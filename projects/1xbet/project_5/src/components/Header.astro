@@ -1,0 +1,89 @@
+---
+const navLinks = [
+  { href: '/', label: 'Главная' },
+  { href: '/sozdat-akkaunt', label: 'Регистрация' },
+  { href: '/onlajn-kazino', label: 'Казино' },
+  { href: '/akcii', label: 'Акции' },
+  { href: '/lichnyy-kabinet', label: 'Кабинет' },
+  { href: '/prilozhenie', label: 'Скачать' },
+];
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center">
+      <span class="text-xl font-bold text-gray-900">1x<span class="text-main-500">Bet</span></span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-1">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            'px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200',
+            currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+              ? 'text-main-500'
+              : 'text-gray-600 hover:text-main-500 hover:bg-gray-50'
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a
+        href={affiliateLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:inline-flex items-center px-5 py-2 bg-main-500 text-white text-sm font-semibold rounded-lg hover:bg-main-600 transition-colors duration-200"
+      >
+        Начать игру
+      </a>
+
+      <button
+        id="burger-btn"
+        class="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+        aria-label="Меню"
+      >
+        <span id="burger-line-1" class="block w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-200"></span>
+        <span id="burger-line-2" class="block w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-200"></span>
+        <span id="burger-line-3" class="block w-5 h-0.5 bg-gray-700 transition-all duration-200"></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            'block py-2.5 px-3 text-sm font-medium rounded-lg transition-colors duration-200',
+            currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+              ? 'text-main-500 bg-main-100'
+              : 'text-gray-600 hover:text-main-500 hover:bg-gray-50'
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href={affiliateLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block mt-3 py-2.5 bg-main-500 text-white text-center text-sm font-semibold rounded-lg hover:bg-main-600 transition-colors duration-200"
+      >
+        Начать игру
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  document.getElementById('burger-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>

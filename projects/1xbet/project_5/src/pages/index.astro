@@ -1,0 +1,475 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/ui/Card.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '1xBet Казахстан — обзор и ставки',
+  url: 'https://review-1xbet.kz',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://review-1xbet.kz/?s={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Сколько аккаунтов можно создать?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Разрешён только один аккаунт на человека. При попытке создать второй — оба заблокируют без предупреждения. Проверяют по ИИН, номеру телефона и IP.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Как быстрее всего вывести деньги?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Kaspi Gold — самый быстрый способ. У меня деньги приходили за 20 минут, но бывает и до 24 часов. Крипта (USDT TRC20) тоже неплоха — обычно 15–30 минут.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Работает ли приложение без интернета?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Нет. Без подключения к сети приложение бесполезно — даже статистику не посмотришь. Нужен хотя бы мобильный 3G, чтобы хоть что-то загрузилось.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Блокирует ли Beeline KZ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Периодически да — блокировки бывают у всех казахстанских операторов. Приложение обычно работает стабильнее, чем сайт через браузер. Если перестало открываться — попробуйте VPN или зеркало.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Что такое вейджер и как его отыграть?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Вейджер — это количество раз, которое нужно прокрутить бонусные деньги. Например, ×5 на спорт означает: получил 10 000 ₸ бонуса — поставь на 50 000 ₸ экспрессами. На казино вейджер ×35, и это реально тяжело.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Что такое Cash Out и как им пользоваться?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Cash Out позволяет забрать часть выигрыша до окончания события. Доступен не на все матчи и не всегда. Сумма зависит от текущего счёта — иногда выгодно, иногда нет.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Есть ли live-казино с дилерами?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Да, раздел live-казино работает круглосуточно. Рулетка, блэкджек, баккара, шоу-игры — всё с живыми дилерами от Evolution и Pragmatic Play Live. Задержки трансляции минимальные.',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="1xBet Казахстан — ставки на спорт и казино KZ 2026"
+  description="Обзор 1xBet для Казахстана: ставки на КПЛ, казино, бонус до 220 000 ₸. Пополнение через Kaspi в тенге."
+  schema={websiteSchema}
+  type="website"
+>
+
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-main-100 text-main-600 text-sm font-medium mb-6">
+          1 000+ live-событий
+        </span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight mb-6">
+          1xBet Казахстан — ставки + казино для игроков из&nbsp;KZ
+        </h1>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          Личный обзор от игрока из Тараза. Больше пятидесяти видов спорта, десять тысяч игр в разделе казино, счёт в тенге. Расскажу, что работает, а где стоит быть осторожнее.
+        </p>
+        <div class="flex flex-wrap gap-4 mb-10">
+          <CTAButton href={affiliateLink} variant="primary" size="lg" external>
+            Создать профиль в KZT
+          </CTAButton>
+          <CTAButton href="/sozdat-akkaunt" variant="outline" size="lg">
+            Получить фрибет
+          </CTAButton>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4 text-center">
+            <p class="text-2xl font-semibold text-gray-900">50+</p>
+            <p class="text-sm text-gray-500">видов спорта</p>
+          </div>
+          <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4 text-center">
+            <p class="text-2xl font-semibold text-gray-900">1 000 ₸</p>
+            <p class="text-sm text-gray-500">мин. депозит</p>
+          </div>
+          <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4 text-center">
+            <p class="text-2xl font-semibold text-gray-900">100%</p>
+            <p class="text-sm text-gray-500">на первый депозит</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading align="left">Что такое 1xBet и стоит ли тут играть</SectionHeading>
+      <div class="mt-8 space-y-4 text-gray-600 leading-relaxed">
+        <p>
+          Познакомился с этой площадкой в 2017 году — друг из Алматы скинул ссылку и сказал, что там нормальные коэффициенты на КПЛ. Зарегался, закинул пять тысяч тенге через Kaspi и начал потихоньку разбираться. С тех пор прошло девять лет, и за это время платформа заметно изменилась. Не всё в лучшую сторону, но об этом дальше.
+        </p>
+        <p>
+          Из плюсов: каталог огромный — больше десяти тысяч игр, пятьдесят с лишним видов спорта, пополнение через Kaspi без конвертации. Минимальный депозит — тысяча тенге. Из минусов: <a href="/akcii" class="text-main-500 hover:text-main-600">условия бонусов</a> могут неприятно удивить, а техподдержка отвечает шаблонами.
+        </p>
+        <p class="text-sm text-gray-500 bg-gray-50 rounded-xl p-4 border border-gray-200">
+          Этот сайт содержит партнёрские ссылки. Я получаю комиссию за регистрации, но это не влияет на содержание обзоров. 21+ | Играйте ответственно.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>Что нравится и что бесит</SectionHeading>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+        <Card>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">Линия и коэффициенты</h3>
+          <p class="text-sm text-gray-600 mb-2">
+            <span class="text-alt-500 font-medium">+</span> Пятьдесят с лишним видов спорта, маржа 3–5% на топ-события.
+          </p>
+          <p class="text-sm text-gray-500">
+            <span class="text-gray-400 font-medium">−</span> На матчи КПЛ роспись беднее, чем на английскую Премьер-Лигу.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">Оплата в тенге</h3>
+          <p class="text-sm text-gray-600 mb-2">
+            <span class="text-alt-500 font-medium">+</span> Kaspi, Halyk, Jusan — деньги приходят без конвертации.
+          </p>
+          <p class="text-sm text-gray-500">
+            <span class="text-gray-400 font-medium">−</span> Kaspi иногда отклоняет платежи без объяснения причин.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">Мобильное приложение</h3>
+          <p class="text-sm text-gray-600 mb-2">
+            <span class="text-alt-500 font-medium">+</span> APK около 40 МБ, работает стабильно на Android.
+          </p>
+          <p class="text-sm text-gray-500">
+            <span class="text-gray-400 font-medium">−</span> Нет в Google Play, обновлять приходится вручную.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">Казино и слоты</h3>
+          <p class="text-sm text-gray-600 mb-2">
+            <span class="text-alt-500 font-medium">+</span> Больше десяти тысяч игр от Pragmatic Play, NetEnt, Evolution.
+          </p>
+          <p class="text-sm text-gray-500">
+            <span class="text-gray-400 font-medium">−</span> Вейджер ×35 на казино-бонус — отыграть крайне непросто.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">Бонусы</h3>
+          <p class="text-sm text-gray-600 mb-2">
+            <span class="text-alt-500 font-medium">+</span> До 220 000 ₸ на первый депозит + 150 фриспинов.
+          </p>
+          <p class="text-sm text-gray-500">
+            <span class="text-gray-400 font-medium">−</span> Условия отыгрыша не самые простые, время покажет.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">Поддержка</h3>
+          <p class="text-sm text-gray-600 mb-2">
+            <span class="text-alt-500 font-medium">+</span> Чат работает круглосуточно, на русском языке.
+          </p>
+          <p class="text-sm text-gray-500">
+            <span class="text-gray-400 font-medium">−</span> Отвечают шаблонно, приходится настаивать на решении.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>Ставки на спорт: что есть на платформе</SectionHeading>
+      <p class="text-gray-600 leading-relaxed text-center max-w-2xl mx-auto mt-4 mb-10">
+        Линия охватывает больше пятидесяти дисциплин. Маржа на топ-матчи — 3–5%, что для казахстанского рынка вполне приемлемо. В лайве ежедневно доступно свыше тысячи событий.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Card>
+          <div class="w-10 h-10 rounded-lg bg-main-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-main-500" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12 2a10 10 0 0 1 0 20M12 2a10 10 0 0 0 0 20M2 12h20" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Футбол</h3>
+          <p class="text-sm text-gray-600">КПЛ — до ста пятидесяти рынков на топ-матчи. Маржа 4–5%, на Лигу Чемпионов чуть ниже.</p>
+        </Card>
+        <Card>
+          <div class="w-10 h-10 rounded-lg bg-main-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-main-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v4m0 12v4m-10-10h4m12 0h4"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Хоккей</h3>
+          <p class="text-sm text-gray-600">НХЛ и КХЛ — от шестидесяти рынков. Барыс покрыт, но роспись скромнее, чем хотелось бы.</p>
+        </Card>
+        <Card>
+          <div class="w-10 h-10 rounded-lg bg-main-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-main-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Теннис</h3>
+          <p class="text-sm text-gray-600">Покрытие от турниров Большого шлема до челленджеров. Лайв-ставки на сеты и геймы обновляются быстро.</p>
+        </Card>
+        <Card>
+          <div class="w-10 h-10 rounded-lg bg-main-100 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-main-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M7 12h10M12 7v10"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Баскетбол</h3>
+          <p class="text-sm text-gray-600">НБА, Евролига, казахстанская лига. Тоталы, форы, статистика игроков — набор солидный.</p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>Платежи: методы и сроки</SectionHeading>
+      <p class="text-gray-600 leading-relaxed text-center max-w-2xl mx-auto mt-4 mb-10">
+        Лично я выводил на Kaspi Gold — деньги пришли за двадцать минут. Но бывало и дольше, до суток. Ниже таблица с основными методами.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Метод</th>
+              <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Пополнение</th>
+              <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Вывод</th>
+              <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Минимум</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr>
+              <td class="px-6 py-4 text-sm text-gray-800 font-medium">Kaspi Gold</td>
+              <td class="px-6 py-4 text-sm text-gray-600">Мгновенно</td>
+              <td class="px-6 py-4 text-sm text-gray-600">1–24 часа</td>
+              <td class="px-6 py-4 text-sm text-gray-600">1 000 ₸</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm text-gray-800 font-medium">Halyk Homebank</td>
+              <td class="px-6 py-4 text-sm text-gray-600">5–15 мин</td>
+              <td class="px-6 py-4 text-sm text-gray-600">1–3 дня</td>
+              <td class="px-6 py-4 text-sm text-gray-600">1 000 ₸</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm text-gray-800 font-medium">USDT (TRC20)</td>
+              <td class="px-6 py-4 text-sm text-gray-600">15–30 мин</td>
+              <td class="px-6 py-4 text-sm text-gray-600">15–30 мин</td>
+              <td class="px-6 py-4 text-sm text-gray-600">~3 000 ₸</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>Топ слотов — что крутить</SectionHeading>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+        <Card>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-medium text-gray-500 bg-gray-100 rounded-full px-3 py-1">Pragmatic Play</span>
+            <span class="text-xs font-medium text-alt-500">RTP 96.48%</span>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Sweet Bonanza</h3>
+          <p class="text-sm text-gray-600 mb-4">Фруктовая тематика с кластерными выплатами. Множители в бонусном раунде достигают ×100, максимальный куш — ×21 175. Волатильность высокая, сухие серии бывают длинными.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-500">Макс. ×21 175</span>
+            <a href="/sweet-bonanza" class="text-sm font-medium text-main-500 hover:text-main-600">Обзор →</a>
+          </div>
+        </Card>
+        <Card>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-medium text-gray-500 bg-gray-100 rounded-full px-3 py-1">Pragmatic Play</span>
+            <span class="text-xs font-medium text-alt-500">RTP 96.51%</span>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">The Dog House</h3>
+          <p class="text-sm text-gray-600 mb-4">Весёлые псы с фиксированными вайлдами и множителями до ×3. Бонус запускается тремя скаттерами. Макс. выигрыш ×6 750 — не рекордный, но реалистичный.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-500">Макс. ×6 750</span>
+            <a href="/the-dog-house" class="text-sm font-medium text-main-500 hover:text-main-600">Обзор →</a>
+          </div>
+        </Card>
+        <Card>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-medium text-gray-500 bg-gray-100 rounded-full px-3 py-1">Pragmatic Play</span>
+            <span class="text-xs font-medium text-alt-500">RTP 96.53%</span>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Sugar Rush 1000</h3>
+          <p class="text-sm text-gray-600 mb-4">Сладкая версия с накопительными множителями на поле. Потенциал до ×25 000. Механика необычная, и к ней нужно привыкнуть — но когда разберёшься, затягивает.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-500">Макс. ×25 000</span>
+            <a href="/sugar-rush-1000" class="text-sm font-medium text-main-500 hover:text-main-600">Обзор →</a>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>Приветственный пакет: что получишь</SectionHeading>
+      <p class="text-gray-600 leading-relaxed text-center max-w-2xl mx-auto mt-4 mb-10">
+        Бонус выглядит щедро на первый взгляд. Но давайте разберёмся, что скрывается за красивыми цифрами.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <Card>
+          <p class="text-xs font-medium text-main-500 uppercase tracking-wider mb-3">Спортивный бонус</p>
+          <p class="text-2xl font-semibold text-gray-900 mb-2">100% до 220 000 ₸</p>
+          <p class="text-sm text-gray-500">Вейджер ×5 экспрессами с коэффициентом от 1.40. Срок — 30 дней. Отыграть реально, но придётся постараться.</p>
+        </Card>
+        <Card>
+          <p class="text-xs font-medium text-main-500 uppercase tracking-wider mb-3">Казино-бонус</p>
+          <p class="text-2xl font-semibold text-gray-900 mb-2">150 фриспинов</p>
+          <p class="text-sm text-gray-500">Вейджер ×35 — это серьёзно. Из ста пятидесяти бесплатных вращений мне удалось выйти в плюс один раз из трёх попыток.</p>
+        </Card>
+        <Card>
+          <p class="text-xs font-medium text-main-500 uppercase tracking-wider mb-3">Фрибет</p>
+          <p class="text-2xl font-semibold text-gray-900 mb-2">Бесплатная ставка</p>
+          <p class="text-sm text-gray-500">При выполнении условий первого депозита. Неплохой бонус, но не стоит ради него завышать сумму пополнения.</p>
+        </Card>
+      </div>
+      <div class="text-center mt-8">
+        <a href="/akcii" class="text-sm font-medium text-main-500 hover:text-main-600">Подробнее про все акции →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading align="left">Live: ставки и дилеры онлайн</SectionHeading>
+      <div class="mt-8 space-y-4 text-gray-600 leading-relaxed">
+        <p>
+          Лайв-раздел работает круглосуточно — ежедневно свыше тысячи событий. Задержка трансляций минимальная, но иногда при слабом мобильном интернете поток подтормаживает. Cash Out доступен не на все матчи, и это раздражает. Делал лайв-ставку на хоккей Барыса — коэффициент менялся быстро, сервер не лагал.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+        <div class="flex items-start gap-3 bg-gray-50 rounded-xl p-4 border border-gray-200">
+          <span class="w-2 h-2 rounded-full bg-alt-500 mt-2 shrink-0"></span>
+          <p class="text-sm text-gray-700">1 000+ live-событий ежедневно</p>
+        </div>
+        <div class="flex items-start gap-3 bg-gray-50 rounded-xl p-4 border border-gray-200">
+          <span class="w-2 h-2 rounded-full bg-alt-500 mt-2 shrink-0"></span>
+          <p class="text-sm text-gray-700">Cash Out — забрать ставку до конца матча</p>
+        </div>
+        <div class="flex items-start gap-3 bg-gray-50 rounded-xl p-4 border border-gray-200">
+          <span class="w-2 h-2 rounded-full bg-alt-500 mt-2 shrink-0"></span>
+          <p class="text-sm text-gray-700">Live-казино с дилерами: Aviator, Crazy Time, Lightning Roulette</p>
+        </div>
+        <div class="flex items-start gap-3 bg-gray-50 rounded-xl p-4 border border-gray-200">
+          <span class="w-2 h-2 rounded-full bg-alt-500 mt-2 shrink-0"></span>
+          <p class="text-sm text-gray-700">Трансляции матчей в приложении</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>Спрашивают — отвечаю</SectionHeading>
+      <div class="mt-10 space-y-4">
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-gray-900 font-medium">
+            Сколько аккаунтов можно создать?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+            Только один. При попытке создать второй — оба заблокируют без предупреждения. Проверяют по ИИН, номеру телефона и IP-адресу. Мой знакомый из Шымкента потерял деньги на счету именно из-за этого — восстановить не удалось.
+          </div>
+        </details>
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-gray-900 font-medium">
+            Как быстрее всего вывести деньги?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+            Kaspi Gold — самый быстрый вариант. У меня деньги приходили за двадцать минут, но иногда ожидание растягивается до суток. Криптовалюта USDT через TRC20 тоже неплоха — обычно пятнадцать–тридцать минут, но нужно разбираться в кошельках.
+          </div>
+        </details>
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-gray-900 font-medium">
+            Работает ли приложение без интернета?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+            Нет, совсем никак. Без подключения к сети приложение бесполезно — даже историю ставок не посмотришь. Нужен хотя бы 3G, чтобы что-то загрузилось. Это, конечно, минус для тех, кто часто бывает в зонах без покрытия.
+          </div>
+        </details>
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-gray-900 font-medium">
+            Блокирует ли Beeline KZ?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+            Периодически да. Блокировки случаются у всех казахстанских операторов — не только Beeline, но и Kcell, и Tele2. <a href="/prilozhenie" class="text-main-500 hover:text-main-600">Приложение</a> работает стабильнее, чем сайт через браузер. Если не грузится — попробуйте VPN или зеркало.
+          </div>
+        </details>
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-gray-900 font-medium">
+            Что такое вейджер и как его отыграть?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+            Вейджер — количество раз, которое нужно прокрутить бонусные средства. На спорт — ×5 экспрессами с кэфом от 1.40. На казино — ×35, и это реально тяжело. Из трёх моих попыток отыграть казино-бонус успехом завершилась только одна.
+          </div>
+        </details>
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-gray-900 font-medium">
+            Что такое Cash Out и как им пользоваться?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+            Cash Out даёт возможность забрать часть выигрыша до окончания матча. Доступен не на все события и не всегда. Сумма зависит от текущего счёта — иногда выгодно, иногда площадка предлагает слишком мало.
+          </div>
+        </details>
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-gray-900 font-medium">
+            Есть ли live-казино с дилерами?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+            Да, и довольно обширный. Рулетка, блэкджек, баккара, шоу-игры — всё с живыми ведущими от Evolution и Pragmatic Play Live. Трансляция идёт с минимальной задержкой, но стабильный интернет обязателен.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <SectionHeading>Готовы начать?</SectionHeading>
+      <p class="text-gray-600 mt-4 mb-8">
+        Попробовать можно, но подходите к этому с холодной головой. Играйте только на те деньги, которые готовы потерять.
+      </p>
+      <CTAButton href={affiliateLink} variant="primary" size="lg" external>
+        Не откладывайте
+      </CTAButton>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</BaseLayout>

@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import { Image } from 'astro:assets';
+import casinoImg from '../assets/images/casino-chips.png';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Казино 1xBet — слоты, рулетка и live-дилеры',
+  description: 'Онлайн-казино 1xBet для Казахстана. Слоты, live-дилеры, краш-игры. Депозит от 1 000 ₸ через Kaspi.',
+  author: {
+    '@type': 'Person',
+    name: 'Арман Жумабаев',
+  },
+  datePublished: '2026-01-20',
+  dateModified: '2026-03-22',
+  inLanguage: 'ru',
+};
+---
+
+<BaseLayout
+  title="Играть в казино 1xBet Казахстан — слоты и live-игры"
+  description="Онлайн-казино 1xBet для Казахстана. Слоты, live-дилеры, краш-игры. Депозит от 1 000 ₸ через Kaspi."
+  schema={schema}
+  publishDate="2026-01-20"
+  updateDate="2026-03-22"
+>
+  <Breadcrumbs items={[
+    { label: 'Главная', href: '/' },
+    { label: 'Казино' },
+  ]} />
+
+  <ArticleMeta publishDate="2026-01-20" updateDate="2026-03-22" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tighter leading-none text-white mb-8">
+        Казино 1xBet — слоты, рулетка и&nbsp;live-дилеры
+      </h1>
+
+      <div class="border-2 border-brand-500 overflow-hidden mb-10">
+        <Image
+          src={casinoImg}
+          alt="Онлайн-казино на букмекерской платформе"
+          class="w-full"
+          widths={[400, 640, 1024]}
+          sizes="(max-width: 1024px) 100vw, 896px"
+        />
+      </div>
+
+      <p class="text-zinc-300 text-lg leading-relaxed mb-4">
+        Я начинал со ставок на футбол, а в казино залетел случайно — крутанул слот от нечего делать, пока ждал матч КПЛ. С тех пор игровой раздел стал для меня отдельной вселенной. На платформе собрано больше десяти тысяч игр от сотни с лишним провайдеров, и каталог реально обновляется каждую неделю.
+      </p>
+
+      <p class="text-zinc-300 leading-relaxed mb-10">
+        Пополнить счёт можно через Kaspi — минимальный депозит от 1 000 тенге. Деньги падают моментально, я проверял десятки раз. Если ты только думаешь попробовать — сначала <a href="/registraciya" class="text-brand-400 hover:text-brand-300 border-b border-brand-500/50">создай аккаунт</a>, это займёт две минуты.
+      </p>
+
+      <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tighter text-white mb-6">
+        Популярные слоты
+      </h2>
+
+      <p class="text-zinc-300 leading-relaxed mb-6">
+        Из десяти тысяч автоматов выделю два, на которых сам провёл больше всего времени. Оба слота отличаются высокой отдачей и адреналиновой механикой — множители тут решают всё.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+        <Card class="border-2 border-bg-700" hover={false}>
+          <div class="aspect-[16/10] bg-bg-900 border-2 border-brand-500/20 flex items-center justify-center">
+            <div class="text-center">
+              <svg class="w-12 h-12 mx-auto text-brand-400/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <p class="text-xs font-mono text-zinc-600 mt-2 uppercase">Gates of Olympus</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <span class="inline-block font-mono text-xs text-brand-400 border border-brand-500/30 px-2 py-0.5 uppercase tracking-wider">Pragmatic Play</span>
+            <h3 class="font-mono text-white text-xl font-bold uppercase tracking-tight mt-3 mb-2">Gates of Olympus</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Зевс швыряет молнии и множители до ×500 на каждом спине. Кластерная механика без линий — выигрыш складывается из комбинаций символов на всём поле. На бонусных раундах множители суммируются, и тут начинается настоящий хаос.
+            </p>
+            <div class="flex gap-4 font-mono text-xs text-zinc-500 uppercase tracking-wider mt-3">
+              <span>RTP 96.50%</span>
+              <span>Max ×5000</span>
+            </div>
+            <div class="mt-4">
+              <CTAButton href="/gates-of-olympus" variant="outline" size="sm">Обзор Olympus</CTAButton>
+            </div>
+          </div>
+        </Card>
+
+        <Card class="border-2 border-bg-700" hover={false}>
+          <div class="aspect-[16/10] bg-bg-900 border-2 border-brand-500/20 flex items-center justify-center">
+            <div class="text-center">
+              <svg class="w-12 h-12 mx-auto text-brand-400/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              <p class="text-xs font-mono text-zinc-600 mt-2 uppercase">Book of Dead</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <span class="inline-block font-mono text-xs text-brand-400 border border-brand-500/30 px-2 py-0.5 uppercase tracking-wider">Play'n GO</span>
+            <h3 class="font-mono text-white text-xl font-bold uppercase tracking-tight mt-3 mb-2">Book of Dead</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Классический египетский автомат с расширяющимися символами. Во время бонусной серии случайный символ занимает весь барабан — именно тут прилетают крупные выплаты. Волатильность высокая, но ради этого и играешь.
+            </p>
+            <div class="flex gap-4 font-mono text-xs text-zinc-500 uppercase tracking-wider mt-3">
+              <span>RTP 96.21%</span>
+              <span>Max ×5000</span>
+            </div>
+            <div class="mt-4">
+              <CTAButton href="/book-of-dead" variant="outline" size="sm">Обзор Book of Dead</CTAButton>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tighter text-white mb-6">
+        Live-казино и краш-игры
+      </h2>
+
+      <p class="text-zinc-300 leading-relaxed mb-6">
+        Живые столы — это отдельная атмосфера. Дилеры ведут трансляцию в реальном времени, и ты видишь каждое движение карты или шарика. Я чаще всего сижу на Lightning Roulette — там случайные множители до ×500 падают на отдельные номера, и адреналин зашкаливает.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+        <div class="border-2 border-pop-500/40 bg-bg-900 p-5">
+          <p class="font-mono text-pop-400 text-xs uppercase tracking-wider mb-2">Краш</p>
+          <p class="text-lg font-black text-white mb-1">Aviator</p>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Самолёт летит — множитель растёт. Забираешь выигрыш в любой момент или теряешь всё. Простейшая механика, но оторваться невозможно.
+          </p>
+        </div>
+
+        <div class="border-2 border-pop-500/40 bg-bg-900 p-5">
+          <p class="font-mono text-pop-400 text-xs uppercase tracking-wider mb-2">Шоу</p>
+          <p class="text-lg font-black text-white mb-1">Crazy Time</p>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Колесо фортуны с четырьмя бонусными мини-играми. Тут реально может залететь ×25 000 за один раунд — видел своими глазами в стриме.
+          </p>
+        </div>
+
+        <div class="border-2 border-pop-500/40 bg-bg-900 p-5">
+          <p class="font-mono text-pop-400 text-xs uppercase tracking-wider mb-2">Рулетка</p>
+          <p class="text-lg font-black text-white mb-1">Lightning Roulette</p>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Классическая рулетка, но каждый раунд молния бьёт в случайные числа и накидывает множитель. Мой любимый формат для вечерних сессий.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tighter text-white mb-6">
+        Бонус для казино
+      </h2>
+
+      <div class="border-l-4 border-brand-500 pl-6 mb-10">
+        <p class="text-zinc-300 leading-relaxed mb-4">
+          Помимо спортивного приветственного пакета, букмекер дарит 150 фриспинов для игровых автоматов. Вейджер — ×35, то есть выигрыш с бесплатных вращений нужно прокрутить тридцать пять раз. Скажу честно: отыгрыш жёсткий, я пробовал дважды и один раз вышел в плюс, другой — нет. Подробности и стратегии описал на <a href="/bonus" class="text-brand-400 hover:text-brand-300 border-b border-brand-500/50">странице бонусов</a>.
+        </p>
+        <p class="text-zinc-400 text-sm">
+          Фриспины начисляются не сразу — после первого пополнения и отыгрыша части спортивного бонуса. Активируются автоматически в разделе «Мои бонусы».
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tighter text-white mb-6">
+        Провайдеры и каталог
+      </h2>
+
+      <p class="text-zinc-300 leading-relaxed mb-4">
+        В каталоге представлены Pragmatic Play, Evolution, Play'n GO, NetEnt, Microgaming и ещё десятки студий. Фильтры работают нормально — можно отсортировать по провайдеру, типу игры или популярности. Новинки выходят каждую неделю, и я реально замечаю обновления — не просто маркетинговая болтовня.
+      </p>
+
+      <p class="text-zinc-300 leading-relaxed mb-12">
+        Отдельно радует раздел с демо-режимом: большинство слотов можно крутить бесплатно и без регистрации. Полезно, когда хочешь протестировать механику до того, как ставить реальные деньги. Но live-столы, понятное дело, доступны только после входа в аккаунт.
+      </p>
+
+      <div class="border-2 border-brand-500 bg-bg-900 p-8 text-center">
+        <p class="font-mono text-brand-400 text-sm uppercase tracking-wider mb-3">10 000+ игр ждут</p>
+        <p class="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-6">
+          Попробуй казино с бонусом 150 фриспинов
+        </p>
+        <CTAButton href={affiliateLink} variant="primary" size="lg" external>
+          Открыть казино
+        </CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

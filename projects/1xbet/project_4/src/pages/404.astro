@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Страница не найдена — 404"
+  description="Запрашиваемая страница не найдена. Вернитесь на главную."
+  noindex={true}
+>
+  <section class="py-20 lg:py-32">
+    <div class="max-w-lg mx-auto px-4 sm:px-6 text-center">
+      <div class="text-9xl font-black text-brand-400/10 uppercase tracking-tighter mb-4 font-mono">404</div>
+      <h1 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter mb-4">Страница не найдена</h1>
+      <p class="text-zinc-500 mb-8">
+        К сожалению, запрашиваемая страница не существует или была перемещена.
+      </p>
+      <a href="/" class="inline-flex items-center justify-center px-8 py-4 bg-brand-500 text-black font-mono font-bold uppercase text-sm border-2 border-brand-500 hover:bg-black hover:text-brand-400 transition-colors duration-100">
+        Вернуться на главную
+      </a>
+    </div>
+  </section>
+</BaseLayout>

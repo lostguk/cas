@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://review-1xbet.kz/sitemap-index.xml

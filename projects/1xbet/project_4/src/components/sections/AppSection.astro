@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import SectionHeading from '../ui/SectionHeading.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import appImg from '../../assets/images/app-phone.png';
+---
+
+<section id="app" class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <SectionHeading align="left" class="mb-6">Приложение: ставки с телефона</SectionHeading>
+        <div class="text-slate-300 leading-relaxed space-y-4">
+          <p>
+            Скачал APK букмекера с официального сайта — весит где-то 40 мегабайт, нормально для такого приложения. Установка стандартная: разрешаешь «неизвестные источники» в настройках Android и ставишь как обычную программу. У меня Samsung A54, встало без проблем и работает без тормозов.
+          </p>
+          <p>
+            Через приложение реально удобнее делать ставки — интерфейс адаптирован, кэфы и линия всегда под рукой. Уведомления о результатах приходят моментально, не пропускаю ни один лайв. Единственное — обновлять APK надо вручную.
+          </p>
+        </div>
+        <div class="mt-8">
+          <CTAButton href="/skachat" size="lg">Скачать APK бесплатно</CTAButton>
+        </div>
+      </div>
+      <div class="border-2 border-white p-4">
+        <Image
+          src={appImg}
+          alt="Мобильное приложение для ставок на телефоне"
+          width={600}
+          height={800}
+          class="w-full h-auto"
+          loading="lazy"
+          format="webp"
+          quality={80}
+        />
+      </div>
+    </div>
+  </div>
+</section>

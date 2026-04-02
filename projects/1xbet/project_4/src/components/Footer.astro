@@ -1,0 +1,66 @@
+---
+const sections = [
+  {
+    title: 'ПЛАТФОРМА',
+    links: [
+      { href: '/registraciya', label: 'Регистрация' },
+      { href: '/bonus', label: 'Бонусы' },
+      { href: '/skachat', label: 'Скачать APK' },
+      { href: '/zerkalo', label: 'Зеркало' },
+    ],
+  },
+  {
+    title: 'ИГРЫ',
+    links: [
+      { href: '/casino', label: 'Казино' },
+      { href: '/gates-of-olympus', label: 'Gates of Olympus' },
+      { href: '/book-of-dead', label: 'Book of Dead' },
+    ],
+  },
+  {
+    title: 'ИНФО',
+    links: [
+      { href: '/about', label: 'Об авторе' },
+    ],
+  },
+];
+---
+
+<footer class="mt-20">
+  <div class="h-0.5 bg-brand-500"></div>
+  <div class="bg-black border-t border-bg-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="col-span-2 md:col-span-1">
+          <a href="/" class="flex items-center gap-2 mb-4">
+            <div class="w-6 h-6 bg-brand-500 rotate-12"></div>
+            <span class="font-bold text-white font-mono uppercase tracking-tighter">1xBet</span>
+          </a>
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Обзор 1xBet от игрока из Актобе. Ставки, казино, бонусы — личный опыт.
+          </p>
+        </div>
+
+        {sections.map(section => (
+          <div>
+            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-brand-400 mb-4">{section.title}</h3>
+            <ul class="space-y-2">
+              {section.links.map(link => (
+                <li>
+                  <a href={link.href} class="text-sm text-zinc-400 hover:text-brand-400 transition-colors duration-100">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 pt-6 border-t-2 border-bg-800">
+        <p class="text-xs text-zinc-600 leading-relaxed max-w-3xl">
+          21+ | Ответственная игра | Этот сайт содержит партнёрские ссылки. Автор получает комиссию за регистрации. Это не влияет на объективность обзора. Играйте ответственно.
+        </p>
+        <p class="text-xs text-zinc-700 mt-2 font-mono">© {new Date().getFullYear()} 1xbet-stavki.kz</p>
+      </div>
+    </div>
+  </div>
+</footer>

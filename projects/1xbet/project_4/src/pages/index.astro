@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import OverviewSection from '../components/sections/OverviewSection.astro';
+import BonusSection from '../components/sections/BonusSection.astro';
+import SportsSection from '../components/sections/SportsSection.astro';
+import AdvantagesSection from '../components/sections/AdvantagesSection.astro';
+import SlotsSection from '../components/sections/SlotsSection.astro';
+import PaymentsSection from '../components/sections/PaymentsSection.astro';
+import AppSection from '../components/sections/AppSection.astro';
+import FAQSection from '../components/sections/FAQSection.astro';
+import CTASection from '../components/sections/CTASection.astro';
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '1xBet Казахстан — ставки и казино',
+  url: 'https://1xbet-stavki.kz',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://1xbet-stavki.kz/?s={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<BaseLayout
+  title="1xBet Казахстан — ставки на спорт и казино KZ 2026"
+  description="Обзор 1xBet для Казахстана: ставки на КПЛ, казино, бонус до 220 000 ₸. Пополнение через Kaspi в тенге."
+  schema={websiteSchema}
+  type="website"
+>
+  <HeroSection />
+  <OverviewSection />
+  <BonusSection />
+  <SportsSection />
+  <AdvantagesSection />
+  <SlotsSection />
+  <PaymentsSection />
+  <AppSection />
+  <FAQSection />
+  <CTASection />
+</BaseLayout>

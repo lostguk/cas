@@ -1,0 +1,55 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+---
+
+<section class="py-16 sm:py-24 bg-bg-950">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionHeading align="left">
+      Спорт: от КПЛ до киберспорта
+    </SectionHeading>
+
+    <p class="text-zinc-400 mt-6 max-w-2xl text-base leading-relaxed">
+      Начинал со ставок на КПЛ — Кайрат, Астана, дерби в Актобе. Потом затянуло серьёзно. Сейчас на площадке ловлю линию на 40+ видов спорта и ставлю почти на всё подряд.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-4 mt-10">
+      <Card class="border-2 border-bg-700" hover={false}>
+        <svg class="w-10 h-10 text-brand-400 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <polygon points="12,6 17,10 15,16 9,16 7,10" />
+        </svg>
+        <h3 class="font-mono text-white text-lg font-bold uppercase tracking-tight mb-2">Футбол</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">КПЛ, АПЛ, Ла Лига — маржа от 2% на топовые матчи. По выходным собираю экспрессы из 3-4 событий, нормально заходят.</p>
+      </Card>
+
+      <Card class="border-2 border-bg-700" hover={false}>
+        <svg class="w-10 h-10 text-brand-400 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L6 18L18 18" />
+          <circle cx="14" cy="8" r="3" />
+        </svg>
+        <h3 class="font-mono text-white text-lg font-bold uppercase tracking-tight mb-2">Хоккей</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">НХЛ и «Барыс» всегда в линии, даже товарняки. Роспись широкая — больше 80 исходов на матч, тоталы удобные.</p>
+      </Card>
+
+      <Card class="border-2 border-bg-700" hover={false}>
+        <svg class="w-10 h-10 text-brand-400 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="10" cy="10" r="8" />
+          <line x1="16" y1="16" x2="22" y2="22" />
+        </svg>
+        <h3 class="font-mono text-white text-lg font-bold uppercase tracking-tight mb-2">Теннис</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">Турниры ATP идут круглый год — всегда есть на что поставить. Лайв-коэффициенты обновляются за секунды, удобно ловить момент на брейке.</p>
+      </Card>
+
+      <Card class="border-2 border-bg-700" hover={false}>
+        <svg class="w-10 h-10 text-brand-400 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" />
+          <line x1="8" y1="21" x2="16" y2="21" />
+          <line x1="12" y1="17" x2="12" y2="21" />
+        </svg>
+        <h3 class="font-mono text-white text-lg font-bold uppercase tracking-tight mb-2">Киберспорт</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">CS2, Dota 2, Valorant — роспись как на обычный спорт. Ставки на карты, раунды, тоталы убийств — всё реально работает.</p>
+      </Card>
+    </div>
+  </div>
+</section>

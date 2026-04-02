@@ -1,0 +1,90 @@
+{
+  "index": {
+    "title": "1xBet Казахстан — ставки на спорт и казино KZ 2026",
+    "description": "Обзор 1xBet для Казахстана: ставки на КПЛ, казино, бонус до 220 000 ₸. Пополнение через Kaspi в тенге.",
+    "primary_keyword": "1xBet казахстан",
+    "title_formula": 1,
+    "page_type": "index"
+  },
+  "sozdat-akkaunt": {
+    "title": "Регистрация 1xBet: 4 способа + бонус на первый депозит",
+    "description": "Регистрация 1xBet за 2 минуты — пошагово. Аккаунт в тенге, бонус на старте, верификация через ИИН.",
+    "primary_keyword": "1xBet регистрация",
+    "title_formula": 2,
+    "page_type": "registration"
+  },
+  "prilozhenie": {
+    "title": "Скачать 1xBet Казахстан — APK для Android бесплатно",
+    "description": "Как скачать 1xBet в Казахстане: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.",
+    "primary_keyword": "1xBet скачать",
+    "title_formula": 3,
+    "page_type": "download"
+  },
+  "onlajn-kazino": {
+    "title": "Какие слоты есть на 1xBet? Обзор казино KZ 2026",
+    "description": "Казино 1xBet KZ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в тенге, выводи на Kaspi.",
+    "primary_keyword": "1xBet казино",
+    "title_formula": 4,
+    "page_type": "casino"
+  },
+  "akcii": {
+    "title": "1xBet Бонусы — приветственный пакет для KZ | 2026",
+    "description": "Бонусы 1xBet для Казахстана: до 220 000 ₸ на спорт, 150 фриспинов на казино. Условия отыгрыша.",
+    "primary_keyword": "1xBet бонус",
+    "title_formula": 1,
+    "page_type": "bonus"
+  },
+  "lichnyy-kabinet": {
+    "title": "Личный кабинет 1xBet: вход, вывод, верификация KZ",
+    "description": "1xBet личный кабинет — как войти, пополнить счёт и вывести деньги в тенге на Kaspi Gold.",
+    "primary_keyword": "1xBet вход",
+    "title_formula": 2,
+    "page_type": "account"
+  },
+  "about": {
+    "title": "Обзор 1xBet Казахстан — кто автор и зачем этот сайт",
+    "description": "Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках.",
+    "primary_keyword": "1xBet обзор",
+    "title_formula": 3,
+    "page_type": "about"
+  },
+  "sweet-bonanza": {
+    "title": "Играть Sweet Bonanza на 1xBet Казахстан — обзор и RTP",
+    "description": "Sweet Bonanza на 1xBet: RTP 96.48%, бонусные раунды, волатильность. Честный обзор от казахстанца 2026.",
+    "primary_keyword": "Sweet Bonanza слот",
+    "title_formula": 3,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Sweet Bonanza",
+      "rtp": "96.48%",
+      "maxWin": "×21 175",
+      "provider": "Pragmatic Play"
+    }
+  },
+  "the-dog-house": {
+    "title": "The Dog House слот: RTP 96.51%, максимум ×6 750 | 1xBet",
+    "description": "Обзор слота The Dog House на 1xBet: RTP 96.51%, макс. выигрыш ×6 750. Pragmatic Play. Играй в тенге.",
+    "primary_keyword": "The Dog House слот",
+    "title_formula": 2,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "The Dog House",
+      "rtp": "96.51%",
+      "maxWin": "×6 750",
+      "provider": "Pragmatic Play"
+    }
+  },
+  "sugar-rush-1000": {
+    "title": "Sugar Rush 1000 — обзор слота и демо на 1xBet | 2026",
+    "description": "Sugar Rush 1000 — обзор слота от Pragmatic Play. RTP 96.53%, множитель ×25 000. Демо и реальная игра на 1xBet.",
+    "primary_keyword": "Sugar Rush 1000 слот",
+    "title_formula": 1,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Sugar Rush 1000",
+      "rtp": "96.53%",
+      "maxWin": "×25 000",
+      "provider": "Pragmatic Play"
+    }
+  }
+}

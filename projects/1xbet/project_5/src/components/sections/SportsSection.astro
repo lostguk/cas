@@ -1,0 +1,53 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const sports = [
+  {
+    title: 'Футбол',
+    color: 'bg-main-100 text-main-600',
+    text: 'КПЛ — до 150 рынков на топ-матчи, маржа около 4–5%. На АПЛ и Ла Лигу роспись шире, но для казахстанского футбола выбор средний. Бывают задержки с обновлением коэффициентов в live.',
+  },
+  {
+    title: 'Хоккей',
+    color: 'bg-alt-500/10 text-alt-500',
+    text: 'НХЛ и КХЛ покрыты нормально, маржа около 4%. Барыс есть в линии, но рынков меньше, чем хотелось бы. На ВХЛ расписание нестабильное — может, со временем станет лучше.',
+  },
+  {
+    title: 'Теннис',
+    color: 'bg-main-100 text-main-600',
+    text: 'ATP и WTA представлены прилично, есть ITF-турниры. Коэффициенты в live меняются быстро — при медленном интернете можно не успеть. Маржа на мелкие турниры доходит до 5–6%.',
+  },
+  {
+    title: 'Баскетбол',
+    color: 'bg-alt-500/10 text-alt-500',
+    text: 'NBA и Евролига — до 100 рынков на матч, маржа 4–5%. На Национальную лигу Казахстана вариантов мало. Live-ставки доступны, но интерфейс иногда подтормаживает при высокой нагрузке.',
+  },
+];
+---
+
+<section id="sports" class="py-16 lg:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading class="mb-4">
+      Ставки на спорт — что по факту
+    </SectionHeading>
+
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+      Площадка предлагает больше 50 дисциплин и порядка 1 000 live-событий ежедневно. Маржа 3–5% — не лучшая на рынке, но терпимая. Ниже — мой субъективный разбор четырёх популярных видов.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {sports.map((sport) => (
+        <Card>
+          <div class="flex items-center gap-3 mb-3">
+            <span class:list={['shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-sm font-semibold', sport.color]}>
+              {sport.title.charAt(0)}
+            </span>
+            <h3 class="text-lg font-semibold text-gray-900">{sport.title}</h3>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed">{sport.text}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

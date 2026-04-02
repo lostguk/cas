@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+const publishDate = '2026-01-25';
+const updateDate = '2026-03-15';
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'Об авторе обзора 1xBet Казахстан',
+  description: 'Информация об авторе сайта review-1xbet.kz — Серик Калиев из Тараза.',
+  url: 'https://review-1xbet.kz/about',
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Серик Калиев',
+    jobTitle: 'Обзорщик букмекеров, аналитик',
+    url: 'https://review-1xbet.kz/about',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Тараз',
+      addressCountry: 'KZ',
+    },
+    knowsAbout: ['ставки на спорт', 'онлайн-казино', 'букмекерские конторы', 'гемблинг'],
+  },
+};
+---
+
+<BaseLayout
+  title="Кто пишет обзоры 1xBet? Об авторе и проекте 2026"
+  description="Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках."
+  type="article"
+  schema={aboutSchema}
+  publishDate={publishDate}
+  updateDate={updateDate}
+>
+  <Breadcrumbs items={[
+    { label: 'Главная', href: '/' },
+    { label: 'Об авторе' },
+  ]} />
+
+  <article class="pb-16 lg:pb-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight mb-6">
+        Об авторе — кто стоит за этим обзором
+      </h1>
+    </div>
+
+    <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-start gap-5 mb-10">
+        <div class="shrink-0 w-16 h-16 rounded-xl bg-main-100 flex items-center justify-center">
+          <span class="text-xl font-semibold text-main-600">СК</span>
+        </div>
+        <div>
+          <p class="text-xl font-semibold text-gray-900">Серик Калиев</p>
+          <p class="text-sm text-gray-500">35 лет · Тараз, Казахстан</p>
+        </div>
+      </div>
+
+      <div class="space-y-6 text-gray-600 leading-relaxed">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 pt-2">Кто я</h2>
+
+        <p>
+          Меня зовут Серик, мне тридцать пять, живу в Таразе. В мир ставок погрузился в 2017 году — коллега с работы скинул ссылку на букмекерскую контору и сказал «попробуй, там коэффициенты на КПЛ нормальные». Попробовал, затянуло. С тех пор прошло девять лет, и за это время я видел в этой сфере многое — и выигрыши, и обидные проигрыши, и сомнительные бонусные условия.
+        </p>
+
+        <p>
+          Не считаю себя профессиональным игроком и не претендую на экспертизу уровня аналитических агентств. Я обычный человек из Тараза, который достаточно долго пользуется платформой, чтобы видеть её реальные плюсы и минусы. По образованию — экономист, по роду деятельности — фрилансер. Этот сайт — побочный проект, который родился из желания систематизировать свой опыт.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 pt-4">Зачем этот сайт</h2>
+
+        <p>
+          Когда я начинал разбираться с букмекерами, адекватных обзоров на русском для Казахстана практически не существовало. Либо откровенная реклама с нулевой конкретикой, либо устаревшие статьи, где методы оплаты и бонусы давно изменились. Мне не хватало честного взгляда от человека из моего региона — кто платит в тенге, выводит на Kaspi и знает местную специфику. Не нашёл — решил написать сам.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 pt-4">Как тестирую</h2>
+
+        <p>
+          Каждый обзор основан на реальных действиях. Пополняю счёт через Kaspi QR и банковскую карту, делаю ставки, вывожу деньги — фиксирую сроки и суммы. Бонусы активирую и пытаюсь отыграть до конца, чтобы описать реальные условия, а не теоретические. Слоты тестирую на реальные тенге — минимум пятьдесят спинов, прежде чем формировать мнение. Приложение проверяю на Samsung A54 с мобильным 4G от Kcell.
+        </p>
+
+        <p>
+          Если букмекер задержал вывод или бонус оказался невыгодным — читатель об этом узнает. Подход простой: пишу так, как рассказал бы знакомому, который спрашивает совет перед регистрацией. Без приукрашивания и без лишней паники.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 pt-4">Про честность</h2>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 my-2">
+          <p class="text-sm font-medium text-gray-900 mb-2">Дисклеймер</p>
+          <p class="text-sm text-gray-500">
+            Часть ссылок на этом сайте — партнёрские. Если вы переходите по ним и создаёте аккаунт, я получаю комиссию от площадки. Для вас это бесплатно — партнёрская ссылка часто активирует расширенный приветственный пакет. Считаю правильным говорить об этом открыто.
+          </p>
+        </div>
+
+        <p>
+          Партнёрская программа — мой единственный источник дохода с сайта. Но это не повод идеализировать платформу. За девять лет сталкивался и с долгой верификацией, и с отклонёнными выводами, и с бонусами, которые не стоили потраченного времени. Всё это отражено в обзорах. Потерять доверие читателей — хуже, чем потерять разовую комиссию.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 pt-4">Предупреждение</h2>
+
+        <div class="bg-main-100 border border-main-200 rounded-xl p-6 my-2">
+          <p class="text-sm font-medium text-main-600 mb-3">21+ | Ответственная игра</p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex items-start gap-2"><span class="text-main-500 mt-0.5">·</span>Азартные игры — только для лиц старше 21 года</li>
+            <li class="flex items-start gap-2"><span class="text-main-500 mt-0.5">·</span>Ставьте исключительно те суммы, потерю которых переживёте безболезненно</li>
+            <li class="flex items-start gap-2"><span class="text-main-500 mt-0.5">·</span>Не гонитесь за отыгрышем — проигрышные серии случаются у каждого</li>
+            <li class="flex items-start gap-2"><span class="text-main-500 mt-0.5">·</span>При первых признаках зависимости обратитесь к специалисту</li>
+          </ul>
+        </div>
+
+        <p>
+          Я сам ставлю только на деньги, которые готов потерять без ущерба для бюджета. Никогда не занимал на ставки и не советую это делать другим. Букмекер — это развлечение с рисками, а не способ стабильного заработка. Относитесь к нему соответственно.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4 mt-12 pt-8 border-t border-gray-200">
+        <CTAButton href={affiliateLink} variant="primary" size="lg" external>
+          Начать с приветственным пакетом
+        </CTAButton>
+        <CTAButton href="/onlajn-kazino" variant="outline" size="lg">
+          Обзор казино
+        </CTAButton>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

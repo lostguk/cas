@@ -1,0 +1,63 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const cards = [
+  {
+    title: 'Линия и коэффициенты',
+    plus: '50+ видов спорта, маржа держится на уровне 3–5% — терпимо для рынка.',
+    minus: 'На КПЛ роспись заметно беднее, чем на европейские лиги. Для локальных матчей — так себе.',
+  },
+  {
+    title: 'Оплата в тенге',
+    plus: 'Kaspi, Halyk, Jusan — пополнение без конвертации, деньги приходят быстро.',
+    minus: 'Kaspi периодически отклоняет платежи без объяснения причин. Приходится повторять.',
+  },
+  {
+    title: 'Мобильное приложение',
+    plus: 'APK весит около 40 МБ, работает стабильно даже на слабых устройствах.',
+    minus: 'Отсутствует в Google Play — обновлять приходится вручную с сайта. Неудобно.',
+  },
+  {
+    title: 'Казино и слоты',
+    plus: '10 000+ игр от Pragmatic Play, NetEnt, Play\'n GO и Evolution — выбор большой.',
+    minus: 'Вейджер ×35 на казино-бонус — отыграть реально сложно, времени дают мало.',
+  },
+  {
+    title: 'Бонусы',
+    plus: 'До 220 000 ₸ + 150 фриспинов на старте — на бумаге выглядит щедро.',
+    minus: 'Условия отыгрыша жёсткие, большинство игроков не справляется с вейджером.',
+  },
+  {
+    title: 'Поддержка',
+    plus: 'Чат работает круглосуточно на русском языке, отвечают в течение минуты.',
+    minus: 'Ответы шаблонные, как из методички. Чтобы решить реальную проблему — нужно настаивать.',
+  },
+];
+---
+
+<section id="advantages" class="py-16 lg:py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading class="mb-12">
+      Плюсы и минусы — объективно
+    </SectionHeading>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {cards.map((card) => (
+        <Card>
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">{card.title}</h3>
+          <div class="space-y-3">
+            <div class="flex items-start gap-2.5">
+              <span class="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-alt-500/15 text-alt-500 flex items-center justify-center text-xs font-semibold">+</span>
+              <p class="text-sm text-gray-600 leading-relaxed">{card.plus}</p>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-main-500/15 text-main-600 flex items-center justify-center text-xs font-semibold">&minus;</span>
+              <p class="text-sm text-gray-600 leading-relaxed">{card.minus}</p>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

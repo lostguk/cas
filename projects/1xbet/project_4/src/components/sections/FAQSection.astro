@@ -1,0 +1,69 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const faqs = [
+  {
+    question: 'Нужен ли ИИН для создания аккаунта?',
+    answer: 'Нет, при регистрации хватает email и номера телефона. ИИН понадобится позже, когда контора запросит верификацию — обычно перед первым крупным выводом. До этого спокойно играешь без документов.',
+  },
+  {
+    question: 'Можно ли пополнить через USDT?',
+    answer: 'Да, пополнение через USDT работает по сети TRC20, комиссия копеечная — несколько центов. Зачисление обычно за 15–30 минут, проверено лично не раз. Сам пользуюсь когда не хочу светить карту — быстрее банковского перевода и без лишних вопросов от банка.',
+  },
+  {
+    question: 'Работает ли приложение без интернета?',
+    answer: 'Нет, для ставок и казино нужно стабильное подключение к сети. Офлайн-режима у приложения нет — даже кэшированные страницы не позволят сделать ставку или крутить слот. Мобильного 4G от Kcell или Beeline вполне хватает для комфортной игры без задержек.',
+  },
+  {
+    question: 'Какой VPN лучше для Казахстана?',
+    answer: 'Лично использую Windscribe — бесплатная версия нормально тянет для ставок и казино. Planet VPN тоже рабочий вариант для Казахстана. Главное — выбирай сервер поближе, Россия или Турция, чтобы пинг не страдал и страницы грузились быстро.',
+  },
+  {
+    question: 'Как активировать фриспины?',
+    answer: 'После активации бонуса заходишь в раздел «Казино» и открываешь нужный слот — фриспины запускаются автоматически. Если не видишь их — проверь условия акции в личном кабинете, иногда нужно принять бонус вручную.',
+  },
+  {
+    question: 'Есть ли ставки на киберспорт?',
+    answer: 'Да, площадка покрывает CS2, Dota 2, League of Legends, Valorant и другие дисциплины. Коэффициенты адекватные, линия нормальная. Перед крупными турнирами типа Major или TI роспись заметно расширяется, появляются карты и другие рынки.',
+  },
+  {
+    question: 'Можно ли купить бонусную игру в слоте?',
+    answer: 'В некоторых слотах от Pragmatic Play и других провайдеров есть функция Feature Buy — покупка бонусного раунда напрямую. Стоит обычно от ×80 до ×100 от размера ставки. Доступно не во всех слотах — зависит от провайдера и ограничений региона.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<section id="faq" class="py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading class="mb-12">FAQ — отвечаю на вопросы</SectionHeading>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group border-2 border-white">
+          <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+            <span class="font-bold text-white text-sm sm:text-base">{faq.question}</span>
+            <span class="font-mono text-brand-400 text-lg shrink-0 transition-transform duration-100 group-open:rotate-45">+</span>
+          </summary>
+          <div class="px-6 pb-5 text-slate-300 text-sm leading-relaxed border-t-2 border-white/20 pt-4">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

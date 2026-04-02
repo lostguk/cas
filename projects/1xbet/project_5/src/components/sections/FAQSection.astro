@@ -1,0 +1,105 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const faqs = [
+  {
+    question: 'Сколько аккаунтов можно создать?',
+    answer: 'Один. Это строгое правило, за нарушение контора блокирует все аккаунты и обнуляет балансы. Проверяют по документам, IP и устройствам. Лично знаю человека, которого заблокировали за второй аккаунт на жену — так что не рискуйте.',
+  },
+  {
+    question: 'Как быстрее всего вывести деньги?',
+    answer: 'По моему опыту — USDT через TRC20. Деньги приходят за 15–30 минут, без вопросов от банка. Kaspi тоже быстрый, но бывают задержки до суток — особенно если сумма крупная или аккаунт новый. Halyk — медленнее всех, до 3 дней.',
+  },
+  {
+    question: 'Работает ли приложение без интернета?',
+    answer: 'Нет. Для ставок и казино нужно стабильное подключение. Офлайн-режима нет — даже просмотреть историю не получится. Мобильного 4G от Kcell или Beeline хватает, но в метро Алматы бывают обрывы — имейте в виду.',
+  },
+  {
+    question: 'Блокирует ли Beeline KZ?',
+    answer: 'Периодически — да. Основной сайт могут блокировать на уровне оператора, это зависит от текущих требований регулятора. Рабочий вариант — зеркало или VPN. Я использую Windscribe, бесплатной версии хватает. Но стабильность зеркал — вопрос спорный, они тоже иногда падают.',
+  },
+  {
+    question: 'Что такое вейджер и как его отыграть?',
+    answer: 'Вейджер — это количество раз, которое нужно прокрутить сумму бонуса перед выводом. Здесь \u00d75 на спорт (экспрессы от 3 событий с кэфом от 1.40) и \u00d735 на казино. На спорт ещё реально, на казино — крайне сложно. Срок — 30 дней, потом бонус сгорает. Будьте готовы к тому, что большинство не справляется.',
+  },
+  {
+    question: 'Что такое Cash Out и как им пользоваться?',
+    answer: 'Cash Out позволяет забрать часть выигрыша до окончания матча. Кнопка появляется в разделе «Мои ставки» на подходящих событиях. Сумма кэшаута всегда ниже потенциального выигрыша — букмекер закладывает свою маржу. Пользуюсь, когда матч идёт не по плану, но не считаю это выгодной стратегией на постоянной основе.',
+  },
+  {
+    question: 'Есть ли live-казино с дилерами?',
+    answer: 'Да — Crazy Time, Lightning Roulette, блэкджек и баккара с живыми дилерами от Evolution. Работает стабильно, стримы в хорошем качестве. Но задержка 2–3 секунды есть, и в быстрых играх вроде Aviator это может раздражать. В целом — нормально, но идеальным не назову.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<section id="faq" class="py-16 lg:py-24 bg-gray-50">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading class="mb-12">
+      Частые вопросы
+    </SectionHeading>
+
+    <div class="grid grid-cols-1 gap-4">
+      {faqs.map((faq, i) => (
+        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden" data-faq-item>
+          <button
+            class="w-full flex items-center justify-between gap-4 px-6 py-4 text-left cursor-pointer hover:bg-gray-50 transition-colors duration-150"
+            data-faq-toggle
+            aria-expanded="false"
+            aria-controls={`faq-answer-${i}`}
+          >
+            <span class="font-semibold text-gray-900 text-sm sm:text-base">{faq.question}</span>
+            <svg class="shrink-0 w-5 h-5 text-gray-400 transition-transform duration-200" data-faq-icon fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          <div
+            id={`faq-answer-${i}`}
+            class="hidden px-6 pb-5 pt-0 border-t border-gray-100"
+            data-faq-answer
+          >
+            <p class="text-sm text-gray-600 leading-relaxed pt-4">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<script>
+  document.querySelectorAll('[data-faq-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('[data-faq-item]');
+      const answer = item.querySelector('[data-faq-answer]');
+      const icon = btn.querySelector('[data-faq-icon]');
+      const isOpen = !answer.classList.contains('hidden');
+
+      document.querySelectorAll('[data-faq-item]').forEach((other) => {
+        other.querySelector('[data-faq-answer]').classList.add('hidden');
+        other.querySelector('[data-faq-toggle]').setAttribute('aria-expanded', 'false');
+        other.querySelector('[data-faq-icon]').style.transform = '';
+      });
+
+      if (!isOpen) {
+        answer.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+</script>

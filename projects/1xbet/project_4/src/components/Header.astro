@@ -1,0 +1,74 @@
+---
+const navLinks = [
+  { href: '/', label: 'ГЛАВНАЯ' },
+  { href: '/registraciya', label: 'РЕГИСТРАЦИЯ' },
+  { href: '/casino', label: 'КАЗИНО' },
+  { href: '/bonus', label: 'БОНУСЫ' },
+  { href: '/zerkalo', label: 'ЗЕРКАЛО' },
+  { href: '/skachat', label: 'СКАЧАТЬ' },
+];
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-black border-b-2 border-brand-500">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-brand-500 rotate-12"></div>
+      <span class="font-bold text-lg text-white font-mono uppercase tracking-tighter">1xBet</span>
+    </a>
+
+    <div class="flex items-center gap-4">
+      <a
+        href={affiliateLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:inline-flex px-6 py-2 bg-brand-500 text-black font-mono font-bold uppercase text-sm border-2 border-brand-500 hover:bg-black hover:text-brand-400 transition-colors duration-100"
+      >
+        Начать с приветственным пакетом
+      </a>
+
+      <button
+        id="burger-btn"
+        class="flex flex-col justify-center items-center w-10 h-10 border-2 border-white"
+        aria-label="Меню"
+      >
+        <span class="block w-5 h-0.5 bg-white mb-1"></span>
+        <span class="block w-5 h-0.5 bg-white mb-1"></span>
+        <span class="block w-5 h-0.5 bg-white"></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden bg-black border-t-2 border-brand-500">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            'block py-3 font-mono uppercase text-sm tracking-wider border-b border-bg-800 transition-colors duration-100',
+            currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+              ? 'text-brand-400'
+              : 'text-white hover:text-brand-400'
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href={affiliateLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block mt-4 py-3 bg-brand-500 text-black text-center font-mono font-bold uppercase text-sm"
+      >
+        Начать с приветственным пакетом
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  document.getElementById('burger-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>

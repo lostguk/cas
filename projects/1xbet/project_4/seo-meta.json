@@ -1,0 +1,77 @@
+{
+  "index": {
+    "title": "1xBet Казахстан — ставки на спорт и казино KZ 2026",
+    "description": "Обзор 1xBet для Казахстана: ставки на КПЛ, казино, бонус до 220 000 ₸. Пополнение через Kaspi в тенге.",
+    "primary_keyword": "1xBet казахстан",
+    "title_formula": 1,
+    "page_type": "index"
+  },
+  "registraciya": {
+    "title": "Регистрация 1xBet: 4 способа + бонус на первый депозит",
+    "description": "Регистрация 1xBet за 2 минуты — пошагово. Аккаунт в тенге, бонус на старте, верификация через ИИН.",
+    "primary_keyword": "1xBet регистрация",
+    "title_formula": 2,
+    "page_type": "registration"
+  },
+  "casino": {
+    "title": "Играть в казино 1xBet Казахстан — слоты и live-игры",
+    "description": "Онлайн-казино 1xBet для Казахстана. Слоты, live-дилеры, краш-игры. Депозит от 1 000 ₸ через Kaspi.",
+    "primary_keyword": "1xBet казино",
+    "title_formula": 3,
+    "page_type": "casino"
+  },
+  "bonus": {
+    "title": "Какие бонусы даёт 1xBet? Полный гайд для KZ 2026",
+    "description": "Бонусная программа 1xBet: до 220 000 ₸ на первый депозит. Условия, сроки, как не потерять бонус.",
+    "primary_keyword": "1xBet бонус",
+    "title_formula": 4,
+    "page_type": "bonus"
+  },
+  "zerkalo": {
+    "title": "1xBet Зеркало — рабочий доступ без блокировки | 2026",
+    "description": "Рабочее зеркало 1xBet для Казахстана. Обходи блокировку Kcell и Beeline — вход без VPN.",
+    "primary_keyword": "1xBet зеркало",
+    "title_formula": 1,
+    "page_type": "mirror"
+  },
+  "skachat": {
+    "title": "Приложение 1xBet: APK 40 МБ + установка за 1 минуту",
+    "description": "1xBet приложение для Android и iOS — скачать бесплатно. APK 40 МБ, ставки и казино с телефона.",
+    "primary_keyword": "1xBet скачать",
+    "title_formula": 2,
+    "page_type": "download"
+  },
+  "about": {
+    "title": "Обзор 1xBet Казахстан — кто автор и зачем этот сайт",
+    "description": "Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках.",
+    "primary_keyword": "1xBet обзор",
+    "title_formula": 3,
+    "page_type": "about"
+  },
+  "gates-of-olympus": {
+    "title": "Играть Gates of Olympus на 1xBet Казахстан — обзор и RTP",
+    "description": "Gates of Olympus на 1xBet: RTP 96.50%, бонусные раунды, волатильность. Честный обзор от казахстанца 2026.",
+    "primary_keyword": "Gates of Olympus слот",
+    "title_formula": 3,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Gates of Olympus",
+      "rtp": "96.50%",
+      "maxWin": "×5 000",
+      "provider": "Pragmatic Play"
+    }
+  },
+  "book-of-dead": {
+    "title": "Book of Dead слот: RTP 96.21%, максимум ×5 000 | 1xBet",
+    "description": "Обзор слота Book of Dead на 1xBet: RTP 96.21%, макс. выигрыш ×5 000. Play'n GO. Играй в тенге.",
+    "primary_keyword": "Book of Dead слот",
+    "title_formula": 2,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Book of Dead",
+      "rtp": "96.21%",
+      "maxWin": "×5 000",
+      "provider": "Play'n GO"
+    }
+  }
+}

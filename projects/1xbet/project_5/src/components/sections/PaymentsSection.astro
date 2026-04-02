@@ -1,0 +1,71 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const methods = [
+  {
+    title: 'Kaspi / Halyk / Jusan',
+    description: 'Карты и переводы казахстанских банков. Пополнение через Kaspi обычно мгновенное, а вот с Halyk бывают задержки до 15 минут. Вывод — отдельная история: от часа до суток, и предсказать сложно.',
+  },
+  {
+    title: 'Криптовалюта (USDT)',
+    description: 'TRC20, без комиссии со стороны платформы, зачисление за 15–30 минут. Пожалуй, самый стабильный способ — но нужно разбираться в крипте. Не для всех удобно, но лично я пользуюсь чаще всего.',
+  },
+  {
+    title: 'Электронные кошельки',
+    description: 'QIWI и WebMoney — работают, но медленнее банковских карт. Честно говоря, этими способами почти не пользуюсь: комиссии выше, а скорость ниже. Может, у кого-то другой опыт.',
+  },
+];
+
+const tableRows = [
+  { method: 'Kaspi Gold', deposit: 'Мгновенно', withdrawal: '1–24 часа', min: '1 000 ₸' },
+  { method: 'Halyk Homebank', deposit: '5–15 мин', withdrawal: '1–3 дня', min: '1 000 ₸' },
+  { method: 'USDT (TRC20)', deposit: '15–30 мин', withdrawal: '15–30 мин', min: '~3 000 ₸' },
+];
+---
+
+<section id="payments" class="py-16 lg:py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading class="mb-12">
+      Пополнение и вывод — моя статистика
+    </SectionHeading>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      {methods.map((m) => (
+        <Card>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">{m.title}</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">{m.description}</p>
+        </Card>
+      ))}
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-200 bg-gray-50">
+              <th class="text-left px-6 py-3 font-semibold text-gray-900">Метод</th>
+              <th class="text-left px-6 py-3 font-semibold text-gray-900">Пополнение</th>
+              <th class="text-left px-6 py-3 font-semibold text-gray-900">Вывод</th>
+              <th class="text-left px-6 py-3 font-semibold text-gray-900">Минимум</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tableRows.map((row, i) => (
+              <tr class:list={[i < tableRows.length - 1 && 'border-b border-gray-100']}>
+                <td class="px-6 py-3 font-medium text-gray-900">{row.method}</td>
+                <td class="px-6 py-3 text-gray-600">{row.deposit}</td>
+                <td class="px-6 py-3 text-gray-600">{row.withdrawal}</td>
+                <td class="px-6 py-3 text-gray-600">{row.min}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500 text-center">
+      Сроки вывода — по моему опыту за последние полгода. У вас может быть иначе. Контора иногда запрашивает верификацию перед выводом — это задерживает на 1–2 дня. Будьте готовы.
+    </p>
+  </div>
+</section>

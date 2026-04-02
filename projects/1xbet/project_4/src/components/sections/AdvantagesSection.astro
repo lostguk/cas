@@ -1,0 +1,86 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+---
+
+<section class="py-16 sm:py-24 bg-bg-900">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionHeading align="left">
+      Что нравится и что бесит
+    </SectionHeading>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+      <Card class="border-2 border-bg-700" hover={false}>
+        <h3 class="font-mono text-white font-bold uppercase tracking-tight mb-3">Линия / коэффициенты</h3>
+        <div class="flex gap-2 items-start">
+          <span class="text-brand-400 font-mono font-bold shrink-0">+</span>
+          <p class="text-zinc-300 text-sm">Маржа от 1.5% на топ-футбол — одна из лучших на рынке СНГ.</p>
+        </div>
+        <div class="flex gap-2 items-start mt-2">
+          <span class="text-zinc-500 font-mono font-bold shrink-0">−</span>
+          <p class="text-zinc-400 text-sm">На мелкие лиги маржа взлетает до 6-8%, ощутимо режет прибыль.</p>
+        </div>
+      </Card>
+
+      <Card class="border-2 border-bg-700" hover={false}>
+        <h3 class="font-mono text-white font-bold uppercase tracking-tight mb-3">Оплата в тенге</h3>
+        <div class="flex gap-2 items-start">
+          <span class="text-brand-400 font-mono font-bold shrink-0">+</span>
+          <p class="text-zinc-300 text-sm">Каспи, Халык — пополнение за пару минут без конвертации в доллары.</p>
+        </div>
+        <div class="flex gap-2 items-start mt-2">
+          <span class="text-zinc-500 font-mono font-bold shrink-0">−</span>
+          <p class="text-zinc-400 text-sm">Вывод иногда подвисает на 2-3 часа, приходится ждать и нервничать.</p>
+        </div>
+      </Card>
+
+      <Card class="border-2 border-bg-700" hover={false}>
+        <h3 class="font-mono text-white font-bold uppercase tracking-tight mb-3">Приложение</h3>
+        <div class="flex gap-2 items-start">
+          <span class="text-brand-400 font-mono font-bold shrink-0">+</span>
+          <p class="text-zinc-300 text-sm">APK на андроид летает, ставки в один тап прямо с телефона.</p>
+        </div>
+        <div class="flex gap-2 items-start mt-2">
+          <span class="text-zinc-500 font-mono font-bold shrink-0">−</span>
+          <p class="text-zinc-400 text-sm">На iOS нормального приложения нет, через браузер не очень удобно.</p>
+        </div>
+      </Card>
+
+      <Card class="border-2 border-bg-700" hover={false}>
+        <h3 class="font-mono text-white font-bold uppercase tracking-tight mb-3">Казино / слоты</h3>
+        <div class="flex gap-2 items-start">
+          <span class="text-brand-400 font-mono font-bold shrink-0">+</span>
+          <p class="text-zinc-300 text-sm">Больше 3000 слотов от Pragmatic, Play'n GO — выбор огромный.</p>
+        </div>
+        <div class="flex gap-2 items-start mt-2">
+          <span class="text-zinc-500 font-mono font-bold shrink-0">−</span>
+          <p class="text-zinc-400 text-sm">Затягивает сильно, легко спустить весь банк за один вечер.</p>
+        </div>
+      </Card>
+
+      <Card class="border-2 border-bg-700" hover={false}>
+        <h3 class="font-mono text-white font-bold uppercase tracking-tight mb-3">Бонусы</h3>
+        <div class="flex gap-2 items-start">
+          <span class="text-brand-400 font-mono font-bold shrink-0">+</span>
+          <p class="text-zinc-300 text-sm">Фрибет до 75 000 ₸ на первый депозит — реально щедро.</p>
+        </div>
+        <div class="flex gap-2 items-start mt-2">
+          <span class="text-zinc-500 font-mono font-bold shrink-0">−</span>
+          <p class="text-zinc-400 text-sm">Отыгрыш x5 за 30 дней, условия жёсткие.</p>
+        </div>
+      </Card>
+
+      <Card class="border-2 border-bg-700" hover={false}>
+        <h3 class="font-mono text-white font-bold uppercase tracking-tight mb-3">Поддержка</h3>
+        <div class="flex gap-2 items-start">
+          <span class="text-brand-400 font-mono font-bold shrink-0">+</span>
+          <p class="text-zinc-300 text-sm">Чат 24/7, отвечают за 3-5 минут — быстро.</p>
+        </div>
+        <div class="flex gap-2 items-start mt-2">
+          <span class="text-zinc-500 font-mono font-bold shrink-0">−</span>
+          <p class="text-zinc-400 text-sm">Ответы часто шаблонные, не решают вопрос с первого раза.</p>
+        </div>
+      </Card>
+    </div>
+  </div>
+</section>

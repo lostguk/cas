@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'Об авторе обзора 1xBet Казахстан',
+  description: 'Информация об авторе сайта 1xbet-stavki.kz — Арман Жумабаев из Актобе.',
+  url: 'https://1xbet-stavki.kz/about',
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Арман Жумабаев',
+    jobTitle: 'Автор обзоров казино и ставок',
+    url: 'https://1xbet-stavki.kz/about',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Актобе',
+      addressCountry: 'KZ',
+    },
+    knowsAbout: ['ставки на спорт', 'онлайн-казино', 'букмекерские конторы'],
+  },
+};
+---
+
+<BaseLayout
+  title="Обзор 1xBet Казахстан — кто автор и зачем этот сайт"
+  description="Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках."
+  type="article"
+  schema={aboutSchema}
+  publishDate="2026-01-10"
+  updateDate="2026-03-15"
+>
+  <Breadcrumbs items={[
+    { label: 'Главная', href: '/' },
+    { label: 'Об авторе' },
+  ]} />
+
+  <article class="pb-16 lg:pb-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-6">
+        Об авторе — кто стоит за обзором 1xBet
+      </h1>
+    </div>
+
+    <ArticleMeta publishDate="2026-01-10" updateDate="2026-03-15" />
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6 text-zinc-300 text-base sm:text-lg leading-relaxed">
+        <div class="flex items-start gap-6 mb-8">
+          <div class="shrink-0 w-20 h-20 border-2 border-brand-500 flex items-center justify-center">
+            <span class="font-mono text-2xl font-bold text-brand-400">АЖ</span>
+          </div>
+          <div>
+            <p class="text-xl font-bold text-white">Арман Жумабаев</p>
+            <p class="font-mono text-sm text-zinc-500 uppercase tracking-wider">28 лет · Актобе, Казахстан</p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter pt-4">
+          Кто я
+        </h2>
+
+        <p>
+          Привет! Меня зовут Арман, мне 28, живу в Актобе. В мир ставок на спорт попал шесть лет назад, когда друг скинул ссылку на 1xBet и сказал «попробуй, там нормальные кэфы на КПЛ». Попробовал — и втянулся. Начинал с минимальных ставок на казахстанский футбол, потом распробовал лайвы на баскетбол, хоккей, позже подключил казино. Сейчас площадка — часть повседневной рутины: захожу практически каждый день.
+        </p>
+
+        <p>
+          По образованию — инженер-программист, но по специальности не работаю. Зарабатываю фрилансом и параллельно развиваю этот сайт. Не профессиональный гемблер и не каппер — обычный энтузиаст, который за шесть лет накопил достаточно опыта, чтобы делиться им с другими.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter pt-6">
+          Зачем этот сайт
+        </h2>
+
+        <p>
+          Когда сам начинал, нормальных обзоров на русском для Казахстана практически не было. Вся информация — или откровенная реклама без конкретики, или устаревшие статьи с 2019 года. Хотелось найти место, где человек из моего региона честно расскажет: как пополнить через Kaspi, сколько идёт вывод, работает ли бонус, какие слоты дают. Не нашёл — решил сделать сам.
+        </p>
+
+        <p>
+          Этот ресурс — мой личный проект. Никакой редакции, никакого стороннего заказчика. Пишу о том, что тестирую лично, на свои деньги. Контора не спонсирует сайт напрямую — я зарабатываю через партнёрскую программу (об этом ниже), но это не влияет на содержание обзоров. Если что-то работает плохо — пишу прямо.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter pt-6">
+          Как тестирую
+        </h2>
+
+        <p>
+          Каждый обзор основан на реальном опыте. Пополняю через Kaspi QR и банковскую карту, вывожу на Kaspi Gold — фиксирую сроки и комиссии. Бонусы активирую и отыгрываю от начала до конца, чтобы описать реальные условия вейджера. Слоты кручу на реальные деньги — минимум 50-100 спинов на каждый, прежде чем писать отзыв. Приложение тестирую на Samsung Galaxy A54 с мобильным 4G от Kcell.
+        </p>
+
+        <p>
+          Скриншоты, суммы и сроки в обзорах — настоящие. Не использую демо-режим для создания контента. Если букмекер задержал вывод или бонус оказался невыгодным — читатель об этом узнает. Подход простой: пишу так, как рассказал бы другу, который собирается <a href="/registraciya" class="text-brand-400 underline hover:text-brand-300">зарегистрироваться</a> и спрашивает мнение.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter pt-6">
+          Про честность и партнёрские ссылки
+        </h2>
+
+        <div class="border-2 border-brand-500/30 bg-bg-950 p-6 my-6">
+          <p class="font-mono text-xs uppercase tracking-wider text-brand-400 mb-3">Дисклеймер</p>
+          <p class="text-sm text-zinc-400">
+            Часть ссылок на этом сайте — партнёрские. Если ты переходишь по ним и создаёшь аккаунт, я получаю комиссию от платформы. Для тебя это ничего не стоит — наоборот, партнёрская ссылка часто активирует расширенный приветственный пакет. Это мой основной источник дохода с сайта, и я считаю правильным говорить об этом открыто.
+          </p>
+        </div>
+
+        <p>
+          Партнёрка не означает, что я буду хвалить площадку вопреки фактам. За шесть лет сталкивался и с долгой верификацией, и с зависшими выводами, и с невыгодными бонусами — всё это отражено в обзорах. Доверие читателей мне дороже разовой комиссии.
+        </p>
+
+        <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter pt-6">
+          Предупреждение
+        </h2>
+
+        <div class="border-2 border-pop-500/40 bg-bg-950 p-6 my-6">
+          <p class="font-mono text-xs uppercase tracking-wider text-pop-400 mb-4">21+ | Ответственная игра</p>
+          <ul class="text-sm text-zinc-400 space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="text-pop-400 font-mono font-bold shrink-0">//</span>
+              <span>Азартные игры доступны только для лиц старше 21 года</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-pop-400 font-mono font-bold shrink-0">//</span>
+              <span>Ставь только те деньги, которые готов потерять без ущерба для бюджета</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-pop-400 font-mono font-bold shrink-0">//</span>
+              <span>Не гонись за отыгрышем — проигрыш серий случается у каждого</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-pop-400 font-mono font-bold shrink-0">//</span>
+              <span>Если чувствуешь зависимость — обратись за помощью к специалисту</span>
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          Я сам ставлю исключительно на деньги, потерю которых переживу безболезненно. Никогда не занимал на ставки, не играл на последние и не рекомендую делать это другим. Букмекер — это развлечение, а не способ заработка. Подходи к нему с холодной головой.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4 mt-12 pt-8 border-t-2 border-bg-800">
+        <CTAButton href={affiliateLink} variant="primary" size="lg" external>
+          Начать с приветственным пакетом
+        </CTAButton>
+        <CTAButton href="/casino" variant="outline" size="lg">
+          Обзор казино
+        </CTAButton>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

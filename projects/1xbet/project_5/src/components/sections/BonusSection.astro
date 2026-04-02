@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import bonusImg from '../../assets/images/p5-bonus-gift.png';
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const bonuses = [
+  {
+    type: 'Спортивный бонус',
+    value: '100% до 220 000 ₸',
+    condition: 'Вейджер \u00d75 на экспрессы от 3 событий с коэффициентом от 1.40. Срок — 30 дней.',
+    verdict: 'Условия терпимые, но собрать нужные экспрессы за месяц — задачка не для новичка. Я справился, но нервы потрепал.',
+  },
+  {
+    type: 'Казино-бонус',
+    value: '150 фриспинов',
+    condition: 'Вейджер \u00d735 на конкретных слотах. Выигрыш с фриспинов тоже нужно отыграть.',
+    verdict: 'Отыгрыш \u00d735 — это жёстко. Большинство теряет бонус раньше, чем выполнит условия. Попробовать можно, но рассчитывать не стоит.',
+  },
+  {
+    type: 'Фрибет',
+    value: 'Бесплатная ставка',
+    condition: 'Выдаётся при выполнении условий первого депозита. Сумма зависит от размера пополнения.',
+    verdict: 'Фрибет — приятный жест, но сумма обычно небольшая. Не стоит ради него пополнять больше, чем планировали. Время покажет, насколько это выгодно.',
+  },
+];
+---
+
+<section id="bonus" class="py-16 lg:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading class="mb-12">
+      Бонусная программа — разбор условий
+    </SectionHeading>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+        {bonuses.map((bonus) => (
+          <Card>
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold text-gray-900">{bonus.type}</h3>
+              <span class="text-sm font-semibold text-main-600 bg-main-50 px-3 py-1 rounded-lg">{bonus.value}</span>
+            </div>
+            <p class="text-sm text-gray-500 mb-2">{bonus.condition}</p>
+            <p class="text-sm text-gray-700 leading-relaxed">{bonus.verdict}</p>
+          </Card>
+        ))}
+      </div>
+
+      <div class="hidden lg:block">
+        <Image
+          src={bonusImg}
+          alt="Бонусная программа"
+          class="w-full rounded-xl shadow-sm"
+          widths={[400, 600]}
+          sizes="(min-width: 1024px) 33vw, 100vw"
+        />
+      </div>
+    </div>
+
+    <p class="mt-8 text-sm text-gray-500 text-center max-w-2xl mx-auto">
+      Подробнее о всех акциях и промокодах — на <a href="/akcii" class="text-main-600 underline underline-offset-2 hover:text-main-500">странице бонусов</a>. Но не уверен, что все предложения одинаково выгодны — читайте условия до последней строчки.
+    </p>
+  </div>
+</section>

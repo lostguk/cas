@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import bonusImg from '../../assets/images/bonus-chest.png';
+import SectionHeading from '../ui/SectionHeading.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import Card from '../ui/Card.astro';
+---
+
+<section class="py-20 sm:py-28 bg-bg-950">
+  <div class="max-w-6xl mx-auto px-4">
+    <SectionHeading>
+      Бонус до 220 000 ₸ — условия
+    </SectionHeading>
+
+    <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+      <div class="border-2 border-brand-500 overflow-hidden">
+        <Image
+          src={bonusImg}
+          alt="Бонусный пакет 1xBet до 220 000 тенге"
+          class="w-full"
+          widths={[400, 640]}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <Card class="border-2 border-brand-500/30">
+          <p class="font-mono text-brand-400 text-sm uppercase tracking-wider mb-2">Спортивный бонус</p>
+          <p class="text-xl font-black text-white mb-2">100% до 220 000 ₸</p>
+          <p class="text-zinc-400 text-sm">Вейджер ×5 — нужно поставить сумму бонуса пять раз на экспрессы с коэффициентом от 1.40. Условия реальные, сам отыгрывал за две недели.</p>
+        </Card>
+
+        <Card class="border-2 border-brand-500/30">
+          <p class="font-mono text-brand-400 text-sm uppercase tracking-wider mb-2">Казино-бонус</p>
+          <p class="text-xl font-black text-white mb-2">150 фриспинов</p>
+          <p class="text-zinc-400 text-sm">Вейджер ×35 — тут сложнее, честно говоря. Отыграть казино-бонус удаётся далеко не всегда. Не рассчитывайте на лёгкие деньги.</p>
+        </Card>
+
+        <Card class="border-2 border-brand-500/30">
+          <p class="font-mono text-brand-400 text-sm uppercase tracking-wider mb-2">Фрибет</p>
+          <p class="text-xl font-black text-white mb-2">Бесплатная ставка</p>
+          <p class="text-zinc-400 text-sm">Даётся при первом депозите. Условия мягкие — фрибет можно поставить на любое событие с коэффициентом от 1.80.</p>
+        </Card>
+
+        <CTAButton href="https://refpa94475.com/L?tag=d_3955871m_99c_" variant="primary" size="lg" external class="mt-4 w-full text-center">
+          Открыть казино с бонусом
+        </CTAButton>
+      </div>
+    </div>
+  </div>
+</section>

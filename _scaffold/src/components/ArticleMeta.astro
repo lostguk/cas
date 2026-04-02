@@ -1,0 +1,33 @@
+---
+interface Props {
+  publishDate: string;
+  updateDate: string;
+}
+
+const { publishDate, updateDate } = Astro.props;
+
+const formatDate = (dateStr: string) => {
+  const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+  const d = new Date(dateStr);
+  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+};
+---
+
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500 mb-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="flex items-center gap-2">
+    <div class="w-8 h-8 rounded-full bg-{{COLOR_ACCENT}}-500/20 flex items-center justify-center text-{{COLOR_ACCENT}}-400 text-xs font-bold">
+      {{AUTHOR_INITIALS}}
+    </div>
+    <div>
+      <a href="/about" class="text-slate-300 hover:text-{{COLOR_ACCENT}}-400 transition-colors font-medium">{{AUTHOR_NAME}}</a>
+    </div>
+  </div>
+  <span class="hidden sm:inline text-slate-700">|</span>
+  <time datetime={publishDate}>
+    Опубликовано: {formatDate(publishDate)}
+  </time>
+  <span class="hidden sm:inline text-slate-700">|</span>
+  <time datetime={updateDate}>
+    Обновлено: {formatDate(updateDate)}
+  </time>
+</div>

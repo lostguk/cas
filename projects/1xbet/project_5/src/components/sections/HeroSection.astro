@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/images/p5-hero-stadium.png';
+import CTAButton from '../ui/CTAButton.astro';
+---
+
+<section class="relative overflow-hidden bg-white">
+  <div class="absolute inset-0">
+    <Image
+      src={heroImg}
+      alt="Стадион"
+      class="w-full h-full object-cover opacity-10"
+      widths={[640, 1024, 1536]}
+      sizes="100vw"
+      loading="eager"
+    />
+  </div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-4 pt-20 pb-24 sm:pt-28 sm:pb-32 text-center">
+    <div class="inline-block bg-main-50 border border-main-200 rounded-2xl px-10 py-8 mb-8">
+      <p class="text-sm text-gray-500 mb-1">Приветственный пакет до</p>
+      <p class="text-5xl sm:text-6xl font-semibold text-main-600 leading-none">220 000 ₸</p>
+      <p class="text-sm text-gray-500 mt-2">+ 150 фриспинов</p>
+    </div>
+
+    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight mb-4">
+      1xBet Казахстан — стоит&nbsp;ли? Скептический обзор
+    </h1>
+
+    <p class="max-w-2xl mx-auto text-gray-600 mb-8 leading-relaxed">
+      Личный разбор от Серика из Тараз. 9 лет в беттинге, ни одного заказного обзора — только факты, сомнения и честные выводы по ставкам и казино.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">
+      <CTAButton href="https://refpa94475.com/L?tag=d_3955872m_100c_" variant="primary" size="lg" external>
+        Создать профиль в KZT
+      </CTAButton>
+      <CTAButton href="/sozdat-akkaunt" variant="outline" size="lg">
+        Получить фрибет
+      </CTAButton>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
+      <div class="text-center">
+        <p class="text-2xl font-semibold text-gray-900">50+</p>
+        <p class="text-xs text-gray-500 mt-0.5">видов спорта</p>
+      </div>
+      <div class="text-center border-x border-gray-200">
+        <p class="text-2xl font-semibold text-gray-900">1 000 ₸</p>
+        <p class="text-xs text-gray-500 mt-0.5">мин. депозит</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl font-semibold text-gray-900">100%</p>
+        <p class="text-xs text-gray-500 mt-0.5">на первый депозит</p>
+      </div>
+    </div>
+  </div>
+</section>
