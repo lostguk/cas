@@ -1,0 +1,38 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+
+const items = [
+  { t: 'Скорость', d: 'Интерфейс заточен под быстрый купон, особенно в live.' },
+  { t: 'Роспись', d: 'Много маркетов на топ-матчи; экзотика тоже встречается.' },
+  { t: 'Мобайл', d: 'APK и веб: ставка с телефона без магических танцев.' },
+  { t: 'Казино', d: 'Слоты и live-столы рядом со спортом в одном профиле.' },
+  { t: 'KZT', d: 'Тенге в кошельке — меньше путаницы с курсами.' },
+  { t: 'Промо', d: 'Акции меняются; читай условия вайджера на официальной стороне.' },
+];
+---
+
+<section class="py-20 lg:py-28 bg-dark-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>
+      Плюсы в двух строках.
+      <p slot="subtitle" class="text-slate-400">Карточки вместо полотна текста.</p>
+    </SectionHeading>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+      {
+        items.map((x) => (
+          <Card>
+            <h3 class="text-base font-extrabold uppercase text-primary-400 mb-2">{x.t}</h3>
+            <p class="text-slate-400 text-sm">{x.d}</p>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="flex justify-center">
+      <CTAButton href={affiliateLink} size="lg" external>Проверить самому</CTAButton>
+    </div>
+  </div>
+</section>

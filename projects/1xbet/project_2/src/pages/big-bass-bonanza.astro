@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+const publishDate = '2026-03-22';
+const updateDate = '2026-04-01';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  itemReviewed: {
+    '@type': 'VideoGame',
+    name: 'Big Bass Bonanza',
+    gamePlatform: 'Online casino',
+  },
+  reviewRating: { '@type': 'Rating', ratingValue: '4.4', bestRating: '5' },
+  author: { '@type': 'Person', name: 'Редакция 1xСтавка KZ' },
+  reviewBody: 'Рыболовный слот с денежной рыбой и множителями в бонусе.',
+};
+---
+
+<BaseLayout
+  title="Big Bass Bonanza — обзор слота"
+  description="Pragmatic Play: рыбалка, сбор рыбы с множителями, RTP ориентир. Запуск на официальном сайте."
+  schema={schema}
+  type="article"
+  publishDate={publishDate}
+  updateDate={updateDate}
+  noindex={true}
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Онлайн-казино', href: '/onlajn-kazino' },
+      { label: 'Big Bass Bonanza' },
+    ]}
+  />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-3">
+          Big Bass Bonanza.
+        </h1>
+        <p class="text-primary-400 font-bold text-sm uppercase tracking-widest">Pragmatic Play</p>
+        <div class="mt-6">
+          <CTAButton href={affiliateLink} size="lg" external>Ловить рыбу</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder
+        description="Слот Big Bass Bonanza: озеро на рассвете, удочка и блёсна на экране"
+        class="mb-10"
+      />
+
+      <div class="grid sm:grid-cols-3 gap-4 mb-10">
+        <Card class="!p-4">
+          <p class="text-xs text-slate-500 uppercase">RTP ориентир</p>
+          <p class="text-xl font-black text-white">~96.7%</p>
+        </Card>
+        <Card class="!p-4">
+          <p class="text-xs text-slate-500 uppercase">Волатильность</p>
+          <p class="text-xl font-black text-white">Средняя+</p>
+        </Card>
+        <Card class="!p-4">
+          <p class="text-xs text-slate-500 uppercase">Тема</p>
+          <p class="text-xl font-black text-white">Рыбалка</p>
+        </Card>
+      </div>
+
+      <div class="space-y-5 text-slate-300 text-sm">
+        <h2 class="text-xl font-bold text-white uppercase">Бонус.</h2>
+        <p>
+          Рыбак собирает денежные символы с экрана; иногда поднимает множитель, и серия удачных спинов складывается в нормальный занос.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">База.</h2>
+        <p>
+          В основной игре держится спокойнее чем DOA2; ожидание бонуски может затянуться, банкролл планируй на сотню спинов минимум.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Серия.</h2>
+        <p>
+          У игры много клонов с разными множителями и мегавеями; проверяй название в лобби, чтобы не путать с «Christmas» или «Keeping it Reel».
+        </p>
+      </div>
+
+      <div class="mt-12 flex justify-center">
+        <CTAButton href={affiliateLink} size="lg" external>К Big Bass</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

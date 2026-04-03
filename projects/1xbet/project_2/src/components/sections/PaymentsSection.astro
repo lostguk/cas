@@ -1,0 +1,61 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+
+const methods = [
+  { name: 'Kaspi / карты', in: 'обычно мгновенно', out: 'от минут до суток', min: 'см. кассу' },
+  { name: 'Крипто USDT', in: 'после сети', out: 'по сети', min: 'зависит от актива' },
+  { name: 'Электронные', in: 'быстро', out: 'по регламенту', min: 'в личном кабинете' },
+];
+---
+
+<section class="py-20 lg:py-28 bg-dark-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>
+      Платежи кратко.
+      <p slot="subtitle" class="text-slate-400">Точные лимиты всегда в кассе оператора.</p>
+    </SectionHeading>
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      {
+        methods.map((m) => (
+          <Card>
+            <h3 class="font-extrabold uppercase text-white mb-2">{m.name}</h3>
+            <p class="text-slate-400 text-sm">Ввод: {m.in}.</p>
+            <p class="text-slate-400 text-sm">Вывод: {m.out}.</p>
+            <p class="text-slate-500 text-xs mt-2">Минимум: {m.min}.</p>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="overflow-x-auto rounded-lg border border-white/10 mb-10">
+      <table class="w-full text-sm text-left text-slate-300">
+        <thead class="bg-dark-800 text-primary-400 uppercase text-xs tracking-wider">
+          <tr>
+            <th class="px-4 py-3">Метод</th>
+            <th class="px-4 py-3">Пополнение</th>
+            <th class="px-4 py-3">Вывод</th>
+            <th class="px-4 py-3">Минимум</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            methods.map((m) => (
+              <tr class="border-t border-white/5 hover:bg-white/[0.02]">
+                <td class="px-4 py-3 font-medium text-white">{m.name}</td>
+                <td class="px-4 py-3">{m.in}</td>
+                <td class="px-4 py-3">{m.out}</td>
+                <td class="px-4 py-3 text-slate-500">{m.min}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="flex justify-center">
+      <CTAButton href={affiliateLink} size="lg" external>Пополнить счёт</CTAButton>
+    </div>
+  </div>
+</section>

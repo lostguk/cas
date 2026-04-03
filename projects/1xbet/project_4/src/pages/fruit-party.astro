@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+
+const slotSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'SoftwareApplication',
+      name: 'Fruit Party',
+      applicationCategory: 'GameApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'KZT' },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4.3', bestRating: '5' },
+    author: { '@type': 'Person', name: 'Арман Жумабаев' },
+    reviewBody: 'Каскадный слот Pragmatic с фруктами и множителями на сетке 7x7.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Fruit Party',
+    applicationCategory: 'GameApplication',
+    description: 'Фруктовая тема, кластеры и случайные множители.',
+  },
+];
+---
+
+<BaseLayout
+  title="Fruit Party слот: RTP 96.47%, максимум ×5 000 | 1xBet"
+  description="Обзор слота Fruit Party на 1xBet: RTP 96.47%, макс. выигрыш ×5 000. Pragmatic Play. Играй в тенге."
+  schema={slotSchemas}
+  publishDate="2026-02-05"
+  updateDate="2026-04-03"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Fruit Party' }]} />
+  <section class="py-10 lg:py-14 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <ArticleMeta publishDate="2026-02-05" updateDate="2026-04-03" />
+    <div class="text-center mb-10 border-b-2 border-white/10 pb-10">
+      <h1 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white mb-4">
+        Fruit Party — обзор слота от Pragmatic Play
+      </h1>
+      <p class="text-zinc-400 font-mono text-sm">RTP 96.47% · макс ×5 000 · кластеры</p>
+      <div class="mt-8">
+        <CTAButton href={affiliateLink} size="lg" external>Играть Fruit Party</CTAButton>
+      </div>
+    </div>
+
+    <ImagePlaceholder
+      description="Слот Fruit Party: сетка с фруктами, каскады и взрывные анимации"
+      aspect="16/10"
+      class="mb-10"
+    />
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Обзор Fruit Party</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Яркая сетка 7x7, выигрыши каскадом, множители иногда падают как снег — визуально шумно но не тошнит.
+    </p>
+    <p class="text-zinc-400 text-sm mb-10">
+      Волатильность средняя-повышенная по ощущениям, серии пустых спинов бывают но реже чем в «книжках».
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Как играть</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Собираешь кластеры от пяти одинаковых, символы исчезают, новые падают сверху, множители суммируются в удачном раунде.
+    </p>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Бонуска покупается если слот даёт такую опцию — я пару раз купил и слил, ну то есть не всегда окупается.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Мой опыт</h2>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Катил с минималки в тенге, поймал x300 один раз, остальное время кормил автомат печеньками как говорится.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Стоит ли играть</h2>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Норм для тех кто любит каскады и не хочет египет на каждом втором слоте.
+    </p>
+
+    <p class="text-sm font-mono text-zinc-500 mb-10">
+      <a href="/igrovye-avtomaty" class="text-cta-400 border-b border-cta-500">Казино</a>
+      ·
+      <a href="/book-of-dead" class="text-cta-400 border-b border-cta-500">Book of Dead</a>
+      ·
+      <a href="/starlight-princess" class="text-cta-400 border-b border-cta-500">Starlight Princess</a>
+    </p>
+
+    <div class="border-2 border-info-500/40 p-8 text-center">
+      <CTAButton href={affiliateLink} size="lg" external>Запустить слот</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

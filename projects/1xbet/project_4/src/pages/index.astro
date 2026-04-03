@@ -11,14 +11,18 @@ import AppSection from '../components/sections/AppSection.astro';
 import FAQSection from '../components/sections/FAQSection.astro';
 import CTASection from '../components/sections/CTASection.astro';
 
+const siteUrl = 'https://1xbet-stavki.kz';
+
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: '1xBet Казахстан — ставки и казино',
-  url: 'https://1xbet-stavki.kz',
+  name: '1xbet-stavki.kz',
+  url: siteUrl,
+  description: 'Личный блог про 1xBet для игроков из Казахстана.',
+  inLanguage: 'ru-KZ',
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://1xbet-stavki.kz/?s={search_term_string}',
+    target: `${siteUrl}/?q={search_term_string}`,
     'query-input': 'required name=search_term_string',
   },
 };
@@ -28,7 +32,6 @@ const websiteSchema = {
   title="1xBet Казахстан — ставки на спорт и казино KZ 2026"
   description="Обзор 1xBet для Казахстана: ставки на КПЛ, казино, бонус до 220 000 ₸. Пополнение через Kaspi в тенге."
   schema={websiteSchema}
-  type="website"
 >
   <HeroSection />
   <OverviewSection />

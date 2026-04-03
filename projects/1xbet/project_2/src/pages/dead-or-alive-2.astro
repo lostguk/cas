@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+const publishDate = '2026-03-21';
+const updateDate = '2026-04-01';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  itemReviewed: {
+    '@type': 'VideoGame',
+    name: 'Dead or Alive 2',
+    gamePlatform: 'Online casino',
+  },
+  reviewRating: { '@type': 'Rating', ratingValue: '4.6', bestRating: '5' },
+  author: { '@type': 'Person', name: 'Редакция 1xСтавка KZ' },
+  reviewBody: 'Культовый вестерн-слот с тремя бонус-играми разной дисперсии.',
+};
+---
+
+<BaseLayout
+  title="Dead or Alive 2 — обзор слота"
+  description="NetEnt: три бонуски, дикий запад, экстремальная волатильность. Игра на официальном сайте."
+  schema={schema}
+  type="article"
+  publishDate={publishDate}
+  updateDate={updateDate}
+  noindex={true}
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Онлайн-казино', href: '/onlajn-kazino' },
+      { label: 'Dead or Alive 2' },
+    ]}
+  />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-3">
+          Dead or Alive 2.
+        </h1>
+        <p class="text-primary-400 font-bold text-sm uppercase tracking-widest">NetEnt</p>
+        <div class="mt-6">
+          <CTAButton href={affiliateLink} size="lg" external>Запустить</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder
+        description="Слот Dead or Alive 2: ковбои на закате, револьверы и вывеска салуна"
+        class="mb-10"
+      />
+
+      <div class="grid sm:grid-cols-3 gap-4 mb-10">
+        <Card class="!p-4">
+          <p class="text-xs text-slate-500 uppercase">RTP ориентир</p>
+          <p class="text-xl font-black text-white">~96.8%</p>
+        </Card>
+        <Card class="!p-4">
+          <p class="text-xs text-slate-500 uppercase">Риск</p>
+          <p class="text-xl font-black text-white">Очень высокий</p>
+        </Card>
+        <Card class="!p-4">
+          <p class="text-xs text-slate-500 uppercase">Линии</p>
+          <p class="text-xl font-black text-white">9</p>
+        </Card>
+      </div>
+
+      <div class="space-y-5 text-slate-300 text-sm">
+        <h2 class="text-xl font-bold text-white uppercase">Три бонуса.</h2>
+        <p>
+          Old Saloon, High Noon и Train Heist дают разный баланс частоты и потолка; Train мягче, High Noon — для любителей жёсткого свинга.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Липкие вайлды.</h2>
+        <p>
+          Дикие символы могут залипать и множиться; серия мёртвых спинов больно бьёт по банку, готовься ментально.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Для кого.</h2>
+        <p>
+          Новичкам лучше начать с демо или мягких слотов; здесь сессия может уйти в ноль быстрее чем кажется.
+        </p>
+      </div>
+
+      <div class="mt-12 flex justify-center">
+        <CTAButton href={affiliateLink} size="lg" external>Играть в DOA2</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

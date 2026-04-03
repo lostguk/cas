@@ -1,0 +1,58 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+
+const bonuses = [
+  {
+    title: 'Стартовый пакет',
+    sum: 'до 220 000 ₸',
+    text: 'Цифры на баннере красивые, но читайте правила: вейджер, сроки, какие рынки считаются.',
+  },
+  {
+    title: 'Фриспины',
+    sum: 'пакеты на слоты',
+    text: 'Иногда крутятся под конкретные игры, не под все подряд — это не баг а маркетинг.',
+  },
+  {
+    title: 'Акции и турниры',
+    sum: 'ротация',
+    text: 'Заходят и уходят, мы предлагаем не цепляться за старый скриншот из телеги.',
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <SectionHeading>
+        Бонусы: красиво в рекламе, скучно в правилах
+        <p slot="subtitle" class="mt-4 text-slate-400">Мы не продаём «гарантированную прибыль», это вообще не наш жанр.</p>
+      </SectionHeading>
+    </div>
+    <div class="grid lg:grid-cols-5 gap-10 items-start">
+      <div class="lg:col-span-2">
+        <ImagePlaceholder description="Бонусы: золотой сундук с монетами и подарками" />
+      </div>
+      <div class="lg:col-span-3 space-y-4">
+        {bonuses.map((b) => (
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-accent-500/5 to-base-900 border border-white/[0.06]">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+              <h3 class="text-lg font-bold text-white">{b.title}</h3>
+              <span class="text-accent-400 font-semibold">{b.sum}</span>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed">{b.text}</p>
+          </div>
+        ))}
+        <p class="text-slate-500 text-sm leading-relaxed pt-2">
+          Бонус который нужно отыграть за ограниченное время лучше брать когда вы реально планируете играть, а не когда просто кликнули из любопытства.
+        </p>
+      </div>
+    </div>
+    <div class="text-center mt-12">
+      <CTAButton href={affiliateLink} size="lg" external>Актуальные условия в кабинете</CTAButton>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+---
+
+<BaseLayout
+  title="Страница не найдена"
+  description="404 — такого адреса нет. Вернись на главную или перейди на официальный сайт."
+  noindex={true}
+  type="website"
+>
+  <section class="py-24 lg:py-32 text-center px-4">
+    <p class="text-8xl font-black text-primary-500/40 mb-4">404</p>
+    <h1 class="text-3xl font-black uppercase text-white mb-4">Потерялись.</h1>
+    <p class="text-slate-400 max-w-md mx-auto mb-10">
+      Ссылка устарела или введена с опечаткой; главная и линия живут по кнопкам ниже.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <CTAButton href="/" variant="secondary" size="lg">На главную</CTAButton>
+      <CTAButton href={affiliateLink} size="lg" external>На линию</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

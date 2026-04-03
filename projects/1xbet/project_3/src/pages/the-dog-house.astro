@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+const title = 'Играть The Dog House на 1xBet Казахстан — обзор и RTP';
+const description =
+  'The Dog House на 1xBet: RTP 96.51%, бонусные раунды, волатильность. Честный обзор от казахстанца 2026.';
+const canonical = 'https://1xbetlive.mobi/the-dog-house';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'Game',
+      name: 'The Dog House',
+      gameLocation: { '@type': 'VirtualLocation', url: canonical },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4', bestRating: '5' },
+    author: { '@type': 'Person', name: 'Данияр С.' },
+    reviewBody: description,
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-14"
+  updateDate="2026-03-25"
+  noindex={true}
+  type="article"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Слоты', href: '/slots-i-igry' },
+      { label: 'The Dog House' },
+    ]}
+  />
+  <ArticleMeta publishDate="2026-02-14" updateDate="2026-03-25" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-sm font-semibold text-brand-600 mb-2">Pragmatic Play · RTP 96.51%</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">The Dog House: собаки, будки и волатильность.</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Слот с липкими вайлдами во фриспинах — либо серия пустых круток, либо яркий занос. Баланс держите коротким, если нервы не железные.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Играть на платформе</CTAButton>
+      </div>
+
+      <ImagePlaceholder description="Слот The Dog House: собаки и будки, весёлая тема" class="mb-10" />
+
+      <div class="grid sm:grid-cols-3 gap-4 mb-10 text-center">
+        <Card class="py-4">
+          <div class="text-xs text-gray-500 uppercase">RTP</div>
+          <div class="text-xl font-bold text-gray-900">96.51%</div>
+        </Card>
+        <Card class="py-4">
+          <div class="text-xs text-gray-500 uppercase">Макс.</div>
+          <div class="text-xl font-bold text-gray-900">×6 750</div>
+        </Card>
+        <Card class="py-4">
+          <div class="text-xs text-gray-500 uppercase">Провайдер</div>
+          <div class="text-xl font-bold text-gray-900">Pragmatic</div>
+        </Card>
+      </div>
+
+      <div class="space-y-5 text-gray-700 mb-10">
+        <p>
+          Механика простая: базовые спины и бонус с выбором «липкие вайлды» или «дождь вайлдов». Вайлды решают всё — без них бонус может выдать копейки.
+        </p>
+        <p>
+          По данным из открытых источников игра остаётся в топе у игроков из СНГ из-за понятных правил и визуала. Это не делает её «выгодной» — дисперсия всё равно высокая.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-gray-200 bg-bg-50 p-4 text-sm text-gray-600">
+        18+. Играйте ответственно. По данным из открытых источников правила слота и лимиты ставок могут отличаться в вашем регионе.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

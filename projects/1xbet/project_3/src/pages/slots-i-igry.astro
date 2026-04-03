@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+const title = 'Какие слоты есть на 1xBet? Обзор казино KZ 2026';
+const description =
+  'Казино 1xBet KZ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в тенге, выводи на Kaspi.';
+const canonical = 'https://1xbetlive.mobi/slots-i-igry';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'ru',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-01-20"
+  updateDate="2026-03-15"
+  noindex={true}
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Слоты и игры' }]} />
+  <ArticleMeta publishDate="2026-01-20" updateDate="2026-03-15" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Слоты и игры на 1xBet для KZ.</h1>
+        <p class="text-lg text-gray-600">
+          Каталог тянется на тысячи позиций; разумнее фильтровать по провайдеру и волатильности, чем листать бесконечно.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Открыть казино</CTAButton>
+          <CTAButton href="/the-dog-house" variant="outline" size="lg">The Dog House</CTAButton>
+          <CTAButton href="/sugar-rush-1000" variant="outline" size="lg">Sugar Rush 1000</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder
+        description="Лобби казино: сетка превью слотов и фильтр по провайдерам на светлом UI"
+        class="mb-12"
+      />
+
+      <div class="space-y-6 text-gray-700 mb-10">
+        <p>
+          RTP в справке слота — не обещание сессии. В коротком отрезке возможно всё: серия пустых спинов или удачный бонуска. По данным из открытых источников популярные провайдеры в KZ — те же, что и глобально: Pragmatic, Play’n GO и другие крупные студии.
+        </p>
+        <p>
+          Live-казино с дилерами грузит интернет сильнее слотов. Если Wi‑Fi скачет — снижайте качество трансляции или переходите в RNG-игры.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <Card>
+          <h2 class="text-lg font-bold text-gray-900 mb-2">Демо.</h2>
+          <p class="text-sm text-gray-600">
+            Пробный режим экономит бюджет на знакомстве с механикой. Не все слоты дают демо без входа — зависит от прав и региона.
+          </p>
+        </Card>
+        <Card>
+          <h2 class="text-lg font-bold text-gray-900 mb-2">Лимиты.</h2>
+          <p class="text-sm text-gray-600">
+            Минимальная ставка и максимальный выигрыш указаны внутри игры. Не смешивайте реальные деньги и «просто посмотреть» без лимита времени.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

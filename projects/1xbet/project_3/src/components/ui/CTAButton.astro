@@ -1,0 +1,37 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  external?: boolean;
+  class?: string;
+}
+
+const { href, variant = 'primary', size = 'md', external = false, class: className = '' } = Astro.props;
+
+const base =
+  'inline-flex items-center justify-center font-semibold rounded-xl transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500';
+
+const variants: Record<string, string> = {
+  primary:
+    'bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-lg shadow-brand-500/25 hover:from-brand-600 hover:to-brand-600',
+  secondary: 'bg-bg-100 text-gray-800 border border-bg-200 hover:bg-bg-200',
+  outline: 'border-2 border-brand-500/60 text-brand-600 bg-transparent hover:bg-brand-500/10',
+};
+
+const sizes: Record<string, string> = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-sm sm:text-base',
+  lg: 'px-8 py-4 text-base',
+};
+
+const cls = [base, variants[variant], sizes[size], className].filter(Boolean).join(' ');
+---
+
+<a
+  href={href}
+  class={cls}
+  {...external ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
+>
+  <slot />
+</a>

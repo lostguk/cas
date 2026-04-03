@@ -130,6 +130,97 @@ const CTA_BANK = {
   final: ['Готовы попробовать?', 'Начните прямо сейчас', 'Ваш аккаунт ждёт', 'Пора действовать', 'Не откладывайте'],
 };
 
+const FORMAT_NOTES = {
+  A: {
+    name: 'Авторский блог',
+    voice: '1-е лицо, персона-автор',
+    about_type: 'Об авторе — биография, опыт, город',
+    has_author: true,
+    h2_style: 'Личные, субъективные: «Мой опыт с...», «Что нравится и что бесит»',
+    cta_style: 'Рекомендательные: «Забрать бонус», «Попробовать самому»',
+    faq_style: 'Разговорный тон, от первого лица',
+    forbidden: 'Корпоративный язык, «мы предлагаем», «платформа обеспечивает»',
+    main_words: '1000-1400',
+    sub_words: '500-800',
+  },
+  B: {
+    name: 'Корпоративная платформа',
+    voice: 'От компании: «мы предлагаем», «наши клиенты», эмодзи в H2 допустимы',
+    about_type: 'О платформе — история, лицензия, ответственная игра',
+    has_author: false,
+    h2_style: 'Официальные: «Почему выбирают {brand}», «Преимущества платформы», эмодзи допустимы',
+    cta_style: 'Продающие: «Регистрация», «Получить бонус», «Начать игру»',
+    faq_style: 'Профессиональный, 3-е лицо',
+    forbidden: '«Я», личные истории, субъективные оценки, «лично мне не зашло»',
+    main_words: '1000-1400',
+    sub_words: '500-800',
+    extras: 'Промокод как центральный элемент, бейджи-цифры (25M+, 1000+)',
+  },
+  C: {
+    name: 'Информационный портал',
+    voice: '3-е лицо: «контора предлагает», «платформа обеспечивает»',
+    about_type: 'О редакции / О портале',
+    has_author: false,
+    h2_style: 'Информационные: «Обзор БК {brand}», «Способы финансовых операций»',
+    cta_style: 'Нейтральные: «Перейти на официальный сайт», «Узнать подробнее»',
+    faq_style: 'Длинные подробные ответы, энциклопедический',
+    forbidden: 'Разговорный тон, «ну», «короче», эмоциональные оценки',
+    main_words: '1500-2000',
+    sub_words: '800-1200',
+  },
+  D: {
+    name: 'Обзорный сайт с дисклеймерами',
+    voice: 'Дистанцированный: «по данным из открытых источников», «согласно отзывам»',
+    about_type: 'Дисклеймер: НЕ официальный сайт, НЕ зеркало, НЕ проводит операции',
+    has_author: false,
+    h2_style: 'Осторожные: «Информация о регистрации», «Обзор бонусной программы (по данным обзоров)»',
+    cta_style: 'Мягкие: «Посетить официальный сайт», «Узнать актуальные условия»',
+    faq_style: 'Осторожный, со ссылками на источники',
+    forbidden: 'Прямые утверждения, гарантии, «лучший», «мы предлагаем»',
+    main_words: '1000-1400',
+    sub_words: '500-800',
+    extras: 'Дисклеймер 💡/⚠️ после КАЖДОГО информационного блока',
+  },
+  E: {
+    name: 'Лендинг-витрина',
+    voice: 'Маркетинговый, короткий: «Начать», «Скачать», «Получить»',
+    about_type: 'Минимальный: 1 экран, лицензия + ответственная игра',
+    has_author: false,
+    h2_style: 'Короткие с глаголами: «Ставки на любой вид спорта», «Четыре шага до первой ставки»',
+    cta_style: 'МНОГО. Каждая секция = CTA. «Начать играть», «Сделать ставку»',
+    faq_style: 'Краткие ответы, 1-2 предложения',
+    forbidden: 'Длинные абзацы (>3 предложений), аналитика, рассуждения',
+    main_words: '600-900',
+    sub_words: '300-500',
+    extras: 'Карточки как основа контента. Step-by-step flow. Минимум текста',
+  },
+  F: {
+    name: 'Гайд/Туториал',
+    voice: 'Обучающий: «чтобы зарегистрироваться, выполните...», «на этом шаге нужно...»',
+    about_type: 'О проекте — обучающий ресурс, команда',
+    has_author: false,
+    h2_style: 'Инструкционные: «Как зарегистрироваться — пошагово», «Инструкция: вывод на Kaspi»',
+    cta_style: 'Утилитарные: «Перейти к регистрации», «Скачать приложение»',
+    faq_style: 'Технический, чёткие ответы',
+    forbidden: 'Мнения, эмоции, «мне понравилось», оценочные суждения',
+    main_words: '1000-1400',
+    sub_words: '500-800',
+  },
+  G: {
+    name: 'Агрегатор/сравнение',
+    voice: 'Аналитический: «по совокупности параметров», оценки X/5',
+    about_type: 'Об аналитической команде',
+    has_author: false,
+    h2_style: 'Сравнительные: «{brand} vs Mostbet: сравнение для KZ», «Рейтинг бонусов»',
+    cta_style: 'Аналитические: «Сравнить условия», «Посмотреть рейтинг»',
+    faq_style: 'Фактический, со ссылками на данные',
+    forbidden: 'Явная предвзятость, «однозначно лучший» без доказательств',
+    main_words: '1000-1400',
+    sub_words: '500-800',
+    extras: 'Таблицы сравнения + рейтинги как основа',
+  },
+};
+
 const STYLE_NOTES = {
   casual: {
     tone: 'разговорный, расслабленный',
@@ -787,6 +878,71 @@ function buildLinkingPlan(config) {
   return { plan, incoming };
 }
 
+const TYPO_BANK = {
+  drop_letter: ['прилжение', 'регистраця', 'верифкация', 'коэфициент', 'пополнеие', 'приветсвенный', 'доступый'],
+  swap_letters: ['подтормаживть', 'тенеге', 'букемкер', 'поддрежка'],
+  double_letter: ['бонусс', 'каззино', 'оттзыв', 'коммиссия'],
+  tsya_tsya: ['регистрироватся', 'авторизоватся', 'пополняеться', 'обновляеться'],
+  wrong_vowel: ['скочать', 'палучить', 'привитственный', 'верефикация'],
+};
+
+const PUNCT_PATTERNS = [
+  'запятая вместо точки (поток мысли)',
+  'пропуск запятой перед что/который',
+  'тире вместо двоеточия',
+  'лишняя запятая перед «и»',
+];
+
+const SLANG_BANK = ['норм', 'кэф', 'апк', 'тг', 'инфа', 'залил', 'слил', 'зашло', 'ЛК'];
+
+function buildHumanRealismHints(config, sections) {
+  const pageCount = (config.pages || []).length + (config.slot_pages || []).length;
+  const typoTypes = Object.keys(TYPO_BANK);
+
+  const perPage = [];
+  for (let i = 0; i < pageCount; i++) {
+    const typoCount = 1 + Math.floor(Math.random() * 4);
+    const punctCount = 2 + Math.floor(Math.random() * 2);
+    const typos = [];
+    for (let t = 0; t < typoCount; t++) {
+      const type = typoTypes[Math.floor(Math.random() * typoTypes.length)];
+      const words = TYPO_BANK[type];
+      typos.push({ type, example: words[Math.floor(Math.random() * words.length)] });
+    }
+    perPage.push({
+      typo_count: typoCount,
+      typos,
+      punct_count: punctCount,
+      punct_types: pickN(PUNCT_PATTERNS, punctCount),
+      slang_count: 2 + Math.floor(Math.random() * 3),
+      slang_suggestions: pickN(SLANG_BANK, 3),
+      contradiction: i % 3 === 0,
+      unfinished_thought: i % 2 === 0,
+      self_correction: true,
+      emotional_reactions: 3 + Math.floor(Math.random() * 3),
+      uneven_depth: i < sections.length,
+    });
+  }
+
+  return {
+    rules: {
+      typos_per_page: '1-4 орфографических опечатки',
+      punct_per_page: '2-3 пунктуационных сбоя',
+      no_errors_in: 'H1, title, description, первое предложение абзаца',
+      contradictions: '1-2 на страницу — разный опыт в разных абзацах',
+      self_corrections: '1-2 на страницу — «ну то есть», «ладно, за две»',
+      emotional_reactions: '3-5 на страницу — в скобках или через тире',
+      slang: '2-4 на страницу из банка',
+      uneven_depth: 'минимум 2 короткие секции + 1 длинная',
+      vague_time: '2-3 на страницу — «где-то в марте», «кажется»',
+      faq_style_variation: 'разная длина ответов: 1 подробный, 1 краткий, 1 с отступлением',
+    },
+    typo_bank: TYPO_BANK,
+    slang_bank: SLANG_BANK,
+    per_page_hints: perPage,
+  };
+}
+
 function main() {
   const args = process.argv.slice(2);
   if (args.length === 0) {
@@ -829,9 +985,17 @@ function main() {
   console.log('\x1b[1m=== Генератор контент-скелета ===\x1b[0m');
   console.log('');
   console.log(`  Проект:  \x1b[36m${projectPath}\x1b[0m`);
+  const cfmt = config.content_format || 'A';
+  const cfmtInfo = FORMAT_NOTES[cfmt] || FORMAT_NOTES['A'];
   console.log(`  Бренд:   \x1b[33m${brandName}\x1b[0m`);
-  console.log(`  Автор:   ${config.author?.name || '—'} (${config.author?.city || '—'})`);
-  console.log(`  Стиль:   \x1b[35m${style}\x1b[0m — ${STYLE_NOTES[style]?.tone || ''}`);
+  console.log(`  Формат:  \x1b[36m${cfmt}: ${cfmtInfo.name}\x1b[0m`);
+  if (cfmtInfo.has_author) {
+    console.log(`  Автор:   ${config.author?.name || '—'} (${config.author?.city || '—'})`);
+    console.log(`  Стиль:   \x1b[35m${style}\x1b[0m — ${STYLE_NOTES[style]?.tone || ''}`);
+  } else {
+    console.log(`  Автор:   \x1b[90m(нет персоны — формат ${cfmt})\x1b[0m`);
+  }
+  console.log(`  Голос:   ${cfmtInfo.voice}`);
   console.log(`  Страниц: ${(config.pages || []).length} основных + ${(config.slot_pages || []).length} слотовых`);
   console.log('');
 
@@ -846,20 +1010,26 @@ function main() {
   const keywordBudget = buildKeywordBudget(config, mainSections);
   const linkingPlan = buildLinkingPlan(config);
 
+  const contentFormat = config.content_format || 'A';
+  const formatInfo = FORMAT_NOTES[contentFormat] || FORMAT_NOTES['A'];
+
   const skeleton = {
     _meta: {
       brand: brandName,
       domain: config.domain,
-      author: config.author,
-      style,
-      style_description: STYLE_NOTES[style],
+      author: formatInfo.has_author ? config.author : null,
+      content_format: contentFormat,
+      content_format_name: formatInfo.name,
+      format_rules: formatInfo,
+      style: formatInfo.has_author ? style : null,
+      style_description: formatInfo.has_author ? (STYLE_NOTES[style] || null) : null,
       generated_at: new Date().toISOString(),
       year: YEAR,
     },
     keyword_budget: keywordBudget,
     linking_plan: linkingPlan,
     main_page: {
-      total_words: '1000-1400',
+      total_words: formatInfo.main_words,
       sections_order: sections,
       sections: mainSections,
       used_cta_texts: usedCtas,
@@ -870,6 +1040,7 @@ function main() {
       selected_questions: faqQuestions.map(q => ({ number: q.num, question: q.text, category: q.category })),
       numbers_for_registry: faqQuestions.map(q => q.num).join(', '),
     },
+    human_realism: buildHumanRealismHints(config, sections),
   };
 
   const outputPath = path.join(projectPath, 'content-skeleton.json');
@@ -921,10 +1092,20 @@ function main() {
   }
 
   console.log('');
+  console.log('');
+  console.log('\x1b[36m--- Человеческий реализм (техники 6-18) ---\x1b[0m');
+  console.log(`  Опечатки: ${skeleton.human_realism.rules.typos_per_page}`);
+  console.log(`  Пунктуация: ${skeleton.human_realism.rules.punct_per_page}`);
+  console.log(`  Сленг: ${skeleton.human_realism.rules.slang} (${SLANG_BANK.slice(0, 5).join(', ')}...)`);
+  console.log(`  Противоречия, самоисправления, эмоции, неровная глубина`);
+  console.log(`  Банк опечаток: ${Object.values(TYPO_BANK).flat().length} готовых слов`);
+
+  console.log('');
   console.log(`\x1b[32m✓ Сохранено: ${outputPath}\x1b[0m`);
   console.log('');
   console.log('  Следующий шаг: агент использует content-skeleton.json');
   console.log('  для генерации уникальных текстов проекта.');
+  console.log('  Секция human_realism содержит конкретные подсказки по ошибкам для каждой страницы.');
   console.log(`  FAQ номера для REGISTRY.md: ${faqQuestions.map(q => q.num).join(', ')}`);
   console.log('');
 }

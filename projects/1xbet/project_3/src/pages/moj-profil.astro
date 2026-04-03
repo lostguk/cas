@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+const title = 'Личный кабинет 1xBet: вход, вывод, верификация KZ';
+const description =
+  '1xBet личный кабинет — как войти, пополнить счёт и вывести деньги в тенге на Kaspi Gold.';
+const canonical = 'https://1xbetlive.mobi/moj-profil';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'ru',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-01-08"
+  updateDate="2026-03-10"
+  noindex={true}
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Мой профиль' }]} />
+  <ArticleMeta publishDate="2026-01-08" updateDate="2026-03-10" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Личный кабинет: вход, деньги, документы.</h1>
+        <p class="text-lg text-gray-600">
+          Здесь сходятся история ставок, статус верификации и лимиты вывода. Если что-то серое — сначала касса, потом чат.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Войти на сайт</CTAButton>
+      </div>
+
+      <div class="mb-12">
+        <ImagePlaceholder
+          description="Личный кабинет: боковое меню, баланс в тенге и история операций"
+          aspect="16/9"
+        />
+      </div>
+
+      <div class="space-y-6">
+        <Card>
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Вход и безопасность.</h2>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Двухфакторка не помешает, если крутите заметные суммы. Сохраняйте резервные коды не в заметках на рабочем столе — это ленивый, но частый вектор.
+          </p>
+        </Card>
+        <Card>
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Вывод на Kaspi и карты.</h2>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Банк может задержать входящий перевод на проверку. Не паникуйте в первый час — смотрите статус в кабинете и выписке. При отказе читайте причину в письме от кассы.
+          </p>
+        </Card>
+        <Card>
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Верификация.</h2>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Загрузите читаемые фото без бликов. ИИН и паспорт должны совпадать с профилем. Расхождение в одной букве иногда стопорит вывод на дни, особенно если фамилия в аккаанте с опечаткой.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

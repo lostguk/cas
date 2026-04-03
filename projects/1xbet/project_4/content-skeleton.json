@@ -10,6 +10,20 @@
       "job_title": "Автор обзоров казино и ставок",
       "bio_style": "enthusiast"
     },
+    "content_format": "A",
+    "content_format_name": "Авторский блог",
+    "format_rules": {
+      "name": "Авторский блог",
+      "voice": "1-е лицо, персона-автор",
+      "about_type": "Об авторе — биография, опыт, город",
+      "has_author": true,
+      "h2_style": "Личные, субъективные: «Мой опыт с...», «Что нравится и что бесит»",
+      "cta_style": "Рекомендательные: «Забрать бонус», «Попробовать самому»",
+      "faq_style": "Разговорный тон, от первого лица",
+      "forbidden": "Корпоративный язык, «мы предлагаем», «платформа обеспечивает»",
+      "main_words": "1000-1400",
+      "sub_words": "500-800"
+    },
     "style": "enthusiast",
     "style_description": {
       "tone": "эмоциональный, увлечённый",
@@ -17,7 +31,7 @@
       "markers": "восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям",
       "example": "«Поставил экспресс из 5 событий на КПЛ — зашёл! 15 000 тенге превратились в 120 тысяч!»"
     },
-    "generated_at": "2026-04-02T03:57:54.912Z",
+    "generated_at": "2026-04-03T03:47:32.946Z",
     "year": 2026
   },
   "keyword_budget": {
@@ -99,7 +113,7 @@
         "max_per_page": 2
       },
       {
-        "word": "ставки казахстан",
+        "word": "ставки кз",
         "max_per_page": 2
       }
     ]
@@ -108,146 +122,161 @@
     "plan": {
       "index": {
         "outgoing": [
-          "/registraciya",
-          "/casino",
-          "/bonus",
-          "/zerkalo",
-          "/skachat",
+          "/nachalo-raboty",
+          "/mobile-app",
+          "/igrovye-avtomaty",
+          "/privetstvennye-bonusy",
+          "/alternativnyj-vhod",
           "/about",
-          "/gates-of-olympus",
-          "/book-of-dead"
+          "/book-of-dead",
+          "/fruit-party"
         ],
         "min": 5
       },
-      "registraciya": {
+      "nachalo-raboty": {
         "outgoing": [
-          "/zerkalo",
-          "/skachat",
-          "/bonus",
-          "/gates-of-olympus",
+          "/mobile-app",
+          "/fruit-party",
+          "/starlight-princess",
+          "/igrovye-avtomaty",
           "/about"
         ],
         "min": 3
       },
-      "casino": {
+      "mobile-app": {
         "outgoing": [
-          "/registraciya",
-          "/bonus",
-          "/book-of-dead",
-          "/skachat",
-          "/about"
-        ],
-        "min": 3
-      },
-      "bonus": {
-        "outgoing": [
-          "/zerkalo",
-          "/gates-of-olympus",
-          "/skachat",
-          "/registraciya",
-          "/about"
-        ],
-        "min": 3
-      },
-      "zerkalo": {
-        "outgoing": [
+          "/igrovye-avtomaty",
           "/about",
-          "/skachat",
-          "/book-of-dead",
-          "/gates-of-olympus"
+          "/nachalo-raboty",
+          "/alternativnyj-vhod"
         ],
         "min": 3
       },
-      "skachat": {
+      "igrovye-avtomaty": {
         "outgoing": [
-          "/book-of-dead",
-          "/zerkalo",
+          "/nachalo-raboty",
           "/about",
-          "/registraciya"
+          "/mobile-app",
+          "/starlight-princess"
+        ],
+        "min": 3
+      },
+      "privetstvennye-bonusy": {
+        "outgoing": [
+          "/igrovye-avtomaty",
+          "/book-of-dead",
+          "/mobile-app",
+          "/about"
+        ],
+        "min": 3
+      },
+      "alternativnyj-vhod": {
+        "outgoing": [
+          "/igrovye-avtomaty",
+          "/mobile-app",
+          "/starlight-princess",
+          "/nachalo-raboty",
+          "/about"
         ],
         "min": 3
       },
       "about": {
         "outgoing": [
-          "/book-of-dead",
-          "/bonus",
-          "/registraciya",
-          "/casino",
+          "/starlight-princess",
+          "/fruit-party",
+          "/nachalo-raboty",
+          "/alternativnyj-vhod",
           "/about"
         ],
         "min": 3
       },
-      "gates-of-olympus": {
+      "book-of-dead": {
         "outgoing": [
-          "/casino",
-          "/book-of-dead"
+          "/igrovye-avtomaty",
+          "/fruit-party",
+          "/starlight-princess"
         ],
         "min": 2
       },
-      "book-of-dead": {
+      "fruit-party": {
         "outgoing": [
-          "/casino",
-          "/gates-of-olympus"
+          "/igrovye-avtomaty",
+          "/book-of-dead",
+          "/starlight-princess"
+        ],
+        "min": 2
+      },
+      "starlight-princess": {
+        "outgoing": [
+          "/igrovye-avtomaty",
+          "/book-of-dead",
+          "/fruit-party"
         ],
         "min": 2
       }
     },
     "incoming": {
-      "registraciya": [
+      "nachalo-raboty": [
         "index",
-        "casino",
-        "bonus",
-        "skachat",
+        "mobile-app",
+        "igrovye-avtomaty",
+        "alternativnyj-vhod",
         "about"
       ],
-      "casino": [
+      "mobile-app": [
         "index",
-        "about",
-        "gates-of-olympus",
-        "book-of-dead"
+        "nachalo-raboty",
+        "igrovye-avtomaty",
+        "privetstvennye-bonusy",
+        "alternativnyj-vhod"
       ],
-      "bonus": [
+      "igrovye-avtomaty": [
         "index",
-        "registraciya",
-        "casino",
+        "nachalo-raboty",
+        "mobile-app",
+        "privetstvennye-bonusy",
+        "alternativnyj-vhod",
+        "book-of-dead",
+        "fruit-party",
+        "starlight-princess"
+      ],
+      "privetstvennye-bonusy": [
+        "index"
+      ],
+      "alternativnyj-vhod": [
+        "index",
+        "mobile-app",
         "about"
-      ],
-      "zerkalo": [
-        "index",
-        "registraciya",
-        "bonus",
-        "skachat"
-      ],
-      "skachat": [
-        "index",
-        "registraciya",
-        "casino",
-        "bonus",
-        "zerkalo"
       ],
       "about": [
         "index",
-        "registraciya",
-        "casino",
-        "bonus",
-        "zerkalo",
-        "skachat",
+        "nachalo-raboty",
+        "mobile-app",
+        "igrovye-avtomaty",
+        "privetstvennye-bonusy",
+        "alternativnyj-vhod",
         "about"
-      ],
-      "gates-of-olympus": [
-        "index",
-        "registraciya",
-        "bonus",
-        "zerkalo",
-        "book-of-dead"
       ],
       "book-of-dead": [
         "index",
-        "casino",
-        "zerkalo",
-        "skachat",
+        "privetstvennye-bonusy",
+        "fruit-party",
+        "starlight-princess"
+      ],
+      "fruit-party": [
+        "index",
+        "nachalo-raboty",
         "about",
-        "gates-of-olympus"
+        "book-of-dead",
+        "starlight-princess"
+      ],
+      "starlight-princess": [
+        "nachalo-raboty",
+        "igrovye-avtomaty",
+        "alternativnyj-vhod",
+        "about",
+        "book-of-dead",
+        "fruit-party"
       ]
     }
   },
@@ -272,7 +301,7 @@
         "h1": "1xBet Казахстан — ставки + казино для игроков из KZ",
         "h1_note": "НЕ дублировать title. Содержит primary keyword.",
         "subtitle": "Личный обзор 1xBet от игрока из Актобе. 50+ видов спорта, 10 000+ игр в казино, счёт в тенге.",
-        "badge": "Актуально на 2026",
+        "badge": "1 000+ live-событий",
         "stats": [
           {
             "value": "50+",
@@ -288,13 +317,13 @@
           }
         ],
         "cta_primary": {
-          "text": "Начать с приветственным пакетом",
+          "text": "Забрать бонус на старте",
           "href": "affiliateLink",
           "external": true
         },
         "cta_secondary": {
-          "text": "Начать со ставок на спорт",
-          "href": "/zerkalo"
+          "text": "Ставить на КПЛ",
+          "href": "/nachalo-raboty"
         },
         "keywords": [
           "1xbet казахстан"
@@ -304,7 +333,7 @@
       {
         "section": "Overview",
         "words": "150-200",
-        "h2": "Мой опыт с 1xBet — коротко и честно",
+        "h2": "Коротко о 1xBet для тех, кто в первый раз",
         "paragraphs": [
           {
             "plan": "Личное знакомство с платформой. Как узнал, сколько пользуюсь. Содержит primary keyword «1xbet казахстан».",
@@ -327,8 +356,8 @@
           }
         ],
         "internal_links": [
-          "/zerkalo",
-          "/skachat"
+          "/mobile-app",
+          "/nachalo-raboty"
         ],
         "disclaimer": true,
         "style": "Тон: эмоциональный, увлечённый. Абзацы: средние, с личными историями. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям"
@@ -336,7 +365,7 @@
       {
         "section": "Bonus",
         "words": "80-100",
-        "h2": "Бонус до 220 000 ₸ — условия",
+        "h2": "Бонусы 1xBet — что дают на старте",
         "cards": [
           {
             "type": "Спортивный бонус",
@@ -358,20 +387,20 @@
           "бонус"
         ],
         "internal_links": [
-          "/bonus"
+          "/privetstvennye-bonusy"
         ],
         "style": "Тон: эмоциональный, увлечённый. Обязательно упомянуть сложность отыгрыша — честно."
       },
       {
         "section": "Sports",
         "words": "100-130",
-        "h2": "Спорт: от КПЛ до киберспорта",
+        "h2": "Виды спорта для ставок на 1xBet",
         "intro": "1 абзац (2-3 предложения). Общее впечатление о спортивной линии. Маржа 3-5%, 1 000+ live-событий.",
         "cards": [
           {
-            "title": "Бокс и MMA",
+            "title": "Теннис",
             "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
-            "icon_hint": "перчатка"
+            "icon_hint": "ракетка"
           },
           {
             "title": "Хоккей",
@@ -379,14 +408,14 @@
             "icon_hint": "шайба"
           },
           {
-            "title": "Теннис",
+            "title": "Бокс и MMA",
             "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
-            "icon_hint": "ракетка"
+            "icon_hint": "перчатка"
           },
           {
-            "title": "Футбол",
+            "title": "Баскетбол",
             "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
-            "icon_hint": "мяч"
+            "icon_hint": "мяч баскетбольный"
           }
         ],
         "keywords": [
@@ -398,7 +427,7 @@
       {
         "section": "Advantages",
         "words": "100-130",
-        "h2": "Что нравится и что бесит",
+        "h2": "Честная оценка: плюсы и минусы",
         "cards": [
           {
             "title": "Линия и коэффициенты",
@@ -440,18 +469,8 @@
       {
         "section": "Slots",
         "words": "80-100",
-        "h2": "Популярные слоты на 1xBet",
+        "h2": "Топ слотов — что крутить",
         "cards": [
-          {
-            "slug": "gates-of-olympus",
-            "name": "Gates of Olympus",
-            "provider": "Pragmatic Play",
-            "rtp": "96.50%",
-            "maxWin": "×5 000",
-            "description_hint": "2 предложения: тема слота + впечатление. RTP 96.50%, макс. ×5 000.",
-            "cta": "Запустить слот бесплатно",
-            "link": "/gates-of-olympus"
-          },
           {
             "slug": "book-of-dead",
             "name": "Book of Dead",
@@ -459,8 +478,28 @@
             "rtp": "96.21%",
             "maxWin": "×5 000",
             "description_hint": "2 предложения: тема слота + впечатление. RTP 96.21%, макс. ×5 000.",
-            "cta": "Открыть казино с бонусом",
+            "cta": "Крутить с фриспинами",
             "link": "/book-of-dead"
+          },
+          {
+            "slug": "fruit-party",
+            "name": "Fruit Party",
+            "provider": "Pragmatic Play",
+            "rtp": "96.47%",
+            "maxWin": "×5 000",
+            "description_hint": "2 предложения: тема слота + впечатление. RTP 96.47%, макс. ×5 000.",
+            "cta": "Играть с бонусом",
+            "link": "/fruit-party"
+          },
+          {
+            "slug": "starlight-princess",
+            "name": "Starlight Princess",
+            "provider": "Pragmatic Play",
+            "rtp": "96.50%",
+            "maxWin": "×5 000",
+            "description_hint": "2 предложения: тема слота + впечатление. RTP 96.50%, макс. ×5 000.",
+            "cta": "Испытать удачу",
+            "link": "/starlight-princess"
           }
         ],
         "keywords": [
@@ -471,7 +510,7 @@
       {
         "section": "Payments",
         "words": "80-100",
-        "h2": "Как закинуть и вывести деньги",
+        "h2": "Платежи на 1xBet: методы и сроки",
         "cards": [
           {
             "method": "Kaspi / Halyk / Jusan",
@@ -534,55 +573,55 @@
           "скачать"
         ],
         "internal_links": [
-          "/skachat"
+          "/mobile-app"
         ],
         "style": "Тон: эмоциональный, увлечённый."
       },
       {
         "section": "FAQ",
         "words": "200-250",
-        "h2": "FAQ — отвечаю на вопросы",
+        "h2": "Частые вопросы",
         "questions": [
           {
-            "number": 10,
+            "number": 9,
             "category": "Регистрация и аккаунт",
-            "question": "Нужен ли ИИН для создания аккаунта?",
+            "question": "Как восстановить забытый пароль?",
             "answer_hint": "2-3 предложения. Тон: эмоциональный, увлечённый. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 13,
+            "number": 19,
             "category": "Пополнение и вывод",
-            "question": "Можно ли пополнить через USDT?",
+            "question": "Берёт ли платформа комиссию за вывод?",
             "answer_hint": "2-3 предложения. Тон: эмоциональный, увлечённый. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 30,
+            "number": 25,
             "category": "Приложение и доступ",
-            "question": "Работает ли приложение без интернета?",
+            "question": "Приложение тормозит — что делать?",
             "answer_hint": "2-3 предложения. Тон: эмоциональный, увлечённый. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 36,
+            "number": 39,
             "category": "Блокировки и зеркала",
-            "question": "Какой VPN лучше для Казахстана?",
+            "question": "Блокирует ли Beeline KZ?",
             "answer_hint": "2-3 предложения. Тон: эмоциональный, увлечённый. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 50,
+            "number": 45,
             "category": "Бонусы и промоакции",
-            "question": "Как активировать фриспины?",
+            "question": "Есть ли фрибет без депозита?",
             "answer_hint": "2-3 предложения. Тон: эмоциональный, увлечённый. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 56,
+            "number": 53,
             "category": "Ставки на спорт",
-            "question": "Есть ли ставки на киберспорт?",
+            "question": "Как работают live-ставки?",
             "answer_hint": "2-3 предложения. Тон: эмоциональный, увлечённый. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 69,
+            "number": 68,
             "category": "Казино и слоты",
-            "question": "Можно ли купить бонусную игру в слоте?",
+            "question": "Какой слот самый популярный в Казахстане?",
             "answer_hint": "2-3 предложения. Тон: эмоциональный, увлечённый. Разговорный ответ с конкретикой, не шаблонный."
           }
         ],
@@ -595,7 +634,7 @@
       {
         "section": "CTA",
         "words": "15-25",
-        "h2": "Ваш аккаунт ждёт",
+        "h2": "Попробуй 1xBet сам",
         "subtitle": "Одно предложение. Личное обращение к читателю. Содержит бренд «1xBet».",
         "cta": {
           "text": "Не откладывайте",
@@ -608,23 +647,24 @@
       }
     ],
     "used_cta_texts": [
-      "Начать с приветственным пакетом",
-      "Начать со ставок на спорт",
-      "Запустить слот бесплатно",
-      "Открыть казино с бонусом",
+      "Забрать бонус на старте",
+      "Ставить на КПЛ",
+      "Крутить с фриспинами",
+      "Играть с бонусом",
+      "Испытать удачу",
       "Не откладывайте"
     ]
   },
   "subpages": {
-    "registraciya": {
-      "slug": "registraciya",
+    "nachalo-raboty": {
+      "slug": "nachalo-raboty",
       "page_type": "registration",
       "words": "500-800",
       "schema_hint": "HowTo + HowToStep",
       "internal_links": [
-        "/casino",
-        "/bonus",
-        "/zerkalo"
+        "/privetstvennye-bonusy",
+        "/about",
+        "/alternativnyj-vhod"
       ],
       "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям",
       "h1": "Как зарегистрироваться на 1xBet в Казахстане",
@@ -651,14 +691,49 @@
         }
       ]
     },
-    "casino": {
-      "slug": "casino",
+    "mobile-app": {
+      "slug": "mobile-app",
+      "page_type": "download",
+      "words": "500-800",
+      "schema_hint": "HowTo + HowToStep",
+      "internal_links": [
+        "/privetstvennye-bonusy",
+        "/nachalo-raboty",
+        "/igrovye-avtomaty"
+      ],
+      "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям",
+      "h1": "Скачать 1xBet — APK для Android и iPhone",
+      "blocks": [
+        {
+          "h2": "Скачать на Android (APK)",
+          "type": "steps",
+          "content": "4 шага: ссылка → разрешить источники → установить → войти"
+        },
+        {
+          "h2": "Установка на iOS",
+          "type": "steps",
+          "content": "3 шага: зеркало → скачать из App Store → войти"
+        },
+        {
+          "h2": "Обзор приложения",
+          "type": "text",
+          "content": "Плюсы и минусы мобильного приложения 1xBet. Размер, скорость, удобство."
+        },
+        {
+          "h2": "Системные требования",
+          "type": "table",
+          "content": "Таблица: ОС | Версия | Размер | RAM"
+        }
+      ]
+    },
+    "igrovye-avtomaty": {
+      "slug": "igrovye-avtomaty",
       "page_type": "casino",
       "words": "500-800",
       "schema_hint": "Article",
       "internal_links": [
-        "/registraciya",
-        "/skachat",
+        "/alternativnyj-vhod",
+        "/nachalo-raboty",
         "/about"
       ],
       "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям",
@@ -686,15 +761,15 @@
         }
       ]
     },
-    "bonus": {
-      "slug": "bonus",
+    "privetstvennye-bonusy": {
+      "slug": "privetstvennye-bonusy",
       "page_type": "bonus",
       "words": "500-800",
       "schema_hint": "Article",
       "internal_links": [
-        "/skachat",
-        "/about",
-        "/casino"
+        "/nachalo-raboty",
+        "/mobile-app",
+        "/igrovye-avtomaty"
       ],
       "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям",
       "h1": "Бонусы 1xBet — приветственный пакет и акции",
@@ -721,15 +796,15 @@
         }
       ]
     },
-    "zerkalo": {
-      "slug": "zerkalo",
+    "alternativnyj-vhod": {
+      "slug": "alternativnyj-vhod",
       "page_type": "mirror",
       "words": "500-800",
       "schema_hint": "Article",
       "internal_links": [
-        "/bonus",
-        "/about",
-        "/skachat"
+        "/privetstvennye-bonusy",
+        "/mobile-app",
+        "/nachalo-raboty"
       ],
       "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям",
       "h1": "1xBet зеркало — рабочий доступ для Казахстана",
@@ -751,50 +826,15 @@
         }
       ]
     },
-    "skachat": {
-      "slug": "skachat",
-      "page_type": "download",
-      "words": "500-800",
-      "schema_hint": "HowTo + HowToStep",
-      "internal_links": [
-        "/bonus",
-        "/casino",
-        "/zerkalo"
-      ],
-      "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям",
-      "h1": "Скачать 1xBet — APK для Android и iPhone",
-      "blocks": [
-        {
-          "h2": "Скачать на Android (APK)",
-          "type": "steps",
-          "content": "4 шага: ссылка → разрешить источники → установить → войти"
-        },
-        {
-          "h2": "Установка на iOS",
-          "type": "steps",
-          "content": "3 шага: зеркало → скачать из App Store → войти"
-        },
-        {
-          "h2": "Обзор приложения",
-          "type": "text",
-          "content": "Плюсы и минусы мобильного приложения 1xBet. Размер, скорость, удобство."
-        },
-        {
-          "h2": "Системные требования",
-          "type": "table",
-          "content": "Таблица: ОС | Версия | Размер | RAM"
-        }
-      ]
-    },
     "about": {
       "slug": "about",
       "page_type": "about",
       "words": "400-600",
       "schema_hint": "AboutPage + Person",
       "internal_links": [
-        "/skachat",
-        "/bonus",
-        "/casino"
+        "/mobile-app",
+        "/nachalo-raboty",
+        "/igrovye-avtomaty"
       ],
       "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям",
       "h1": "Об авторе — кто стоит за обзором 1xBet",
@@ -828,45 +868,6 @@
     }
   },
   "slot_pages": {
-    "gates-of-olympus": {
-      "slug": "gates-of-olympus",
-      "page_type": "slot",
-      "words": "500-800",
-      "h1": "Gates of Olympus — обзор слота от Pragmatic Play",
-      "schema_hint": "Review + SoftwareApplication (GameApplication)",
-      "slot_info": {
-        "name": "Gates of Olympus",
-        "rtp": "96.50%",
-        "maxWin": "×5 000",
-        "provider": "Pragmatic Play"
-      },
-      "blocks": [
-        {
-          "h2": "Обзор Gates of Olympus",
-          "type": "text",
-          "content": "Тема слота, RTP 96.50%, волатильность, макс. ×5 000. Первое впечатление."
-        },
-        {
-          "h2": "Как играть",
-          "type": "text",
-          "content": "Механика: символы, бонусные раунды, множители. 2-3 абзаца."
-        },
-        {
-          "h2": "Мой опыт",
-          "type": "text",
-          "content": "Личный опыт игры на 1xBet. Конкретные суммы, сессии, результат."
-        },
-        {
-          "h2": "Стоит ли играть",
-          "type": "text",
-          "content": "Итоговая оценка. Кому подойдёт, кому нет. Плюсы и минусы."
-        }
-      ],
-      "internal_links": [
-        "/casino"
-      ],
-      "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям"
-    },
     "book-of-dead": {
       "slug": "book-of-dead",
       "page_type": "slot",
@@ -902,7 +903,85 @@
         }
       ],
       "internal_links": [
-        "/casino"
+        "/igrovye-avtomaty"
+      ],
+      "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям"
+    },
+    "fruit-party": {
+      "slug": "fruit-party",
+      "page_type": "slot",
+      "words": "500-800",
+      "h1": "Fruit Party — обзор слота от Pragmatic Play",
+      "schema_hint": "Review + SoftwareApplication (GameApplication)",
+      "slot_info": {
+        "name": "Fruit Party",
+        "rtp": "96.47%",
+        "maxWin": "×5 000",
+        "provider": "Pragmatic Play"
+      },
+      "blocks": [
+        {
+          "h2": "Обзор Fruit Party",
+          "type": "text",
+          "content": "Тема слота, RTP 96.47%, волатильность, макс. ×5 000. Первое впечатление."
+        },
+        {
+          "h2": "Как играть",
+          "type": "text",
+          "content": "Механика: символы, бонусные раунды, множители. 2-3 абзаца."
+        },
+        {
+          "h2": "Мой опыт",
+          "type": "text",
+          "content": "Личный опыт игры на 1xBet. Конкретные суммы, сессии, результат."
+        },
+        {
+          "h2": "Стоит ли играть",
+          "type": "text",
+          "content": "Итоговая оценка. Кому подойдёт, кому нет. Плюсы и минусы."
+        }
+      ],
+      "internal_links": [
+        "/igrovye-avtomaty"
+      ],
+      "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям"
+    },
+    "starlight-princess": {
+      "slug": "starlight-princess",
+      "page_type": "slot",
+      "words": "500-800",
+      "h1": "Starlight Princess — обзор слота от Pragmatic Play",
+      "schema_hint": "Review + SoftwareApplication (GameApplication)",
+      "slot_info": {
+        "name": "Starlight Princess",
+        "rtp": "96.50%",
+        "maxWin": "×5 000",
+        "provider": "Pragmatic Play"
+      },
+      "blocks": [
+        {
+          "h2": "Обзор Starlight Princess",
+          "type": "text",
+          "content": "Тема слота, RTP 96.50%, волатильность, макс. ×5 000. Первое впечатление."
+        },
+        {
+          "h2": "Как играть",
+          "type": "text",
+          "content": "Механика: символы, бонусные раунды, множители. 2-3 абзаца."
+        },
+        {
+          "h2": "Мой опыт",
+          "type": "text",
+          "content": "Личный опыт игры на 1xBet. Конкретные суммы, сессии, результат."
+        },
+        {
+          "h2": "Стоит ли играть",
+          "type": "text",
+          "content": "Итоговая оценка. Кому подойдёт, кому нет. Плюсы и минусы."
+        }
+      ],
+      "internal_links": [
+        "/igrovye-avtomaty"
       ],
       "style": "Тон: эмоциональный, увлечённый. восклицания (но не в каждом предложении), «это просто огонь», «честно — офигел», рекомендации друзьям"
     }
@@ -910,41 +989,395 @@
   "faq": {
     "selected_questions": [
       {
-        "number": 10,
-        "question": "Нужен ли ИИН для создания аккаунта?",
+        "number": 9,
+        "question": "Как восстановить забытый пароль?",
         "category": "Регистрация и аккаунт"
       },
       {
-        "number": 13,
-        "question": "Можно ли пополнить через USDT?",
+        "number": 19,
+        "question": "Берёт ли платформа комиссию за вывод?",
         "category": "Пополнение и вывод"
       },
       {
-        "number": 30,
-        "question": "Работает ли приложение без интернета?",
+        "number": 25,
+        "question": "Приложение тормозит — что делать?",
         "category": "Приложение и доступ"
       },
       {
-        "number": 36,
-        "question": "Какой VPN лучше для Казахстана?",
+        "number": 39,
+        "question": "Блокирует ли Beeline KZ?",
         "category": "Блокировки и зеркала"
       },
       {
-        "number": 50,
-        "question": "Как активировать фриспины?",
+        "number": 45,
+        "question": "Есть ли фрибет без депозита?",
         "category": "Бонусы и промоакции"
       },
       {
-        "number": 56,
-        "question": "Есть ли ставки на киберспорт?",
+        "number": 53,
+        "question": "Как работают live-ставки?",
         "category": "Ставки на спорт"
       },
       {
-        "number": 69,
-        "question": "Можно ли купить бонусную игру в слоте?",
+        "number": 68,
+        "question": "Какой слот самый популярный в Казахстане?",
         "category": "Казино и слоты"
       }
     ],
-    "numbers_for_registry": "10, 13, 30, 36, 50, 56, 69"
+    "numbers_for_registry": "9, 19, 25, 39, 45, 53, 68"
+  },
+  "human_realism": {
+    "rules": {
+      "typos_per_page": "1-4 орфографических опечатки",
+      "punct_per_page": "2-3 пунктуационных сбоя",
+      "no_errors_in": "H1, title, description, первое предложение абзаца",
+      "contradictions": "1-2 на страницу — разный опыт в разных абзацах",
+      "self_corrections": "1-2 на страницу — «ну то есть», «ладно, за две»",
+      "emotional_reactions": "3-5 на страницу — в скобках или через тире",
+      "slang": "2-4 на страницу из банка",
+      "uneven_depth": "минимум 2 короткие секции + 1 длинная",
+      "vague_time": "2-3 на страницу — «где-то в марте», «кажется»",
+      "faq_style_variation": "разная длина ответов: 1 подробный, 1 краткий, 1 с отступлением"
+    },
+    "typo_bank": {
+      "drop_letter": [
+        "прилжение",
+        "регистраця",
+        "верифкация",
+        "коэфициент",
+        "пополнеие",
+        "приветсвенный",
+        "доступый"
+      ],
+      "swap_letters": [
+        "подтормаживть",
+        "тенеге",
+        "букемкер",
+        "поддрежка"
+      ],
+      "double_letter": [
+        "бонусс",
+        "каззино",
+        "оттзыв",
+        "коммиссия"
+      ],
+      "tsya_tsya": [
+        "регистрироватся",
+        "авторизоватся",
+        "пополняеться",
+        "обновляеться"
+      ],
+      "wrong_vowel": [
+        "скочать",
+        "палучить",
+        "привитственный",
+        "верефикация"
+      ]
+    },
+    "slang_bank": [
+      "норм",
+      "кэф",
+      "апк",
+      "тг",
+      "инфа",
+      "залил",
+      "слил",
+      "зашло",
+      "ЛК"
+    ],
+    "per_page_hints": [
+      {
+        "typo_count": 1,
+        "typos": [
+          {
+            "type": "swap_letters",
+            "example": "букемкер"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "пропуск запятой перед что/который",
+          "запятая вместо точки (поток мысли)"
+        ],
+        "slang_count": 2,
+        "slang_suggestions": [
+          "слил",
+          "зашло",
+          "норм"
+        ],
+        "contradiction": true,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 1,
+        "typos": [
+          {
+            "type": "tsya_tsya",
+            "example": "регистрироватся"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "лишняя запятая перед «и»"
+        ],
+        "slang_count": 2,
+        "slang_suggestions": [
+          "апк",
+          "кэф",
+          "залил"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 1,
+        "typos": [
+          {
+            "type": "drop_letter",
+            "example": "прилжение"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "тг",
+          "зашло",
+          "слил"
+        ],
+        "contradiction": false,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "double_letter",
+            "example": "оттзыв"
+          },
+          {
+            "type": "double_letter",
+            "example": "бонусс"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "верефикация"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 4,
+        "slang_suggestions": [
+          "зашло",
+          "инфа",
+          "тг"
+        ],
+        "contradiction": true,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "swap_letters",
+            "example": "букемкер"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "привитственный"
+          },
+          {
+            "type": "double_letter",
+            "example": "коммиссия"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 2,
+        "slang_suggestions": [
+          "слил",
+          "апк",
+          "тг"
+        ],
+        "contradiction": false,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 4,
+        "typos": [
+          {
+            "type": "double_letter",
+            "example": "оттзыв"
+          },
+          {
+            "type": "drop_letter",
+            "example": "верифкация"
+          },
+          {
+            "type": "double_letter",
+            "example": "каззино"
+          },
+          {
+            "type": "drop_letter",
+            "example": "регистраця"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 4,
+        "slang_suggestions": [
+          "ЛК",
+          "слил",
+          "апк"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 1,
+        "typos": [
+          {
+            "type": "double_letter",
+            "example": "оттзыв"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который"
+        ],
+        "slang_count": 2,
+        "slang_suggestions": [
+          "тг",
+          "норм",
+          "кэф"
+        ],
+        "contradiction": true,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 1,
+        "typos": [
+          {
+            "type": "tsya_tsya",
+            "example": "пополняеться"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "тире вместо двоеточия",
+          "пропуск запятой перед что/который"
+        ],
+        "slang_count": 4,
+        "slang_suggestions": [
+          "норм",
+          "кэф",
+          "апк"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 2,
+        "typos": [
+          {
+            "type": "double_letter",
+            "example": "коммиссия"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "привитственный"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "пропуск запятой перед что/который",
+          "запятая вместо точки (поток мысли)",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "зашло",
+          "апк",
+          "тг"
+        ],
+        "contradiction": false,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 2,
+        "typos": [
+          {
+            "type": "wrong_vowel",
+            "example": "привитственный"
+          },
+          {
+            "type": "swap_letters",
+            "example": "подтормаживть"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "пропуск запятой перед что/который",
+          "запятая вместо точки (поток мысли)"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "норм",
+          "кэф",
+          "залил"
+        ],
+        "contradiction": true,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      }
+    ]
   }
 }

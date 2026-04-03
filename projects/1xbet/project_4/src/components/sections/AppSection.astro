@@ -1,39 +1,42 @@
 ---
-import { Image } from 'astro:assets';
 import SectionHeading from '../ui/SectionHeading.astro';
 import CTAButton from '../ui/CTAButton.astro';
-import appImg from '../../assets/images/app-phone.png';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const steps = [
+  'Жмёшь рабочую ссылку с телефона, качаешь апк с официального раздела.',
+  'В настройках Android разрешаешь неизвестные источники — да, система ругается.',
+  'Ставишь пакет, логинишься или регистрируешься, проверяешь что это не фейк.',
+  'Обновления проверяй раз в пару недель, иначе вылетит в лайве в самый неудачный момент.',
+];
 ---
 
-<section id="app" class="py-16 lg:py-24">
+<section class="py-16 lg:py-24 border-b-2 border-white/10 bg-surface-950">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <SectionHeading>Приложение ставки с телефона</SectionHeading>
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
       <div>
-        <SectionHeading align="left" class="mb-6">Приложение: ставки с телефона</SectionHeading>
-        <div class="text-slate-300 leading-relaxed space-y-4">
-          <p>
-            Скачал APK букмекера с официального сайта — весит где-то 40 мегабайт, нормально для такого приложения. Установка стандартная: разрешаешь «неизвестные источники» в настройках Android и ставишь как обычную программу. У меня Samsung A54, встало без проблем и работает без тормозов.
-          </p>
-          <p>
-            Через приложение реально удобнее делать ставки — интерфейс адаптирован, кэфы и линия всегда под рукой. Уведомления о результатах приходят моментально, не пропускаю ни один лайв. Единственное — обновлять APK надо вручную.
-          </p>
-        </div>
+        <p class="text-zinc-300 leading-relaxed mb-6">
+          Прилжение юзаю каждый день почти, в автобусе удобнее чем мобильный сайт — хотя сайт тоже норм если честно.
+          Размер файла около сорока мегабайт, на 4G ставится за минуту.
+        </p>
+        <ol class="space-y-4">
+          {steps.map((step, i) => (
+            <li class="flex gap-4 border-l-2 border-cta-500 pl-4">
+              <span class="font-mono text-cta-500 font-bold shrink-0">{String(i + 1).padStart(2, '0')}</span>
+              <span class="text-sm text-zinc-400 leading-relaxed">{step}</span>
+            </li>
+          ))}
+        </ol>
         <div class="mt-8">
-          <CTAButton href="/skachat" size="lg">Скачать APK бесплатно</CTAButton>
+          <CTAButton href="/mobile-app" size="md">Полная инструкция по апк</CTAButton>
         </div>
       </div>
-      <div class="border-2 border-white p-4">
-        <Image
-          src={appImg}
-          alt="Мобильное приложение для ставок на телефоне"
-          width={600}
-          height={800}
-          class="w-full h-auto"
-          loading="lazy"
-          format="webp"
-          quality={80}
-        />
-      </div>
+      <ImagePlaceholder
+        description="Мокап смартфона: тёмный интерфейс приложения, лаймовые акценты, линия ставок"
+        aspect="3/4"
+        class="max-w-sm mx-auto"
+      />
     </div>
   </div>
 </section>

@@ -1,7 +1,8 @@
 {
-  "name": "1xbet-stavki-kz",
+  "name": "1xbet-stavki-project-4",
   "type": "module",
   "version": "1.0.0",
+  "private": true,
   "engines": {
     "node": ">=22.12.0"
   },
@@ -12,8 +13,8 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
-    "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.1",
+    "@tailwindcss/vite": "^4.2.2",
     "tailwindcss": "^4.2.2"
   }
 }

@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+
+const publishDate = '2026-01-25';
+const updateDate = '2026-04-01';
+
+---
+
+<BaseLayout
+  title="1xBet Зеркало — рабочий доступ без блокировки | 2026"
+  description="Рабочее зеркало 1xBet для Казахстана. Обходи блокировку Kcell и Beeline — вход без VPN."
+  type="article"
+  publishDate={publishDate}
+  updateDate={updateDate}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Зеркало' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Зеркало: тот же кабинет, другой адрес в строке</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Мы предлагаем не верить первому попавшемуся «рабочему на сегодня» из комментариев.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Безопасный вход</CTAButton>
+          <CTAButton href="/skachat" variant="secondary" size="lg">Скачать приложение</CTAButton>
+        </div>
+      </div>
+      <div class="mb-12">
+        <ImagePlaceholder description="Зеркало доступа: альтернативный адрес и замок безопасности" />
+      </div>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <h2 class="text-2xl font-bold text-white">Почему так происходит</h2>
+        <p>
+          Фильтрация у операторов и регуляторные требования дают эффект «сайт не грузится». Зеркало по сути дублирует функционал на новом домене, баланс не испаряется если это действительно официальный ресурс.
+        </p>
+        <p>
+          Кстати VPN не всегда обязателен если приложение или зеркало открываются сами — у кого-то на Kcell стабильно, у кого-то только через обход, тут карма провайдера.
+        </p>
+        <h2 class="text-2xl font-bold text-white">Фишинг</h2>
+        <p>
+          Проверяйте сертификат, опечатки в домене, не вводите пароль дважды на подозрительных формах. Если что-то просит «перевести на проверку» — это уже не зеркало, а сказочные мошенники.
+        </p>
+        <p>
+          Верифкация после первого входа с нового устройства может всплыть — это нормально, антифрод так работает, не принимайте на личный счёт.
+        </p>
+      </div>
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-accent-500/10 via-base-800 to-secondary-500/5 border border-accent-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Сохраните рабочие каналы</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Подписка на официальные уведомления спасает нервы лучше чем гуглить зеркало в три ночи.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Войти через партнёрскую ссылку</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

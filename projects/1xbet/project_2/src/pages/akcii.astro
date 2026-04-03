@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+const publishDate = '2026-03-18';
+const updateDate = '2026-04-01';
+
+const promos = [
+  { t: 'Приветствие', d: 'Бонус на первый депозит; вейджер и срок отыгрыша в правилах.' },
+  { t: 'Экспрессы', d: 'Иногда страховка или увеличенный выигрыш на комбо из N событий.' },
+  { t: 'Казино', d: 'Фриспины на выбранные слоты; список игр ограничен акцией.' },
+];
+---
+
+<BaseLayout
+  title="Акции и бонусы — краткий обзор"
+  description="Промо для спорта и казино: что проверить в первую очередь. Условия только на официальном сайте."
+  type="article"
+  publishDate={publishDate}
+  updateDate={updateDate}
+  noindex={true}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Акции' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-4">
+          Промо в карточках.
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+          Промокод не всегда нужен: часть предложений цепляется автоматически после депозита, если акция активна.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Смотреть акции</CTAButton>
+          <CTAButton href="/onlajn-kazino" variant="secondary" size="lg">Казино</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder
+        description="Баннер акции: подарочная лента и монеты на тёмно-красном фоне"
+        class="mb-10"
+      />
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        {
+          promos.map((p) => (
+            <Card>
+              <h2 class="text-base font-extrabold uppercase text-white mb-2">{p.t}</h2>
+              <p class="text-slate-400 text-sm">{p.d}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <div class="space-y-5 text-slate-300 text-sm">
+        <h2 class="text-xl font-bold text-white uppercase">Вейджер.</h2>
+        <p>
+          Множитель показывает, сколько раз нужно прокрутить сумму бонуса; слоты и лайв часто считаются по-разному — смотри проценты в таблице акции.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Отказ.</h2>
+        <p>
+          Иногда можно играть без бонуса чистым депозитом; кнопка отказа или поддержка помогут, если бонус уже не нужен.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Сроки.</h2>
+        <p>
+          Промо сгорает по таймеру; календарь в кабинете и пуши приложения экономят нервы.
+        </p>
+      </div>
+
+      <div class="mt-14 flex justify-center">
+        <CTAButton href={affiliateLink} size="lg" external>Активировать</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

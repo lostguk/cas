@@ -1,0 +1,36 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+
+const steps = [
+  { n: '1', title: 'Регистрация', text: 'Форма, телефон, пароль. Обычно до минуты.' },
+  { n: '2', title: 'Профиль', text: 'Подтверди контакты. Документы — по запросу оператора.' },
+  { n: '3', title: 'Депозит', text: 'Kaspi, карта или крипта. Зачисление чаще мгновенное.' },
+  { n: '4', title: 'Ставка', text: 'Выбери рынок, введи сумму, подтверди купон.' },
+];
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>
+      Четыре шага до купона.
+      <p slot="subtitle" class="text-slate-400">Без лекций: только порядок действий.</p>
+    </SectionHeading>
+    <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      {
+        steps.map((step) => (
+          <li class="relative rounded-lg bg-dark-800 border-l-4 border-primary-500 p-6">
+            <span class="text-5xl font-black text-primary-500/30 absolute top-4 right-4">{step.n}</span>
+            <h3 class="text-lg font-extrabold uppercase text-white mb-2 pr-12">{step.title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{step.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+    <div class="flex justify-center">
+      <CTAButton href={affiliateLink} size="lg" external>Начать шаг 1</CTAButton>
+    </div>
+  </div>
+</section>

@@ -6,22 +6,39 @@ interface Props {
 
 const { publishDate, updateDate } = Astro.props;
 
+const months = [
+  'января',
+  'февраля',
+  'марта',
+  'апреля',
+  'мая',
+  'июня',
+  'июля',
+  'августа',
+  'сентября',
+  'октября',
+  'ноября',
+  'декабря',
+];
+
 const formatDate = (dateStr: string) => {
-  const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
   const d = new Date(dateStr);
   return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 };
 ---
 
-<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono uppercase tracking-wider text-zinc-600 mb-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="flex items-center gap-2">
-    <div class="w-8 h-8 border-2 border-brand-500 flex items-center justify-center text-brand-400 text-xs font-bold">
-      АЖ
-    </div>
-    <a href="/about" class="text-zinc-400 hover:text-brand-400 transition-colors duration-100">Арман Жумабаев</a>
+<div class="flex flex-wrap items-center gap-3 text-sm text-zinc-500 font-mono border-b-2 border-white/10 pb-6 mb-8">
+  <span
+    class="w-10 h-10 border-2 border-cta-500/40 flex items-center justify-center text-cta-400 font-bold text-xs shrink-0"
+    aria-hidden="true"
+  >
+    АЖ
+  </span>
+  <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+    <a href="/about" class="text-cta-400 hover:text-cta-300 uppercase tracking-wide">Арман Жумабаев</a>
+    <span class="text-zinc-600">|</span>
+    <time datetime={publishDate}>опубликовано {formatDate(publishDate)}</time>
+    <span class="text-zinc-600">|</span>
+    <time datetime={updateDate}>обновлено {formatDate(updateDate)}</time>
   </div>
-  <span class="text-zinc-800">—</span>
-  <time datetime={publishDate}>{formatDate(publishDate)}</time>
-  <span class="text-zinc-800">—</span>
-  <time datetime={updateDate}>обн. {formatDate(updateDate)}</time>
 </div>

@@ -1,69 +1,62 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
 import Card from '../ui/Card.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
 
 const methods = [
-  {
-    title: 'Kaspi / Halyk / Jusan',
-    desc: 'Банковские карты казахстанских банков — мгновенное пополнение, вывод от пары часов до суток.',
-  },
-  {
-    title: 'Криптовалюта USDT',
-    desc: 'Сеть TRC20, комиссия минимальная. Зачисление за 15–30 минут, вывод такой же быстрый.',
-  },
-  {
-    title: 'Электронные кошельки',
-    desc: 'Skrill, Neteller и другие. Работают стабильно, но для казахстанцев менее привычный вариант.',
-  },
+  { method: 'Kaspi / Halyk / Jusan', hint: 'Карты и переводы по KZ, самый понятный путь.' },
+  { method: 'USDT TRC20', hint: 'Крипта без лишней комиссии на стороне конторы, жди 15-30 мин.' },
+  { method: 'Кошельки', hint: 'QIWI и прочее ещё живо но я реже, дольше иногда.' },
 ];
 
-const tableRows = [
-  { method: 'Kaspi Gold', deposit: 'мгновенно', withdrawal: '1–24 ч', min: '1 000 ₸' },
-  { method: 'Halyk', deposit: '5–15 мин', withdrawal: '1–3 дня', min: '1 000 ₸' },
-  { method: 'USDT TRC20', deposit: '15–30 мин', withdrawal: '15–30 мин', min: '~3 000 ₸' },
+const rows = [
+  ['Kaspi Gold', 'Мгновенно', '1-24 часа', '1 000 ₸'],
+  ['Halyk Homebank', '5-15 мин', '1-3 дня', '1 000 ₸'],
+  ['USDT (TRC20)', '15-30 мин', '15-30 мин', '~3 000 ₸'],
 ];
 ---
 
-<section id="payments" class="py-16 lg:py-24">
+<section class="py-16 lg:py-24 border-b-2 border-white/10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <SectionHeading class="mb-12">Как закинуть и вывести деньги</SectionHeading>
-
-    <div class="grid md:grid-cols-3 gap-6">
+    <SectionHeading>Платежи методы и сроки</SectionHeading>
+    <div class="grid lg:grid-cols-3 gap-6 mb-12">
       {methods.map((m) => (
-        <Card class="border-2 border-white">
-          <h3 class="font-mono text-lg font-bold text-brand-400 uppercase tracking-wider mb-3">{m.title}</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">{m.desc}</p>
+        <Card>
+          <h3 class="font-mono text-sm uppercase text-white mb-2">{m.method}</h3>
+          <p class="text-sm text-zinc-400">{m.hint}</p>
         </Card>
       ))}
     </div>
-
-    <div class="mt-12 overflow-x-auto">
-      <table class="w-full border-2 border-white text-sm">
-        <thead>
-          <tr>
-            <th class="border-2 border-white px-4 py-3 text-left font-mono text-xs uppercase tracking-wider text-brand-400 bg-bg-900">Метод</th>
-            <th class="border-2 border-white px-4 py-3 text-left font-mono text-xs uppercase tracking-wider text-brand-400 bg-bg-900">Пополнение</th>
-            <th class="border-2 border-white px-4 py-3 text-left font-mono text-xs uppercase tracking-wider text-brand-400 bg-bg-900">Вывод</th>
-            <th class="border-2 border-white px-4 py-3 text-left font-mono text-xs uppercase tracking-wider text-brand-400 bg-bg-900">Минимум</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tableRows.map((r) => (
-            <tr>
-              <td class="border-2 border-white px-4 py-3 font-medium text-white">{r.method}</td>
-              <td class="border-2 border-white px-4 py-3 text-slate-300">{r.deposit}</td>
-              <td class="border-2 border-white px-4 py-3 text-slate-300">{r.withdrawal}</td>
-              <td class="border-2 border-white px-4 py-3 text-slate-300 font-mono">{r.min}</td>
+    <div class="grid lg:grid-cols-2 gap-8 items-start">
+      <ImagePlaceholder
+        description="Платёжные логотипы: карты Kaspi, иконки банков KZ, строка USDT"
+        aspect="16/10"
+      />
+      <div class="overflow-x-auto border-2 border-white/20">
+        <table class="w-full text-sm font-mono">
+          <thead>
+            <tr class="border-b-2 border-white/20 text-left text-cta-500 uppercase text-xs">
+              <th class="p-3">Метод</th>
+              <th class="p-3">Пополнение</th>
+              <th class="p-3">Вывод</th>
+              <th class="p-3">Минимум</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr class="border-b border-white/10 text-zinc-300 hover:bg-white/[0.03]">
+                {row.map((cell) => (
+                  <td class="p-3">{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
-
-    <div class="mt-10 max-w-3xl text-slate-300 leading-relaxed">
-      <p>
-        Тут три рабочих варианта, которые я сам использую. Kaspi Gold — самый удобный способ для казахстанцев, закинул тенге — и через секунды уже на балансе конторы. С выводом тоже нормально: последний раз скинул 15 000 ₸ в пятницу вечером, пришли в субботу до обеда. Крипта USDT через сеть TRC20 — для тех кто шарит, комиссия копеечная и по скорости вообще без вопросов. Электронные кошельки тоже работают, но лично мне хватает Kaspi на все случаи. Halyk иногда тупит — было что ждал вывод почти три дня, но это скорее исключение.
-      </p>
-    </div>
+    <p class="mt-8 text-sm text-zinc-500 max-w-2xl leading-relaxed">
+      Выводил на Kaspi где-то за полдня, другой раз сутки — зависит от антифрода и загрузки.
+      Тенеге на счёте держу отдельно от «живых» денег чтобы не тупить.
+    </p>
   </div>
 </section>

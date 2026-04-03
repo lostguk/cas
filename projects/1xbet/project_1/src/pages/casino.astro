@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+
+const publishDate = '2026-02-02';
+const updateDate = '2026-03-30';
+
+---
+
+<BaseLayout
+  title="Какие слоты есть на 1xBet? Обзор казино KZ 2026"
+  description="Казино 1xBet KZ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в тенге, выводи на Kaspi."
+  type="article"
+  publishDate={publishDate}
+  updateDate={updateDate}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Казино: не только слоты, ещё live и быстрые игры</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Мы предлагаем относиться к разделу как к развлечению с бюджетом, а не как к зарплате.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Открыть казино</CTAButton>
+          <CTAButton href="/sugar-rush" variant="secondary" size="lg">Обзор Sugar Rush</CTAButton>
+        </div>
+      </div>
+      <div class="mb-12">
+        <ImagePlaceholder description="Казино: фишки, карты и рулетка на зелёном сукне" />
+      </div>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <h2 class="text-2xl font-bold text-white">Провайдеры и каталог</h2>
+        <p>
+          Набор широкий, фильтры спасают когда глаза разбегаются. Демо часто доступно без входа, но это зависит от слота и региона — если кнопка неактивна не бейте по монитору.
+        </p>
+        <p>
+          Слот в котором высокая волатильность может съесть депозит за пять минут или наоборот выдать ×500 — мы предупредили, дальше ваша эстетика риска.
+        </p>
+        <h2 class="text-2xl font-bold text-white">Тенге и лимиты</h2>
+        <p>
+          Ставки в KZT удобны, минимумы на спин разные. Бонус на казино часто с отдельным вейджером, читайте мелкий шрифт, там жизнь.
+        </p>
+        <p>
+          Перейти в <a href="/sweet-bonanza" class="text-accent-400 hover:underline">Sweet Bonanza</a> или <a href="/bonus" class="text-accent-400 hover:underline">страницу бонусов</a> можно когда освоитесь с правилами.
+        </p>
+      </div>
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-accent-500/10 via-base-800 to-secondary-500/5 border border-accent-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Демо и реальные деньги</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Потестили демо, и сразу перешли на реал — ок, но помните что психология там другая когда вращаются тенге а не «фантики».
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Играть ответственно</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

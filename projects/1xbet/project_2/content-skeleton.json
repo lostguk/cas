@@ -1,0 +1,8 @@
+{
+  "format": "E",
+  "tone": "landing_minimal",
+  "main_word_target": "600-900",
+  "sub_word_target": "300-500",
+  "faq_ids": [2, 12, 22, 32, 42, 52, 65],
+  "placeholders_required": true
+}

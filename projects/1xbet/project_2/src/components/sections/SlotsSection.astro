@@ -1,0 +1,65 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+
+const slots = [
+  {
+    href: '/gates-of-olympus',
+    name: 'Gates of Olympus',
+    provider: 'Pragmatic Play',
+    rtp: '~96.5%',
+    desc: 'Множители падают с небес; волатильность высокая.',
+    ph: 'Слот Gates of Olympus: Зевс, молнии, древнегреческая тема',
+  },
+  {
+    href: '/dead-or-alive-2',
+    name: 'Dead or Alive 2',
+    provider: 'NetEnt',
+    rtp: '~96.8%',
+    desc: 'Дикий запад, бонус-игры с разной волатильностью.',
+    ph: 'Слот Dead or Alive 2: ковбои, револьверы, салун',
+  },
+  {
+    href: '/big-bass-bonanza',
+    name: 'Big Bass Bonanza',
+    provider: 'Pragmatic Play',
+    rtp: '~96.7%',
+    desc: 'Рыбалка с ловлей множителей в бонуске.',
+    ph: 'Слот Big Bass Bonanza: удочка, озеро, рыба-кэш',
+  },
+];
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>
+      Три слота — три вибра.
+      <p slot="subtitle" class="text-slate-400">Подробные обзоры на отдельных страницах.</p>
+    </SectionHeading>
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      {
+        slots.map((s) => (
+          <Card class="overflow-hidden !p-0">
+            <ImagePlaceholder description={s.ph} class="!rounded-none !border-0 border-b border-white/10" />
+            <div class="p-6">
+              <p class="text-xs text-primary-500 font-bold uppercase mb-1">{s.provider}</p>
+              <h3 class="text-lg font-extrabold text-white uppercase mb-2">{s.name}</h3>
+              <p class="text-slate-400 text-sm mb-3">{s.desc}</p>
+              <p class="text-xs text-slate-500 mb-4">RTP ориентир: {s.rtp}.</p>
+              <CTAButton href={s.href} variant="outline" size="sm" class="w-full justify-center">
+                Обзор слота
+              </CTAButton>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="flex justify-center">
+      <CTAButton href={affiliateLink} size="lg" external>Крутить в казино</CTAButton>
+    </div>
+  </div>
+</section>

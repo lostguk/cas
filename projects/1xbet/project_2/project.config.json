@@ -1,0 +1,51 @@
+{
+  "brand": "1xBet",
+  "region": "Казахстан",
+  "language": "ru",
+  "currency": "KZT",
+  "domain": "1xstavka-kz.com",
+  "affiliate_url": "https://refpa94475.com/L?tag=d_3955870m_98c_",
+  "color_preset": "midnight-red",
+  "visual_style": "sports-energy",
+  "content_format": "E",
+  "preset_number": 2,
+  "font": "Manrope",
+  "logo_type": "C",
+  "author": null,
+  "pages": [
+    "index",
+    "sozdat-akkaunt",
+    "prilozhenie",
+    "onlajn-kazino",
+    "dostup",
+    "akcii",
+    "lichnyy-kabinet",
+    "about"
+  ],
+  "slot_pages": ["gates-of-olympus", "dead-or-alive-2", "big-bass-bonanza"],
+  "sections_order": [
+    "Hero",
+    "Overview",
+    "Sports",
+    "Steps",
+    "Advantages",
+    "Bonus",
+    "Payments",
+    "Slots",
+    "Live",
+    "App",
+    "FAQ",
+    "CTA"
+  ],
+  "seo": {
+    "primary_keyword": "1xstavka казахстан",
+    "secondary_keywords": [
+      "1хставка кз",
+      "ставки казахстан",
+      "онлайн казино тенге"
+    ],
+    "geo_target": "KZ"
+  },
+  "noindex": true,
+  "faq_bank_ids": [2, 12, 22, 32, 42, 52, 65]
+}

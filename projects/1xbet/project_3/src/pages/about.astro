@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+const title = 'Обзор 1xBet Казахстан — кто автор и зачем этот сайт';
+const description =
+  'Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках.';
+const canonical = 'https://1xbetlive.mobi/about';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: title,
+  description,
+  url: canonical,
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Данияр С.',
+    jobTitle: 'Автор обзоров',
+    url: canonical,
+  },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema} noindex={true} type="article">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О проекте' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 text-center">Кто пишет этот сайт.</h1>
+
+      <div class="flex flex-col sm:flex-row gap-8 items-start mb-10">
+        <div class="w-20 h-20 rounded-2xl bg-brand-500/15 text-brand-700 font-extrabold text-2xl flex items-center justify-center shrink-0 mx-auto sm:mx-0">
+          ДС
+        </div>
+        <div class="space-y-4 text-gray-700 flex-1">
+          <p>
+            Меня зовут Данияр, я из Казахстана и много лет слежу за рынком онлайн-ставок как пользователь, не как сотрудник букмекеров. Тексты — личные наблюдения плюс сверка с публичными правилами операторов.
+          </p>
+          <p>
+            На сайте есть партнёрские ссылки: если перейдёте и зарегистрируетесь, я могу получить вознаграждение. Это не влияет на то, что я описываю минусы и риски отдельными абзацами.
+          </p>
+          <p>
+            По данным из открытых источников я проверяю интерфейс и кассу периодически, но не круглосуточно. Если увидели неточность — напишите через форму соцсети оператора, а мне оставьте мысль в голове, у меня нет комментариев на странице.
+          </p>
+        </div>
+      </div>
+
+      <ImagePlaceholder
+        description="Автор за ноутбуком: заметки по платежам и скриншоты кассы на втором мониторе"
+        class="mb-10"
+      />
+
+      <div class="text-center">
+        <CTAButton href={affiliateLink} size="lg" external>Перейти к обзору платформы</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,73 @@
+---
+const sections = [
+  {
+    title: 'Разделы',
+    links: [
+      { href: '/otkryt-schet', label: 'Открыть счёт' },
+      { href: '/ustanovka', label: 'Установка' },
+      { href: '/slots-i-igry', label: 'Слоты и игры' },
+    ],
+  },
+  {
+    title: 'Ещё',
+    links: [
+      { href: '/podarki', label: 'Подарки и бонусы' },
+      { href: '/moj-profil', label: 'Мой профиль' },
+      { href: '/about', label: 'О проекте' },
+    ],
+  },
+  {
+    title: 'Слоты',
+    links: [
+      { href: '/the-dog-house', label: 'The Dog House' },
+      { href: '/sugar-rush-1000', label: 'Sugar Rush 1000' },
+    ],
+  },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-20 bg-gray-50 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-flex items-center gap-1.5 mb-4">
+          <span class="text-xl" aria-hidden="true">⚡</span>
+          <span class="font-extrabold text-gray-900"
+            >1x<span class="text-brand-600">Bet</span> KZ</span
+          >
+        </a>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Независимый обзор для читателей из Казахстана: интерфейс, платежи, бонусы. По данным из открытых источников.
+        </p>
+      </div>
+      {
+        sections.map((s) => (
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">{s.title}</h3>
+            <ul class="space-y-2.5">
+              {s.links.map((l) => (
+                <li>
+                  <a href={l.href} class="text-sm text-gray-600 hover:text-brand-600 transition-colors">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-gray-200 space-y-4 text-xs text-gray-500 leading-relaxed">
+      <p>
+        <strong class="text-gray-700">По данным из открытых источников.</strong> Материалы носят информационный характер, не являются призывом к игре на деньги. 18+.
+      </p>
+      <p>
+        Азартные игры связаны с риском. Играйте ответственно, в рамках личного бюджета. На сайте есть партнёрские ссылки.
+      </p>
+      <p class="text-gray-400">© {year} 1xbetlive.mobi. Все права защищены.</p>
+    </div>
+  </div>
+</footer>

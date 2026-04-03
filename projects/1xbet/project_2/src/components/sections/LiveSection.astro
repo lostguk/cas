@@ -1,0 +1,57 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+
+const feats = [
+  'Кэфы обновляются по ходу матча без перезагрузки страницы.',
+  'Графики и статистика рядом с рынком — меньше прыжков по вкладкам.',
+  'Быстрые маркеты на событие в тайме.',
+  'Cash Out там, где оператор включил опцию.',
+];
+---
+
+<section class="py-20 lg:py-28 bg-dark-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <SectionHeading align="left" class="!text-left !mb-0">
+          Live без паузы.
+          <p slot="subtitle" class="text-slate-400 !mx-0">
+            Купон собирается, пока идёт игра; не отвлекайся на лишние экраны.
+          </p>
+        </SectionHeading>
+        <ul class="mt-8 space-y-4">
+          {
+            feats.map((f) => (
+              <li class="flex gap-3 text-slate-300 text-sm">
+                <svg
+                  class="w-5 h-5 text-primary-500 shrink-0 mt-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>{f}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="text-slate-500 text-sm mt-6">
+          Трансляции и задержки зависят от прав и региона.
+        </p>
+        <div class="mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>В live-линию</CTAButton>
+        </div>
+      </div>
+      <ImagePlaceholder
+        description="Live-матч: табло с коэффициентами и статистикой"
+        class="lg:max-w-none"
+      />
+    </div>
+  </div>
+</section>

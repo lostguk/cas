@@ -1,66 +1,79 @@
 ---
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+const year = new Date().getFullYear();
+
 const sections = [
   {
-    title: 'ПЛАТФОРМА',
+    title: 'Разделы',
     links: [
-      { href: '/registraciya', label: 'Регистрация' },
-      { href: '/bonus', label: 'Бонусы' },
-      { href: '/skachat', label: 'Скачать APK' },
-      { href: '/zerkalo', label: 'Зеркало' },
+      { href: '/nachalo-raboty', label: 'Начало работы' },
+      { href: '/mobile-app', label: 'Приложение' },
+      { href: '/igrovye-avtomaty', label: 'Автоматы' },
     ],
   },
   {
-    title: 'ИГРЫ',
+    title: 'Ещё',
     links: [
-      { href: '/casino', label: 'Казино' },
-      { href: '/gates-of-olympus', label: 'Gates of Olympus' },
-      { href: '/book-of-dead', label: 'Book of Dead' },
-    ],
-  },
-  {
-    title: 'ИНФО',
-    links: [
+      { href: '/privetstvennye-bonusy', label: 'Приветственные бонусы' },
+      { href: '/alternativnyj-vhod', label: 'Альтернативный вход' },
       { href: '/about', label: 'Об авторе' },
+    ],
+  },
+  {
+    title: 'Слоты',
+    links: [
+      { href: '/book-of-dead', label: 'Book of Dead' },
+      { href: '/fruit-party', label: 'Fruit Party' },
+      { href: '/starlight-princess', label: 'Starlight Princess' },
     ],
   },
 ];
 ---
 
-<footer class="mt-20">
-  <div class="h-0.5 bg-brand-500"></div>
-  <div class="bg-black border-t border-bg-800 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="col-span-2 md:col-span-1">
-          <a href="/" class="flex items-center gap-2 mb-4">
-            <div class="w-6 h-6 bg-brand-500 rotate-12"></div>
-            <span class="font-bold text-white font-mono uppercase tracking-tighter">1xBet</span>
-          </a>
-          <p class="text-sm text-zinc-500 leading-relaxed">
-            Обзор 1xBet от игрока из Актобе. Ставки, казино, бонусы — личный опыт.
-          </p>
+<footer class="mt-24 border-t-2 border-white/20 bg-surface-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex items-center gap-3 mb-4">
+          <span
+            class="w-10 h-10 border-2 border-cta-500 flex items-center justify-center font-mono text-[10px] font-bold text-cta-500"
+            >1x</span
+          >
+          <span class="font-mono text-xs uppercase text-zinc-400">1xbet-stavki.kz</span>
         </div>
-
-        {sections.map(section => (
-          <div>
-            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-brand-400 mb-4">{section.title}</h3>
-            <ul class="space-y-2">
-              {section.links.map(link => (
-                <li>
-                  <a href={link.href} class="text-sm text-zinc-400 hover:text-brand-400 transition-colors duration-100">{link.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-
-      <div class="mt-12 pt-6 border-t-2 border-bg-800">
-        <p class="text-xs text-zinc-600 leading-relaxed max-w-3xl">
-          21+ | Ответственная игра | Этот сайт содержит партнёрские ссылки. Автор получает комиссию за регистрации. Это не влияет на объективность обзора. Играйте ответственно.
+        <p class="text-sm text-zinc-500 leading-relaxed font-mono">
+          Личный блог Армана из Актобе. Не официальный сайт букмекера, только мой опыт и ссылки-партнёрка.
         </p>
-        <p class="text-xs text-zinc-700 mt-2 font-mono">© {new Date().getFullYear()} 1xbet-stavki.kz</p>
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block mt-4 font-mono text-xs uppercase border-2 border-cta-500 px-4 py-2 text-cta-400 hover:bg-cta-500 hover:text-black transition-colors duration-100"
+        >
+          Перейти в 1xBet
+        </a>
       </div>
+      {sections.map((sec) => (
+        <div>
+          <h3 class="font-mono text-xs uppercase tracking-widest text-cta-500 mb-4 border-b-2 border-white/10 pb-2">
+            {sec.title}
+          </h3>
+          <ul class="space-y-2">
+            {sec.links.map((l) => (
+              <li>
+                <a href={l.href} class="text-sm text-zinc-400 hover:text-white font-mono">
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="mt-12 pt-8 border-t-2 border-white/10 text-xs text-zinc-600 font-mono space-y-2">
+      <p>18+. Играй ответственно. Азартные игры могут вызывать зависимость.</p>
+      <p>Материалы носят информационный характер, не призыв к действию.</p>
+      <p class="text-zinc-500">© {year} 1xbet-stavki.kz · Арман Жумабаев</p>
     </div>
   </div>
 </footer>

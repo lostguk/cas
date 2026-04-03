@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+
+const slotSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'SoftwareApplication',
+      name: 'Starlight Princess',
+      applicationCategory: 'GameApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'KZT' },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4.4', bestRating: '5' },
+    author: { '@type': 'Person', name: 'Арман Жумабаев' },
+    reviewBody: 'Pragmatic слот с аниме-стилем и множителями в бонусной игре.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Starlight Princess',
+    applicationCategory: 'GameApplication',
+    description: 'Сетка с каскадами и множителями в стиле аниме-принцессы.',
+  },
+];
+---
+
+<BaseLayout
+  title="Starlight Princess — обзор слота и демо на 1xBet | 2026"
+  description="Starlight Princess — обзор слота от Pragmatic Play. RTP 96.50%, множитель ×5 000. Демо и реальная игра на 1xBet."
+  schema={slotSchemas}
+  publishDate="2026-02-08"
+  updateDate="2026-04-03"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Starlight Princess' }]} />
+  <section class="py-10 lg:py-14 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <ArticleMeta publishDate="2026-02-08" updateDate="2026-04-03" />
+    <div class="text-center mb-10 border-b-2 border-white/10 pb-10">
+      <h1 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white mb-4">
+        Starlight Princess — обзор слота от Pragmatic Play
+      </h1>
+      <p class="text-zinc-400 font-mono text-sm">RTP 96.50% · макс ×5 000 · множители</p>
+      <div class="mt-8">
+        <CTAButton href={affiliateLink} size="lg" external>Играть Starlight Princess</CTAButton>
+      </div>
+    </div>
+
+    <ImagePlaceholder
+      description="Слот Starlight Princess: аниме-принцесса, неон и падающие множители"
+      aspect="16/10"
+      class="mb-10"
+    />
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Обзор Starlight Princess</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Принцесса с крыльями орет про множители x500 в лицо — шутка, но в бонусе реально бывает жарко.
+    </p>
+    <p class="text-zinc-400 text-sm mb-10">
+      Механика близка к другим «прагматик» дропам, но оформление люблю больше чем сухие фрукты иногда.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Как играть</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Кластеры и каскады, сердца скаттеры запускают фриспины, множители висят на поле и суммируются если цепочка зашла.
+    </p>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Анте-бет и покупка бонуса есть на многих казино включая эту площадку — не обязательно ждать скаттеров вечность.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Мой опыт</h2>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Слился на покупке бонуса два раза подряд, третий окупил — типичная история для меня, эмоции хардкор.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Стоит ли играть</h2>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Если нравится визуал и множители — залетай, если бесит аниме — закрой вкладку и иди в блэкджек.
+    </p>
+
+    <p class="text-sm font-mono text-zinc-500 mb-10">
+      <a href="/igrovye-avtomaty" class="text-cta-400 border-b border-cta-500">Обзор казино</a>
+      ·
+      <a href="/book-of-dead" class="text-cta-400 border-b border-cta-500">Book of Dead</a>
+      ·
+      <a href="/fruit-party" class="text-cta-400 border-b border-cta-500">Fruit Party</a>
+    </p>
+
+    <div class="border-2 border-cta-500/40 p-8 text-center">
+      <CTAButton href={affiliateLink} size="lg" external>Открыть слот</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

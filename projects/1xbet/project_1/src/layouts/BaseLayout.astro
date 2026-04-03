@@ -1,0 +1,93 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import SEOHead from '../components/SEOHead.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  type?: 'website' | 'article';
+  schema?: object;
+  publishDate?: string;
+  updateDate?: string;
+}
+
+const siteUrl = 'https://1xbet-obzor.kz';
+const siteName = '1xbet-obzor.kz';
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  noindex,
+  type,
+  schema,
+  publishDate,
+  updateDate,
+} = Astro.props;
+
+const canonicalUrl = canonical ?? Astro.url.href;
+
+const organizationNode = {
+  '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
+  name: siteName,
+  url: siteUrl,
+};
+
+const graph: object[] = [organizationNode];
+
+if (schema) {
+  if (Array.isArray(schema)) {
+    graph.push(...(schema as object[]));
+  } else {
+    graph.push(schema as object);
+  }
+}
+
+const schemaTypes = schema
+  ? (Array.isArray(schema) ? schema : [schema]).map((n) => (n as { '@type'?: string })['@type'])
+  : [];
+const skipAutoArticle = schemaTypes.includes('Review') || schemaTypes.includes('AboutPage');
+
+if (publishDate && updateDate && !skipAutoArticle) {
+  graph.push({
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: publishDate,
+    dateModified: updateDate,
+    publisher: { '@id': `${siteUrl}/#organization` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+  });
+}
+
+const schemaLd = { '@context': 'https://schema.org', '@graph': graph };
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <SEOHead
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      noindex={noindex}
+      type={type}
+      schema={schemaLd}
+    />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-1 pt-16 lg:pt-[4.5rem]">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

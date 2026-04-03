@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+
+const publishDate = '2026-01-12';
+const updateDate = '2026-03-28';
+
+const howToSchema = {
+  '@type': 'HowTo',
+  name: 'Регистрация на 1xBet из Казахстана',
+  description: 'Пошагово: создание аккаунта, валюта, бонус, базовая безопасность.',
+  step: [
+    { '@type': 'HowToStep', name: 'Шаг 1', text: 'Открыть официальную страницу регистрации по рабочей ссылке.' },
+    { '@type': 'HowToStep', name: 'Шаг 2', text: 'Выбрать способ: в один клик, по телефону, email или соцсеть.' },
+    { '@type': 'HowToStep', name: 'Шаг 3', text: 'Указать валюту тенге и страну, проверить промокод если планируете бонус.' },
+    { '@type': 'HowToStep', name: 'Шаг 4', text: 'Подтвердить контакты, заполнить профиль, при необходимости пройти верификацию.' },
+  ],
+};
+
+const steps = [
+  { n: '1', title: 'Рабочая ссылка', text: 'Берём переход с проверенного места, не с рекламного объявления где домен похож но буква лишняя.' },
+  { n: '2', title: 'Способ регистрацыи', text: 'В один клик быстрее всего, но потом всё равно дополните данные иначе вывод упрётся в стену.' },
+  { n: '3', title: 'Валюта и лимиты', text: 'KZT удобен если живёте в Казахстане, менять потом больно — думайте сразу, не как мы в прошлый раз.' },
+  { n: '4', title: 'Бонус да/нет', text: 'Приветсвенный пакет цепляет, но если не любите отыгрыш можете отказаться и не воевать с вейджером.' },
+  { n: '5', title: 'Почта и телефон', text: 'Проверьте SMS и письмо, иногда коды приходят с задержкой и это не повод кликать «отправить» десять раз.' },
+];
+---
+
+<BaseLayout
+  title="Регистрация 1xBet: 4 способа + бонус на первый депозит"
+  description="Регистрация 1xBet за 2 минуты — пошагово. Аккаунт в тенге, бонус на старте, верификация через ИИН."
+  type="article"
+  schema={howToSchema}
+  publishDate={publishDate}
+  updateDate={updateDate}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Регистрация' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Регистрация: быстро открыть аккаунт и не наделать глупостей</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Мы предлагаем пройти путь спокойно: форма простая, а нервы сбережёте если заранее решите про бонус и валюту.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Зарегистрироваться</CTAButton>
+          <CTAButton href="/bonus" variant="secondary" size="lg">Сначала читать про бонус</CTAButton>
+        </div>
+      </div>
+      <div class="mb-12 max-w-2xl mx-auto">
+        <ImagePlaceholder description="Процесс регистрации: форма создания аккаунта" />
+      </div>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <h2 class="text-2xl font-bold text-white">Что понадобится до клика</h2>
+        <p>
+          Документы могут запросить позже, но телефон и почта должны быть живые. ИИН и данные личности часто всплывают на этапе вывода, к этому лучше быть готовым сразу, а не удивляться на пятом дне.
+        </p>
+        <p>
+          Метод при котором вы регистрируетесь влияет на то как потом восстанавливать доступ: соцсети удобны, пока не отвязались, email надёжнее если не теряете пароли каждый месяц.
+        </p>
+      </div>
+      <div class="mt-12 grid gap-4">
+        {steps.map((s) => (
+          <Card>
+            <div class="flex gap-4">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-500/20 text-accent-400 font-bold">{s.n}</span>
+              <div>
+                <h3 class="text-lg font-semibold text-white mb-1">{s.title}</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">{s.text}</p>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-accent-500/10 via-base-800 to-secondary-500/5 border border-accent-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Готово — можно пополнять</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Пополнили, и сразу пошли в слоты — классика; мы бы сначала глянули лимиты и бонусные условия, но это уже ваш выбор.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Перейти к регистрации</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

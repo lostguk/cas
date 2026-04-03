@@ -32,11 +32,20 @@
 - .htaccess (одинаковый для всех)
 - tsconfig.json (одинаковый)
 - .gitignore (одинаковый)
+- .nvmrc (всегда `22` — фиксирует Node.js версию)
 
 ## Файлы которые агент ДОПИСЫВАЕТ после замены
 - Header.astro — создаётся с нуля (вариант лого, навигация, стиль)
 - Footer.astro — создаётся с нуля (вариант, ссылки, описание)
 - CTAButton.astro — создаётся с нуля (вариант стиля кнопок)
 - Card.astro — создаётся с нуля (вариант стиля карточек)
-- Все sections/* — создаются с нуля (уникальный контент)
-- Все pages/* (кроме 404) — создаются с нуля
+- ImagePlaceholder.astro — адаптировать цвета под CSS-переменные проекта (заменить {{COLOR_*}} плейсхолдеры)
+- Все sections/* — создаются с нуля (уникальный контент, картинки через `<ImagePlaceholder description="..." />`)
+- Все pages/* (кроме 404) — создаются с нуля (картинки через `<ImagePlaceholder description="..." />`)
+
+## ВАЖНО: вместо любого `<img>` или `<Image>` — компонент ImagePlaceholder
+```astro
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+<ImagePlaceholder description="Казино: фишки, карты и рулетка на тёмном фоне" />
+```
+Описание ОБЯЗАТЕЛЬНО, на русском, конкретное.

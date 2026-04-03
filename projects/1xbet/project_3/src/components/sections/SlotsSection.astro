@@ -1,0 +1,71 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+
+const slots = [
+  {
+    href: '/the-dog-house',
+    provider: 'Pragmatic Play',
+    name: 'The Dog House',
+    rtp: '96.51%',
+    win: '×6 750',
+    desc: 'Волатильность высокая: серии без бонуса выматывают. Когда ловишь фриспины — динамика резко меняется.',
+    placeholder: 'Слот The Dog House: собаки и будки, весёлая тема',
+  },
+  {
+    href: '/sugar-rush-1000',
+    provider: 'Pragmatic Play',
+    name: 'Sugar Rush 1000',
+    rtp: '96.53%',
+    win: '×25 000',
+    desc: 'Каскады и множители дают редкие, но яркие пики. Не подходит тем, кто ждёт ровный график баланса.',
+    placeholder: 'Слот Sugar Rush 1000: сладкая сетка и каскадные выигрыши',
+  },
+  {
+    href: '/slots-i-igry',
+    provider: 'Разные',
+    name: 'Каталог казино',
+    rtp: 'зависит от слота',
+    win: '—',
+    desc: 'Фильтр по провайдеру спасает время. Демо есть у части игр — проверяйте кнопку «демо» до входа в аккаунт.',
+    placeholder: 'Лобби казино: сетка превью слотов и фильтр по провайдерам',
+  },
+];
+---
+
+<section class="py-16 lg:py-20 bg-bg-50/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Слоты: не только картинка, но и математика.</SectionHeading>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12 -mt-4">
+      RTP в справке не гарантирует исход сессии; это долгосрочный ориентир от провайдера.
+    </p>
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        slots.map((s) => (
+          <Card class="flex flex-col">
+            <a href={s.href} class="block mb-4 -mx-2">
+              <ImagePlaceholder description={s.placeholder} />
+            </a>
+            <p class="text-xs font-semibold text-brand-600 uppercase tracking-wide mb-1">{s.provider}</p>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{s.name}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed flex-1 mb-4">{s.desc}</p>
+            <div class="flex flex-wrap gap-3 text-xs text-gray-500 mb-4">
+              <span class="px-2 py-1 rounded-md bg-gray-100">RTP {s.rtp}</span>
+              <span class="px-2 py-1 rounded-md bg-gray-100">Макс. {s.win}</span>
+            </div>
+            <CTAButton href={s.href} variant="outline" size="sm" class="w-full sm:w-auto">
+              Подробнее
+            </CTAButton>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="text-center mt-10">
+      <CTAButton href={affiliateLink} size="lg" external>Играть на платформе</CTAButton>
+    </div>
+  </div>
+</section>

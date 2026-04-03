@@ -1,0 +1,64 @@
+---
+import Card from '../ui/Card.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+---
+
+<section class="py-16 lg:py-20 bg-base-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <SectionHeading>
+        Платежи: тенге, карты, электронка
+        <p slot="subtitle" class="mt-4 text-slate-400">Минимум лирики, максимум того что люди ищут в поддержке.</p>
+      </SectionHeading>
+    </div>
+    <p class="text-slate-300 text-center max-w-3xl mx-auto mb-10 text-sm leading-relaxed">
+      Мы предлагаем сначала глянуть лимиты в кассе, потом уже гнать депозит на максимум. Метод при котором комиссия минимальная не всегда самый быстрый на вывод — тут классический компромисс.
+    </p>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <Card>
+        <h3 class="text-white font-semibold mb-2">Kaspi / банки</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Частый выбор в KZ, но проверяйте доступность именно вашего банка в списке, списки меняются.</p>
+      </Card>
+      <Card>
+        <h3 class="text-white font-semibold mb-2">Карты</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Удобно если привыкли, иногда банк режет MCC — тогда не к нам претензии, к эмитенту.</p>
+      </Card>
+      <Card>
+        <h3 class="text-white font-semibold mb-2">Крипто и кошельки</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Вариант для тех кто уже в теме, новичкам мы бы не советовали начинать с цепочек переводов.</p>
+      </Card>
+    </div>
+    <div class="overflow-x-auto rounded-2xl border border-white/[0.06] bg-base-950/80">
+      <table class="w-full text-sm text-left min-w-[520px]">
+        <thead>
+          <tr class="border-b border-white/10 text-slate-400">
+            <th class="px-4 py-3 font-medium">Метод</th>
+            <th class="px-4 py-3 font-medium">Пополнение</th>
+            <th class="px-4 py-3 font-medium">Вывод</th>
+            <th class="px-4 py-3 font-medium">Минимум (ориентир)</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          <tr class="border-b border-white/[0.04] hover:bg-white/[0.02]">
+            <td class="px-4 py-3">Электронные системы</td>
+            <td class="px-4 py-3">Обычно быстро</td>
+            <td class="px-4 py-3">От часов до суток</td>
+            <td class="px-4 py-3">зависит от метода</td>
+          </tr>
+          <tr class="border-b border-white/[0.04] hover:bg-white/[0.02]">
+            <td class="px-4 py-3">Банковские карты</td>
+            <td class="px-4 py-3">Часто мгновенно</td>
+            <td class="px-4 py-3">1–3 дня</td>
+            <td class="px-4 py-3">смотреть кассу</td>
+          </tr>
+          <tr class="hover:bg-white/[0.02]">
+            <td class="px-4 py-3">Криптовалюта</td>
+            <td class="px-4 py-3">После сети</td>
+            <td class="px-4 py-3">После модерации</td>
+            <td class="px-4 py-3">плавающий</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

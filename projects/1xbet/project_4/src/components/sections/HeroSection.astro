@@ -1,57 +1,47 @@
 ---
-import { Image } from 'astro:assets';
-import heroImg from '../../assets/images/hero-arena.png';
 import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
 ---
 
-<section class="relative z-10 bg-bg-950">
-  <div class="absolute inset-0 overflow-hidden">
-    <Image
-      src={heroImg}
-      alt="1xBet Казахстан арена ставок"
-      class="w-full h-full object-cover opacity-20"
-      widths={[640, 1024, 1536]}
-      sizes="100vw"
-      loading="eager"
-    />
-    <div class="absolute inset-0 bg-gradient-to-b from-bg-950/40 via-bg-950/80 to-bg-950"></div>
-  </div>
-
-  <div class="relative z-10 max-w-5xl mx-auto px-4 pt-24 pb-32 sm:pt-32 sm:pb-40 text-center">
-    <span class="inline-block font-mono text-xs uppercase tracking-widest text-brand-400 border-2 border-brand-500 px-4 py-1.5 mb-8">
-      Проверено лично — 2026
-    </span>
-
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-tighter leading-none text-white mb-6">
-      1xBet Казахстан — ставки и&nbsp;казино без&nbsp;фильтров
-    </h1>
-
-    <p class="max-w-2xl mx-auto text-lg sm:text-xl text-zinc-400 mb-10 leading-relaxed">
-      Я — Арман из Актобе, на этой площадке уже шестой год. Делюсь реальным опытом без рекламной воды и красивых обещаний — только конкретные цифры, честные плюсы и минусы по ставкам и казино в Казахстане!
-    </p>
-
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <CTAButton href="https://refpa94475.com/L?tag=d_3955871m_99c_" variant="primary" size="lg" external>
-        Начать с приветственным пакетом
-      </CTAButton>
-      <CTAButton href="/registraciya" variant="secondary" size="lg">
-        Начать со ставок на спорт
-      </CTAButton>
-    </div>
-  </div>
-
-  <div class="relative z-20 max-w-4xl mx-auto px-4 -mb-16 grid grid-cols-1 sm:grid-cols-3 gap-4">
-    <div class="bg-bg-900 border-2 border-brand-500 p-6 text-center">
-      <p class="font-mono text-brand-400 text-sm uppercase tracking-wider mb-1">Ставки</p>
-      <p class="text-2xl font-black text-white">50+ видов</p>
-    </div>
-    <div class="bg-bg-900 border-2 border-brand-500 p-6 text-center">
-      <p class="font-mono text-brand-400 text-sm uppercase tracking-wider mb-1">Казино</p>
-      <p class="text-2xl font-black text-white">10 000+ игр</p>
-    </div>
-    <div class="bg-bg-900 border-2 border-brand-500 p-6 text-center">
-      <p class="font-mono text-brand-400 text-sm uppercase tracking-wider mb-1">Бонус</p>
-      <p class="text-2xl font-black text-white">до 220 000 ₸</p>
+<section class="relative border-b-2 border-white/10 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div>
+        <p
+          class="inline-block font-mono text-xs uppercase tracking-widest border-2 border-cta-500 text-cta-400 px-3 py-1 mb-6"
+        >
+          1 000+ live · личный обзор
+        </p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-tighter text-white leading-[1.05] mb-6">
+          1xBet Казахстан — ставки + казино для игроков из KZ
+        </h1>
+        <p class="text-lg text-zinc-400 mb-8 max-w-xl leading-relaxed">
+          Я сам с Актобе, кручу слоты и иногда лезу в лайв на футбол. Тут мой взгляд на площадку, без канцелярита.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <CTAButton href={affiliateLink} size="lg" external>Забрать бонус на старте</CTAButton>
+          <CTAButton href="/nachalo-raboty" variant="secondary" size="lg">Ставить на КПЛ</CTAButton>
+        </div>
+        <div class="grid grid-cols-3 gap-4 border-2 border-white/15 p-4">
+          <div>
+            <p class="font-mono text-xl sm:text-2xl font-bold text-cta-500">50+</p>
+            <p class="text-xs font-mono uppercase text-zinc-500 mt-1">видов спорта</p>
+          </div>
+          <div>
+            <p class="font-mono text-xl sm:text-2xl font-bold text-cta-500">1 000 ₸</p>
+            <p class="text-xs font-mono uppercase text-zinc-500 mt-1">мин. депозит</p>
+          </div>
+          <div>
+            <p class="font-mono text-xl sm:text-2xl font-bold text-cta-500">100%</p>
+            <p class="text-xs font-mono uppercase text-zinc-500 mt-1">на первый деп</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <ImagePlaceholder description="Стадион ночью: зелёное поле и софиты" aspect="16/10" />
+      </div>
     </div>
   </div>
 </section>

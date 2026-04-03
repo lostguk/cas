@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+const publishDate = '2026-03-10';
+const updateDate = '2026-04-01';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Установка приложения Android',
+  description: 'Как скачать APK и обновить клиент без Google Play.',
+  step: [
+    { '@type': 'HowToStep', name: 'Скачать APK', text: 'Загрузить файл с официальной страницы.' },
+    { '@type': 'HowToStep', name: 'Разрешения', text: 'Включить установку из неизвестных источников на время установки.' },
+    { '@type': 'HowToStep', name: 'Установка', text: 'Открыть файл и подтвердить обновление.' },
+  ],
+};
+
+const blocks = [
+  { t: 'APK', d: 'Полный клиент: ставки, казино, касса в одном ярлыке.' },
+  { t: 'Обновления', d: 'Переустановка поверх сохраняет сессию, если не чистить данные.' },
+  { t: 'iOS', d: 'На айфон часто веб-профиль или PWA — смотри актуальную инструкцию у оператора.' },
+];
+---
+
+<BaseLayout
+  title="Приложение — скачать и обновить"
+  description="APK для Android: загрузка, разрешения, обновление. Без воды, с переходом на официальный сайт."
+  schema={schema}
+  type="website"
+  noindex={true}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Приложение' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-4">
+          Мобильный клиент.
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+          Google Play часто без букмекерских приложений; APK — нормальный путь, если файл с официальной страницы.
+        </p>
+        <div class="mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Скачать APK</CTAButton>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 items-start mb-12">
+        <ImagePlaceholder description="Мокап смартфона с приложением для ставок" aspect="3/4" />
+        <div class="space-y-4">
+          {
+            blocks.map((b) => (
+              <Card>
+                <h2 class="text-base font-extrabold uppercase text-primary-400 mb-2">{b.t}</h2>
+                <p class="text-slate-400 text-sm">{b.d}</p>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="space-y-5 text-slate-300 text-sm">
+        <h2 class="text-xl font-bold text-white uppercase">Безопасность файла.</h2>
+        <p>
+          Хэш и ссылка должны совпадать с тем, что выдаёт оператор; сторонние зеркала с «ускоренной» загрузкой лучше обходить стороной.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Если не ставится.</h2>
+        <p>
+          Проверь свободное место, отключи оптимизаторы батареи для установщика и повтори; на Huawei может понадобиться отдельный магазин или веб-версия.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Трафик.</h2>
+        <p>
+          Клиент кэширует линию; live всё равно жрёт данные — держи Wi‑Fi или пакет с запасом, особенно на стримах.
+        </p>
+      </div>
+
+      <div class="mt-14 text-center">
+        <CTAButton href={affiliateLink} size="lg" external>Открыть загрузку</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

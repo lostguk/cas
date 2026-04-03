@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+const publishDate = '2026-03-15';
+const updateDate = '2026-04-01';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Как создать аккаунт: шаги',
+  description: 'Краткая дорожная карта регистрации для пользователей из Казахстана.',
+  step: [
+    { '@type': 'HowToStep', name: 'Открыть форму', text: 'Перейти по официальной ссылке и выбрать регистрацию.' },
+    { '@type': 'HowToStep', name: 'Контакты', text: 'Указать телефон или email и придумать пароль.' },
+    { '@type': 'HowToStep', name: 'Подтверждение', text: 'Ввести код из SMS или письма.' },
+    { '@type': 'HowToStep', name: 'Профиль', text: 'Заполнить валюту KZT и личные данные по запросу формы.' },
+  ],
+};
+
+const cards = [
+  { t: 'Телефон', d: 'Быстрый вход и восстановление через SMS.' },
+  { t: 'Email', d: 'Подходит, если не хочешь светить номер сразу.' },
+  { t: 'Соцсети', d: 'Иногда доступен вход через сторонний аккаунт.' },
+];
+---
+
+<BaseLayout
+  title="Создать аккаунт — быстрый гайд"
+  description="Регистрация в пару шагов: телефон, подтверждение, валюта тенге. Переход на официальный сайт."
+  schema={schema}
+  type="website"
+  noindex={true}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Создать аккаунт' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white mb-4">
+          Аккаунт за четыре шага.
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+          Минимум текста — максимум ясности; паспорт на старте не всегда обязателен, но KYC может прийти позже.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Регистрация</CTAButton>
+          <CTAButton href="/lichnyy-kabinet" variant="secondary" size="lg">Уже есть вход</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder
+        description="Форма регистрации: поля телефона, пароля и валюты на тёмном интерфейсе"
+        class="mb-10"
+      />
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        {
+          cards.map((c) => (
+            <Card>
+              <h2 class="text-base font-extrabold uppercase text-primary-400 mb-2">{c.t}</h2>
+              <p class="text-slate-400 text-sm">{c.d}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <div class="space-y-6 text-slate-300 text-sm leading-relaxed">
+        <h2 class="text-xl font-bold text-white uppercase">Что ввести в первую очередь.</h2>
+        <p>
+          Номер казахстанского оператора или email, плюс пароль с цифрамми и буквами; валюта счёта KZT снимает лишние пересчёты при депозите.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Подтверждение.</h2>
+        <p>
+          Код из SMS приходит за секунды; если задержка — проверь сеть и папку спам для писем, иногда помогает повторная отправка через минуту.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">После входа.</h2>
+        <p>
+          Заполни профиль до конца, чтобы касса не стопорила вывод; бонусное поле промокода обычно на виду — код не всегда обязателен.
+        </p>
+        <p class="text-slate-500">
+          Мы не открываем счета и не собираем документы; все действия только на стороне оператора.
+        </p>
+      </div>
+
+      <div
+        class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-primary-500/10 via-dark-800 to-highlight-100/5 border border-primary-500/20"
+      >
+        <h2 class="text-2xl font-black uppercase text-white mb-3">Готов?</h2>
+        <p class="text-slate-300 mb-6">Один тап — и форма открыта.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Создать сейчас</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

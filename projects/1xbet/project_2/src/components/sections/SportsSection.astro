@@ -1,0 +1,56 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+
+const sports = [
+  {
+    title: 'Футбол',
+    text: 'Топ-лиги, КПЛ, кубки. Экспрессы и одинары в пару кликов.',
+    icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z',
+  },
+  {
+    title: 'Хоккей',
+    text: 'КХЛ, NHL, «Барыс». Периоды, форы, тоталы — в live тоже.',
+    icon:
+      'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
+  },
+  {
+    title: 'Киберспорт',
+    text: 'CS2, Dota 2, LoL. Карты, раунды, быстрые маркеты.',
+    icon: 'M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z',
+  },
+  {
+    title: 'Баскетбол',
+    text: 'NBA, Евролига, четверти. Роспись глубже средней линии.',
+    icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-6 6h12',
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-dark-900/50 skew-y-[-1deg]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 skew-y-[1deg]">
+    <SectionHeading>
+      Спорт на карточках.
+      <p slot="subtitle" class="text-slate-400">Выбери дисциплину — линия откроется на официальной стороне.</p>
+    </SectionHeading>
+    <div class="grid sm:grid-cols-2 gap-6 mb-10">
+      {
+        sports.map((s) => (
+          <Card>
+            <svg class="w-12 h-12 text-primary-500 mb-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d={s.icon} />
+            </svg>
+            <h3 class="text-lg font-extrabold uppercase text-white mb-2">{s.title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{s.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="flex justify-center">
+      <CTAButton href={affiliateLink} size="lg" external>Смотреть события</CTAButton>
+    </div>
+  </div>
+</section>

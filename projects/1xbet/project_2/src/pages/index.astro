@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import OverviewSection from '../components/sections/OverviewSection.astro';
+import SportsSection from '../components/sections/SportsSection.astro';
+import StepsSection from '../components/sections/StepsSection.astro';
+import AdvantagesSection from '../components/sections/AdvantagesSection.astro';
+import BonusSection from '../components/sections/BonusSection.astro';
+import PaymentsSection from '../components/sections/PaymentsSection.astro';
+import SlotsSection from '../components/sections/SlotsSection.astro';
+import LiveSection from '../components/sections/LiveSection.astro';
+import AppSection from '../components/sections/AppSection.astro';
+import FAQSection from '../components/sections/FAQSection.astro';
+import CTASection from '../components/sections/CTASection.astro';
+
+const title = '1xСтавка Казахстан — ставки и казино';
+const description =
+  'Короткий лендинг: спорт, live, слоты и приложение для KZ. Переход на официальный сайт в один клик.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '1xСтавка KZ',
+  url: 'https://1xstavka-kz.com',
+  inLanguage: 'ru-KZ',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://1xstavka-kz.com/?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema} type="website" noindex={true}>
+  <HeroSection />
+  <OverviewSection />
+  <SportsSection />
+  <StepsSection />
+  <AdvantagesSection />
+  <BonusSection />
+  <PaymentsSection />
+  <SlotsSection />
+  <LiveSection />
+  <AppSection />
+  <FAQSection />
+  <CTASection />
+</BaseLayout>

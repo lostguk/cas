@@ -9,62 +9,76 @@ interface Props {
   schema?: object;
 }
 
+const siteUrl = 'https://1xbet-stavki.kz';
+const siteName = '1xbet-stavki.kz';
+
 const {
   title,
   description,
-  canonical = Astro.url.href,
-  ogImage = '/og-default.png',
+  canonical,
+  ogImage = '/favicon.svg',
   noindex = true,
   type = 'website',
   schema,
 } = Astro.props;
 
-const siteName = '1xBet Казахстан — ставки и казино';
+const canonicalUrl = canonical ?? Astro.url.href;
 const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+
+const schemaArray = schema
+  ? Array.isArray(schema)
+    ? schema
+    : [schema]
+  : [];
+
+const schemaJson = schemaArray.length ? JSON.stringify(schemaArray.length === 1 ? schemaArray[0] : schemaArray) : null;
 ---
 
-<meta charset="utf-8" />
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#18181b" />
-
+<meta name="theme-color" content="#000000" />
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
-<link rel="canonical" href={canonical} />
-
-{noindex && <meta name="robots" content="noindex, nofollow" />}
-{!noindex && <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
-
+<link rel="canonical" href={canonicalUrl} />
+{noindex ? (
+  <meta name="robots" content="noindex, nofollow" />
+) : (
+  <meta name="robots" content="index, follow" />
+)}
 <meta property="og:type" content={type} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:url" content={canonical} />
+<meta property="og:url" content={canonicalUrl} />
 <meta property="og:site_name" content={siteName} />
-<meta property="og:image" content={ogImage} />
+<meta property="og:image" content={new URL(ogImage, siteUrl).href} />
 <meta property="og:locale" content="ru_KZ" />
-
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={ogImage} />
-
+<meta name="twitter:image" content={new URL(ogImage, siteUrl).href} />
 <meta name="geo.region" content="KZ" />
 <meta name="geo.placename" content="Kazakhstan" />
-<meta name="content-language" content="ru" />
 <meta http-equiv="content-language" content="ru" />
-
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" />
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
 <noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap"
+  />
 </noscript>
-
-{schema && Array.isArray(schema) ? (
-  schema.map(s => (
-    <script type="application/ld+json" set:html={JSON.stringify(s)} />
-  ))
-) : schema ? (
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-) : null}
+{schemaJson && (
+  <script type="application/ld+json" set:html={schemaJson} />
+)}

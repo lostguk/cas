@@ -1,69 +1,75 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
 
-const faqs = [
+const faqItems = [
   {
-    question: 'Нужен ли ИИН для создания аккаунта?',
-    answer: 'Нет, при регистрации хватает email и номера телефона. ИИН понадобится позже, когда контора запросит верификацию — обычно перед первым крупным выводом. До этого спокойно играешь без документов.',
+    q: 'Нужен ли ИИН для создания аккаунта?',
+    a: 'Для регистрации часто хватает телефона и почты, но верифкация потом всё равно попросит документы и ИИН если выводишь нормальные суммы.',
   },
   {
-    question: 'Можно ли пополнить через USDT?',
-    answer: 'Да, пополнение через USDT работает по сети TRC20, комиссия копеечная — несколько центов. Зачисление обычно за 15–30 минут, проверено лично не раз. Сам пользуюсь когда не хочу светить карту — быстрее банковского перевода и без лишних вопросов от банка.',
+    q: 'Можно ли пополнить через USDT?',
+    a: 'Да, TRC20 у меня проходил за 20 минут в среднем, комиссия сети отдельно — не путай с комиссией конторы.',
   },
   {
-    question: 'Работает ли приложение без интернета?',
-    answer: 'Нет, для ставок и казино нужно стабильное подключение к сети. Офлайн-режима у приложения нет — даже кэшированные страницы не позволят сделать ставку или крутить слот. Мобильного 4G от Kcell или Beeline вполне хватает для комфортной игры без задержек.',
+    q: 'Работает ли приложение без интернета?',
+    a: 'Нет, это не офлайн-игра, без сети ты даже баланс не увидишь, логично же.',
   },
   {
-    question: 'Какой VPN лучше для Казахстана?',
-    answer: 'Лично использую Windscribe — бесплатная версия нормально тянет для ставок и казино. Planet VPN тоже рабочий вариант для Казахстана. Главное — выбирай сервер поближе, Россия или Турция, чтобы пинг не страдал и страницы грузились быстро.',
+    q: 'Какой VPN лучше для Казахстана?',
+    a: 'Я не рекламирую бренды, бери платный с нормальными отзывами и kill-switch, бесплатные часто режут скорость в лайве.',
   },
   {
-    question: 'Как активировать фриспины?',
-    answer: 'После активации бонуса заходишь в раздел «Казино» и открываешь нужный слот — фриспины запускаются автоматически. Если не видишь их — проверь условия акции в личном кабинете, иногда нужно принять бонус вручную.',
+    q: 'Как активировать фриспины?',
+    a: 'Обычно после депозита заходишь в акции или в конкретный слот, там кнопка «активировать» — если не видишь, пинай поддержку в чате.',
   },
   {
-    question: 'Есть ли ставки на киберспорт?',
-    answer: 'Да, площадка покрывает CS2, Dota 2, League of Legends, Valorant и другие дисциплины. Коэффициенты адекватные, линия нормальная. Перед крупными турнирами типа Major или TI роспись заметно расширяется, появляются карты и другие рынки.',
+    q: 'Есть ли ставки на киберспорт?',
+    a: 'Есть, от Dota до Valorant, кэфы на топ-турниры норм, на тир-3 матчи маржа выше — я такое реже трогаю.',
   },
   {
-    question: 'Можно ли купить бонусную игру в слоте?',
-    answer: 'В некоторых слотах от Pragmatic Play и других провайдеров есть функция Feature Buy — покупка бонусного раунда напрямую. Стоит обычно от ×80 до ×100 от размера ставки. Доступно не во всех слотах — зависит от провайдера и ограничений региона.',
+    q: 'Можно ли купить бонусную игру в слоте?',
+    a: 'В части слотов Pragmatic и других есть buy bonus, списывают сразу кусок баланса — я пару раз купил и слил, ну то есть не везёт всегда.',
   },
 ];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
+  mainEntity: faqItems.map((item) => ({
     '@type': 'Question',
-    name: faq.question,
+    name: item.q,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: faq.answer,
+      text: item.a,
     },
   })),
 };
 ---
 
-<section id="faq" class="py-16 lg:py-24">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <SectionHeading class="mb-12">FAQ — отвечаю на вопросы</SectionHeading>
-
-    <div class="space-y-4">
-      {faqs.map((faq) => (
-        <details class="group border-2 border-white">
-          <summary class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-            <span class="font-bold text-white text-sm sm:text-base">{faq.question}</span>
-            <span class="font-mono text-brand-400 text-lg shrink-0 transition-transform duration-100 group-open:rotate-45">+</span>
+<section class="py-16 lg:py-24 border-b-2 border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Частые вопросы</SectionHeading>
+    <div class="max-w-3xl mx-auto space-y-3">
+      {faqItems.map((item) => (
+        <details class="group border-2 border-white/15 bg-surface-950 open:border-cta-500/40">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 p-4 font-mono text-sm uppercase text-white list-none">
+            <span>{item.q}</span>
+            <svg
+              class="w-5 h-5 text-cta-500 shrink-0 transition-transform group-open:rotate-180"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
           </summary>
-          <div class="px-6 pb-5 text-slate-300 text-sm leading-relaxed border-t-2 border-white/20 pt-4">
-            {faq.answer}
+          <div class="px-4 pb-4 text-sm text-zinc-400 leading-relaxed border-t-2 border-white/10 pt-4">
+            {item.a}
           </div>
         </details>
       ))}
     </div>
   </div>
 </section>
-
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

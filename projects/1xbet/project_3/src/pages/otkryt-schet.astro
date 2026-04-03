@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+const title = 'Регистрация 1xBet: 4 способа + бонус на первый депозит';
+const description =
+  'Регистрация 1xBet за 2 минуты — пошагово. Аккаунт в тенге, бонус на старте, верификация через ИИН.';
+const canonical = 'https://1xbetlive.mobi/otkryt-schet';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: [
+    { '@type': 'HowToStep', name: 'Шаг 1', text: 'Откройте форму регистрации на официальной странице.' },
+    { '@type': 'HowToStep', name: 'Шаг 2', text: 'Выберите валюту KZT и заполните контакты.' },
+    { '@type': 'HowToStep', name: 'Шаг 3', text: 'Подтвердите телефон или почту по коду из SMS.' },
+    { '@type': 'HowToStep', name: 'Шаг 4', text: 'Завершите профиль и при необходимости загрузите документы.' },
+  ],
+};
+
+const steps = [
+  {
+    n: '01',
+    title: 'Старт',
+    text: 'Перейдите по рабочей ссылке и выберите способ: в один клик, телефон, email или соцсеть. Я чаще беру телефон — меньше путаницы с логином.',
+  },
+  {
+    n: '02',
+    title: 'Валюта и регион',
+    text: 'Для Казахстана логично закрепить тенге сразу. Потом менять сложнее, поддержка не всегда идёт навстречу — это нормальная практика у операторов.',
+  },
+  {
+    n: '03',
+    title: 'Подтверждение',
+    text: 'SMS иногда приходит с задержкой: подождите минуту, не спамьте «отправить снова». Если тишина — проверьте номер и антиспам в смс-фильтре.',
+  },
+  {
+    n: '04',
+    title: 'Профиль',
+    text: 'ФИО и дата рождения лучше как в документе. Расхождения потом всплывают на выводе, и это долго чинится.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-01-12"
+  updateDate="2026-03-28"
+  noindex={true}
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Открыть счёт' }]} />
+  <ArticleMeta publishDate="2026-01-12" updateDate="2026-03-28" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+          Как открыть счёт на 1xBet из Казахстана.
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Ниже — живой порядок действий без маркетинга. По данным из открытых источников форма иногда меняется, ориентируйтесь на экран.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Зарегистрироваться</CTAButton>
+          <CTAButton href="/ustanovka" variant="outline" size="lg">Потом установить приложение</CTAButton>
+        </div>
+      </div>
+
+      <div class="mb-12">
+        <ImagePlaceholder description="Регистрация: форма создания аккаунта на платформе" />
+      </div>
+
+      <div class="space-y-6 text-gray-700 mb-14">
+        <p>
+          Перед вводом данных отключите автозаполнение паролей от чужих Wi‑Fi — мелочь, но спокойнее. Я обычно делаю скриншот выбранной валюты, чтобы потом не спорить с памятью.
+        </p>
+        <p>
+          Бонус на первый депозит цепляется по правилам акции: если не уверены — отметьте «без бонуса» и зайдите в кассу уже спокойно.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        {
+          steps.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-extrabold text-brand-600 shrink-0">{s.n}</span>
+                <div>
+                  <h2 class="text-xl font-bold text-gray-900 mb-2">{s.title}</h2>
+                  <p class="text-gray-600 leading-relaxed">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl border border-brand-500/20 bg-bg-50">
+        <h2 class="text-2xl font-bold text-gray-900 mb-3">Готово — можно пополнять.</h2>
+        <p class="text-gray-600 mb-6">
+          Лимиты и методы смотрите в кассе сразу после входа. Не делайте крупный первый перевод без проверки статуса счёта.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть регистрацию</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

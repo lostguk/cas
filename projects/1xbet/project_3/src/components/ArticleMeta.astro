@@ -1,0 +1,39 @@
+---
+interface Props {
+  publishDate: string;
+  updateDate: string;
+}
+
+const { publishDate, updateDate } = Astro.props;
+
+const months = [
+  'января',
+  'февраля',
+  'марта',
+  'апреля',
+  'мая',
+  'июня',
+  'июля',
+  'августа',
+  'сентября',
+  'октября',
+  'ноября',
+  'декабря',
+];
+
+const formatDate = (dateStr: string) => {
+  const d = new Date(dateStr);
+  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+};
+---
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-3 text-sm text-gray-500 pb-2">
+  <div class="w-9 h-9 rounded-full bg-brand-500/15 text-brand-600 font-bold flex items-center justify-center text-xs">
+    ДС
+  </div>
+  <a href="/about" class="font-medium text-gray-800 hover:text-brand-600">Данияр С.</a>
+  <span class="text-gray-300">|</span>
+  <time datetime={publishDate}>Опубликовано: {formatDate(publishDate)}</time>
+  <span class="text-gray-300">|</span>
+  <time datetime={updateDate}>Обновлено: {formatDate(updateDate)}</time>
+</div>

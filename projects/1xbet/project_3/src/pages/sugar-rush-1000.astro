@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+const title = 'Sugar Rush 1000 слот: RTP 96.53%, максимум ×25 000 | 1xBet';
+const description =
+  'Обзор слота Sugar Rush 1000 на 1xBet: RTP 96.53%, макс. выигрыш ×25 000. Pragmatic Play. Играй в тенге.';
+const canonical = 'https://1xbetlive.mobi/sugar-rush-1000';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'Game',
+      name: 'Sugar Rush 1000',
+      gameLocation: { '@type': 'VirtualLocation', url: canonical },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4', bestRating: '5' },
+    author: { '@type': 'Person', name: 'Данияр С.' },
+    reviewBody: description,
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-18"
+  updateDate="2026-03-25"
+  noindex={true}
+  type="article"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Слоты', href: '/slots-i-igry' },
+      { label: 'Sugar Rush 1000' },
+    ]}
+  />
+  <ArticleMeta publishDate="2026-02-18" updateDate="2026-03-25" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-sm font-semibold text-brand-600 mb-2">Pragmatic Play · RTP 96.53%</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Sugar Rush 1000: каскады и множители.</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Сетка 7×7, выигрыши каскадом, множители остаются на поле — классика «серия мёртвых спинов → один удар». Терпение нужно железное.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Открыть слот</CTAButton>
+      </div>
+
+      <ImagePlaceholder
+        description="Слот Sugar Rush 1000: конфетная сетка, множители и каскадные символы"
+        class="mb-10"
+      />
+
+      <div class="grid sm:grid-cols-3 gap-4 mb-10 text-center">
+        <Card class="py-4">
+          <div class="text-xs text-gray-500 uppercase">RTP</div>
+          <div class="text-xl font-bold text-gray-900">96.53%</div>
+        </Card>
+        <Card class="py-4">
+          <div class="text-xs text-gray-500 uppercase">Макс.</div>
+          <div class="text-xl font-bold text-gray-900">×25 000</div>
+        </Card>
+        <Card class="py-4">
+          <div class="text-xs text-gray-500 uppercase">Провайдер</div>
+          <div class="text-xl font-bold text-gray-900">Pragmatic</div>
+        </Card>
+      </div>
+
+      <div class="space-y-5 text-gray-700 mb-10">
+        <p>
+          Покупка бонуса есть — цена кусается, отдача не гарантирована. Я пробую демо перед реальными покупками, иначе быстро ловлю FOMO на красивых анимациях.
+        </p>
+        <p>
+          Версия 1000 сильнее базового Sugar Rush по потенциалу и по просадкам. По данным из открытых источников популярность в KZ высокая — очереди на трансляциях стримеров этому только помогают.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-gray-200 bg-bg-50 p-4 text-sm text-gray-600">
+        18+. По данным из открытых источников: играйте в пределах бюджета, установите лимиты в кабинете до первого депозита.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

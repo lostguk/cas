@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+
+const ways = [
+  {
+    title: 'Рабочее зеркало',
+    text: 'Тот же сайт под другим доменом, логин пароль те же, баланс не пропадает если это официальный редирект.',
+  },
+  {
+    title: 'Приложение',
+    text: 'Апк часто живёт когда браузер режут, я так и сижу с телефона если домашний провайдер тупит.',
+  },
+  {
+    title: 'DNS 8.8.8.8',
+    text: 'Помогает не всегда, но попробовать минутное дело, гугловский DNS в настройках сети.',
+  },
+];
+---
+
+<BaseLayout
+  title="Зеркало 1xBet: актуальная ссылка + обход блокировки KZ"
+  description="1xBet зеркало 2026 — актуальная ссылка для входа из Казахстана. Баланс и ставки сохраняются."
+  publishDate="2026-03-05"
+  updateDate="2026-04-03"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Альтернативный вход' }]} />
+  <section class="py-10 lg:py-14 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <ArticleMeta publishDate="2026-03-05" updateDate="2026-04-03" />
+    <div class="text-center mb-10 border-b-2 border-white/10 pb-10">
+      <h1 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white mb-4">
+        1xBet зеркало — рабочий доступ для Казахстана
+      </h1>
+      <p class="text-zinc-400 font-mono text-sm max-w-2xl mx-auto mb-8">
+        Блокировки случаются, Kcell Beeline и другие любят резать беттинг — не паникуй, варианты есть.
+      </p>
+      <CTAButton href={affiliateLink} size="lg" external>Открыть рабочую ссылку</CTAButton>
+    </div>
+
+    <ImagePlaceholder
+      description="Браузер с предупреждением блокировки и второй вкладкой с успешным входом"
+      aspect="16/10"
+      class="mb-10"
+    />
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Почему блокируют</h2>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Законодательство и политика операторов, не буду юристом, факт — сайт иногда не открывается хотя вчера открывался.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-6">Три способа зайти</h2>
+    <div class="space-y-4 mb-10">
+      {ways.map((w, i) => (
+        <div class="border-2 border-white/15 p-5">
+          <p class="font-mono text-cta-500 text-xs uppercase mb-2">0{i + 1}</p>
+          <h3 class="text-white font-bold uppercase mb-2">{w.title}</h3>
+          <p class="text-sm text-zinc-400 leading-relaxed">{w.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Как отличить фишинг</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Не вводи данные на странице которая просит «срочно подтвердить карту» странным формам, официальный вход не выглядит как одна кнопка «дай cvc».
+    </p>
+    <p class="text-zinc-400 text-sm mb-10">
+      Если сомневаешься — открой ссылку из приложения которое уже стоит, или напиши в поддержку из старой сессии.
+    </p>
+
+    <p class="text-sm font-mono text-zinc-500 mb-10">
+      <a href="/mobile-app" class="text-cta-400 border-b border-cta-500">APK</a>
+      ·
+      <a href="/igrovye-avtomaty" class="text-cta-400 border-b border-cta-500">Казино</a>
+      ·
+      <a href="/starlight-princess" class="text-cta-400 border-b border-cta-500">Слот</a>
+    </p>
+
+    <div class="border-2 border-cta-500/50 p-8 text-center">
+      <CTAButton href={affiliateLink} size="lg" external>Войти через партнёрскую ссылку</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

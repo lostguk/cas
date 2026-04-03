@@ -6,11 +6,14 @@ interface Props {
 }
 
 const { tag: Tag = 'h2', align = 'center', class: className = '' } = Astro.props;
-const alignClass = align === 'center' ? 'text-center' : 'text-left';
 ---
 
-<div class:list={[alignClass, className]}>
-  <Tag class="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-none">
+<div class:list={['mb-10', align === 'center' && 'text-center', className]}>
+  <Tag
+    class:list={[
+      'text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tighter text-white leading-tight',
+    ]}
+  >
     <slot />
   </Tag>
   <slot name="subtitle" />

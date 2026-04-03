@@ -1,0 +1,29 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="relative overflow-hidden rounded-3xl border border-brand-500/20 bg-gradient-to-br from-brand-500/10 via-white to-pop-500/10 px-6 py-14 sm:px-12 text-center"
+    >
+      <div
+        class="pointer-events-none absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-brand-400/20 blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
+      <div class="relative">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Готовы проверить интерфейс сами?</h2>
+        <p class="text-gray-600 max-w-xl mx-auto mb-8">
+          Переход по ссылке открывает официальный поток регистрации. По данным из открытых источников условия меняются — сверяйте кассу на месте.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <CTAButton href={affiliateLink} size="lg" external>Открыть платформу</CTAButton>
+          <CTAButton href="/about" variant="outline" size="lg">Кто автор обзора</CTAButton>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

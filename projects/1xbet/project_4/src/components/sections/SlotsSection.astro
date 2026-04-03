@@ -2,60 +2,63 @@
 import SectionHeading from '../ui/SectionHeading.astro';
 import Card from '../ui/Card.astro';
 import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const slots = [
+  {
+    slug: '/book-of-dead',
+    name: 'Book of Dead',
+    provider: "Play'n GO",
+    rtp: '96.21%',
+    maxWin: '×5 000',
+    desc: 'Классика Египта, книга разбрасывает символы — я в минус уходил и в плюс, волатильность злая но интересно.',
+    cta: 'Крутить с фриспинами',
+    placeholder: 'Слот Book of Dead: египетская тема, фараоны и пирамиды',
+  },
+  {
+    slug: '/fruit-party',
+    name: 'Fruit Party',
+    provider: 'Pragmatic Play',
+    rtp: '96.47%',
+    maxWin: '×5 000',
+    desc: 'Фрукты и каскады, визуально ярко, иногда подтормаживть на старом телефоне но терпимо.',
+    cta: 'Играть с бонусом',
+    placeholder: 'Слот Fruit Party: фруктовая сетка и каскадные множители',
+  },
+  {
+    slug: '/starlight-princess',
+    name: 'Starlight Princess',
+    provider: 'Pragmatic Play',
+    rtp: '96.50%',
+    maxWin: '×5 000',
+    desc: 'Аниме-стиль, множители падают как снег, я люблю когда шумно на экране.',
+    cta: 'Испытать удачу',
+    placeholder: 'Слот Starlight Princess: аниме-принцесса и множители',
+  },
+];
 ---
 
-<section class="py-16 sm:py-24 bg-bg-950">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6">
-    <SectionHeading align="left">
-      Популярные слоты на 1xBet
-    </SectionHeading>
-
-    <div class="grid sm:grid-cols-2 gap-6 mt-10">
-      <Card class="border-2 border-bg-700" hover={false}>
-        <div class="aspect-[16/10] bg-bg-900 border-2 border-brand-500/20 flex items-center justify-center">
-          <div class="text-center">
-            <svg class="w-12 h-12 mx-auto text-brand-400/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            <p class="text-xs font-mono text-zinc-600 mt-2 uppercase">GATES OF OLYMPUS</p>
-          </div>
-        </div>
-        <div class="mt-4">
-          <span class="inline-block font-mono text-xs text-brand-400 border border-brand-500/30 px-2 py-0.5 uppercase tracking-wider">Pragmatic Play</span>
-          <h3 class="font-mono text-white text-xl font-bold uppercase tracking-tight mt-3 mb-2">Gates of Olympus</h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">Зевс раздаёт множители до ×500 на каждом спине. Слот без линий — выплаты по кластерам, и на фриспинах множители складываются.</p>
-          <div class="flex gap-4 font-mono text-xs text-zinc-500 uppercase tracking-wider mt-3">
-            <span>RTP 96.50%</span>
-            <span>Max ×5000</span>
-          </div>
-          <div class="mt-4">
-            <CTAButton href="/gates-of-olympus" variant="outline" size="sm">Крутить Olympus</CTAButton>
-          </div>
-        </div>
-      </Card>
-
-      <Card class="border-2 border-bg-700" hover={false}>
-        <div class="aspect-[16/10] bg-bg-900 border-2 border-brand-500/20 flex items-center justify-center">
-          <div class="text-center">
-            <svg class="w-12 h-12 mx-auto text-brand-400/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-            <p class="text-xs font-mono text-zinc-600 mt-2 uppercase">BOOK OF DEAD</p>
-          </div>
-        </div>
-        <div class="mt-4">
-          <span class="inline-block font-mono text-xs text-brand-400 border border-brand-500/30 px-2 py-0.5 uppercase tracking-wider">Play'n GO</span>
-          <h3 class="font-mono text-white text-xl font-bold uppercase tracking-tight mt-3 mb-2">Book of Dead</h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">Классика с египетской темой и расширяющимися символами. На фриспинах случайный символ заполняет весь барабан — тут залетают крупные выплаты.</p>
-          <div class="flex gap-4 font-mono text-xs text-zinc-500 uppercase tracking-wider mt-3">
-            <span>RTP 96.21%</span>
-            <span>Max ×5000</span>
-          </div>
-          <div class="mt-4">
-            <CTAButton href="/book-of-dead" variant="outline" size="sm">Открыть Book of Dead</CTAButton>
-          </div>
-        </div>
-      </Card>
+<section class="py-16 lg:py-24 border-b-2 border-white/10 bg-surface-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Топ слотов что крутить</SectionHeading>
+    <div class="grid md:grid-cols-3 gap-6">
+      {slots.map((s) => (
+        <Card>
+          <ImagePlaceholder description={s.placeholder} aspect="16/10" class="mb-4" />
+          <p class="font-mono text-xs text-info-400 uppercase mb-1">{s.provider}</p>
+          <h3 class="text-lg font-black uppercase text-white mb-2">{s.name}</h3>
+          <p class="text-sm text-zinc-400 mb-4 leading-relaxed">{s.desc}</p>
+          <p class="font-mono text-xs text-zinc-500 mb-4">
+            RTP {s.rtp} · макс {s.maxWin}
+          </p>
+          <CTAButton href={s.slug} variant="outline" size="sm">
+            {s.cta}
+          </CTAButton>
+        </Card>
+      ))}
     </div>
+    <p class="text-center mt-8 text-sm text-zinc-500 font-mono">
+      Все три проверял на реале и на демо, в демо всегда везёт — это ловушка психологии.
+    </p>
   </div>
 </section>

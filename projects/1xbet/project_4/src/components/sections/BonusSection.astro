@@ -1,50 +1,56 @@
 ---
-import { Image } from 'astro:assets';
-import bonusImg from '../../assets/images/bonus-chest.png';
 import SectionHeading from '../ui/SectionHeading.astro';
-import CTAButton from '../ui/CTAButton.astro';
 import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+
+const cards = [
+  {
+    type: 'Спорт',
+    value: '100% до 220 000 ₸',
+    condition: 'Вейджер ×5 на спорт / ×35 на казино, 30 дней — читай мелкий шрифт.',
+  },
+  {
+    type: 'Казино',
+    value: '150 фриспинов',
+    condition: 'Слоты ограничены списком, не жди что выберешь любой автомат.',
+  },
+  {
+    type: 'Фрибет',
+    value: 'Бесплатная ставка',
+    condition: 'Подвязано к первому депозиту и акциям, «просто так» редко.',
+  },
+];
 ---
 
-<section class="py-20 sm:py-28 bg-bg-950">
-  <div class="max-w-6xl mx-auto px-4">
-    <SectionHeading>
-      Бонус до 220 000 ₸ — условия
-    </SectionHeading>
-
-    <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-      <div class="border-2 border-brand-500 overflow-hidden">
-        <Image
-          src={bonusImg}
-          alt="Бонусный пакет 1xBet до 220 000 тенге"
-          class="w-full"
-          widths={[400, 640]}
-          sizes="(max-width: 1024px) 100vw, 50vw"
+<section class="py-16 lg:py-24 border-b-2 border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Бонусы — что дают на старте</SectionHeading>
+    <div class="grid lg:grid-cols-5 gap-8 items-start">
+      <div class="lg:col-span-2">
+        <ImagePlaceholder
+          description="Промо-блок: лаймовые акценты, цифры бонуса и условия мелким шрифтом"
+          aspect="4/5"
+          class="max-w-md"
         />
       </div>
-
-      <div class="flex flex-col gap-4">
-        <Card class="border-2 border-brand-500/30">
-          <p class="font-mono text-brand-400 text-sm uppercase tracking-wider mb-2">Спортивный бонус</p>
-          <p class="text-xl font-black text-white mb-2">100% до 220 000 ₸</p>
-          <p class="text-zinc-400 text-sm">Вейджер ×5 — нужно поставить сумму бонуса пять раз на экспрессы с коэффициентом от 1.40. Условия реальные, сам отыгрывал за две недели.</p>
-        </Card>
-
-        <Card class="border-2 border-brand-500/30">
-          <p class="font-mono text-brand-400 text-sm uppercase tracking-wider mb-2">Казино-бонус</p>
-          <p class="text-xl font-black text-white mb-2">150 фриспинов</p>
-          <p class="text-zinc-400 text-sm">Вейджер ×35 — тут сложнее, честно говоря. Отыграть казино-бонус удаётся далеко не всегда. Не рассчитывайте на лёгкие деньги.</p>
-        </Card>
-
-        <Card class="border-2 border-brand-500/30">
-          <p class="font-mono text-brand-400 text-sm uppercase tracking-wider mb-2">Фрибет</p>
-          <p class="text-xl font-black text-white mb-2">Бесплатная ставка</p>
-          <p class="text-zinc-400 text-sm">Даётся при первом депозите. Условия мягкие — фрибет можно поставить на любое событие с коэффициентом от 1.80.</p>
-        </Card>
-
-        <CTAButton href="https://refpa94475.com/L?tag=d_3955871m_99c_" variant="primary" size="lg" external class="mt-4 w-full text-center">
-          Открыть казино с бонусом
-        </CTAButton>
+      <div class="lg:col-span-3 grid gap-4">
+        {cards.map((c) => (
+          <Card>
+            <p class="font-mono text-xs uppercase text-cta-500 mb-2">{c.type}</p>
+            <p class="text-xl font-black uppercase text-white mb-3">{c.value}</p>
+            <p class="text-sm text-zinc-400 leading-relaxed">{c.condition}</p>
+          </Card>
+        ))}
+        <p class="text-sm text-zinc-500 font-mono">
+          Бонусс не зря с двумя «с» иногда пишу — так у меня в черновике висело, ладно шучу, опечатка была.
+          Короче отыгрыш жёсткий, если ты только ради слотов — готовься к ×35 на казино.
+        </p>
+        <div>
+          <CTAButton href="/privetstvennye-bonusy" variant="outline" size="md">Все условия бонусов</CTAButton>
+        </div>
       </div>
     </div>
   </div>

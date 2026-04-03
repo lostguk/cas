@@ -1,39 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-950: #0a0a0b;
-  --color-bg-900: #18181b;
-  --color-bg-800: #27272a;
-  --color-bg-700: #3f3f46;
+  --font-sans: "Rubik", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --color-brand-600: #65a30d;
-  --color-brand-500: #84cc16;
-  --color-brand-400: #a3e635;
-  --color-brand-300: #bef264;
+  --color-surface-50: #fafafa;
+  --color-surface-100: #f4f4f5;
+  --color-surface-200: #e4e4e7;
+  --color-surface-300: #d4d4d8;
+  --color-surface-400: #a1a1aa;
+  --color-surface-500: #71717a;
+  --color-surface-600: #52525b;
+  --color-surface-700: #3f3f46;
+  --color-surface-800: #27272a;
+  --color-surface-900: #18181b;
+  --color-surface-950: #09090b;
 
-  --color-pop-500: #22d3ee;
-  --color-pop-400: #67e8f9;
+  --color-cta-300: #bef264;
+  --color-cta-400: #a3e635;
+  --color-cta-500: #84cc16;
+  --color-cta-600: #65a30d;
 
-  --font-sans: 'Rubik', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-info-300: #67e8f9;
+  --color-info-400: #22d3ee;
+  --color-info-500: #06b6d4;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
-
   body {
-    background-color: #000;
-    color: #fff;
+    background-color: #000000;
+    color: #fafafa;
     font-family: var(--font-sans);
-    line-height: 1.7;
+    line-height: 1.65;
   }
-
   ::selection {
-    background-color: var(--color-brand-500);
-    color: #000;
+    background-color: var(--color-cta-500);
+    color: #000000;
   }
 }

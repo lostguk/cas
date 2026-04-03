@@ -483,137 +483,97 @@ SVG 32×32, стилистически связанный с логотипом 
 
 ---
 
-## Изображения — стратегия
+## Изображения → заглушки с описаниями
 
-Каждый проект ОБЯЗАН содержать уникальные изображения. Имена файлов, стили, композиции — всё должно отличаться от проекта к проекту.
+Растровые изображения НЕ генерируются. Вместо них — HTML/CSS-заглушки с текстовым описанием содержимого.
 
-### Категории изображений
+### Что НЕ является изображением (всегда качественное)
 
-| Категория | Кол-во | Где используются | Источник |
+Следующие элементы — ответственность агента, они всегда должны быть тематическими и качественными:
+
+- **SVG-иконки** — inline SVG с осмысленными путями (не generic), тематические для каждой секции
+- **CSS-градиенты** — фоны hero-секций, декоративные элементы
+- **CSS-паттерны** — radial-gradient, текстуры через CSS
+- **Аватар автора** — инициалы в стилизованном CSS-блоке
+- **Favicon.svg** — уникальный SVG для каждого проекта
+- **Emoji/Unicode** — допустимы в определённых content_format (B, E)
+
+### Обязательный компонент ImagePlaceholder.astro
+
+В каждом проекте ОБЯЗАН быть компонент `src/components/ui/ImagePlaceholder.astro`. Он используется ВМЕСТО любого `<img>` или `<Image>`.
+
+```astro
+---
+interface Props {
+  description: string;
+  aspect?: string;
+  class?: string;
+}
+
+const { description, aspect = '16/10', class: className = '' } = Astro.props;
+---
+
+<div class:list={[`aspect-[${aspect}] rounded-2xl bg-gradient-to-br from-accent-500/10 via-base-900 to-secondary-500/5 border border-white/[0.06] flex items-center justify-center`, className]}>
+  <div class="text-center px-4">
+    <svg class="w-10 h-10 mx-auto text-accent-400/30 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <circle cx="8.5" cy="8.5" r="1.5" />
+      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+    </svg>
+    <p class="text-xs text-slate-500 max-w-52">{description}</p>
+  </div>
+</div>
+```
+
+Цвета `accent/base/secondary` заменяются на реальные имена переменных проекта (`brand/bg/pop`, `cta/surface/info` и т.д.).
+
+### Использование в коде
+
+```astro
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+<ImagePlaceholder description="Казино: фишки, карты и рулетка на тёмном фоне" />
+<ImagePlaceholder description="Мокап смартфона с интерфейсом ставок" aspect="3/4" />
+<ImagePlaceholder description="Слот Sugar Rush: конфеты и яркие цвета" aspect="16/10" />
+```
+
+### ЗАПРЕЩЕНО
+
+- `<img src="...">` — НЕЛЬЗЯ, использовать `<ImagePlaceholder>`
+- `<Image>` из astro:assets — НЕЛЬЗЯ
+- Заглушка без описания — НЕЛЬЗЯ (пустой `description=""`)
+- Описание на английском — НЕЛЬЗЯ (только русский)
+- Описание «картинка» / «изображение» — НЕЛЬЗЯ (конкретное описание)
+
+### Описания для заглушек (таблица конкретных описаний)
+
+### Описания для заглушек
+
+| Место | Описание | SVG-иконка |
+|---|---|---|
+| Hero-фон | Только CSS-градиенты, без заглушки | — |
+| Казино | «Казино: фишки, карты, рулетка» | Карты/фишки |
+| Бонус | «Бонус: подарок, монеты» | Подарок |
+| App | «Мокап смартфона с приложением» | Смартфон |
+| Live | «Live: дашборд статистики» | Монитор |
+| Спорт | «Стадион, ночная атмосфера» | Стадион |
+| Слот | «Слот [название]: [тема]» | Игровой автомат |
+| Подстраница | «[Тема]: тематическая иллюстрация» | По контексту |
+
+### Обязательные реальные файлы
+
+| Файл | Формат | Путь | Создание |
 |---|---|---|---|
-| Фоновые (hero, спорт) | 2-3 | Фон секций на главной (opacity 5-25%) | AI-генерация |
-| Контентные (бонусы, казино, live, app) | 3-4 | Секции на главной, в 2-колоночных блоках | AI-генерация |
-| Подстраничные | 3-5 | Заголовочные блоки подстраниц | AI-генерация |
-| Слотовые | по кол-ву slot-страниц | Карточки слотов на главной + подстраницы | Тематические AI-изображения |
-| OG-image | 1 | Соцсети (также в public/) | AI-генерация |
-| **Итого** | **13-18** | | |
+| **favicon.svg** | SVG 32x32 | `public/favicon.svg` | Агент создаёт — уникальный для проекта |
+| **og-default.png** | PNG 1200x630 | `public/og-default.png` | Через GenerateImage — единственное допустимое использование |
 
-### Правила именования файлов
+### Правила
 
-**Имена файлов уникальны для каждого проекта.** Не копировать структуру именования между проектами.
-
-Варианты подходов к именам:
-- Описательные: `stadium-night-view.png`, `phone-betting-app.png`
-- Короткие: `bg-hero.png`, `img-bonus.png`, `pic-casino.png`
-- Нумерованные: `visual-01.png`, `visual-02.png`
-- Тематические: `arena-lights.png`, `gold-chest.png`, `roulette-top.png`
-
-Агент выбирает схему именования случайно для каждого проекта.
-
-### Правила для подстраниц
-
-Минимум 3-4 подстраницы должны иметь изображение в заголовочном блоке. Приоритет:
-1. Страницы-инструкции (регистрация, скачивание) — обязательно
-2. Казино-страница — обязательно
-3. Бонусы — желательно
-4. Остальные — по ситуации
-
-### Правила для слотов
-
-Каждая слот-страница и каждая карточка слота в секции Slots на главной ОБЯЗАНА иметь **свою уникальную** картинку. Одна картинка на нескольких слотах — ЗАПРЕЩЕНО.
-
-**Источник изображений слотов — пользователь предоставляет вручную.**
-
-Перед генерацией проекта пользователь скидывает в чат реальные скриншоты/картинки для каждого слота, который будет в проекте. Агент копирует их в `src/assets/images/` и использует в коде.
-
-**ЕСЛИ пользователь не предоставил картинки слотов при запросе на генерацию — агент ОБЯЗАН попросить их ПЕРЕД началом работы.** Не генерировать проект без слотовых картинок.
-
-Формат запроса:
-> Для проекта нужны картинки следующих слотов: [список]. Скиньте изображения для каждого слота, и я начну генерацию.
-
-### Генерация AI-изображений
-
-Используется GenerateImage. Промпты адаптируются под цветовую схему проекта.
-
-**Принципы промптов:**
-- Указывать hex-цвет фона из палитры проекта (`#{base-color}`)
-- Всегда: `no text, no logos, no watermarks, no UI elements`
-- Фоновые: `very dark edges, cinematic lighting, shallow depth of field`
-- Предметные: `professional product photography, studio lighting`
-- Атмосферные: `editorial photography style, high-end magazine quality`
-- Указывать соотношение сторон (16:9, 4:3, 3:4)
-
-**Шаблоны промптов по типам:**
-
-Фон hero:
-> Professional editorial photograph of [спортивная/казино сцена], dramatic [accent-color] spotlights, dark atmosphere #{base-color}, cinematic wide angle, no text no logos no watermarks, 16:9
-
-Контентная (бонусы/казино/live):
-> Professional product/food photography of [предмет по теме секции] on dark surface, [accent-color] lighting accents, dark background #{base-color}, no text no logos no watermarks, [ratio]
-
-Подстраничная:
-> [Абстрактная/предметная] illustration/photography of [тема страницы], [accent-color] glow, dark background #{base-color}, no text no logos no watermarks, 16:9
-
-Слотовая (тематическая):
-> Professional [product/food/landscape] photography of [предметы по теме слота] on dark surface, [accent-color] lighting, dark moody atmosphere, no text no logos no watermarks, 16:9
-
-Агент подставляет конкретные значения из конфига проекта — цвета, тему, предметы.
-
-### Использование в Astro — паттерны
-
-Все изображения в `src/assets/images/`. Импорт через Astro `<Image>` с уникальными именами.
-
-**Паттерн: фоновое изображение**
-```astro
-import { Image } from 'astro:assets';
-import heroBackground from '../../assets/images/{уникальное-имя}.png';
-
-<div class="relative overflow-hidden">
-  <Image src={heroBackground} alt="Описание на русском" width={1400} height={700}
-    class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-lighten"
-    loading="eager" format="webp" quality={60} />
-  <div class="absolute inset-0 bg-gradient-to-b from-{base}-950 via-{base}-950/90 to-{base}-950"></div>
-  <div class="relative">...</div>
-</div>
-```
-
-**Паттерн: контентное изображение**
-```astro
-import contentImg from '../../assets/images/{уникальное-имя}.png';
-
-<Image src={contentImg} alt="Описание на русском" width={600} height={450}
-  class="rounded-2xl border border-white/[0.06] shadow-2xl" format="webp" quality={80} />
-```
-
-**Паттерн: изображение слота (в карточке и на подстранице)**
-```astro
-import slotImg from '../../assets/images/{уникальное-имя}.png';
-
-<div class="aspect-[16/10] overflow-hidden rounded-t-2xl">
-  <Image src={slotImg} alt="Описание слота на русском" width={800} height={500}
-    class="w-full h-full object-cover" format="webp" quality={80} />
-</div>
-```
-
-**Паттерн: заголовочное изображение подстраницы**
-```astro
-import pageImg from '../assets/images/{уникальное-имя}.png';
-
-<div class="mt-10 rounded-2xl overflow-hidden border border-white/[0.06]">
-  <Image src={pageImg} alt="Описание на русском" width={900} height={450}
-    class="w-full" format="webp" quality={80} />
-</div>
-```
-
-### Общие правила
-
-- `loading="eager"` ТОЛЬКО для hero-баннера на главной
-- Остальные — lazy (по умолчанию)
-- Фоновые: `quality={60}`, контентные: `quality={75-80}`
-- Все `alt` на русском, описательные, содержат ключевые слова
-- Каждый `alt` уникален в рамках страницы
-- Каждый слот — своя уникальная картинка (одна на нескольких слотах — запрещено)
-- Имена файлов уникальны между проектами (не копировать naming-схему)
+- **ЗАПРЕЩЕНО** `import { Image } from 'astro:assets'` для контентных изображений
+- **ЗАПРЕЩЕНО** создавать файлы в `src/assets/images/`
+- GenerateImage используется **ТОЛЬКО** для `og-default.png` (1 раз на проект)
+- Hero-фон: CSS-градиенты + radial-gradient (не заглушка, а полноценный CSS-дизайн)
+- SVG-иконки: inline, уникальные viewBox-пути, не stub
 
 ---
 
@@ -653,6 +613,7 @@ import pageImg from '../assets/images/{уникальное-имя}.png';
 4. **Домен хардкодится** — в Breadcrumbs, BaseLayout, SEOHead
 5. **Автор хардкодится** — в ArticleMeta, BaseLayout, about.astro
 6. **Нет центрального конфига (site.ts)** — домен, affiliate-ссылка, имя автора хардкодятся прямо в компонентах
-7. **SVG-иконки inline** — передаются как строки в массивах данных, рендерятся через `<Fragment set:html={icon} />`
-8. **Изображения** — импорт из `src/assets/images/`, Astro `<Image>` компонент с format="webp" и quality
-9. **13-18 изображений на проект** — все уникальные, имена файлов не повторяются между проектами
+7. **SVG-иконки inline** — передаются как строки в массивах данных, рендерятся через `<Fragment set:html={icon} />`, всегда качественные и тематические
+8. **Изображения = заглушки** — CSS-блоки с описаниями вместо растровых файлов. НЕТ `Image` из astro:assets, НЕТ `src/assets/images/`
+9. **Hero-фон = CSS** — градиенты + radial-gradient, без изображений
+10. **favicon.svg + og-default.png** — два обязательных реальных файла в `public/`, уникальных для каждого проекта

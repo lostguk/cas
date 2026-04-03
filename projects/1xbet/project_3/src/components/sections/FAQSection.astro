@@ -1,0 +1,75 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const faq = [
+  {
+    q: 'Можно ли изменить валюту после регистрации?',
+    a: 'Обычно валюта счёта фиксируется при создании профиля. В редких кейсах поддержка предлагает перенос, но это долго и с проверками. Проще сразу выбрать KZT если живёте в Казахстане — меньше путаницы с конвертацией.',
+  },
+  {
+    q: 'Какой минимум для вывода?',
+    a: 'Порог зависит от метода: карта, кошелёк и крипто дают разные нижние границы. Смотрите кассу в аккаунте — там цифра на сегодня, а не из статьи в интернете. Иногда лимит ниже на e-wallet, чем на карту.',
+  },
+  {
+    q: 'Чем приложение лучше сайта?',
+    a: 'APK держит сессию удобнее на телефоне и реже «ломается» о мобильный браузер. Минус — обновления вручную и загрузка не из Google Play. Если не хотите ставить файл — мобильная веб-версия остаётся рабочим вариантом.',
+  },
+  {
+    q: 'Как отличить настоящее зеркало от фишинга?',
+    a: 'Проверяйте HTTPS, совпадение интерфейса после входа и двухфакторку если включали. Фишинг часто давит срочностью («блок через час»). Не вводите данные по ссылке из левого чата — только из проверенных каналов.',
+  },
+  {
+    q: 'Можно ли отказаться от бонуса?',
+    a: 'Да, у многих акций есть опция играть без пакета — тогда не цепляется вейджер. Если бонус уже лег на счёт, отмена может потребовать обращения в поддержку. Сохраняйте переписку, если спорите по условиям.',
+  },
+  {
+    q: 'Какая маржа на футбол?',
+    a: 'По данным из открытых источников маржа плавает 4–8% на топ-лиги и выше на экзотику. Сравнивайте несколько рынков в одном матче: тотал и угловые часто «дороже» чем исход.',
+  },
+  {
+    q: 'Честны ли слоты или настроены на проигрыш?',
+    a: 'Лицензированные провайдеры используют RNG, но это не значит «равномерное везение» в каждой сессии. Дисперсия может съесть баланс быстро. Играйте только на свободные деньги и с лимитом — иначе математика бренда всегда в долгую выигрывает.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+---
+
+<section class="py-16 lg:py-20 bg-bg-50/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Частые вопросы читателей из KZ.</SectionHeading>
+    <div class="max-w-3xl mx-auto space-y-3">
+      {
+        faq.map((item) => (
+          <details class="group rounded-xl border border-gray-200 bg-white shadow-sm open:shadow-md transition-shadow">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-gray-900">
+              <span>{item.q}</span>
+              <svg
+                class="w-5 h-5 shrink-0 text-brand-500 transition-transform group-open:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">{item.a}</div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

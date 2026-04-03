@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+---
+
+<BaseLayout
+  title="Страница не найдена"
+  description="Запрошенный адрес отсутствует на 1xbetlive.mobi."
+  canonical="https://1xbetlive.mobi/404"
+  noindex={true}
+>
+  <section class="py-24 lg:py-32 text-center px-4">
+    <p class="text-brand-600 font-semibold mb-2">404</p>
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Такой страницы нет.</h1>
+    <p class="text-gray-600 max-w-md mx-auto mb-8">
+      Проверьте адрес или вернитесь на главную. По данным из открытых источников структура сайта иногда обновляется.
+    </p>
+    <CTAButton href="/" size="lg">На главную</CTAButton>
+  </section>
+</BaseLayout>

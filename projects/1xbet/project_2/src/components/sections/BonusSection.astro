@@ -1,0 +1,37 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+
+const bonuses = [
+  { title: 'Старт', sum: 'до привет-пакета', text: 'Часто бонус на первый депозит; вейджер читай мелким шрифтом.' },
+  { title: 'Экспрессы', sum: 'страховка / буст', text: 'Иногда акции на комбо; условия и сроки только у оператора.' },
+  { title: 'Казино', sum: 'фриспины', text: 'Пакеты на слоты всплывают сезонно; список игр ограничен правилами.' },
+];
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>
+      Акции в кармане.
+      <p slot="subtitle" class="text-slate-400">Цифры ориентировочные — финал на официальном сайте.</p>
+    </SectionHeading>
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      {
+        bonuses.map((b) => (
+          <Card>
+            <p class="text-xs uppercase tracking-widest text-primary-500 font-bold mb-1">{b.title}</p>
+            <p class="text-2xl font-black text-white mb-3">{b.sum}</p>
+            <p class="text-slate-400 text-sm">{b.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">
+      <CTAButton href="/akcii" variant="secondary" size="lg">Все акции</CTAButton>
+      <CTAButton href={affiliateLink} size="lg" external>Забрать бонус</CTAButton>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+import Card from '../ui/Card.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+
+const cards = [
+  {
+    title: 'Футбол и КПЛ',
+    text: 'Линия широкая, но маржа на региональные матчи иногда кусается. Экспрессы собираем когда голова холодная, не на эмоциях после прошлого тура.',
+    icon: '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>',
+  },
+  {
+    title: 'Live и кэшаут',
+    text: 'Кэшаут спасает когда матч идёт не туда, хотя суммы режут без предупреждения. Мы предлагаем не лезть в лайв без нормального интернета, иначе котировки устаревают прямо на экране.',
+    icon: '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg>',
+  },
+  {
+    title: 'Кибер и кубки',
+    text: 'Dota и CS в линии есть, коэффициенты скачут на турнирах как на фондовке. Иногда проще взять один исход, чем гнаться за «жирным» экспрессом который рвётся от одного пистолетки.',
+    icon: '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h4M14 10h4M8 14h8"/></svg>',
+  },
+  {
+    title: 'Теннис и зимние виды',
+    text: 'Ночные сессии по Австралии норм тем кто не спит, но волатильность бешеная. Хоккей любим отдельно, хотя лимиты на «Барыс» местами странные — видимо нагрузка.',
+    icon: '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M8 8l8 8M16 8l-8 8"/></svg>',
+  },
+];
+---
+
+<section class="relative py-16 lg:py-20 overflow-hidden">
+  <div class="absolute inset-0 bg-base-900/40" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <SectionHeading>
+        Спортивная линия: что реально заметили
+        <p slot="subtitle" class="mt-4 text-slate-400">Без мантры «лучшие коэффициенты в галактике», только практика.</p>
+      </SectionHeading>
+    </div>
+    <p class="text-slate-300 text-center max-w-3xl mx-auto mb-10 leading-relaxed">
+      Мы предлагаем зайти на линию до матча и сравнить хотя бы три исхода с тем что видите у конкурентов. Слот в котором можно купить бонус это другая история, а тут чистая математика и нервы.
+    </p>
+    <div class="max-w-4xl mx-auto mb-12">
+      <ImagePlaceholder description="Спорт: стадион, ночная подсветка и табло с коэффициентами" aspect="21/9" />
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {cards.map((c) => (
+        <Card>
+          <div class="w-12 h-12 rounded-xl bg-accent-500/10 text-accent-400 flex items-center justify-center mb-4" set:html={c.icon} />
+          <h3 class="text-lg font-bold text-white mb-2">{c.title}</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">{c.text}</p>
+        </Card>
+      ))}
+    </div>
+    <p class="text-center mt-10">
+      <a href={affiliateLink} class="text-accent-400 hover:text-accent-300 text-sm font-medium" target="_blank" rel="noopener noreferrer">
+        Открыть спортивную линию →
+      </a>
+    </p>
+  </div>
+</section>

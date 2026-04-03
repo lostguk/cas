@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+const publishDate = '2026-03-12';
+const updateDate = '2026-04-01';
+
+const games = [
+  { href: '/gates-of-olympus', name: 'Gates of Olympus', note: 'Каскады и множители.' },
+  { href: '/dead-or-alive-2', name: 'Dead or Alive 2', note: 'Высокая волатильность.' },
+  { href: '/big-bass-bonanza', name: 'Big Bass Bonanza', note: 'Бонус с рыбой-множителем.' },
+];
+---
+
+<BaseLayout
+  title="Онлайн-казино — слоты и тенге"
+  description="Игра в KZT, популярные слоты и ссылки на обзоры. Переход в казино на официальном сайте."
+  type="article"
+  publishDate={publishDate}
+  updateDate={updateDate}
+  noindex={true}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Онлайн-казино' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-4">
+          Казино без лишней теории.
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+          Счёт в тенге значит ставки в слотах тоже в ₸; конвертация не мешает, если валюта профиля выбрана один раз правильно.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>В игры</CTAButton>
+          <CTAButton href="/akcii" variant="secondary" size="lg">Бонусы</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder
+        description="Лобби казино: сетка иконок слотов на тёмном фоне с красными акцентами"
+        class="mb-10"
+      />
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        {
+          games.map((g) => (
+            <Card>
+              <h2 class="text-base font-extrabold uppercase text-white mb-2">{g.name}</h2>
+              <p class="text-slate-400 text-sm mb-4">{g.note}</p>
+              <CTAButton href={g.href} variant="outline" size="sm" class="w-full justify-center">
+                Обзор
+              </CTAButton>
+            </Card>
+          ))
+        }
+      </div>
+
+      <div class="space-y-5 text-slate-300 text-sm">
+        <h2 class="text-xl font-bold text-white uppercase">RTP и дисперсия.</h2>
+        <p>
+          Процент возврата в справке слота — долгосрочная математика, а не обещание сессии; подбирай волатильность под банкролл.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Лимиты.</h2>
+        <p>
+          Минимум спина виден внутри игры; столы live и слоты могут отличаться на порядок, проверяй перед первым кликом.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Ответственность.</h2>
+        <p>
+          Лимиты депозита и самоисключение есть у нормальных операторов — используй, если чувствуешь, что уносит.
+        </p>
+      </div>
+
+      <div class="mt-14 flex justify-center">
+        <CTAButton href={affiliateLink} size="lg" external>Открыть казино</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

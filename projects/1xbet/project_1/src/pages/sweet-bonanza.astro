@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+
+const publishDate = '2026-02-16';
+const updateDate = '2026-03-29';
+
+const reviewSchema = {
+  '@type': 'Review',
+  itemReviewed: {
+    '@type': 'VideoGame',
+    name: 'Sweet Bonanza',
+    gamePlatform: 'Online',
+    author: { '@type': 'Organization', name: 'Pragmatic Play' },
+  },
+  reviewBody: 'Sweet Bonanza на 1xBet KZ: RTP, максимальный выигрыш, бонус-раунд.',
+  author: { '@type': 'Organization', name: '1xbet-obzor.kz' },
+  datePublished: publishDate,
+};
+---
+
+<BaseLayout
+  title="Sweet Bonanza слот: RTP 96.48%, максимум ×21 175 | 1xBet"
+  description="Обзор слота Sweet Bonanza на 1xBet: RTP 96.48%, макс. выигрыш ×21 175. Pragmatic Play. Играй в тенге."
+  type="article"
+  schema={reviewSchema}
+  publishDate={publishDate}
+  updateDate={updateDate}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино', href: '/casino' }, { label: 'Sweet Bonanza' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Sweet Bonanza: фрукты, бомбы и нерв в бонуске</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          RTP около 96.48%, заявленный максимум ×21 175 — красивые цифры, но дистанция решает всё.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Играть</CTAButton>
+          <CTAButton href="/sugar-rush" variant="secondary" size="lg">Sugar Rush</CTAButton>
+        </div>
+      </div>
+      <div class="mb-12">
+        <ImagePlaceholder description="Слот Sweet Bonanza: фрукты, леденцы и каскадные выигрыши на ярком фоне" />
+      </div>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <h2 class="text-2xl font-bold text-white">Каскады и множители</h2>
+        <p>
+          Падения символов дают серии, множители в фриспинах могут сложиться в сумасшедший итог или остаться смешными — тут удача решает больше чем «стратегия из тиктока».
+        </p>
+        <p>
+          Античит мифов: нет кнопки «гарантированный занос», есть бюджет и дисциплина. Мы предлагаем ставить лимиты заранее, потому что «ещё пять спинов» часто превращаются в сорок.
+        </p>
+        <h2 class="text-2xl font-bold text-white">Где играть</h2>
+        <p>
+          На платформе слот доступен в тенге, пополнение описано в <a href="/casino" class="text-accent-400 hover:underline">обзоре казино</a>, а про бонусы читайте <a href="/bonus" class="text-accent-400 hover:underline">отдельно</a>.
+        </p>
+      </div>
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-accent-500/10 via-base-800 to-secondary-500/5 border border-accent-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Проверьте таблицу выплат</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Она скучная, зато честнее чем обложка с конфетами.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Запустить Sweet Bonanza</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

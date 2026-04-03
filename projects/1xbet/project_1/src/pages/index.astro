@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AdvantagesSection from '../components/sections/AdvantagesSection.astro';
+import AppSection from '../components/sections/AppSection.astro';
+import BonusSection from '../components/sections/BonusSection.astro';
+import CTASection from '../components/sections/CTASection.astro';
+import FAQSection from '../components/sections/FAQSection.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import LiveSection from '../components/sections/LiveSection.astro';
+import OverviewSection from '../components/sections/OverviewSection.astro';
+import PaymentsSection from '../components/sections/PaymentsSection.astro';
+import SlotsSection from '../components/sections/SlotsSection.astro';
+import SportsSection from '../components/sections/SportsSection.astro';
+
+const siteUrl = 'https://1xbet-obzor.kz';
+
+const websiteSchema = {
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  url: siteUrl,
+  name: '1xbet-obzor.kz',
+  publisher: { '@id': `${siteUrl}/#organization` },
+  inLanguage: 'ru-KZ',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}/?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const faqItems = [
+  {
+    question: 'С какого возраста можно играть в Казахстане?',
+    answer:
+      'Мы исходим из правила 18+ и ответственной игры: несовершеннолетним не место ни в казино, ни в ставках. На практике аккаунт всё равно просят подтвердить, и если документы не бьются с возрастом доступ режут без дискуссий.',
+  },
+  {
+    question: 'Какой минимальный депозит в тенге?',
+    answer:
+      'Точная цифра плавает по методу и акции, поэтому мы предлагаем смотреть кассу в момент пополнения. В целом старт бывает скромным, но «влезть на минималку» и сразу ждать кэшаут без верификации — редкий сценарий, банки и антифрод вмешиваются как хотят.',
+  },
+  {
+    question: 'Почему приложения нет в Google Play?',
+    answer:
+      'Политика маркета к беттингу жёсткая, поэтому APK крутится в обход площадки. Это не «вирусня» автоматически, но и не повод качать первый попавшийся файл из поиска — только официальные разделы и обновления по делу.',
+  },
+  {
+    question: 'Почему блокируют сайт в Казахстане?',
+    answer:
+      'Регуляторика и фильтрации у провайдеров меняются, плюс конкуренция трафика. Мы предлагаем не паниковать: зеркало и приложение решают часть проблем, а фишинг решается холодной головой и проверкой URL.',
+  },
+  {
+    question: 'Как получить приветственный бонус?',
+    answer:
+      'Обычно цепочка простая: регистрация, первый депозит, активация в кабинете, чтение вейджера. Промокод если есть — вводится до или после депозита по правилам акции, мы не подставляем «волшебные» коды из воздуха.',
+  },
+  {
+    question: 'Есть ли ставки на КПЛ?',
+    answer:
+      'Линия на чемпионат Казахстана встречается, хотя глубина росписи не всегда как в топ-5 лиг. Если матч не нашли — иногда это не «баг», а просто не тот день или не та стадия турнира, live тоже подгружают не всё подряд.',
+  },
+  {
+    question: 'Что такое RTP и на что влияет?',
+    answer:
+      'RTP — теоретический возврат игроку на длинной дистанции, не обещание выигрыша в вашей сессии. Коротко: можно поймать ×1000 и всё равно статистически «проиграть дистанцию», это математика слота, не мораль.',
+  },
+];
+---
+
+<BaseLayout
+  title="1xBet Казахстан — ставки на спорт и казино KZ 2026"
+  description="Обзор 1xBet для Казахстана: ставки на КПЛ, казино, бонус до 220 000 ₸. Пополнение через Kaspi в тенге."
+  schema={websiteSchema}
+  type="website"
+>
+  <HeroSection />
+  <OverviewSection />
+  <SportsSection />
+  <AdvantagesSection />
+  <BonusSection />
+  <PaymentsSection />
+  <SlotsSection />
+  <LiveSection />
+  <AppSection />
+  <FAQSection items={faqItems} />
+  <CTASection />
+</BaseLayout>

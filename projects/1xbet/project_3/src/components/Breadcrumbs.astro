@@ -1,0 +1,55 @@
+---
+interface Props {
+  items: { label: string; href?: string }[];
+}
+
+const { items } = Astro.props;
+const origin = 'https://1xbetlive.mobi';
+
+const list = items.map((item, i) => ({
+  ...item,
+  position: i + 1,
+  fullUrl: item.href ? `${origin}${item.href}` : undefined,
+}));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: list
+    .filter((x) => x.href)
+    .map((x) => ({
+      '@type': 'ListItem',
+      position: x.position,
+      name: x.label,
+      item: x.fullUrl,
+    })),
+};
+---
+
+<nav aria-label="Навигация" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+  <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+    {
+      items.map((item, i) => (
+        <>
+          {i > 0 && (
+            <li aria-hidden="true">
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m9 6 6 6-6 6" />
+              </svg>
+            </li>
+          )}
+          <li>
+            {item.href ? (
+              <a href={item.href} class="text-brand-600 hover:text-brand-500 font-medium">
+                {item.label}
+              </a>
+            ) : (
+              <span class="text-gray-700 font-medium">{item.label}</span>
+            )}
+          </li>
+        </>
+      ))
+    }
+  </ol>
+</nav>
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

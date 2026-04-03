@@ -1,0 +1,30 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <ImagePlaceholder description="Мокап смартфона с приложением для ставок" aspect="3/4" class="order-2 lg:order-1 max-w-sm mx-auto w-full" />
+      <div class="order-1 lg:order-2">
+        <SectionHeading align="left" class="!text-left">
+          Приложенеи рядом.
+          <p slot="subtitle" class="text-slate-400 !mx-0">
+            APK вне Google Play — обновления и права доступа смотри на официальной странице загрузки.
+          </p>
+        </SectionHeading>
+        <p class="text-slate-300 text-sm mb-6">
+          Пуши о матчах и быстрый вход по PIN экономят время перед стартом тайма.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <CTAButton href="/prilozhenie" variant="secondary" size="lg">Инструкция APK</CTAButton>
+          <CTAButton href={affiliateLink} size="lg" external>Скачать</CTAButton>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Регистрация на 1xBet в Казахстане',
+  step: [
+    { '@type': 'HowToStep', name: 'Открыть форму', text: 'Перейти по ссылке и выбрать способ регистрации.' },
+    { '@type': 'HowToStep', name: 'Заполнить данные', text: 'Указать телефон или email, придумать пароль.' },
+    { '@type': 'HowToStep', name: 'Валюта KZT', text: 'Выбрать тенге чтобы не терять на конвертации.' },
+    { '@type': 'HowToStep', name: 'Подтвердить', text: 'Ввести код из SMS или письма и зайти в аккаунт.' },
+  ],
+};
+
+const steps = [
+  'Жмёшь мою партнёрскую ссылку, открывается форма — не качай апк с левых тг-каналов, это важно.',
+  'Выбираешь «телефон», «почта», «соцсеть» или «в клик» — я обычно через телефон, быстрее всего.',
+  'Ставишь валюту KZT сразу, потом не охота мучиться с конвертацией в кабинете.',
+  'Промокод если есть — вбиваешь, если нет и ладно, акции всё равно висят в разделе бонусов.',
+  'Смс приходит за минуту, вводишь код и ты внутри, дальше можешь пополнять и тестить линию.',
+];
+
+const ways = [
+  { title: 'Телефон', text: 'Номер кз, смс, готово. Самый привычный способ для меня.' },
+  { title: 'Email', text: 'Если не хочешь светить мобилу, но письмо иногда в спам улетает.' },
+  { title: 'Соцсети', text: 'Телега и прочее — удобно если лень заполнять поля вручную.' },
+  { title: 'В один клик', text: 'Создаёт логин само, запиши данные куда-нибудь а то потеряешь.' },
+];
+---
+
+<BaseLayout
+  title="Регистрация 1xBet: 4 способа + бонус на первый депозит"
+  description="Регистрация 1xBet за 2 минуты — пошагово. Аккаунт в тенге, бонус на старте, верификация через ИИН."
+  schema={howToSchema}
+  publishDate="2026-03-15"
+  updateDate="2026-04-03"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Начало работы' }]} />
+  <section class="py-10 lg:py-14 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <ArticleMeta publishDate="2026-03-15" updateDate="2026-04-03" />
+    <div class="text-center mb-12 border-b-2 border-white/10 pb-10">
+      <h1 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white mb-4">
+        Как зарегистрироваться на 1xBet в Казахстане
+      </h1>
+      <p class="text-zinc-400 font-mono text-sm max-w-2xl mx-auto mb-8">
+        Пишу как сам проходил, без воды. Если что-то изменилось в форме — пиши в комменты, хотя комментов тут нет, лол.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <CTAButton href={affiliateLink} size="lg" external>Регистрация за две минуты</CTAButton>
+        <CTAButton href="/privetstvennye-bonusy" variant="secondary" size="lg">Сначала про бонусы</CTAButton>
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <ImagePlaceholder
+        description="Форма регистрации: поля телефона, валюта KZT, кнопка создать аккаунт"
+        aspect="16/10"
+      />
+    </div>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-6">Пошаговая регистрация</h2>
+    <ol class="space-y-4 mb-14">
+      {steps.map((s, i) => (
+        <li class="border-2 border-white/15 p-4 font-mono text-sm text-zinc-300">
+          <span class="text-cta-500 font-bold mr-2">{i + 1}.</span>
+          {s}
+        </li>
+      ))}
+    </ol>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-6">Способы регистрации</h2>
+    <div class="grid sm:grid-cols-2 gap-4 mb-14">
+      {ways.map((w) => (
+        <Card>
+          <h3 class="font-mono text-cta-400 uppercase text-xs mb-2">{w.title}</h3>
+          <p class="text-sm text-zinc-400 leading-relaxed">{w.text}</p>
+        </Card>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Бонус при регистрации</h2>
+    <p class="text-zinc-300 leading-relaxed mb-6">
+      На баннерах кричат про 220 000 ₸ и фриспины, условия меняются — перепроверь на странице акции в день депозита.
+      Я брал пакет и отыгрывал неделю, кому-то зайдёт быстрее кому-то вообще не стоит брать.
+    </p>
+    <p class="mb-10">
+      <a href="/privetstvennye-bonusy" class="text-cta-400 font-mono uppercase text-sm border-b-2 border-cta-500">
+        Разбор приветственных бонусов
+      </a>
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Верификация</h2>
+    <p class="text-zinc-300 leading-relaxed mb-6">
+      KYC попросят когда захочешь вывести крупнее или подозрятся в мультиаккаунтах, паспорт ИИН селфи стандартный набор.
+      У меня верефикация заняла пару дней, друг говорил за сутки — видимо от нагрузки зависит.
+    </p>
+    <p class="text-zinc-400 text-sm font-mono mb-12">
+      Ещё глянь <a href="/alternativnyj-vhod" class="text-cta-400 border-b border-cta-500">альтернативный вход</a> если сайт не грузится.
+    </p>
+
+    <div class="border-2 border-cta-500/40 p-8 text-center">
+      <h2 class="text-lg font-black uppercase text-white mb-3">Готов зайти</h2>
+      <p class="text-sm text-zinc-500 mb-6">Дальше сам: депозит, слоты, ставки — не забывай про лимиты.</p>
+      <CTAButton href={affiliateLink} size="lg" external>Создать аккаунт</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

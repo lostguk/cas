@@ -1,0 +1,50 @@
+{
+  "site": "https://1xstavka-kz.com",
+  "noindex": true,
+  "pages": {
+    "index": {
+      "title": "1xСтавка Казахстан — ставки и казино",
+      "description": "Короткий лендинг: спорт, live, слоты и приложение для KZ."
+    },
+    "sozdat-akkaunt": {
+      "title": "Создать аккаунт — быстрый гайд",
+      "description": "Регистрация: телефон, подтверждение, валюта тенге."
+    },
+    "prilozhenie": {
+      "title": "Приложение — скачать и обновить",
+      "description": "APK для Android: загрузка и обновление."
+    },
+    "onlajn-kazino": {
+      "title": "Онлайн-казино — слоты и тенге",
+      "description": "Слоты в KZT и ссылки на обзоры."
+    },
+    "dostup": {
+      "title": "Доступ без VPN",
+      "description": "Зеркала, DNS, безопасность входа."
+    },
+    "akcii": {
+      "title": "Акции и бонусы",
+      "description": "Промо для спорта и казино — кратко."
+    },
+    "lichnyy-kabinet": {
+      "title": "Личный кабинет",
+      "description": "Касса, бонусы, верификация."
+    },
+    "about": {
+      "title": "О проекте",
+      "description": "Информационный сайт, не оператор."
+    },
+    "gates-of-olympus": {
+      "title": "Gates of Olympus — обзор",
+      "description": "Слот Pragmatic Play: каскады и множители."
+    },
+    "dead-or-alive-2": {
+      "title": "Dead or Alive 2 — обзор",
+      "description": "Слот NetEnt: вестерн и три бонуса."
+    },
+    "big-bass-bonanza": {
+      "title": "Big Bass Bonanza — обзор",
+      "description": "Слот Pragmatic Play: рыбалка и множители."
+    }
+  }
+}

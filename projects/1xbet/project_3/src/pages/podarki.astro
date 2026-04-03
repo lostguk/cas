@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+const title = '1xBet Бонусы — приветственный пакет для KZ | 2026';
+const description =
+  'Бонусы 1xBet для Казахстана: до 220 000 ₸ на спорт, 150 фриспинов на казино. Условия отыгрыша.';
+const canonical = 'https://1xbetlive.mobi/podarki';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'ru',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-01"
+  updateDate="2026-03-22"
+  noindex={true}
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Подарки' }]} />
+  <ArticleMeta publishDate="2026-02-01" updateDate="2026-03-22" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Подарки и бонусы: читать мелкий шрифт.</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Цифры на баннерах — верхняя граница, реальная сумма зависит от депозита, рынков и вейджера.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Проверить акции</CTAButton>
+      </div>
+
+      <ImagePlaceholder
+        description="Промо-баннер: подарочная лента, проценты бонуса и таймер акции"
+        class="mb-10"
+      />
+
+      <div class="space-y-5 text-gray-700 mb-12">
+        <p>
+          Приветственный пакет часто делится на спорт и казино. Если вы чистый беттор — казино-часть может мешать отыгрышу, и наоборот. Отказ от бонуса иногда спасает нервы.
+        </p>
+        <p>
+          Фриспины крутятся в указанных слотах. Нет слота — нет спинов, это не ошибка кассы. По данным из открытых источников список игр для акций обновляют без публичного пресс-релиза.
+        </p>
+        <p>
+          Кэшбэк и турниры требуют оборота. Запишите даты начала и конца — «я не знал» редко принимают в споре с поддержкой.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-brand-500/20 bg-bg-50 p-5 text-sm text-gray-600 mb-10">
+        <strong class="text-gray-800">По данным из открытых источников.</strong> Условия бонусов меняются. Сверяйте правила в аккаунте перед активацией.
+      </div>
+
+      <div class="text-center">
+        <CTAButton href={affiliateLink} size="lg" external>Активировать на платформе</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

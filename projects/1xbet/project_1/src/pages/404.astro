@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+---
+
+<BaseLayout
+  title="Страница не найдена"
+  description="Запрашиваемая страница отсутствует на 1xbet-obzor.kz."
+  noindex={true}
+>
+  <section class="py-24 lg:py-32">
+    <div class="max-w-lg mx-auto px-4 text-center">
+      <p class="text-8xl font-black text-accent-500/30 mb-4">404</p>
+      <h1 class="text-2xl font-bold text-white mb-4">Такой страницы нет</h1>
+      <p class="text-slate-400 mb-8 leading-relaxed">
+        Мы предлагаем вернуться на главную или открыть раздел через меню — возможно ссылка устарела или опечатались в адресе.
+      </p>
+      <CTAButton href="/" size="lg">На главную</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

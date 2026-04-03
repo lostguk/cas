@@ -1,0 +1,61 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+
+const stats = [
+  { value: 'KZT', label: 'Счёт в тенге' },
+  { value: 'Kaspi', label: 'Пополнения из KZ' },
+  { value: '24/7', label: 'Поддержка на русском' },
+];
+---
+
+<section class="relative overflow-hidden py-16 sm:py-20 lg:py-28">
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-bg-50 via-white to-brand-500/5 pointer-events-none"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="absolute -top-24 right-0 w-[420px] h-[420px] rounded-full bg-brand-400/10 blur-3xl pointer-events-none"
+    aria-hidden="true"
+  >
+  </div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div>
+        <p
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-700 text-sm font-medium mb-6"
+        >
+          Обзор для Казахстана
+        </p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-[1.1] mb-6">
+          1xBet: ставки, казино и выплаты в тенге.
+        </h1>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
+          Рассказываю как пользователь из Алматы: как открыть счёт, куда уходят комиссии и где в интерефейсе прячутся лимиты. Без обещаний «лёгких денег», только факты и личный опыт тестов.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <CTAButton href={affiliateLink} size="lg" external>Перейти на платформу</CTAButton>
+          <CTAButton href="/otkryt-schet" variant="outline" size="lg">Как открыть счёт</CTAButton>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          {
+            stats.map((s) => (
+              <div class="text-center sm:text-left">
+                <div class="text-xl sm:text-2xl font-extrabold text-brand-600">{s.value}</div>
+                <div class="text-xs sm:text-sm text-gray-500 mt-1">{s.label}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="relative">
+        <ImagePlaceholder
+          description="Главный экран букмекерской линии: коэффициенты и live-события на одном дашборде"
+        />
+      </div>
+    </div>
+  </div>
+</section>

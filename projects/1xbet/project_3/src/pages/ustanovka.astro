@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+const title = 'Скачать 1xBet Казахстан — APK для Android бесплатно';
+const description =
+  'Как скачать 1xBet в Казахстане: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.';
+const canonical = 'https://1xbetlive.mobi/ustanovka';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: [
+    { '@type': 'HowToStep', name: 'Скачать APK', text: 'Загрузите файл с официальной страницы приложения.' },
+    { '@type': 'HowToStep', name: 'Разрешить установку', text: 'Включите установку из неизвестных источников для браузера.' },
+    { '@type': 'HowToStep', name: 'Установить', text: 'Откройте файл и завершите установку.' },
+    { '@type': 'HowToStep', name: 'Войти', text: 'Авторизуйтесь или зарегистрируйтесь в приложении.' },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-03"
+  updateDate="2026-03-20"
+  noindex={true}
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Установка' }]} />
+  <ArticleMeta publishDate="2026-02-03" updateDate="2026-03-20" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Установка приложения 1xBet в KZ.</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Google Play часто недоступен для беттинг-приложений — APK это норма, не «левый софт» если тянете с официального потока.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Скачать / открыть сайт</CTAButton>
+          <CTAButton href="/moj-profil" variant="outline" size="lg">Личный кабинет</CTAButton>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 items-start mb-12">
+        <div class="space-y-4 text-gray-700">
+          <p>
+            На Android путь простой: скачать apk, разрешить установку из браузера, запустить мастер. На iOS чаще остаётся веб-приложение или профиль — смотрите актуальную инструкцию на стороне оператора, я не обещаю один сценарий на все версии iOS.
+          </p>
+          <p>
+            После установки включите автообновление внутри приложения если есть — иначе версия устареет и словите баги на live.
+          </p>
+        </div>
+        <ImagePlaceholder
+          description="Мокап смартфона: экран загрузки APK и иконка приложения на рабочем столе"
+          aspect="3/4"
+        />
+      </div>
+
+      <div class="space-y-4 mb-12">
+        <Card>
+          <h2 class="text-lg font-bold text-gray-900 mb-2">Безопасность файла.</h2>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Сверяйте домен и HTTPS. Если система ругается на подпись — не «ломайте» отключением антивируса, лучше скачайте заново с официальной ветки.
+          </p>
+        </Card>
+        <Card>
+          <h2 class="text-lg font-bold text-gray-900 mb-2">Обновления.</h2>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Раз в месяц проверяйте раздел «о приложении». Старый билд иногда не пускает в кассу — это не блокировка аккаунта, а технический стоп.
+          </p>
+        </Card>
+      </div>
+
+      <div class="text-center p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-xl font-bold text-gray-900 mb-3">Нужна ссылка сейчас?</h2>
+        <p class="text-gray-600 mb-6">
+          Переход открывает мобильную зону загрузки. По данным из открытых источников зеркала меняются — берите адрес из проверенных каналов.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть загрузку</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

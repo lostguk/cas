@@ -3,153 +3,101 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ArticleMeta from '../components/ArticleMeta.astro';
 import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
 
-const publishDate = '2026-02-12';
-const updateDate = '2026-03-26';
-const affiliate = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
 
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  itemReviewed: {
+const slotSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'SoftwareApplication',
+      name: 'Book of Dead',
+      applicationCategory: 'GameApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'KZT' },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5' },
+    author: { '@type': 'Person', name: 'Арман Жумабаев' },
+    reviewBody: 'Классический слот Play n GO с высокой волатильностью и бонусной книгой.',
+  },
+  {
+    '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'Book of Dead',
     applicationCategory: 'GameApplication',
-    operatingSystem: 'Web',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'KZT',
-    },
+    description: 'Слот с египетской тематикой, фриспины с расширяющимся символом.',
   },
-  reviewRating: {
-    '@type': 'Rating',
-    ratingValue: '4.5',
-    bestRating: '5',
-  },
-  author: {
-    '@type': 'Person',
-    name: 'Арман Жумабаев',
-  },
-  datePublished: publishDate,
-  dateModified: updateDate,
-  reviewBody: 'Обзор слота Book of Dead на 1xBet: RTP 96.21%, расширяющиеся символы, 10 фри-спинов с потенциалом крупного выигрыша.',
-};
+];
 ---
 
 <BaseLayout
-  title="Book of Dead слот: RTP 96.21%, максимум ×5 000 | 1xBet"
-  description="Обзор слота Book of Dead на 1xBet: RTP 96.21%, макс. выигрыш ×5 000. Play'n GO. Играй в тенге."
+  title="Играть Book of Dead на 1xBet Казахстан — обзор и RTP"
+  description="Book of Dead на 1xBet: RTP 96.21%, бонусные раунды, волатильность. Честный обзор от казахстанца 2026."
+  schema={slotSchemas}
+  publishDate="2026-02-01"
+  updateDate="2026-04-03"
   type="article"
-  schema={reviewSchema}
-  publishDate={publishDate}
-  updateDate={updateDate}
 >
-  <Breadcrumbs items={[
-    { label: 'Главная', href: '/' },
-    { label: 'Казино', href: '/casino' },
-    { label: 'Book of Dead' },
-  ]} />
-
-  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-none mb-6">
-      Book of Dead — обзор слота от Play'n GO
-    </h1>
-
-    <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
-
-    <div class="aspect-[16/10] bg-bg-900 border-2 border-brand-500/20 flex items-center justify-center mb-8">
-      <div class="text-center">
-        <svg class="w-16 h-16 mx-auto text-brand-400/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-        </svg>
-        <p class="text-sm font-mono text-zinc-600 mt-2 uppercase tracking-wider">BOOK OF DEAD</p>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Book of Dead' }]} />
+  <section class="py-10 lg:py-14 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <ArticleMeta publishDate="2026-02-01" updateDate="2026-04-03" />
+    <div class="text-center mb-10 border-b-2 border-white/10 pb-10">
+      <h1 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white mb-4">
+        Book of Dead — обзор слота от Play'n GO
+      </h1>
+      <p class="text-zinc-400 font-mono text-sm">RTP 96.21% · макс ×5 000 · волатильность высокая</p>
+      <div class="mt-8">
+        <CTAButton href={affiliateLink} size="lg" external>Играть на 1xBet</CTAButton>
       </div>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-4 border-2 border-brand-500/20 mb-12">
-      <div class="p-4 border-b sm:border-b-0 border-r border-brand-500/10">
-        <p class="text-xs font-mono uppercase tracking-wider text-zinc-600 mb-1">Провайдер</p>
-        <p class="text-lg font-bold text-white">Play'n GO</p>
-      </div>
-      <div class="p-4 border-b sm:border-b-0 sm:border-r border-brand-500/10">
-        <p class="text-xs font-mono uppercase tracking-wider text-zinc-600 mb-1">RTP</p>
-        <p class="text-lg font-bold text-brand-400">96.21%</p>
-      </div>
-      <div class="p-4 border-r border-brand-500/10">
-        <p class="text-xs font-mono uppercase tracking-wider text-zinc-600 mb-1">Волатильность</p>
-        <p class="text-lg font-bold text-pop-400">Высокая</p>
-      </div>
-      <div class="p-4">
-        <p class="text-xs font-mono uppercase tracking-wider text-zinc-600 mb-1">Макс. выигрыш</p>
-        <p class="text-lg font-bold text-white">×5 000</p>
-      </div>
+    <ImagePlaceholder
+      description="Слот Book of Dead: египетская тема, фараоны и пирамиды"
+      aspect="16/10"
+      class="mb-10"
+    />
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Обзор Book of Dead</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Египет, Рич Уайлд, книга разбрасывает символы в бонусе — механика старая как мир но затягивает.
+    </p>
+    <p class="text-zinc-400 text-sm mb-10">
+      RTP заявлен 96.21%, на практике сессии либо жёстко сосут либо дарят x500, середины мало.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Как играть</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Три скаттера запускают фриспины, перед стартом выбирается расширяющийся символ, линии читаются классически.
+    </p>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Ставку крути осторожно, гамма скачет — я с тенге по 200 крутил и за вечер и в плюс и в жёсткий минус уходил.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Мой опыт</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Однажды поймал полный экран фараонов, офигел честно, другой раз 200 спинов без бонуса — хотел кинуть мышку.
+    </p>
+    <p class="text-zinc-400 text-sm mb-10">
+      На букмекерской площадке крутил и с бонуса и со своих, отыгрыш с фриспинов долгий если лезть в мелкий шрифт.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Стоит ли играть</h2>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Если любишь классику и готов к качелям — да, если нужен chill на низкой волатильности — иди в другие слоты.
+    </p>
+
+    <p class="text-sm font-mono text-zinc-500 mb-10">
+      <a href="/igrovye-avtomaty" class="text-cta-400 border-b border-cta-500">Все автоматы</a>
+      ·
+      <a href="/fruit-party" class="text-cta-400 border-b border-cta-500">Fruit Party</a>
+      ·
+      <a href="/starlight-princess" class="text-cta-400 border-b border-cta-500">Starlight Princess</a>
+    </p>
+
+    <div class="border-2 border-cta-500 p-8 text-center">
+      <CTAButton href={affiliateLink} size="lg" external>Крутить Book of Dead</CTAButton>
     </div>
-
-    <section class="mb-12">
-      <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter leading-none mb-6">
-        Обзор слота Book of Dead
-      </h2>
-      <p class="text-zinc-300 leading-relaxed mb-4">
-        Book of Dead от Play'n GO — это классический видеослот с египетской тематикой, который уже много лет удерживает позиции в топе самых популярных игровых автоматов. Главный герой — искатель приключений Рич Уайлд, отправляющийся вглубь гробниц фараонов за древними сокровищами. Визуально слот выполнен в тёплых золотисто-песочных тонах: иероглифы на стенах, каменные плиты, мерцающие артефакты и детализированные фигурки египетских богов.
-      </p>
-      <p class="text-zinc-300 leading-relaxed mb-4">
-        Игровое поле — классическое: 5 барабанов и 10 линий выплат. Структура простая, но затягивает благодаря продуманным механикам и ощущению, что крупный выигрыш может прилететь в любой момент. RTP составляет 96.21%, волатильность — высокая, а максимальный выигрыш достигает ×5 000 от ставки.
-      </p>
-      <p class="text-zinc-300 leading-relaxed">
-        Ключевой символ — Книга Мёртвых, которая выполняет роль одновременно Wild и Scatter. Три и более книг на поле запускают бонусный раунд с бесплатными вращениями. На платформе 1xBet слот доступен в тенге, что удобно для казахстанских игроков — никакой конвертации и скрытых комиссий.
-      </p>
-    </section>
-
-    <section class="mb-12">
-      <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter leading-none mb-6">
-        Геймплей — расширяющиеся символы и фри-спины
-      </h2>
-      <p class="text-zinc-300 leading-relaxed mb-4">
-        При выпадении 3 или более символов Книги активируется раунд из 10 бесплатных вращений. Перед началом фри-спинов случайным образом выбирается один специальный символ — и именно он определяет потенциал всего бонуса. Этот символ расширяется на весь барабан при каждом выпадении, занимая все три позиции на катушке.
-      </p>
-      <p class="text-zinc-300 leading-relaxed mb-4">
-        Представьте: выбран символ Рича Уайлда — самый дорогой в таблице выплат. Если он выпадает на трёх барабанах из пяти, символы расширяются и заполняют все пятнадцать клеток на этих катушках. Выплата происходит по всем активным линиям, а итоговая сумма может превысить ставку в сотни раз. Именно такие моменты делают Book of Dead легендой среди слотов.
-      </p>
-      <p class="text-zinc-300 leading-relaxed">
-        Во время фри-спинов можно повторно поймать 3 книги и получить дополнительные 10 вращений. Также в базовой игре доступна функция Gamble — после любого выигрыша можно рискнуть и удвоить сумму, угадав цвет карты. Я пользуюсь ей редко, но для любителей риска это дополнительный инструмент.
-      </p>
-    </section>
-
-    <section class="mb-12">
-      <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter leading-none mb-6">
-        Мой опыт — сессия в тенге
-      </h2>
-      <p class="text-zinc-300 leading-relaxed mb-4">
-        Начал сессию с банкроллом 12 000 ₸ и ставкой 150 ₸ на спин. Первые тридцать вращений не принесли ничего выдающегося — мелкие выплаты по 50–200 ₸ чередовались с пустыми спинами. Баланс постепенно опустился до 8 400 ₸, и начало казаться, что сессия будет убыточной.
-      </p>
-      <p class="text-zinc-300 leading-relaxed mb-4">
-        На 42-м спине выпали 3 книги — бонус стартовал. Специальным символом был выбран фараон, второй по стоимости после Рича. На шестом фри-спине фараон расширился сразу на три барабана, и выигрыш за одно вращение составил 9 750 ₸. Остальные фри-спины принесли ещё около 3 200 ₸ — мелкие, но стабильные возвраты.
-      </p>
-      <p class="text-zinc-300 leading-relaxed">
-        К концу часовой сессии баланс составлял 19 800 ₸ — чистый плюс 7 800 ₸. Слот играет жёстко, и без терпения здесь делать нечего. Но когда расширяющийся символ ложится на три и более барабана — адреналин зашкаливает. На 1xBet играть комфортно: пополнение через Kaspi моментальное, вывод тоже без задержек.
-      </p>
-    </section>
-
-    <section class="mb-12">
-      <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter leading-none mb-6">
-        Вердикт — стоит ли играть
-      </h2>
-      <p class="text-zinc-300 leading-relaxed mb-4">
-        Book of Dead — проверенная временем классика, которая не зря удерживается в топах уже несколько лет. Механика расширяющихся символов во фри-спинах создаёт именно те моменты, ради которых хочется крутить барабаны снова и снова.
-      </p>
-      <p class="text-zinc-300 leading-relaxed mb-4">
-        Плюсы: интуитивно понятная механика, высокий потенциал в бонусном раунде, приятный визуал и знакомый геймплей для тех, кто когда-либо играл в Book of Ra. Минусы: десять линий выплат ощущаются ограниченно по сравнению с современными слотами, а в базовой игре крупные выигрыши случаются нечасто.
-      </p>
-      <p class="text-zinc-300 leading-relaxed mb-6">
-        Слот подойдёт тем, кто предпочитает классические автоматы с высокой дисперсией и ценит один удачный фри-спин, который переворачивает всю сессию. Если ищете что-то более динамичное с кластерными выплатами — попробуйте <a href="/gates-of-olympus" class="text-brand-400 border-b border-brand-400/50 hover:text-brand-300 transition-colors duration-100">Gates of Olympus</a>. А для полного обзора доступных игр загляните в раздел <a href="/casino" class="text-brand-400 border-b border-brand-400/50 hover:text-brand-300 transition-colors duration-100">казино</a>.
-      </p>
-    </section>
-
-    <div class="border-t-2 border-brand-500/20 pt-8 text-center">
-      <CTAButton href={affiliate} size="lg" external>
-        Попробовать Book of Dead
-      </CTAButton>
-    </div>
-  </article>
+  </section>
 </BaseLayout>

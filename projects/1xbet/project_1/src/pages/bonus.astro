@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+
+const publishDate = '2026-02-08';
+const updateDate = '2026-03-25';
+---
+
+<BaseLayout
+  title="1xBet Бонус: до 220 000 ₸ + 150 фриспинов новым игрокам"
+  description="1xBet бонус 2026: приветственный пакет, промокод, фрибет. Как получить и отыграть бонус в KZ."
+  type="article"
+  publishDate={publishDate}
+  updateDate={updateDate}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Бонус' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Бонусы: цифры громкие, условия длинные</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Мы предлагаем читать вейджер до клика «принять», потом уже не нойте что «нас обманули».
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Забрать в кабинете</CTAButton>
+          <CTAButton href="/registraciya" variant="secondary" size="lg">Ещё нет аккаунта</CTAButton>
+        </div>
+      </div>
+      <div class="mb-12">
+        <ImagePlaceholder description="Бонусы: золотой сундук с монетами и подарками" />
+      </div>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <h2 class="text-2xl font-bold text-white">Приветственный пакет</h2>
+        <p>
+          Суммы на баннерах меняются по акциям, мы не фиксируем вечный скриншот. Промокод если есть — вводится по инструкции, не наобум, иначе бонус не цепанётся и начнётся срач в поддержке.
+        </p>
+        <p>
+          Правда фриспины не всегда на любимый слот, иногда на то что вы в жизни не открывали — маркетинг, привыкайте.
+        </p>
+        <h2 class="text-2xl font-bold text-white">Отыгрыш</h2>
+        <p>
+          Вейджер ×35 на казино и ×5 на спорт — цифры условные, смотрите актуальные. Бонусс не вывести пока не выполните условия, это база, не откровение.
+        </p>
+        <p>
+          Отказаться от бонуса иногда умнее чем палучить и потом воевать с отыгрышем две недели подряд.
+        </p>
+      </div>
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-accent-500/10 via-base-800 to-secondary-500/5 border border-accent-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Проверьте сроки</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Пополнили, и забыли про дедлайн — классика; напоминание от нас бесплатно.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Условия в реальном времени</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

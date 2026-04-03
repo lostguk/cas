@@ -1,0 +1,59 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
+
+const bonuses = [
+  {
+    title: 'Приветственный пакет',
+    sum: 'до 220 000 ₸ ориентир',
+    text: 'Суммы и ветчер меняются по акциям. Читайте мелкий шрифт: иногда спорт и казино нельзя мешать в одном отыгрыше.',
+  },
+  {
+    title: 'Фриспины',
+    sum: 'пакеты по правилам',
+    text: 'Вращения привязаны к конкретным слотам. Если слот недоступен в KZ — бонус может не активироваться, это не баг а география.',
+  },
+  {
+    title: 'Кэшбэк и акции',
+    sum: 'сезонно',
+    text: 'Периодические промо с условиями по обороту. Сохраняйте скриншот правил — потом спорить легче.',
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-5 gap-10 items-start">
+      <div class="lg:col-span-2">
+        <ImagePlaceholder
+          description="Бонусы: подарочная коробка, монеты и промо-текст на светлом баннере"
+          aspect="4/5"
+          class="max-w-md mx-auto lg:mx-0"
+        />
+      </div>
+      <div class="lg:col-span-3">
+        <SectionHeading align="left">Бонусы: цифры красивые, условия — важнее.</SectionHeading>
+        <div class="space-y-4">
+          {
+            bonuses.map((b) => (
+              <div class="rounded-2xl border border-brand-500/15 bg-gradient-to-br from-brand-500/5 to-pop-500/5 p-6">
+                <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                  <h3 class="text-lg font-bold text-gray-900">{b.title}</h3>
+                  <span class="text-brand-600 font-semibold text-sm">{b.sum}</span>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">{b.text}</p>
+              </div>
+            ))
+          }
+        </div>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <CTAButton href={affiliateLink} size="lg" external>Актуальные акции</CTAButton>
+          <CTAButton href="/podarki" variant="outline" size="lg">Страница подарков</CTAButton>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://1xbetlive.mobi/sitemap-index.xml

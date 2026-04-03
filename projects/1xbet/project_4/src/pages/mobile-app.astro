@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Установка приложения 1xBet на Android',
+  step: [
+    { '@type': 'HowToStep', name: 'Скачать APK', text: 'Загрузить файл с официального сайта.' },
+    { '@type': 'HowToStep', name: 'Разрешить установку', text: 'Включить установку из неизвестных источников.' },
+    { '@type': 'HowToStep', name: 'Установить', text: 'Запустить apk и дождаться окончания.' },
+    { '@type': 'HowToStep', name: 'Войти', text: 'Ввести логин и пароль от аккаунта.' },
+  ],
+};
+
+const androidSteps = [
+  'Заходишь с телефона по рабочей ссылке, в шапке или футере ищешь «приложение андроид».',
+  'Качаешь apk, система орёт про неизвестный источник — разрешаешь один раз для браузера.',
+  'Тапаешь файл, ждёшь установку, иконка появится на рабочем столе.',
+  'Логин пароль как на сайте, баланс тот же, если ввёл не тот логин — не паникуй, выйди и зайди нормально.',
+];
+
+const iosSteps = [
+  'На айфоне часто ведут через профиль или подсказку в кабинете — следуй инструкции на сайте дня.',
+  'Иногда приложение под разные регионы, если не видишь — зеркало или поддержка подскажут.',
+  'После установки авторизуйся, Face ID если дают — удобно.',
+];
+
+const specs = [
+  ['Android', '7+', '~40 МБ', '2 ГБ+'],
+  ['iOS', 'по гайду на сайте', 'зависит', '2 ГБ+'],
+];
+---
+
+<BaseLayout
+  title="Скачать 1xBet Казахстан — APK для Android бесплатно"
+  description="Как скачать 1xBet в Казахстане: APK для Android, инструкция для iPhone. Рабочая ссылка 2026."
+  schema={howToSchema}
+  publishDate="2026-03-10"
+  updateDate="2026-04-03"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Мобильное приложение' }]} />
+  <section class="py-10 lg:py-14 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <ArticleMeta publishDate="2026-03-10" updateDate="2026-04-03" />
+    <div class="text-center mb-12 border-b-2 border-white/10 pb-10">
+      <h1 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white mb-4">
+        Скачать 1xBet — APK для Android и iPhone
+      </h1>
+      <p class="text-zinc-400 font-mono text-sm max-w-2xl mx-auto mb-8">
+        Апк не в плей маркете это нормально для беттинга, не качай сборки с рекламы в инсте — там малварь бывает.
+      </p>
+      <CTAButton href={affiliateLink} size="lg" external>Скачать с официальной витрины</CTAButton>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 mb-14 items-start">
+      <ImagePlaceholder
+        description="Мокап смартфона: экран приложения 1xBet, лаймовые акценты, список матчей"
+        aspect="3/4"
+        class="max-w-xs mx-auto"
+      />
+      <div>
+        <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-6">Android APK</h2>
+        <ol class="space-y-3 mb-8">
+          {androidSteps.map((s, i) => (
+            <li class="text-sm text-zinc-300 border-2 border-white/10 p-3 font-mono">
+              <span class="text-cta-500">{i + 1}.</span> {s}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-6">iOS</h2>
+    <ol class="space-y-3 mb-10">
+      {iosSteps.map((s, i) => (
+        <li class="text-sm text-zinc-300 border-2 border-white/10 p-3 font-mono">
+          <span class="text-cta-500">{i + 1}.</span> {s}
+        </li>
+      ))}
+    </ol>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Обзор приложения</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Скорость норм, лайв не лагает если сеть не тупит, из минусов — ручные обновы и что иногда антивирус ругается зря.
+    </p>
+    <p class="text-zinc-400 text-sm mb-10 leading-relaxed">
+      В сайте наоборот не нужно обновлять apk но удобство на пальце всё равно за приложением, я так чувствую.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Системные требования</h2>
+    <div class="overflow-x-auto border-2 border-white/20 mb-12">
+      <table class="w-full text-sm font-mono">
+        <thead>
+          <tr class="border-b-2 border-white/20 text-cta-500 uppercase text-xs text-left">
+            <th class="p-3">ОС</th>
+            <th class="p-3">Версия</th>
+            <th class="p-3">Размер</th>
+            <th class="p-3">RAM</th>
+          </tr>
+        </thead>
+        <tbody>
+          {specs.map((row) => (
+            <tr class="border-b border-white/10 text-zinc-300">
+              {row.map((c) => (
+                <td class="p-3">{c}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-4 mb-12">
+      <Card>
+        <h3 class="font-mono text-xs uppercase text-cta-400 mb-2">Куда дальше</h3>
+        <a href="/igrovye-avtomaty" class="text-sm text-zinc-300 hover:text-white border-b border-white/30">Слоты и казино</a>
+      </Card>
+      <Card>
+        <h3 class="font-mono text-xs uppercase text-cta-400 mb-2">Если блок</h3>
+        <a href="/alternativnyj-vhod" class="text-sm text-zinc-300 hover:text-white border-b border-white/30">Альтернативный вход</a>
+      </Card>
+    </div>
+
+    <div class="border-2 border-info-500/30 p-8 text-center">
+      <CTAButton href={affiliateLink} size="lg" external>Открыть скачивание</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

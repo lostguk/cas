@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import SEOHead from '../components/SEOHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  type?: 'website' | 'article';
+  schema?: object;
+  publishDate?: string;
+  updateDate?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  noindex,
+  type,
+  schema: seoSchema,
+  publishDate,
+  updateDate,
+} = Astro.props;
+
+const siteUrl = 'https://1xstavka-kz.com';
+const siteName = '1xСтавка KZ';
+
+const authorSchema = {
+  '@type': 'Person',
+  name: 'Редакция 1xСтавка KZ',
+  url: `${siteUrl}/about`,
+};
+
+let mergedSchema: object | object[] | undefined = seoSchema;
+
+if (publishDate && type === 'article') {
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title.replace(` | ${siteName}`, ''),
+    description,
+    datePublished: publishDate,
+    dateModified: updateDate ?? publishDate,
+    author: authorSchema,
+    publisher: {
+      '@type': 'Organization',
+      name: siteName,
+      url: siteUrl,
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical ?? Astro.url.href },
+  };
+  if (Array.isArray(seoSchema)) {
+    mergedSchema = [...seoSchema, articleSchema];
+  } else if (seoSchema) {
+    mergedSchema = [seoSchema, articleSchema];
+  } else {
+    mergedSchema = articleSchema;
+  }
+}
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <SEOHead
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      noindex={noindex}
+      type={type}
+      schema={mergedSchema}
+    />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-1 pt-16 lg:pt-[4.5rem]">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

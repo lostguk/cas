@@ -1,0 +1,69 @@
+---
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+const currentYear = new Date().getFullYear();
+
+const sections = [
+  {
+    title: 'Разделы',
+    links: [
+      { href: '/registraciya', label: 'Регистрация' },
+      { href: '/skachat', label: 'Скачать APK' },
+      { href: '/casino', label: 'Казино' },
+      { href: '/bonus', label: 'Бонусы' },
+    ],
+  },
+  {
+    title: 'Доступ',
+    links: [
+      { href: '/zerkalo', label: 'Зеркало' },
+      { href: '/sugar-rush', label: 'Sugar Rush' },
+      { href: '/sweet-bonanza', label: 'Sweet Bonanza' },
+    ],
+  },
+  {
+    title: 'Инфо',
+    links: [
+      { href: '/about', label: 'О проекте' },
+      { href: affiliateLink, label: 'Официальный вход', external: true },
+    ],
+  },
+];
+---
+
+<footer class="bg-base-900 border-t border-white/5 mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-flex items-center gap-2 mb-4">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-base-800 border border-accent-500/30 text-base font-extrabold text-accent-400">1</span>
+          <span class="text-white font-bold">1xbet-obzor.kz</span>
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+          Мы предлагаем структурированный обзор платформы для пользователей из Казахстана: ставки, казино, бонусы и рабочий доступ без лишней воды.
+        </p>
+      </div>
+      {sections.map((sec) => (
+        <div>
+          <h3 class="text-white font-semibold text-sm mb-4">{sec.title}</h3>
+          <ul class="space-y-2">
+            {sec.links.map((l) => (
+              <li>
+                <a
+                  href={l.href}
+                  {...('external' in l && l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  class="text-slate-400 hover:text-accent-400 text-sm transition-colors"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="mt-12 pt-8 border-t border-white/5 text-xs text-slate-500 space-y-3 max-w-4xl">
+      <p>18+. Играйте ответственно. Информация носит ознакомительный характер, мы не являемся оператором азартных игр.</p>
+      <p>© {currentYear} 1xbet-obzor.kz. Независимый информационный ресурс.</p>
+    </div>
+  </div>
+</footer>

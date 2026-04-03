@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+
+const topSlots = [
+  { name: 'Book of Dead', rtp: '96.21%', note: 'Египет, книга, классика — крутил сотни спинов.' },
+  { name: 'Sweet Bonanza', rtp: '96.48%', note: 'Сладости и множители, визуально шумно но заводит.' },
+  { name: 'Gates of Olympus', rtp: '96.50%', note: 'Зевс швыряет множители, волатильность зверская.' },
+  { name: 'Dog House', rtp: '96.51%', note: 'Собаки и липкие вайлды, юмор странный но слот рабочий.' },
+  { name: 'Fruit Party', rtp: '96.47%', note: 'Фруктовая сетка, каскады, иногда скучно но платит.' },
+];
+---
+
+<BaseLayout
+  title="Какие слоты есть на 1xBet? Обзор казино KZ 2026"
+  description="Казино 1xBet KZ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в тенге, выводи на Kaspi."
+  publishDate="2026-03-01"
+  updateDate="2026-04-03"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Игровые автоматы' }]} />
+  <section class="py-10 lg:py-14 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <ArticleMeta publishDate="2026-03-01" updateDate="2026-04-03" />
+    <div class="text-center mb-10 border-b-2 border-white/10 pb-10">
+      <h1 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white mb-4">
+        Казино 1xBet — слоты рулетка и live-дилеры
+      </h1>
+      <p class="text-zinc-400 font-mono text-sm max-w-2xl mx-auto mb-8">
+        Раздел с играми тут огромный, я честно не пересчитывал все десять тысяч — жизнь короткая.
+      </p>
+      <CTAButton href={affiliateLink} size="lg" external>Зайти в казино</CTAButton>
+    </div>
+
+    <ImagePlaceholder
+      description="Зал казино: неон, автоматы в ряд, контраст лайм на чёрном"
+      aspect="16/10"
+      class="mb-12"
+    />
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Обзор казино</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Провайдеры знакомые: Pragmatic, NetEnt, Play n GO, Evolution, Microgaming и ещё пачка мелких студий.
+      Я в основном в слотах, live рулетку трогаю когда хочется «как в кино» но с дивана.
+    </p>
+    <p class="text-zinc-400 text-sm mb-10 leading-relaxed">
+      Демо режим есть почти везде, я иногда кручу бесплатно часами а потом удивляюсь что на реале не залетает — психология странная штука.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-6">Популярные слоты</h2>
+    <div class="space-y-4 mb-12">
+      {topSlots.map((s) => (
+        <Card>
+          <div class="flex flex-wrap justify-between gap-2 mb-2">
+            <h3 class="font-mono text-white uppercase">{s.name}</h3>
+            <span class="font-mono text-info-400 text-xs">RTP {s.rtp}</span>
+          </div>
+          <p class="text-sm text-zinc-400">{s.note}</p>
+        </Card>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Live и краш</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Crazy Time, монополия, блэкджек с дилером — всё как у людей, стрим иногда лагает если интернет скачет.
+    </p>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Aviator и JetX я называю «нервотрёп», поднялся в три раза и так же быстро слил — ну то есть весело но опасно.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Бонусы для казино</h2>
+    <p class="text-zinc-300 leading-relaxed mb-8">
+      Фриспины и пакеты висят в акциях, вейджер ×35 на казино для меня долго, я брал когда было настроение мучиться.
+    </p>
+
+    <p class="text-sm text-zinc-500 font-mono mb-10">
+      Отдельные обзоры:
+      <a href="/book-of-dead" class="text-cta-400 border-b border-cta-500">Book of Dead</a>,
+      <a href="/fruit-party" class="text-cta-400 border-b border-cta-500">Fruit Party</a>,
+      <a href="/starlight-princess" class="text-cta-400 border-b border-cta-500">Starlight Princess</a>.
+    </p>
+
+    <div class="border-2 border-cta-500 p-8 text-center">
+      <CTAButton href={affiliateLink} size="lg" external>Крутить слоты</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

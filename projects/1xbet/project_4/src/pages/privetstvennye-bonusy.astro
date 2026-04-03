@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
+
+const promoCards = [
+  { title: 'Экспресс-буст', text: 'Добавляют процент к длинным экспрессам, читай лимиты по кэфам.' },
+  { title: 'Кешбэк', text: 'Возврат с проигрыша в казино иногда, не стабильно круглый год.' },
+  { title: 'Промокоды', text: 'Ловлю в рассылке и у стримеров, не все коды рабочие — проверяй срок.' },
+];
+
+const wagerSteps = [
+  'Сначала читаешь что именно нужно открутить: спорт ×5 или казино ×35, не перепутай разделы.',
+  'Делаешь ординары или слоты согласно правилам, некоторые игры не считаются — список в правилах.',
+  'Следишь за таймером 30 дней обычно, я однажды просрал бонус за три дня до дедлайна потому что ленился.',
+];
+---
+
+<BaseLayout
+  title="1xBet Бонусы — приветственный пакет для KZ | 2026"
+  description="Бонусы 1xBet для Казахстана: до 220 000 ₸ на спорт, 150 фриспинов на казино. Условия отыгрыша."
+  publishDate="2026-02-20"
+  updateDate="2026-04-03"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Приветственные бонусы' }]} />
+  <section class="py-10 lg:py-14 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <ArticleMeta publishDate="2026-02-20" updateDate="2026-04-03" />
+    <div class="text-center mb-10 border-b-2 border-white/10 pb-10">
+      <h1 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white mb-4">
+        Бонусы 1xBet — приветственный пакет и акции
+      </h1>
+      <p class="text-zinc-400 font-mono text-sm max-w-2xl mx-auto mb-8">
+        Привитственный пакет звучит как опечатка но люди так ищут в гугле, оставлю для сео шутку эту.
+      </p>
+      <CTAButton href={affiliateLink} size="lg" external>Забрать актуальный бонус</CTAButton>
+    </div>
+
+    <ImagePlaceholder
+      description="Баннер акции: процент бонуса, фриспины, мелкий текст условий внизу"
+      aspect="16/10"
+      class="mb-12"
+    />
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Приветственный бонус</h2>
+    <p class="text-zinc-300 leading-relaxed mb-10">
+      Цифры на баннере крутые, реальность такая что отыгрыш долгий, если ты не готов сидеть неделями — лучше отказаться сразу и играть своими.
+    </p>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-6">Как отыграть</h2>
+    <ol class="space-y-3 mb-12">
+      {wagerSteps.map((s, i) => (
+        <li class="border-2 border-white/10 p-4 text-sm text-zinc-300 font-mono">
+          {i + 1}. {s}
+        </li>
+      ))}
+    </ol>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-6">Другие акции</h2>
+    <div class="grid sm:grid-cols-3 gap-4 mb-12">
+      {promoCards.map((p) => (
+        <Card>
+          <h3 class="font-mono text-xs uppercase text-cta-400 mb-2">{p.title}</h3>
+          <p class="text-sm text-zinc-400">{p.text}</p>
+        </Card>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-black uppercase text-white border-l-4 border-cta-500 pl-4 mb-4">Стоит ли брать</h2>
+    <p class="text-zinc-300 leading-relaxed mb-4">
+      Если любишь слоты и готов к ×35 — бери, если ты только экспрессы на спорт то спорт-пакет логичнее.
+    </p>
+    <p class="text-zinc-400 text-sm mb-10">
+      Я отказывался от бонуса пару раз когда хотел спокойно вывести без отыгрыша, это тоже норм стратегия.
+    </p>
+
+    <p class="text-sm font-mono text-zinc-500 mb-10">
+      <a href="/nachalo-raboty" class="text-cta-400 border-b border-cta-500">Регистрация</a>
+      ·
+      <a href="/mobile-app" class="text-cta-400 border-b border-cta-500">Приложение</a>
+      ·
+      <a href="/book-of-dead" class="text-cta-400 border-b border-cta-500">Слот с фриспинами</a>
+    </p>
+
+    <div class="border-2 border-info-500/40 p-8 text-center">
+      <CTAButton href={affiliateLink} size="lg" external>Посмотреть бонусы в конторе</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

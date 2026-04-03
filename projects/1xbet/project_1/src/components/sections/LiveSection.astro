@@ -1,0 +1,50 @@
+---
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+
+const features = [
+  'Котировки обновляются пачками, иногда с задержкой на слабом LTE.',
+  'Графики и статистика в лайве помогают, но не отменяют здравый смысл.',
+  'Быстрые рынки — отдельный вид спорта для нервной системы.',
+  'Кэшаут в лайве есть, но не на каждый исход и не в каждый момент матча.',
+];
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <SectionHeading align="left">
+          Live-ставки: скорость дороже красоты
+          <p slot="subtitle" class="mt-4 text-slate-400 text-sm max-w-xl text-left">Мы не обещаем идеальный интерфейс без лагов, сеть решает половину успеха.</p>
+        </SectionHeading>
+        <p class="mt-6 text-slate-300 leading-relaxed">
+          Мы предлагаем держать запас времени до закрытия приёма: кликнул, и ставка не прошла — классика жанра. Приложение которое работает без VPN у многих в KZ реальность, но у кого-то наоборот только браузер тянет — тут уж как повезёт с оператором.
+        </p>
+        <ul class="mt-8 space-y-3">
+          {features.map((f) => (
+            <li class="flex gap-3 text-slate-300 text-sm">
+              <span class="mt-0.5 text-accent-400 shrink-0" aria-hidden="true">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-8 text-slate-400 text-sm leading-relaxed">
+          Скачал APK, и установил за минуту — звучит просто, но не забудьте разрешить источники и проверить хеш если паранойя (иногда полезная).
+        </p>
+        <a href={affiliateLink} class="inline-block mt-6 text-accent-400 hover:text-accent-300 text-sm font-medium" target="_blank" rel="noopener noreferrer">
+          Перейти в live-раздел →
+        </a>
+      </div>
+      <div>
+        <ImagePlaceholder description="Live-ставки: дашборд матча с коэффициентами в реальном времени" />
+      </div>
+    </div>
+  </div>
+</section>

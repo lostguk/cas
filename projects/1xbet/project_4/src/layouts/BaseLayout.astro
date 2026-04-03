@@ -16,47 +16,78 @@ interface Props {
   updateDate?: string;
 }
 
-const { publishDate, updateDate, ...seoProps } = Astro.props;
+const siteUrl = 'https://1xbet-stavki.kz';
+const siteName = '1xbet-stavki.kz';
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  noindex = true,
+  type = 'website',
+  schema: extraSchema,
+  publishDate,
+  updateDate,
+} = Astro.props;
 
 const authorSchema = {
+  '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Арман Жумабаев',
-  url: 'https://1xbet-stavki.kz/about',
+  jobTitle: 'Автор обзоров казино и ставок',
+  url: `${siteUrl}/about`,
+  description:
+    'Арман Жумабаев, 28 лет, Актобе. Пишу про ставки и казино с личной точки зрения, без корпоративной подачи.',
+  nationality: { '@type': 'Country', name: 'Kazakhstan' },
 };
 
-const articleSchema = publishDate ? {
+const publisherSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: seoProps.title,
-  description: seoProps.description,
-  datePublished: publishDate,
-  dateModified: updateDate || publishDate,
-  author: authorSchema,
-  publisher: {
-    '@type': 'Organization',
-    name: '1xBet KZ Обзор',
-    url: 'https://1xbet-stavki.kz',
-  },
-  inLanguage: 'ru',
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': seoProps.canonical || Astro.url.href,
-  },
-} : null;
+  '@type': 'Organization',
+  name: siteName,
+  url: siteUrl,
+};
 
-const mergedSchema = seoProps.schema && articleSchema
-  ? [seoProps.schema, articleSchema]
-  : articleSchema || seoProps.schema || null;
+let merged: object[] = [authorSchema, publisherSchema];
+
+if (publishDate) {
+  merged.push({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: publishDate,
+    dateModified: updateDate ?? publishDate,
+    author: { '@type': 'Person', name: 'Арман Жумабаев', url: `${siteUrl}/about` },
+    publisher: { '@type': 'Organization', name: siteName, url: siteUrl },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical ?? Astro.url.href },
+  });
+}
+
+if (extraSchema) {
+  merged = merged.concat(Array.isArray(extraSchema) ? extraSchema : [extraSchema]);
+}
+
+const finalSchema = merged.length === 1 ? merged[0] : merged;
 ---
 
 <!doctype html>
 <html lang="ru">
   <head>
-    <SEOHead {...seoProps} schema={mergedSchema} />
+    <SEOHead
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      noindex={noindex}
+      type={type}
+      schema={finalSchema}
+    />
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col bg-black text-white font-sans">
     <Header />
-    <main class="flex-1 pt-16 lg:pt-18">
+    <main class="flex-1 pt-20 lg:pt-24">
       <slot />
     </main>
     <Footer />

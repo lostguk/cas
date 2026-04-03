@@ -1,74 +1,107 @@
 ---
-const navLinks = [
-  { href: '/', label: 'ГЛАВНАЯ' },
-  { href: '/registraciya', label: 'РЕГИСТРАЦИЯ' },
-  { href: '/casino', label: 'КАЗИНО' },
-  { href: '/bonus', label: 'БОНУСЫ' },
-  { href: '/zerkalo', label: 'ЗЕРКАЛО' },
-  { href: '/skachat', label: 'СКАЧАТЬ' },
-];
 const affiliateLink = 'https://refpa94475.com/L?tag=d_3955871m_99c_';
 const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Главная' },
+  { href: '/nachalo-raboty', label: 'Старт' },
+  { href: '/mobile-app', label: 'Апк' },
+  { href: '/igrovye-avtomaty', label: 'Слоты' },
+  { href: '/privetstvennye-bonusy', label: 'Бонусы' },
+  { href: '/alternativnyj-vhod', label: 'Вход' },
+  { href: '/about', label: 'Обо мне' },
+];
+
+const isActive = (href: string) =>
+  currentPath === href || (href !== '/' && currentPath.startsWith(href));
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-black border-b-2 border-brand-500">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <div class="w-8 h-8 bg-brand-500 rotate-12"></div>
-      <span class="font-bold text-lg text-white font-mono uppercase tracking-tighter">1xBet</span>
-    </a>
-
-    <div class="flex items-center gap-4">
-      <a
-        href={affiliateLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hidden sm:inline-flex px-6 py-2 bg-brand-500 text-black font-mono font-bold uppercase text-sm border-2 border-brand-500 hover:bg-black hover:text-brand-400 transition-colors duration-100"
-      >
-        Начать с приветственным пакетом
-      </a>
-
-      <button
-        id="burger-btn"
-        class="flex flex-col justify-center items-center w-10 h-10 border-2 border-white"
-        aria-label="Меню"
-      >
-        <span class="block w-5 h-0.5 bg-white mb-1"></span>
-        <span class="block w-5 h-0.5 bg-white mb-1"></span>
-        <span class="block w-5 h-0.5 bg-white"></span>
-      </button>
-    </div>
-  </div>
-
-  <div id="mobile-menu" class="hidden bg-black border-t-2 border-brand-500">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      {navLinks.map(link => (
-        <a
-          href={link.href}
-          class:list={[
-            'block py-3 font-mono uppercase text-sm tracking-wider border-b border-bg-800 transition-colors duration-100',
-            currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
-              ? 'text-brand-400'
-              : 'text-white hover:text-brand-400'
-          ]}
+<header
+  class="fixed top-0 left-0 right-0 z-50 border-b-2 border-white/20 bg-black"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <a href="/" class="flex items-center gap-3 group">
+        <span
+          class="relative w-11 h-11 border-2 border-cta-500 bg-black flex items-center justify-center font-mono text-xs font-bold text-cta-500 uppercase tracking-tighter group-hover:bg-cta-500 group-hover:text-black transition-colors duration-100"
+          aria-hidden="true"
         >
-          {link.label}
-        </a>
-      ))}
-      <a
-        href={affiliateLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="block mt-4 py-3 bg-brand-500 text-black text-center font-mono font-bold uppercase text-sm"
-      >
-        Начать с приветственным пакетом
+          1x
+        </span>
+        <span class="font-mono text-sm uppercase tracking-widest text-white hidden sm:block">stavki.kz</span>
       </a>
-    </nav>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Основная навигация">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-3 py-2 font-mono text-xs uppercase border-2 border-transparent',
+              isActive(link.href)
+                ? 'text-black bg-cta-500 border-cta-500'
+                : 'text-zinc-300 hover:text-cta-400 hover:border-white/30',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex font-mono text-xs uppercase font-bold px-4 py-2 border-2 border-cta-500 bg-cta-500 text-black hover:bg-black hover:text-cta-500 transition-colors duration-100"
+        >
+          В контору
+        </a>
+        <button
+          type="button"
+          id="menu-toggle"
+          class="lg:hidden font-mono text-xs uppercase border-2 border-white px-3 py-2 text-white"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          Меню
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden border-t-2 border-white/20 py-4">
+      <div class="flex flex-col gap-2">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-3 py-2 font-mono text-sm uppercase border-2',
+              isActive(link.href)
+                ? 'border-cta-500 bg-cta-500 text-black'
+                : 'border-white/20 text-zinc-200',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 text-center font-mono text-sm uppercase font-bold px-4 py-3 border-2 border-cta-500 bg-cta-500 text-black"
+        >
+          В контору
+        </a>
+      </div>
+    </div>
   </div>
 </header>
 
 <script>
-  document.getElementById('burger-btn')?.addEventListener('click', () => {
-    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    const open = menu && !menu.classList.contains('hidden');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 </script>

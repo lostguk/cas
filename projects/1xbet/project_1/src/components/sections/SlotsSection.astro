@@ -1,0 +1,61 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+
+const slots = [
+  {
+    href: '/sugar-rush',
+    name: 'Sugar Rush',
+    provider: 'Pragmatic Play',
+    rtp: '96.50%',
+    maxWin: '×5 000',
+    desc: 'Сладкая волатильность, серии каскадов, нервная игра если гонитесь за бонусной покупкой.',
+    placeholder: 'Слот Sugar Rush: конфеты и яркие цвета, тема сладостей',
+  },
+  {
+    href: '/sweet-bonanza',
+    name: 'Sweet Bonanza',
+    provider: 'Pragmatic Play',
+    rtp: '96.48%',
+    maxWin: '×21 175',
+    desc: 'Мультипликаторы в бонусе могут внезапно снести банкролл в плюс или наоборот в ноль за пару спинов.',
+    placeholder: 'Слот Sweet Bonanza: фрукты, леденцы и каскадные выигрыши',
+  },
+];
+---
+
+<section class="py-16 lg:py-20 bg-base-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <SectionHeading>
+        Слоты: не только картинка, ещё и математика
+        <p slot="subtitle" class="mt-4 text-slate-400">
+          Две игры разобрали отдельно, остальное — в общем <a href="/casino" class="text-accent-400 hover:underline">разделе казино</a>.
+        </p>
+      </SectionHeading>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {slots.map((s) => (
+        <article class="rounded-2xl border border-white/[0.06] bg-white/[0.02] overflow-hidden hover:border-accent-500/20 transition-all">
+          <ImagePlaceholder description={s.placeholder} />
+          <div class="p-6">
+            <p class="text-xs text-accent-400/80 uppercase tracking-wider mb-1">{s.provider}</p>
+            <h3 class="text-xl font-bold text-white mb-2">{s.name}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">{s.desc}</p>
+            <div class="flex flex-wrap gap-3 text-xs text-slate-500 mb-4">
+              <span>RTP {s.rtp}</span>
+              <span>Макс. {s.maxWin}</span>
+            </div>
+            <CTAButton href={s.href} variant="outline" size="sm">Обзор слота</CTAButton>
+          </div>
+        </article>
+      ))}
+    </div>
+    <p class="text-center mt-10">
+      <CTAButton href={affiliateLink} variant="secondary" size="md" external>Играть на платформе</CTAButton>
+    </p>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+const publishDate = '2026-02-20';
+const updateDate = '2026-04-01';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'О проекте 1xСтавка KZ',
+  description: 'Информационный лендинг без игр и платежей на стороне сайта.',
+  mainEntity: {
+    '@type': 'Organization',
+    name: '1xСтавка KZ',
+    url: 'https://1xstavka-kz.com',
+  },
+};
+---
+
+<BaseLayout
+  title="О проекте — дисклеймер"
+  description="Мы не оператор, не зеркало и не касса. Только обзорные материалы и ссылка на официальный ресурс."
+  schema={schema}
+  type="website"
+  noindex={true}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О проекте' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-4">
+          Кто мы.
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+          Редакция собирает короткие карточки и гайды для читателей из Казахстана, без выдачи собственных лицензий.
+        </p>
+        <div class="mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>К оператору</CTAButton>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <Card>
+          <h2 class="text-base font-extrabold uppercase text-primary-400 mb-2">Не официальный сайт</h2>
+          <p class="text-slate-400 text-sm">
+            Домен информационный; бренды принадлежат правообладателям, мы не выступаем от их имени.
+          </p>
+        </Card>
+        <Card>
+          <h2 class="text-base font-extrabold uppercase text-primary-400 mb-2">Нет платежей</h2>
+          <p class="text-slate-400 text-sm">
+            Депозиты и выводы проходят только на стороне лицензируемого оператора, не через эту страницу.
+          </p>
+        </Card>
+      </div>
+
+      <div class="space-y-5 text-slate-300 text-sm">
+        <h2 class="text-xl font-bold text-white uppercase">Контент.</h2>
+        <p>
+          Тексты обновляются нерегулярно; актуальные правила бонусов, лимитов и юридические документы всегда читай у первоисточника.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Ответственность.</h2>
+        <p>
+          Ставки и азартные игры — риск; если чувствуешь потерю контроля — остановись и обратись к специалистам.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Связь.</h2>
+        <p>
+          Вопросы по счёту решает только поддержка оператора; мы не видим твой баланс и не можем его восстановить.
+        </p>
+      </div>
+
+      <div class="mt-14 flex justify-center">
+        <CTAButton href="/" variant="secondary" size="lg">На главную</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

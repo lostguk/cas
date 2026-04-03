@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+const publishDate = '2026-03-08';
+const updateDate = '2026-04-01';
+---
+
+<BaseLayout
+  title="Доступ без VPN — зеркала и DNS"
+  description="Как зайти на сайт: зеркало, DNS, мобильный клиент. Осторожность с фишингом."
+  type="article"
+  publishDate={publishDate}
+  updateDate={updateDate}
+  noindex={true}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Доступ' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-4">
+          Обход блокировок.
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+          VPN не всегда обязателен; иногда хватает рабочего зеркала или смены DNS на уровне роутера.
+        </p>
+        <div class="mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Актуальный вход</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder
+        description="Браузерная строка с защищённым адресом и значком замка"
+        aspect="21/9"
+        class="mb-10"
+      />
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <Card>
+          <h2 class="text-base font-extrabold uppercase text-primary-400 mb-2">Зеркало</h2>
+          <p class="text-slate-400 text-sm">Тот же кабинет, другой домен; бери ссылку только из проверенных каналов.</p>
+        </Card>
+        <Card>
+          <h2 class="text-base font-extrabold uppercase text-primary-400 mb-2">DNS</h2>
+          <p class="text-slate-400 text-sm">8.8.8.8 или Cloudflare иногда помогают без VPN, но не панацея.</p>
+        </Card>
+        <Card>
+          <h2 class="text-base font-extrabold uppercase text-primary-400 mb-2">Приложение</h2>
+          <p class="text-slate-400 text-sm">Клиент тянет рабочий endpoint сам; обновляй APK вовремя.</p>
+        </Card>
+      </div>
+
+      <div class="space-y-5 text-slate-300 text-sm">
+        <h2 class="text-xl font-bold text-white uppercase">Фишинг.</h2>
+        <p>
+          Лишняя буква в домене, давление «срочно войти» и запрос карты до входа — стоп-сигналы; сверяй SSL и адрес с официальными каналами.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Баланс.</h2>
+        <p>
+          На легальном зеркале баланс тот же, потому что это один аккаунт; если суммы не сходятся — немедленно выйди и смени пароль.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Провайдеры KZ.</h2>
+        <p>
+          У некоторых операторов фильтрация плавает по времени; мобильный интернет иногда ведёт себя иначе чем домашний Wi‑Fi.
+        </p>
+      </div>
+
+      <div class="mt-14 flex justify-center">
+        <CTAButton href={affiliateLink} size="lg" external>Зайти сейчас</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

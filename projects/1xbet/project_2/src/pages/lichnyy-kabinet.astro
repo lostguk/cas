@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955870m_98c_';
+const publishDate = '2026-03-05';
+const updateDate = '2026-04-01';
+
+const tiles = [
+  { t: 'Касса', d: 'Депозит, вывод, история транзакций и лимиты.' },
+  { t: 'Бонусы', d: 'Активные предложения, прогресс вейджера, фриспины.' },
+  { t: 'Безопасность', d: 'Пароль, 2FA если доступна, список сессий.' },
+];
+---
+
+<BaseLayout
+  title="Личный кабинет — обзор разделов"
+  description="Касса, бонусы, верификация и безопасность профиля. Вход только на официальном сайте."
+  type="article"
+  publishDate={publishDate}
+  updateDate={updateDate}
+  noindex={true}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Личный кабинет' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-4">
+          Кабинет в двух словах.
+        </h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+          Один логин на спорт и казино; настройки и лимиты лежат там же, где касса.
+        </p>
+        <div class="mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Войти</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder
+        description="Дашборд личного кабинета: баланс, бонусы и кнопка пополнения"
+        class="mb-10"
+      />
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        {
+          tiles.map((x) => (
+            <Card>
+              <h2 class="text-base font-extrabold uppercase text-primary-400 mb-2">{x.t}</h2>
+              <p class="text-slate-400 text-sm">{x.d}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <div class="space-y-5 text-slate-300 text-sm">
+        <h2 class="text-xl font-bold text-white uppercase">Верификация.</h2>
+        <p>
+          KYC могут запросить перед крупным выводом; паспорт и селфи — типовой набор, срок проверки плавает от часов до суток.
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Вывод на Kaspi.</h2>
+        <p>
+          Реквизиты должны совпадать с владельцем счёта; расхождения часто дают отказ без объяснений в духе «политика AML».
+        </p>
+        <h2 class="text-xl font-bold text-white uppercase">Две сессии.</h2>
+        <p>
+          Параллельный вход с телефона и ПК обычно ок; подозрительная активность оператор режет сам, лучше не шарить аккаунт.
+        </p>
+      </div>
+
+      <div class="mt-14 flex justify-center">
+        <CTAButton href={affiliateLink} size="lg" external>Открыть кабинет</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

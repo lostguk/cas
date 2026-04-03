@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const affiliateLink = 'https://refpa94475.com/L?tag=d_3955869m_97c_';
+const siteUrl = 'https://1xbet-obzor.kz';
+
+const publishDate = '2026-01-05';
+const updateDate = '2026-03-15';
+
+const aboutSchema = {
+  '@type': 'AboutPage',
+  name: 'О проекте 1xbet-obzor.kz',
+  url: `${siteUrl}/about`,
+  mainEntity: { '@type': 'Organization', name: '1xbet-obzor.kz', url: siteUrl },
+};
+---
+
+<BaseLayout
+  title="О проекте 1xbet-obzor.kz — редакционная позиция и партнёрские ссылки"
+  description="Кто стоит за обзором 1xBet KZ: редакция без «личного бренда автора», прозрачно о партнёрских ссылках и ограничениях."
+  type="article"
+  schema={aboutSchema}
+  publishDate={publishDate}
+  updateDate={updateDate}
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О проекте' }]} />
+  <ArticleMeta publishDate={publishDate} updateDate={updateDate} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">О проекте: мы не оператор, мы редакторы с опытом кликов</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Здесь нет личного «гуру автора» — команда собирает факты, спорит в чате и выкладывает выводы.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Партнёрская ссылка</CTAButton>
+          <CTAButton href="/casino" variant="secondary" size="lg">Наш обзор казино</CTAButton>
+        </div>
+      </div>
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <h2 class="text-2xl font-bold text-white">Как мы зарабатываем</h2>
+        <p>
+          Переходы по партнёрским ссылкам могут приносить комиссию оператору программы. Это не делает текст «купленным» автоматически, но и не делает нас нейтральными как Википедия — честно говорим как есть.
+        </p>
+        <p>
+          Мы предлагаем сравнивать наши заметки с другими источниками, особенно если решение про деньги. Кстати иногда мы сами находим противоречия в старых статьях — правила платформы меняются, и мы подтягиваем даты обновления.
+        </p>
+        <h2 class="text-2xl font-bold text-white">Ограничения</h2>
+        <p>
+          Не даём юридических консультаций, не обещаем выигрыши и не лезем в ваши споры с поддержкой. Игра 18+, ответственность на игроке, мы только подсвечиваем риски.
+        </p>
+        <p>
+          Поддрежка сайта техническая простая: статика, без личного кабинета читателя, поэтому вопросы про «где мой вывод» — только в саппорт букмекера.
+        </p>
+      </div>
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-accent-500/10 via-base-800 to-secondary-500/5 border border-accent-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Связь</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Обратная связь пока через обновления материалов, мы не обещаем мгновенный колл-центр — у нас не он.
+        </p>
+        <CTAButton href="/" variant="outline" size="lg">На главную</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
