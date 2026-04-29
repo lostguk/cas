@@ -1,0 +1,64 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const faqs = [
+  {
+    q: 'Что делать если не приходит SMS при регистрации?',
+    a: 'Проверь номер — может цифру не ту вбил. Если МТС или Мегафон блокирует, попробуй через email. У меня с Билайном один раз не пришло, перезапросил через минуту и всё ок.',
+  },
+  {
+    q: 'Берёт ли платформа комиссию за вывод?',
+    a: 'Нет, со стороны 1Win комиссия нулевая. Но банк может свою добавить — Тинькофф не берёт, а вот Альфа иногда да. Зависит от тарифа.',
+  },
+  {
+    q: 'Безопасно ли скачивать APK?',
+    a: 'Если качаешь с офф. сайта — да. С левых сайтов не надо, там могут подсунуть что угодно. Качал через зеркало, антивирус молчит.',
+  },
+  {
+    q: 'Блокируют ли провайдеры сайт?',
+    a: 'МТС иногда блочит, Мегафон тоже. Решение — приложение или зеркало. Через апк вообще никаких проблем с доступом.',
+  },
+  {
+    q: 'Что такое вейджер и как его отыграть?',
+    a: 'Вейджер — сколько раз нужно прокрутить бонус перед выводом. ×50 на казино — это жесть конечно. На спорте ×5 — терпимо, можно экспрессами.',
+  },
+  {
+    q: 'Можно ли ставить с двух устройств одновременно?',
+    a: 'Можно. Один аккаунт — с телефона и компа. Проверял лично.',
+  },
+  {
+    q: 'Как удалить аккаунт навсегда?',
+    a: 'Написать в поддрежку через чат или email, попросить удаление. Обычно обрабатывают за пару дней но иногда тянут. Будьте готовы что попросят подтвердить личность.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Вопросы о 1Win</SectionHeading>
+    <div class="space-y-4">
+      {faqs.map((f) => (
+        <details class="group bg-abyss-800 border-l-4 border-coral-500 rounded-lg">
+          <summary class="flex items-center justify-between cursor-pointer p-5 text-white font-semibold">
+            <span class="pr-4">{f.q}</span>
+            <svg class="w-5 h-5 text-coral-400 shrink-0 group-open:rotate-180 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-slate-400 leading-relaxed">{f.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

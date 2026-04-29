@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+const title = 'Регистрация Mostbet: 4 способа + бонус на первый депозит';
+const description =
+  'Регистрация Mostbet за 2 минуты — пошагово. Аккаунт в рублях, бонус на старте, верификация через СНИЛС.';
+const canonical = 'https://mostbetpka.su/registraciya';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: [
+    { '@type': 'HowToStep', name: 'Шаг 1', text: 'Откройте форму регистрации на официальной странице Mostbet.' },
+    { '@type': 'HowToStep', name: 'Шаг 2', text: 'Выберите валюту RUB и заполните контактные данные.' },
+    { '@type': 'HowToStep', name: 'Шаг 3', text: 'Подтвердите номер телефона кодом из SMS.' },
+    { '@type': 'HowToStep', name: 'Шаг 4', text: 'Завершите профиль и при необходимости загрузите документы для верификации.' },
+  ],
+};
+
+const steps = [
+  {
+    n: '01',
+    title: 'Выберите способ регистрации',
+    text: 'Перейдите на сайт Mostbet и нажмите кнопку регистрации. Доступны четыре варианта: в один клик, по номеру телефона, через email или через социальные сети. Для пользователей из России рекомендуется регистрация по телефону — так проще восстановить доступ.',
+  },
+  {
+    n: '02',
+    title: 'Укажите валюту и регион',
+    text: 'На этом шаге нужно выбрать рубль (RUB) в качестве валюты счёта. После создания аккаунта изменить валюту нельзя. Если планируете пополнять через Сбербанк или Тинькофф — рубль избавит от конвертации и комиссий.',
+  },
+  {
+    n: '03',
+    title: 'Подтвердите данные',
+    text: 'На указанный номер придёт SMS с кодом подтверждения. Введите его в соответствующее поле. Если код не приходит в течение минуты — проверьте правильность номера и настройки SMS-фильтра на телефоне.',
+  },
+  {
+    n: '04',
+    title: 'Заполните профиль',
+    text: 'Укажите ФИО и дату рождения в точности как в паспорте. Расхождения могут привести к проблемам при выводе средств. Верификация потребует загрузку скана паспорта РФ и СНИЛС или ИНН.',
+  },
+];
+
+const methods = [
+  { title: 'По телефону', desc: 'Укажите номер, получите SMS-код. Самый быстрый способ для пользователей из России.' },
+  { title: 'По email', desc: 'Введите почту и пароль. На email придёт ссылка для подтверждения.' },
+  { title: 'Через соцсети', desc: 'Авторизация через аккаунт ВКонтакте, Google или Telegram.' },
+  { title: 'В один клик', desc: 'Система сгенерирует логин и пароль автоматически. Сохраните данные сразу.' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-01-15"
+  updateDate="2026-04-01"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Регистрация' }]} />
+  <ArticleMeta publishDate="2026-01-15" updateDate="2026-04-01" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="mb-10">
+        <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-warm-900 leading-tight mb-4">
+          Как зарегистрироваться на Mostbet из России
+        </h1>
+        <p class="text-warm-500 leading-relaxed">
+          Чтобы создать аккаунт на Mostbet, потребуется не более двух минут. Ниже — пошаговая инструкция с описанием каждого этапа: от выбора способа регистрации до верификации документов.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 mt-6">
+          <CTAButton href={affiliateLink} size="lg" external>Зарегистрироваться</CTAButton>
+          <CTAButton href="/skachat" variant="outline" size="lg">Скачать приложение</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="Форма регистрации Mostbet: выбор способа и валюты" aspect="16/9" class="mb-10" />
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-6">Пошаговая регистрация</h2>
+      <div class="space-y-4 mb-12">
+        {
+          steps.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-serif font-semibold text-accent-500 shrink-0">{s.n}</span>
+                <div>
+                  <h3 class="font-serif text-lg font-semibold text-warm-900 mb-1">{s.title}</h3>
+                  <p class="text-sm text-warm-500 leading-relaxed">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-6">Способы регистрации на Mostbet</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+        {
+          methods.map((m) => (
+            <Card>
+              <h3 class="font-serif font-semibold text-warm-900 mb-1">{m.title}</h3>
+              <p class="text-sm text-warm-500">{m.desc}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Бонус при регистрации</h2>
+      <p class="text-warm-500 leading-relaxed mb-4">
+        Новым пользователям доступен приветственный бонус до 32 500 ₽ на первый депозит. Чтобы активировать предложение, необходимо выбрать тип бонуса (спорт или казино) при пополнении счёта. Подробные условия — на <a href="/bonus" class="text-accent-600 hover:underline">странице бонусов</a>.
+      </p>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Верификация аккаунта</h2>
+      <p class="text-warm-500 leading-relaxed mb-4">
+        Для вывода средств платформа запрашивает верификацию. Потребуется скан паспорта РФ и документ, подтверждающий личность — СНИЛС или ИНН. Процедура обычно занимает от нескольких часов до суток. До прохождения KYC вывод может быть ограничен.
+      </p>
+      <p class="text-warm-500 leading-relaxed mb-10">
+        После верификации доступны все методы вывода, включая Сбербанк, Тинькофф и СБП. Подробнее о <a href="/casino" class="text-accent-600 hover:underline">казино</a> и доступных играх читайте в соответствующем разделе.
+      </p>
+
+      <div class="rounded-lg border border-accent-500/15 bg-white p-6 text-center">
+        <h2 class="font-serif text-xl font-semibold text-warm-900 mb-2">Готово — можно пополнять счёт</h2>
+        <p class="text-sm text-warm-500 mb-4">
+          После регистрации перейдите в кассу и выберите удобный способ пополнения.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть регистрацию</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

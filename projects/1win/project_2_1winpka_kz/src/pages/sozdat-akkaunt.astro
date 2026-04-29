@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const steps = [
+  { num: '01', title: 'Откройте сайт или приложение', text: 'Перейдите на официальный сайт или запустите APK. Нажмите кнопку «Регистрация» — она в правом верхнем углу.' },
+  { num: '02', title: 'Выберите способ регистрации', text: 'Четыре варианта: по телефону, через email, соцсети или в один клик. По данным — регистрация через телефон самая быстрая, около 90 секунд.' },
+  { num: '03', title: 'Укажите валюту KZT', text: 'Обязательно выберите тенге — иначе будет конвертация при каждом пополнеие через Kaspi. Промокод вводится на этом же шаге.' },
+  { num: '04', title: 'Подтвердите аккаунт', text: 'SMS-код или письмо на почту. На Kcell задержка до 5 минут — если не приходит, используйте email.' },
+];
+
+const methods = [
+  { title: 'По телефону', text: 'Номер + SMS-код. Самый быстрый способ — около 90 секунд.' },
+  { title: 'По email', text: 'Адрес почты + пароль. Подтверждение через ссылку в письме.' },
+  { title: 'Через соцсети', text: 'Google, Telegram, VK. Авторизация в два клика.' },
+  { title: 'В один клик', text: 'Минимум данных — валюта + согласие. Данные дозаполняются позже.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Как зарегистрироваться на 1Win',
+  description: 'Пошаговая инструкция регистрации на 1Win для Казахстана.',
+  step: steps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.text,
+  })),
+};
+---
+
+<BaseLayout
+  title="Регистрация 1Win: 4 способа + бонус на первый депозит"
+  description="Регистрация 1Win за 2 минуты — пошагово. Аккаунт в тенге, бонус на старте, верификация через ИИН."
+  schema={schema}
+  publishDate="2026-01-25"
+  updateDate="2026-03-28"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Регистрация' }]} />
+  <ArticleMeta publishDate="2026-01-25" updateDate="2026-03-28" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Как зарегистрироваться на 1Win в Казахстане</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">Четыре способа создания аккаунта — сравнение по скорости и удобству.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Создать профиль в KZT</CTAButton>
+          <CTAButton href="/akcii" variant="secondary" size="lg">Узнать про бонус</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Форма регистрации 1Win: поля ввода на фиолетовом фоне" aspect="16/7" class="mb-12" />
+
+      <div class="space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Пошаговая регистрация</h2>
+        <p>Процедура стандартная для букмекеров KZ-сегмента. По нашим замерам, от открытия страницы до готового аккаунта — 2-3 минуты. Если планируете пользоваться <a href="/dostup" class="text-glow-400 hover:text-glow-300">зеркалом для доступа</a>, регистрация проходит через него аналогично.</p>
+      </div>
+
+      <div class="relative mt-10 space-y-0">
+        {steps.map((step, i) => (
+          <div class="flex gap-6 pb-8 relative">
+            {i < steps.length - 1 && <div class="absolute left-5 top-12 bottom-0 w-px bg-glow-500/20"></div>}
+            <div class="w-10 h-10 rounded-full bg-glow-500/15 border border-glow-500/30 flex items-center justify-center text-glow-400 text-sm font-bold shrink-0 relative z-10">
+              {step.num}
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-1">{step.title}</h3>
+              <p class="text-sm text-slate-300">{step.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-white mb-6">Способы регистрации на 1Win</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {methods.map((m) => (
+            <Card>
+              <h3 class="font-semibold text-white mb-2">{m.title}</h3>
+              <p class="text-sm text-slate-300">{m.text}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-12 space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Бонус при регистрации</h2>
+        <p>Приветственный пакет — до 500% на первые четыре депозита + 70 фриспинов. Условия отыгрыша — вейджер ×50, 30 дней. По оценке аналитической команды — 3.5/5 в сравнении с конкурентами. Подробный разбор в <a href="/akcii" class="text-glow-400 hover:text-glow-300">обзоре бонусной программы</a>.</p>
+
+        <h2 class="text-2xl font-bold text-white">Верификация</h2>
+        <p>KYC-проверка — удостоверение с ИИН + селфи с документом. По нашим данным за март 2026, срок верефикации — от 1 до 5 рабочих дней. Без KYC вывод ограничен суммой до 50 000 ₸. На <a href="/onlajn-kazino" class="text-glow-400 hover:text-glow-300">странице казино</a> играть можно и без верификации.</p>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-glow-500/10 via-void-800 to-flash-500/5 border border-glow-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Начать регистрацию</h2>
+        <p class="text-slate-300 mb-6">Счёт в тенге, без конвертации, четыре способа на выбор.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть аккаунт за 2 минуты</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

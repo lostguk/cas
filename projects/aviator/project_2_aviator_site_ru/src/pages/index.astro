@@ -1,0 +1,772 @@
+---
+import FAQSection from '../components/sections/FAQSection.astro'
+import FinalCTASection from '../components/sections/FinalCTASection.astro'
+import HeroSection from '../components/sections/HeroSection.astro'
+import Card from '../components/ui/Card.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import GameOverviewTable from '../components/ui/GameOverviewTable.astro'
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro'
+import PromoBanner from '../components/ui/PromoBanner.astro'
+import StepsList from '../components/ui/StepsList.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const affiliateLink = '#';
+
+const title = 'Aviator на Mostbet: обзор краш-игры, ставки и бонус 125% + 250 фриспинов';
+const description = 'Полный гайд по игре Aviator на Mostbet 2026: правила краш-игры от Spribe, RTP 97%, обзор интерфейса, рабочие тактики управления банком и приветственный бонус 125% до 35 000 ₽ + 250 фриспинов на старте.';
+
+const overviewRows = [
+  { emoji: '✅', label: 'Игра', value: 'Aviator (Авиатор)' },
+  { emoji: '🛠', label: 'Провайдер', value: '<a class="text-orange-300 hover:text-orange-200 underline decoration-orange-500/40 underline-offset-2" href="/about">Spribe</a>' },
+  { emoji: '🚀', label: 'Тип игры', value: 'Краш-игра (мульти-плеер, social gambling)' },
+  { emoji: '🔢', label: 'RTP', value: '97% (один из самых высоких среди крэш-игр)' },
+  { emoji: '⚡', label: 'Волатильность', value: 'Высокая' },
+  { emoji: '💵', label: 'Минимальная ставка', value: '0,10 ₽ (около 0,01 USD)' },
+  { emoji: '💰', label: 'Максимальная ставка', value: 'до 7 000 ₽ за раунд (10 000 ₽ суммарно)' },
+  { emoji: '🏆', label: 'Максимальный множитель', value: '×100 (теоретический максимум)' },
+  { emoji: '🎮', label: 'Где играть', value: '1Win, Mostbet, Pin-Up, 1xBet, Melbet и 50+ других казино' },
+  { emoji: '📱', label: 'Платформы', value: 'Браузер, iOS, Android, мобильная веб-версия' },
+  { emoji: '🎁', label: 'Бонус для новичков', value: '<a class="text-orange-300 hover:text-orange-200 underline decoration-orange-500/40 underline-offset-2" href="/bonus">Бонус 125% до 35 000 ₽ на первые 4 депозита (Mostbet)</a>' },
+  { emoji: '💳', label: 'Способы оплаты', value: 'Сбербанк, Тинькофф, Альфа-Банк, ЮMoney, Visa/MC, USDT, Bitcoin' },
+  { emoji: '🆓', label: 'Демо-режим', value: '<a class="text-orange-300 hover:text-orange-200 underline decoration-orange-500/40 underline-offset-2" href="/demo">Доступен (бесплатные раунды без регистрации)</a>' },
+  { emoji: '👥', label: 'Multiplayer', value: 'Да — встроенный чат и общая лента ставок' },
+  { emoji: '⏱', label: 'Длительность раунда', value: 'от 1 до 30+ секунд' },
+  { emoji: '🔐', label: 'Алгоритм честности', value: 'Provably Fair (хэш SHA-256)' },
+  { emoji: '📞', label: 'Поддержка Mostbet', value: '24/7, чат на сайте, Telegram, e-mail' },
+];
+
+const heroStats = [
+  { value: '97%', label: 'RTP игры' },
+  { value: '×100', label: 'максимум' },
+  { value: '125%', label: 'бонус 125%' },
+];
+
+const howToGetBonusSteps = [
+  {
+    title: 'Регистрация на Mostbet',
+    body: 'Откройте сайт Mostbet по нашей ссылке и нажмите «Регистрация» в правом верхнем углу. Введите e-mail или номер телефона, придумайте пароль и выберите валюту счёта — рубль. Согласитесь с правилами и подтвердите создание аккаунта. Вся процедура занимает около двух минут.',
+  },
+  {
+    title: 'Подтверждение в течение 7 минут',
+    body: 'После регистрации у вас есть 7 минут, чтобы пополнить счёт и получить максимальный бонус 125%. Это ограничение действует только для новых российских игроков и работает по принципу «открыл — зашёл — играешь».',
+  },
+  {
+    title: 'Первый депозит от 200 рублей',
+    body: 'Перейдите в раздел «Касса» и выберите способ оплаты: Сбербанк, Тинькофф, Альфа-Банк, ЮMoney, Visa/Mastercard или криптовалюта (USDT, BTC, ETH). Минимальная сумма для активации бонуса — 200 рублей, обработка занимает 1–5 минут в зависимости от метода.',
+  },
+  {
+    title: 'Активация и старт игры',
+    body: 'Бонус автоматически зачисляется на ваш счёт после успешного пополнения. Перейдите в раздел казино, найдите Aviator (он всегда в топе главной страницы) и сделайте первую ставку. Вейджер бонуса — x35, отыгрывать его можно в том числе на самом Aviator.',
+  },
+];
+
+const registrationSteps = [
+  {
+    title: 'Откройте официальный сайт Mostbet',
+    body: 'Используйте кнопку «Играть в Aviator» в любом промо-блоке этого обзора — она содержит партнёрскую метку <strong>MOSTAVIATOR</strong> и автоматически активирует увеличенный бонус. Сайт открывается в новой вкладке.',
+  },
+  {
+    title: 'Нажмите «Регистрация»',
+    body: 'Кнопка размещена в правом верхнем углу и подсвечена жёлтым акцентом — заметить её несложно. На мобильном устройстве она находится в меню-бургере.',
+  },
+  {
+    title: 'Выберите способ регистрации',
+    body: 'Доступны три варианта: по e-mail, по номеру телефона или через социальные сети (Google, Telegram, ВКонтакте). Самый быстрый — по телефону: код подтверждения приходит за 10–20 секунд.',
+  },
+  {
+    title: 'Заполните данные и подтвердите аккаунт',
+    body: 'Введите запрошенную информацию, выберите валюту счёта (для России — рубль RUB) и страну проживания. Согласитесь с правилами и нажмите «Создать аккаунт». На указанный e-mail или номер придёт ссылка/код активации.',
+  },
+  {
+    title: 'Войдите в личный кабинет',
+    body: 'После активации аккаунт готов к игре. В личном кабинете доступны разделы «Касса», «Бонусы», «История ставок» и сама игра Aviator — она вынесена отдельной кнопкой в боковом меню.',
+  },
+];
+
+const depositSteps = [
+  {
+    title: 'Перейдите в раздел «Касса»',
+    body: 'В личном кабинете нажмите кнопку «Пополнить» в правом верхнем углу или откройте раздел «Касса» в боковом меню. Платформа покажет полный список доступных способов с минимальными суммами и сроками.',
+  },
+  {
+    title: 'Выберите валюту и метод',
+    body: 'Для российских игроков основные методы: Сбербанк, Тинькофф, Альфа-Банк (СБП), ЮMoney, QIWI (где работает), Visa/Mastercard, а также USDT по сети TRC-20 (минимальная комиссия) или ERC-20.',
+  },
+  {
+    title: 'Введите сумму',
+    body: 'Минимальный депозит для активации приветственного бонуса — 200 ₽. Если вы хотите получить бонус 125% полностью на первом депозите — внесите 1 500 ₽ или больше. Это позволит сразу получить 3 500 ₽ бонусных средств на счёт.',
+  },
+  {
+    title: 'Подтвердите перевод',
+    body: 'Платформа перенаправит на страницу банка или платёжной системы. Подтвердите операцию через смс-код, push-уведомление или биометрию. Зачисление обычно занимает 1–5 минут, для криптовалюты — 5–30 минут в зависимости от загруженности сети.',
+  },
+  {
+    title: 'Проверьте баланс и начните играть',
+    body: 'После успешного зачисления откройте Aviator и сделайте первую ставку. Минимальная — 0,10 ₽, максимальная — до 7 000 ₽ за раунд. Используйте функцию авто-кэшаута, чтобы фиксировать прибыль при достижении нужного множителя.',
+  },
+];
+
+const withdrawalSteps = [
+  {
+    title: 'Откройте «Кассу» → «Вывод»',
+    body: 'В личном кабинете перейдите в раздел вывода средств. Платформа покажет ваш текущий баланс с разделением на основной и бонусный — выводить можно только основной баланс или отыгранный бонус.',
+  },
+  {
+    title: 'Выберите способ вывода',
+    body: 'По требованиям KYC вывод оформляется тем же методом, через который пополняли счёт (или родственным — например, с карты Сбербанка можно вывести через СБП). Криптовалюта — отдельная очередь, без ограничения «тот же метод».',
+  },
+  {
+    title: 'Укажите сумму и реквизиты',
+    body: 'Минимальная сумма вывода — 300 ₽ для большинства банковских методов, 5 USDT для крипты. Максимум для одной транзакции — 100 000 ₽ (фиат) или эквивалент в крипте. Введите номер карты/счёта или адрес кошелька.',
+  },
+  {
+    title: 'Подтвердите 2FA',
+    body: 'Если у вас включена двухфакторная аутентификация (рекомендуется), введите код из приложения Google Authenticator или подтвердите через Telegram-бот. Это занимает несколько секунд.',
+  },
+  {
+    title: 'Дождитесь обработки',
+    body: 'Сроки: USDT (TRC-20) — 5–30 минут, СБП и большинство банков — до 60 минут, банковская карта — до 24 часов в рабочие дни, иногда до 3 рабочих дней. Все статусы видны в разделе «История транзакций».',
+  },
+  {
+    title: 'Верификация при первом крупном выводе',
+    body: 'При выводе суммы свыше 9 000 ₽ или по запросу службы безопасности система может попросить пройти KYC: фото паспорта (страница с фото и регистрация), селфи с документом и иногда — подтверждение адреса (квитанция/выписка). Проверка занимает от 1 до 5 рабочих дней, после неё лимиты увеличиваются.',
+  },
+];
+
+const faqItems = [
+  {
+    q: 'Что такое Aviator и кто его разработал?',
+    a: 'Aviator — это краш-игра, выпущенная провайдером Spribe в январе 2019 года. Принцип игры прост: на экране стартует красный самолётик, множитель ставки растёт от 1.00× и может достигать 100×. Игрок должен успеть забрать выигрыш до того, как самолёт «улетит» с поля. Игра использует алгоритм Provably Fair — каждый раунд можно проверить по хэшу SHA-256 на честность. Aviator стал первым массовым представителем жанра crash в онлайн-казино и до сих пор считается эталоном.',
+  },
+  {
+    q: 'На каких сайтах можно играть в Aviator на реальные деньги в России?',
+    a: 'Игра представлена в большинстве крупных международных казино: Mostbet (рекомендуем — отличный приветственный бонус и стабильная работа в России), Mostbet, Pin-Up, 1xBet, Melbet, Joycasino, Ramenbet и десятки других. Для российских игроков ключевой критерий — приём рублей и работающие платёжные методы (Сбербанк, Тинькофф, СБП). На партнёрских сайтах часто доступен увеличенный бонус — например, 125% до 35 000 ₽ на Mostbet при регистрации по нашей ссылке.',
+  },
+  {
+    q: 'Какой RTP у Aviator и можно ли действительно выиграть?',
+    a: 'Заявленный RTP игры — 97%, что выше большинства слотов (обычный диапазон 95–96%) и приближается к RTP блэкджека и видеопокера. На длинной дистанции это означает: из 100 ₽ ставок игрок в среднем возвращает 97 ₽. Но Aviator — игра с очень высокой волатильностью: выигрышные раунды встречаются часто, но крупные множители (×10 и выше) — редко (около 4% раундов). Выигрыши абсолютно реальны, особенно при использовании стратегии низких множителей с высокой частотой кэшаута.',
+  },
+  {
+    q: 'Можно ли играть в Aviator бесплатно без регистрации?',
+    a: 'Да, существует <a class="text-orange-300 hover:text-orange-200 underline decoration-orange-500/40 underline-offset-2" href="/demo">демо-режим</a>, который доступен на большинстве платформ без регистрации. В демо вы получаете виртуальный баланс (обычно 1 000 условных единиц) и можете изучить интерфейс, попробовать стратегии, понять механику авто-кэшаута. Однако демо-результаты не передаются в реальный режим — это просто тренажёр. Для игры на реальные деньги нужна регистрация и депозит.',
+  },
+  {
+    q: 'Какая стратегия работает в Aviator?',
+    a: 'Универсальной «выигрышной» стратегии не существует — это азартная игра с встроенным математическим преимуществом казино (3%). Однако есть подходы, которые помогают управлять банком и снижать риски: <strong>стратегия 1.5×</strong> (всегда забирать ставку при множителе 1.5 — выигрывает в 60–65% раундов), <strong>Мартингейл</strong> (удвоение ставки после проигрыша — рискованная), <strong>две ставки одновременно</strong> (одна на безопасный коэффициент 1.3×, вторая на жирный 5–10×). Подробный разбор всех методов с примерами — на странице <a class="text-orange-300 hover:text-orange-200 underline decoration-orange-500/40 underline-offset-2" href="/strategii">стратегий</a>.',
+  },
+  {
+    q: 'Что такое сигналы Aviator и стоит ли им верить?',
+    a: 'Сигналами называют сообщения вида «через 30 секунд будет множитель 5.5×», которые продают в Telegram-каналах и онлайн-сервисах. <strong>Все они — мошенничество</strong>: алгоритм Aviator использует криптографически защищённый случайный seed, который генерируется одновременно сервером и игроком, и предсказать его невозможно. Если кто-то предлагает «гарантированные сигналы» — это либо угаданное совпадение, либо подгонка скриншотов задним числом. Подробное расследование таких схем — в нашем материале о <a class="text-orange-300 hover:text-orange-200 underline decoration-orange-500/40 underline-offset-2" href="/signaly">сигналах</a>.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  type="website"
+  schema={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'aviator-site.ru',
+      url: 'https://aviator-site.ru/',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://aviator-site.ru/?q={search_term_string}',
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'VideoGame',
+      name: 'Aviator',
+      description: 'Краш-игра от провайдера Spribe с RTP 97%, доступная в большинстве онлайн-казино.',
+      genre: 'Crash game',
+      gamePlatform: ['Web', 'iOS', 'Android'],
+      applicationCategory: 'GameApplication',
+      author: { '@type': 'Organization', name: 'Spribe' },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        ratingCount: '12480',
+        bestRating: '5',
+        worstRating: '1',
+      },
+    },
+  ]}
+>
+  <HeroSection
+    title='Aviator на Mostbet — играть с бонусом <span class="text-orange-400">125%</span> и 250 фриспинами'
+    subtitle='Подробный гайд по краш-игре <strong>Aviator</strong> от провайдера Spribe на платформе Mostbet: разбираем механику игры, рабочие тактики управления банком, демо-режим, мобильное приложение и приветственный пакет до 35 000 ₽ для российских игроков. <strong>Создайте аккаунт за 2 минуты — и получите 250 фриспинов в подарок.</strong>'
+    primaryCta='Открыть Aviator на Mostbet'
+    secondaryCta='Как играть'
+    stats={heroStats}
+  />
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="mb-6">
+      <p class="inline-flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-widest text-orange-400">
+        <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+        Сводная таблица
+      </p>
+      <h2 class="text-2xl lg:text-3xl font-bold text-white tracking-tight">Краткие параметры игры Aviator</h2>
+      <p class="mt-2 text-slate-400 max-w-3xl">
+        Если у вас нет времени читать весь обзор — вот выжимка по ключевым параметрам Aviator: что это за игра, кто её сделал, какой RTP, где играть в России и какой бонус доступен на партнёрских платформах.
+      </p>
+    </div>
+    <GameOverviewTable rows={overviewRows} />
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="grid lg:grid-cols-[1fr_1.3fr] gap-8 lg:gap-12 items-start">
+      <div class="lg:order-2">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-5">Что такое Aviator?</h2>
+        <div class="space-y-4 text-slate-300 leading-relaxed prose-aviator">
+          <p>
+            <strong>Aviator</strong> — это онлайн краш-игра, выпущенная провайдером <strong>Spribe</strong> в начале 2019 года. Принцип игры предельно прост и одновременно затягивает с первого раунда: на экране стартует красный самолётик, множитель ставки растёт от 1.00×, и ваша задача — успеть нажать «Кэшаут» до того, как самолёт улетит за пределы экрана. Если успели — забираете ставку, умноженную на текущий коэффициент. Если не успели — проигрываете.
+          </p>
+          <p>
+            За шесть с лишним лет Aviator превратился в феномен онлайн-гемблинга. По данным самого Spribe, в игру одновременно играют до 80 000 человек, а суммарно через неё прошло более 25 миллиардов раундов. Игра доступна в 50+ странах, переведена на 20+ языков и стабильно занимает первое место по обороту в категории «крэш-игры» во всех крупных казино. В России Aviator появился в 2020 году и быстро стал самой популярной игрой на Mostbet, 1Win и Pin-Up — потеснив даже классические слоты вроде Sweet Bonanza.
+          </p>
+          <p>
+            Главное технологическое отличие Aviator — алгоритм <strong>Provably Fair</strong>. Перед каждым раундом сервер казино и устройство игрока совместно генерируют криптографический seed (хэш SHA-256), на основе которого определяется итоговый множитель. После раунда хэш публикуется — любой может проверить, что результат был зафиксирован до старта и не подделан. Это делает Aviator одной из самых прозрачных азартных игр на рынке: в отличие от классических слотов, где «честность» приходится принимать на веру.
+          </p>
+          <p>
+            Помимо самого процесса, Aviator знаменит <strong>социальной составляющей</strong>: справа от игрового поля идёт лента ставок всех игроков в реальном времени и общий чат. Можно видеть, кто на сколько поставил, кто успел кэшаутить, кто не успел. Это создаёт ощущение «общей рулетки» — даже если играете на минимальную ставку, вы часть процесса, в котором прямо сейчас участвуют тысячи людей со всего мира.
+          </p>
+        </div>
+      </div>
+      <div class="lg:order-1">
+        <ImagePlaceholder
+          description="2. Скриншот Aviator: красный самолёт летит вверх по графику, текущий множитель ×4.18, лента ставок и чат справа"
+          aspect="4/5"
+        />
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <PromoBanner
+      imageNumber={3}
+      imageDescription="Промо-баннер Mostbet: красный самолёт с надписью бонус 125%, монеты падают на купюры рублей"
+      headline="Зарегистрируйтесь сегодня и заберите бонус 125% до 35 000 ₽ на Mostbet"
+      body="Эксклюзивные условия для российских игроков: пополните счёт в течение 7 минут после регистрации — и получите утроение первого депозита. Минимальная сумма — 200 ₽, максимальная сумма бонуса — 35 000 ₽ за четыре первых пополнения."
+      primaryCta="Забрать бонус 125%"
+      lastUsedMinutes={4}
+    />
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="mb-8">
+      <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+        <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+        Краш-игры
+      </p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">Похожие краш-игры от Spribe и других провайдеров</h2>
+      <p class="mt-3 text-slate-400 max-w-3xl">
+        Aviator — родоначальник жанра, но за шесть лет на рынке появилось множество качественных аналогов. Ниже четыре самых популярных краш-игры, которые соседствуют с Aviator в большинстве казино — включая Mostbet.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <Card>
+        <ImagePlaceholder description="4. Lucky Jet: космический персонаж летит вверх, множитель 3.45×" aspect="1/1" />
+        <h3 class="mt-4 font-bold text-white text-lg">Lucky Jet</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mt-1 mb-2">Mostbet Games · RTP 97%</p>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Эксклюзивная краш-игра Mostbet — реактивный человечек вместо самолёта, тот же принцип. Часто используется как зеркало Aviator на платформе.
+        </p>
+      </Card>
+      <Card>
+        <ImagePlaceholder description="5. JetX: ракета на звёздном фоне с цифровым множителем 8.12×" aspect="1/1" />
+        <h3 class="mt-4 font-bold text-white text-lg">JetX</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mt-1 mb-2">SmartSoft · RTP 97%</p>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Главный конкурент Aviator. Те же правила, но другая визуальная подача — космос, ракета, неоновые акценты. Доступен на Mostbet и Mostbet.
+        </p>
+      </Card>
+      <Card>
+        <ImagePlaceholder description="6. Spaceman: космонавт с реактивным ранцем взлетает вверх" aspect="1/1" />
+        <h3 class="mt-4 font-bold text-white text-lg">Spaceman</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mt-1 mb-2">Pragmatic Play · RTP 96.5%</p>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Версия от лидера индустрии. Удобный интерфейс, авто-кэшаут с двумя независимыми ставками, поддержка на всех топовых платформах.
+        </p>
+      </Card>
+      <Card>
+        <ImagePlaceholder description="7. Crash X: яркий взрыв на чёрном фоне, цифровой счётчик 12.5×" aspect="1/1" />
+        <h3 class="mt-4 font-bold text-white text-lg">Crash X</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mt-1 mb-2">Turbo Games · RTP 97%</p>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Минималистичный дизайн, чистый «график-крэш» без анимации персонажа — для тех, кто ценит сухой расчёт. Часто на 1xBet и BetWinner.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <PromoBanner
+      imageNumber={8}
+      imageDescription="Промо-баннер: пакет приветственных бонусов Mostbet — четыре депозита, золотые медали 125% / 75% / 50% / 25%"
+      headline="125% бонусов за первые 4 депозита — забирайте свой пакет до 35 000 ₽"
+      body="Бонусная программа Mostbet устроена как лестница: первый депозит даёт 125%, второй — 150%, третий — 100%, четвёртый — 50%. Суммарно — до 125%, или 35 000 ₽. Использовать можно сразу на Aviator и других играх казино."
+      primaryCta="Активировать пакет"
+      lastUsedMinutes={9}
+    />
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12 items-start">
+      <div>
+        <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+          <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+          Пошаговая инструкция
+        </p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">Как получить максимальный бонус 125% на Aviator</h2>
+        <p class="text-slate-400 mb-6 leading-relaxed">
+          Чтобы забрать приветственный бонус и сразу начать играть в Aviator с увеличенным банком, выполните четыре простых шага. Главное условие — успеть сделать первый депозит в течение семи минут после регистрации, иначе бонус снизится со 125% до 100% на первый депозит.
+        </p>
+        <StepsList steps={howToGetBonusSteps} />
+      </div>
+      <div>
+        <ImagePlaceholder
+          description="9. Скриншот раздела «Касса» Mostbet: вкладка «Депозит», список платёжных методов, поле ввода суммы и активный бонусный код MOSTAVIATOR"
+          aspect="4/5"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-start">
+      <div class="lg:order-2">
+        <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+          <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+          Регистрация
+        </p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">Регистрация на Mostbet — пять минут до первой ставки</h2>
+        <p class="text-slate-400 mb-6 leading-relaxed">
+          Mostbet использует упрощённую процедуру регистрации без обязательной первоначальной верификации: вы можете создать аккаунт, пополнить счёт и сделать ставку буквально за пять минут. Полный KYC (загрузка документов) потребуется только при выводе крупной суммы или по запросу службы безопасности.
+        </p>
+        <StepsList steps={registrationSteps} />
+        <div class="mt-6">
+          <CTAButton href={affiliateLink} external size="md">Зарегистрироваться на Mostbet</CTAButton>
+        </div>
+      </div>
+      <div class="lg:order-1">
+        <ImagePlaceholder
+          description="10. Скриншот формы регистрации на Mostbet: e-mail, телефон, пароль, валюта RUB, переключатель социальных сетей"
+          aspect="4/5"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="mb-8">
+      <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+        <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+        Бонусная программа
+      </p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">Бонусы Mostbet для игроков в Aviator</h2>
+      <p class="mt-3 text-slate-400 max-w-3xl">
+        Помимо приветственного пакета, Mostbet регулярно проводит акции, специально привязанные к Aviator и другим краш-играм. Ниже разбор основных активных бонусов на 2026 год.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5 mb-8">
+      <Card highlight>
+        <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">Депозит 1</p>
+        <h3 class="text-2xl font-extrabold text-white mb-2">125% до 9 000 ₽</h3>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Максимальный бонус на первое пополнение — 125% при условии регистрации и депозита в течение 7 минут. Минимальная сумма — 200 ₽, максимальная — 9 000 ₽ (то есть бонус до 9 000 ₽).
+        </p>
+      </Card>
+      <Card>
+        <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">Депозит 2</p>
+        <h3 class="text-2xl font-extrabold text-white mb-2">150% до 11 250 ₽</h3>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Второе пополнение даёт бонус 150% от суммы — продолжаем наращивать игровой банк. Активируется автоматически в течение 30 дней после регистрации.
+        </p>
+      </Card>
+      <Card>
+        <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">Депозит 3</p>
+        <h3 class="text-2xl font-extrabold text-white mb-2">100% до 9 000 ₽</h3>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Третий депозит — стандартное удвоение. Этот бонус особенно удобен после небольшой серии в Aviator: можно пополнить и сразу удвоить банк для продолжения игры.
+        </p>
+      </Card>
+      <Card>
+        <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">Депозит 4</p>
+        <h3 class="text-2xl font-extrabold text-white mb-2">50% до 3 500 ₽</h3>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Завершающий бонус приветственного пакета. Суммарно за четыре депозита — до 35 000 ₽ бонусных средств. Вейджер на весь пакет — x35.
+        </p>
+      </Card>
+    </div>
+
+    <div class="overflow-x-auto rounded-2xl border border-orange-500/15 bg-carbon-800/50">
+      <table class="w-full text-sm text-slate-200 min-w-[640px]">
+        <thead>
+          <tr class="bg-carbon-900/60 text-left">
+            <th class="px-5 py-3 font-bold text-white">Бонус</th>
+            <th class="px-5 py-3 font-bold text-white">Размер</th>
+            <th class="px-5 py-3 font-bold text-white">Условия</th>
+            <th class="px-5 py-3 font-bold text-white">Вейджер</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-white/[0.04]"><td class="px-5 py-3 font-semibold">Кэшбэк по выходным</td><td class="px-5 py-3">до 30%</td><td class="px-5 py-3 text-slate-400">Возврат части проигрыша по итогам недели</td><td class="px-5 py-3">x3</td></tr>
+          <tr class="border-t border-white/[0.04] bg-carbon-900/40"><td class="px-5 py-3 font-semibold">Express бонус</td><td class="px-5 py-3">+10–15%</td><td class="px-5 py-3 text-slate-400">К выигрышу экспрессов от 5 событий — работает и на Aviator-битвах</td><td class="px-5 py-3">—</td></tr>
+          <tr class="border-t border-white/[0.04]"><td class="px-5 py-3 font-semibold">Промокод <strong>MOSTAVIATOR</strong></td><td class="px-5 py-3">+30 ₽</td><td class="px-5 py-3 text-slate-400">Бонус-фрибет на Aviator при вводе кода в форме регистрации</td><td class="px-5 py-3">x35</td></tr>
+          <tr class="border-t border-white/[0.04] bg-carbon-900/40"><td class="px-5 py-3 font-semibold">Турниры Aviator</td><td class="px-5 py-3">до 300 000 ₽</td><td class="px-5 py-3 text-slate-400">Призовой фонд недельных турниров — топ-100 игроков</td><td class="px-5 py-3">—</td></tr>
+          <tr class="border-t border-white/[0.04]"><td class="px-5 py-3 font-semibold">VIP кэшбэк</td><td class="px-5 py-3">до 25%</td><td class="px-5 py-3 text-slate-400">Для игроков с оборотом от 100 000 ₽ в месяц</td><td class="px-5 py-3">x1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-5 text-sm text-slate-400 leading-relaxed">
+      Подробные условия каждой акции — в личном кабинете на Mostbet, раздел «Акции». Перед активацией бонуса всегда читайте условия отыгрыша: на Aviator зачётность ставок составляет 100%, то есть каждая ставка засчитывается полностью в вейджер.
+    </p>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <PromoBanner
+      imageNumber={11}
+      imageDescription="Промо-баннер: смартфон с открытым Aviator на Mostbet, иконки СБП и Сбербанка, надпись «Депозит за 5 минут»"
+      headline="Сделайте первый депозит за 5 минут — и получите первую ставку с увеличенным банком"
+      body="СБП, Тинькофф, Сбербанк, USDT, банковская карта — все методы работают за 1–5 минут. Минимальная сумма депозита — 200 ₽, для активации бонуса 125% — от 200 ₽."
+      primaryCta="Пополнить счёт"
+      lastUsedMinutes={2}
+    />
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12 items-start">
+      <div>
+        <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+          <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+          Депозит
+        </p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">Внесение депозита: пошагово для российских игроков</h2>
+        <p class="text-slate-400 mb-6 leading-relaxed">
+          Mostbet принимает все основные платёжные методы для России: СБП от любого банка, прямые переводы из Сбербанка, Тинькофф, Альфа-Банка, Райффайзена, ЮMoney, банковские карты и криптовалюту. Ниже — рабочая инструкция.
+        </p>
+        <StepsList steps={depositSteps} />
+      </div>
+      <div>
+        <ImagePlaceholder
+          description="12. Скриншот выбора платёжных методов на Mostbet: список с иконками Сбербанк, Тинькофф, СБП, USDT, карта"
+          aspect="4/5"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="mb-8">
+      <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+        <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+        Платёжные методы
+      </p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">Способы пополнения и вывода на Mostbet для России</h2>
+      <p class="mt-3 text-slate-400 max-w-3xl">
+        Платформа поддерживает практически все актуальные для российских игроков методы оплаты, включая СБП. Ниже сводка с лимитами и сроками — данные актуальны на апрель 2026 года.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <Card>
+        <h3 class="font-bold text-white text-lg mb-1">СБП (Система быстрых платежей)</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-3">Топ метод для РФ</p>
+        <ul class="text-sm text-slate-300 space-y-1.5">
+          <li>Минимум: <strong>200 ₽</strong></li>
+          <li>Максимум: <strong>100 000 ₽</strong></li>
+          <li>Скорость: <strong>1–3 минуты</strong></li>
+          <li>Комиссия: <strong>0%</strong></li>
+        </ul>
+      </Card>
+      <Card>
+        <h3 class="font-bold text-white text-lg mb-1">Сбербанк</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-3">Прямой перевод</p>
+        <ul class="text-sm text-slate-300 space-y-1.5">
+          <li>Минимум: <strong>200 ₽</strong></li>
+          <li>Максимум: <strong>500 000 ₽</strong></li>
+          <li>Скорость: <strong>1–10 минут</strong></li>
+          <li>Комиссия: <strong>0%</strong></li>
+        </ul>
+      </Card>
+      <Card>
+        <h3 class="font-bold text-white text-lg mb-1">Тинькофф / Альфа-Банк</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-3">Карта или счёт</p>
+        <ul class="text-sm text-slate-300 space-y-1.5">
+          <li>Минимум: <strong>200 ₽</strong></li>
+          <li>Максимум: <strong>300 000 ₽</strong></li>
+          <li>Скорость: <strong>1–15 минут</strong></li>
+          <li>Комиссия: <strong>0%</strong></li>
+        </ul>
+      </Card>
+      <Card>
+        <h3 class="font-bold text-white text-lg mb-1">ЮMoney</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-3">Электронный кошелёк</p>
+        <ul class="text-sm text-slate-300 space-y-1.5">
+          <li>Минимум: <strong>200 ₽</strong></li>
+          <li>Максимум: <strong>50 000 ₽</strong></li>
+          <li>Скорость: <strong>мгновенно</strong></li>
+          <li>Комиссия: <strong>1–2%</strong></li>
+        </ul>
+      </Card>
+      <Card>
+        <h3 class="font-bold text-white text-lg mb-1">USDT (TRC-20)</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-3">Криптовалюта</p>
+        <ul class="text-sm text-slate-300 space-y-1.5">
+          <li>Минимум: <strong>5 USDT</strong> (~500 ₽)</li>
+          <li>Максимум: <strong>без лимита</strong></li>
+          <li>Скорость: <strong>5–30 минут</strong></li>
+          <li>Комиссия сети: <strong>1 USDT</strong></li>
+        </ul>
+      </Card>
+      <Card>
+        <h3 class="font-bold text-white text-lg mb-1">Visa / Mastercard / МИР</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-3">Банковские карты</p>
+        <ul class="text-sm text-slate-300 space-y-1.5">
+          <li>Минимум: <strong>500 ₽</strong></li>
+          <li>Максимум: <strong>200 000 ₽</strong></li>
+          <li>Скорость депозита: <strong>1–5 минут</strong></li>
+          <li>Скорость вывода: <strong>до 24 часов</strong></li>
+        </ul>
+      </Card>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <PromoBanner
+      imageNumber={13}
+      imageDescription="Промо-баннер: красный самолётик с надписью «Эксклюзивный промокод MOSTAVIATOR», иллюстрация подарка"
+      headline="Активируйте промокод MOSTAVIATOR — и получите +30 ₽ фрибета на Aviator"
+      body="Эксклюзивный код для читателей aviator-site.ru: введите MOSTAVIATOR в форме регистрации, и сверх обычного бонуса 125% вы получите фрибет 30 ₽ — небольшую, но симпатичную добавку к стартовому банку."
+      primaryCta="Активировать промокод"
+      lastUsedMinutes={11}
+    />
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-start">
+      <div class="lg:order-2">
+        <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+          <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+          Вывод средств
+        </p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">Вывод выигрыша из Aviator: за сколько и куда</h2>
+        <p class="text-slate-400 mb-6 leading-relaxed">
+          Скорость вывода — одна из главных причин популярности Mostbet в России. Среднее время обработки СБП-вывода составляет 35–55 минут, USDT — 5–30 минут. Ниже подробная инструкция и сроки по каждому методу.
+        </p>
+        <StepsList steps={withdrawalSteps} />
+      </div>
+      <div class="lg:order-1">
+        <ImagePlaceholder
+          description="14. Скриншот раздела «Вывод» на Mostbet: список методов с временем обработки, баланс пользователя, статусы транзакций"
+          aspect="4/5"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="grid lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-start">
+      <div>
+        <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+          <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+          Безопасность
+        </p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">Лицензии и безопасность Aviator и Mostbet</h2>
+        <div class="space-y-4 text-slate-300 leading-relaxed prose-aviator">
+          <p>
+            Сама игра <strong>Aviator</strong> сертифицирована независимой лабораторией <strong>BMM Testlabs</strong> — её алгоритм Provably Fair прошёл проверку по стандарту ISO/IEC 17025. Это значит: каждый раунд игры технически невозможно подделать ни на стороне казино, ни на стороне игрока. Хэш SHA-256 публикуется до начала раунда, итоговый множитель определяется случайной комбинацией двух seed (серверного и клиентского) и фиксируется в неизменяемом виде.
+          </p>
+          <p>
+            Платформа <strong>Mostbet</strong>, на которой мы рекомендуем играть, работает по лицензии Curaçao Gaming Authority (номер 8048/JAZ). Это самая распространённая международная лицензия для онлайн-казино, она обязывает оператора соблюдать стандарты ответственной игры, KYC/AML-процедур и защиты средств игроков. Пользовательские данные и транзакции защищены 256-битным SSL-шифрованием — тем же стандартом, что и в крупных банках.
+          </p>
+          <p>
+            Дополнительный уровень защиты — обязательная двухфакторная аутентификация при выводе средств. Можно подключить Google Authenticator, Telegram-бот или подтверждение по SMS. По умолчанию 2FA выключена, но платформа настойчиво просит включить её при первом крупном депозите. Рекомендуем сделать это сразу после регистрации — занимает минуту, но сильно снижает риск взлома аккаунта.
+          </p>
+        </div>
+      </div>
+      <div>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-carbon-800/60 border border-white/[0.06]">
+            <span class="text-2xl shrink-0">🔒</span>
+            <div>
+              <h4 class="font-bold text-white text-sm mb-0.5">SSL-шифрование 256-bit</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">Все транзакции и данные передаются по защищённым каналам.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-carbon-800/60 border border-white/[0.06]">
+            <span class="text-2xl shrink-0">📃</span>
+            <div>
+              <h4 class="font-bold text-white text-sm mb-0.5">Лицензия Curaçao 8048/JAZ</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">Официальная лицензия Mostbet, действующая с 2018 года.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-carbon-800/60 border border-white/[0.06]">
+            <span class="text-2xl shrink-0">🛡</span>
+            <div>
+              <h4 class="font-bold text-white text-sm mb-0.5">Двухфакторная аутентификация</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">Google Authenticator, Telegram, SMS — на выбор.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-carbon-800/60 border border-white/[0.06]">
+            <span class="text-2xl shrink-0">🎲</span>
+            <div>
+              <h4 class="font-bold text-white text-sm mb-0.5">Provably Fair</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">Каждый раунд Aviator проверяется по криптографическому хэшу.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 p-4 rounded-xl bg-carbon-800/60 border border-white/[0.06]">
+            <span class="text-2xl shrink-0">⚖️</span>
+            <div>
+              <h4 class="font-bold text-white text-sm mb-0.5">Ответственная игра</h4>
+              <p class="text-xs text-slate-400 leading-relaxed">Самоограничение по депозитам, времени, ставкам — настраивается в ЛК.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+      <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+      Верификация
+    </p>
+    <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">Процесс верификации (KYC) — кратко</h2>
+    <p class="text-slate-300 leading-relaxed mb-3">
+      Полная верификация на Mostbet не требуется для регистрации, депозита или игры — это одно из ключевых преимуществ платформы. KYC запрашивается только при выводе крупной суммы (от 9 000 ₽ за раз), при подозрительной активности или периодически в рамках стандартных проверок безопасности.
+    </p>
+    <p class="text-slate-300 leading-relaxed">
+      Для прохождения нужны: фото или скан паспорта (страница с фото и страница с регистрацией), селфи с паспортом в руках и иногда — подтверждение адреса (квитанция за коммунальные услуги или выписка из банка не старше 3 месяцев). Все документы загружаются через защищённую форму в личном кабинете. Среднее время рассмотрения — 1–3 рабочих дня, после успешной проверки лимиты на вывод увеличиваются до 300 000 ₽ в сутки.
+    </p>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="mb-8">
+      <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+        <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+        Мобильное приложение
+      </p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">Aviator на смартфоне: приложение Mostbet для Android и iOS</h2>
+      <p class="mt-3 text-slate-400 max-w-3xl">
+        Большинство российских игроков предпочитают играть в Aviator с телефона: меньше отвлекающих факторов, быстрее реакция, можно сделать ставку прямо в дороге. Mostbet предлагает нативные приложения для двух платформ.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <Card>
+        <ImagePlaceholder
+          description="15. Мокап Android: главный экран приложения Mostbet с иконкой Aviator в топе и активной игровой сессией"
+          aspect="9/16"
+          variant="mockup"
+          class="max-w-[280px] mx-auto"
+        />
+        <h3 class="mt-5 text-2xl font-bold text-white">Android-приложение</h3>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300">
+          <li class="flex items-start gap-2"><span class="text-orange-400 font-bold mt-0.5">→</span><span>Скачивается с сайта Mostbet (нет в Google Play по правилам Google)</span></li>
+          <li class="flex items-start gap-2"><span class="text-orange-400 font-bold mt-0.5">→</span><span>Размер APK — 38 МБ, требования: Android 5.0+ и 50 МБ свободной памяти</span></li>
+          <li class="flex items-start gap-2"><span class="text-orange-400 font-bold mt-0.5">→</span><span>Установка занимает около минуты, нужно разрешить «неизвестные источники» в настройках безопасности</span></li>
+          <li class="flex items-start gap-2"><span class="text-orange-400 font-bold mt-0.5">→</span><span>Aviator вынесен в отдельный раздел главного меню и работает идентично веб-версии</span></li>
+        </ul>
+        <div class="mt-5">
+          <CTAButton href="/skachat" variant="secondary" size="md">Инструкция для Android</CTAButton>
+        </div>
+      </Card>
+
+      <Card>
+        <ImagePlaceholder
+          description="16. Мокап iOS: экран iPhone с открытым Aviator на Mostbet, динамичная анимация полёта"
+          aspect="9/16"
+          variant="mockup"
+          class="max-w-[280px] mx-auto"
+        />
+        <h3 class="mt-5 text-2xl font-bold text-white">iOS-приложение</h3>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300">
+          <li class="flex items-start gap-2"><span class="text-orange-400 font-bold mt-0.5">→</span><span>Доступно через TestFlight по приглашению с сайта Mostbet</span></li>
+          <li class="flex items-start gap-2"><span class="text-orange-400 font-bold mt-0.5">→</span><span>Поддержка iOS 13.0+ и всех iPhone от 8-го поколения</span></li>
+          <li class="flex items-start gap-2"><span class="text-orange-400 font-bold mt-0.5">→</span><span>Поддержка Face ID/Touch ID для входа в личный кабинет</span></li>
+          <li class="flex items-start gap-2"><span class="text-orange-400 font-bold mt-0.5">→</span><span>Push-уведомления о результатах выводов и новых акциях по Aviator</span></li>
+        </ul>
+        <div class="mt-5">
+          <CTAButton href="/skachat" variant="secondary" size="md">Инструкция для iOS</CTAButton>
+        </div>
+      </Card>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <PromoBanner
+      imageNumber={17}
+      imageDescription="Промо-баннер: смартфон iPhone и Android рядом, открыта игра Aviator, надпись «Играйте на любом устройстве»"
+      headline="Играйте в Aviator на любом устройстве — приложение или браузер"
+      body="Веб-версия Mostbet работает в любом современном браузере без установки. Приложения для Android и iOS добавляют push-уведомления, биометрию и слегка ускоряют отрисовку анимации полёта самолёта."
+      primaryCta="Открыть Aviator"
+      lastUsedMinutes={7}
+    />
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="mb-8">
+      <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+        <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+        Поддержка
+      </p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">Поддержка Mostbet по всем вопросам Aviator</h2>
+      <p class="mt-3 text-slate-400 max-w-3xl">
+        Если у вас возникли вопросы по игре, депозиту, бонусам или выводу — служба поддержки Mostbet работает круглосуточно на четырёх каналах. Среднее время ответа в чате — 3 минуты.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <Card>
+        <div class="text-3xl mb-3" aria-hidden="true">💬</div>
+        <h3 class="font-bold text-white text-base mb-1">Онлайн-чат</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-2">~3 минуты</p>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Кнопка чата в правом нижнем углу любой страницы. Поддержка на русском, работает 24/7.
+        </p>
+      </Card>
+      <Card>
+        <div class="text-3xl mb-3" aria-hidden="true">📧</div>
+        <h3 class="font-bold text-white text-base mb-1">E-mail</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-2">до 24 часов</p>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          support@mostbet.com — для сложных запросов и претензий с приложением документов.
+        </p>
+      </Card>
+      <Card>
+        <div class="text-3xl mb-3" aria-hidden="true">✈️</div>
+        <h3 class="font-bold text-white text-base mb-1">Telegram</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-2">~10 минут</p>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Официальный бот @win1ru_support — оперативные ответы и статусы транзакций.
+        </p>
+      </Card>
+      <Card>
+        <div class="text-3xl mb-3" aria-hidden="true">📚</div>
+        <h3 class="font-bold text-white text-base mb-1">Раздел FAQ</h3>
+        <p class="text-xs text-orange-400 uppercase tracking-wider font-bold mb-2">мгновенно</p>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          На сайте Mostbet есть подробная база знаний — около 200 разобранных вопросов по платформе и играм.
+        </p>
+      </Card>
+    </div>
+  </section>
+
+  <FAQSection items={faqItems} subtitle="Самые частые вопросы об игре Aviator и платформе Mostbet, на которой её удобнее всего запускать в России." />
+
+  <FinalCTASection
+    title='Готовы взлететь? Aviator ждёт вас на Mostbet <span class="text-orange-400">прямо сейчас</span>'
+    body="Зарегистрируйтесь по ссылке ниже, пополните счёт за 7 минут и заберите бонус 125% до 35 000 ₽. Aviator работает 24/7, демо-режим — без регистрации, выплаты — за минуты."
+    rating="4.9/5"
+    cta="Играть в Aviator на Mostbet"
+  />
+</BaseLayout>

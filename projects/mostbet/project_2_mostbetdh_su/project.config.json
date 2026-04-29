@@ -1,0 +1,46 @@
+{
+	"brand": "Mostbet",
+	"region": "RU",
+	"language": "ru",
+	"currency": "RUB",
+	"domain": "mostbetdh.su",
+	"affiliate_url": "#",
+	"color_preset": "dark-emerald",
+	"visual_style": "dark-premium",
+	"content_format": "G",
+	"preset_number": 7,
+	"font": "Source Sans 3",
+	"logo_type": "B",
+	"author": null,
+	"pages": [
+		"index",
+		"sozdat-akkaunt",
+		"prilozhenie",
+		"onlajn-kazino",
+		"akcii",
+		"about"
+	],
+	"slot_pages": ["sugar-rush", "fruit-party"],
+	"sections_order": [
+		"Hero",
+		"Overview",
+		"Sports",
+		"Advantages",
+		"Payments",
+		"Bonus",
+		"Slots",
+		"FAQ",
+		"CTA"
+	],
+	"seo": {
+		"primary_keyword": "mostbet россия",
+		"secondary_keywords": [
+			"мостбет скачать",
+			"мостбет бонус",
+			"мостбет казино",
+			"мостбет ставки"
+		],
+		"geo_target": "RU"
+	},
+	"noindex": false
+}

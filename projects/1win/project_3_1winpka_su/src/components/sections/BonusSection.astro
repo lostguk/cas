@@ -1,0 +1,32 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const bonuses = [
+  { type: 'Спортивный бонус', value: 'до 500%', condition: 'Вейджер ×5, 30 дней на отыгрыш' },
+  { type: 'Казино-бонус', value: '70 фриспинов', condition: 'Вейджер ×50, конкретные слоты' },
+  { type: 'Фрибет', value: 'Бесплатная ставка', condition: 'При выполнении условий первого депозита' },
+];
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Бонусы 1Win — что дают на старте</SectionHeading>
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+      {bonuses.map((b) => (
+        <Card>
+          <div class="text-xs font-bold uppercase tracking-widest text-coral-400 mb-2">{b.type}</div>
+          <div class="text-2xl font-extrabold text-white mb-2">{b.value}</div>
+          <p class="text-sm text-slate-400">{b.condition}</p>
+        </Card>
+      ))}
+    </div>
+    <p class="text-center text-slate-400 text-sm mb-6">Вейджер ×50 на казино — серьёзно, отыграть непросто. На спорте ×5 — это норм.</p>
+    <div class="text-center">
+      <CTAButton href={affiliateLink} size="lg" external>Получить приветственный пакет</CTAButton>
+    </div>
+  </div>
+</section>

@@ -7,39 +7,39 @@
 
 ## Технический стек
 
-| Пакет | Версия | Назначение |
-|---|---|---|
-| `astro` | ^6.1.1 | SSG-фреймворк |
-| `@astrojs/sitemap` | ^3.7.2 | Автогенерация sitemap |
-| `@tailwindcss/vite` | ^4.2.2 | Tailwind через Vite |
-| `tailwindcss` | ^4.2.2 | Утилитарный CSS |
+| Пакет               | Версия | Назначение            |
+| ------------------- | ------ | --------------------- |
+| `astro`             | ^6.1.1 | SSG-фреймворк         |
+| `@astrojs/sitemap`  | ^3.7.2 | Автогенерация sitemap |
+| `@tailwindcss/vite` | ^4.2.2 | Tailwind через Vite   |
+| `tailwindcss`       | ^4.2.2 | Утилитарный CSS       |
 
 ---
 
 ## astro.config.mjs
 
 ```js
-import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from 'astro/config'
+import tailwindcss from '@tailwindcss/vite'
+import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
-  site: 'https://DOMAIN',
-  vite: {
-    plugins: [tailwindcss()],
-    build: { cssMinify: true },
-  },
-  integrations: [
-    sitemap({
-      changefreq: 'weekly',
-      priority: 0.7,
-      lastmod: new Date(),
-    }),
-  ],
-  compressHTML: true,
-  build: { inlineStylesheets: 'auto' },
-  prefetch: { prefetchAll: true, defaultStrategy: 'viewport' },
-});
+	site: 'https://DOMAIN',
+	vite: {
+		plugins: [tailwindcss()],
+		build: { cssMinify: true },
+	},
+	integrations: [
+		sitemap({
+			changefreq: 'weekly',
+			priority: 0.7,
+			lastmod: new Date(),
+		}),
+	],
+	compressHTML: true,
+	build: { inlineStylesheets: 'auto' },
+	prefetch: { prefetchAll: true, defaultStrategy: 'viewport' },
+})
 ```
 
 ---
@@ -106,21 +106,23 @@ src/
 ### BaseLayout.astro
 
 **Props:**
+
 ```ts
 interface Props {
-  title: string;
-  description: string;
-  canonical?: string;
-  ogImage?: string;
-  noindex?: boolean;
-  type?: 'website' | 'article';
-  schema?: object;
-  publishDate?: string;
-  updateDate?: string;
+	title: string
+	description: string
+	canonical?: string
+	ogImage?: string
+	noindex?: boolean
+	type?: 'website' | 'article'
+	schema?: object
+	publishDate?: string
+	updateDate?: string
 }
 ```
 
 **Логика:**
+
 1. Принимает `publishDate` и `updateDate` для Article schema
 2. Создаёт `authorSchema` с данными автора
 3. Если `publishDate` есть — генерирует Article schema с `headline`, `description`, `datePublished`, `dateModified`, `author`, `publisher`
@@ -132,19 +134,21 @@ interface Props {
 ### SEOHead.astro
 
 **Props:**
+
 ```ts
 interface Props {
-  title: string;
-  description: string;
-  canonical?: string;       // default: Astro.url.href
-  ogImage?: string;         // default: '/og-default.png'
-  noindex?: boolean;        // default: true (для закрытия от индексации)
-  type?: 'website' | 'article';
-  schema?: object;
+	title: string
+	description: string
+	canonical?: string // default: Astro.url.href
+	ogImage?: string // default: '/og-default.png'
+	noindex?: boolean // default: true (для закрытия от индексации)
+	type?: 'website' | 'article'
+	schema?: object
 }
 ```
 
 **Генерирует:**
+
 - `<meta charset>`, viewport, theme-color
 - `<title>` — добавляет ` | siteName` если его нет
 - `<meta description>`, `<link canonical>`
@@ -161,6 +165,7 @@ interface Props {
 ### Header.astro
 
 **Структура:**
+
 - `navLinks` — массив `{ href, label }` (4-6 ссылок)
 - `affiliateLink` — партнёрская ссылка
 - Fixed header: `fixed top-0 left-0 right-0 z-50 bg-{base}-950/90 backdrop-blur-xl border-b border-white/5`
@@ -171,6 +176,7 @@ interface Props {
 - JS: toggle hidden класса при клике на бургер
 
 **Паттерн активной ссылки:**
+
 ```astro
 class:list={[
   'px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
@@ -185,6 +191,7 @@ class:list={[
 ### Footer.astro
 
 **Структура:**
+
 - `sections` — массив `{ title, links: [{ href, label }] }` (3 группы)
 - Layout: `grid grid-cols-2 md:grid-cols-4 gap-8`
 - Первая колонка: лого + описание
@@ -198,13 +205,15 @@ class:list={[
 ### Breadcrumbs.astro
 
 **Props:**
+
 ```ts
 interface Props {
-  items: { label: string; href?: string; }[];
+	items: { label: string; href?: string }[]
 }
 ```
 
 **Генерирует:**
+
 - Навигация `<nav aria-label="Навигация">`
 - Список `<ol>` с разделителями-шевронами (SVG)
 - Schema.org BreadcrumbList (JSON-LD `<script>`)
@@ -215,14 +224,16 @@ interface Props {
 ### ArticleMeta.astro
 
 **Props:**
+
 ```ts
 interface Props {
-  publishDate: string;
-  updateDate: string;
+	publishDate: string
+	updateDate: string
 }
 ```
 
 **Отображает:**
+
 - Аватар автора (инициалы в цветном круге `bg-{accent}-500/20`)
 - Имя автора (ссылка на /about)
 - Дата публикации (формат: «15 января 2026»)
@@ -230,6 +241,7 @@ interface Props {
 - Разделители `|`
 
 **Форматирование дат:**
+
 ```ts
 const months = ['января', 'февраля', ...];
 const formatDate = (dateStr) => `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
@@ -240,17 +252,19 @@ const formatDate = (dateStr) => `${d.getDate()} ${months[d.getMonth()]} ${d.getF
 ### CTAButton.astro
 
 **Props:**
+
 ```ts
 interface Props {
-  href: string;
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
-  external?: boolean;
-  class?: string;
+	href: string
+	variant?: 'primary' | 'secondary' | 'outline'
+	size?: 'sm' | 'md' | 'lg'
+	external?: boolean
+	class?: string
 }
 ```
 
 **Варианты:**
+
 - `primary`: `bg-gradient-to-r from-{accent}-500 to-{accent}-600 text-white shadow-lg`
 - `secondary`: `bg-white/10 text-white border border-white/10`
 - `outline`: `border-2 border-{accent}-500/50 text-{accent}-400`
@@ -264,10 +278,11 @@ interface Props {
 ### Card.astro
 
 **Props:**
+
 ```ts
 interface Props {
-  class?: string;
-  hover?: boolean; // default: true
+	class?: string
+	hover?: boolean // default: true
 }
 ```
 
@@ -279,11 +294,12 @@ interface Props {
 ### SectionHeading.astro
 
 **Props:**
+
 ```ts
 interface Props {
-  tag?: 'h2' | 'h3';
-  align?: 'left' | 'center';
-  class?: string;
+	tag?: 'h2' | 'h3'
+	align?: 'left' | 'center'
+	class?: string
 }
 ```
 
@@ -437,24 +453,23 @@ const schema = { '@context': 'https://schema.org', '@type': '...', ... };
 
 ## Типы страниц и их Schema
 
-| Тип | Schema | Пример |
-|---|---|---|
-| Главная | `WebSite` + `SearchAction` | index.astro |
-| Инструкция | `HowTo` + `HowToStep` | registraciya, skachat |
+| Тип            | Schema                       | Пример                          |
+| -------------- | ---------------------------- | ------------------------------- |
+| Главная        | `WebSite` + `SearchAction`   | index.astro                     |
+| Инструкция     | `HowTo` + `HowToStep`        | registraciya, skachat           |
 | Информационная | `Article` (через BaseLayout) | zerkalo, lichnyy-kabinet, bonus |
-| Обзор слота | `Review` + `Game` | sugar-rush, gates-of-olympus |
-| О проекте | `AboutPage` + `Person` | about |
-| 404 | нет schema, noindex=true | 404 |
+| Обзор слота    | `Review` + `Game`            | sugar-rush, gates-of-olympus    |
+| О проекте      | `AboutPage` + `Person`       | about                           |
+| 404            | нет schema, noindex=true     | 404                             |
 
 ---
 
 ## Статические файлы (public/)
 
 ### .htaccess
-Полная серверная оптимизация Apache:
-- HTTPS redirect (301)
-- Remove trailing slash
-- Remove www
+
+Серверная оптимизация Apache (редиректы НЕ включаются — они настраиваются на хосте):
+
 - Security headers (X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy, HSTS)
 - GZIP (mod_deflate) для текста, JS, CSS, SVG, шрифтов
 - Кеширование (mod_expires): HTML 0s, CSS/JS/img/fonts 1 год
@@ -465,6 +480,7 @@ const schema = { '@context': 'https://schema.org', '@type': '...', ... };
 - ErrorDocument 404 /404.html
 
 ### robots.txt
+
 ```
 User-agent: *
 Disallow: /    # При noindex: true
@@ -474,7 +490,9 @@ Sitemap: https://DOMAIN/sitemap-index.xml
 ```
 
 ### favicon.svg
+
 SVG 32×32, стилистически связанный с логотипом проекта:
+
 - Для текстового лого (A/F): квадрат с `rx="6"`, base-цвет фона, аббревиатура accent-цветом
 - Для SVG-значка (B): та же геометрическая фигура, уменьшенная до 32×32
 - Для буквы в фигуре (C): тот же скруглённый квадрат с буквой
@@ -532,39 +550,42 @@ const { description, aspect = '16/10', class: className = '' } = Astro.props;
 ```astro
 import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
 
-<ImagePlaceholder description="Казино: фишки, карты и рулетка на тёмном фоне" />
-<ImagePlaceholder description="Мокап смартфона с интерфейсом ставок" aspect="3/4" />
-<ImagePlaceholder description="Слот Sugar Rush: конфеты и яркие цвета" aspect="16/10" />
+<ImagePlaceholder description="1. Казино: фишки, карты и рулетка на тёмном фоне" />
+<ImagePlaceholder description="2. Мокап смартфона с интерфейсом ставок" aspect="3/4" />
+<ImagePlaceholder description="3. Слот Sugar Rush: конфеты и яркие цвета" aspect="16/10" />
 ```
+
+**Нумерация описаний**: каждая заглушка на странице получает порядковый номер с точкой в начале описания (`1. ...`, `2. ...`, `3. ...`). Нумерация сквозная в пределах одной страницы, начинается с 1.
 
 ### ЗАПРЕЩЕНО
 
 - `<img src="...">` — НЕЛЬЗЯ, использовать `<ImagePlaceholder>`
 - `<Image>` из astro:assets — НЕЛЬЗЯ
 - Заглушка без описания — НЕЛЬЗЯ (пустой `description=""`)
+- Описание без порядкового номера — НЕЛЬЗЯ
 - Описание на английском — НЕЛЬЗЯ (только русский)
 - Описание «картинка» / «изображение» — НЕЛЬЗЯ (конкретное описание)
 
-### Описания для заглушек (таблица конкретных описаний)
-
 ### Описания для заглушек
 
-| Место | Описание | SVG-иконка |
-|---|---|---|
-| Hero-фон | Только CSS-градиенты, без заглушки | — |
-| Казино | «Казино: фишки, карты, рулетка» | Карты/фишки |
-| Бонус | «Бонус: подарок, монеты» | Подарок |
-| App | «Мокап смартфона с приложением» | Смартфон |
-| Live | «Live: дашборд статистики» | Монитор |
-| Спорт | «Стадион, ночная атмосфера» | Стадион |
-| Слот | «Слот [название]: [тема]» | Игровой автомат |
-| Подстраница | «[Тема]: тематическая иллюстрация» | По контексту |
+Каждая заглушка на странице нумеруется по порядку: `1. ...`, `2. ...`, `3. ...` и т.д. Нумерация сквозная в пределах одной страницы.
+
+| Место       | Пример описания                       | SVG-иконка      |
+| ----------- | ------------------------------------- | --------------- |
+| Hero-фон    | Только CSS-градиенты, без заглушки    | —               |
+| Казино      | «1. Казино: фишки, карты, рулетка»    | Карты/фишки     |
+| Бонус       | «2. Бонус: подарок, монеты»           | Подарок         |
+| App         | «3. Мокап смартфона с приложением»    | Смартфон        |
+| Live        | «4. Live: дашборд статистики»         | Монитор         |
+| Спорт       | «5. Стадион, ночная атмосфера»        | Стадион         |
+| Слот        | «6. Слот [название]: [тема]»          | Игровой автомат |
+| Подстраница | «7. [Тема]: тематическая иллюстрация» | По контексту    |
 
 ### Обязательные реальные файлы
 
-| Файл | Формат | Путь | Создание |
-|---|---|---|---|
-| **favicon.svg** | SVG 32x32 | `public/favicon.svg` | Агент создаёт — уникальный для проекта |
+| Файл               | Формат       | Путь                    | Создание                                                    |
+| ------------------ | ------------ | ----------------------- | ----------------------------------------------------------- |
+| **favicon.svg**    | SVG 32x32    | `public/favicon.svg`    | Агент создаёт — уникальный для проекта                      |
 | **og-default.png** | PNG 1200x630 | `public/og-default.png` | Через GenerateImage — единственное допустимое использование |
 
 ### Правила
@@ -583,19 +604,19 @@ import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
 
 ### Требования к объёму текста по секциям
 
-| Секция | Объём текста | Что должно быть |
-|---|---|---|
-| Hero | 30-40 слов подзаголовок | H1, подзаголовок (1-2 предложения), 2 CTA, 3 статистики |
-| Overview | 3 абзаца, 150-200 слов | Личный обзор + дисклеймер. Без воды. |
-| Sports | 4 карточки по 2 предл. + 1 вводный абзац | 100-130 слов. Факты, не описания. |
-| Advantages | 6 карточек по 2 предл. | 100-130 слов. Плюс + минус в каждой. |
-| Payments | 3 карточки по 1-2 предл. + таблица | 80-100 слов + таблица (таблица не считается). |
-| Bonus | 3 карточки по 1-2 предл. | 80-100 слов. Цифры, не вода. |
-| Slots | 3 карточки по 2 предл. | 80-100 слов. RTP, ссылки. |
-| Live | 1-2 абзаца + список 4 фич | 80-100 слов. |
-| App | 1-2 абзаца | 60-80 слов. |
-| FAQ | 6-7 вопросов по 2-3 предл. ответ | 200-250 слов. Без воды. |
-| CTA | H2 + 1 предложение | 15-25 слов. |
+| Секция     | Объём текста                             | Что должно быть                                         |
+| ---------- | ---------------------------------------- | ------------------------------------------------------- |
+| Hero       | 30-40 слов подзаголовок                  | H1, подзаголовок (1-2 предложения), 2 CTA, 3 статистики |
+| Overview   | 3 абзаца, 150-200 слов                   | Личный обзор + дисклеймер. Без воды.                    |
+| Sports     | 4 карточки по 2 предл. + 1 вводный абзац | 100-130 слов. Факты, не описания.                       |
+| Advantages | 6 карточек по 2 предл.                   | 100-130 слов. Плюс + минус в каждой.                    |
+| Payments   | 3 карточки по 1-2 предл. + таблица       | 80-100 слов + таблица (таблица не считается).           |
+| Bonus      | 3 карточки по 1-2 предл.                 | 80-100 слов. Цифры, не вода.                            |
+| Slots      | 3 карточки по 2 предл.                   | 80-100 слов. RTP, ссылки.                               |
+| Live       | 1-2 абзаца + список 4 фич                | 80-100 слов.                                            |
+| App        | 1-2 абзаца                               | 60-80 слов.                                             |
+| FAQ        | 6-7 вопросов по 2-3 предл. ответ         | 200-250 слов. Без воды.                                 |
+| CTA        | H2 + 1 предложение                       | 15-25 слов.                                             |
 
 **Итого на главной: 1000-1400 слов.** НЕ больше.
 

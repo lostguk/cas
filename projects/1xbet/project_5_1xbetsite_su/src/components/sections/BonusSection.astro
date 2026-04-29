@@ -1,0 +1,46 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const bonuses = [
+  {
+    title: 'Спортивный бонус',
+    sum: '100% до 32 500 ₽',
+    condition: 'Вейджер ×5 на экспрессы, 30 дней',
+  },
+  {
+    title: 'Казино-бонус',
+    sum: '150 фриспинов',
+    condition: 'Вейджер ×35, на определённые слоты',
+  },
+  {
+    title: 'Фрибет',
+    sum: 'Бесплатная ставка',
+    condition: 'При выполнении условий первого депозита',
+  },
+];
+---
+
+<section class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Приветственный пакет: что получишь</SectionHeading>
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        bonuses.map((b) => (
+          <Card>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">{b.title}</h3>
+            <p class="text-2xl font-extrabold text-cta-500 mb-3">{b.sum}</p>
+            <p class="text-sm text-gray-500">{b.condition}</p>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-4 mt-10">
+      <CTAButton href={affiliateLink} size="lg" external>Забрать бонус</CTAButton>
+      <CTAButton href="/privetstvennye-bonusy" variant="outline" size="lg">Подробнее о бонусах</CTAButton>
+    </div>
+  </div>
+</section>

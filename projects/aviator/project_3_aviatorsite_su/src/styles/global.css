@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+	--color-navy-50: #f0f6ff;
+	--color-navy-100: #d6e4ff;
+	--color-navy-200: #a8c2ee;
+	--color-navy-300: #6c8bbf;
+	--color-navy-400: #3e5680;
+	--color-navy-500: #233a5e;
+	--color-navy-600: #182a47;
+	--color-navy-700: #11203a;
+	--color-navy-800: #0d1a30;
+	--color-navy-900: #0a1628;
+	--color-navy-950: #050d1c;
+
+	--color-amber-300: #fcd34d;
+	--color-amber-400: #fbbf24;
+	--color-amber-500: #f59e0b;
+	--color-amber-600: #d97706;
+	--color-amber-700: #b45309;
+
+	--color-emerald-300: #6ee7b7;
+	--color-emerald-400: #34d399;
+	--color-emerald-500: #10b981;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+	}
+	body {
+		background-color: var(--color-navy-900);
+		color: #e2e8f0;
+		font-family: var(--font-sans);
+		line-height: 1.7;
+	}
+	::selection {
+		background-color: var(--color-amber-500);
+		color: #0a1628;
+	}
+	details > summary {
+		list-style: none;
+		cursor: pointer;
+	}
+	details > summary::-webkit-details-marker {
+		display: none;
+	}
+}
+
+@layer components {
+	.prose-aviator p {
+		margin-block: 0.85rem;
+	}
+	.prose-aviator strong {
+		color: #ffffff;
+	}
+}
+
+@keyframes aviator-pulse {
+	0%,
+	100% {
+		opacity: 0.45;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.05);
+	}
+}
+
+.animate-aviator-pulse {
+	animation: aviator-pulse 2.4s ease-in-out infinite;
+}

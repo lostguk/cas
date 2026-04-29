@@ -1,7 +1,6 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
 import Card from '../ui/Card.astro';
-import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
 
 const methods = [
   {
@@ -66,9 +65,13 @@ const rows = [
           </tbody>
         </table>
       </div>
-      <ImagePlaceholder
-        description="Экран кассы: список способов пополнения и вывода с лимитами в тенге"
-        aspect="4/3"
+      <img
+        src="/images/payments-methods.png"
+        alt="Способы пополнения и вывода в тенге"
+        width="800"
+        height="450"
+        class="rounded-xl shadow-sm w-full"
+        loading="lazy"
       />
     </div>
   </div>

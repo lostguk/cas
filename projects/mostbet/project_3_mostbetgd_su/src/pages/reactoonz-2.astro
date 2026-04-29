@@ -1,0 +1,118 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import Card from '../components/ui/Card.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const affiliateLink = '#';
+const title = 'Reactoonz 2 слот: RTP 96.20%, максимум ×5 083 | Mostbet';
+const description =
+  'Обзор слота Reactoonz 2 на Mostbet: RTP 96.20%, макс. выигрыш ×5 083. Play\'n GO. Играй в рубль.';
+const canonical = 'https://mostbetgd.su/reactoonz-2';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'Game',
+      name: 'Reactoonz 2',
+      gameLocation: { '@type': 'VirtualLocation', url: canonical },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4', bestRating: '5' },
+    author: { '@type': 'Organization', name: 'Mostbet Россия' },
+    reviewBody: description,
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-25"
+  updateDate="2026-04-01"
+  type="article"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Слоты', href: '/slots-i-igry' },
+      { label: 'Reactoonz 2' },
+    ]}
+  />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-sm font-semibold text-main-400 uppercase tracking-wider mb-2">Play'n GO · RTP 96.20%</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight mb-4">
+          Reactoonz 2 — обзор слота
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+          Сиквел популярного слота от Play'n GO с каскадными механиками на сетке 7×7. Максимальный потенциал — ×5 083.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Открыть слот</CTAButton>
+      </div>
+
+      <img
+        src="/images/reactoonz-review.jpg"
+        alt="Слот Reactoonz 2: забавные инопланетяне"
+        width="1200"
+        height="675"
+        loading="eager"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-10"
+      />
+
+      <div class="grid sm:grid-cols-3 gap-4 mb-10 text-center">
+        <Card class="py-4">
+          <div class="text-xs text-slate-500 uppercase">RTP</div>
+          <div class="text-xl font-bold text-white">96.20%</div>
+        </Card>
+        <Card class="py-4">
+          <div class="text-xs text-slate-500 uppercase">Макс. выигрыш</div>
+          <div class="text-xl font-bold text-white">×5 083</div>
+        </Card>
+        <Card class="py-4">
+          <div class="text-xs text-slate-500 uppercase">Провайдер</div>
+          <div class="text-xl font-bold text-white">Play'n GO</div>
+        </Card>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Обзор Reactoonz 2</h2>
+      <div class="space-y-5 text-slate-300 mb-10">
+        <p>
+          Reactoonz 2 — сиквел культового слота с забавными инопланетными существами. Сетка 7×7 с каскадными выигрышами: совпадающие символы исчезают, на их место падают новые. RTP 96.20%, волатильность средне-высокая.
+        </p>
+        <p>
+          Графика улучшена по сравнению с первой частью, добавлены новые фичи: электрический Wild, Energoon и система зарядки Quantumeter.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Как играть</h2>
+      <div class="space-y-5 text-slate-300 mb-10">
+        <p>
+          Выигрыши формируются кластерами — группами из 5+ одинаковых символов, соприкасающихся по горизонтали или вертикали. После выигрыша символы исчезают, запуская каскад. Каждый каскад заряжает Quantumeter, который активирует бонусные фичи.
+        </p>
+        <p>
+          Электрический Wild появляется случайно и трансформирует соседние символы. Gargantoon — максимальная фича, превращающая множество символов и генерирующая крупнейшие выигрыши.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Стоит ли играть</h2>
+      <div class="space-y-5 text-slate-300 mb-10">
+        <p>
+          Reactoonz 2 идеально подходит любителям каскадных механик и красочного геймплея. Максимальный потенциал ×5 083 — значительно выше среднего. Из минусов: базовая дисперсия может быстро съесть баланс без каскадных серий.
+        </p>
+        <p>
+          Полный каталог игр — на странице <a href="/slots-i-igry" class="text-main-400 hover:text-main-300 underline underline-offset-2">слоты Mostbet</a>. Рекомендуем также <a href="/big-bass-splash" class="text-main-400 hover:text-main-300 underline underline-offset-2">Big Bass Splash</a>.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-deep-600 bg-deep-900/50 p-4 text-sm text-slate-400">
+        18+. По данным из открытых источников: играйте в пределах бюджета, установите лимиты в кабинете до первого депозита.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

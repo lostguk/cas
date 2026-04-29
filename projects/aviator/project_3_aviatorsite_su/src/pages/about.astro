@@ -1,0 +1,143 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import FinalCTASection from '../components/sections/FinalCTASection.astro'
+import Card from '../components/ui/Card.astro'
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const title = 'О проекте aviatorsite.su — информационный портал об игре Aviator';
+const description = 'Aviatorgames.su — независимый информационный портал об игре Aviator от Spribe. Обзоры, стратегии, демо-режим, инструкции по платформам. Партнёрская модель и ответственная игра.';
+---
+
+<BaseLayout title={title} description={description} type="article" publishDate="2026-01-15" updateDate="2026-04-22">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О проекте' }]} />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <ArticleMeta publishDate="2026-01-15" updateDate="2026-04-22" readingMinutes={5} />
+
+    <header class="mt-8 mb-10">
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+        О проекте <span class="text-amber-400">aviatorsite.su</span>
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Aviatorgames.su — это независимый информационный портал, посвящённый одной игре: <strong>Aviator от провайдера Spribe</strong>. Мы рассказываем о правилах, стратегиях, демо-режиме, мобильных приложениях и партнёрских платформах.
+      </p>
+    </header>
+
+    <section class="mb-10">
+      <ImagePlaceholder description="1. Иллюстрация концепции сайта: красный самолёт Aviator, символ информации (i), стрелки между разделами" aspect="16/9" />
+    </section>
+
+    <section class="mb-10 prose-aviator text-slate-300 leading-relaxed">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Кто мы и что делаем</h2>
+      <p class="mb-4">
+        Команда aviatorsite.su — небольшая редакция авторов, которая специализируется на одной нише: краш-играх и в первую очередь на Aviator. Мы изучаем игру с момента её выхода в 2019 году, тестируем все механики, проверяем стратегии и собираем актуальную информацию о платформах, на которых её можно запустить.
+      </p>
+      <p class="mb-4">
+        В отличие от множества похожих сайтов, мы не пишем «миллиард слов про каждое казино мира» — у нас один фокус и одна цель: дать максимально полную и честную информацию об Aviator российскому читателю. Это позволяет глубже копать материал и быстрее обновлять данные при изменениях.
+      </p>
+      <p>
+        Все обзоры пишутся редакцией, без передачи на сторону. Перед публикацией каждый материал проходит проверку фактов: цифры RTP, лимиты ставок, условия бонусов — всё сверяется с официальными источниками и платформами на момент публикации.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-5">Наш подход</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <Card>
+          <div class="text-3xl mb-3" aria-hidden="true">🎯</div>
+          <h3 class="font-bold text-white text-base mb-2">Один фокус — Aviator</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Никаких слотов, рулеток, букмекеров — только краш-игры с акцентом на Aviator. Это позволяет нам быть в теме глубже всех.
+          </p>
+        </Card>
+        <Card>
+          <div class="text-3xl mb-3" aria-hidden="true">🔍</div>
+          <h3 class="font-bold text-white text-base mb-2">Проверенные данные</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            RTP, лимиты, условия бонусов сверяются с источниками. Если данные обновились — обновляем статьи (видно по дате «Обновлено»).
+          </p>
+        </Card>
+        <Card>
+          <div class="text-3xl mb-3" aria-hidden="true">⚖️</div>
+          <h3 class="font-bold text-white text-base mb-2">Честность о минусах</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Мы открыто пишем о рисках азартных игр, разоблачаем «сигналы» и «гарантированные стратегии» — потому что хотим, чтобы читатели не теряли деньги.
+          </p>
+        </Card>
+        <Card>
+          <div class="text-3xl mb-3" aria-hidden="true">🤝</div>
+          <h3 class="font-bold text-white text-base mb-2">Партнёрская модель</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Сайт зарабатывает на реферальных переходах в казино 1xBet. Это никак не влияет на содержание статей — мы пишем то, что считаем правдой.
+          </p>
+        </Card>
+      </div>
+    </section>
+
+    <section class="mb-10 prose-aviator text-slate-300 leading-relaxed">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Почему мы рекомендуем именно 1xBet</h2>
+      <p class="mb-4">
+        В качестве партнёрской платформы мы выбрали <strong>1xBet</strong>. Решение основано на трёх факторах: <strong>стабильная работа в России</strong> (СБП, Сбер, Тинькофф работают без сбоев), <strong>максимальный приветственный бонус</strong> (100% против 100–200% у большинства конкурентов) и <strong>оптимизация под Aviator</strong> (игра вынесена в отдельный раздел главного меню, есть специальные турниры).
+      </p>
+      <p class="mb-4">
+        Это не значит, что Aviator на других платформах хуже — на Mostbet, Pin-Up, 1xBet игра работает абсолютно идентично, потому что её предоставляет один и тот же провайдер Spribe. Различаются условия бонусов, скорость выплат, удобство интерфейса. Если у вас уже есть аккаунт на другой платформе — играть в Aviator там можно без проблем.
+      </p>
+      <p>
+        В описаниях платежных методов, инструкций и других технических разделов мы намеренно фокусируемся именно на 1xBet, чтобы информация была точной и проверенной. Для других платформ может действовать другой набор методов оплаты, лимитов и условий бонусов.
+      </p>
+    </section>
+
+    <section class="mb-10 prose-aviator text-slate-300 leading-relaxed">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Дисклеймер о партнёрских ссылках</h2>
+      <p class="mb-4">
+        Сайт aviatorsite.su содержит партнёрские ссылки на казино <strong>1xBet</strong>. При переходе по этим ссылкам и регистрации на платформе мы получаем небольшое вознаграждение от оператора — это позволяет нам поддерживать сайт, обновлять информацию и развивать новые материалы. <strong>Для вас как читателя ничего не меняется</strong>: бонусы, условия игры, лимиты — всё остаётся таким же, как при прямом заходе на сайт.
+      </p>
+      <p>
+        Aviatorgames.su <strong>не является официальным сайтом</strong> 1xBet, не проводит финансовых операций, не принимает депозитов и не отвечает за работу платформы. Все вопросы по аккаунту, депозитам, выводам и техническим проблемам решаются непосредственно через службу поддержки 1xBet.
+      </p>
+    </section>
+
+    <section class="mb-10 prose-aviator text-slate-300 leading-relaxed">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Ответственная игра</h2>
+      <p class="mb-4">
+        Aviator — это азартная игра с элементом риска. Несмотря на высокий RTP 97%, на длинной дистанции большинство игроков уйдут в небольшой минус — это математическая реальность любого онлайн-казино. Поэтому первое и главное правило: <strong>играйте только на те деньги, которые готовы потерять</strong>. Никогда не используйте кредитные средства, заёмные деньги или средства, отложенные на жизненные нужды.
+      </p>
+      <p class="mb-4">
+        Если вы замечаете, что игра становится навязчивой, что вы возвращаетесь к ней «чтобы отыграться», что мысли о ставках мешают работе и отношениям — это сигнал остановиться. На 1xBet есть инструменты самоограничения: лимит депозита в день/неделю/месяц, лимит времени игровой сессии, временная блокировка аккаунта (от 24 часов до 6 месяцев). Все настройки доступны в личном кабинете в разделе «Ответственная игра».
+      </p>
+      <p>
+        Если игра вышла из-под контроля — обратитесь в специализированные службы помощи. В России работает <strong>Лудоман.нет</strong> и горячая линия <strong>8 800 200-25-26</strong> (анонимно, бесплатно, круглосуточно).
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <div class="rounded-2xl bg-amber-500/10 border border-amber-500/40 p-6 lg:p-8">
+        <div class="flex items-start gap-4">
+          <span class="text-3xl shrink-0">⚠️</span>
+          <div>
+            <h2 class="text-xl font-bold text-white mb-2">Важно знать</h2>
+            <p class="text-slate-200 leading-relaxed mb-2"><strong>18+. Игра только для совершеннолетних.</strong></p>
+            <p class="text-slate-200 leading-relaxed mb-2">Не используйте Aviator как источник дохода — это развлечение с элементом риска.</p>
+            <p class="text-slate-200 leading-relaxed">При признаках игровой зависимости обращайтесь за помощью: 8 800 200-25-26 или к специалисту-психотерапевту.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Контакты</h2>
+      <p class="text-slate-300 leading-relaxed">
+        По вопросам сотрудничества, рекламы или предложений по контенту — пишите на <strong>editor@aviatorsite.su</strong>. Отвечаем в течение 1–2 рабочих дней.
+      </p>
+    </section>
+  </article>
+
+  <FinalCTASection
+    title='Готовы попробовать <span class="text-amber-400">Aviator</span> со всеми знаниями?'
+    body="Применяйте всё, что прочитали: подходящую стратегию, демо-режим для тренировки и приветственный бонус 100% от 1xBet для уверенного старта."
+    rating="4.9/5"
+    cta="Играть в Aviator на 1xBet"
+  />
+</BaseLayout>

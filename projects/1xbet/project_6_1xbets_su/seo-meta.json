@@ -1,0 +1,77 @@
+{
+  "index": {
+    "title": "1xBet Россия — ставки на спорт и казино РУ 2026",
+    "description": "Обзор 1xBet для Россия: ставки на КПЛ, казино, бонус до 32 500 ₽. Пополнение через Сбербанк в рубль.",
+    "primary_keyword": "1xBet россия",
+    "title_formula": 1,
+    "page_type": "index"
+  },
+  "sozdat-akkaunt": {
+    "title": "Регистрация 1xBet: 4 способа + бонус на первый депозит",
+    "description": "Регистрация 1xBet за 2 минуты — пошагово. Аккаунт в рубль, бонус на старте, верификация через ИИН.",
+    "primary_keyword": "1xBet регистрация",
+    "title_formula": 2,
+    "page_type": "registration"
+  },
+  "mobile-app": {
+    "title": "Скачать 1xBet Россия — APK для Android бесплатно",
+    "description": "Как скачать 1xBet в Россия: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.",
+    "primary_keyword": "1xBet скачать",
+    "title_formula": 3,
+    "page_type": "download"
+  },
+  "onlajn-kazino": {
+    "title": "Какие слоты есть на 1xBet? Обзор казино РУ 2026",
+    "description": "Казино 1xBet РУ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в рубль, выводи на Сбербанк.",
+    "primary_keyword": "1xBet казино",
+    "title_formula": 4,
+    "page_type": "casino"
+  },
+  "dostup": {
+    "title": "1xBet Зеркало — рабочий доступ без блокировки | 2026",
+    "description": "Рабочее зеркало 1xBet для Россия. Обходи блокировку Kcell и Beeline — вход без VPN.",
+    "primary_keyword": "1xBet зеркало",
+    "title_formula": 1,
+    "page_type": "mirror"
+  },
+  "akcii": {
+    "title": "1xBet Бонус: до 32 500 ₽ + 150 фриспинов новым игрокам",
+    "description": "1xBet бонус 2026: приветственный пакет, промокод, фрибет. Как получить и отыграть бонус в KZ.",
+    "primary_keyword": "1xBet бонус",
+    "title_formula": 2,
+    "page_type": "bonus"
+  },
+  "about": {
+    "title": "Обзор 1xBet Россия — кто автор и зачем этот сайт",
+    "description": "Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках.",
+    "primary_keyword": "1xBet обзор",
+    "title_formula": 3,
+    "page_type": "about"
+  },
+  "sugar-rush-1000": {
+    "title": "Играть Sugar Rush 1000 на 1xBet Россия — обзор и RTP",
+    "description": "Sugar Rush 1000 на 1xBet: RTP 96.53%, бонусные раунды, волатильность. Честный обзор от жителя Россия 2026.",
+    "primary_keyword": "Sugar Rush 1000 слот",
+    "title_formula": 3,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Sugar Rush 1000",
+      "rtp": "96.53%",
+      "maxWin": "×25 000",
+      "provider": "Pragmatic Play"
+    }
+  },
+  "the-dog-house": {
+    "title": "The Dog House слот: RTP 96.51%, максимум ×6 750 | 1xBet",
+    "description": "Обзор слота The Dog House на 1xBet: RTP 96.51%, макс. выигрыш ×6 750. Pragmatic Play. Играй в рубль.",
+    "primary_keyword": "The Dog House слот",
+    "title_formula": 2,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "The Dog House",
+      "rtp": "96.51%",
+      "maxWin": "×6 750",
+      "provider": "Pragmatic Play"
+    }
+  }
+}

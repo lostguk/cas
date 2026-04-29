@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+
+const title = 'Обзор 1xBet Россия — кто автор и зачем этот сайт';
+const description = 'Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: title,
+  description,
+  url: 'https://1xbets.su/about',
+  mainEntity: {
+    '@type': 'Organization',
+    name: '1xbets.su',
+    url: 'https://1xbets.su',
+    description: 'Информационный портал с обзорами букмекерских платформ',
+  },
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://1xbets.su/about" schema={schema} publishDate="2026-04-01" updateDate="2026-04-13">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О сайте' }]} />
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-none uppercase tracking-tighter mb-6">
+        О ДАННОМ ИНФОРМАЦИОННОМ ПОРТАЛЕ
+      </h1>
+      <div class="border-2 border-info-400 bg-surface-400 p-8 max-w-3xl">
+        <p class="text-info-400 font-mono font-bold uppercase text-sm tracking-wider mb-4">⚠️ ВАЖНЫЙ ДИСКЛЕЙМЕР</p>
+        <ul class="space-y-2 text-white/70">
+          <li class="flex gap-2"><span class="text-info-400 font-mono">—</span> Данный сайт <strong class="text-white">НЕ является</strong> официальным сайтом 1xBet</li>
+          <li class="flex gap-2"><span class="text-info-400 font-mono">—</span> Данный сайт <strong class="text-white">НЕ является</strong> зеркалом 1xBet</li>
+          <li class="flex gap-2"><span class="text-info-400 font-mono">—</span> Мы <strong class="text-white">НЕ проводим</strong> финансовые операции</li>
+          <li class="flex gap-2"><span class="text-info-400 font-mono">—</span> Мы <strong class="text-white">НЕ принимаем</strong> ставки и платежи</li>
+          <li class="flex gap-2"><span class="text-info-400 font-mono">—</span> Мы <strong class="text-white">НЕ проводим</strong> регистрацию аккаунтов</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>О ПРОЕКТЕ</SectionHeading>
+      <div class="max-w-3xl space-y-4 text-white/70">
+        <p>
+          Данный ресурс является информационным порталом, публикующим обзоры букмекерских платформ на основе открытых данных. Материалы собраны из публичных источников: отзывы пользователей, обзоры аналитиков, официальная документация операторов.
+        </p>
+        <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+          <p>💡 Все данные носят информационный характер и не являются руководством к действию.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>ЗАЧЕМ ЭТОТ САЙТ</SectionHeading>
+      <div class="max-w-3xl space-y-4 text-white/70">
+        <p>
+          Цель проекта — систематизировать информацию о букмекерской платформе для русскоязычных пользователей. Мы стараемся представить данные объективно, включая как преимущества, так и недостатки, описанные в публичных обзорах.
+        </p>
+        <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+          <p>⚠️ Мы не рекламируем азартные игры и не призываем к участию в них.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>МЕТОДОЛОГИЯ ОБЗОРОВ</SectionHeading>
+      <div class="max-w-3xl space-y-4 text-white/70">
+        <p>
+          Информация собирается из открытых источников: тематические форумы, агрегаторы отзывов, обзоры экспертов, официальная документация. Мы стремимся к актуальности данных, но не можем гарантировать их полную достоверность на момент прочтения.
+        </p>
+        <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+          <p>💡 Для получения точной и актуальной информации рекомендуем обращаться непосредственно к оператору.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>ПАРТНЁРСКИЕ ССЫЛКИ</SectionHeading>
+      <div class="max-w-3xl space-y-4 text-white/70">
+        <p>
+          На сайте присутствуют партнёрские ссылки. Это означает, что мы можем получить вознаграждение, если пользователь перейдёт по ссылке и совершит регистрацию. Наличие партнёрских ссылок не влияет на содержание обзоров.
+        </p>
+        <p>
+          Рекомендуем ознакомиться с <a href="/sozdat-akkaunt" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">информацией о регистрации</a>, обзором <a href="/mobile-app" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">приложения</a> и страницей <a href="/akcii" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">акций</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>ПРЕДУПРЕЖДЕНИЕ</SectionHeading>
+      <div class="max-w-3xl">
+        <div class="border-2 border-info-400 bg-surface-400 p-8">
+          <p class="text-white/70 mb-4">
+            Азартные игры связаны с финансовым риском. Не ставьте больше, чем можете позволить себе потерять. Если вы замечаете признаки игровой зависимости, обратитесь за профессиональной помощью.
+          </p>
+          <p class="text-info-400 font-mono font-bold uppercase text-sm">18+. Играйте ответственно.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

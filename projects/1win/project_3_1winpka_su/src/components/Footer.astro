@@ -1,0 +1,74 @@
+---
+const affiliateLink = '#';
+const year = new Date().getFullYear();
+
+const sections = [
+  {
+    title: 'Платформа',
+    links: [
+      { href: '/otkryt-schet', label: 'Регистрация' },
+      { href: '/prilozhenie', label: 'Приложение' },
+      { href: '/podarki', label: 'Бонусы' },
+    ],
+  },
+  {
+    title: 'Игры',
+    links: [
+      { href: '/igrovye-avtomaty', label: 'Казино' },
+      { href: '/bananas-go-bahamas', label: 'Bananas go Bahamas' },
+      { href: '/sweet-bonanza', label: 'Sweet Bonanza' },
+    ],
+  },
+  {
+    title: 'Инфо',
+    links: [
+      { href: '/about', label: 'О проекте' },
+    ],
+  },
+];
+---
+
+<footer class="mt-20 border-t border-coral-500/10 bg-abyss-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex items-center gap-2.5 mb-4">
+          <svg class="w-8 h-8" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="10" fill="#f43f5e" />
+            <path d="M10 18l8-10 8 10-8 10z" fill="#0a0e17" />
+            <circle cx="18" cy="18" r="3" fill="#2dd4bf" />
+          </svg>
+          <span class="font-extrabold text-white">1Win<span class="text-coral-400">.su</span></span>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Информационный ресурс о платформе 1Win для игроков из России.
+        </p>
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center mt-4 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-coral-500 to-teal-500 text-white hover:scale-105 transition-transform duration-200"
+        >
+          Перейти на 1Win
+        </a>
+      </div>
+      {sections.map((sec) => (
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-coral-400 mb-4">{sec.title}</h3>
+          <ul class="space-y-2.5">
+            {sec.links.map((l) => (
+              <li>
+                <a href={l.href} class="text-sm text-slate-400 hover:text-white transition-colors">{l.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="mt-12 pt-8 border-t border-white/5 text-xs text-slate-600 space-y-2">
+      <p>21+. Играйте ответственно. Азартные игры могут вызывать зависимость.</p>
+      <p>Сайт содержит партнёрские ссылки. Информация носит ознакомительный характер.</p>
+      <p class="text-slate-500">© {year} 1winpka.su</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Card from '../components/ui/Card.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const title = 'Регистрация 1xBet: 4 способа + бонус на первый депозит';
+const description = 'Регистрация 1xBet за 2 минуты — пошагово. Аккаунт в рубль, бонус на старте, верификация через ИИН.';
+
+const affiliateLink = '#';
+
+const steps = [
+  { num: '01', title: 'Выбор способа', desc: 'По данным из обзоров, доступно 4 варианта: телефон, email, соцсети, в один клик. Самый быстрый — в один клик.' },
+  { num: '02', title: 'Заполнение данных', desc: 'Согласно инструкциям, потребуется указать страну (Россия), валюту (RUB) и контактные данные.' },
+  { num: '03', title: 'Промокод и бонус', desc: 'По данным из открытых источников, при регистрации можно ввести промокод для активации бонуса до 32 500 ₽.' },
+  { num: '04', title: 'Подтверждение', desc: 'Согласно обзорам, аккаунт активируется после подтверждения через SMS или email. Процесс занимает 2-3 минуты.' },
+];
+
+const methods = [
+  { title: 'ПО ТЕЛЕФОНУ', desc: 'Номер + SMS-код. По данным обзоров, самый популярный способ среди пользователей из РФ.' },
+  { title: 'ПО EMAIL', desc: 'Электронная почта + пароль. Согласно отзывам, требуется подтверждение через письмо.' },
+  { title: 'ЧЕРЕЗ СОЦСЕТИ', desc: 'По данным из открытых источников, доступна авторизация через VK, Telegram и другие сервисы.' },
+  { title: 'В ОДИН КЛИК', desc: 'Согласно обзорам, самый быстрый вариант — только выбор страны и валюты. Данные для входа генерируются автоматически.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: steps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.desc,
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://1xbets.su/sozdat-akkaunt" schema={schema} publishDate="2026-04-01" updateDate="2026-04-13">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Регистрация' }]} />
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-none uppercase tracking-tighter mb-6">
+        ИНФОРМАЦИЯ О РЕГИСТРАЦИИ НА 1XBET
+      </h1>
+      <p class="text-lg text-white/60 max-w-2xl mb-4">
+        По данным из открытых источников, создание аккаунта на платформе занимает несколько минут. Ниже представлена информация о процессе регистрации, собранная из публичных обзоров.
+      </p>
+      <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+        <p>⚠️ Мы не проводим регистрацию. Информация носит обзорный характер. Для создания аккаунта обращайтесь на официальный сайт.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>ПОШАГОВАЯ РЕГИСТРАЦИЯ</SectionHeading>
+      <div class="space-y-4 max-w-3xl">
+        {steps.map((s) => (
+          <div class="flex gap-6 border-2 border-white/10 bg-surface-400 p-6 hover:border-cta-500/30 transition-colors duration-100">
+            <span class="text-3xl font-black font-mono text-cta-500 shrink-0">{s.num}</span>
+            <div>
+              <p class="font-mono font-bold text-white uppercase tracking-wider mb-1">{s.title}</p>
+              <p class="text-sm text-white/60">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50 mt-8 max-w-3xl">
+        <p>💡 По данным из открытых источников. Актуальный интерфейс может отличаться от описанного.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>СПОСОБЫ РЕГИСТРАЦИИ НА 1XBET</SectionHeading>
+      <div class="grid md:grid-cols-2 gap-4 lg:gap-6 max-w-3xl">
+        {methods.map((m) => (
+          <Card>
+            <p class="text-sm font-mono font-bold text-cta-400 uppercase tracking-wider mb-2">{m.title}</p>
+            <p class="text-sm text-white/60">{m.desc}</p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>БОНУС ПРИ РЕГИСТРАЦИИ</SectionHeading>
+      <div class="max-w-3xl space-y-4 text-white/70">
+        <p>
+          По данным из открытых источников, при регистрации доступен приветственный бонус до 32 500 ₽ + 150 фриспинов. Условия отыгрыша: вейджер ×5 на спорт (экспрессы от 1.40) или ×35 на казино. Срок — 30 дней. Подробнее на странице <a href="/akcii" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">акций и бонусов</a>.
+        </p>
+        <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+          <p>⚠️ Согласно отзывам, условия отыгрыша могут быть сложными. Рекомендуется ознакомиться с полными правилами на сайте оператора.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>ВЕРИФИКАЦИЯ АККАУНТА</SectionHeading>
+      <div class="max-w-3xl space-y-4 text-white/70">
+        <p>
+          Согласно обзорам, для верификации потребуется документ (СНИЛС/ИНН) и селфи. По данным из отзывов, процесс проверки занимает от нескольких часов до 3 рабочих дней. Верификация необходима для вывода средств.
+        </p>
+        <p>
+          Также рекомендуем ознакомиться с <a href="/mobile-app" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">обзором мобильного приложения</a> и страницей <a href="/about" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">о проекте</a>.
+        </p>
+        <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+          <p>💡 Мы не проводим верификацию и не храним персональные данные. Для актуальной информации обращайтесь к оператору.</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <CTAButton href={affiliateLink} size="lg" external>ПОСЕТИТЬ ОФИЦИАЛЬНЫЙ САЙТ</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

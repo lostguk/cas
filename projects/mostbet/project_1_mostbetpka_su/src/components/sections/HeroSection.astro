@@ -1,0 +1,39 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const stats = [
+  { value: '40+', label: 'видов спорта' },
+  { value: '100 ₽', label: 'мин. депозит' },
+  { value: '100%', label: 'на первый депозит' },
+];
+---
+
+<section class="py-12 lg:py-16">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 text-accent-700 text-sm font-medium mb-6">
+      Актуально на 2026
+    </p>
+    <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-warm-900 leading-tight mb-4">
+      Mostbet Россия — гайд по ставкам и казино для игроков из РФ
+    </h1>
+    <p class="text-warm-500 leading-relaxed mb-8">
+      Пошаговые инструкции для пользователей из России: как зарегистрироваться, пополнить счёт через Сбербанк или Тинькофф, получить бонус до 32 500 ₽ и начать делать ставки на РПЛ.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 mb-10">
+      <CTAButton href={affiliateLink} size="lg" external>Перейти к регистрации</CTAButton>
+      <CTAButton href="/registraciya" variant="outline" size="lg">Инструкция по регистрации</CTAButton>
+    </div>
+    <div class="flex gap-8 border-t border-warm-200 pt-6">
+      {
+        stats.map((s) => (
+          <div>
+            <div class="text-xl font-serif font-semibold text-accent-600">{s.value}</div>
+            <div class="text-xs text-warm-400 mt-0.5">{s.label}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const advantages = [
+  {
+    title: 'Линия и коэффициенты',
+    plus: '35+ видов спорта, маржа 3-5%',
+    minus: 'На РПЛ роспись беднее чем на АПЛ',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 5-5"/></svg>',
+  },
+  {
+    title: 'Оплата в рублях',
+    plus: 'Сбербанк, Тинькофф, Альфа — без конвертации',
+    minus: 'Сбербанк иногда отклоняет платежи',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>',
+  },
+  {
+    title: 'Мобильное приложение',
+    plus: 'APK ~50 МБ, работает стабильно',
+    minus: 'Нет в Google Play, обновлять вручную',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>',
+  },
+  {
+    title: 'Казино и слоты',
+    plus: '12 000+ игр от Pragmatic Play, Spribe, 1Win Games',
+    minus: 'Вейджер ×50 — жёстко',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h.01M16 16h.01M8 16h.01M16 8h.01M12 12h.01"/></svg>',
+  },
+  {
+    title: 'Бонусы',
+    plus: 'До 500% + 70 фриспинов',
+    minus: 'Условия отыгрыша непростые',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>',
+  },
+  {
+    title: 'Поддержка',
+    plus: 'Чат 24/7 на русском',
+    minus: 'Отвечают шаблонно, нужно настаивать',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+  },
+];
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Честная оценка: плюсы и минусы</SectionHeading>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {advantages.map((a) => (
+        <Card>
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-coral-500/10 flex items-center justify-center text-coral-400 shrink-0">
+              <Fragment set:html={a.icon} />
+            </div>
+            <h3 class="font-bold text-white uppercase tracking-wide text-sm">{a.title}</h3>
+          </div>
+          <p class="text-sm text-teal-400 mb-1">+ {a.plus}</p>
+          <p class="text-sm text-coral-400">− {a.minus}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

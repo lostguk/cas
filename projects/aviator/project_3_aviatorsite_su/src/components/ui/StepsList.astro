@@ -1,0 +1,35 @@
+---
+interface Step {
+  title: string;
+  body: string;
+}
+
+interface Props {
+  steps: Step[];
+  variant?: 'numbered' | 'check';
+}
+
+const { steps, variant = 'numbered' } = Astro.props;
+---
+
+<ol class="space-y-5">
+  {steps.map((step, i) => (
+    <li class="flex gap-4 items-start">
+      <span
+        class:list={[
+          'shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-extrabold text-sm border',
+          variant === 'numbered'
+            ? 'bg-amber-500/15 text-amber-300 border-amber-500/40'
+            : 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40',
+        ]}
+        aria-hidden="true"
+      >
+        {variant === 'numbered' ? i + 1 : '✓'}
+      </span>
+      <div class="flex-1 min-w-0 pt-1">
+        <h4 class="font-bold text-white text-base sm:text-lg mb-1.5">{step.title}</h4>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed" set:html={step.body} />
+      </div>
+    </li>
+  ))}
+</ol>

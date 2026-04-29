@@ -1,0 +1,70 @@
+{
+  "index": {
+    "title": "Mostbet Россия — ставки на спорт и казино РУ 2026",
+    "description": "Обзор Mostbet для Россия: ставки на КПЛ, казино, бонус до 32 500 ₽. Пополнение через Сбербанк в рубль.",
+    "primary_keyword": "Mostbet россия",
+    "title_formula": 1,
+    "page_type": "index"
+  },
+  "registraciya": {
+    "title": "Регистрация Mostbet: 4 способа + бонус на первый депозит",
+    "description": "Регистрация Mostbet за 2 минуты — пошагово. Аккаунт в рубль, бонус на старте, верификация через ИИН.",
+    "primary_keyword": "Mostbet регистрация",
+    "title_formula": 2,
+    "page_type": "registration"
+  },
+  "skachat": {
+    "title": "Скачать Mostbet Россия — APK для Android бесплатно",
+    "description": "Как скачать Mostbet в Россия: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.",
+    "primary_keyword": "Mostbet скачать",
+    "title_formula": 3,
+    "page_type": "download"
+  },
+  "casino": {
+    "title": "Какие слоты есть на Mostbet? Обзор казино РУ 2026",
+    "description": "Казино Mostbet РУ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в рубль, выводи на Сбербанк.",
+    "primary_keyword": "Mostbet казино",
+    "title_formula": 4,
+    "page_type": "casino"
+  },
+  "bonus": {
+    "title": "Mostbet Бонусы — приветственный пакет для РУ | 2026",
+    "description": "Бонусы Mostbet для Россия: до 32 500 ₽ на спорт, 150 фриспинов на казино. Условия отыгрыша.",
+    "primary_keyword": "Mostbet бонус",
+    "title_formula": 1,
+    "page_type": "bonus"
+  },
+  "about": {
+    "title": "О нас: обзор Mostbet от реального игрока из Россия",
+    "description": "О проекте: честный обзор Mostbet от автора из Россия. Без заказных текстов, только личный опыт.",
+    "primary_keyword": "Mostbet обзор",
+    "title_formula": 2,
+    "page_type": "about"
+  },
+  "sweet-bonanza": {
+    "title": "Стоит ли играть в Sweet Bonanza? Обзор слота 2026",
+    "description": "Слот Sweet Bonanza от Pragmatic Play на Mostbet KZ. RTP 96.48%, макс. ×21 175. Как играть и выигрывать.",
+    "primary_keyword": "Sweet Bonanza слот",
+    "title_formula": 4,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Sweet Bonanza",
+      "rtp": "96.48%",
+      "maxWin": "×21 175",
+      "provider": "Pragmatic Play"
+    }
+  },
+  "gates-of-olympus": {
+    "title": "Играть Gates of Olympus на Mostbet Россия — обзор и RTP",
+    "description": "Gates of Olympus на Mostbet: RTP 96.50%, бонусные раунды, волатильность. Честный обзор от жителя Россия 2026.",
+    "primary_keyword": "Gates of Olympus слот",
+    "title_formula": 3,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Gates of Olympus",
+      "rtp": "96.50%",
+      "maxWin": "×5 000",
+      "provider": "Pragmatic Play"
+    }
+  }
+}

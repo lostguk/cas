@@ -1,0 +1,70 @@
+{
+  "index": {
+    "title": "1Win Россия — ставки на спорт и казино РУ 2026",
+    "description": "Обзор 1Win для Россия: ставки на КПЛ, казино, бонус до 32 500 ₽. Пополнение через Сбербанк в рубль.",
+    "primary_keyword": "1Win россия",
+    "title_formula": 1,
+    "page_type": "index"
+  },
+  "otkryt-schet": {
+    "title": "Регистрация 1Win: 4 способа + бонус на первый депозит",
+    "description": "Регистрация 1Win за 2 минуты — пошагово. Аккаунт в рубль, бонус на старте, верификация через ИИН.",
+    "primary_keyword": "1Win регистрация",
+    "title_formula": 2,
+    "page_type": "registration"
+  },
+  "prilozhenie": {
+    "title": "Скачать 1Win Россия — APK для Android бесплатно",
+    "description": "Как скачать 1Win в Россия: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.",
+    "primary_keyword": "1Win скачать",
+    "title_formula": 3,
+    "page_type": "download"
+  },
+  "igrovye-avtomaty": {
+    "title": "Какие слоты есть на 1Win? Обзор казино РУ 2026",
+    "description": "Казино 1Win РУ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в рубль, выводи на Сбербанк.",
+    "primary_keyword": "1Win казино",
+    "title_formula": 4,
+    "page_type": "casino"
+  },
+  "podarki": {
+    "title": "1Win Бонусы — приветственный пакет для РУ | 2026",
+    "description": "Бонусы 1Win для Россия: до 32 500 ₽ на спорт, 150 фриспинов на казино. Условия отыгрыша.",
+    "primary_keyword": "1Win бонус",
+    "title_formula": 1,
+    "page_type": "bonus"
+  },
+  "about": {
+    "title": "О нас: обзор 1Win от реального игрока из Россия",
+    "description": "О проекте: честный обзор 1Win от автора из Россия. Без заказных текстов, только личный опыт.",
+    "primary_keyword": "1Win обзор",
+    "title_formula": 2,
+    "page_type": "about"
+  },
+  "bananas-go-bahamas": {
+    "title": "Стоит ли играть в Bananas go Bahamas? Обзор слота 2026",
+    "description": "Слот Bananas go Bahamas от Novomatic на 1Win KZ. RTP 96.10%, макс. ×9 000. Как играть и выигрывать.",
+    "primary_keyword": "Bananas go Bahamas слот",
+    "title_formula": 4,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Bananas go Bahamas",
+      "rtp": "96.10%",
+      "maxWin": "×9 000",
+      "provider": "Novomatic"
+    }
+  },
+  "sweet-bonanza": {
+    "title": "Играть Sweet Bonanza на 1Win Россия — обзор и RTP",
+    "description": "Sweet Bonanza на 1Win: RTP 96.48%, бонусные раунды, волатильность. Честный обзор от жителя Россия 2026.",
+    "primary_keyword": "Sweet Bonanza слот",
+    "title_formula": 3,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Sweet Bonanza",
+      "rtp": "96.48%",
+      "maxWin": "×21 175",
+      "provider": "Pragmatic Play"
+    }
+  }
+}

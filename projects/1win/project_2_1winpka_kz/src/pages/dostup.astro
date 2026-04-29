@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const methods = [
+  { num: '01', title: 'Зеркало (актуальная ссылка)', text: 'Зеркало — точная копия основного сайта на другом домене. Данные аккаунта, баланс, история — всё сохраняется. Ссылки обновляются каждые 2-3 дня.' },
+  { num: '02', title: 'Мобильное приложение', text: 'APK не зависит от блокировки домена — работает напрямую через серверы платформы. По нашим данным, самый стабильный способ доступа.' },
+  { num: '03', title: 'Смена DNS (8.8.8.8)', text: 'Меняете DNS в настройках Wi-Fi на Google DNS (8.8.8.8). Работает не со всеми провайдерами — Kcell блокирует на уровне IP, а не DNS.' },
+];
+---
+
+<BaseLayout
+  title="1Win Зеркало — рабочий доступ без блокировки | 2026"
+  description="Рабочее зеркало 1Win для Казахстан. Обходи блокировку Kcell и Beeline — вход без VPN."
+  publishDate="2026-02-15"
+  updateDate="2026-04-08"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Доступ' }]} />
+  <ArticleMeta publishDate="2026-02-15" updateDate="2026-04-08" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">1Win зеркало — рабочий доступ для Казахстана</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">Три способа обхода блокировки: зеркало, приложение, DNS. Сравнение надёжности.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Перейти на рабочее зеркало</CTAButton>
+        </div>
+      </div>
+
+      <div class="space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Почему блокируют</h2>
+        <p>Провайдеры Kcell и Beeline KZ периодически блокируют домены букмекерских контор по требованию регулятора. Это стандартная ситуация для всех площадок — не только 1Win. Altel блокирует реже, но тоже не застрахован. По нашим наблюдениям блокировки происходят волнами: 2-3 недели работает, потом домен закрывают.</p>
+      </div>
+
+      <div class="mt-10">
+        <h2 class="text-2xl font-bold text-white mb-6">3 способа зайти</h2>
+        <div class="relative space-y-0">
+          {methods.map((m, i) => (
+            <div class="flex gap-6 pb-8 relative">
+              {i < methods.length - 1 && <div class="absolute left-5 top-12 bottom-0 w-px bg-glow-500/20"></div>}
+              <div class="w-10 h-10 rounded-full bg-glow-500/15 border border-glow-500/30 flex items-center justify-center text-glow-400 text-sm font-bold shrink-0 relative z-10">
+                {m.num}
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-1">{m.title}</h3>
+                <p class="text-sm text-slate-300">{m.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-10 space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Как отличить настоящее зеркало</h2>
+        <p>Фишинговые сайты — реальная проблема. Три признака настоящего зеркала: HTTPS-сертификат, возможность войти в существующий аккаунт, идентичный интерфейс с основным сайтом. Если просят ввести данные карты на странице «зеркала» — это мошенники. Безопаснее всего пользоваться <a href="/onlajn-kazino" class="text-glow-400 hover:text-glow-300">казино через приложение</a> — там фишинг невозможен.</p>
+        <p>Для <a href="/sozdat-akkaunt" class="text-glow-400 hover:text-glow-300">регистрации нового аккаунта</a> зеркало подходит — данные синхронизируются с основным сайтом. <a href="/akcii" class="text-glow-400 hover:text-glow-300">Бонусы</a> активируются независимо от способа входа.</p>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-glow-500/10 via-void-800 to-flash-500/5 border border-glow-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Получить доступ сейчас</h2>
+        <p class="text-slate-300 mb-6">Актуальное зеркало, обновляется ежедневно.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть через зеркало</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

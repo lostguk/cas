@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const reviewSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  itemReviewed: {
+    '@type': 'SoftwareApplication',
+    name: 'Gates of Olympus',
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'Web',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'KZT' },
+  },
+  reviewRating: { '@type': 'Rating', ratingValue: '4.3', bestRating: '5' },
+  author: { '@type': 'Organization', name: '1xbts.kz' },
+};
+---
+
+<BaseLayout
+  title="Играть Gates of Olympus на 1xBet Казахстан — обзор и RTP"
+  description="Gates of Olympus на 1xBet: RTP 96.50%, бонусные раунды, волатильность. Честный обзор от жителя Казахстан 2026."
+  schema={reviewSchema}
+  publishDate="2026-02-20"
+  updateDate="2026-04-07"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино', href: '/onlajn-kazino' }, { label: 'Gates of Olympus' }]} />
+  <ArticleMeta publishDate="2026-02-20" updateDate="2026-04-07" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">Gates of Olympus — обзор слота от Pragmatic Play</h1>
+        <p class="text-lg text-gray-400 italic font-heading max-w-2xl mx-auto">RTP 96.50%, максимальный выигрыш ×5 000, высокая волатильность.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Испытать удачу</CTAButton>
+          <CTAButton href="/onlajn-kazino" variant="secondary" size="lg">Все слоты</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Слот Gates of Olympus: Зевс с молниями, храм Олимпа, золотые символы" aspect="16/9" class="mb-12" />
+
+      <div class="space-y-8 text-gray-300">
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Обзор Gates of Olympus</h2>
+          <p class="mb-3">Gates of Olympus — слот от Pragmatic Play на тематику древнегреческой мифологии. Игровое поле 6×5, механика «Tumble» (каскадные выигрыши): выигрышные символы исчезают, на их место падают новые. RTP — 96.50%, волатильность высокая, что означает редкие, но крупные выплаты.</p>
+          <p class="text-gray-400 text-sm">Центральная фигура — Зевс, периодически бросающий множители (от ×2 до ×500) на поле. Множители суммируются в пределах одного каскада, что формирует основной потенциал выигрыша.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Как играть</h2>
+          <p class="mb-3">Выигрыш формируется при появлении 8 и более одинаковых символов в любой позиции на поле (не обязательно на линии). После выплаты символы удаляются, освобождая место для новых — каскад продолжается, пока формируются комбинации.</p>
+          <p class="text-gray-400 text-sm">Бонусный раунд активируется при выпадении 4+ символов Scatter. Предусмотрена функция покупки бонуса за ×100 от ставки. В бонусном раунде множители не сбрасываются между спинами — именно здесь реализуется потенциал до ×5 000.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex-1 p-5 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-amber-500/15">
+            <div class="text-xs text-amber-500/60 uppercase tracking-wider mb-1">RTP</div>
+            <div class="text-2xl font-heading font-bold text-white">96.50%</div>
+          </div>
+          <div class="flex-1 p-5 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-amber-500/15">
+            <div class="text-xs text-amber-500/60 uppercase tracking-wider mb-1">Макс. выигрыш</div>
+            <div class="text-2xl font-heading font-bold text-white">×5 000</div>
+          </div>
+          <div class="flex-1 p-5 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-amber-500/15">
+            <div class="text-xs text-amber-500/60 uppercase tracking-wider mb-1">Провайдер</div>
+            <div class="text-2xl font-heading font-bold text-white">Pragmatic Play</div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Стоит ли играть</h2>
+          <p class="text-gray-400 text-sm">Gates of Olympus подойдёт пользователям, готовым к высокой дисперсии: длительные серии без выигрышей чередуются с крупными выплатами. Слот не рекомендуется для минимальных банкроллов. Для сравнения можно ознакомиться с обзором <a href="/sugar-rush" class="text-amber-400 hover:text-amber-300">Sugar Rush</a> — схожая механика, но другая динамика. Полный <a href="/onlajn-kazino" class="text-amber-400 hover:text-amber-300">каталог казино</a> доступен в соответствующем разделе.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-amber-500/10 via-obsidian-800 to-olive-500/5 border border-amber-500/10">
+        <h2 class="text-2xl font-heading font-bold text-white mb-3">Gates of Olympus на 1xBet</h2>
+        <p class="text-gray-400 italic font-heading mb-6">Играйте в тенге. Бонус до 220 000 ₸ + 150 фриспинов.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Начать игру</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

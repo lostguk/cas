@@ -1,0 +1,56 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const items = [
+  {
+    title: 'Линия и коэффициенты',
+    plus: '40+ видов спорта, маржа 3–5% на топ-лиги',
+    minus: 'На РПЛ роспись беднее, чем на АПЛ или Ла Лигу',
+  },
+  {
+    title: 'Оплата в рублях',
+    plus: 'Сбербанк, Тинькофф, Альфа-Банк, СБП — без конвертации',
+    minus: 'СБП иногда задерживает зачисление на 5–15 минут',
+  },
+  {
+    title: 'Мобильное приложение',
+    plus: 'APK ~45 МБ, стабильная работа на Android',
+    minus: 'Нет в Google Play, обновлять нужно вручную',
+  },
+  {
+    title: 'Казино и слоты',
+    plus: '8 000+ игр: Pragmatic Play, Spribe, NetEnt, Evolution',
+    minus: 'Вейджер ×5 на спорт / ×60 на казино — условия жёсткие',
+  },
+  {
+    title: 'Бонусы',
+    plus: 'До 32 500 ₽ + 250 фриспинов на первый депозит',
+    minus: 'Условия отыгрыша требуют внимательного изучения',
+  },
+  {
+    title: 'Поддержка',
+    plus: 'Чат 24/7 на русском языке',
+    minus: 'Ответы часто шаблонные, для решения сложных вопросов нужно настаивать',
+  },
+];
+---
+
+<section class="py-12 lg:py-16">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <SectionHeading>Преимущества и недостатки Mostbet</SectionHeading>
+    <div class="space-y-4">
+      {
+        items.map((item) => (
+          <Card>
+            <h3 class="font-serif text-lg font-semibold text-warm-900 mb-2">{item.title}</h3>
+            <div class="flex flex-col gap-1.5 text-sm">
+              <p class="text-green-600">+ {item.plus}</p>
+              <p class="text-warm-400">− {item.minus}</p>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

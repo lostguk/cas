@@ -1,0 +1,105 @@
+---
+const affiliateLink = '#';
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Главная' },
+  { href: '/otkryt-schet', label: 'Регистрация' },
+  { href: '/prilozhenie', label: 'Приложение' },
+  { href: '/igrovye-avtomaty', label: 'Казино' },
+  { href: '/podarki', label: 'Бонусы' },
+  { href: '/about', label: 'О нас' },
+];
+
+const isActive = (href: string) =>
+  currentPath === href || (href !== '/' && currentPath.startsWith(href));
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-abyss-900/95 backdrop-blur-md border-b border-coral-500/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <a href="/" class="flex items-center gap-2.5 group">
+        <svg class="w-9 h-9" viewBox="0 0 36 36" fill="none">
+          <rect width="36" height="36" rx="10" fill="#f43f5e" />
+          <path d="M10 18l8-10 8 10-8 10z" fill="#0a0e17" />
+          <circle cx="18" cy="18" r="3" fill="#2dd4bf" />
+        </svg>
+        <span class="font-extrabold text-lg text-white tracking-tight">1Win<span class="text-coral-400">.su</span></span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Основная навигация">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-3 py-2 rounded-lg text-sm font-semibold uppercase tracking-wide transition-colors duration-200',
+              isActive(link.href)
+                ? 'text-coral-400 bg-coral-500/10'
+                : 'text-slate-300 hover:text-white hover:bg-white/5',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wider bg-gradient-to-r from-coral-500 to-teal-500 text-white hover:scale-105 transition-transform duration-200"
+        >
+          Начать играть
+        </a>
+        <button
+          type="button"
+          id="menu-toggle"
+          class="lg:hidden p-2 text-white"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 py-4">
+      <div class="flex flex-col gap-1">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-4 py-3 rounded-lg text-sm font-semibold uppercase tracking-wide',
+              isActive(link.href)
+                ? 'text-coral-400 bg-coral-500/10'
+                : 'text-slate-200 hover:bg-white/5',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 text-center px-5 py-3 rounded-lg text-sm font-bold uppercase bg-gradient-to-r from-coral-500 to-teal-500 text-white"
+        >
+          Начать играть
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    const open = menu && !menu.classList.contains('hidden');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>

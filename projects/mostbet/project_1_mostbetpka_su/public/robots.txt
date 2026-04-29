@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mostbetpka.su/sitemap-index.xml

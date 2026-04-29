@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const reviewSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'SoftwareApplication',
+      name: 'Bananas go Bahamas',
+      applicationCategory: 'GameApplication',
+      operatingSystem: 'Web',
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4', bestRating: '5' },
+    author: { '@type': 'Organization', name: '1winpka.su' },
+  },
+];
+---
+
+<BaseLayout
+  title="Стоит ли играть в Bananas go Bahamas? Обзор слота 2026"
+  description="Слот Bananas go Bahamas от Novomatic на 1Win. RTP 96.10%, макс. ×9 000. Как играть и выигрывать."
+  schema={reviewSchema}
+  publishDate="2026-03-01"
+  updateDate="2026-04-10"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино', href: '/igrovye-avtomaty' }, { label: 'Bananas go Bahamas' }]} />
+  <ArticleMeta publishDate="2026-03-01" updateDate="2026-04-10" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight mb-4">Bananas go Bahamas — обзор слота</h1>
+        <p class="text-lg text-slate-300 max-w-xl mx-auto">Novomatic · RTP 96.10% · Макс. выигрыш ×9 000</p>
+        <div class="mt-6">
+          <CTAButton href={affiliateLink} size="lg" external>Играть с бонусом</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Слот Bananas go Bahamas: тропический остров, пальмы и обезьяны" aspect="16/9" class="mb-10" />
+
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <h2 class="text-2xl font-bold text-white uppercase tracking-wide">Обзор Bananas go Bahamas</h2>
+        <p>Тропический слот от Novomatic — классика которая не теряет актуальности. Пять барабанов, девять линий, тема — пляжный отдых с обезьянами. RTP 96.10%, волатильность средняя. Максимальный выигрыш ×9 000 — не рекордный, но для классического слота нормально.</p>
+
+        <h2 class="text-2xl font-bold text-white uppercase tracking-wide">Как играть</h2>
+        <p>Механика простая — никаких Tumble или Megaways. Обычные спины, scatter запускает бесплатные вращения. В бонусном раунде множители растут, и именно тут можно собрать крупный выигрыш. Wild заменяет все символы кроме scatter.</p>
+        <p>Ставки от минимума — подходит для тех кто не хочет рисковать крупными суммами.</p>
+
+        <h2 class="text-2xl font-bold text-white uppercase tracking-wide">Стоит ли играть</h2>
+        <p>Для любителей классики — да. Не ждите безумных множителей как в Sweet Bonanza, но бонусные раунды выпадают чаще. Хороший вариант для отыгрыша фриспинов — стабильный, без резких перепадов баланса.</p>
+        <p>Другие слоты — в <a href="/igrovye-avtomaty" class="text-coral-400 hover:underline">каталоге казино</a>. Также рекомендуем <a href="/sweet-bonanza" class="text-coral-400 hover:underline">обзор Sweet Bonanza</a>.</p>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-lg bg-gradient-to-br from-coral-500/10 via-abyss-800 to-teal-500/5 border border-coral-500/10">
+        <h2 class="text-xl font-bold text-white uppercase mb-3">Запустить Bananas go Bahamas</h2>
+        <p class="text-slate-300 mb-6">Тропический слот с бонусными вращениями и множителями.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Крутить с фриспинами</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

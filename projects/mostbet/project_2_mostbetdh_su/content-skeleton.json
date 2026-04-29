@@ -1,0 +1,1225 @@
+{
+  "_meta": {
+    "brand": "Mostbet",
+    "domain": "mostbetdh.su",
+    "region": {
+      "name": "Россия",
+      "currency": "рубль",
+      "currencyCode": "RUB",
+      "currencySymbol": "₽",
+      "bonus": "32 500 ₽",
+      "minDeposit": "100 ₽",
+      "banks": [
+        "Сбербанк",
+        "Тинькофф",
+        "Альфа-Банк"
+      ],
+      "mainBank": "Сбербанк",
+      "providers": [
+        "МТС",
+        "Мегафон",
+        "Билайн"
+      ],
+      "league": "РПЛ",
+      "clubs": [
+        "Зенит",
+        "Спартак",
+        "ЦСКА"
+      ],
+      "docId": "СНИЛС",
+      "geoRegion": "RU",
+      "geoPlacename": "Russia"
+    },
+    "region_code": "RU",
+    "author": null,
+    "content_format": "G",
+    "content_format_name": "Агрегатор/сравнение",
+    "format_rules": {
+      "name": "Агрегатор/сравнение",
+      "voice": "Аналитический: «по совокупности параметров», оценки X/5",
+      "about_type": "Об аналитической команде",
+      "has_author": false,
+      "h2_style": "Сравнительные: «{brand} vs Mostbet: сравнение для KZ», «Рейтинг бонусов»",
+      "cta_style": "Аналитические: «Сравнить условия», «Посмотреть рейтинг»",
+      "faq_style": "Фактический, со ссылками на данные",
+      "forbidden": "Явная предвзятость, «однозначно лучший» без доказательств",
+      "main_words": "1000-1400",
+      "sub_words": "500-800",
+      "extras": "Таблицы сравнения + рейтинги как основа"
+    },
+    "style": null,
+    "style_description": null,
+    "generated_at": "2026-04-13T17:38:23.008Z",
+    "year": 2026
+  },
+  "keyword_budget": {
+    "brand": {
+      "word": "Mostbet",
+      "max_per_paragraph": 1,
+      "max_per_page": 10,
+      "synonyms": [
+        "контора",
+        "площадка",
+        "букмекер",
+        "тут",
+        "у них",
+        "платформа",
+        "сервис"
+      ]
+    },
+    "ставки": {
+      "word": "ставки",
+      "max_per_paragraph": 1,
+      "max_per_page": 6,
+      "synonyms": [
+        "прогнозы",
+        "пари",
+        "беттинг",
+        "игра"
+      ]
+    },
+    "казино": {
+      "word": "казино",
+      "max_per_paragraph": 1,
+      "max_per_page": 6,
+      "synonyms": [
+        "слоты",
+        "автоматы",
+        "игровой клуб",
+        "раздел с играми"
+      ]
+    },
+    "бонус": {
+      "word": "бонус",
+      "max_per_paragraph": 1,
+      "max_per_page": 6,
+      "synonyms": [
+        "подарок",
+        "акция",
+        "предложение",
+        "пакет",
+        "награда"
+      ]
+    },
+    "тенге": {
+      "word": "тенге",
+      "max_per_paragraph": 1,
+      "max_per_page": 6,
+      "synonyms": [
+        "валюта",
+        "KZT",
+        "₸",
+        "в местной валюте"
+      ]
+    },
+    "primary_keyword": {
+      "word": "mostbet россия",
+      "max_per_page": 5,
+      "placement": "H1, первый абзац, середина текста, финальный CTA"
+    },
+    "secondary_keywords": [
+      {
+        "word": "мостбет скачать",
+        "max_per_page": 2
+      },
+      {
+        "word": "мостбет бонус",
+        "max_per_page": 2
+      },
+      {
+        "word": "мостбет казино",
+        "max_per_page": 2
+      },
+      {
+        "word": "мостбет ставки",
+        "max_per_page": 2
+      }
+    ]
+  },
+  "linking_plan": {
+    "plan": {
+      "index": {
+        "outgoing": [
+          "/sozdat-akkaunt",
+          "/prilozhenie",
+          "/onlajn-kazino",
+          "/akcii",
+          "/about",
+          "/sugar-rush",
+          "/fruit-party"
+        ],
+        "min": 5
+      },
+      "sozdat-akkaunt": {
+        "outgoing": [
+          "/prilozhenie",
+          "/onlajn-kazino",
+          "/akcii",
+          "/about"
+        ],
+        "min": 3
+      },
+      "prilozhenie": {
+        "outgoing": [
+          "/about",
+          "/akcii",
+          "/onlajn-kazino",
+          "/sugar-rush"
+        ],
+        "min": 3
+      },
+      "onlajn-kazino": {
+        "outgoing": [
+          "/sozdat-akkaunt",
+          "/prilozhenie",
+          "/akcii",
+          "/sugar-rush",
+          "/about"
+        ],
+        "min": 3
+      },
+      "akcii": {
+        "outgoing": [
+          "/fruit-party",
+          "/sugar-rush",
+          "/about",
+          "/onlajn-kazino"
+        ],
+        "min": 3
+      },
+      "about": {
+        "outgoing": [
+          "/sozdat-akkaunt",
+          "/prilozhenie",
+          "/onlajn-kazino",
+          "/fruit-party",
+          "/about"
+        ],
+        "min": 3
+      },
+      "sugar-rush": {
+        "outgoing": [
+          "/onlajn-kazino",
+          "/fruit-party"
+        ],
+        "min": 2
+      },
+      "fruit-party": {
+        "outgoing": [
+          "/onlajn-kazino",
+          "/sugar-rush"
+        ],
+        "min": 2
+      }
+    },
+    "incoming": {
+      "sozdat-akkaunt": [
+        "index",
+        "onlajn-kazino",
+        "about"
+      ],
+      "prilozhenie": [
+        "index",
+        "sozdat-akkaunt",
+        "onlajn-kazino",
+        "about"
+      ],
+      "onlajn-kazino": [
+        "index",
+        "sozdat-akkaunt",
+        "prilozhenie",
+        "akcii",
+        "about",
+        "sugar-rush",
+        "fruit-party"
+      ],
+      "akcii": [
+        "index",
+        "sozdat-akkaunt",
+        "prilozhenie",
+        "onlajn-kazino"
+      ],
+      "about": [
+        "index",
+        "sozdat-akkaunt",
+        "prilozhenie",
+        "onlajn-kazino",
+        "akcii",
+        "about"
+      ],
+      "sugar-rush": [
+        "index",
+        "prilozhenie",
+        "onlajn-kazino",
+        "akcii",
+        "fruit-party"
+      ],
+      "fruit-party": [
+        "index",
+        "akcii",
+        "about",
+        "sugar-rush"
+      ]
+    }
+  },
+  "main_page": {
+    "total_words": "1000-1400",
+    "sections_order": [
+      "Hero",
+      "Overview",
+      "Sports",
+      "Advantages",
+      "Payments",
+      "Bonus",
+      "Slots",
+      "FAQ",
+      "CTA"
+    ],
+    "sections": [
+      {
+        "section": "Hero",
+        "words": "30-40 (подзаголовок)",
+        "h1": "Mostbet Казахстан — ставки + казино для игроков из KZ",
+        "h1_note": "НЕ дублировать title. Содержит primary keyword.",
+        "subtitle": "Личный обзор Mostbet от игрока из Казахстана. 40+ видов спорта, 8 000+ игр в казино, счёт в тенге.",
+        "badge": "800+ live-событий",
+        "stats": [
+          {
+            "value": "40+",
+            "label": "видов спорта"
+          },
+          {
+            "value": "500 ₸",
+            "label": "мин. депозит"
+          },
+          {
+            "value": "100%",
+            "label": "на первый депозит"
+          }
+        ],
+        "cta_primary": {
+          "text": "Зарегистрироваться с бонусом",
+          "href": "affiliateLink",
+          "external": true
+        },
+        "cta_secondary": {
+          "text": "Сделать первую ставку",
+          "href": "/sozdat-akkaunt"
+        },
+        "keywords": [
+          "mostbet россия"
+        ],
+        "style": "Тон: разговорный, расслабленный"
+      },
+      {
+        "section": "Overview",
+        "words": "150-200",
+        "h2": "Mostbet в Казахстане: личный обзор",
+        "paragraphs": [
+          {
+            "plan": "Личное знакомство с платформой. Как узнал, сколько пользуюсь. Содержит primary keyword «mostbet россия».",
+            "keywords": [
+              "mostbet россия"
+            ],
+            "words": "50-70"
+          },
+          {
+            "plan": "Главные плюсы и один минус. Конкретные цифры: 8 000+ игр, 40+ видов спорта, депозит от 500 ₸.",
+            "keywords": [
+              "мостбет скачать"
+            ],
+            "words": "50-70"
+          },
+          {
+            "plan": "Дисклеймер: партнёрские ссылки, 21+, ответственная игра. Тон — честный, не продающий.",
+            "keywords": [],
+            "words": "40-50"
+          }
+        ],
+        "internal_links": [
+          "/akcii",
+          "/onlajn-kazino"
+        ],
+        "disclaimer": true,
+        "style": "Тон: разговорный, расслабленный. Абзацы: короткие (2-3 предложения). много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики"
+      },
+      {
+        "section": "Sports",
+        "words": "100-130",
+        "h2": "Спорт: от КПЛ до киберспорта",
+        "intro": "1 абзац (2-3 предложения). Общее впечатление о спортивной линии. Маржа 3-5%, 800+ live-событий.",
+        "cards": [
+          {
+            "title": "Хоккей",
+            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
+            "icon_hint": "шайба"
+          },
+          {
+            "title": "Баскетбол",
+            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
+            "icon_hint": "мяч баскетбольный"
+          },
+          {
+            "title": "Теннис",
+            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
+            "icon_hint": "ракетка"
+          },
+          {
+            "title": "Киберспорт",
+            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
+            "icon_hint": "геймпад"
+          }
+        ],
+        "keywords": [
+          "ставки"
+        ],
+        "internal_links": [],
+        "style": "Тон: разговорный, расслабленный. Факты, не описания."
+      },
+      {
+        "section": "Advantages",
+        "words": "100-130",
+        "h2": "Плюсы и минусы Mostbet — без прикрас",
+        "cards": [
+          {
+            "title": "Линия и коэффициенты",
+            "plus": "40+ видов спорта, маржа 3-5%",
+            "minus": "На КПЛ роспись беднее, чем на АПЛ"
+          },
+          {
+            "title": "Оплата в тенге",
+            "plus": "Kaspi, Halyk, Jusan — без конвертации",
+            "minus": "Kaspi иногда отклоняет платежи"
+          },
+          {
+            "title": "Мобильное приложение",
+            "plus": "APK ~40 МБ, работает стабильно",
+            "minus": "Нет в Google Play, обновлять вручную"
+          },
+          {
+            "title": "Казино и слоты",
+            "plus": "8 000+ игр, Pragmatic Play, Spribe, NetEnt, Evolution",
+            "minus": "Вейджер ×5 на спорт / ×60 на казино — жёстко"
+          },
+          {
+            "title": "Бонусы",
+            "plus": "До 150 000 ₸ + 250 фриспинов",
+            "minus": "Условия отыгрыша не самые простые"
+          },
+          {
+            "title": "Поддержка",
+            "plus": "Чат 24/7 на русском",
+            "minus": "Отвечают шаблонно, нужно настаивать"
+          }
+        ],
+        "note": "Каждая карточка: заголовок + 2 предложения (плюс и минус). Честно, без идеализации.",
+        "keywords": [
+          "Mostbet"
+        ],
+        "style": "Тон: разговорный, расслабленный."
+      },
+      {
+        "section": "Payments",
+        "words": "80-100",
+        "h2": "Тенге без конвертации — как платить",
+        "cards": [
+          {
+            "method": "Kaspi / Halyk / Jusan",
+            "hint": "Карты и переводы казахстанских банков"
+          },
+          {
+            "method": "Криптовалюта (USDT)",
+            "hint": "TRC20, без комиссии платформы, 15-30 мин"
+          },
+          {
+            "method": "Электронные кошельки",
+            "hint": "QIWI, WebMoney — работает, но медленнее"
+          }
+        ],
+        "table": {
+          "columns": [
+            "Метод",
+            "Пополнение",
+            "Вывод",
+            "Минимум"
+          ],
+          "rows": [
+            [
+              "Kaspi Gold",
+              "Мгновенно",
+              "1-24 часа",
+              "500 ₸"
+            ],
+            [
+              "Halyk Homebank",
+              "5-15 мин",
+              "1-3 дня",
+              "500 ₸"
+            ],
+            [
+              "USDT (TRC20)",
+              "15-30 мин",
+              "15-30 мин",
+              "~3 000 ₸"
+            ]
+          ]
+        },
+        "keywords": [
+          "тенге"
+        ],
+        "style": "Тон: разговорный, расслабленный. Упомянуть личный опыт вывода."
+      },
+      {
+        "section": "Bonus",
+        "words": "80-100",
+        "h2": "Приветственный пакет: что получишь",
+        "cards": [
+          {
+            "type": "Спортивный бонус",
+            "value": "100% до 150 000 ₸",
+            "condition": "Вейджер ×5 на спорт / ×60 на казино, 30 дней"
+          },
+          {
+            "type": "Казино-бонус",
+            "value": "250 фриспинов",
+            "condition": "Вейджер ×5 на спорт / ×60 на казино, конкретные слоты"
+          },
+          {
+            "type": "Фрибет",
+            "value": "Бесплатная ставка",
+            "condition": "При выполнении условий первого депозита"
+          }
+        ],
+        "keywords": [
+          "бонус"
+        ],
+        "internal_links": [
+          "/akcii"
+        ],
+        "style": "Тон: разговорный, расслабленный. Обязательно упомянуть сложность отыгрыша — честно."
+      },
+      {
+        "section": "Slots",
+        "words": "80-100",
+        "h2": "Слоты Mostbet — личный топ",
+        "cards": [
+          {
+            "slug": "sugar-rush",
+            "name": "Sugar Rush",
+            "provider": "Pragmatic Play",
+            "rtp": "96.50%",
+            "maxWin": "×5 000",
+            "description_hint": "2 предложения: тема слота + впечатление. RTP 96.50%, макс. ×5 000.",
+            "cta": "Испытать удачу",
+            "link": "/sugar-rush"
+          },
+          {
+            "slug": "fruit-party",
+            "name": "Fruit Party",
+            "provider": "Pragmatic Play",
+            "rtp": "96.47%",
+            "maxWin": "×5 000",
+            "description_hint": "2 предложения: тема слота + впечатление. RTP 96.47%, макс. ×5 000.",
+            "cta": "Открыть казино с бонусом",
+            "link": "/fruit-party"
+          }
+        ],
+        "keywords": [
+          "казино"
+        ],
+        "style": "Тон: разговорный, расслабленный. Для каждого слота — уникальный CTA."
+      },
+      {
+        "section": "FAQ",
+        "words": "200-250",
+        "h2": "Частые вопросы",
+        "questions": [
+          {
+            "number": 9,
+            "category": "Регистрация и аккаунт",
+            "question": "Как восстановить забытый пароль?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 18,
+            "category": "Пополнение и вывод",
+            "question": "Почему отклонили вывод на карту?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 25,
+            "category": "Приложение и доступ",
+            "question": "Приложение тормозит — что делать?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 40,
+            "category": "Блокировки и зеркала",
+            "question": "Как настроить DNS на Android?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 48,
+            "category": "Бонусы и промоакции",
+            "question": "Какой вейджер на казино-бонус?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 57,
+            "category": "Ставки на спорт",
+            "question": "Как ставить экспрессы?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 67,
+            "category": "Казино и слоты",
+            "question": "Что такое Aviator и как играть?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          }
+        ],
+        "schema": "FAQPage",
+        "keywords": [
+          "mostbet россия"
+        ],
+        "style": "Ответы: разговорный, расслабленный. Каждый ответ содержит конкретную цифру или факт. Не «канцелярит»."
+      },
+      {
+        "section": "CTA",
+        "words": "15-25",
+        "h2": "Время действовать",
+        "subtitle": "Одно предложение. Личное обращение к читателю. Содержит бренд «Mostbet».",
+        "cta": {
+          "text": "Пора действовать",
+          "href": "affiliateLink",
+          "external": true
+        },
+        "keywords": [
+          "Mostbet"
+        ]
+      }
+    ],
+    "used_cta_texts": [
+      "Зарегистрироваться с бонусом",
+      "Сделать первую ставку",
+      "Испытать удачу",
+      "Открыть казино с бонусом",
+      "Пора действовать"
+    ]
+  },
+  "subpages": {
+    "sozdat-akkaunt": {
+      "slug": "sozdat-akkaunt",
+      "page_type": "registration",
+      "words": "500-800",
+      "schema_hint": "HowTo + HowToStep",
+      "internal_links": [
+        "/about",
+        "/prilozhenie",
+        "/onlajn-kazino"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "Как зарегистрироваться на Mostbet в Казахстане",
+      "blocks": [
+        {
+          "h2": "Пошаговая регистрация",
+          "type": "steps",
+          "content": "4-5 шагов: выбор способа → заполнение → валюта KZT → промокод → подтверждение"
+        },
+        {
+          "h2": "Способы регистрации на Mostbet",
+          "type": "cards",
+          "content": "3-4 карточки: по телефону, email, соцсети, в один клик"
+        },
+        {
+          "h2": "Бонус при регистрации",
+          "type": "text",
+          "content": "Абзац о приветственном бонусе 150 000 ₸. Ссылка на страницу бонусов."
+        },
+        {
+          "h2": "Верификация",
+          "type": "text",
+          "content": "Абзац о KYC: удостоверение + ИИН + селфи. Личный опыт: сколько заняло."
+        }
+      ]
+    },
+    "prilozhenie": {
+      "slug": "prilozhenie",
+      "page_type": "download",
+      "words": "500-800",
+      "schema_hint": "HowTo + HowToStep",
+      "internal_links": [
+        "/about",
+        "/onlajn-kazino",
+        "/akcii"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "Скачать Mostbet — APK для Android и iPhone",
+      "blocks": [
+        {
+          "h2": "Скачать на Android (APK)",
+          "type": "steps",
+          "content": "4 шага: ссылка → разрешить источники → установить → войти"
+        },
+        {
+          "h2": "Установка на iOS",
+          "type": "steps",
+          "content": "3 шага: зеркало → скачать из App Store → войти"
+        },
+        {
+          "h2": "Обзор приложения",
+          "type": "text",
+          "content": "Плюсы и минусы мобильного приложения Mostbet. Размер, скорость, удобство."
+        },
+        {
+          "h2": "Системные требования",
+          "type": "table",
+          "content": "Таблица: ОС | Версия | Размер | RAM"
+        }
+      ]
+    },
+    "onlajn-kazino": {
+      "slug": "onlajn-kazino",
+      "page_type": "casino",
+      "words": "500-800",
+      "schema_hint": "Article",
+      "internal_links": [
+        "/prilozhenie",
+        "/sozdat-akkaunt",
+        "/about"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "Казино Mostbet — слоты, рулетка и live-дилеры",
+      "blocks": [
+        {
+          "h2": "Обзор казино",
+          "type": "text",
+          "content": "8 000+ игр, провайдеры: Pragmatic Play, Spribe, NetEnt, Evolution. Личное впечатление."
+        },
+        {
+          "h2": "Популярные слоты",
+          "type": "cards",
+          "content": "Топ-5 слотов с RTP, провайдером и мнением"
+        },
+        {
+          "h2": "Live-казино и краш-игры",
+          "type": "text",
+          "content": "Aviator, Lucky Jet, JetX, Mines, Dice. Опыт игры в Aviator."
+        },
+        {
+          "h2": "Бонусы для казино",
+          "type": "text",
+          "content": "250 фриспинов, вейджер ×5 на спорт / ×60 на казино. Стоит ли брать."
+        }
+      ]
+    },
+    "akcii": {
+      "slug": "akcii",
+      "page_type": "bonus",
+      "words": "500-800",
+      "schema_hint": "Article",
+      "internal_links": [
+        "/about",
+        "/onlajn-kazino",
+        "/prilozhenie"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "Бонусы Mostbet — приветственный пакет и акции",
+      "blocks": [
+        {
+          "h2": "Приветственный бонус",
+          "type": "text",
+          "content": "До 150 000 ₸ + 250 фриспинов. Условия получения."
+        },
+        {
+          "h2": "Как отыграть бонус",
+          "type": "steps",
+          "content": "Вейджер ×5 на спорт / ×60 на казино. Пошагово: что считается, сроки, подводные камни."
+        },
+        {
+          "h2": "Другие акции",
+          "type": "cards",
+          "content": "Экспресс-бонус, кешбэк, промокоды — что реально работает."
+        },
+        {
+          "h2": "Стоит ли брать бонус",
+          "type": "text",
+          "content": "Честное мнение: кому подойдёт, кому нет."
+        }
+      ]
+    },
+    "about": {
+      "slug": "about",
+      "page_type": "about",
+      "words": "400-600",
+      "schema_hint": "AboutPage + Person",
+      "internal_links": [
+        "/sozdat-akkaunt",
+        "/prilozhenie",
+        "/onlajn-kazino"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "Об авторе — кто стоит за обзором Mostbet",
+      "blocks": [
+        {
+          "h2": "Кто я",
+          "type": "text",
+          "content": "undefined, undefined, undefined лет. С 2021 года в ставках."
+        },
+        {
+          "h2": "Зачем этот сайт",
+          "type": "text",
+          "content": "Мотивация: делюсь опытом, не заказной обзор. Личная история."
+        },
+        {
+          "h2": "Как тестирую",
+          "type": "text",
+          "content": "Пополняю реальные деньги, ставлю, вывожу. Не «теоретик»."
+        },
+        {
+          "h2": "Про честность",
+          "type": "text",
+          "content": "Открытое признание партнёрских ссылок. Это не влияет на оценки."
+        },
+        {
+          "h2": "Предупреждение",
+          "type": "text",
+          "content": "21+, ответственная игра. Не ставьте больше, чем можете потерять."
+        }
+      ]
+    }
+  },
+  "slot_pages": {
+    "sugar-rush": {
+      "slug": "sugar-rush",
+      "page_type": "slot",
+      "words": "500-800",
+      "h1": "Sugar Rush — обзор слота от Pragmatic Play",
+      "schema_hint": "Review + SoftwareApplication (GameApplication)",
+      "slot_info": {
+        "name": "Sugar Rush",
+        "rtp": "96.50%",
+        "maxWin": "×5 000",
+        "provider": "Pragmatic Play"
+      },
+      "blocks": [
+        {
+          "h2": "Обзор Sugar Rush",
+          "type": "text",
+          "content": "Тема слота, RTP 96.50%, волатильность, макс. ×5 000. Первое впечатление."
+        },
+        {
+          "h2": "Как играть",
+          "type": "text",
+          "content": "Механика: символы, бонусные раунды, множители. 2-3 абзаца."
+        },
+        {
+          "h2": "Мой опыт",
+          "type": "text",
+          "content": "Личный опыт игры на Mostbet. Конкретные суммы, сессии, результат."
+        },
+        {
+          "h2": "Стоит ли играть",
+          "type": "text",
+          "content": "Итоговая оценка. Кому подойдёт, кому нет. Плюсы и минусы."
+        }
+      ],
+      "internal_links": [
+        "/onlajn-kazino"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики"
+    },
+    "fruit-party": {
+      "slug": "fruit-party",
+      "page_type": "slot",
+      "words": "500-800",
+      "h1": "Fruit Party — обзор слота от Pragmatic Play",
+      "schema_hint": "Review + SoftwareApplication (GameApplication)",
+      "slot_info": {
+        "name": "Fruit Party",
+        "rtp": "96.47%",
+        "maxWin": "×5 000",
+        "provider": "Pragmatic Play"
+      },
+      "blocks": [
+        {
+          "h2": "Обзор Fruit Party",
+          "type": "text",
+          "content": "Тема слота, RTP 96.47%, волатильность, макс. ×5 000. Первое впечатление."
+        },
+        {
+          "h2": "Как играть",
+          "type": "text",
+          "content": "Механика: символы, бонусные раунды, множители. 2-3 абзаца."
+        },
+        {
+          "h2": "Мой опыт",
+          "type": "text",
+          "content": "Личный опыт игры на Mostbet. Конкретные суммы, сессии, результат."
+        },
+        {
+          "h2": "Стоит ли играть",
+          "type": "text",
+          "content": "Итоговая оценка. Кому подойдёт, кому нет. Плюсы и минусы."
+        }
+      ],
+      "internal_links": [
+        "/onlajn-kazino"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики"
+    }
+  },
+  "faq": {
+    "selected_questions": [
+      {
+        "number": 9,
+        "question": "Как восстановить забытый пароль?",
+        "category": "Регистрация и аккаунт"
+      },
+      {
+        "number": 18,
+        "question": "Почему отклонили вывод на карту?",
+        "category": "Пополнение и вывод"
+      },
+      {
+        "number": 25,
+        "question": "Приложение тормозит — что делать?",
+        "category": "Приложение и доступ"
+      },
+      {
+        "number": 40,
+        "question": "Как настроить DNS на Android?",
+        "category": "Блокировки и зеркала"
+      },
+      {
+        "number": 48,
+        "question": "Какой вейджер на казино-бонус?",
+        "category": "Бонусы и промоакции"
+      },
+      {
+        "number": 57,
+        "question": "Как ставить экспрессы?",
+        "category": "Ставки на спорт"
+      },
+      {
+        "number": 67,
+        "question": "Что такое Aviator и как играть?",
+        "category": "Казино и слоты"
+      }
+    ],
+    "numbers_for_registry": "9, 18, 25, 40, 48, 57, 67"
+  },
+  "human_realism": {
+    "rules": {
+      "typos_per_page": "1-4 орфографических опечатки",
+      "punct_per_page": "2-3 пунктуационных сбоя",
+      "no_errors_in": "H1, title, description, первое предложение абзаца",
+      "contradictions": "1-2 на страницу — разный опыт в разных абзацах",
+      "self_corrections": "1-2 на страницу — «ну то есть», «ладно, за две»",
+      "emotional_reactions": "3-5 на страницу — в скобках или через тире",
+      "slang": "2-4 на страницу из банка",
+      "uneven_depth": "минимум 2 короткие секции + 1 длинная",
+      "vague_time": "2-3 на страницу — «где-то в марте», «кажется»",
+      "faq_style_variation": "разная длина ответов: 1 подробный, 1 краткий, 1 с отступлением"
+    },
+    "typo_bank": {
+      "drop_letter": [
+        "прилжение",
+        "регистраця",
+        "верифкация",
+        "коэфициент",
+        "пополнеие",
+        "приветсвенный",
+        "доступый"
+      ],
+      "swap_letters": [
+        "подтормаживть",
+        "тенеге",
+        "букемкер",
+        "поддрежка"
+      ],
+      "double_letter": [
+        "бонусс",
+        "каззино",
+        "оттзыв",
+        "коммиссия"
+      ],
+      "tsya_tsya": [
+        "регистрироватся",
+        "авторизоватся",
+        "пополняеться",
+        "обновляеться"
+      ],
+      "wrong_vowel": [
+        "скочать",
+        "палучить",
+        "привитственный",
+        "верефикация"
+      ]
+    },
+    "slang_bank": [
+      "норм",
+      "кэф",
+      "апк",
+      "тг",
+      "инфа",
+      "залил",
+      "слил",
+      "зашло",
+      "ЛК"
+    ],
+    "per_page_hints": [
+      {
+        "typo_count": 4,
+        "typos": [
+          {
+            "type": "swap_letters",
+            "example": "поддрежка"
+          },
+          {
+            "type": "double_letter",
+            "example": "коммиссия"
+          },
+          {
+            "type": "double_letter",
+            "example": "коммиссия"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "привитственный"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 4,
+        "slang_suggestions": [
+          "апк",
+          "зашло",
+          "норм"
+        ],
+        "contradiction": true,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "drop_letter",
+            "example": "коэфициент"
+          },
+          {
+            "type": "swap_letters",
+            "example": "букемкер"
+          },
+          {
+            "type": "double_letter",
+            "example": "оттзыв"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 2,
+        "slang_suggestions": [
+          "апк",
+          "ЛК",
+          "инфа"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 5,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 2,
+        "typos": [
+          {
+            "type": "double_letter",
+            "example": "бонусс"
+          },
+          {
+            "type": "drop_letter",
+            "example": "коэфициент"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "тире вместо двоеточия",
+          "запятая вместо точки (поток мысли)",
+          "лишняя запятая перед «и»"
+        ],
+        "slang_count": 2,
+        "slang_suggestions": [
+          "зашло",
+          "апк",
+          "тг"
+        ],
+        "contradiction": false,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 4,
+        "typos": [
+          {
+            "type": "swap_letters",
+            "example": "подтормаживть"
+          },
+          {
+            "type": "swap_letters",
+            "example": "тенеге"
+          },
+          {
+            "type": "tsya_tsya",
+            "example": "пополняеться"
+          },
+          {
+            "type": "swap_letters",
+            "example": "подтормаживть"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "запятая вместо точки (поток мысли)"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "зашло",
+          "норм",
+          "кэф"
+        ],
+        "contradiction": true,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 1,
+        "typos": [
+          {
+            "type": "double_letter",
+            "example": "бонусс"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "тире вместо двоеточия",
+          "запятая вместо точки (поток мысли)"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "норм",
+          "зашло",
+          "кэф"
+        ],
+        "contradiction": false,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 1,
+        "typos": [
+          {
+            "type": "wrong_vowel",
+            "example": "скочать"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "тире вместо двоеточия",
+          "лишняя запятая перед «и»"
+        ],
+        "slang_count": 4,
+        "slang_suggestions": [
+          "слил",
+          "инфа",
+          "апк"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 5,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 2,
+        "typos": [
+          {
+            "type": "drop_letter",
+            "example": "коэфициент"
+          },
+          {
+            "type": "tsya_tsya",
+            "example": "регистрироватся"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "тире вместо двоеточия",
+          "лишняя запятая перед «и»"
+        ],
+        "slang_count": 2,
+        "slang_suggestions": [
+          "норм",
+          "залил",
+          "ЛК"
+        ],
+        "contradiction": true,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "swap_letters",
+            "example": "тенеге"
+          },
+          {
+            "type": "drop_letter",
+            "example": "доступый"
+          },
+          {
+            "type": "tsya_tsya",
+            "example": "обновляеться"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "пропуск запятой перед что/который",
+          "лишняя запятая перед «и»"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "залил",
+          "инфа",
+          "тг"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      }
+    ]
+  }
+}

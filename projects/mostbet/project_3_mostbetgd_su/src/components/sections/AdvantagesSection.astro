@@ -1,0 +1,55 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const items = [
+  {
+    title: 'Линия и коэффициенты',
+    body: '40+ видов спорта, маржа 3–5% на главные события. На матчах РПЛ роспись уступает АПЛ, но базовые рынки присутствуют всегда.',
+    icon: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="7"/></svg>',
+  },
+  {
+    title: 'Оплата в рублях',
+    body: 'Сбербанк, Тинькофф, Альфа-Банк, ВТБ, СБП — без конвертации. Минимальный депозит от 100 ₽, вывод в течение 1–24 часов.',
+    icon: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>',
+  },
+  {
+    title: 'Мобильное приложение',
+    body: 'APK для Android (~45 МБ), версия для iOS. Стабильная работа, push-уведомления о результатах. Обновления вручную для Android.',
+    icon: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M10 18h4"/></svg>',
+  },
+  {
+    title: 'Казино и слоты',
+    body: '8 000+ игр от Pragmatic Play, Spribe, NetEnt, Evolution. Вейджер ×60 на казино-бонус — условия жёсткие, но стандартные для рынка.',
+    icon: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h2M14 9h2M9 15h6"/></svg>',
+  },
+  {
+    title: 'Бонусы',
+    body: 'До 32 500 ₽ + 150 фриспинов на старте. Условия отыгрыша прозрачны — вейджер ×5 на спорт, ×60 на казино, 30 дней на выполнение.',
+    icon: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12v10H4V12M2 7h20v5H2z"/><path d="M12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5h0C11 2 12 7 12 7ZM12 7h4.5a2.5 2.5 0 0 0 0-5h0C13 2 12 7 12 7Z"/></svg>',
+  },
+  {
+    title: 'Поддержка',
+    body: 'Чат 24/7 на русском языке. Среднее время ответа — 2 минуты. Для сложных вопросов рекомендуем обращаться через email.',
+    icon: '<svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></svg>',
+  },
+];
+---
+
+<section class="py-20 lg:py-28 relative">
+  <div class="absolute inset-0 -skew-y-2 bg-deep-900/60 -z-10" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Преимущества платформы</SectionHeading>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        items.map((item) => (
+          <Card>
+            <div class="w-12 h-12 rounded-lg bg-main-500/15 text-main-400 flex items-center justify-center mb-4" set:html={item.icon} />
+            <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{item.body}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

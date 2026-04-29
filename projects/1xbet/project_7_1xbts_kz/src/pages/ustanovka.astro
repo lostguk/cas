@@ -1,0 +1,133 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const affiliateLink = '#';
+
+const androidSteps = [
+  { num: '01', title: 'Перейти по ссылке на официальный ресурс', text: 'Загрузка APK доступна с основного сайта или через актуальное зеркало. В Google Play приложение не представлено.' },
+  { num: '02', title: 'Разрешить установку из неизвестных источников', text: 'В настройках Android → Безопасность → активировать опцию для браузера, через который загружается файл.' },
+  { num: '03', title: 'Установить APK-файл', text: 'Размер установочного файла — около 40 МБ. Процесс занимает менее минуты на большинстве устройств.' },
+  { num: '04', title: 'Авторизоваться или создать аккаунт', text: 'После установки войти в существующий аккаунт или пройти процедуру регистрации.' },
+];
+
+const iosSteps = [
+  { num: '01', title: 'Открыть сайт через Safari', text: 'Перейти на официальный ресурс или зеркало с устройства iOS.' },
+  { num: '02', title: 'Загрузить из App Store', text: 'Для ряда регионов приложение доступно напрямую. Альтернатива — мобильная версия сайта.' },
+  { num: '03', title: 'Авторизоваться', text: 'Вход в аккаунт через стандартную форму.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Как скачать 1xBet на Android и iOS',
+  step: androidSteps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.text,
+  })),
+};
+---
+
+<BaseLayout
+  title="Скачать 1xBet Казахстан — APK для Android бесплатно"
+  description="Как скачать 1xBet в Казахстан: APK для Android, инструкция для iPhone. Рабочая ссылка 2026."
+  schema={schema}
+  publishDate="2026-02-05"
+  updateDate="2026-04-10"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Установка' }]} />
+  <ArticleMeta publishDate="2026-02-05" updateDate="2026-04-10" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">Скачать 1xBet — APK для Android и iPhone</h1>
+        <p class="text-lg text-gray-400 italic font-heading max-w-2xl mx-auto">Пошаговая инструкция по установке мобильного приложения для казахстанских пользователей.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Загрузить APK</CTAButton>
+          <CTAButton href="/vhod" variant="secondary" size="lg">Как войти в аккаунт</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/app-1.jpg"
+        alt="Мобильное приложение 1xBet: интерфейс для Android с линией и live-событиями"
+        width="1200"
+        height="675"
+        loading="eager"
+        decoding="async"
+        class="rounded-2xl w-full h-auto aspect-[16/9] object-cover mb-12"
+      />
+
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-6">Скачать на Android (APK)</h2>
+          <div class="space-y-4">
+            {androidSteps.map((step) => (
+              <div class="flex gap-4 items-start border-l-2 border-amber-500/20 pl-5">
+                <div class="text-amber-400 font-heading font-bold text-sm shrink-0">{step.num}</div>
+                <div>
+                  <h3 class="font-semibold text-white mb-1">{step.title}</h3>
+                  <p class="text-sm text-gray-400">{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent"></div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-6">Установка на iOS</h2>
+          <div class="space-y-4">
+            {iosSteps.map((step) => (
+              <div class="flex gap-4 items-start border-l-2 border-amber-500/20 pl-5">
+                <div class="text-amber-400 font-heading font-bold text-sm shrink-0">{step.num}</div>
+                <div>
+                  <h3 class="font-semibold text-white mb-1">{step.title}</h3>
+                  <p class="text-sm text-gray-400">{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent"></div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Обзор приложения</h2>
+          <p class="text-gray-300 mb-3">Мобильная версия 1xBet воспроизводит основной функционал десктопного сайта: ставки на спорт, раздел казино, управление аккаунтом, пополнение и вывод. Интерфейс адаптирован под экраны смартфонов, навигация упрощена. Из минусов — обновления приходится устанавливать вручную, поскольку APK не обновляеться через магазин приложений.</p>
+          <p class="text-gray-400 text-sm">На устройствах с Android 8.0+ и минимум 2 ГБ оперативной памяти приложение работает стабильно. На более старых моделях возможны подтормаживания, особенно в разделе live-ставок. Детали по доступу — в <a href="/rabochij-sajt" class="text-amber-400 hover:text-amber-300">обзоре актуальных зеркал</a>. Информация о <a href="/about" class="text-amber-400 hover:text-amber-300">портале</a> и редакции — на отдельной странице.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Системные требования</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead><tr class="border-b border-amber-500/20 text-left">
+                <th class="py-3 px-4 text-amber-400 font-heading">ОС</th>
+                <th class="py-3 px-4 text-amber-400 font-heading">Версия</th>
+                <th class="py-3 px-4 text-amber-400 font-heading">Размер</th>
+                <th class="py-3 px-4 text-amber-400 font-heading">RAM</th>
+              </tr></thead>
+              <tbody>
+                <tr class="border-b border-white/5"><td class="py-3 px-4 text-white">Android</td><td class="py-3 px-4 text-gray-400">8.0+</td><td class="py-3 px-4 text-gray-400">~40 МБ</td><td class="py-3 px-4 text-gray-400">2 ГБ+</td></tr>
+                <tr class="border-b border-white/5"><td class="py-3 px-4 text-white">iOS</td><td class="py-3 px-4 text-gray-400">14.0+</td><td class="py-3 px-4 text-gray-400">~120 МБ</td><td class="py-3 px-4 text-gray-400">2 ГБ+</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-amber-500/10 via-obsidian-800 to-olive-500/5 border border-amber-500/10">
+        <h2 class="text-2xl font-heading font-bold text-white mb-3">Приложение доступно бесплатно</h2>
+        <p class="text-gray-400 italic font-heading mb-6">Установка занимает менее минуты. Бонусная программа действует и в мобильной версии.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Скачать на устройство</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

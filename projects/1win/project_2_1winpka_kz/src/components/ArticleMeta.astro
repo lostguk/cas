@@ -1,0 +1,39 @@
+---
+interface Props {
+  publishDate: string;
+  updateDate: string;
+}
+
+const { publishDate, updateDate } = Astro.props;
+
+const months = [
+  'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+  'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря',
+];
+
+const formatDate = (dateStr: string) => {
+  const d = new Date(dateStr);
+  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+};
+---
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-3 text-sm text-slate-500 border-b border-white/[0.06] pb-6 mb-8">
+  <span
+    class="w-9 h-9 rounded-xl bg-glow-500/15 flex items-center justify-center text-glow-400 font-bold text-xs shrink-0"
+    aria-hidden="true"
+  >
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </svg>
+  </span>
+  <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+    <a href="/about" class="text-glow-400 hover:text-glow-300 font-medium transition-colors">Редакция 1winpka.kz</a>
+    <span class="text-slate-700">·</span>
+    <time datetime={publishDate}>{formatDate(publishDate)}</time>
+    <span class="text-slate-700">·</span>
+    <time datetime={updateDate}>обновлено {formatDate(updateDate)}</time>
+  </div>
+</div>

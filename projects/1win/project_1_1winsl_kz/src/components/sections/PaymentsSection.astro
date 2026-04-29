@@ -1,0 +1,63 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const methods = [
+  { method: 'Kaspi / Halyk / Jusan', hint: 'Карты казахстанских банков — самый быстрый способ', icon: '💳' },
+  { method: 'Криптовалюта (USDT)', hint: 'TRC20, без комиссии платформы, 15-30 мин', icon: '₿' },
+  { method: 'Электронные кошельки', hint: 'QIWI, WebMoney — работает но медленнее', icon: '👛' },
+];
+
+const rows = [
+  ['Kaspi Gold', 'Мгновенно', '1-24 часа', '500 ₸'],
+  ['Halyk Homebank', '5-15 мин', '1-3 дня', '500 ₸'],
+  ['USDT (TRC20)', '15-30 мин', '15-30 мин', '~3 000 ₸'],
+];
+---
+
+<section class="py-12 lg:py-16 bg-cream-100/50">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <SectionHeading>Платежи: методы и сроки</SectionHeading>
+
+    <div class="space-y-3 mb-8">
+      {methods.map((m) => (
+        <Card>
+          <div class="flex items-center gap-3">
+            <span class="text-xl">{m.icon}</span>
+            <div>
+              <p class="font-semibold text-cream-900">{m.method}</p>
+              <p class="text-sm text-cream-500">{m.hint}</p>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-cream-200">
+            <th class="text-left py-3 pr-4 font-semibold text-cream-700">Метод</th>
+            <th class="text-left py-3 pr-4 font-semibold text-cream-700">Пополнение</th>
+            <th class="text-left py-3 pr-4 font-semibold text-cream-700">Вывод</th>
+            <th class="text-left py-3 font-semibold text-cream-700">Минимум</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr class="border-b border-cream-100">
+              <td class="py-3 pr-4 text-cream-800">{row[0]}</td>
+              <td class="py-3 pr-4 text-cream-600">{row[1]}</td>
+              <td class="py-3 pr-4 text-cream-600">{row[2]}</td>
+              <td class="py-3 text-cream-600">{row[3]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-sm text-cream-500 mt-5">
+      Лично я залил 5000 тенеге через Kaspi Gold в субботу вечером — деньги на счету через пару минут. С выводом чуть дольше, у меня обычно часов 6-8 на ту же Kaspi. USDT реально быстрее, но там минималка выше.
+    </p>
+  </div>
+</section>

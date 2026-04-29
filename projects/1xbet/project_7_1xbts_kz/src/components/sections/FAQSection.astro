@@ -1,0 +1,69 @@
+---
+const faqs = [
+  {
+    question: 'Что делать если не приходит SMS при регистрации?',
+    answer: 'Рекомендуется проверить правильность указанного номера и убедиться, что оператор (Kcell, Beeline KZ, Altel) не блокирует сервисные сообщения. В ряде случаев помогает повторная отправка кода через 60 секунд. Если проблема сохраняется, платформа предлагает альтернативные способы подтверждения — через электронную почту или мессенджер.',
+  },
+  {
+    question: 'Сколько реально ждать вывод на Kaspi?',
+    answer: 'По данным пользователей, вывод на Kaspi Gold занимает от 1 до 24 часов. На практике зачисление нередко происходит в течение 2–4 часов, однако в период повышенной нагрузки сроки могут увеличиваться. Halyk Homebank — как правило, дольше: от 1 до 3 рабочих дней.',
+  },
+  {
+    question: 'Безопасно ли скачивать APK?',
+    answer: 'Установочный файл APK, загруженный с официального ресурса или через актуальное зеркало, не содержит вредоносного кода. Перед установкой потребуется разрешить инсталляцию из неизвестных источников в настройках Android. В Google Play приложение отсутствует по политике магазина.',
+  },
+  {
+    question: 'Блокирует ли Kcell сайт?',
+    answer: 'Периодически провайдеры Kcell и Beeline KZ ограничивают доступ к основному домену. Для обхода блокировки используются актуальные зеркала либо мобильное приложение. Подробности — в разделе о <a href="/rabochij-sajt" class="text-amber-400 hover:text-amber-300">рабочем доступе</a>.',
+  },
+  {
+    question: 'Есть ли бонус за установку приложения?',
+    answer: 'Отдельного бонуса за установку приложения платформа не предусматривает. Тем не менее пользователи мобильной версии получают доступ к тем же акциям, что и на десктопе, включая приветственный пакет до 220 000 ₸.',
+  },
+  {
+    question: 'Можно ли ставить с двух устройств одновременно?',
+    answer: 'Платформа допускает авторизацию с нескольких устройств. Ограничений на одновременный вход через браузер и приложение не зафиксировано. Создание нескольких аккаунтов при этом запрещено правилами.',
+  },
+  {
+    question: 'Можно ли установить лимит на ставки?',
+    answer: 'В настройках личного кабинета доступна функция самоограничения: лимит на депозит, лимит на ставку и временная блокировка аккаунта. Инструментарий ответственной игры соответствует международным стандартам.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.answer.replace(/<[^>]*>/g, ''),
+    },
+  })),
+};
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-amber-400 leading-tight">Вопросы о 1xBet</h2>
+    </div>
+
+    <div class="space-y-3">
+      {faqs.map((faq) => (
+        <details class="group rounded-2xl border border-amber-500/15 bg-gradient-to-b from-gray-900/50 to-black">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-white font-medium">
+            <span class="pr-4">{faq.question}</span>
+            <svg class="w-5 h-5 text-amber-400 shrink-0 group-open:rotate-180 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-gray-400 leading-relaxed" set:html={faq.answer} />
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

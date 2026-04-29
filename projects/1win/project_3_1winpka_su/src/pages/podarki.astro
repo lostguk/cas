@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+---
+
+<BaseLayout
+  title="1Win Бонусы — приветственный пакет для РУ | 2026"
+  description="Бонусы 1Win для России: до 32 500 ₽ на спорт, 150 фриспинов на казино. Условия отыгрыша."
+  publishDate="2026-02-05"
+  updateDate="2026-04-08"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Бонусы' }]} />
+  <ArticleMeta publishDate="2026-02-05" updateDate="2026-04-08" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight mb-4">Бонусы 1Win — приветственный пакет</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">До 500% на первые четыре депозита + 70 фриспинов. Разбираем условия.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Получить бонус на старте</CTAButton>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-3">Приветственный бонус</h2>
+          <p class="text-slate-300">До 500% распределяется на четыре первых пополнения. Первый депозит — 200%, второй — 150%, третий — 100%, четвёртый — 50%. Минимум 100 ₽ через Сбербанк или Тинькофф. Фриспины начисляются на выбранные слоты после активации.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-4">Как отыграть бонус</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {[
+              { n: '1', t: 'Получи бонус', d: 'Пополни счёт и активируй предложение в личном кабинете.' },
+              { n: '2', t: 'Делай ставки', d: 'На спорте вейджер ×5 — ставь экспрессы от 3 событий с кэфом от 1.3.' },
+              { n: '3', t: 'Отыграй на казино', d: 'Вейджер ×50 — тут жёстко, крути слоты и надейся на удачу.' },
+              { n: '4', t: 'Выведи', d: 'После выполнения условий деньги переходят на основной баланс.' },
+            ].map((s) => (
+              <Card>
+                <div class="text-3xl font-extrabold text-coral-400/20 mb-1">{s.n}</div>
+                <h3 class="font-bold text-white uppercase mb-1">{s.t}</h3>
+                <p class="text-sm text-slate-400">{s.d}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-3">Другие акции</h2>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <Card>
+              <h3 class="font-bold text-white uppercase mb-1">Экспресс-бонус</h3>
+              <p class="text-sm text-slate-400">+7-15% к выигрышу на экспрессы от 5 событий.</p>
+            </Card>
+            <Card>
+              <h3 class="font-bold text-white uppercase mb-1">Кешбэк</h3>
+              <p class="text-sm text-slate-400">До 30% возврата на казино. Зависит от уровня в программе лояльности.</p>
+            </Card>
+            <Card>
+              <h3 class="font-bold text-white uppercase mb-1">Промокоды</h3>
+              <p class="text-sm text-slate-400">Периодически появляются в тг-каналах. Дают фрибеты и фриспины.</p>
+            </Card>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-3">Стоит ли брать бонус</h2>
+          <p class="text-slate-300">Спортивный — однозначно да, вейджер ×5 — реально отыграть экспрессами. Казино-бонус — на любителя, ×50 это много. Если не уверены — лучше начните без бонуса и посмотрите как идёт. Регистрация через <a href="/otkryt-schet" class="text-coral-400 hover:underline">инструкцию</a> займёт пару минут.</p>
+          <p class="text-slate-400 text-sm mt-2">Все <a href="/igrovye-avtomaty" class="text-coral-400 hover:underline">слоты для отыгрыша</a> доступны в каталоге. Скачать <a href="/prilozhenie" class="text-coral-400 hover:underline">приложение</a> можно на отдельной странице. О нас — <a href="/about" class="text-coral-400 hover:underline">тут</a>.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-lg bg-gradient-to-br from-coral-500/10 via-abyss-800 to-teal-500/5 border border-coral-500/10">
+        <h2 class="text-xl font-bold text-white uppercase mb-3">Бонус ждёт</h2>
+        <p class="text-slate-300 mb-6">До 500% на старте — активируйте при первом пополнении.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Активировать предложение</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

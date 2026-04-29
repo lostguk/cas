@@ -1,0 +1,46 @@
+{
+	"brand": "1Win",
+	"region": "KZ",
+	"language": "ru",
+	"currency": "KZT",
+	"domain": "1winsl.kz",
+	"affiliate_url": "#",
+	"color_preset": "deep-purple",
+	"visual_style": "blog-personal",
+	"content_format": "A",
+	"preset_number": 12,
+	"font": "Merriweather+Nunito Sans",
+	"logo_type": "A",
+	"author": {
+		"name": "Серик Калиев",
+		"city": "Тараз",
+		"age": 28,
+		"experience_years": 4,
+		"job_title": "Автор обзоров, любитель Lucky Jet",
+		"bio_style": "casual"
+	},
+	"pages": ["index", "registraciya", "skachat", "casino", "bonus", "about"],
+	"slot_pages": ["sweet-bonanza", "coin-strike"],
+	"sections_order": [
+		"Hero",
+		"Overview",
+		"Bonus",
+		"Advantages",
+		"Slots",
+		"Payments",
+		"App",
+		"FAQ",
+		"CTA"
+	],
+	"seo": {
+		"primary_keyword": "1win казахстан",
+		"secondary_keywords": [
+			"1вин кз",
+			"1win скачать",
+			"1win lucky jet",
+			"1win бонус"
+		],
+		"geo_target": "KZ"
+	},
+	"noindex": false
+}

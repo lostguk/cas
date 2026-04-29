@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Скачать 1xBet Россия — APK для Android бесплатно';
+const description =
+  'Как скачать 1xBet в Россия: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.';
+const canonical = 'https://1xbetsite.su/ustanovka';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: [
+    { '@type': 'HowToStep', name: 'Скачать APK', text: 'Загрузите файл с официальной страницы.' },
+    { '@type': 'HowToStep', name: 'Разрешить установку', text: 'Включите установку из неизвестных источников.' },
+    { '@type': 'HowToStep', name: 'Установить', text: 'Откройте файл и завершите установку.' },
+    { '@type': 'HowToStep', name: 'Войти', text: 'Авторизуйтесь или зарегистрируйтесь.' },
+  ],
+};
+
+const androidSteps = [
+  { n: '01', title: 'Скачайте APK', text: 'Перейдите на официальный сайт и нажмите «Скачать для Android».' },
+  { n: '02', title: 'Разрешите установку', text: 'В настройках браузера включите «Из неизвестных источников».' },
+  { n: '03', title: 'Установите', text: 'Откройте скачанный файл и следуйте инструкции.' },
+  { n: '04', title: 'Войдите', text: 'Используйте логин и пароль или создайте новый аккаунт.' },
+];
+
+const iosSteps = [
+  { n: '01', title: 'Откройте сайт', text: 'Зайдите на официальный сайт через Safari.' },
+  { n: '02', title: 'Скачайте из App Store', text: 'Если приложение доступно — установите. Иначе используйте веб-версию.' },
+  { n: '03', title: 'Войдите', text: 'Авторизуйтесь и начните играть.' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Скачать' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Скачать 1xBet — APK и&nbsp;iOS</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          В Google Play приложения для ставок недоступны — APK с официального сайта это нормальная практика.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Скачать / открыть сайт</CTAButton>
+          <CTAButton href="/moj-profil" variant="outline" size="lg">Личный кабинет</CTAButton>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6">Android (APK)</h2>
+      <div class="space-y-4 mb-12">
+        {
+          androidSteps.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-extrabold text-cta-500 shrink-0">{s.n}</span>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">{s.title}</h3>
+                  <p class="text-sm text-gray-600">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6">iOS (iPhone)</h2>
+      <div class="space-y-4 mb-12">
+        {
+          iosSteps.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-extrabold text-cta-500 shrink-0">{s.n}</span>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">{s.title}</h3>
+                  <p class="text-sm text-gray-600">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Системные требования</h2>
+      <div class="overflow-x-auto rounded-xl bg-white shadow-xl mb-12">
+        <table class="min-w-full text-sm text-left">
+          <thead class="bg-gray-50 text-gray-700 font-semibold border-b border-gray-200">
+            <tr>
+              <th class="px-4 py-3">ОС</th>
+              <th class="px-4 py-3">Версия</th>
+              <th class="px-4 py-3">Размер</th>
+              <th class="px-4 py-3">RAM</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="px-4 py-3 font-medium">Android</td><td class="px-4 py-3">5.0+</td><td class="px-4 py-3">~40 МБ</td><td class="px-4 py-3">1 ГБ</td></tr>
+            <tr><td class="px-4 py-3 font-medium">iOS</td><td class="px-4 py-3">12.0+</td><td class="px-4 py-3">~120 МБ</td><td class="px-4 py-3">2 ГБ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-center p-8 rounded-2xl bg-gray-50 shadow-xl">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Нужна ссылка?</h2>
+        <p class="text-gray-600 mb-6">
+          После установки <a href="/otkryt-schet" class="text-cta-500 hover:text-cta-600 underline">зарегистрируйтесь</a> и получите <a href="/privetstvennye-bonusy" class="text-cta-500 hover:text-cta-600 underline">бонус</a>.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть загрузку</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

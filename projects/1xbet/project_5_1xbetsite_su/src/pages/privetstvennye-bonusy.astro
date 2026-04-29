@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = '1xBet Бонусы — приветственный пакет для РУ | 2026';
+const description =
+  'Бонусы 1xBet для Россия: до 32 500 ₽ на спорт, 150 фриспинов на казино. Условия отыгрыша.';
+const canonical = 'https://1xbetsite.su/privetstvennye-bonusy';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'ru',
+};
+
+const wagering = [
+  { n: '01', title: 'Получите бонус', text: 'Пополните счёт — бонус зачислится автоматически.' },
+  { n: '02', title: 'Ставьте экспрессы', text: 'Минимум 3 события с кэфом 1.40+. Вейджер ×5 для спорта.' },
+  { n: '03', title: 'Отыграйте за 30 дней', text: 'Не успели — бонус сгорает. Казино: вейджер ×35.' },
+  { n: '04', title: 'Выводите', text: 'После отыгрыша деньги переходят на реальный баланс.' },
+];
+
+const promos = [
+  { title: 'Экспресс дня', text: 'Повышенный кэф на собранный экспресс от букмекера. Каждый день новый.' },
+  { title: 'Кэшбэк', text: 'Возврат части проигрыша за неделю. Процент зависит от уровня в программе лояльности.' },
+  { title: 'Промокоды', text: 'Периодические акции в соцсетях и Telegram. Фрибеты и фриспины.' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Бонусы' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Бонусы 1xBet — приветственный пакет</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          До 32 500 ₽ на спорт + 150 фриспинов на казино. Разбираем условия отыгрыша.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Забрать бонус</CTAButton>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6 mb-14">
+        <Card class="text-center">
+          <p class="text-sm text-gray-500 uppercase tracking-wide mb-2">Спорт</p>
+          <p class="text-3xl font-extrabold text-cta-500 mb-2">32 500 ₽</p>
+          <p class="text-sm text-gray-600">100% на первый депозит. Вейджер ×5.</p>
+        </Card>
+        <Card class="text-center">
+          <p class="text-sm text-gray-500 uppercase tracking-wide mb-2">Казино</p>
+          <p class="text-3xl font-extrabold text-cta-500 mb-2">150 фриспинов</p>
+          <p class="text-sm text-gray-600">На определённые слоты. Вейджер ×35.</p>
+        </Card>
+      </div>
+
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Как отыграть бонус</h2>
+      <div class="space-y-4 mb-14">
+        {
+          wagering.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-extrabold text-cta-500 shrink-0">{s.n}</span>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">{s.title}</h3>
+                  <p class="text-sm text-gray-600">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Другие акции</h2>
+      <div class="grid sm:grid-cols-3 gap-4 mb-14">
+        {
+          promos.map((p) => (
+            <Card>
+              <h3 class="font-semibold text-gray-900 mb-2">{p.title}</h3>
+              <p class="text-sm text-gray-600">{p.text}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <div class="text-center p-8 rounded-2xl bg-gray-50 shadow-xl">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3">Стоит ли брать бонус?</h2>
+        <p class="text-gray-600 mb-6">
+          Если готовы к вейджеру — да. Если нет — регистрируйтесь без бонуса и играйте на реальные. <a href="/moj-profil" class="text-cta-500 hover:text-cta-600 underline">Как вывести</a>.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Начать с бонусом</CTAButton>
+      </div>
+
+      <div class="mt-8 text-sm text-gray-500 text-center">
+        <a href="/ustanovka" class="text-cta-500 hover:text-cta-600">Скачать приложение</a> · <a href="/dead-or-alive-2" class="text-cta-500 hover:text-cta-600">Dead or Alive 2</a> · <a href="/about" class="text-cta-500 hover:text-cta-600">О проекте</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

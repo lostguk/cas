@@ -1,0 +1,70 @@
+{
+  "index": {
+    "title": "Mostbet Россия — ставки на спорт и казино РУ 2026",
+    "description": "Обзор Mostbet для Россия: ставки на КПЛ, казино, бонус до 32 500 ₽. Пополнение через Сбербанк в рубль.",
+    "primary_keyword": "Mostbet россия",
+    "title_formula": 1,
+    "page_type": "index"
+  },
+  "sozdat-akkaunt": {
+    "title": "Регистрация Mostbet: 4 способа + бонус на первый депозит",
+    "description": "Регистрация Mostbet за 2 минуты — пошагово. Аккаунт в рубль, бонус на старте, верификация через ИИН.",
+    "primary_keyword": "Mostbet регистрация",
+    "title_formula": 2,
+    "page_type": "registration"
+  },
+  "prilozhenie": {
+    "title": "Скачать Mostbet Россия — APK для Android бесплатно",
+    "description": "Как скачать Mostbet в Россия: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.",
+    "primary_keyword": "Mostbet скачать",
+    "title_formula": 3,
+    "page_type": "download"
+  },
+  "onlajn-kazino": {
+    "title": "Какие слоты есть на Mostbet? Обзор казино РУ 2026",
+    "description": "Казино Mostbet РУ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в рубль, выводи на Сбербанк.",
+    "primary_keyword": "Mostbet казино",
+    "title_formula": 4,
+    "page_type": "casino"
+  },
+  "akcii": {
+    "title": "Mostbet Бонусы — приветственный пакет для РУ | 2026",
+    "description": "Бонусы Mostbet для Россия: до 32 500 ₽ на спорт, 150 фриспинов на казино. Условия отыгрыша.",
+    "primary_keyword": "Mostbet бонус",
+    "title_formula": 1,
+    "page_type": "bonus"
+  },
+  "about": {
+    "title": "О нас: обзор Mostbet от реального игрока из Россия",
+    "description": "О проекте: честный обзор Mostbet от автора из Россия. Без заказных текстов, только личный опыт.",
+    "primary_keyword": "Mostbet обзор",
+    "title_formula": 2,
+    "page_type": "about"
+  },
+  "sugar-rush": {
+    "title": "Стоит ли играть в Sugar Rush? Обзор слота 2026",
+    "description": "Слот Sugar Rush от Pragmatic Play на Mostbet KZ. RTP 96.50%, макс. ×5 000. Как играть и выигрывать.",
+    "primary_keyword": "Sugar Rush слот",
+    "title_formula": 4,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Sugar Rush",
+      "rtp": "96.50%",
+      "maxWin": "×5 000",
+      "provider": "Pragmatic Play"
+    }
+  },
+  "fruit-party": {
+    "title": "Играть Fruit Party на Mostbet Россия — обзор и RTP",
+    "description": "Fruit Party на Mostbet: RTP 96.47%, бонусные раунды, волатильность. Честный обзор от жителя Россия 2026.",
+    "primary_keyword": "Fruit Party слот",
+    "title_formula": 3,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Fruit Party",
+      "rtp": "96.47%",
+      "maxWin": "×5 000",
+      "provider": "Pragmatic Play"
+    }
+  }
+}

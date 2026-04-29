@@ -1,0 +1,64 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const slots = [
+  {
+    href: '/sugar-rush',
+    provider: 'Pragmatic Play',
+    name: 'Sugar Rush',
+    rtp: '96.50%',
+    win: '×5 000',
+    volatility: 'Высокая',
+    score: '4.2',
+    desc: 'Каскадная механика с множителями. По данным провайдера, RTP 96.50% — выше среднего для кластерных слотов.',
+  },
+  {
+    href: '/fruit-party',
+    provider: 'Pragmatic Play',
+    name: 'Fruit Party',
+    rtp: '96.47%',
+    win: '×5 000',
+    volatility: 'Высокая',
+    score: '4.0',
+    desc: 'Фруктовая тематика с бонусными раундами. Волатильность высокая — длинные серии без выигрыша чередуются с крупными выплатами.',
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Рейтинг слотов Mostbet: сравнение по RTP</SectionHeading>
+    <p class="text-center text-slate-400 max-w-2xl mx-auto mb-12 -mt-4">
+      RTP — долгосрочный ориентир от провайдера, не гарантия результата конкретной сессии.
+    </p>
+    <div class="grid md:grid-cols-2 gap-8 mb-10">
+      {
+        slots.map((s) => (
+          <Card class="flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wide">{s.provider}</p>
+              <span class="text-sm font-bold text-secondary-400 bg-secondary-400/10 px-3 py-1 rounded-full">{s.score}/5</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">{s.name}</h3>
+            <p class="text-sm text-slate-400 leading-relaxed flex-1 mb-4">{s.desc}</p>
+            <div class="flex flex-wrap gap-3 text-xs text-slate-500 mb-4">
+              <span class="px-2 py-1 rounded-md bg-white/[0.05]">RTP {s.rtp}</span>
+              <span class="px-2 py-1 rounded-md bg-white/[0.05]">Макс. {s.win}</span>
+              <span class="px-2 py-1 rounded-md bg-white/[0.05]">{s.volatility}</span>
+            </div>
+            <CTAButton href={s.href} variant="outline" size="sm" class="w-full sm:w-auto">
+              Подробный обзор
+            </CTAButton>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="text-center">
+      <CTAButton href={affiliateLink} size="lg" variant="cta" external>Посмотреть рейтинг</CTAButton>
+    </div>
+  </div>
+</section>

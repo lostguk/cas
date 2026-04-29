@@ -1,0 +1,47 @@
+{
+	"brand": "1xBet",
+	"region": "KZ",
+	"language": "ru",
+	"currency": "KZT",
+	"domain": "1xbts.kz",
+	"affiliate_url": "#",
+	"color_preset": "obsidian-amber",
+	"visual_style": "casino-glam",
+	"content_format": "C",
+	"preset_number": 11,
+	"font": "Cormorant Garamond+DM Sans",
+	"logo_type": "C",
+	"author": null,
+	"pages": [
+		"index",
+		"vhod",
+		"ustanovka",
+		"onlajn-kazino",
+		"rabochij-sajt",
+		"akcii",
+		"about"
+	],
+	"slot_pages": ["gates-of-olympus", "sugar-rush"],
+	"sections_order": [
+		"Hero",
+		"Overview",
+		"Slots",
+		"Sports",
+		"Bonus",
+		"Payments",
+		"Advantages",
+		"FAQ",
+		"CTA"
+	],
+	"seo": {
+		"primary_keyword": "1xbet казахстан",
+		"secondary_keywords": [
+			"1хбет кз",
+			"1xbet скачать",
+			"1xbet вход",
+			"1xbet казино"
+		],
+		"geo_target": "KZ"
+	},
+	"noindex": false
+}

@@ -1,0 +1,72 @@
+---
+const sections = [
+  {
+    title: 'Разделы',
+    links: [
+      { href: '/sozdat-akkaunt', label: 'Регистрация' },
+      { href: '/mobile-app', label: 'Приложение' },
+      { href: '/onlajn-kazino', label: 'Казино' },
+    ],
+  },
+  {
+    title: 'Информация',
+    links: [
+      { href: '/dostup', label: 'Доступ' },
+      { href: '/akcii', label: 'Акции и бонусы' },
+      { href: '/about', label: 'О сайте' },
+    ],
+  },
+  {
+    title: 'Слоты',
+    links: [
+      { href: '/sugar-rush-1000', label: 'Sugar Rush 1000' },
+      { href: '/the-dog-house', label: 'The Dog House' },
+    ],
+  },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-20 bg-surface-400 border-t-2 border-white/10">
+  <div class="h-px bg-gradient-to-r from-transparent via-cta-500/50 to-transparent"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-flex items-center gap-2 mb-4">
+          <span class="w-6 h-6 bg-gradient-to-br from-cta-500 to-cta-700 block" aria-hidden="true"></span>
+          <span class="font-mono font-bold text-white uppercase">1x<span class="text-cta-400">Bet</span> RU</span>
+        </a>
+        <p class="text-sm text-white/50 leading-relaxed">
+          Информационный портал. По данным из открытых источников. НЕ является официальным сайтом.
+        </p>
+      </div>
+      {
+        sections.map((s) => (
+          <div>
+            <h3 class="text-sm font-mono font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2">{s.title}</h3>
+            <ul class="space-y-2.5">
+              {s.links.map((l) => (
+                <li>
+                  <a href={l.href} class="text-sm text-white/50 hover:text-cta-400 transition-colors duration-100 font-mono">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 pt-8 border-t-2 border-white/10 space-y-4 text-xs text-white/40 leading-relaxed">
+      <p>
+        <strong class="text-info-400">⚠️ ДИСКЛЕЙМЕР.</strong> Данный сайт НЕ является официальным сайтом 1xBet, НЕ является зеркалом, НЕ проводит финансовые операции. Материалы носят исключительно информационный характер.
+      </p>
+      <p>
+        По данным из открытых источников. Азартные игры связаны с риском. 18+. На сайте присутствуют партнёрские ссылки.
+      </p>
+      <p class="text-white/20 font-mono">© {year} 1xbets.su</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,46 @@
+{
+	"site_type": "game",
+	"game": "Aviator",
+	"game_provider": "Spribe",
+	"brand": "1Win",
+	"region": "RU",
+	"language": "ru",
+	"domain": "aviatorgames.su",
+	"affiliate_url": "#",
+	"color_preset": "abyss-coral",
+	"visual_style": "premium-encyclopedia",
+	"content_format": "H",
+	"preset_number": 15,
+	"font": "Manrope",
+	"logo_type": "C",
+	"pages": [
+		"index",
+		"kak-igrat",
+		"strategii",
+		"demo",
+		"signaly",
+		"skachat",
+		"bonus",
+		"about"
+	],
+	"sections_order": "fixed",
+	"seo": {
+		"primary_keyword": "aviator игра",
+		"secondary_keywords": [
+			"aviator онлайн",
+			"aviator стратегия",
+			"aviator на деньги",
+			"aviator 1win"
+		],
+		"geo_target": "RU"
+	},
+	"bonus": {
+		"primary_percent": 500,
+		"max_amount": "до 75 000 ₽",
+		"freespins": 70,
+		"first_n_deposits_total_percent": 500,
+		"wager": "x35",
+		"promo_code": "AVIATORGAMES"
+	},
+	"noindex": false
+}

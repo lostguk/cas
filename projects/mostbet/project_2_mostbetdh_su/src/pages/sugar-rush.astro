@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Стоит ли играть в Sugar Rush? Обзор слота 2026';
+const description =
+  'Слот Sugar Rush от Pragmatic Play на Mostbet KZ. RTP 96.50%, макс. ×5 000. Как играть и выигрывать.';
+const canonical = 'https://mostbetdh.su/sugar-rush';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'Game',
+      name: 'Sugar Rush',
+      gameLocation: { '@type': 'VirtualLocation', url: canonical },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4.2', bestRating: '5' },
+    author: { '@type': 'Organization', name: 'Аналитическая команда mostbetdh.su' },
+    reviewBody: description,
+  },
+];
+
+const specs = [
+  { label: 'RTP', value: '96.50%' },
+  { label: 'Макс. выигрыш', value: '×5 000' },
+  { label: 'Провайдер', value: 'Pragmatic Play' },
+  { label: 'Волатильность', value: 'Высокая' },
+  { label: 'Сетка', value: '7×7' },
+  { label: 'Механика', value: 'Кластеры + каскады' },
+];
+
+const ratings = [
+  { param: 'RTP', score: '4.3' },
+  { param: 'Волатильность', score: '3.8' },
+  { param: 'Бонусные функции', score: '4.5' },
+  { param: 'Графика', score: '4.0' },
+  { param: 'Общая оценка', score: '4.2' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-18"
+  updateDate="2026-03-25"
+  type="article"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Казино', href: '/onlajn-kazino' },
+      { label: 'Sugar Rush' },
+    ]}
+  />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-sm font-semibold text-emerald-400 mb-2">Pragmatic Play · RTP 96.50%</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Sugar Rush — аналитический обзор слота</h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Каскадная механика на сетке 7×7 с множителями. По данным провайдера, RTP 96.50% — выше среднего для кластерных слотов. Максимальный выигрыш ×5 000.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" variant="cta" external class="mt-8">Испытать удачу</CTAButton>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Технические характеристики</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
+        {
+          specs.map((s) => (
+            <div class="rounded-xl bg-white/[0.03] border border-white/[0.06] p-4 text-center backdrop-blur-sm">
+              <div class="text-xs text-slate-500 uppercase mb-1">{s.label}</div>
+              <div class="text-lg font-bold text-white">{s.value}</div>
+            </div>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Рейтинг по параметрам</h2>
+      <div class="overflow-x-auto rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm mb-10">
+        <table class="min-w-full text-sm text-left">
+          <thead class="border-b border-white/[0.06]">
+            <tr>
+              <th class="px-5 py-4 text-slate-300 font-semibold">Параметр</th>
+              <th class="px-5 py-4 text-secondary-400 font-semibold text-center">Оценка / 5</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/[0.04]">
+            {
+              ratings.map((r) => (
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="px-5 py-3 text-white font-medium">{r.param}</td>
+                  <td class="px-5 py-3 text-center">
+                    <span class="text-secondary-400 font-bold">{r.score}</span>
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4">Как играть</h2>
+      <div class="space-y-4 text-slate-300 mb-10">
+        <p>
+          Сетка 7×7 с кластерной механикой: выигрыши формируются при совпадении 5+ символов горизонтально или вертикально. Каскад удаляет выигрышные символы, на их место падают новые. Множители остаются на поле и увеличиваются с каждым каскадом.
+        </p>
+        <p>
+          Бонусный раунд активируется при 3+ символах Scatter. По данным провайдера, средняя частота бонуса — 1 на 180 спинов. Покупка бонуса доступна за ×100 ставки — по аналитической оценке, это стандартная цена для слотов высокой волатильности.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4">Аналитическое заключение</h2>
+      <div class="space-y-4 text-slate-300 mb-10">
+        <p>
+          По совокупности параметров Sugar Rush получает оценку 4.2/5. Сильные стороны: выше среднего RTP (96.50%), увлекательная каскадная механика, визуально качественное исполнение. Слабые стороны: высокая волатильность означает длительные серии без выигрыша. Рекомендуется для опытных пользователей с установленным лимитом. Сравните с <a href="/fruit-party" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">Fruit Party</a>. Полный каталог — в <a href="/onlajn-kazino" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">разделе казино</a>.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-emerald-500/20 bg-white/[0.02] p-4 text-sm text-slate-400 backdrop-blur-sm">
+        18+. По данным из открытых источников: играйте в пределах бюджета, установите лимиты в кабинете до первого депозита.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

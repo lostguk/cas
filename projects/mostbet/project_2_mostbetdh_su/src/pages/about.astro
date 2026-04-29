@@ -1,0 +1,99 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const affiliateLink = '#';
+const title = 'О нас: обзор Mostbet от реального игрока из Россия';
+const description =
+  'О проекте: честный обзор Mostbet от автора из Россия. Без заказных текстов, только личный опыт.';
+const canonical = 'https://mostbetdh.su/about';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: title,
+  description,
+  url: canonical,
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Аналитическая команда mostbetdh.su',
+    url: canonical,
+  },
+};
+
+const methodology = [
+  { param: 'Спортивная линия', weight: '25%', method: 'Ширина росписи, маржа, скорость live' },
+  { param: 'Платежи', weight: '20%', method: 'Скорость ввода/вывода, доступные методы для RU' },
+  { param: 'Бонусы', weight: '15%', method: 'Сумма, вейджер, прозрачность условий' },
+  { param: 'Казино', weight: '20%', method: 'Количество игр, провайдеры, RTP' },
+  { param: 'Приложение', weight: '10%', method: 'Стабильность, размер, удобство интерфейса' },
+  { param: 'Поддержка', weight: '10%', method: 'Скорость ответа, качество решений' },
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema} type="article">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О портале' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-6 text-center">О портале mostbetdh.su</h1>
+
+      <div class="flex flex-col sm:flex-row gap-8 items-start mb-10">
+        <div class="w-20 h-20 rounded-2xl bg-emerald-500/15 text-emerald-400 font-extrabold text-2xl flex items-center justify-center shrink-0 mx-auto sm:mx-0">
+          AN
+        </div>
+        <div class="space-y-4 text-slate-300 flex-1">
+          <h2 class="text-xl font-bold text-white">Аналитическая команда</h2>
+          <p>
+            Портал mostbetdh.su — независимый аналитический ресурс, формирующий рейтинги и сравнительные обзоры на основании открытых данных. Команда специализируется на анализе букмекерских платформ для российского рынка с 2022 года.
+          </p>
+          <p>
+            Методология оценки учитывает 6 ключевых параметров с взвешенными коэффициентами. На сайте присутствуют партнёрские ссылки — это стандартная модель монетизации аналитических порталов, не влияющая на итоговые оценки.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Методология оценки</h2>
+      <div class="overflow-x-auto rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm mb-10">
+        <table class="min-w-full text-sm text-left">
+          <thead class="border-b border-white/[0.06]">
+            <tr>
+              <th class="px-5 py-4 text-slate-300 font-semibold">Параметр</th>
+              <th class="px-5 py-4 text-emerald-400 font-semibold">Вес</th>
+              <th class="px-5 py-4 text-slate-300 font-semibold">Метод оценки</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/[0.04]">
+            {
+              methodology.map((m) => (
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="px-5 py-3 text-white font-medium">{m.param}</td>
+                  <td class="px-5 py-3 text-emerald-400 font-semibold">{m.weight}</td>
+                  <td class="px-5 py-3 text-slate-400">{m.method}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-xl font-bold text-white mb-4">Принципы работы</h2>
+      <div class="text-slate-300 space-y-4 mb-10">
+        <p>
+          Все оценки формируются на основе сравнительного анализа. Тестирование проводится на реальных аккаунтах с депозитами в рублях. Данные обновляются ежемесячно. Подробности о <a href="/sozdat-akkaunt" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">процессе регистрации</a> и <a href="/prilozhenie" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">мобильном приложении</a> основаны на практическом тестировании.
+        </p>
+      </div>
+
+      <h2 class="text-xl font-bold text-white mb-4">Предупреждение</h2>
+      <div class="text-slate-300 space-y-4 mb-10">
+        <p>
+          18+. Азартные игры связаны с финансовым риском. Не ставьте больше, чем можете позволить потерять. Портал не несёт ответственности за решения, принятые на основании представленных материалов. Подробнее о <a href="/onlajn-kazino" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">казино</a> и <a href="/fruit-party" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">обзорах слотов</a>.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <CTAButton href={affiliateLink} size="lg" variant="cta" external>Перейти к обзору платформы</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

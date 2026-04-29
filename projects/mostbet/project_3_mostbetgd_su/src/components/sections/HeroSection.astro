@@ -1,0 +1,58 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const stats = [
+  { value: '40+', label: 'видов спорта' },
+  { value: '100 ₽', label: 'мин. депозит' },
+  { value: '100%', label: 'на первый депозит' },
+];
+---
+
+<section class="relative overflow-hidden min-h-[80vh] flex items-end">
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-deep-800 via-deep-800/70 to-deep-900/40 pointer-events-none z-10"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-main-500/10 via-transparent to-alt-400/5 pointer-events-none"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute top-10 right-0 w-96 h-96 rounded-full bg-main-500/8 blur-3xl pointer-events-none"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-alt-400/5 blur-3xl pointer-events-none"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-32 lg:pt-40 w-full">
+    <p
+      class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-main-500/15 border border-main-500/30 text-main-400 text-sm font-semibold uppercase tracking-wider mb-6"
+    >
+      Актуально на 2026
+    </p>
+    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white uppercase tracking-tight leading-[1.05] mb-6 max-w-4xl">
+      Mostbet Россия — ставки и казино для&nbsp;игроков&nbsp;из&nbsp;RU
+    </h1>
+    <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
+      Мы предлагаем полный обзор платформы Mostbet: 40+ видов спорта, 8 000+ игр в казино, счёт в рублях. Бонус до 32 500 ₽ для новых клиентов.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+      <CTAButton href={affiliateLink} size="lg" external>Получить бонус</CTAButton>
+      <CTAButton href="/podarki" variant="outline" size="lg">Ставить на РПЛ</CTAButton>
+    </div>
+    <div class="grid grid-cols-3 gap-6 max-w-lg">
+      {
+        stats.map((s) => (
+          <div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-main-400">{s.value}</div>
+            <div class="text-xs sm:text-sm text-slate-400 mt-1">{s.label}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

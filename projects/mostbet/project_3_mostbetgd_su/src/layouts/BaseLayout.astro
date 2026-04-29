@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+import SEOHead from '../components/SEOHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  type?: 'website' | 'article';
+  schema?: object;
+  publishDate?: string;
+  updateDate?: string;
+}
+
+const { publishDate, updateDate, ...seoProps } = Astro.props;
+
+const articleSchema = publishDate
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: seoProps.title,
+      description: seoProps.description,
+      datePublished: publishDate,
+      dateModified: updateDate || publishDate,
+      author: {
+        '@type': 'Organization',
+        name: 'Mostbet Россия',
+        url: 'https://mostbetgd.su',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Mostbet Россия',
+        url: 'https://mostbetgd.su',
+      },
+      inLanguage: 'ru',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': seoProps.canonical || Astro.url.href,
+      },
+    }
+  : null;
+
+const mergedSchema =
+  seoProps.schema && articleSchema
+    ? [seoProps.schema, articleSchema]
+    : articleSchema || seoProps.schema || null;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <SEOHead {...seoProps} schema={mergedSchema} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-deep-800 text-slate-100">
+    <Header />
+    <main class="flex-1 pt-16 lg:pt-18">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

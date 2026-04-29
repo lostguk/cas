@@ -1,0 +1,63 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const cards = [
+  {
+    title: 'Линия и коэффициенты',
+    plus: '50+ видов спорта, маржа 3–5% на топ-события',
+    minus: 'На КПЛ роспись беднее, чем на АПЛ или Ла Лигу',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"><path d="M3 3v18h18"/><path d="m7 16 4-8 4 5 5-9"/></svg>',
+  },
+  {
+    title: 'Оплата в тенге',
+    plus: 'Kaspi, Halyk, Jusan — без конвертации',
+    minus: 'Kaspi иногда отклоняет платежи без объяснений',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>',
+  },
+  {
+    title: 'Мобильное приложение',
+    plus: 'APK ~40 МБ, работает стабильно на большинстве устройств',
+    minus: 'Отсутствует в Google Play, обновление только вручную',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>',
+  },
+  {
+    title: 'Казино и слоты',
+    plus: '10 000+ игр: Pragmatic Play, NetEnt, Evolution, Microgaming',
+    minus: 'Вейджер ×35 на казино-бонус — условия отыгрыша жёсткие',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg>',
+  },
+  {
+    title: 'Бонусы',
+    plus: 'До 220 000 ₸ + 150 фриспинов на первый депозит',
+    minus: 'Условия отыгрыша запутанные, особенно для новичков',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>',
+  },
+  {
+    title: 'Поддержка',
+    plus: 'Онлайн-чат работает круглосуточно на русском языке',
+    minus: 'Ответы часто шаблонные, для решения сложных вопросов приходится настаивать',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Честная оценка: плюсы и минусы</SectionHeading>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {cards.map((card) => (
+        <div class="bg-gradient-to-b from-gray-900 to-black border border-amber-500/20 rounded-2xl p-6 hover:border-amber-400/40 transition-all duration-500">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4">
+            <Fragment set:html={card.icon} />
+          </div>
+          <h3 class="font-heading font-bold text-white mb-3">{card.title}</h3>
+          <div class="space-y-2 text-sm">
+            <p class="text-olive-400">+ {card.plus}</p>
+            <p class="text-gray-500">− {card.minus}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

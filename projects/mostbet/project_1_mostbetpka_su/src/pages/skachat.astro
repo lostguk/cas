@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Скачать Mostbet Россия — APK для Android бесплатно';
+const description =
+  'Как скачать Mostbet в России: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.';
+const canonical = 'https://mostbetpka.su/skachat';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: [
+    { '@type': 'HowToStep', name: 'Шаг 1', text: 'Откройте официальный сайт Mostbet через браузер на Android.' },
+    { '@type': 'HowToStep', name: 'Шаг 2', text: 'Разрешите установку из неизвестных источников в настройках.' },
+    { '@type': 'HowToStep', name: 'Шаг 3', text: 'Скачайте и установите APK-файл.' },
+    { '@type': 'HowToStep', name: 'Шаг 4', text: 'Войдите в аккаунт или зарегистрируйтесь.' },
+  ],
+};
+
+const androidSteps = [
+  { n: '01', title: 'Откройте сайт', text: 'Перейдите на официальный сайт Mostbet через мобильный браузер. На главной странице найдите кнопку скачивания APK-файла.' },
+  { n: '02', title: 'Разрешите установку', text: 'В настройках Android перейдите в раздел «Безопасность» и включите «Установка из неизвестных источников» для текущего браузера.' },
+  { n: '03', title: 'Установите APK', text: 'После загрузки откройте файл и нажмите «Установить». Размер приложения — около 45 МБ. Процесс занимает менее минуты.' },
+  { n: '04', title: 'Войдите в аккаунт', text: 'Запустите приложение и авторизуйтесь. Если аккаунта ещё нет — пройдите регистрацию прямо в приложении. Инструкция на странице «Регистрация».' },
+];
+
+const iosSteps = [
+  { n: '01', title: 'Откройте Safari', text: 'Перейдите на сайт Mostbet через Safari. Мобильная версия адаптирована для iOS и работает без установки дополнительных приложений.' },
+  { n: '02', title: 'Добавьте на экран', text: 'Нажмите кнопку «Поделиться» и выберите «На экран Домой». Это создаст ярлык, который запускается как отдельное приложение.' },
+  { n: '03', title: 'Авторизуйтесь', text: 'Откройте ярлык и войдите в аккаунт. Все функции — ставки, казино, вывод средств — доступны через веб-версию.' },
+];
+
+const sysReq = [
+  { os: 'Android', version: '6.0+', size: '~45 МБ', ram: '2 ГБ' },
+  { os: 'iOS (веб)', version: 'Safari 14+', size: '—', ram: '2 ГБ' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-01"
+  updateDate="2026-04-05"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Скачать' }]} />
+  <ArticleMeta publishDate="2026-02-01" updateDate="2026-04-05" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-warm-900 leading-tight mb-4">
+        Скачать Mostbet — APK для Android и iPhone
+      </h1>
+      <p class="text-warm-500 leading-relaxed mb-6">
+        Мобильное приложение Mostbet позволяет делать ставки и играть в слоты без привязки к компьютеру. Ниже — пошаговые инструкции для Android и iOS с описанием системных требований.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 mb-10">
+        <CTAButton href={affiliateLink} size="lg" external>Скачать приложение</CTAButton>
+        <CTAButton href="/registraciya" variant="outline" size="lg">Инструкция по регистрации</CTAButton>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-6">Установка на Android (APK)</h2>
+      <div class="space-y-4 mb-12">
+        {
+          androidSteps.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-serif font-semibold text-accent-500 shrink-0">{s.n}</span>
+                <div>
+                  <h3 class="font-serif text-lg font-semibold text-warm-900 mb-1">{s.title}</h3>
+                  <p class="text-sm text-warm-500 leading-relaxed">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-6">Установка на iOS</h2>
+      <div class="space-y-4 mb-12">
+        {
+          iosSteps.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-serif font-semibold text-accent-500 shrink-0">{s.n}</span>
+                <div>
+                  <h3 class="font-serif text-lg font-semibold text-warm-900 mb-1">{s.title}</h3>
+                  <p class="text-sm text-warm-500 leading-relaxed">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Обзор приложения</h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          Мобильное приложение Mostbet включает все функции десктопной версии: линия, live-ставки, казино, вывод средств. Интерфейс адаптирован под вертикальную ориентацию экрана. Навигация между разделами осуществляется через нижнее меню.
+        </p>
+        <p>
+          Из минусов: приложение отсутствует в Google Play, поэтому обновления нужно устанавливать вручную. При появлении новой версии платформа отправляет уведомление внутри приложения. Подробнее о доступных играх — в разделе <a href="/casino" class="text-accent-600 hover:underline">казино</a>. Информация о проекте — на <a href="/about" class="text-accent-600 hover:underline">странице «О проекте»</a>.
+        </p>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Системные требования</h2>
+      <div class="overflow-x-auto rounded-lg border border-warm-200 bg-white shadow-sm mb-10">
+        <table class="min-w-full text-sm text-left">
+          <thead class="bg-warm-100 text-warm-700 font-medium border-b border-warm-200">
+            <tr>
+              <th class="px-4 py-3">ОС</th>
+              <th class="px-4 py-3">Версия</th>
+              <th class="px-4 py-3">Размер</th>
+              <th class="px-4 py-3">RAM</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-warm-100">
+            {
+              sysReq.map((r) => (
+                <tr class="hover:bg-warm-50">
+                  <td class="px-4 py-3 text-warm-800 font-medium">{r.os}</td>
+                  <td class="px-4 py-3 text-warm-500">{r.version}</td>
+                  <td class="px-4 py-3 text-warm-500">{r.size}</td>
+                  <td class="px-4 py-3 text-warm-500">{r.ram}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-warm-500 leading-relaxed mb-6">
+        Если установка APK вызывает затруднения, используйте мобильную веб-версию через браузер. Она работает на любом устройстве и не требует загрузки файлов. Для быстрого доступа добавьте <a href="/sweet-bonanza" class="text-accent-600 hover:underline">Sweet Bonanza</a> в избранное.
+      </p>
+
+      <div class="rounded-lg border border-accent-500/15 bg-white p-6 text-center">
+        <h2 class="font-serif text-xl font-semibold text-warm-900 mb-2">Приложение установлено?</h2>
+        <p class="text-sm text-warm-500 mb-4">Войдите в аккаунт или создайте новый за две минуты.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть Mostbet</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

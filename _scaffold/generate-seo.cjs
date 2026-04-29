@@ -5,6 +5,26 @@ const path = require('path');
 
 const YEAR = new Date().getFullYear();
 
+function resolveRegionCode(input) {
+  if (!input) return 'KZ';
+  const upper = input.toUpperCase();
+  if (upper.length <= 3) return upper;
+  const nameMap = { 'казахстан': 'KZ', 'узбекистан': 'UZ', 'азербайджан': 'AZ', 'кыргызстан': 'KG', 'таджикистан': 'TJ', 'беларусь': 'BY', 'украина': 'UA', 'россия': 'RU', 'молдова': 'MD' };
+  return nameMap[input.toLowerCase()] || 'KZ';
+}
+
+const REGION_DATA = {
+  KZ: { name: 'Казахстан', nameLower: 'казахстан', code: 'кз', currency: 'тенге', currencySymbol: '₸', bonus: '220 000 ₸', minDeposit: '1 000 ₸', mainBank: 'Kaspi' },
+  UZ: { name: 'Узбекистан', nameLower: 'узбекистан', code: 'уз', currency: 'сум', currencySymbol: 'сум', bonus: '11 000 000 сум', minDeposit: '50 000 сум', mainBank: 'Uzcard' },
+  AZ: { name: 'Азербайджан', nameLower: 'азербайджан', code: 'аз', currency: 'манат', currencySymbol: '₼', bonus: '550 ₼', minDeposit: '5 ₼', mainBank: 'Kapital Bank' },
+  KG: { name: 'Кыргызстан', nameLower: 'кыргызстан', code: 'кг', currency: 'сом', currencySymbol: 'сом', bonus: '110 000 сом', minDeposit: '500 сом', mainBank: 'Оптима' },
+  TJ: { name: 'Таджикистан', nameLower: 'таджикистан', code: 'тж', currency: 'сомони', currencySymbol: 'сомони', bonus: '11 000 сомони', minDeposit: '50 сомони', mainBank: 'Амонатбонк' },
+  BY: { name: 'Беларусь', nameLower: 'беларусь', code: 'бай', currency: 'белорусский рубль', currencySymbol: 'Br', bonus: '550 Br', minDeposit: '5 Br', mainBank: 'Беларусбанк' },
+  UA: { name: 'Украина', nameLower: 'украина', code: 'уа', currency: 'гривна', currencySymbol: '₴', bonus: '9 000 ₴', minDeposit: '100 ₴', mainBank: 'Приватбанк' },
+  RU: { name: 'Россия', nameLower: 'россия', code: 'ру', currency: 'рубль', currencySymbol: '₽', bonus: '32 500 ₽', minDeposit: '100 ₽', mainBank: 'Сбербанк' },
+  MD: { name: 'Молдова', nameLower: 'молдова', code: 'мд', currency: 'лей', currencySymbol: 'лей', bonus: '4 500 лей', minDeposit: '50 лей', mainBank: 'MAIB' },
+};
+
 const SLUG_TO_TYPE = {
   'index': 'index',
   'about': 'about',
@@ -71,36 +91,37 @@ const SLOT_DATA = {
   'reactoonz-2':             { name: 'Reactoonz 2',             rtp: '96.20%', maxWin: '×5 083',   provider: "Play'n GO" },
 };
 
-function buildPageTemplates(brand) {
+function buildPageTemplates(brand, reg) {
+  const R = reg || REGION_DATA['KZ'];
   return {
     index: {
-      primaryKw: `${brand} казахстан`,
+      primaryKw: `${brand} ${R.nameLower}`,
       titles: [
-        { f: 1, text: `${brand} Казахстан — ставки на спорт и казино KZ ${YEAR}` },
-        { f: 2, text: `${brand} Казахстан: ставки + казино с бонусом до 220 000 ₸` },
-        { f: 3, text: `Обзор ${brand} Казахстан — ставки, казино, бонусы в тенге` },
-        { f: 4, text: `${brand} в Казахстане — стоит ли? Честный обзор ${YEAR}` },
+        { f: 1, text: `${brand} ${R.name} — ставки на спорт и казино ${R.code.toUpperCase()} ${YEAR}` },
+        { f: 2, text: `${brand} ${R.name}: ставки + казино с бонусом до ${R.bonus}` },
+        { f: 3, text: `Обзор ${brand} ${R.name} — ставки, казино, бонусы в ${R.currency}` },
+        { f: 4, text: `${brand} в ${R.name} — стоит ли? Честный обзор ${YEAR}` },
       ],
       descriptions: [
-        `Обзор ${brand} для Казахстана: ставки на КПЛ, казино, бонус до 220 000 ₸. Пополнение через Kaspi в тенге.`,
-        `${brand} KZ — личный обзор: 50+ видов спорта, 10 000+ слотов, счёт в тенге. Регистрация за 2 минуты.`,
-        `Честный обзор ${brand} от казахстанца. Ставки на спорт, казино, бонусы. Kaspi, Halyk, тенге — всё работает.`,
-        `${brand} в Казахстане ${YEAR}: как ставить, получить бонус и вывести на Kaspi. Обзор от реального игрока.`,
+        `Обзор ${brand} для ${R.name}: ставки на КПЛ, казино, бонус до ${R.bonus}. Пополнение через ${R.mainBank} в ${R.currency}.`,
+        `${brand} ${R.code.toUpperCase()} — личный обзор: 50+ видов спорта, 10 000+ слотов, счёт в ${R.currency}. Регистрация за 2 минуты.`,
+        `Честный обзор ${brand} от жителя ${R.name}. Ставки на спорт, казино, бонусы. ${R.mainBank}, ${R.currency} — всё работает.`,
+        `${brand} в ${R.name} ${YEAR}: как ставить, получить бонус и вывести на ${R.mainBank}. Обзор от реального игрока.`,
       ],
     },
     registration: {
       primaryKw: `${brand} регистрация`,
       titles: [
-        { f: 1, text: `${brand} Регистрация — аккаунт в тенге за 2 минуты | ${YEAR}` },
+        { f: 1, text: `${brand} Регистрация — аккаунт в ${R.currency} за 2 минуты | ${YEAR}` },
         { f: 2, text: `Регистрация ${brand}: 4 способа + бонус на первый депозит` },
-        { f: 3, text: `Создать аккаунт ${brand} Казахстан — пошаговая инструкция` },
-        { f: 4, text: `Как зарегистрироваться на ${brand}? Инструкция KZ ${YEAR}` },
+        { f: 3, text: `Создать аккаунт ${brand} ${R.name} — пошаговая инструкция` },
+        { f: 4, text: `Как зарегистрироваться на ${brand}? Инструкция ${R.code.toUpperCase()} ${YEAR}` },
       ],
       descriptions: [
-        `Как зарегистрироваться на ${brand} в Казахстане. Счёт в KZT, бонус на старте. Пошаговая инструкция.`,
-        `Регистрация ${brand} за 2 минуты — пошагово. Аккаунт в тенге, бонус на старте, верификация через ИИН.`,
-        `Создай аккаунт ${brand} KZ: 4 способа регистрации, счёт в тенге. Бонус начисляется на первый депозит.`,
-        `${brand} регистрация ${YEAR}: как открыть счёт в тенге, получить бонус и начать ставить из Казахстана.`,
+        `Как зарегистрироваться на ${brand} в ${R.name}. Счёт в ${R.currency}, бонус на старте. Пошаговая инструкция.`,
+        `Регистрация ${brand} за 2 минуты — пошагово. Аккаунт в ${R.currency}, бонус на старте, верификация через ИИН.`,
+        `Создай аккаунт ${brand} KZ: 4 способа регистрации, счёт в ${R.currency}. Бонус начисляется на первый депозит.`,
+        `${brand} регистрация ${YEAR}: как открыть счёт в ${R.currency}, получить бонус и начать ставить из ${R.name}.`,
       ],
     },
     download: {
@@ -108,43 +129,43 @@ function buildPageTemplates(brand) {
       titles: [
         { f: 1, text: `${brand} Скачать — приложение для Android и iOS | ${YEAR}` },
         { f: 2, text: `Приложение ${brand}: APK 40 МБ + установка за 1 минуту` },
-        { f: 3, text: `Скачать ${brand} Казахстан — APK для Android бесплатно` },
+        { f: 3, text: `Скачать ${brand} ${R.name} — APK для Android бесплатно` },
         { f: 4, text: `Где скачать ${brand}? Рабочая ссылка на APK ${YEAR}` },
       ],
       descriptions: [
-        `Скачать ${brand} APK на Android бесплатно. Установка за минуту без Google Play. Работает в Казахстане.`,
+        `Скачать ${brand} APK на Android бесплатно. Установка за минуту без Google Play. Работает в ${R.name}.`,
         `${brand} приложение для Android и iOS — скачать бесплатно. APK 40 МБ, ставки и казино с телефона.`,
-        `Как скачать ${brand} в Казахстане: APK для Android, инструкция для iPhone. Рабочая ссылка ${YEAR}.`,
-        `Приложение ${brand} KZ — скачать APK бесплатно. Ставки, казино, вывод на Kaspi прямо с телефона.`,
+        `Как скачать ${brand} в ${R.name}: APK для Android, инструкция для iPhone. Рабочая ссылка ${YEAR}.`,
+        `Приложение ${brand} ${R.code.toUpperCase()} — скачать APK бесплатно. Ставки, казино, вывод на ${R.mainBank} прямо с телефона.`,
       ],
     },
     casino: {
       primaryKw: `${brand} казино`,
       titles: [
-        { f: 1, text: `${brand} Казино — 10 000+ слотов с выводом в тенге | ${YEAR}` },
+        { f: 1, text: `${brand} Казино — 10 000+ слотов с выводом в ${R.currency} | ${YEAR}` },
         { f: 2, text: `Казино ${brand}: слоты, рулетка, Aviator + 150 фриспинов` },
-        { f: 3, text: `Играть в казино ${brand} Казахстан — слоты и live-игры` },
-        { f: 4, text: `Какие слоты есть на ${brand}? Обзор казино KZ ${YEAR}` },
+        { f: 3, text: `Играть в казино ${brand} ${R.name} — слоты и live-игры` },
+        { f: 4, text: `Какие слоты есть на ${brand}? Обзор казино ${R.code.toUpperCase()} ${YEAR}` },
       ],
       descriptions: [
-        `Казино ${brand} — 10 000+ слотов от Pragmatic Play, NetEnt, Evolution. Играй в тенге с бонусом и фриспинами.`,
-        `${brand} казино ${YEAR}: обзор слотов, рулетки, Aviator. Вывод выигрыша на Kaspi Gold в тенге.`,
-        `Онлайн-казино ${brand} для Казахстана. Слоты, live-дилеры, краш-игры. Депозит от 1 000 ₸ через Kaspi.`,
-        `Казино ${brand} KZ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в тенге, выводи на Kaspi.`,
+        `Казино ${brand} — 10 000+ слотов от Pragmatic Play, NetEnt, Evolution. Играй в ${R.currency} с бонусом и фриспинами.`,
+        `${brand} казино ${YEAR}: обзор слотов, рулетки, Aviator. Вывод выигрыша на ${R.mainBank} Gold в ${R.currency}.`,
+        `Онлайн-казино ${brand} для ${R.name}. Слоты, live-дилеры, краш-игры. Депозит от ${R.minDeposit} через ${R.mainBank}.`,
+        `Казино ${brand} ${R.code.toUpperCase()} — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в ${R.currency}, выводи на ${R.mainBank}.`,
       ],
     },
     mirror: {
       primaryKw: `${brand} зеркало`,
       titles: [
         { f: 1, text: `${brand} Зеркало — рабочий доступ без блокировки | ${YEAR}` },
-        { f: 2, text: `Зеркало ${brand}: актуальная ссылка + обход блокировки KZ` },
-        { f: 3, text: `Доступ к ${brand} Казахстан — зеркало, VPN, приложение` },
-        { f: 4, text: `Как зайти на ${brand}? Рабочее зеркало для KZ ${YEAR}` },
+        { f: 2, text: `Зеркало ${brand}: актуальная ссылка + обход блокировки ${R.code.toUpperCase()}` },
+        { f: 3, text: `Доступ к ${brand} ${R.name} — зеркало, VPN, приложение` },
+        { f: 4, text: `Как зайти на ${brand}? Рабочее зеркало для ${R.code.toUpperCase()} ${YEAR}` },
       ],
       descriptions: [
-        `Рабочее зеркало ${brand} для Казахстана. Обходи блокировку Kcell и Beeline — вход без VPN.`,
-        `${brand} зеркало ${YEAR} — актуальная ссылка для входа из Казахстана. Баланс и ставки сохраняются.`,
-        `Как зайти на ${brand} если заблокирован. Зеркало, DNS, приложение — 3 способа для казахстанцев.`,
+        `Рабочее зеркало ${brand} для ${R.name}. Обходи блокировку Kcell и Beeline — вход без VPN.`,
+        `${brand} зеркало ${YEAR} — актуальная ссылка для входа из ${R.name}. Баланс и ставки сохраняются.`,
+        `Как зайти на ${brand} если заблокирован. Зеркало, DNS, приложение — 3 способа для жителей ${R.name}.`,
         `Зеркало ${brand} KZ: рабочая ссылка на сегодня. Ставки, баланс, бонусы доступны через зеркало.`,
       ],
     },
@@ -152,30 +173,30 @@ function buildPageTemplates(brand) {
       primaryKw: `${brand} вход`,
       titles: [
         { f: 1, text: `${brand} Вход — личный кабинет и вывод средств | ${YEAR}` },
-        { f: 2, text: `Личный кабинет ${brand}: вход, вывод, верификация KZ` },
-        { f: 3, text: `Вход в ${brand} Казахстан — авторизация и настройки` },
-        { f: 4, text: `Как войти в ${brand}? Личный кабинет для KZ ${YEAR}` },
+        { f: 2, text: `Личный кабинет ${brand}: вход, вывод, верификация ${R.code.toUpperCase()}` },
+        { f: 3, text: `Вход в ${brand} ${R.name} — авторизация и настройки` },
+        { f: 4, text: `Как войти в ${brand}? Личный кабинет для ${R.code.toUpperCase()} ${YEAR}` },
       ],
       descriptions: [
-        `Вход в личный кабинет ${brand}. Управление ставками, вывод на Kaspi, верификация через ИИН.`,
-        `${brand} личный кабинет — как войти, пополнить счёт и вывести деньги в тенге на Kaspi Gold.`,
+        `Вход в личный кабинет ${brand}. Управление ставками, вывод на ${R.mainBank}, верификация через ИИН.`,
+        `${brand} личный кабинет — как войти, пополнить счёт и вывести деньги в ${R.currency} на ${R.mainBank} Gold.`,
         `Личный кабинет ${brand} KZ: авторизация, настройки профиля, история ставок, вывод средств.`,
-        `Как войти в ${brand} из Казахстана. Личный кабинет: вывод, верификация, двухфакторная защита.`,
+        `Как войти в ${brand} из ${R.name}. Личный кабинет: вывод, верификация, двухфакторная защита.`,
       ],
     },
     bonus: {
       primaryKw: `${brand} бонус`,
       titles: [
-        { f: 1, text: `${brand} Бонусы — приветственный пакет для KZ | ${YEAR}` },
-        { f: 2, text: `${brand} Бонус: до 220 000 ₸ + 150 фриспинов новым игрокам` },
-        { f: 3, text: `Получить бонус ${brand} Казахстан — условия и отыгрыш` },
-        { f: 4, text: `Какие бонусы даёт ${brand}? Полный гайд для KZ ${YEAR}` },
+        { f: 1, text: `${brand} Бонусы — приветственный пакет для ${R.code.toUpperCase()} | ${YEAR}` },
+        { f: 2, text: `${brand} Бонус: до ${R.bonus} + 150 фриспинов новым игрокам` },
+        { f: 3, text: `Получить бонус ${brand} ${R.name} — условия и отыгрыш` },
+        { f: 4, text: `Какие бонусы даёт ${brand}? Полный гайд для ${R.code.toUpperCase()} ${YEAR}` },
       ],
       descriptions: [
-        `Бонусы ${brand} для Казахстана: до 220 000 ₸ на спорт, 150 фриспинов на казино. Условия отыгрыша.`,
+        `Бонусы ${brand} для ${R.name}: до ${R.bonus} на спорт, 150 фриспинов на казино. Условия отыгрыша.`,
         `${brand} бонус ${YEAR}: приветственный пакет, промокод, фрибет. Как получить и отыграть бонус в KZ.`,
-        `Все бонусы ${brand} KZ — приветственный, за депозит, фриспины. Пошаговая активация, вейджер ×35.`,
-        `Бонусная программа ${brand}: до 220 000 ₸ на первый депозит. Условия, сроки, как не потерять бонус.`,
+        `Все бонусы ${brand} ${R.code.toUpperCase()} — приветственный, за депозит, фриспины. Пошаговая активация, вейджер ×35.`,
+        `Бонусная программа ${brand}: до ${R.bonus} на первый депозит. Условия, сроки, как не потерять бонус.`,
       ],
     },
     affiliate: {
@@ -183,48 +204,49 @@ function buildPageTemplates(brand) {
       titles: [
         { f: 1, text: `${brand} Партнёрка — заработок на реферальной программе | ${YEAR}` },
         { f: 2, text: `Партнёрская программа ${brand}: до 40% RevShare + CPA` },
-        { f: 3, text: `Заработать с ${brand} Казахстан — партнёрская программа` },
-        { f: 4, text: `Сколько платит ${brand}? Обзор партнёрки KZ ${YEAR}` },
+        { f: 3, text: `Заработать с ${brand} ${R.name} — партнёрская программа` },
+        { f: 4, text: `Сколько платит ${brand}? Обзор партнёрки ${R.code.toUpperCase()} ${YEAR}` },
       ],
       descriptions: [
         `Партнёрская программа ${brand}: до 40% RevShare, CPA от $50. Как зарабатывать на рефералах из KZ.`,
-        `${brand} партнёрка ${YEAR}: условия, комиссии, вывод. Обзор от действующего партнёра из Казахстана.`,
-        `Партнёрская программа ${brand} KZ — до 40% от дохода. Как начать зарабатывать без вложений.`,
+        `${brand} партнёрка ${YEAR}: условия, комиссии, вывод. Обзор от действующего партнёра из ${R.name}.`,
+        `Партнёрская программа ${brand} ${R.code.toUpperCase()} — до 40% от дохода. Как начать зарабатывать без вложений.`,
         `Заработок на ${brand}: партнёрская программа с RevShare и CPA. Реальные цифры и личный опыт.`,
       ],
     },
     about: {
       primaryKw: `${brand} обзор`,
       titles: [
-        { f: 1, text: `О проекте — честный обзор ${brand} от казахстанца | ${YEAR}` },
-        { f: 2, text: `О нас: обзор ${brand} от реального игрока из Казахстана` },
-        { f: 3, text: `Обзор ${brand} Казахстан — кто автор и зачем этот сайт` },
+        { f: 1, text: `О проекте — честный обзор ${brand} от жителя ${R.name} | ${YEAR}` },
+        { f: 2, text: `О нас: обзор ${brand} от реального игрока из ${R.name}` },
+        { f: 3, text: `Обзор ${brand} ${R.name} — кто автор и зачем этот сайт` },
         { f: 4, text: `Кто пишет обзоры ${brand}? Об авторе и проекте ${YEAR}` },
       ],
       descriptions: [
-        `Кто стоит за обзором ${brand}. Реальный игрок из Казахстана делится опытом: ставки, казино, вывод.`,
-        `О проекте: честный обзор ${brand} от автора из Казахстана. Без заказных текстов, только личный опыт.`,
+        `Кто стоит за обзором ${brand}. Реальный игрок из ${R.name} делится опытом: ставки, казино, вывод.`,
+        `О проекте: честный обзор ${brand} от автора из ${R.name}. Без заказных текстов, только личный опыт.`,
         `Об авторе обзора ${brand} KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках.`,
-        `${brand} обзор — о проекте. Автор из Казахстана, ${YEAR} год. Опыт ставок, казино, вывод средств.`,
+        `${brand} обзор — о проекте. Автор из ${R.name}, ${YEAR} год. Опыт ставок, казино, вывод средств.`,
       ],
     },
   };
 }
 
-function buildSlotTemplates(brand, slotSlug) {
+function buildSlotTemplates(brand, slotSlug, reg) {
+  const R = reg || REGION_DATA['KZ'];
   const data = SLOT_DATA[slotSlug];
   if (!data) {
     return {
       primaryKw: `${slotSlug} слот`,
       titles: [
         { f: 2, text: `${slotSlug} — обзор слота на ${brand} | ${YEAR}` },
-        { f: 1, text: `${slotSlug} слот — играть на ${brand} KZ | ${YEAR}` },
+        { f: 1, text: `${slotSlug} слот — играть на ${brand} ${R.code.toUpperCase()} | ${YEAR}` },
         { f: 4, text: `Стоит ли играть в ${slotSlug}? Обзор ${YEAR}` },
-        { f: 3, text: `Играть ${slotSlug} на ${brand} Казахстан — обзор` },
+        { f: 3, text: `Играть ${slotSlug} на ${brand} ${R.name} — обзор` },
       ],
       descriptions: [
-        `Обзор слота ${slotSlug} на ${brand}. Играй в тенге, выводи на Kaspi Gold.`,
-        `${slotSlug} — обзор слота на ${brand} KZ. Демо и реальная игра в тенге.`,
+        `Обзор слота ${slotSlug} на ${brand}. Играй в ${R.currency}, выводи на ${R.mainBank} Gold.`,
+        `${slotSlug} — обзор слота на ${brand} KZ. Демо и реальная игра в ${R.currency}.`,
       ],
       slotInfo: null,
     };
@@ -237,13 +259,13 @@ function buildSlotTemplates(brand, slotSlug) {
       { f: 2, text: `${name} слот: RTP ${rtp}, максимум ${maxWin} | ${brand}` },
       { f: 1, text: `${name} — обзор слота и демо на ${brand} | ${YEAR}` },
       { f: 4, text: `Стоит ли играть в ${name}? Обзор слота ${YEAR}` },
-      { f: 3, text: `Играть ${name} на ${brand} Казахстан — обзор и RTP` },
+      { f: 3, text: `Играть ${name} на ${brand} ${R.name} — обзор и RTP` },
     ],
     descriptions: [
-      `Обзор слота ${name} на ${brand}: RTP ${rtp}, макс. выигрыш ${maxWin}. ${provider}. Играй в тенге.`,
+      `Обзор слота ${name} на ${brand}: RTP ${rtp}, макс. выигрыш ${maxWin}. ${provider}. Играй в ${R.currency}.`,
       `${name} — обзор слота от ${provider}. RTP ${rtp}, множитель ${maxWin}. Демо и реальная игра на ${brand}.`,
       `Слот ${name} от ${provider} на ${brand} KZ. RTP ${rtp}, макс. ${maxWin}. Как играть и выигрывать.`,
-      `${name} на ${brand}: RTP ${rtp}, бонусные раунды, волатильность. Честный обзор от казахстанца ${YEAR}.`,
+      `${name} на ${brand}: RTP ${rtp}, бонусные раунды, волатильность. Честный обзор от жителя ${R.name} ${YEAR}.`,
     ],
     slotInfo: { name, rtp, maxWin, provider },
   };
@@ -320,7 +342,9 @@ function main() {
   console.log(`  Страниц: ${pages.length} основных + ${slotPages.length} слотовых`);
   console.log('');
 
-  const templates = buildPageTemplates(brand);
+  const regionCode = resolveRegionCode(config.region);
+  const regionData = REGION_DATA[regionCode] || REGION_DATA['KZ'];
+  const templates = buildPageTemplates(brand, regionData);
   const seoMeta = {};
   const formulaUsage = { 1: 0, 2: 0, 3: 0, 4: 0 };
   let variantIdx = 0;
@@ -358,7 +382,7 @@ function main() {
   }
 
   for (const slotSlug of slotPages) {
-    const tpl = buildSlotTemplates(brand, slotSlug);
+    const tpl = buildSlotTemplates(brand, slotSlug, regionData);
     const titleVariant = pickVariant(tpl.titles, variantIdx);
     const descVariant = pickVariant(tpl.descriptions, variantIdx);
 

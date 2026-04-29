@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Как скачать 1Win на Android',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Перейти на сайт', text: 'Открыть 1Win через зеркало' },
+    { '@type': 'HowToStep', position: 2, name: 'Скачать APK', text: 'Нажать кнопку скачивания в шапке сайта' },
+    { '@type': 'HowToStep', position: 3, name: 'Разрешить установку', text: 'Включить установку из неизвестных источников' },
+    { '@type': 'HowToStep', position: 4, name: 'Установить и войти', text: 'Открыть файл, установить приложение' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Скачать 1Win Россия — APK для Android бесплатно"
+  description="Как скачать 1Win в России: APK для Android, инструкция для iPhone. Рабочая ссылка 2026."
+  schema={schema}
+  publishDate="2026-02-15"
+  updateDate="2026-03-28"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Приложение' }]} />
+  <ArticleMeta publishDate="2026-02-15" updateDate="2026-03-28" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight mb-4">Скачать 1Win — APK для Android и iPhone</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">Приложение весит ~50 МБ, работает на Android 6.0+ и iOS 12+. В магазинах его нет — качаем с сайта.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Загрузить на Android</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Мокап смартфона с интерфейсом приложения 1Win" aspect="16/8" class="mb-10" />
+
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-4">Скачать на Android (APK)</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {[
+              { n: '1', t: 'Открой сайт', d: 'Заходи на 1Win через рабочее зеркало. МТС и Мегафон иногда блочат основной домен.' },
+              { n: '2', t: 'Нажми «Скачать»', d: 'В шапке сайта кнопка с иконкой Android. Файл APK скачается автоматически.' },
+              { n: '3', t: 'Разреши установку', d: 'В настройках → Безопасность → «Неизвестные источники». На Samsung — через Galaxy Store.' },
+              { n: '4', t: 'Установи и войди', d: 'Открой скачанный файл, подтверди установку. Войди или создай <a href="/otkryt-schet" class="text-coral-400 hover:underline">новый аккаунт</a>.' },
+            ].map((s) => (
+              <Card>
+                <div class="text-3xl font-extrabold text-coral-400/20 mb-1">{s.n}</div>
+                <h3 class="font-bold text-white uppercase mb-1">{s.t}</h3>
+                <p class="text-sm text-slate-400" set:html={s.d} />
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-3">Установка на iOS</h2>
+          <p class="text-slate-300">Для iPhone и iPad — зайти на сайт через Safari, нажать «Поделиться» → «На экран Домой». Получится веб-приложение, работает как нативное. Полноценного приложения в App Store нет.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-3">Обзор приложения</h2>
+          <p class="text-slate-300">Интерфейс повторяет сайт, но работает шустрее. Все <a href="/igrovye-avtomaty" class="text-coral-400 hover:underline">слоты и казино</a> доступны, live-ставки без задержек. Минус — обновлять нужно вручную, скачивая новый APK.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-3">Системные требования</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left">
+              <thead>
+                <tr class="border-b border-white/10 text-slate-400 uppercase tracking-wider text-xs">
+                  <th class="py-3 pr-4">Параметр</th>
+                  <th class="py-3 pr-4">Android</th>
+                  <th class="py-3">iOS</th>
+                </tr>
+              </thead>
+              <tbody class="text-slate-300">
+                <tr class="border-b border-white/5"><td class="py-3 pr-4">ОС</td><td class="py-3 pr-4">6.0+</td><td class="py-3">12.0+</td></tr>
+                <tr class="border-b border-white/5"><td class="py-3 pr-4">Размер</td><td class="py-3 pr-4">~50 МБ</td><td class="py-3">PWA</td></tr>
+                <tr class="border-b border-white/5"><td class="py-3 pr-4">RAM</td><td class="py-3 pr-4">2 ГБ+</td><td class="py-3">2 ГБ+</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-slate-500 mt-3">Подробнее о <a href="/podarki" class="text-coral-400 hover:underline">бонусах при установке</a> — на отдельной странице.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-lg bg-gradient-to-br from-coral-500/10 via-abyss-800 to-teal-500/5 border border-coral-500/10">
+        <h2 class="text-xl font-bold text-white uppercase mb-3">Установи приложение</h2>
+        <p class="text-slate-300 mb-6">Все функции платформы в кармане. Ставки, казино и вывод средств.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Скачать 1Win APK</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

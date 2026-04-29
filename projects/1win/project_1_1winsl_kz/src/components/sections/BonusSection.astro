@@ -1,0 +1,42 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const bonuses = [
+  { type: 'Спортивный бонус', value: 'до 500%', condition: 'Вейджер ×5 на спорт, 30 дней', icon: '⚽' },
+  { type: 'Казино-бонус', value: '70 фриспинов', condition: 'Вейджер ×50, конкретные слоты', icon: '🎰' },
+  { type: 'Фрибет', value: 'Бесплатная ставка', condition: 'При выполнении условий депозита', icon: '🎯' },
+];
+---
+
+<section class="py-12 lg:py-16">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <SectionHeading>Приветственный пакет: что получишь</SectionHeading>
+
+    <div class="space-y-4">
+      {bonuses.map((b) => (
+        <Card>
+          <div class="flex items-start gap-4">
+            <span class="text-2xl shrink-0">{b.icon}</span>
+            <div>
+              <h3 class="font-semibold text-cream-900">{b.type}</h3>
+              <p class="text-violet-600 font-bold text-lg">{b.value}</p>
+              <p class="text-sm text-cream-500 mt-1">{b.condition}</p>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+
+    <p class="text-sm text-cream-500 mt-6">
+      Бонусс выглядит жирно, но отыграть казино-часть с вейджером ×50 — задачка не из лёгких (спойлер: я слил свой первый бонус на слотах). На спорте ×5 — тут проще, если делать обдуманные ставки. Подробнее разбирал в <a href="/bonus" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">обзоре бонусной программы</a>.
+    </p>
+
+    <div class="mt-8 text-center">
+      <CTAButton href={affiliateLink} external>Открыть аккаунт за 2 минуты</CTAButton>
+    </div>
+  </div>
+</section>

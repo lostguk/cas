@@ -1,0 +1,46 @@
+{
+	"brand": "1Win",
+	"region": "RU",
+	"language": "ru",
+	"currency": "RUB",
+	"domain": "1winpka.su",
+	"affiliate_url": "#",
+	"color_preset": "abyss-coral",
+	"visual_style": "sports-energy",
+	"content_format": "E",
+	"preset_number": 14,
+	"font": "Manrope",
+	"logo_type": "B",
+	"author": null,
+	"pages": [
+		"index",
+		"otkryt-schet",
+		"prilozhenie",
+		"igrovye-avtomaty",
+		"podarki",
+		"about"
+	],
+	"slot_pages": ["bananas-go-bahamas", "sweet-bonanza"],
+	"sections_order": [
+		"Hero",
+		"Overview",
+		"Sports",
+		"Bonus",
+		"Slots",
+		"Advantages",
+		"App",
+		"FAQ",
+		"CTA"
+	],
+	"seo": {
+		"primary_keyword": "1win россия",
+		"secondary_keywords": [
+			"1вин",
+			"1win скачать",
+			"1win lucky jet",
+			"1win регистрация"
+		],
+		"geo_target": "RU"
+	},
+	"noindex": false
+}

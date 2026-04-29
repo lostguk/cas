@@ -1,0 +1,59 @@
+---
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  items: FaqItem[];
+  title?: string;
+  subtitle?: string;
+}
+
+const { items, title = 'Часто задаваемые вопросы', subtitle } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a.replace(/<[^>]*>/g, ''),
+    },
+  })),
+};
+---
+
+<section class="py-14 lg:py-20 bg-carbon-950/40 border-y border-orange-500/10">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <p class="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+        <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+        FAQ
+        <span class="inline-block w-6 h-px bg-orange-500/60"></span>
+      </p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">{title}</h2>
+      {subtitle && <p class="mt-3 text-slate-400 max-w-2xl mx-auto">{subtitle}</p>}
+    </div>
+
+    <div class="space-y-3">
+      {items.map((item) => (
+        <details class="group rounded-2xl bg-carbon-800/60 border border-white/[0.06] hover:border-orange-500/25 transition-colors overflow-hidden">
+          <summary class="flex items-start gap-4 px-5 sm:px-6 py-4 sm:py-5 select-none">
+            <svg class="w-5 h-5 mt-0.5 text-orange-400 shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            <h3 class="font-bold text-white text-base sm:text-lg leading-snug">{item.q}</h3>
+          </summary>
+          <div class="px-5 sm:px-6 pb-5 sm:pb-6 ml-9 text-sm sm:text-base text-slate-300 leading-relaxed prose-aviator">
+            <div set:html={item.a} />
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</section>

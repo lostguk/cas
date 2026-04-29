@@ -1,0 +1,42 @@
+---
+interface Props {
+  items: { label: string; href?: string }[];
+}
+
+const { items } = Astro.props;
+const siteUrl = 'https://1winsl.kz';
+const currentPageUrl = Astro.url.href;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.label,
+    item: item.href ? new URL(item.href, siteUrl).href : currentPageUrl,
+  })),
+};
+---
+
+<nav aria-label="Навигация" class="max-w-2xl mx-auto px-4 sm:px-6 py-4">
+  <ol class="flex flex-wrap items-center gap-1.5 text-sm text-cream-400">
+    {items.map((item, i) => (
+      <li class="flex items-center gap-1.5">
+        {i > 0 && (
+          <svg class="w-3.5 h-3.5 text-cream-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        )}
+        {item.href ? (
+          <a href={item.href} class="text-violet-500 hover:text-violet-600 transition-colors">
+            {item.label}
+          </a>
+        ) : (
+          <span class="text-cream-600">{item.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

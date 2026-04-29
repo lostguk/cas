@@ -4,7 +4,6 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ArticleMeta from '../components/ArticleMeta.astro';
 import CTAButton from '../components/ui/CTAButton.astro';
 import Card from '../components/ui/Card.astro';
-import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
 
 const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
 const title = 'Sugar Rush 1000 слот: RTP 96.53%, максимум ×25 000 | 1xBet';
@@ -35,7 +34,6 @@ const schema = [
   schema={schema}
   publishDate="2026-02-18"
   updateDate="2026-03-25"
-  noindex={true}
   type="article"
 >
   <Breadcrumbs
@@ -57,9 +55,13 @@ const schema = [
         <CTAButton href={affiliateLink} size="lg" external class="mt-8">Открыть слот</CTAButton>
       </div>
 
-      <ImagePlaceholder
-        description="Слот Sugar Rush 1000: конфетная сетка, множители и каскадные символы"
-        class="mb-10"
+      <img
+        src="/images/slot-sugar-rush-1000.png"
+        alt="Слот Sugar Rush 1000: каскадные выигрыши"
+        width="800"
+        height="500"
+        class="rounded-xl shadow-sm w-full mb-10"
+        loading="lazy"
       />
 
       <div class="grid sm:grid-cols-3 gap-4 mb-10 text-center">

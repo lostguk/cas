@@ -1,0 +1,36 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const features = [
+  '600+ live-событий ежедневно',
+  'Cash Out — забрать ставку до конца матча',
+  'Live-казино: Lucky Jet, Aviator, Mines, Speed Cash, Crash',
+  'Трансляции матчей в приложении',
+];
+---
+
+<section class="py-16 lg:py-20 bg-void-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <SectionHeading align="left">Лайв на 1Win — ставки в реальном времени</SectionHeading>
+        <p class="text-slate-300 leading-relaxed mb-6">По данным платформы, ежедневно доступно более 600 live-событий. Задержка принятия пари — от 3 до 8 секунд в зависимости от нагрузки. Cash Out работает на большинстве футбольных и баскетбольных матчей, но не на все рынки.</p>
+
+        <ul class="space-y-3">
+          {features.map((f) => (
+            <li class="flex items-start gap-3 text-slate-300">
+              <svg class="w-5 h-5 text-glow-400 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m5 12 5 5L20 7" />
+              </svg>
+              <span class="text-sm">{f}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <ImagePlaceholder description="4. Live-ставки: дашборд с таблицей коэффициентов и статистикой матча" aspect="4/3" />
+      </div>
+    </div>
+  </div>
+</section>

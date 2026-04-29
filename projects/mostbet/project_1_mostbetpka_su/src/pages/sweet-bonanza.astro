@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+const title = 'Стоит ли играть в Sweet Bonanza? Обзор слота 2026';
+const description =
+  'Слот Sweet Bonanza от Pragmatic Play на Mostbet. RTP 96.48%, макс. ×21 175. Механика, бонусные раунды и рекомендации.';
+const canonical = 'https://mostbetpka.su/sweet-bonanza';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'Game',
+      name: 'Sweet Bonanza',
+      gameLocation: { '@type': 'VirtualLocation', url: canonical },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4', bestRating: '5' },
+    author: { '@type': 'Person', name: 'Дмитрий Смирнов' },
+    reviewBody: description,
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-10"
+  updateDate="2026-03-30"
+  type="article"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Казино', href: '/casino' },
+      { label: 'Sweet Bonanza' },
+    ]}
+  />
+  <ArticleMeta publishDate="2026-02-10" updateDate="2026-03-30" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <p class="text-sm font-medium text-accent-600 mb-2">Pragmatic Play · RTP 96.48%</p>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-warm-900 leading-tight mb-4">
+        Sweet Bonanza — обзор слота от Pragmatic Play
+      </h1>
+      <p class="text-warm-500 leading-relaxed mb-6">
+        Sweet Bonanza — один из наиболее популярных слотов в каталоге Mostbet. Кластерная механика выплат, высокая волатильность и максимальный выигрыш ×21 175 от ставки. Ниже — описание механики, бонусных раундов и рекомендации.
+      </p>
+      <CTAButton href={affiliateLink} size="lg" external class="mb-8">Попробовать в демо-режиме</CTAButton>
+
+      <ImagePlaceholder description="Слот Sweet Bonanza: игровое поле с фруктовыми символами и множителями" aspect="16/9" class="mb-8" />
+
+      <div class="grid grid-cols-3 gap-3 mb-10">
+        <Card class="py-4 text-center">
+          <div class="text-xs text-warm-400 uppercase">RTP</div>
+          <div class="text-xl font-serif font-semibold text-warm-900">96.48%</div>
+        </Card>
+        <Card class="py-4 text-center">
+          <div class="text-xs text-warm-400 uppercase">Макс.</div>
+          <div class="text-xl font-serif font-semibold text-warm-900">×21 175</div>
+        </Card>
+        <Card class="py-4 text-center">
+          <div class="text-xs text-warm-400 uppercase">Провайдер</div>
+          <div class="text-xl font-serif font-semibold text-warm-900">Pragmatic</div>
+        </Card>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Как играть</h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          Игровое поле состоит из сетки 6×5. Выигрыш формируется при появлении 8 и более одинаковых символов в любом месте поля (кластерная механика). После каждого выигрыша символы исчезают, на их место падают новые — это каскадная система.
+        </p>
+        <p>
+          Бонусный раунд активируется при выпадении 4 и более символов Scatter. Во время фриспинов на поле появляются множители от ×2 до ×100, которые суммируются и применяются к выигрышу. Именно в бонусном раунде возможны крупные выплаты.
+        </p>
+        <p>
+          Функция Ante Bet увеличивает ставку на 25%, но удваивает шанс выпадения бонусного раунда. Также доступна покупка фриспинов за 100× от ставки. Для запуска на Mostbet достаточно счёта в рублях.
+        </p>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Рекомендации</h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          Sweet Bonanza — слот с высокой волатильностью. Это означает длительные серии без выигрыша, которые сменяются крупными выплатами в бонусном раунде. Для комфортной игры рекомендуется выбирать ставку, позволяющую выдержать 200–300 спинов.
+        </p>
+        <p>
+          Слот подходит для тех, кто готов к неравномерному распределению выигрышей. Для более стабильной динамики рассмотрите слоты с низкой волатильностью. Другой популярный слот — <a href="/gates-of-olympus" class="text-accent-600 hover:underline">Gates of Olympus</a>.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-warm-200 bg-white p-4 text-xs text-warm-400">
+        18+. Результат каждого спина определяется генератором случайных чисел (RNG). Устанавливайте лимиты. Подробнее об играх — в разделе <a href="/casino" class="text-accent-600 hover:underline">казино</a>.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

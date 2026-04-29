@@ -1,0 +1,24 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-emerald-500/[0.08] via-white/[0.02] to-secondary-400/[0.06] px-6 py-14 sm:px-12 text-center backdrop-blur-sm">
+      <div class="pointer-events-none absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-500/15 blur-[80px]" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute bottom-0 right-1/4 h-40 w-40 rounded-full bg-secondary-400/10 blur-[60px]" aria-hidden="true"></div>
+      <div class="relative">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Время сравнить условия</h2>
+        <p class="text-slate-400 max-w-xl mx-auto mb-8">
+          По совокупности параметров Mostbet набирает 4.3/5 для российских пользователей. Проверьте актуальные условия на платформе.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <CTAButton href={affiliateLink} size="lg" variant="cta" external>Посмотреть рейтинг</CTAButton>
+          <CTAButton href="/about" variant="outline" size="lg">О нашей команде</CTAButton>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

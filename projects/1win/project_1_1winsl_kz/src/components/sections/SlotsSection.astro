@@ -1,0 +1,68 @@
+---
+import CTAButton from '../ui/CTAButton.astro'
+import SectionHeading from '../ui/SectionHeading.astro'
+
+const affiliateLink = '#';
+
+const slots = [
+  {
+    slug: 'sweet-bonanza',
+    name: 'Sweet Bonanza',
+    provider: 'Pragmatic Play',
+    rtp: '96.48%',
+    maxWin: '×21 175',
+    text: 'Конфетная тема, множители в бонусных раундах — зашло на ура. Высокая волатильность, но и выплаты могут быть серьёзными.',
+    cta: 'Играть с бонусом',
+    link: '/sweet-bonanza',
+    image: '/images/sweet-bonanza.jpg',
+    imgDesc: 'Слот Sweet Bonanza: конфеты и фрукты на ярком фоне',
+  },
+  {
+    slug: 'coin-strike',
+    name: 'Coin Strike',
+    provider: 'SmartSoft',
+    rtp: '96.00%',
+    maxWin: '×2 580',
+    text: 'Простая механика в стиле монетного аттракциона. Не такой агрессивный как Sweet Bonanza но и просадки меньше.',
+    cta: 'Крутить с фриспинами',
+    link: '/coin-strike',
+    image: '/images/coin-strike.jpg',
+    imgDesc: 'Слот Coin Strike: золотые монеты и игровое поле',
+  },
+];
+---
+
+<section class="py-12 lg:py-16">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <SectionHeading>Казино: мои любимые слоты</SectionHeading>
+
+    <div class="space-y-6">
+      {slots.map((slot) => (
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+          <img
+            src={slot.image}
+            alt={slot.imgDesc}
+            width="624"
+            height="351"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-auto aspect-video object-cover block"
+          />
+          <div class="p-5">
+            <p class="text-xs text-violet-500 font-medium mb-1">{slot.provider}</p>
+            <h3 class="text-lg font-heading font-bold text-cream-900 mb-2">{slot.name}</h3>
+            <p class="text-sm text-cream-600 mb-3">{slot.text}</p>
+            <div class="flex items-center gap-4 text-xs text-cream-400 mb-4">
+              <span>RTP {slot.rtp}</span>
+              <span>Макс. {slot.maxWin}</span>
+            </div>
+            <div class="flex gap-3">
+              <CTAButton href={affiliateLink} size="sm" external>{slot.cta}</CTAButton>
+              <CTAButton href={slot.link} variant="secondary" size="sm">Обзор</CTAButton>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

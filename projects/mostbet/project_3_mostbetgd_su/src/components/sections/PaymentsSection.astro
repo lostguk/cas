@@ -1,0 +1,68 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const methods = [
+  {
+    title: 'Сбербанк / Тинькофф / Альфа-Банк',
+    text: 'Карты и переводы через СБП крупнейших российских банков. Пополнение мгновенное, вывод — от 1 до 24 часов в зависимости от суммы.',
+  },
+  {
+    title: 'Криптовалюта (USDT)',
+    text: 'TRC20, без комиссии со стороны платформы. Зачисление — 15–30 минут. Проверяйте адрес дважды: ошибка в сети означает потерю средств.',
+  },
+  {
+    title: 'Электронные кошельки',
+    text: 'ЮMoney, QIWI, WebMoney — рабочие варианты для небольших сумм. Комиссии и лимиты различаются, сверяйте в кассе.',
+  },
+];
+
+const rows = [
+  { method: 'Сбербанк / СБП', deposit: 'Мгновенно', withdraw: '1–24 часа', min: '100 ₽' },
+  { method: 'Тинькофф', deposit: '5–15 мин', withdraw: '1–3 дня', min: '100 ₽' },
+  { method: 'USDT (TRC20)', deposit: '15–30 мин', withdraw: '15–30 мин', min: '~500 ₽' },
+];
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>💳 Рубли без конвертации</SectionHeading>
+    <p class="text-center text-slate-400 max-w-3xl mx-auto mb-12 -mt-4">
+      Наши клиенты пополняют счёт и выводят средства через привычные российские банки. Сроки зависят от метода и суммы.
+    </p>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      {
+        methods.map((m) => (
+          <Card>
+            <h3 class="text-lg font-bold text-white mb-2">{m.title}</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">{m.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="overflow-x-auto rounded-lg border border-deep-600 bg-deep-900/50">
+      <table class="min-w-full text-sm text-left">
+        <thead class="bg-deep-700/80 text-slate-300 font-semibold border-b border-deep-600">
+          <tr>
+            <th class="px-4 py-3">Метод</th>
+            <th class="px-4 py-3">Пополнение</th>
+            <th class="px-4 py-3">Вывод</th>
+            <th class="px-4 py-3">Минимум</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-deep-700">
+          {
+            rows.map((r) => (
+              <tr class="hover:bg-deep-700/50">
+                <td class="px-4 py-3 text-white font-medium">{r.method}</td>
+                <td class="px-4 py-3 text-slate-400">{r.deposit}</td>
+                <td class="px-4 py-3 text-slate-400">{r.withdraw}</td>
+                <td class="px-4 py-3 text-main-400">{r.min}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

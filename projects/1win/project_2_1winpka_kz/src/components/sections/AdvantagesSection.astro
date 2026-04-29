@@ -1,0 +1,73 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const cards = [
+  {
+    title: 'Линия и коэффициенты',
+    rating: '4.2/5',
+    plus: '35+ видов спорта, маржа 3-5% на топ-матчи',
+    minus: 'На КПЛ роспись беднее, чем на АПЛ',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5"/></svg>',
+  },
+  {
+    title: 'Оплата в тенге',
+    rating: '4.5/5',
+    plus: 'Kaspi, Halyk, Jusan — без конвертации',
+    minus: 'Kaspi иногда отклоняет платежи',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>',
+  },
+  {
+    title: 'Мобильное приложение',
+    rating: '3.8/5',
+    plus: 'APK ~40 МБ, работает стабильно',
+    minus: 'Нет в Google Play, обновлять вручную',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>',
+  },
+  {
+    title: 'Казино и слоты',
+    rating: '4.3/5',
+    plus: '12 000+ игр, четыре ключевых провайдера',
+    minus: 'Вейджер ×50 — жёстко',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313"/></svg>',
+  },
+  {
+    title: 'Бонусы',
+    rating: '3.5/5',
+    plus: 'До 500% + 70 фриспинов на старте',
+    minus: 'Условия отыгрыша не самые простые',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18"/></svg>',
+  },
+  {
+    title: 'Поддержка',
+    rating: '3.2/5',
+    plus: 'Чат 24/7, русский язык',
+    minus: 'Отвечают шаблонно, нужно настаивать',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/></svg>',
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Плюсы и минусы 1Win — без прикрас</SectionHeading>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {cards.map((card) => (
+        <Card>
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-glow-500/10 flex items-center justify-center text-glow-400 shrink-0">
+              <div class="w-5 h-5" set:html={card.icon} />
+            </div>
+            <div>
+              <h3 class="font-semibold text-white">{card.title}</h3>
+              <span class="text-sm text-glow-400 font-medium">{card.rating}</span>
+            </div>
+          </div>
+          <p class="text-sm text-slate-300 mb-2"><span class="text-green-400">+</span> {card.plus}</p>
+          <p class="text-sm text-slate-400"><span class="text-flash-400">−</span> {card.minus}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

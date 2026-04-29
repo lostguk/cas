@@ -1,0 +1,65 @@
+---
+import Card from '../ui/Card.astro'
+import CTAButton from '../ui/CTAButton.astro'
+
+const slots = [
+  {
+    name: 'Gates of Olympus',
+    provider: 'Pragmatic Play',
+    rtp: '96.50%',
+    maxWin: '×5 000',
+    description: 'Античная тематика с каскадными выигрышами и множителями до ×500 в бонусном раунде. Волатильность высокая — результат непредсказуем, но потенциал солидный.',
+    cta: 'Крутить с фриспинами',
+    link: '/gates-of-olympus',
+    image: '/images/main-1.jpg',
+    alt: 'Слот Gates of Olympus: Зевс и молнии на фоне древнего храма',
+  },
+  {
+    name: 'Sugar Rush',
+    provider: 'Pragmatic Play',
+    rtp: '96.50%',
+    maxWin: '×5 000',
+    description: 'Кластерная механика на поле 7×7 с нарастающими множителями. Яркая конфетная стилистика, при этом математическая модель достаточно агрессивна.',
+    cta: 'Запустить слот бесплатно',
+    link: '/sugar-rush',
+    image: '/images/main-2.jpg',
+    alt: 'Слот Sugar Rush: разноцветные конфеты и множители',
+  },
+];
+---
+
+<section class="py-20 lg:py-28 bg-obsidian-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-amber-400 leading-tight">Популярные слоты на 1xBet</h2>
+      <p class="text-gray-400 italic font-heading mt-3 max-w-xl mx-auto" slot="subtitle">Два автомата от Pragmatic Play, представленные в каталоге платформы</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {slots.map((slot) => (
+        <Card>
+          <img
+            src={slot.image}
+            alt={slot.alt}
+            width="800"
+            height="500"
+            loading="lazy"
+            decoding="async"
+            class="rounded-xl w-full h-auto mb-5 aspect-[16/10] object-cover"
+          />
+          <div class="text-xs text-amber-500/60 uppercase tracking-wider mb-1">{slot.provider}</div>
+          <h3 class="text-xl font-heading font-bold text-white mb-2">{slot.name}</h3>
+          <p class="text-sm text-gray-400 mb-4">{slot.description}</p>
+          <div class="flex items-center gap-4 text-sm text-gray-500 mb-5">
+            <span>RTP {slot.rtp}</span>
+            <span class="text-amber-400/50">·</span>
+            <span>Макс. {slot.maxWin}</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <CTAButton href={slot.link} variant="outline" size="sm">{slot.cta}</CTAButton>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

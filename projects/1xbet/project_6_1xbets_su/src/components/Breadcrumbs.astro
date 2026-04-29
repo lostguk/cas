@@ -1,0 +1,53 @@
+---
+interface Props {
+  items: { label: string; href?: string }[];
+}
+
+const { items } = Astro.props;
+const origin = 'https://1xbets.su';
+
+const list = items.map((item, i) => ({
+  ...item,
+  position: i + 1,
+  fullUrl: item.href ? `${origin}${item.href}` : undefined,
+}));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: list
+    .filter((x) => x.href)
+    .map((x) => ({
+      '@type': 'ListItem',
+      position: x.position,
+      name: x.label,
+      item: x.fullUrl,
+    })),
+};
+---
+
+<nav aria-label="Навигация" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+  <ol class="flex flex-wrap items-center gap-2 text-sm text-white/40 font-mono">
+    {
+      items.map((item, i) => (
+        <>
+          {i > 0 && (
+            <li aria-hidden="true">
+              <span class="text-white/20">/</span>
+            </li>
+          )}
+          <li>
+            {item.href ? (
+              <a href={item.href} class="text-cta-400 hover:text-cta-500 transition-colors duration-100 uppercase text-xs">
+                {item.label}
+              </a>
+            ) : (
+              <span class="text-white/60 uppercase text-xs">{item.label}</span>
+            )}
+          </li>
+        </>
+      ))
+    }
+  </ol>
+</nav>
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,21 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+---
+
+<section class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="border-2 border-cta-500 bg-surface-400 p-8 lg:p-12 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+        УЗНАТЬ АКТУАЛЬНЫЕ УСЛОВИЯ
+      </h2>
+      <p class="text-white/60 max-w-xl mx-auto mb-8">
+        Для получения актуальной информации о 1xBet рекомендуем посетить официальный сайт оператора. Данные на нашем ресурсе могут быть неактуальны.
+      </p>
+      <CTAButton href={affiliateLink} size="lg" external>ПОСЕТИТЬ ОФИЦИАЛЬНЫЙ САЙТ</CTAButton>
+
+      <p class="text-xs text-white/30 mt-6 font-mono">⚠️ 18+. Азартные игры связаны с риском. Играйте ответственно.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+
+const affiliateLink = '#'
+const steps = [
+  {
+    number: 1,
+    title: 'Заполните форму',
+    description: 'Введите email, создайте пароль, подтвердите номер телефона. Займет 1 минуту.'
+  },
+  {
+    number: 2,
+    title: 'Верифицируйте аккаунт',
+    description: 'Загрузьте копию паспорта или ID. Проверка занимает от 5 минут до 1 часа.'
+  },
+  {
+    number: 3,
+    title: 'Сделайте депозит',
+    description: 'Выберите способ оплаты (Kaspi, Halyk, Jusan), введите сумму минимум 5,000 тенге.'
+  },
+  {
+    number: 4,
+    title: 'Начните играть!',
+    description: 'Получите приветственный бонус и начните играть в тысячах слотов.'
+  }
+]
+---
+
+<BaseLayout
+  title="Регистрация PinUp Casino | Казахстан"
+  description="Быстрая регистрация на PinUp Casino за 2 минуты. Получите приветственный бонус до 500,000 тенге прямо сейчас!"
+>
+  <section class="container-section">
+    <div class="container-inner">
+      <h1 class="text-5xl font-bold text-white mb-4 text-center">Регистрация</h1>
+      <p class="text-xl text-slate-400 mb-12 text-center">Создайте аккаунт и получите приветственный бонус за 2 минуты</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {steps.map((step) => (
+          <div class="card">
+            <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500 text-obsidian-950 font-bold mb-4">
+              {step.number}
+            </div>
+            <h3 class="text-white font-bold text-lg mb-2">{step.title}</h3>
+            <p class="text-slate-400">{step.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="max-w-2xl mx-auto mb-8">
+        <div class="card">
+          <h2 class="text-2xl font-bold text-white mb-6">Начать регистрацию</h2>
+          <form class="space-y-4">
+            <div>
+              <label class="block text-white font-semibold mb-2">Email адрес</label>
+              <input type="email" placeholder="your@email.com" class="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <label class="block text-white font-semibold mb-2">Пароль</label>
+              <input type="password" placeholder="Минимум 8 символов" class="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" />
+            </div>
+            <div>
+              <label class="block text-white font-semibold mb-2">Номер телефона</label>
+              <input type="tel" placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" />
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="terms" class="w-4 h-4" />
+              <label for="terms" class="text-slate-300">
+                Я согласен с <a href="#" class="text-amber-500 hover:text-amber-600">условиями использования</a> и <a href="#" class="text-amber-500 hover:text-amber-600">политикой конфиденциальности</a>
+              </label>
+            </div>
+            <CTAButton href={affiliateLink} variant="primary" size="lg" class="w-full text-center">
+              Создать аккаунт
+            </CTAButton>
+          </form>
+          <p class="text-center text-slate-400 mt-4">Уже есть аккаунт? <a href={affiliateLink} class="text-amber-500 hover:text-amber-600">Войти</a></p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card text-center">
+          <div class="text-4xl mb-3">🔒</div>
+          <h3 class="text-white font-bold mb-2">Безопасность данных</h3>
+          <p class="text-slate-400">256-битное SSL-шифрование защищает все ваши персональные данные и финансовую информацию.</p>
+        </div>
+        <div class="card text-center">
+          <div class="text-4xl mb-3">⚡</div>
+          <h3 class="text-white font-bold mb-2">Верификация менее 1 часа</h3>
+          <p class="text-slate-400">Документы проверяются автоматически. Вы можете играть уже через 5-60 минут.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,17 +1,17 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroSection from '../components/sections/HeroSection.astro';
-import OverviewSection from '../components/sections/OverviewSection.astro';
-import SportsSection from '../components/sections/SportsSection.astro';
-import StepsSection from '../components/sections/StepsSection.astro';
-import AdvantagesSection from '../components/sections/AdvantagesSection.astro';
-import BonusSection from '../components/sections/BonusSection.astro';
-import PaymentsSection from '../components/sections/PaymentsSection.astro';
-import SlotsSection from '../components/sections/SlotsSection.astro';
-import LiveSection from '../components/sections/LiveSection.astro';
-import AppSection from '../components/sections/AppSection.astro';
-import FAQSection from '../components/sections/FAQSection.astro';
-import CTASection from '../components/sections/CTASection.astro';
+import AdvantagesSection from '../components/sections/AdvantagesSection.astro'
+import AppSection from '../components/sections/AppSection.astro'
+import BonusSection from '../components/sections/BonusSection.astro'
+import CTASection from '../components/sections/CTASection.astro'
+import FAQSection from '../components/sections/FAQSection.astro'
+import HeroSection from '../components/sections/HeroSection.astro'
+import LiveSection from '../components/sections/LiveSection.astro'
+import OverviewSection from '../components/sections/OverviewSection.astro'
+import PaymentsSection from '../components/sections/PaymentsSection.astro'
+import SlotsSection from '../components/sections/SlotsSection.astro'
+import SportsSection from '../components/sections/SportsSection.astro'
+import StepsSection from '../components/sections/StepsSection.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 const title = '1xСтавка Казахстан — ставки и казино';
 const description =
@@ -31,7 +31,7 @@ const schema = {
 };
 ---
 
-<BaseLayout title={title} description={description} schema={schema} type="website" noindex={true}>
+<BaseLayout title={title} description={description} schema={schema} type="website">
   <HeroSection />
   <OverviewSection />
   <SportsSection />

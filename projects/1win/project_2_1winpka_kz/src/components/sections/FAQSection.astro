@@ -1,0 +1,87 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const faqs = [
+  {
+    q: 'Что делать если не приходит SMS при регистрации?',
+    a: 'Проверьте правильность номера и убедитесь что не заполнена память SMS. На Kcell и Beeline KZ бывают задержки до 5 минут — стандартная ситуация для букмекерских сервисов. Альтернатива — регистрация через email или в один клик.',
+  },
+  {
+    q: 'Берёт ли платформа комиссию за вывод?',
+    a: 'Со стороны 1Win комиссия не взимается. Но Halyk может удержать свой процент — зависит от тарифа карты. На Kaspi Gold по факту приходит полная сумма, и USDT тоже без платформенной комиссии.',
+  },
+  {
+    q: 'Безопасно ли скачивать APK?',
+    a: 'Официальный APK с сайта — да, это стандартная практика для букмекеров в KZ. Google Play не размещает такие приложения по своей политике. Вес файла ~40 МБ, антивирус может показать предупреждение — это нормально для apk из-за пределов магазина.',
+  },
+  {
+    q: 'Блокирует ли Kcell сайт?',
+    a: 'Да, и Kcell и Beeline KZ периодически блокируют основной домен. Три рабочих способа обхода: зеркало, мобильное приложение, смена DNS на 8.8.8.8. По нашим данным приложение не подвержено блокировкам.',
+  },
+  {
+    q: 'Что такое вейджер и как его отыграть?',
+    a: 'Вейджер ×50 означает — нужно прокрутить сумму бонуса 50 раз в ставках. Для бонуса 10 000 ₸ это 500 000 ₸ оборота. Срок — 30 дней. По статистике отыгрывают менее 15% игроков. На спорте вейджер ×5 — значительно проще.',
+  },
+  {
+    q: 'Можно ли ставить с двух устройств одновременно?',
+    a: 'Технически — да, аккаунт привязан к логину а не к устройству. Но мультиаккаунтинг запрещён — два аккаунта на одного человека закроют оба.',
+  },
+  {
+    q: 'Можно ли играть без верификации?',
+    a: 'Пополнять и ставить — да. Выводить крупные суммы — потребуется верификация. Порог — обычно от 50 000 ₸, но платформа может запросить KYC раньше. Нужны удостоверение с ИИН и селфи.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Вопросы о 1Win</SectionHeading>
+
+    <div class="max-w-3xl mx-auto grid gap-3">
+      {faqs.map((faq, i) => (
+        <div class="group border border-white/[0.06] rounded-2xl bg-white/[0.02] overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between gap-4 p-5 text-left cursor-pointer"
+            aria-expanded="false"
+          >
+            <span class="flex items-center gap-3">
+              <span class="text-xs text-glow-400 font-semibold shrink-0">{String(i + 1).padStart(2, '0')}</span>
+              <span class="font-medium text-white">{faq.q}</span>
+            </span>
+            <svg class="w-5 h-5 text-glow-400 shrink-0 transition-transform duration-200 faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 pl-14">
+            <p class="text-sm text-slate-300 leading-relaxed">{faq.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const chevron = btn.querySelector('.faq-chevron');
+      const isOpen = content && !content.classList.contains('hidden');
+      content?.classList.toggle('hidden');
+      chevron?.classList.toggle('rotate-180');
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    });
+  });
+</script>

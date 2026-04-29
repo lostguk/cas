@@ -1,0 +1,118 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import Card from '../components/ui/Card.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const affiliateLink = '#';
+const title = 'Играть Big Bass Splash на Mostbet Россия — обзор и RTP';
+const description =
+  'Big Bass Splash на Mostbet: RTP 96.71%, бонусные раунды, волатильность. Честный обзор от жителя Россия 2026.';
+const canonical = 'https://mostbetgd.su/big-bass-splash';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'Game',
+      name: 'Big Bass Splash',
+      gameLocation: { '@type': 'VirtualLocation', url: canonical },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4', bestRating: '5' },
+    author: { '@type': 'Organization', name: 'Mostbet Россия' },
+    reviewBody: description,
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-20"
+  updateDate="2026-03-30"
+  type="article"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Слоты', href: '/slots-i-igry' },
+      { label: 'Big Bass Splash' },
+    ]}
+  />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-sm font-semibold text-main-400 uppercase tracking-wider mb-2">Pragmatic Play · RTP 96.71%</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight mb-4">
+          Big Bass Splash — обзор слота
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+          Рыболовная тематика от Pragmatic Play с высокой волатильностью и максимальным выигрышем ×2 100. Мы подробно разбираем механику и особенности.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Открыть слот</CTAButton>
+      </div>
+
+      <img
+        src="/images/bbs-review.jpg"
+        alt="Слот Big Bass Splash: рыболовная тема"
+        width="1200"
+        height="675"
+        loading="eager"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-10"
+      />
+
+      <div class="grid sm:grid-cols-3 gap-4 mb-10 text-center">
+        <Card class="py-4">
+          <div class="text-xs text-slate-500 uppercase">RTP</div>
+          <div class="text-xl font-bold text-white">96.71%</div>
+        </Card>
+        <Card class="py-4">
+          <div class="text-xs text-slate-500 uppercase">Макс. выигрыш</div>
+          <div class="text-xl font-bold text-white">×2 100</div>
+        </Card>
+        <Card class="py-4">
+          <div class="text-xs text-slate-500 uppercase">Провайдер</div>
+          <div class="text-xl font-bold text-white">Pragmatic Play</div>
+        </Card>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Обзор Big Bass Splash</h2>
+      <div class="space-y-5 text-slate-300 mb-10">
+        <p>
+          Big Bass Splash — пятый слот в серии Big Bass от Pragmatic Play. Сетка 5×3, 10 игровых линий. RTP 96.71% — выше среднего по индустрии. Волатильность высокая, что означает редкие, но крупные выигрыши.
+        </p>
+        <p>
+          Визуальный стиль — классическая рыбалка: озёра, удочки и денежные рыбы. Звуковое сопровождение ненавязчивое, анимации плавные.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Как играть</h2>
+      <div class="space-y-5 text-slate-300 mb-10">
+        <p>
+          Бонусные раунды активируются при выпадении 3+ символов Scatter. Во время фриспинов на барабанах появляются рыбы с денежными значениями — рыбак собирает их и суммирует выигрыш. Множители могут увеличивать итоговую сумму.
+        </p>
+        <p>
+          Функция покупки бонуса доступна за 100× ставку. Это значительная сумма, и результат не гарантирован. Рекомендуем начинать с демо-режима.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Стоит ли играть</h2>
+      <div class="space-y-5 text-slate-300 mb-10">
+        <p>
+          Big Bass Splash подходит любителям высоковолатильных слотов с бонусными механиками. RTP выше среднего — 96.71%. Из минусов — базовая игра может быть монотонной без бонусных раундов.
+        </p>
+        <p>
+          Полный каталог слотов — на странице <a href="/slots-i-igry" class="text-main-400 hover:text-main-300 underline underline-offset-2">казино Mostbet</a>. Также рекомендуем обзор <a href="/reactoonz-2" class="text-main-400 hover:text-main-300 underline underline-offset-2">Reactoonz 2</a>.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-deep-600 bg-deep-900/50 p-4 text-sm text-slate-400">
+        18+. По данным из открытых источников: играйте в пределах бюджета, установите лимиты в кабинете до первого депозита.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

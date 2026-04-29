@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+
+const affiliateLink = '#'
+---
+
+<BaseLayout
+  title="404 - Страница не найдена | PinUp Casino"
+  description="Оops! Страница, которую вы ищете, не существует."
+>
+  <section class="container-section min-h-screen flex items-center">
+    <div class="container-inner text-center">
+      <h1 class="text-9xl font-bold gradient-text mb-4">404</h1>
+      <h2 class="text-4xl font-bold text-white mb-4">Страница не найдена</h2>
+      <p class="text-xl text-slate-400 mb-8 max-w-xl mx-auto">
+        Кажется, страница, которую вы ищете, была перемещена, удалена или никогда не существовала.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <CTAButton href="/" variant="primary" size="lg">
+          На главную
+        </CTAButton>
+        <CTAButton href={affiliateLink} variant="secondary" size="lg">
+          Начать игру
+        </CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

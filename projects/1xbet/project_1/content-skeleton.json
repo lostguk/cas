@@ -2,6 +2,35 @@
   "_meta": {
     "brand": "1xBet",
     "domain": "1xbet-obzor.kz",
+    "region": {
+      "name": "Казахстан",
+      "currency": "тенге",
+      "currencyCode": "KZT",
+      "currencySymbol": "₸",
+      "bonus": "220 000 ₸",
+      "minDeposit": "1 000 ₸",
+      "banks": [
+        "Kaspi",
+        "Halyk",
+        "Jusan"
+      ],
+      "mainBank": "Kaspi",
+      "providers": [
+        "Kcell",
+        "Beeline KZ",
+        "Altel"
+      ],
+      "league": "КПЛ",
+      "clubs": [
+        "Астана",
+        "Кайрат",
+        "Барыс"
+      ],
+      "docId": "ИИН",
+      "geoRegion": "KZ",
+      "geoPlacename": "Kazakhstan"
+    },
+    "region_code": "KZ",
     "author": null,
     "content_format": "B",
     "content_format_name": "Корпоративная платформа",
@@ -20,7 +49,7 @@
     },
     "style": null,
     "style_description": null,
-    "generated_at": "2026-04-03T03:47:32.780Z",
+    "generated_at": "2026-04-06T18:36:35.595Z",
     "year": 2026
   },
   "keyword_budget": {
@@ -124,57 +153,57 @@
       },
       "registraciya": {
         "outgoing": [
-          "/about",
           "/sweet-bonanza",
-          "/skachat",
-          "/sugar-rush"
+          "/sugar-rush",
+          "/about",
+          "/bonus"
         ],
         "min": 3
       },
       "skachat": {
         "outgoing": [
           "/sugar-rush",
+          "/zerkalo",
+          "/casino",
           "/sweet-bonanza",
-          "/about",
-          "/bonus"
+          "/about"
         ],
         "min": 3
       },
       "casino": {
         "outgoing": [
+          "/registraciya",
           "/skachat",
-          "/zerkalo",
           "/about",
-          "/sweet-bonanza"
+          "/sugar-rush"
         ],
         "min": 3
       },
       "zerkalo": {
         "outgoing": [
-          "/bonus",
-          "/sweet-bonanza",
           "/casino",
-          "/registraciya",
-          "/about"
+          "/bonus",
+          "/about",
+          "/skachat"
         ],
         "min": 3
       },
       "bonus": {
         "outgoing": [
-          "/registraciya",
-          "/skachat",
-          "/casino",
+          "/sugar-rush",
           "/zerkalo",
+          "/casino",
+          "/skachat",
           "/about"
         ],
         "min": 3
       },
       "about": {
         "outgoing": [
-          "/sugar-rush",
           "/sweet-bonanza",
-          "/registraciya",
           "/bonus",
+          "/zerkalo",
+          "/casino",
           "/about"
         ],
         "min": 3
@@ -197,31 +226,32 @@
     "incoming": {
       "registraciya": [
         "index",
-        "zerkalo",
-        "bonus",
-        "about"
+        "casino"
       ],
       "skachat": [
         "index",
-        "registraciya",
         "casino",
+        "zerkalo",
         "bonus"
       ],
       "casino": [
         "index",
+        "skachat",
         "zerkalo",
         "bonus",
+        "about",
         "sugar-rush",
         "sweet-bonanza"
       ],
       "zerkalo": [
         "index",
-        "casino",
-        "bonus"
+        "skachat",
+        "bonus",
+        "about"
       ],
       "bonus": [
         "index",
-        "skachat",
+        "registraciya",
         "zerkalo",
         "about"
       ],
@@ -238,15 +268,14 @@
         "index",
         "registraciya",
         "skachat",
-        "about",
+        "casino",
+        "bonus",
         "sweet-bonanza"
       ],
       "sweet-bonanza": [
         "index",
         "registraciya",
         "skachat",
-        "casino",
-        "zerkalo",
         "about",
         "sugar-rush"
       ]
@@ -274,7 +303,7 @@
         "h1": "1xBet Казахстан — ставки + казино для игроков из KZ",
         "h1_note": "НЕ дублировать title. Содержит primary keyword.",
         "subtitle": "Личный обзор 1xBet от игрока из Казахстана. 50+ видов спорта, 10 000+ игр в казино, счёт в тенге.",
-        "badge": "1 000+ live-событий",
+        "badge": "Актуально на 2026",
         "stats": [
           {
             "value": "50+",
@@ -290,12 +319,12 @@
           }
         ],
         "cta_primary": {
-          "text": "Зарегистрироваться с бонусом",
+          "text": "Забрать бонус на старте",
           "href": "affiliateLink",
           "external": true
         },
         "cta_secondary": {
-          "text": "Ставить на КПЛ",
+          "text": "Получить фрибет",
           "href": "/registraciya"
         },
         "keywords": [
@@ -329,7 +358,7 @@
           }
         ],
         "internal_links": [
-          "/casino",
+          "/registraciya",
           "/skachat"
         ],
         "disclaimer": true,
@@ -338,28 +367,28 @@
       {
         "section": "Sports",
         "words": "100-130",
-        "h2": "Виды спорта для ставок на 1xBet",
+        "h2": "Ставки на спорт: что есть на 1xBet",
         "intro": "1 абзац (2-3 предложения). Общее впечатление о спортивной линии. Маржа 3-5%, 1 000+ live-событий.",
         "cards": [
+          {
+            "title": "Теннис",
+            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
+            "icon_hint": "ракетка"
+          },
           {
             "title": "Хоккей",
             "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
             "icon_hint": "шайба"
           },
           {
-            "title": "Бокс и MMA",
-            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
-            "icon_hint": "перчатка"
-          },
-          {
-            "title": "Баскетбол",
-            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
-            "icon_hint": "мяч баскетбольный"
-          },
-          {
             "title": "Футбол",
             "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
             "icon_hint": "мяч"
+          },
+          {
+            "title": "Киберспорт",
+            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
+            "icon_hint": "геймпад"
           }
         ],
         "keywords": [
@@ -371,7 +400,7 @@
       {
         "section": "Advantages",
         "words": "100-130",
-        "h2": "Что нравится и что бесит",
+        "h2": "Честная оценка: плюсы и минусы",
         "cards": [
           {
             "title": "Линия и коэффициенты",
@@ -413,7 +442,7 @@
       {
         "section": "Bonus",
         "words": "80-100",
-        "h2": "Приветственный пакет: что получишь",
+        "h2": "Бонус до 220 000 ₸ — условия",
         "cards": [
           {
             "type": "Спортивный бонус",
@@ -493,7 +522,7 @@
       {
         "section": "Slots",
         "words": "80-100",
-        "h2": "Казино: мои любимые слоты",
+        "h2": "Топ слотов — что крутить",
         "cards": [
           {
             "slug": "sugar-rush",
@@ -502,7 +531,7 @@
             "rtp": "96.50%",
             "maxWin": "×5 000",
             "description_hint": "2 предложения: тема слота + впечатление. RTP 96.50%, макс. ×5 000.",
-            "cta": "Крутить с фриспинами",
+            "cta": "Играть с бонусом",
             "link": "/sugar-rush"
           },
           {
@@ -512,7 +541,7 @@
             "rtp": "96.48%",
             "maxWin": "×21 175",
             "description_hint": "2 предложения: тема слота + впечатление. RTP 96.48%, макс. ×21 175.",
-            "cta": "Запустить слот бесплатно",
+            "cta": "Открыть казино с бонусом",
             "link": "/sweet-bonanza"
           }
         ],
@@ -524,7 +553,7 @@
       {
         "section": "Live",
         "words": "80-100",
-        "h2": "В режиме реального времени",
+        "h2": "Live-ставки и live-казино",
         "paragraphs": [
           {
             "plan": "1-2 абзаца: как работает live, задержки, количество событий (1 000+).",
@@ -543,7 +572,7 @@
       {
         "section": "App",
         "words": "60-80",
-        "h2": "Мобильное приложение — как скачать",
+        "h2": "APK для Android — инструкция",
         "paragraphs": [
           {
             "plan": "Краткий обзор приложения. Размер APK (~40 МБ), как установить, личный опыт.",
@@ -562,7 +591,7 @@
       {
         "section": "FAQ",
         "words": "200-250",
-        "h2": "Вопросы о 1xBet",
+        "h2": "FAQ — отвечаю на вопросы",
         "questions": [
           {
             "number": 8,
@@ -571,39 +600,39 @@
             "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 16,
+            "number": 15,
             "category": "Пополнение и вывод",
-            "question": "Можно ли вывести на Halyk Homebank?",
+            "question": "Сколько реально ждать вывод на Kaspi?",
             "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 28,
+            "number": 24,
             "category": "Приложение и доступ",
-            "question": "Сколько весит APK-файл?",
+            "question": "Есть ли версия для iPhone?",
             "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 34,
+            "number": 39,
             "category": "Блокировки и зеркала",
-            "question": "Сохраняется ли баланс при входе через зеркало?",
+            "question": "Блокирует ли Beeline KZ?",
             "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 46,
+            "number": 45,
             "category": "Бонусы и промоакции",
-            "question": "Сгорает ли бонус и через сколько?",
+            "question": "Есть ли фрибет без депозита?",
             "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 54,
+            "number": 57,
             "category": "Ставки на спорт",
-            "question": "Что такое Cash Out и как им пользоваться?",
+            "question": "Как ставить экспрессы?",
             "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
           },
           {
-            "number": 68,
+            "number": 61,
             "category": "Казино и слоты",
-            "question": "Какой слот самый популярный в Казахстане?",
+            "question": "Какой минимальный депозит для казино?",
             "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
           }
         ],
@@ -616,10 +645,10 @@
       {
         "section": "CTA",
         "words": "15-25",
-        "h2": "Попробуй 1xBet сам",
+        "h2": "Ваш аккаунт ждёт",
         "subtitle": "Одно предложение. Личное обращение к читателю. Содержит бренд «1xBet».",
         "cta": {
-          "text": "Не откладывайте",
+          "text": "Готовы попробовать?",
           "href": "affiliateLink",
           "external": true
         },
@@ -629,11 +658,11 @@
       }
     ],
     "used_cta_texts": [
-      "Зарегистрироваться с бонусом",
-      "Ставить на КПЛ",
-      "Крутить с фриспинами",
-      "Запустить слот бесплатно",
-      "Не откладывайте"
+      "Забрать бонус на старте",
+      "Получить фрибет",
+      "Играть с бонусом",
+      "Открыть казино с бонусом",
+      "Готовы попробовать?"
     ]
   },
   "subpages": {
@@ -645,7 +674,7 @@
       "internal_links": [
         "/bonus",
         "/zerkalo",
-        "/about"
+        "/casino"
       ],
       "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
       "h1": "Как зарегистрироваться на 1xBet в Казахстане",
@@ -679,8 +708,8 @@
       "schema_hint": "HowTo + HowToStep",
       "internal_links": [
         "/bonus",
-        "/zerkalo",
-        "/registraciya"
+        "/registraciya",
+        "/casino"
       ],
       "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
       "h1": "Скачать 1xBet — APK для Android и iPhone",
@@ -713,7 +742,7 @@
       "words": "500-800",
       "schema_hint": "Article",
       "internal_links": [
-        "/skachat",
+        "/bonus",
         "/registraciya",
         "/about"
       ],
@@ -749,8 +778,8 @@
       "schema_hint": "Article",
       "internal_links": [
         "/bonus",
-        "/casino",
-        "/skachat"
+        "/registraciya",
+        "/about"
       ],
       "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
       "h1": "1xBet зеркало — рабочий доступ для Казахстана",
@@ -778,9 +807,9 @@
       "words": "500-800",
       "schema_hint": "Article",
       "internal_links": [
-        "/about",
         "/zerkalo",
-        "/casino"
+        "/casino",
+        "/registraciya"
       ],
       "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
       "h1": "Бонусы 1xBet — приветственный пакет и акции",
@@ -813,8 +842,8 @@
       "words": "400-600",
       "schema_hint": "AboutPage + Person",
       "internal_links": [
-        "/zerkalo",
-        "/casino",
+        "/skachat",
+        "/registraciya",
         "/bonus"
       ],
       "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
@@ -936,37 +965,37 @@
         "category": "Регистрация и аккаунт"
       },
       {
-        "number": 16,
-        "question": "Можно ли вывести на Halyk Homebank?",
+        "number": 15,
+        "question": "Сколько реально ждать вывод на Kaspi?",
         "category": "Пополнение и вывод"
       },
       {
-        "number": 28,
-        "question": "Сколько весит APK-файл?",
+        "number": 24,
+        "question": "Есть ли версия для iPhone?",
         "category": "Приложение и доступ"
       },
       {
-        "number": 34,
-        "question": "Сохраняется ли баланс при входе через зеркало?",
+        "number": 39,
+        "question": "Блокирует ли Beeline KZ?",
         "category": "Блокировки и зеркала"
       },
       {
-        "number": 46,
-        "question": "Сгорает ли бонус и через сколько?",
+        "number": 45,
+        "question": "Есть ли фрибет без депозита?",
         "category": "Бонусы и промоакции"
       },
       {
-        "number": 54,
-        "question": "Что такое Cash Out и как им пользоваться?",
+        "number": 57,
+        "question": "Как ставить экспрессы?",
         "category": "Ставки на спорт"
       },
       {
-        "number": 68,
-        "question": "Какой слот самый популярный в Казахстане?",
+        "number": 61,
+        "question": "Какой минимальный депозит для казино?",
         "category": "Казино и слоты"
       }
     ],
-    "numbers_for_registry": "8, 16, 28, 34, 46, 54, 68"
+    "numbers_for_registry": "8, 15, 24, 39, 45, 57, 61"
   },
   "human_realism": {
     "rules": {
@@ -1029,147 +1058,82 @@
     ],
     "per_page_hints": [
       {
-        "typo_count": 4,
-        "typos": [
-          {
-            "type": "swap_letters",
-            "example": "тенеге"
-          },
-          {
-            "type": "double_letter",
-            "example": "бонусс"
-          },
-          {
-            "type": "double_letter",
-            "example": "бонусс"
-          },
-          {
-            "type": "tsya_tsya",
-            "example": "регистрироватся"
-          }
-        ],
-        "punct_count": 3,
-        "punct_types": [
-          "пропуск запятой перед что/который",
-          "лишняя запятая перед «и»",
-          "запятая вместо точки (поток мысли)"
-        ],
-        "slang_count": 2,
-        "slang_suggestions": [
-          "норм",
-          "зашло",
-          "инфа"
-        ],
-        "contradiction": true,
-        "unfinished_thought": true,
-        "self_correction": true,
-        "emotional_reactions": 4,
-        "uneven_depth": true
-      },
-      {
         "typo_count": 1,
         "typos": [
-          {
-            "type": "double_letter",
-            "example": "бонусс"
-          }
-        ],
-        "punct_count": 2,
-        "punct_types": [
-          "запятая вместо точки (поток мысли)",
-          "лишняя запятая перед «и»"
-        ],
-        "slang_count": 3,
-        "slang_suggestions": [
-          "залил",
-          "инфа",
-          "норм"
-        ],
-        "contradiction": false,
-        "unfinished_thought": false,
-        "self_correction": true,
-        "emotional_reactions": 3,
-        "uneven_depth": true
-      },
-      {
-        "typo_count": 2,
-        "typos": [
-          {
-            "type": "wrong_vowel",
-            "example": "привитственный"
-          },
           {
             "type": "drop_letter",
             "example": "приветсвенный"
           }
         ],
-        "punct_count": 3,
+        "punct_count": 2,
         "punct_types": [
           "тире вместо двоеточия",
-          "пропуск запятой перед что/который",
-          "запятая вместо точки (поток мысли)"
+          "пропуск запятой перед что/который"
         ],
         "slang_count": 2,
         "slang_suggestions": [
-          "зашло",
-          "ЛК",
-          "апк"
+          "норм",
+          "кэф",
+          "ЛК"
         ],
-        "contradiction": false,
+        "contradiction": true,
         "unfinished_thought": true,
         "self_correction": true,
-        "emotional_reactions": 3,
+        "emotional_reactions": 4,
         "uneven_depth": true
       },
       {
         "typo_count": 1,
         "typos": [
           {
-            "type": "tsya_tsya",
-            "example": "обновляеться"
-          }
-        ],
-        "punct_count": 3,
-        "punct_types": [
-          "тире вместо двоеточия",
-          "лишняя запятая перед «и»",
-          "запятая вместо точки (поток мысли)"
-        ],
-        "slang_count": 4,
-        "slang_suggestions": [
-          "инфа",
-          "кэф",
-          "залил"
-        ],
-        "contradiction": true,
-        "unfinished_thought": false,
-        "self_correction": true,
-        "emotional_reactions": 5,
-        "uneven_depth": true
-      },
-      {
-        "typo_count": 2,
-        "typos": [
-          {
             "type": "drop_letter",
-            "example": "пополнеие"
-          },
-          {
-            "type": "double_letter",
-            "example": "бонусс"
+            "example": "регистраця"
           }
         ],
         "punct_count": 3,
         "punct_types": [
-          "тире вместо двоеточия",
+          "запятая вместо точки (поток мысли)",
           "лишняя запятая перед «и»",
-          "пропуск запятой перед что/который"
+          "тире вместо двоеточия"
         ],
         "slang_count": 3,
         "slang_suggestions": [
-          "апк",
+          "зашло",
+          "тг",
+          "апк"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "drop_letter",
+            "example": "прилжение"
+          },
+          {
+            "type": "drop_letter",
+            "example": "регистраця"
+          },
+          {
+            "type": "double_letter",
+            "example": "оттзыв"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "кэф",
           "норм",
-          "кэф"
+          "тг"
         ],
         "contradiction": false,
         "unfinished_thought": true,
@@ -1178,74 +1142,7 @@
         "uneven_depth": true
       },
       {
-        "typo_count": 4,
-        "typos": [
-          {
-            "type": "wrong_vowel",
-            "example": "палучить"
-          },
-          {
-            "type": "double_letter",
-            "example": "оттзыв"
-          },
-          {
-            "type": "swap_letters",
-            "example": "тенеге"
-          },
-          {
-            "type": "swap_letters",
-            "example": "поддрежка"
-          }
-        ],
-        "punct_count": 3,
-        "punct_types": [
-          "лишняя запятая перед «и»",
-          "запятая вместо точки (поток мысли)",
-          "пропуск запятой перед что/который"
-        ],
-        "slang_count": 3,
-        "slang_suggestions": [
-          "ЛК",
-          "залил",
-          "инфа"
-        ],
-        "contradiction": false,
-        "unfinished_thought": false,
-        "self_correction": true,
-        "emotional_reactions": 3,
-        "uneven_depth": true
-      },
-      {
         "typo_count": 2,
-        "typos": [
-          {
-            "type": "wrong_vowel",
-            "example": "привитственный"
-          },
-          {
-            "type": "swap_letters",
-            "example": "тенеге"
-          }
-        ],
-        "punct_count": 2,
-        "punct_types": [
-          "лишняя запятая перед «и»",
-          "пропуск запятой перед что/который"
-        ],
-        "slang_count": 4,
-        "slang_suggestions": [
-          "ЛК",
-          "залил",
-          "тг"
-        ],
-        "contradiction": true,
-        "unfinished_thought": true,
-        "self_correction": true,
-        "emotional_reactions": 3,
-        "uneven_depth": true
-      },
-      {
-        "typo_count": 4,
         "typos": [
           {
             "type": "drop_letter",
@@ -1253,33 +1150,25 @@
           },
           {
             "type": "tsya_tsya",
-            "example": "регистрироватся"
-          },
-          {
-            "type": "tsya_tsya",
-            "example": "регистрироватся"
-          },
-          {
-            "type": "drop_letter",
-            "example": "прилжение"
+            "example": "обновляеться"
           }
         ],
         "punct_count": 3,
         "punct_types": [
-          "тире вместо двоеточия",
+          "запятая вместо точки (поток мысли)",
           "пропуск запятой перед что/который",
-          "лишняя запятая перед «и»"
+          "тире вместо двоеточия"
         ],
         "slang_count": 4,
         "slang_suggestions": [
-          "ЛК",
-          "зашло",
-          "залил"
+          "кэф",
+          "залил",
+          "зашло"
         ],
-        "contradiction": false,
+        "contradiction": true,
         "unfinished_thought": false,
         "self_correction": true,
-        "emotional_reactions": 5,
+        "emotional_reactions": 4,
         "uneven_depth": true
       },
       {
@@ -1287,28 +1176,165 @@
         "typos": [
           {
             "type": "swap_letters",
-            "example": "тенеге"
+            "example": "подтормаживть"
           },
           {
-            "type": "tsya_tsya",
-            "example": "авторизоватся"
+            "type": "swap_letters",
+            "example": "поддрежка"
           }
         ],
         "punct_count": 2,
         "punct_types": [
           "лишняя запятая перед «и»",
-          "запятая вместо точки (поток мысли)"
+          "тире вместо двоеточия"
         ],
-        "slang_count": 3,
+        "slang_count": 4,
         "slang_suggestions": [
-          "апк",
+          "зашло",
           "слил",
-          "тг"
+          "ЛК"
         ],
         "contradiction": false,
         "unfinished_thought": true,
         "self_correction": true,
-        "emotional_reactions": 5,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 4,
+        "typos": [
+          {
+            "type": "double_letter",
+            "example": "каззино"
+          },
+          {
+            "type": "double_letter",
+            "example": "бонусс"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "скочать"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "верефикация"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "залил",
+          "апк",
+          "кэф"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "drop_letter",
+            "example": "доступый"
+          },
+          {
+            "type": "tsya_tsya",
+            "example": "обновляеться"
+          },
+          {
+            "type": "tsya_tsya",
+            "example": "регистрироватся"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который"
+        ],
+        "slang_count": 4,
+        "slang_suggestions": [
+          "апк",
+          "зашло",
+          "залил"
+        ],
+        "contradiction": true,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "tsya_tsya",
+            "example": "регистрироватся"
+          },
+          {
+            "type": "double_letter",
+            "example": "коммиссия"
+          },
+          {
+            "type": "swap_letters",
+            "example": "подтормаживть"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который"
+        ],
+        "slang_count": 4,
+        "slang_suggestions": [
+          "апк",
+          "кэф",
+          "норм"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "swap_letters",
+            "example": "подтормаживть"
+          },
+          {
+            "type": "tsya_tsya",
+            "example": "обновляеться"
+          },
+          {
+            "type": "drop_letter",
+            "example": "приветсвенный"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который"
+        ],
+        "slang_count": 2,
+        "slang_suggestions": [
+          "норм",
+          "кэф",
+          "залил"
+        ],
+        "contradiction": false,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 3,
         "uneven_depth": true
       }
     ]

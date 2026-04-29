@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CTAButton from "../components/ui/CTAButton.astro";
+
+const affiliateLink = "#";
+const title = "О нас: обзор Mostbet от реального игрока из России";
+const description =
+  "О проекте: обзор Mostbet от автора из России. Обучающий ресурс с инструкциями по платформе.";
+const canonical = "https://mostbetpka.su/about";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: title,
+  description,
+  url: canonical,
+  mainEntity: {
+    "@type": "Person",
+    name: "Дмитрий Смирнов",
+    jobTitle: "Автор гайдов по ставкам и казино",
+    url: canonical,
+  },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  type="article"
+>
+  <Breadcrumbs
+    items={[{ label: "Главная", href: "/" }, { label: "О проекте" }]}
+  />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <h1
+        class="font-serif text-3xl sm:text-4xl font-semibold text-warm-900 mb-8"
+      >
+        О проекте — кто стоит за этим ресурсом
+      </h1>
+
+      <div class="flex flex-col sm:flex-row gap-6 items-start mb-10">
+        <div
+          class="w-16 h-16 rounded-full bg-accent-500/15 text-accent-700 font-serif font-semibold text-xl flex items-center justify-center shrink-0 mx-auto sm:mx-0"
+        >
+          ДС
+        </div>
+        <div class="space-y-4 text-warm-500 leading-relaxed flex-1">
+          <h2 class="font-serif text-2xl font-semibold text-warm-900">
+            Кто автор
+          </h2>
+          <p>
+            Дмитрий Смирнов, 31 год, Москва. С 2021 года изучаю платформы для
+            ставок и казино как пользователь. На этом сайте собраны инструкции и
+            справочные материалы по Mostbet, адаптированные для аудитории из
+            России.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-3">
+        Зачем этот сайт
+      </h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-8">
+        <p>
+          Цель ресурса — предоставить структурированные инструкции по работе с
+          платформой Mostbet. Здесь описаны шаги по <a
+            href="/registraciya"
+            class="text-accent-600 hover:underline">регистрации</a
+          >, <a href="/skachat" class="text-accent-600 hover:underline"
+            >установке приложения</a
+          >, пополнению счёта и использованию бонусов.
+        </p>
+        <p>
+          Материалы не являются рекламой и не призывают к участию в азартных
+          играх. Информация собрана из открытых источников и личного опыта
+          использования платформы.
+        </p>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-3">
+        Как тестируется платформа
+      </h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-8">
+        <p>
+          Все инструкции проверены на практике: регистрация, пополнение через
+          Сбербанк и Тинькофф, ставки на матчи РПЛ, запуск слотов в <a
+            href="/casino"
+            class="text-accent-600 hover:underline">казино</a
+          >. Данные актуальны на момент последнего обновления и перепроверяются
+          периодически.
+        </p>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-3">
+        Про партнёрские ссылки
+      </h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-8">
+        <p>
+          На сайте присутствуют партнёрские ссылки. Если вы перейдёте по ссылке
+          и зарегистрируетесь, автор может получить вознаграждение. Это не
+          влияет на содержание материалов — описываются как преимущества, так и
+          недостатки платформы.
+        </p>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-3">
+        Предупреждение
+      </h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          21+. Азартные игры связаны с финансовыми рисками. Не ставьте больше,
+          чем готовы потерять. Устанавливайте лимиты в личном кабинете до начала
+          игры. В случае проблем с азартными играми обратитесь за
+          профессиональной помощью.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <CTAButton href={affiliateLink} size="lg" external
+          >Перейти на Mostbet</CTAButton
+        >
+      </div>
+    </div>
+  </section>
+</BaseLayout>

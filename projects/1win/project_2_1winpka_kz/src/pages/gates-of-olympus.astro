@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'SoftwareApplication',
+      name: 'Gates of Olympus',
+      applicationCategory: 'GameApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'KZT' },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5' },
+    author: { '@type': 'Organization', name: 'Редакция 1winpka.kz' },
+  },
+];
+---
+
+<BaseLayout
+  title="Gates of Olympus слот: RTP 96.50%, максимум ×5 000 | 1Win"
+  description="Обзор слота Gates of Olympus на 1Win: RTP 96.50%, макс. выигрыш ×5 000. Pragmatic Play. Играй в тенге."
+  schema={schema}
+  publishDate="2026-03-05"
+  updateDate="2026-04-10"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино', href: '/onlajn-kazino' }, { label: 'Gates of Olympus' }]} />
+  <ArticleMeta publishDate="2026-03-05" updateDate="2026-04-10" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Gates of Olympus — обзор слота от Pragmatic Play</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">RTP 96.50%, волатильность высокая, макс. ×5 000. Один из самых популярных слотов 2025-2026.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Попробовать в демо-режиме</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Слот Gates of Olympus: Зевс с молниями на фоне облаков" aspect="16/9" class="mb-12" />
+
+      <div class="grid sm:grid-cols-4 gap-4 mb-12">
+        <Card hover={false} class="text-center">
+          <div class="text-xs text-slate-400 mb-1">RTP</div>
+          <div class="text-xl font-bold text-glow-400">96.50%</div>
+        </Card>
+        <Card hover={false} class="text-center">
+          <div class="text-xs text-slate-400 mb-1">Макс. выигрыш</div>
+          <div class="text-xl font-bold text-flash-400">×5 000</div>
+        </Card>
+        <Card hover={false} class="text-center">
+          <div class="text-xs text-slate-400 mb-1">Провайдер</div>
+          <div class="text-xl font-bold text-white">Pragmatic Play</div>
+        </Card>
+        <Card hover={false} class="text-center">
+          <div class="text-xs text-slate-400 mb-1">Оценка</div>
+          <div class="text-xl font-bold text-glow-400">4.5/5</div>
+        </Card>
+      </div>
+
+      <div class="space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Обзор Gates of Olympus</h2>
+        <p>Слот от Pragmatic Play в топе KZ-игроков уже второй год. Тематика — древнегреческая мифология, Зевс раскидывает молнии и множители. Каскадная механика: выигрышные символы исчезают, на их место падают новые. Это создаёт цепочки — и множители суммируются.</p>
+
+        <h2 class="text-2xl font-bold text-white">Как играть</h2>
+        <p>Сетка 6×5, выплаты за кластеры (8+ одинаковых символов). Без фиксированных линий — символы могут находиться где угодно на поле. Множители ×2-×500 падают случайно во время каскадов. Бонус-раунд активируется при выпадении 4+ scatter-символов (Зевс) — дается 15 бесплатных вращений.</p>
+        <p>Покупка бонус-раунда доступна — стоит ×100 от ставки. При ставке 500 ₸ это 50 000 ₸. Дорого, но шанс на крупный множитель значительно выше чем в базовой игре.</p>
+
+        <h2 class="text-2xl font-bold text-white">Практические данные</h2>
+        <p>За 200 спинов по 200 ₸ (40 000 ₸ оборота): возврат около 37 500 ₸ — 93.8%. Два захода в бонус-раунд из 200 спинов. Один бонус-раунд дал ×18 от ставки, второй — ×47. Волатильность высокая: 150 спинов без единого бонуса, потом два подряд.</p>
+
+        <h2 class="text-2xl font-bold text-white">Стоит ли играть</h2>
+        <p>По совокупности — 4.5/5. RTP выше среднего (96.50%), механика увлекательная, бонус-раунд способен принести крупный выигрыш. Минусы: высокая волатильность (длительные серии без выигрышей), покупка бонуса дорогая. Если предпочитаете быстрые игры — посмотрите <a href="/rocket-queen" class="text-glow-400 hover:text-glow-300">Rocket Queen</a>. Все слоты — в <a href="/onlajn-kazino" class="text-glow-400 hover:text-glow-300">каталоге казино</a>.</p>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-glow-500/10 via-void-800 to-flash-500/5 border border-glow-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Играть в Gates of Olympus</h2>
+        <p class="text-slate-300 mb-6">Демо-режим без регистрации или реальные ставки в тенге.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть слот</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

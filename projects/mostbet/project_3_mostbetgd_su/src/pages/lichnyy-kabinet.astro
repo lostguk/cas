@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Личный кабинет Mostbet: вход, вывод, верификация РУ';
+const description =
+  'Mostbet личный кабинет — как войти, пополнить счёт и вывести деньги в рубль на Сбербанк Gold.';
+const canonical = 'https://mostbetgd.su/lichnyy-kabinet';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'ru',
+};
+
+const loginSteps = [
+  'Откройте сайт или приложение Mostbet',
+  'Введите логин (телефон или email) и пароль',
+  'При включённой двухфакторной аутентификации — подтвердите вход кодом',
+];
+
+const features = [
+  { title: 'История ставок', desc: 'Полная статистика всех ставок с фильтрацией по дате, виду спорта и результату.' },
+  { title: 'Вывод средств', desc: 'Сбербанк, Тинькофф, Альфа-Банк, СБП, криптовалюта. Заявка оформляется в 2 клика.' },
+  { title: 'Бонусный счёт', desc: 'Отслеживание прогресса отыгрыша бонуса, оставшийся вейджер и срок действия.' },
+  { title: 'Верификация', desc: 'Загрузка документов для KYC: СНИЛС/ИНН + селфи. Статус проверки отображается в кабинете.' },
+  { title: 'Настройки безопасности', desc: 'Двухфакторная аутентификация, смена пароля, управление привязанными устройствами.' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-10"
+  updateDate="2026-04-02"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Личный кабинет' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight leading-tight mb-4">
+          Личный кабинет Mostbet — вход, настройки, вывод
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+          Подробное руководство по функциям личного кабинета для наших клиентов из России.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-8">Как войти</h2>
+      <div class="space-y-4 mb-14">
+        {
+          loginSteps.map((step, i) => (
+            <div class="flex items-start gap-4 rounded-lg bg-deep-700/60 border-l-4 border-main-500 p-5">
+              <span class="text-2xl font-extrabold text-main-400 shrink-0">0{i + 1}</span>
+              <p class="text-slate-300">{step}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-8">Возможности кабинета</h2>
+      <div class="grid sm:grid-cols-2 gap-6 mb-14">
+        {
+          features.map((f) => (
+            <Card>
+              <h3 class="text-lg font-bold text-white mb-2">{f.title}</h3>
+              <p class="text-sm text-slate-400">{f.desc}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Вывод средств</h2>
+      <div class="space-y-5 text-slate-300 mb-10">
+        <p>
+          Мы предлагаем вывод на Сбербанк, Тинькофф, Альфа-Банк, ВТБ через СБП, а также на криптовалютные кошельки (USDT TRC20). Минимальная сумма вывода зависит от метода. Стандартный срок обработки — от 1 до 24 часов для банковских карт.
+        </p>
+        <p>
+          Перед первым выводом необходимо пройти верификацию. Имя владельца карты должно совпадать с данными в аккаунте. Рекомендуем начать с <a href="/nachalo-raboty" class="text-main-400 hover:text-main-300 underline underline-offset-2">регистрации</a>, если у вас ещё нет аккаунта, или воспользоваться <a href="/mobile-app" class="text-main-400 hover:text-main-300 underline underline-offset-2">мобильным приложением</a> для быстрого доступа.
+        </p>
+        <p>
+          Актуальные бонусы доступны на <a href="/podarki" class="text-main-400 hover:text-main-300 underline underline-offset-2">странице подарков</a>. Информация о платформе — на странице <a href="/about" class="text-main-400 hover:text-main-300 underline underline-offset-2">о нас</a>. Каталог игр — в разделе <a href="/slots-i-igry" class="text-main-400 hover:text-main-300 underline underline-offset-2">слоты</a>.
+        </p>
+      </div>
+
+      <div class="text-center p-8 rounded-2xl border border-main-500/20 bg-deep-900/50">
+        <h2 class="text-2xl font-extrabold text-white uppercase tracking-tight mb-3">Войти в кабинет</h2>
+        <p class="text-slate-400 mb-6">
+          Управляйте счётом, ставками и выводами через личный кабинет Mostbet.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Войти на платформу</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

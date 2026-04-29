@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const affiliateLink = '#';
+const title = 'Играть Fruit Party на Mostbet Россия — обзор и RTP';
+const description =
+  'Fruit Party на Mostbet: RTP 96.47%, бонусные раунды, волатильность. Честный обзор от жителя Россия 2026.';
+const canonical = 'https://mostbetdh.su/fruit-party';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'Game',
+      name: 'Fruit Party',
+      gameLocation: { '@type': 'VirtualLocation', url: canonical },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4', bestRating: '5' },
+    author: { '@type': 'Organization', name: 'Аналитическая команда mostbetdh.su' },
+    reviewBody: description,
+  },
+];
+
+const specs = [
+  { label: 'RTP', value: '96.47%' },
+  { label: 'Макс. выигрыш', value: '×5 000' },
+  { label: 'Провайдер', value: 'Pragmatic Play' },
+  { label: 'Волатильность', value: 'Высокая' },
+  { label: 'Сетка', value: '7×7' },
+  { label: 'Механика', value: 'Кластеры + множители' },
+];
+
+const ratings = [
+  { param: 'RTP', score: '4.2' },
+  { param: 'Волатильность', score: '3.7' },
+  { param: 'Бонусные функции', score: '4.3' },
+  { param: 'Графика', score: '4.1' },
+  { param: 'Общая оценка', score: '4.0' },
+];
+
+const comparison = [
+  { param: 'RTP', sugarRush: '96.50%', fruitParty: '96.47%' },
+  { param: 'Макс. выигрыш', sugarRush: '×5 000', fruitParty: '×5 000' },
+  { param: 'Волатильность', sugarRush: 'Высокая', fruitParty: 'Высокая' },
+  { param: 'Бонус-раунд', sugarRush: 'Каскады + множители', fruitParty: 'Случайные множители ×2' },
+  { param: 'Покупка бонуса', sugarRush: '×100 ставки', fruitParty: '×100 ставки' },
+  { param: 'Оценка', sugarRush: '4.2/5', fruitParty: '4.0/5' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-20"
+  updateDate="2026-03-28"
+  type="article"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Казино', href: '/onlajn-kazino' },
+      { label: 'Fruit Party' },
+    ]}
+  />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-sm font-semibold text-emerald-400 mb-2">Pragmatic Play · RTP 96.47%</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Fruit Party — аналитический обзор слота</h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Фруктовая тематика с кластерной механикой. RTP 96.47%, максимальный выигрыш ×5 000. Высокая волатильность с бонусными раундами и случайными множителями.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" variant="cta" external class="mt-8">Открыть казино с бонусом</CTAButton>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Технические характеристики</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
+        {
+          specs.map((s) => (
+            <div class="rounded-xl bg-white/[0.03] border border-white/[0.06] p-4 text-center backdrop-blur-sm">
+              <div class="text-xs text-slate-500 uppercase mb-1">{s.label}</div>
+              <div class="text-lg font-bold text-white">{s.value}</div>
+            </div>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Рейтинг по параметрам</h2>
+      <div class="overflow-x-auto rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm mb-10">
+        <table class="min-w-full text-sm text-left">
+          <thead class="border-b border-white/[0.06]">
+            <tr>
+              <th class="px-5 py-4 text-slate-300 font-semibold">Параметр</th>
+              <th class="px-5 py-4 text-secondary-400 font-semibold text-center">Оценка / 5</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/[0.04]">
+            {
+              ratings.map((r) => (
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="px-5 py-3 text-white font-medium">{r.param}</td>
+                  <td class="px-5 py-3 text-center">
+                    <span class="text-secondary-400 font-bold">{r.score}</span>
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4">Как играть</h2>
+      <div class="space-y-4 text-slate-300 mb-10">
+        <p>
+          Сетка 7×7, кластерная механика — совпадение 5+ символов формирует выигрыш. Отличительная особенность Fruit Party — случайные множители ×2, которые могут суммироваться при попадании нескольких фруктов с множителями в один кластер.
+        </p>
+        <p>
+          Бонусный раунд запускается при 3+ Scatter-символах. По статистике провайдера, средняя частота — 1 на 200 спинов. В бонусе множители активируются чаще, что формирует основной потенциал выигрыша.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Сравнение: Fruit Party vs Sugar Rush</h2>
+      <div class="overflow-x-auto rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm mb-10">
+        <table class="min-w-full text-sm text-left">
+          <thead class="border-b border-white/[0.06]">
+            <tr>
+              <th class="px-5 py-4 text-slate-300 font-semibold">Параметр</th>
+              <th class="px-5 py-4 text-emerald-400 font-semibold">Sugar Rush</th>
+              <th class="px-5 py-4 text-secondary-400 font-semibold">Fruit Party</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/[0.04]">
+            {
+              comparison.map((c) => (
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="px-5 py-3 text-white font-medium">{c.param}</td>
+                  <td class="px-5 py-3 text-slate-300">{c.sugarRush}</td>
+                  <td class="px-5 py-3 text-slate-300">{c.fruitParty}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4">Аналитическое заключение</h2>
+      <div class="space-y-4 text-slate-300 mb-10">
+        <p>
+          По совокупности параметров Fruit Party получает оценку 4.0/5. По сравнению с <a href="/sugar-rush" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">Sugar Rush</a>, слот проигрывает на 0.03% по RTP и имеет менее выраженную каскадную динамику. Преимущество — механика случайных множителей ×2, создающая потенциал для крупных выплат в бонусе. Полный каталог слотов — в <a href="/onlajn-kazino" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">разделе казино</a>.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-emerald-500/20 bg-white/[0.02] p-4 text-sm text-slate-400 backdrop-blur-sm">
+        18+. По данным из открытых источников: играйте в пределах бюджета, установите лимиты в кабинете до первого депозита.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

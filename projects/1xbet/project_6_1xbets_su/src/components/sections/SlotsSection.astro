@@ -1,0 +1,66 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const slots = [
+  {
+    name: 'Sugar Rush 1000',
+    provider: 'Pragmatic Play',
+    rtp: '96.53%',
+    maxWin: '×25 000',
+    desc: 'По данным из обзоров, кластерный слот с множителями. Высокая волатильность, потенциал больших выигрышей.',
+    cta: 'ОБЗОР СЛОТА',
+    link: '/sugar-rush-1000',
+  },
+  {
+    name: 'The Dog House',
+    provider: 'Pragmatic Play',
+    rtp: '96.51%',
+    maxWin: '×6 750',
+    desc: 'Согласно отзывам, популярный слот со sticky wilds во фриспинах. Средне-высокая волатильность.',
+    cta: 'ОБЗОР СЛОТА',
+    link: '/the-dog-house',
+  },
+];
+---
+
+<section class="py-16 lg:py-24 border-b-2 border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>
+      ОБЗОР ПОПУЛЯРНЫХ СЛОТОВ
+      <p slot="subtitle">По данным из открытых источников</p>
+    </SectionHeading>
+
+    <div class="grid md:grid-cols-2 gap-4 lg:gap-6">
+      {
+        slots.map((s) => (
+          <Card>
+            <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
+              <div>
+                <p class="text-lg font-black text-white uppercase tracking-tight">{s.name}</p>
+                <p class="text-xs font-mono text-white/40">{s.provider}</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div class="border-l-2 border-cta-500 pl-3">
+                <p class="text-xs font-mono text-white/40 uppercase">RTP</p>
+                <p class="text-lg font-mono font-bold text-cta-400">{s.rtp}</p>
+              </div>
+              <div class="border-l-2 border-info-400 pl-3">
+                <p class="text-xs font-mono text-white/40 uppercase">МАКС.</p>
+                <p class="text-lg font-mono font-bold text-info-400">{s.maxWin}</p>
+              </div>
+            </div>
+            <p class="text-sm text-white/50 mb-4">{s.desc}</p>
+            <CTAButton href={s.link} variant="outline" size="sm" class="w-full">{s.cta}</CTAButton>
+          </Card>
+        ))
+      }
+    </div>
+
+    <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50 mt-8">
+      <p>💡 RTP и параметры слотов указаны по данным разработчиков. Фактические показатели могут отличаться. Мы не проводим азартные игры.</p>
+    </div>
+  </div>
+</section>

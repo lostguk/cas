@@ -1,0 +1,68 @@
+---
+const affiliateLink = '#';
+const year = new Date().getFullYear();
+
+const sections = [
+  {
+    title: 'Платформа',
+    links: [
+      { href: '/sozdat-akkaunt', label: 'Создать аккаунт' },
+      { href: '/mobile-app', label: 'Приложение' },
+      { href: '/dostup', label: 'Доступ к сайту' },
+    ],
+  },
+  {
+    title: 'Игры и ставки',
+    links: [
+      { href: '/onlajn-kazino', label: 'Онлайн-казино' },
+      { href: '/rocket-queen', label: 'Rocket Queen' },
+      { href: '/gates-of-olympus', label: 'Gates of Olympus' },
+    ],
+  },
+  {
+    title: 'Информация',
+    links: [
+      { href: '/akcii', label: 'Акции и бонусы' },
+      { href: '/about', label: 'О проекте' },
+    ],
+  },
+];
+---
+
+<footer class="bg-void-900 border-t border-white/5 mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex items-center gap-2 mb-4">
+          <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" class="fill-glow-500"/>
+            <path d="M8 10l4 12h1l3-8 3 8h1l4-12h-2.5l-2.5 8-3-8h-1l-3 8-2.5-8z" class="fill-void-950"/>
+          </svg>
+          <span class="font-bold text-white text-sm">1winpka.kz</span>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Независимый аналитический обзор платформы 1Win для игроков из Казахстана. Сравнение условий, рейтинги и данные.
+        </p>
+      </div>
+      {sections.map((sec) => (
+        <div>
+          <h3 class="text-sm font-semibold text-glow-400 mb-3">{sec.title}</h3>
+          <ul class="space-y-2">
+            {sec.links.map((l) => (
+              <li>
+                <a href={l.href} class="text-sm text-slate-400 hover:text-white transition-colors">
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="mt-10 pt-8 border-t border-white/5 text-xs text-slate-600 space-y-2">
+      <p>21+. Азартные игры могут вызывать зависимость. Играйте ответственно.</p>
+      <p>Материалы носят информационно-аналитический характер. Сайт не является официальным ресурсом букмекера.</p>
+      <p class="text-slate-500">&copy; {year} 1winpka.kz</p>
+    </div>
+  </div>
+</footer>

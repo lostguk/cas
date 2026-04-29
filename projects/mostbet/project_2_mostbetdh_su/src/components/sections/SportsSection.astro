@@ -1,0 +1,54 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const cards = [
+  {
+    title: 'Футбол и РПЛ',
+    text: 'По данным мониторинга, роспись на матчи РПЛ включает до 150 рынков. Маржа 4–5% на топ-события. Зенит и Спартак — наибольшая ликвидность.',
+    rating: '4.2/5',
+    icon: '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>',
+  },
+  {
+    title: 'Хоккей и КХЛ',
+    text: 'КХЛ представлена развёрнутой линией: Ак Барс, СКА, ЦСКА. Коэфициенты на тоталы сопоставимы с конкурентами. Live-ставки с задержкой 5–15 сек.',
+    rating: '4.0/5',
+    icon: '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18l4-6 4 3 4-8 4 5v4H4Z"/></svg>',
+  },
+  {
+    title: 'Баскетбол и теннис',
+    text: 'NBA и ATP-турниры — стандартная роспись. Маржа на баскетбол около 5–6%. Теннисная линия включает ITF-события с ограниченными лимитами.',
+    rating: '3.8/5',
+    icon: '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M5 5c4 4 10 4 14 0M5 19c4-4 10-4 14 0"/></svg>',
+  },
+  {
+    title: 'Киберспорт',
+    text: 'Dota 2, CS2, League of Legends — высокая активность. Коэффициенты резко меняются на патчах. Большой выбор мелких турниров, но ликвидность ниже.',
+    rating: '4.1/5',
+    icon: '<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>',
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Спортивная линия: рейтинг по дисциплинам</SectionHeading>
+    <p class="text-center text-slate-400 max-w-3xl mx-auto mb-12 -mt-4">
+      Оценки выставлены по совокупности параметров: ширина росписи, маржа, ликвидность и скорость live-расчёта.
+    </p>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {
+        cards.map((c) => (
+          <Card>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center" set:html={c.icon} />
+              <span class="text-sm font-bold text-secondary-400 bg-secondary-400/10 px-3 py-1 rounded-full">{c.rating}</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">{c.title}</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">{c.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,95 @@
+---
+import CTAButton from './ui/CTAButton.astro';
+
+const affiliateLink = '#';
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const navLinks = [
+  { href: '/', label: 'Главная' },
+  { href: '/nachalo-raboty', label: 'Регистрация' },
+  { href: '/mobile-app', label: 'Приложение' },
+  { href: '/slots-i-igry', label: 'Слоты' },
+  { href: '/podarki', label: 'Бонусы' },
+  { href: '/lichnyy-kabinet', label: 'Кабинет' },
+  { href: '/about', label: 'О платформе' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-deep-900/90 backdrop-blur-md border-b border-main-500/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-18">
+      <a href="/" class="flex items-center gap-2 shrink-0">
+        <span class="relative w-8 h-8 flex items-center justify-center" aria-hidden="true">
+          <span class="absolute inset-0 bg-gradient-to-br from-main-500 to-main-600 rounded-md rotate-45"></span>
+          <span class="relative text-white font-black text-sm z-10">M</span>
+        </span>
+        <span class="font-extrabold text-white text-lg tracking-tight">Most<span class="text-main-500">bet</span></span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Основное меню">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class:list={[
+                'px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
+                currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+                  ? 'text-main-400 bg-main-500/10'
+                  : 'text-slate-300 hover:text-white hover:bg-white/5',
+              ]}
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <CTAButton href={affiliateLink} size="sm" external class="hidden sm:inline-flex">Начать игру</CTAButton>
+        <button
+          type="button"
+          id="menu-toggle"
+          class="lg:hidden p-2 rounded-lg text-slate-300 hover:bg-white/10"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Открыть меню"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-main-500/20 py-4">
+      <nav class="flex flex-col gap-1" aria-label="Мобильное меню">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class:list={[
+                'px-3 py-2.5 rounded-lg text-sm font-medium',
+                currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+                  ? 'text-main-400 bg-main-500/10'
+                  : 'text-slate-300 hover:bg-white/5',
+              ]}
+            >
+              {link.label}
+            </a>
+          ))
+        }
+        <CTAButton href={affiliateLink} size="md" external class="mt-2 w-full">Перейти на платформу</CTAButton>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    const open = !!(menu && !menu.classList.contains('hidden'));
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>

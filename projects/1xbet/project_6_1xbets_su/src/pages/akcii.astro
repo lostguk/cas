@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Card from '../components/ui/Card.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const title = '1xBet Бонус: до 32 500 ₽ + 150 фриспинов новым игрокам';
+const description = '1xBet бонус 2026: приветственный пакет, промокод, фрибет. Как получить и отыграть бонус в KZ.';
+
+const affiliateLink = '#';
+
+const wagerSteps = [
+  { num: '01', title: 'Активация', desc: 'По данным обзоров, бонус активируется автоматически при первом пополнении от 100 ₽. Промокод вводится при регистрации.' },
+  { num: '02', title: 'Спортивный вейджер', desc: 'Согласно отзывам, для спортивного бонуса нужно поставить сумму ×5 на экспрессы с минимальным кэфом от 1.40. Срок — 30 дней.' },
+  { num: '03', title: 'Казино-вейджер', desc: 'По данным из открытых источников, для фриспинов действует вейджер ×35. Учитываются ставки на конкретных слотах.' },
+  { num: '04', title: 'Вывод', desc: 'Согласно информации обзоров, после выполнения условий бонусные средства переводятся на основной счёт.' },
+];
+
+const otherPromos = [
+  { title: 'ЭКСПРЕСС-БОНУС', desc: 'По данным обзоров, за экспрессы от 3+ событий начисляется дополнительный процент к выигрышу (до 40%).' },
+  { title: 'КЕШБЭК', desc: 'Согласно информации, еженедельный кешбэк в казино доступен для активных игроков.' },
+  { title: 'ПРОМОКОДЫ', desc: 'По данным из открытых источников, актуальные промокоды публикуются в официальных каналах оператора.' },
+];
+---
+
+<BaseLayout title={title} description={description} canonical="https://1xbets.su/akcii" publishDate="2026-04-01" updateDate="2026-04-13">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Акции' }]} />
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-none uppercase tracking-tighter mb-6">
+        ОБЗОР БОНУСОВ 1XBET
+      </h1>
+      <p class="text-lg text-white/60 max-w-2xl mb-4">
+        По данным из открытых источников, 1xBet предлагает приветственный пакет до 32 500 ₽ + 150 фриспинов. Ниже — информация об условиях получения и отыгрыша.
+      </p>
+      <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+        <p>⚠️ Мы не начисляем бонусы и не принимаем платежи. Актуальные условия уточняйте на сайте оператора.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>ПРИВЕТСТВЕННЫЙ БОНУС</SectionHeading>
+      <div class="max-w-3xl">
+        <div class="border-2 border-cta-500 bg-surface-400 p-8 mb-6">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="border-l-2 border-cta-500 pl-4">
+              <p class="text-xs font-mono text-white/40 uppercase">Спорт</p>
+              <p class="text-2xl font-black text-white">100% до 32 500 ₽</p>
+            </div>
+            <div class="border-l-2 border-info-400 pl-4">
+              <p class="text-xs font-mono text-white/40 uppercase">Казино</p>
+              <p class="text-2xl font-black text-white">150 фриспинов</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+          <p>💡 Согласно обзорам, бонус доступен только для новых аккаунтов. Повторная активация невозможна.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>КАК ОТЫГРАТЬ БОНУС</SectionHeading>
+      <div class="space-y-4 max-w-3xl">
+        {wagerSteps.map((s) => (
+          <div class="flex gap-6 border-2 border-white/10 bg-surface-400 p-6 hover:border-cta-500/30 transition-colors duration-100">
+            <span class="text-3xl font-black font-mono text-cta-500 shrink-0">{s.num}</span>
+            <div>
+              <p class="font-mono font-bold text-white uppercase tracking-wider mb-1">{s.title}</p>
+              <p class="text-sm text-white/60">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50 mt-8 max-w-3xl">
+        <p>⚠️ Условия отыгрыша описаны по данным из публичных обзоров и могут быть неактуальны.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>ДРУГИЕ АКЦИИ</SectionHeading>
+      <div class="grid md:grid-cols-3 gap-4 lg:gap-6 max-w-3xl">
+        {otherPromos.map((p) => (
+          <Card>
+            <p class="text-sm font-mono font-bold text-cta-400 uppercase tracking-wider mb-2">{p.title}</p>
+            <p class="text-sm text-white/60">{p.desc}</p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>СТОИТ ЛИ БРАТЬ БОНУС</SectionHeading>
+      <div class="max-w-3xl space-y-4 text-white/70">
+        <p>
+          По данным из открытых источников, приветственный бонус может быть полезен для новых пользователей, но условия отыгрыша требуют значительных ставок. Согласно отзывам, спортивный вейджер (×5 на экспрессы) выполнить проще, чем казино-вейджер (×35).
+        </p>
+        <p>
+          Рекомендуем также ознакомиться с обзором <a href="/sugar-rush-1000" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">Sugar Rush 1000</a>, информацией о <a href="/mobile-app" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">мобильном приложении</a>, странице <a href="/dostup" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">доступа</a>, <a href="/sozdat-akkaunt" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">регистрации</a> и <a href="/about" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">о проекте</a>.
+        </p>
+        <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+          <p>💡 Не рассматривайте бонус как гарантированный доход. Азартные игры связаны с риском. 18+.</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <CTAButton href={affiliateLink} size="lg" external>УЗНАТЬ АКТУАЛЬНЫЕ УСЛОВИЯ</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

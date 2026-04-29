@@ -1,0 +1,130 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import Card from '../components/ui/Card.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+const affiliateLink = '#';
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Как зарегистрироваться на 1Win в Казахстане',
+  description: 'Пошаговая инструкция регистрации на 1Win для казахстанских игроков.',
+  step: [
+    { '@type': 'HowToStep', name: 'Откройте сайт', text: 'Перейдите на сайт 1Win через зеркало или приложение' },
+    { '@type': 'HowToStep', name: 'Выберите способ', text: 'Телефон, email, соцсети или в один клик' },
+    { '@type': 'HowToStep', name: 'Заполните форму', text: 'Укажите данные и выберите валюту KZT' },
+    { '@type': 'HowToStep', name: 'Подтвердите аккаунт', text: 'Введите код из SMS или подтвердите email' },
+  ],
+};
+
+const methods = [
+  { title: 'По телефону', desc: 'Номер + SMS-код. Самый быстрый, секунд 30.' },
+  { title: 'Через email', desc: 'Почта + пароль. Нужно подтвердить ссылку в письме.' },
+  { title: 'Соцсети', desc: 'Telegram, Google и другие. Удобно если лень заполнять.' },
+  { title: 'В один клик', desc: 'Генерирует логин и пароль автоматом — сохрани их сразу.' },
+];
+---
+
+<BaseLayout
+  title="Регистрация 1Win: 4 способа + бонус на первый депозит"
+  description="Регистрация 1Win за 2 минуты — пошагово. Аккаунт в тенге, бонус на старте, верификация через ИИН."
+  schema={howToSchema}
+  publishDate="2026-01-25"
+  updateDate="2026-04-02"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Регистрация' }]} />
+  <ArticleMeta publishDate="2026-01-25" updateDate="2026-04-02" />
+
+  <section class="py-8 lg:py-12">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h1 class="text-2xl sm:text-3xl font-heading font-bold text-cream-900 leading-snug mb-4">Как зарегистрироваться на 1Win в Казахстане</h1>
+        <p class="text-cream-500">Четыре способа создать аккаунт — разбираю каждый.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
+          <CTAButton href={affiliateLink} size="lg" external>Создать профиль в KZT</CTAButton>
+          <CTAButton href="/bonus" variant="secondary">Узнать про бонус</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/registration.jpg"
+        alt="Форма регистрации 1Win с выбором валюты KZT"
+        width="485"
+        height="351"
+        loading="eager"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-10"
+      />
+
+      <div class="space-y-8 text-cream-700 leading-relaxed">
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-4">Пошаговая регистрация</h2>
+          <p class="mb-4">Регистрироватся на 1Win можно за пару минут — я засекал. Вот что нужно сделать:</p>
+          <div class="grid sm:grid-cols-[1fr_auto] gap-6 items-start">
+            <ol class="space-y-3">
+              <li class="flex gap-3 items-start">
+                <span class="w-7 h-7 rounded-full bg-violet-100 text-violet-600 text-sm font-bold flex items-center justify-center shrink-0">1</span>
+                <span>Зайди на сайт через актуальное зеркало или через приложение</span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="w-7 h-7 rounded-full bg-violet-100 text-violet-600 text-sm font-bold flex items-center justify-center shrink-0">2</span>
+                <span>Выбери способ регистрации — по телефону быстрее всего</span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="w-7 h-7 rounded-full bg-violet-100 text-violet-600 text-sm font-bold flex items-center justify-center shrink-0">3</span>
+                <span>Заполни форму, обязательно выбери валюту KZT — потом менять нельзя</span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="w-7 h-7 rounded-full bg-violet-100 text-violet-600 text-sm font-bold flex items-center justify-center shrink-0">4</span>
+                <span>Подтверди аккаунт через SMS или email</span>
+              </li>
+            </ol>
+            <img
+              src="/images/registration-mobile.jpg"
+              alt="Мобильная форма регистрации 1Win — пошаговое заполнение"
+              width="603"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+              class="hidden sm:block w-44 lg:w-56 h-auto rounded-xl shadow-md border border-violet-100 justify-self-end"
+            />
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-4">Способы регистрации на 1Win</h2>
+          <div class="grid sm:grid-cols-2 gap-3">
+            {methods.map((m) => (
+              <Card>
+                <h3 class="font-semibold text-cream-900 mb-1">{m.title}</h3>
+                <p class="text-sm text-cream-500">{m.desc}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Бонус при регистрации</h2>
+          <p>
+            Сразу после регистраця и первого депозита получаешь приветственный пакет — до 500% на первые четыре пополнения. Подробности, и как отыграть расписал в <a href="/bonus" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">обзоре бонусов</a>. Скажу честно — условия не самые простые, но для ставок на спорт вполне реальные.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Верификация</h2>
+          <p>
+            Для вывода средств нужна верификация — загружаешь удостоверение личности с ИИН и селфи. У меня заняло три дня, хотя обещали сутки (— вот это бесит). Но потом вывод пошёл без вопросов. Кстати через <a href="/casino" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">казино-раздел</a> можно играть и до верификации, просто вывести не получится.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-rose-50 border border-violet-100">
+        <h2 class="text-lg font-heading font-bold text-cream-900 mb-2">Готовы создать аккаунт?</h2>
+        <p class="text-sm text-cream-600 mb-5">Регистрация занимает пару минут, бонус начисляется автоматически.</p>
+        <CTAButton href={affiliateLink} external>Начать с приветственным пакетом</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

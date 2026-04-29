@@ -1,0 +1,32 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="relative overflow-hidden rounded-2xl border border-main-500/20 bg-gradient-to-br from-main-500/10 via-deep-800 to-alt-400/10 px-6 py-16 sm:px-12 text-center"
+    >
+      <div
+        class="pointer-events-none absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-main-500/15 blur-3xl"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="pointer-events-none absolute -bottom-16 right-0 h-48 w-48 rounded-full bg-alt-400/10 blur-3xl"
+        aria-hidden="true"
+      ></div>
+      <div class="relative">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight mb-4">Готовы начать?</h2>
+        <p class="text-slate-300 max-w-xl mx-auto mb-8 text-lg">
+          Присоединяйтесь к Mostbet — платформа с бонусом до 32 500 ₽ ждёт новых клиентов.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <CTAButton href={affiliateLink} size="lg" external>Ваш аккаунт ждёт</CTAButton>
+          <CTAButton href="/about" variant="outline" size="lg">О платформе</CTAButton>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

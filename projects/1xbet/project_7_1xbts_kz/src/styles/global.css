@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
+
+  --color-obsidian-50: #f8f8f9;
+  --color-obsidian-100: #e8e8ea;
+  --color-obsidian-200: #c8c8cd;
+  --color-obsidian-300: #a0a0a8;
+  --color-obsidian-400: #6e6e78;
+  --color-obsidian-500: #45454e;
+  --color-obsidian-600: #33333b;
+  --color-obsidian-700: #25252c;
+  --color-obsidian-800: #1a1a20;
+  --color-obsidian-900: #111318;
+  --color-obsidian-950: #08090c;
+
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+
+  --color-olive-300: #bef264;
+  --color-olive-400: #a3e635;
+  --color-olive-500: #84cc16;
+  --color-olive-600: #65a30d;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-color: #000000;
+    color: #d4d4d8;
+    font-family: var(--font-body);
+    line-height: 1.7;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+  ::selection {
+    background-color: var(--color-amber-500);
+    color: #000000;
+  }
+}

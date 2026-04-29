@@ -1,0 +1,145 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const affiliateLink = '#';
+const title = 'Скачать Mostbet Россия — APK для Android бесплатно';
+const description =
+  'Как скачать Mostbet в Россия: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.';
+const canonical = 'https://mostbetgd.su/mobile-app';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: [
+    { '@type': 'HowToStep', name: 'Шаг 1', text: 'Перейдите на официальный сайт Mostbet.' },
+    { '@type': 'HowToStep', name: 'Шаг 2', text: 'Нажмите «Скачать APK» для Android или откройте App Store для iOS.' },
+    { '@type': 'HowToStep', name: 'Шаг 3', text: 'Разрешите установку из неизвестных источников и установите приложение.' },
+    { '@type': 'HowToStep', name: 'Шаг 4', text: 'Войдите в аккаунт или зарегистрируйтесь.' },
+  ],
+};
+
+const androidSteps = [
+  'Перейдите на официальный сайт Mostbet через актуальную ссылку',
+  'Нажмите кнопку «Скачать APK» — файл весит около 45 МБ',
+  'В настройках устройства разрешите установку из неизвестных источников',
+  'Установите APK и войдите в свой аккаунт',
+];
+
+const iosSteps = [
+  'Откройте Safari и перейдите на сайт Mostbet',
+  'Перейдите в App Store по ссылке со страницы',
+  'Установите приложение и авторизуйтесь',
+];
+
+const sysReqs = [
+  { os: 'Android', version: '6.0+', size: '~45 МБ', ram: '2 ГБ' },
+  { os: 'iOS', version: '12.0+', size: '~120 МБ', ram: '2 ГБ' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-01"
+  updateDate="2026-04-05"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Приложение' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight leading-tight mb-4">
+          Скачать Mostbet — APK для Android и iPhone
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+          Мы подготовили пошаговую инструкцию по установке приложения Mostbet для обеих платформ.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Скачать приложение</CTAButton>
+      </div>
+
+      <img
+        src="/images/mobilka.jpg"
+        alt="Мобильное приложение Mostbet"
+        width="1200"
+        height="675"
+        loading="eager"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-12"
+      />
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-8">Скачать на Android (APK)</h2>
+      <div class="space-y-4 mb-14">
+        {
+          androidSteps.map((step, i) => (
+            <div class="flex items-start gap-4 rounded-lg bg-deep-700/60 border-l-4 border-main-500 p-5">
+              <span class="text-2xl font-extrabold text-main-400 shrink-0">0{i + 1}</span>
+              <p class="text-slate-300">{step}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-8">Установка на iOS</h2>
+      <div class="space-y-4 mb-14">
+        {
+          iosSteps.map((step, i) => (
+            <div class="flex items-start gap-4 rounded-lg bg-deep-700/60 border-l-4 border-alt-400 p-5">
+              <span class="text-2xl font-extrabold text-alt-400 shrink-0">0{i + 1}</span>
+              <p class="text-slate-300">{step}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Обзор приложения</h2>
+      <div class="space-y-5 text-slate-300 mb-14">
+        <p>
+          Мобильное приложение Mostbet предоставляет полный функционал платформы: ставки на спорт, казино, live-дилеры, управление счётом. Push-уведомления о результатах матчей и изменениях коэффициентов.
+        </p>
+        <p>
+          Преимущества — быстрый доступ и стабильная работа даже при нестабильном интернете. Из минусов: обновления для Android приходится устанавливать вручную, так как приложения нет в Google Play. Доступ к <a href="/lichnyy-kabinet" class="text-main-400 hover:text-main-300 underline underline-offset-2">личному кабинету</a> и все функции <a href="/about" class="text-main-400 hover:text-main-300 underline underline-offset-2">платформы</a> сохраняются.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Системные требования</h2>
+      <div class="overflow-x-auto rounded-lg border border-deep-600 bg-deep-900/50 mb-14">
+        <table class="min-w-full text-sm text-left">
+          <thead class="bg-deep-700/80 text-slate-300 font-semibold border-b border-deep-600">
+            <tr>
+              <th class="px-4 py-3">ОС</th>
+              <th class="px-4 py-3">Версия</th>
+              <th class="px-4 py-3">Размер</th>
+              <th class="px-4 py-3">RAM</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-deep-700">
+            {
+              sysReqs.map((r) => (
+                <tr class="hover:bg-deep-700/50">
+                  <td class="px-4 py-3 text-white font-medium">{r.os}</td>
+                  <td class="px-4 py-3 text-slate-400">{r.version}</td>
+                  <td class="px-4 py-3 text-slate-400">{r.size}</td>
+                  <td class="px-4 py-3 text-slate-400">{r.ram}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-center p-8 rounded-2xl border border-main-500/20 bg-deep-900/50">
+        <h2 class="text-2xl font-extrabold text-white uppercase tracking-tight mb-3">Приложение готово к использованию</h2>
+        <p class="text-slate-400 mb-6">
+          Скачайте Mostbet и получите бонус до 32 500 ₽ при первом пополнении через <a href="/nachalo-raboty" class="text-main-400 hover:text-main-300 underline underline-offset-2">регистрацию</a>.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Скачать сейчас</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

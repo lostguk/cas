@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Регистрация Mostbet: 4 способа + бонус на первый депозит';
+const description =
+  'Регистрация Mostbet за 2 минуты — пошагово. Аккаунт в рубль, бонус на старте, верификация через ИИН.';
+const canonical = 'https://mostbetdh.su/sozdat-akkaunt';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: [
+    { '@type': 'HowToStep', name: 'Шаг 1', text: 'Откройте форму регистрации на официальном сайте.' },
+    { '@type': 'HowToStep', name: 'Шаг 2', text: 'Выберите валюту RUB и заполните контактные данные.' },
+    { '@type': 'HowToStep', name: 'Шаг 3', text: 'Подтвердите телефон или почту по коду из SMS.' },
+    { '@type': 'HowToStep', name: 'Шаг 4', text: 'Завершите профиль и при необходимости загрузите документы.' },
+  ],
+};
+
+const steps = [
+  {
+    n: '01',
+    title: 'Выбор способа регистрации',
+    text: 'Платформа предлагает 4 варианта: в один клик, по номеру телефона, через email, через социальные сети. По данным аналитики, регистрация по телефону — наиболее быстрый способ (до 2 минут).',
+  },
+  {
+    n: '02',
+    title: 'Валюта и регион',
+    text: 'Для пользователей из России рекомендуется выбрать RUB. Смена валюты после создания аккаунта, как правило, невозможна. Это стандартная практика у операторов данного класса.',
+  },
+  {
+    n: '03',
+    title: 'Подтверждение данных',
+    text: 'SMS-код поступает в течение 1–2 минут. В случае задержки рекомендуется проверить корректность номера и спам-фильтр. Повторная отправка доступна через 60 секунд.',
+  },
+  {
+    n: '04',
+    title: 'Заполнение профиля',
+    text: 'ФИО и дата рождения должны совпадать с данными паспорта РФ. Расхождения выявляются на этапе верификации и блокируют вывод средств.',
+  },
+];
+
+const methods = [
+  { title: 'По телефону', time: '~2 мин', desc: 'Номер + SMS-код. Самый быстрый способ.' },
+  { title: 'По email', time: '~3 мин', desc: 'Почта + пароль + подтверждение по ссылке.' },
+  { title: 'Через соцсети', time: '~1 мин', desc: 'Авторизация через VK, OK, Telegram.' },
+  { title: 'В один клик', time: '~30 сек', desc: 'Минимум данных, но потом нужно заполнить профиль.' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-01-15"
+  updateDate="2026-03-28"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Регистрация' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">
+          Как зарегистрироваться на Mostbet из России
+        </h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Пошаговая инструкция на основе тестирования. Аккаунт в рублях, выбор способа регистрации, верификация через СНИЛС/ИНН.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" variant="cta" external>Зарегистрироваться с бонусом</CTAButton>
+          <CTAButton href="/prilozhenie" variant="outline" size="lg">Скачать приложение</CTAButton>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Способы регистрации: сравнение</h2>
+      <div class="grid sm:grid-cols-2 gap-4 mb-14">
+        {
+          methods.map((m) => (
+            <Card>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-white font-semibold">{m.title}</h3>
+                <span class="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-full">{m.time}</span>
+              </div>
+              <p class="text-sm text-slate-400">{m.desc}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Пошаговая регистрация</h2>
+      <div class="space-y-6 mb-14">
+        {
+          steps.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-extrabold text-emerald-500 shrink-0">{s.n}</span>
+                <div>
+                  <h3 class="text-lg font-bold text-white mb-2">{s.title}</h3>
+                  <p class="text-slate-400 leading-relaxed">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4">Бонус при регистрации</h2>
+      <div class="text-slate-300 space-y-4 mb-10">
+        <p>
+          Приветственный бонус составляет до 32 500 ₽ на первый депозит. По данным сравнительного анализа, это средний показатель для данного сегмента. Подробные условия — на странице <a href="/akcii" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">акций</a>.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4">Верификация</h2>
+      <div class="text-slate-300 space-y-4 mb-10">
+        <p>
+          KYC-проверка запрашивается перед первым выводом. Необходимы: паспорт РФ, СНИЛС или ИНН, селфи с документом. По данным мониторинга, процесс занимает от 2 часов до 3 рабочих дней. Подробнее о платформе — <a href="/about" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">на странице о портале</a>.
+        </p>
+      </div>
+
+      <div class="text-center p-8 rounded-2xl border border-white/[0.08] bg-gradient-to-br from-emerald-500/[0.06] to-secondary-400/[0.04] backdrop-blur-sm">
+        <h2 class="text-2xl font-bold text-white mb-3">Аккаунт готов — можно пополнять</h2>
+        <p class="text-slate-400 mb-6">
+          Лимиты и доступные методы пополнения отображаются в кассе после входа. Рекомендуем ознакомиться с условиями <a href="/onlajn-kazino" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">казино</a> перед активацией бонуса.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" variant="cta" external>Открыть регистрацию</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

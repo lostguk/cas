@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'О проекте 1winpka.su',
+  url: 'https://1winpka.su/about',
+};
+---
+
+<BaseLayout
+  title="О нас: обзор 1Win от реального игрока из России"
+  description="О проекте: честный обзор 1Win от автора из России. Без заказных текстов, только личный опыт."
+  schema={aboutSchema}
+  publishDate="2026-01-20"
+  updateDate="2026-04-05"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О проекте' }]} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight mb-8">О проекте</h1>
+
+      <div class="space-y-8 text-slate-300 leading-relaxed">
+        <div>
+          <h2 class="text-xl font-bold text-white uppercase tracking-wide mb-3">Зачем этот сайт</h2>
+          <p>Информационный ресурс о платформе 1Win для игроков из России. Здесь собрана актуальная информация о ставках, казино, бонусах и способах оплаты. Все данные проверяются и обновляются регулярно.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-white uppercase tracking-wide mb-3">Как проверяем</h2>
+          <p>Реальные депозиты, реальные выводы. Тестируем <a href="/prilozhenie" class="text-coral-400 hover:underline">приложение</a> на разных устройствах, проверяем скорость выплат через Сбербанк и Тинькофф. Если что-то не работает — пишем как есть.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-white uppercase tracking-wide mb-3">Про честность</h2>
+          <p>На сайте размещены партнёрские ссылки. Это не влияет на оценки — если <a href="/podarki" class="text-coral-400 hover:underline">бонус</a> сложно отыграть, мы так и напишем. Платформа не идеальна, и мы не делаем вид что это не так.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-white uppercase tracking-wide mb-3">Обновление информации</h2>
+          <p>Контент обновляется по мере изменений на платформе. Актуальные <a href="/igrovye-avtomaty" class="text-coral-400 hover:underline">каталоги игр</a>, бонусные условия и способы оплаты проверяются ежемесячно.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-white uppercase tracking-wide mb-3">Предупреждение</h2>
+          <p>21+. Азартные игры могут вызывать зависимость. Не ставьте больше, чем готовы потерять. Если чувствуете проблемы — обратитесь за помощью.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center p-8 rounded-lg bg-gradient-to-br from-coral-500/10 via-abyss-800 to-teal-500/5 border border-coral-500/10">
+        <h2 class="text-xl font-bold text-white uppercase mb-3">Проверить 1Win самому</h2>
+        <p class="text-slate-400 mb-6">Ознакомьтесь с платформой и составьте собственное мнение.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Перейти на 1Win</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,42 @@
+{
+  "project_id": "pinup_1_kz",
+  "project_name": "PinUp Casino Казахстан",
+  "brand": "pinup",
+  "domain": "pinuppka.kz",
+  "region": "KZ",
+  "language": "ru",
+  "content_format": "H",
+  "visual_style": "premium-encyclopedia",
+  "site_title": "PinUp Casino | Казахстан | Официальный сайт",
+  "site_description": "PinUp Casino - лучшее онлайн казино Казахстана. Бонусы, слоты, ставки. Лицензированная платформа с быстрым выводом тенге.",
+  "author": null,
+  "color_scheme": "obsidian-amber",
+  "font_family": "Rubik",
+  "affiliate_url": "#",
+  "currency": "KZT",
+  "payment_methods": [
+    "Kaspi",
+    "Halyk Bank",
+    "Jusan",
+    "Phonebank"
+  ],
+  "pages": [
+    "index",
+    "registraciya",
+    "bonus",
+    "prilozhenie",
+    "otzivi",
+    "about",
+    "404"
+  ],
+  "slot_reviews": [
+    "crazy-fruits",
+    "sweet-bonanza",
+    "big-bass-bonanza"
+  ],
+  "meta": {
+    "color_primary": "#111318",
+    "color_accent": "#f59e0b",
+    "color_secondary": "#84cc16"
+  }
+}

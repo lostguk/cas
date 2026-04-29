@@ -1,0 +1,69 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const methods = [
+  {
+    title: 'Сбербанк / Тинькофф / Альфа-Банк',
+    text: 'Перевод с карт российских банков. Пополнение, как правило, зачисляется мгновенно. Вывод — от нескольких часов до 1–3 дней в зависимости от суммы и статуса верификации.',
+  },
+  {
+    title: 'СБП и ЮMoney',
+    text: 'Система быстрых платежей работает без комиссии со стороны платформы. ЮMoney — альтернатива для тех, кто предпочитает электронные кошельки. Минимальное пополнение — от 100 ₽.',
+  },
+  {
+    title: 'Криптовалюта (USDT)',
+    text: 'Пополнение через USDT TRC20. Комиссия сети, не платформы. Зачисление — 15–30 минут. Перед переводом необходимо дважды проверить адрес и выбранную сеть.',
+  },
+];
+
+const rows = [
+  { method: 'Сбербанк / СберPay', deposit: 'Мгновенно', withdraw: '1–24 часа', min: '100 ₽' },
+  { method: 'Тинькофф', deposit: 'Мгновенно', withdraw: '1–24 часа', min: '100 ₽' },
+  { method: 'СБП', deposit: '1–5 мин', withdraw: '1–3 дня', min: '100 ₽' },
+  { method: 'USDT (TRC20)', deposit: '15–30 мин', withdraw: '15–30 мин', min: '~1 500 ₽' },
+];
+---
+
+<section class="py-12 lg:py-16">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <SectionHeading>Способы пополнения и вывода средств</SectionHeading>
+    <div class="space-y-4 mb-8">
+      {
+        methods.map((m) => (
+          <Card>
+            <h3 class="font-serif text-lg font-semibold text-warm-900 mb-2">{m.title}</h3>
+            <p class="text-sm text-warm-500 leading-relaxed">{m.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="overflow-x-auto rounded-lg border border-warm-200 bg-white shadow-sm">
+      <table class="min-w-full text-sm text-left">
+        <thead class="bg-warm-100 text-warm-700 font-medium border-b border-warm-200">
+          <tr>
+            <th class="px-4 py-3">Метод</th>
+            <th class="px-4 py-3">Пополнение</th>
+            <th class="px-4 py-3">Вывод</th>
+            <th class="px-4 py-3">Минимум</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-warm-100">
+          {
+            rows.map((r) => (
+              <tr class="hover:bg-warm-50">
+                <td class="px-4 py-3 text-warm-800 font-medium">{r.method}</td>
+                <td class="px-4 py-3 text-warm-500">{r.deposit}</td>
+                <td class="px-4 py-3 text-warm-500">{r.withdraw}</td>
+                <td class="px-4 py-3 text-warm-500">{r.min}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 text-xs text-warm-400">
+      Сроки указаны ориентировочно. Фактическое время зависит от суммы, банка и статуса верификации аккаунта.
+    </p>
+  </div>
+</section>

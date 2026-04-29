@@ -1,0 +1,47 @@
+{
+	"brand": "1xBet",
+	"region": "RU",
+	"language": "ru",
+	"currency": "RUB",
+	"domain": "1xbetsite.su",
+	"affiliate_url": "#",
+	"color_preset": "abyss-coral",
+	"visual_style": "light-clean",
+	"content_format": "E",
+	"preset_number": 9,
+	"font": "Plus Jakarta Sans",
+	"logo_type": "A",
+	"author": null,
+	"pages": [
+		"index",
+		"otkryt-schet",
+		"ustanovka",
+		"igrovye-avtomaty",
+		"privetstvennye-bonusy",
+		"moj-profil",
+		"about"
+	],
+	"slot_pages": ["dead-or-alive-2", "big-bass-bonanza", "book-of-dead"],
+	"sections_order": [
+		"Hero",
+		"Overview",
+		"Advantages",
+		"Sports",
+		"Bonus",
+		"Payments",
+		"Slots",
+		"FAQ",
+		"CTA"
+	],
+	"seo": {
+		"primary_keyword": "1xbet россия",
+		"secondary_keywords": [
+			"1хбет скачать",
+			"1xbet регистрация",
+			"1xbet бонус",
+			"1xbet ставки"
+		],
+		"geo_target": "RU"
+	},
+	"noindex": false
+}

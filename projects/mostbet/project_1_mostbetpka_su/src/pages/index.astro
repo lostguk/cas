@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import OverviewSection from '../components/sections/OverviewSection.astro';
+import AdvantagesSection from '../components/sections/AdvantagesSection.astro';
+import BonusSection from '../components/sections/BonusSection.astro';
+import SlotsSection from '../components/sections/SlotsSection.astro';
+import PaymentsSection from '../components/sections/PaymentsSection.astro';
+import FAQSection from '../components/sections/FAQSection.astro';
+import CTASection from '../components/sections/CTASection.astro';
+
+const title = 'Mostbet Россия — ставки на спорт и казино РУ 2026';
+const description =
+  'Обзор Mostbet для России: ставки на РПЛ, казино, бонус до 32 500 ₽. Пополнение через Сбербанк в рублях.';
+const canonical = 'https://mostbetpka.su/';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'mostbetpka.su',
+  url: canonical,
+  description,
+  inLanguage: 'ru',
+  publisher: {
+    '@type': 'Organization',
+    name: 'mostbetpka.su',
+    url: canonical,
+  },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema}>
+  <HeroSection />
+  <OverviewSection />
+  <AdvantagesSection />
+  <BonusSection />
+  <SlotsSection />
+  <PaymentsSection />
+  <FAQSection />
+  <CTASection />
+</BaseLayout>

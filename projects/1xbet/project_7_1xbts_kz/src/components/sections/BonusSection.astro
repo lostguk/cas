@@ -1,0 +1,46 @@
+---
+import Card from '../ui/Card.astro'
+import SectionHeading from '../ui/SectionHeading.astro'
+
+const affiliateLink = '#';
+
+const bonuses = [
+  { type: 'Спортивный бонус', value: '100% до 220 000 ₸', condition: 'Вейджер ×5 на экспресс-ставки, минимум 3 события, кэф от 1.40. Срок — 30 дней.' },
+  { type: 'Казино-бонус', value: '150 фриспинов', condition: 'Вейджер ×35, действует на определённые слоты. Условия отыгрыша жёсткие.' },
+  { type: 'Фрибет', value: 'Бесплатная ставка', condition: 'Начисляется при выполнении условий первого депозита. Сумма варьируется.' },
+];
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Бонус до 220 000 ₸ — условия</SectionHeading>
+
+    <div class="grid lg:grid-cols-5 gap-8 items-start">
+      <div class="lg:col-span-2">
+        <img
+          src="/images/main-3.jpg"
+          alt="Бонусный пакет 1xBet: золотые монеты и подарочная коробка"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          class="rounded-2xl w-full h-auto aspect-[4/3] object-cover"
+        />
+      </div>
+      <div class="lg:col-span-3 space-y-4">
+        {bonuses.map((bonus) => (
+          <Card>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+              <div class="flex-1">
+                <div class="text-xs text-amber-500/60 uppercase tracking-wider mb-1">{bonus.type}</div>
+                <div class="text-xl font-heading font-bold text-white">{bonus.value}</div>
+              </div>
+              <p class="text-sm text-gray-400 sm:max-w-xs">{bonus.condition}</p>
+            </div>
+          </Card>
+        ))}
+        <p class="text-sm text-gray-500">Подробный разбор условий и стратегии отыгрыша — в <a href="/akcii" class="text-amber-400 hover:text-amber-300 transition-colors">обзоре бонусной программы</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>

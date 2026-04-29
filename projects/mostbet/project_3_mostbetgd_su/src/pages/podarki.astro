@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Mostbet Бонусы — приветственный пакет для РУ | 2026';
+const description =
+  'Бонусы Mostbet для Россия: до 32 500 ₽ на спорт, 150 фриспинов на казино. Условия отыгрыша.';
+const canonical = 'https://mostbetgd.su/podarki';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'ru',
+};
+
+const bonusCards = [
+  { title: 'Экспресс-бонус', desc: 'Увеличение коэффициента при ставке экспрессом от 3 событий. Чем больше событий — тем выше надбавка к выигрышу.' },
+  { title: 'Кешбэк', desc: 'Еженедельный возврат части проигранных средств. Процент зависит от уровня в программе лояльности.' },
+  { title: 'Промокоды', desc: 'Периодические коды на фрибеты и фриспины. Публикуются в соцсетях и на партнёрских ресурсах.' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-01"
+  updateDate="2026-03-25"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Бонусы' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight mb-4">
+          Бонусы Mostbet — приветственный пакет и акции
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+          Мы предлагаем прозрачные условия бонусной программы. Все цифры и требования — ниже.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Получить бонус</CTAButton>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Приветственный бонус</h2>
+      <div class="space-y-5 text-slate-300 mb-12">
+        <p>
+          100% до 32 500 ₽ на первый депозит + 150 фриспинов. Бонус активируется автоматически при пополнении счёта. Минимальный депозит для активации — 100 ₽. Фриспины начисляются на определённые слоты.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Как отыграть бонус</h2>
+      <div class="space-y-4 mb-14">
+        <div class="flex items-start gap-4 rounded-lg bg-deep-700/60 border-l-4 border-main-500 p-5">
+          <span class="text-2xl font-extrabold text-main-400 shrink-0">01</span>
+          <p class="text-slate-300">Пополните счёт на сумму от 100 ₽ — бонус зачисляется автоматически</p>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg bg-deep-700/60 border-l-4 border-main-500 p-5">
+          <span class="text-2xl font-extrabold text-main-400 shrink-0">02</span>
+          <p class="text-slate-300">Вейджер ×5 на спорт (экспрессы от 3 событий, коэфф. 1.40+) или ×60 на казино</p>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg bg-deep-700/60 border-l-4 border-main-500 p-5">
+          <span class="text-2xl font-extrabold text-main-400 shrink-0">03</span>
+          <p class="text-slate-300">Срок отыгрыша — 30 дней с момента активации бонуса</p>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg bg-deep-700/60 border-l-4 border-main-500 p-5">
+          <span class="text-2xl font-extrabold text-main-400 shrink-0">04</span>
+          <p class="text-slate-300">После выполнения условий бонусные средства переводятся на основной счёт</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Другие акции</h2>
+      <div class="grid sm:grid-cols-3 gap-6 mb-14">
+        {
+          bonusCards.map((b) => (
+            <Card>
+              <h3 class="text-lg font-bold text-white mb-2">{b.title}</h3>
+              <p class="text-sm text-slate-400">{b.desc}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Стоит ли брать бонус</h2>
+      <div class="space-y-5 text-slate-300 mb-10">
+        <p>
+          Спортивный вейджер ×5 — вполне реальный для активных игроков. Казино-вейджер ×60 — значительно сложнее, рекомендуем только опытным пользователям. Если не уверены — можно отказаться от бонуса при регистрации через <a href="/nachalo-raboty" class="text-main-400 hover:text-main-300 underline underline-offset-2">форму регистрации</a>.
+        </p>
+        <p>
+          Рекомендуем также ознакомиться со слотами, которые участвуют в акции, на странице <a href="/reactoonz-2" class="text-main-400 hover:text-main-300 underline underline-offset-2">Reactoonz 2</a> и <a href="/big-bass-splash" class="text-main-400 hover:text-main-300 underline underline-offset-2">Big Bass Splash</a>. Информация о нашей платформе — на странице <a href="/about" class="text-main-400 hover:text-main-300 underline underline-offset-2">о нас</a>.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-main-500/20 bg-deep-900/50 p-5 text-sm text-slate-400 mb-10">
+        <strong class="text-slate-200">По данным из открытых источников.</strong> Условия бонусов меняются. Сверяйте правила в аккаунте перед активацией.
+      </div>
+
+      <div class="text-center">
+        <CTAButton href={affiliateLink} size="lg" external>Активировать бонус</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

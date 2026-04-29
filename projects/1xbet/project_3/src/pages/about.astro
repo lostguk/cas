@@ -1,8 +1,7 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import CTAButton from '../components/ui/CTAButton.astro';
-import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
 const title = 'Обзор 1xBet Казахстан — кто автор и зачем этот сайт';
@@ -25,7 +24,7 @@ const schema = {
 };
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} schema={schema} noindex={true} type="article">
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema} type="article">
   <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О проекте' }]} />
   <section class="py-12 lg:py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,10 +47,7 @@ const schema = {
         </div>
       </div>
 
-      <ImagePlaceholder
-        description="Автор за ноутбуком: заметки по платежам и скриншоты кассы на втором мониторе"
-        class="mb-10"
-      />
+      <img src="/images/author-laptop.png" alt="Автор за ноутбуком: анализ платежей и скриншоты кассы" width="800" height="600" class="rounded-xl shadow-sm w-full mb-10" loading="lazy" />
 
       <div class="text-center">
         <CTAButton href={affiliateLink} size="lg" external>Перейти к обзору платформы</CTAButton>

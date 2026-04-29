@@ -1,0 +1,62 @@
+---
+import CTAButton from '../ui/CTAButton.astro'
+import SectionHeading from '../ui/SectionHeading.astro'
+
+const affiliateLink = '#';
+
+const bonuses = [
+  {
+    title: 'Спортивный бонус',
+    sum: '100% до 32 500 ₽',
+    text: 'Приветственный бонус на первый депозит для ставок на спорт. Вейджер ×5, срок отыгрыша — 30 дней. Минимальный коэффициент экспресса — 1.40.',
+  },
+  {
+    title: 'Казино-бонус',
+    sum: '150 фриспинов',
+    text: 'Фриспины начисляются на определённые слоты. Вейджер ×60, условия привязаны к конкретным играм. Проверяйте список доступных слотов в кабинете.',
+  },
+  {
+    title: 'Фрибет',
+    sum: 'Бесплатная ставка',
+    text: 'При выполнении условий первого депозита клиенты получают бесплатную ставку. Условия и сумма зависят от текущей промоакции.',
+  },
+];
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-5 gap-10 items-start">
+      <div class="lg:col-span-2 overflow-hidden rounded-lg">
+        <img
+          src="/images/bonus.jpg"
+          alt="Бонусное предложение Mostbet"
+          width="1200"
+          height="900"
+          loading="lazy"
+          decoding="async"
+          class="w-full h-auto aspect-[4/3] object-cover"
+        />
+      </div>
+      <div class="lg:col-span-3">
+        <SectionHeading align="left">🎁 Стартовый бонус — до 32 500 ₽</SectionHeading>
+        <div class="space-y-4">
+          {
+            bonuses.map((b) => (
+              <div class="rounded-lg border border-main-500/15 bg-gradient-to-r from-main-500/5 to-alt-400/5 p-6">
+                <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                  <h3 class="text-lg font-bold text-white">{b.title}</h3>
+                  <span class="text-main-400 font-semibold text-sm">{b.sum}</span>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">{b.text}</p>
+              </div>
+            ))
+          }
+        </div>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <CTAButton href={affiliateLink} size="lg" external>Получить бонус</CTAButton>
+          <CTAButton href="/podarki" variant="outline" size="lg">Все акции</CTAButton>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

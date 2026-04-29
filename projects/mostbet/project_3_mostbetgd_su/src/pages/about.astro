@@ -1,0 +1,67 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const affiliateLink = '#';
+const title = 'О платформе Mostbet Россия — обзор и информация';
+const description =
+  'О платформе Mostbet: история, лицензия, ответственная игра. Прозрачно о партнёрских ссылках.';
+const canonical = 'https://mostbetgd.su/about';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: title,
+  description,
+  url: canonical,
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Mostbet Россия',
+    url: 'https://mostbetgd.su',
+  },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema} type="article">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О платформе' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight mb-8 text-center">О платформе</h1>
+
+      <div class="flex flex-col sm:flex-row gap-8 items-start mb-10">
+        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-main-500 to-main-600 text-white font-extrabold text-2xl flex items-center justify-center shrink-0 mx-auto sm:mx-0">
+          MB
+        </div>
+        <div class="space-y-5 text-slate-300 flex-1">
+          <h2 class="text-2xl font-extrabold text-white uppercase tracking-tight">О Mostbet</h2>
+          <p>
+            Mostbet — международная букмекерская платформа, работающая с 2009 года. Мы предлагаем ставки на спорт, казино и live-игры для клиентов из более чем 90 стран. Платформа лицензирована и работает в соответствии с международным законодательством.
+          </p>
+
+          <h2 class="text-2xl font-extrabold text-white uppercase tracking-tight pt-4">Зачем этот сайт</h2>
+          <p>
+            Данный ресурс создан для информирования пользователей из России о возможностях платформы Mostbet. Мы структурируем информацию о регистрации, бонусах, платежах и функциях так, чтобы наши клиенты могли принимать взвешенные решения.
+          </p>
+
+          <h2 class="text-2xl font-extrabold text-white uppercase tracking-tight pt-4">Прозрачность</h2>
+          <p>
+            На сайте присутствуют партнёрские ссылки. При переходе и регистрации мы можем получить вознаграждение. Это стандартная практика в индустрии, и она не влияет на объективность представленной информации. Все данные о бонусах и условиях — из официальных источников.
+          </p>
+
+          <h2 class="text-2xl font-extrabold text-white uppercase tracking-tight pt-4">Ответственная игра</h2>
+          <p>
+            18+. Азартные игры связаны с финансовыми рисками. Мы призываем играть ответственно, устанавливать лимиты и не ставить больше, чем вы готовы потерять. В <a href="/lichnyy-kabinet" class="text-main-400 hover:text-main-300 underline underline-offset-2">личном кабинете</a> доступны инструменты самоограничения.
+          </p>
+          <p>
+            Ознакомьтесь с нашим <a href="/slots-i-igry" class="text-main-400 hover:text-main-300 underline underline-offset-2">каталогом игр</a>, <a href="/nachalo-raboty" class="text-main-400 hover:text-main-300 underline underline-offset-2">инструкцией по регистрации</a> и <a href="/big-bass-splash" class="text-main-400 hover:text-main-300 underline underline-offset-2">обзорами слотов</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <CTAButton href={affiliateLink} size="lg" external>Перейти на платформу</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

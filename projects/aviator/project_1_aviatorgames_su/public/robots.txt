@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aviatorgames.su/sitemap-index.xml

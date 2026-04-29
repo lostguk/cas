@@ -1,0 +1,45 @@
+---
+import Card from '../ui/Card.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const sports = [
+  {
+    title: 'Футбол',
+    text: 'На матчи КПЛ доступно до 150 рынков — тоталы, форы, угловые. Маржа на топ-события 3–4%, на аутсайдеров выше.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10zM2 12h20"/></svg>',
+  },
+  {
+    title: 'Киберспорт',
+    text: 'Dota 2, CS2, LoL — прематч и лайв. Роспись на мейджоры сопоставима с футбольной по глубине.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10v4m4-6v8m4-8v8m4-6v4"/></svg>',
+  },
+  {
+    title: 'Бокс и MMA',
+    text: 'Казахстанские бойцы в UFC и топ-промоушенах. Ставки на метод победы, раунд завершения, тоталы.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7"><path d="M18 11V6a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v0M6 11V6a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v5"/><path d="M6 11a4 4 0 0 0 4 4h4a4 4 0 0 0 4-4"/><path d="M10 15v5m4-5v5"/></svg>',
+  },
+  {
+    title: 'Баскетбол',
+    text: 'NBA, Евролига, Национальная лига РК. Лайв-ставки с обновлением кэфов каждые 3–5 секунд.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-7 h-7"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93c4.08 2.38 8.58 3.34 14.14.74M4.93 19.07c4.08-2.38 8.58-3.34 14.14-.74M2 12h20"/></svg>',
+  },
+];
+---
+
+<section class="relative py-16 lg:py-20 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Виды спорта для ставок на 1xBet</SectionHeading>
+    <p class="text-center text-gray-400 max-w-2xl mx-auto -mt-6 mb-10 italic font-heading">Линия платформы охватывает более 50 дисциплин. Ниже — четыре наиболее востребованных направления среди казахстанских пользователей.</p>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {sports.map((sport) => (
+        <Card>
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4">
+            <Fragment set:html={sport.icon} />
+          </div>
+          <h3 class="text-lg font-heading font-bold text-white mb-2">{sport.title}</h3>
+          <p class="text-sm text-gray-400">{sport.text}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

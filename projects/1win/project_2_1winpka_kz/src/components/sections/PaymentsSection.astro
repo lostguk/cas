@@ -1,0 +1,69 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const methods = [
+  {
+    title: 'Kaspi / Halyk / Jusan',
+    text: 'Банковские карты и переводы в тенге. Kaspi Gold — наиболее быстрый вариант по данным пользователей.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"/></svg>',
+  },
+  {
+    title: 'Криптовалюта (USDT)',
+    text: 'TRC20, без коммиссии платформы. По замерам — 15-30 минут на обработку.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 3.75c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>',
+  },
+  {
+    title: 'Электронные кошельки',
+    text: 'QIWI, WebMoney — работают, но время обработки дольше. Оценка — 3/5.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3"/></svg>',
+  },
+];
+
+const tableRows = [
+  ['Kaspi Gold', 'Мгновенно', '1-24 часа', '500 ₸'],
+  ['Halyk Homebank', '5-15 мин', '1-3 дня', '500 ₸'],
+  ['USDT (TRC20)', '15-30 мин', '15-30 мин', '~3 000 ₸'],
+];
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Тенге без конвертации — как платить</SectionHeading>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      {methods.map((m) => (
+        <Card>
+          <div class="w-11 h-11 rounded-xl bg-glow-500/10 flex items-center justify-center text-glow-400 mb-4">
+            <div class="w-5 h-5" set:html={m.icon} />
+          </div>
+          <h3 class="font-semibold text-white mb-2">{m.title}</h3>
+          <p class="text-sm text-slate-300">{m.text}</p>
+        </Card>
+      ))}
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-white/10">
+            <th class="text-left py-3 px-4 text-slate-400 font-medium">Метод</th>
+            <th class="text-left py-3 px-4 text-slate-400 font-medium">Пополнение</th>
+            <th class="text-left py-3 px-4 text-slate-400 font-medium">Вывод</th>
+            <th class="text-left py-3 px-4 text-slate-400 font-medium">Минимум</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableRows.map((row) => (
+            <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+              <td class="py-3 px-4 text-white font-medium">{row[0]}</td>
+              <td class="py-3 px-4 text-slate-300">{row[1]}</td>
+              <td class="py-3 px-4 text-slate-300">{row[2]}</td>
+              <td class="py-3 px-4 text-glow-400">{row[3]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

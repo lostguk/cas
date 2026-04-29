@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import OverviewSection from '../components/sections/OverviewSection.astro';
+import BonusSection from '../components/sections/BonusSection.astro';
+import AdvantagesSection from '../components/sections/AdvantagesSection.astro';
+import SlotsSection from '../components/sections/SlotsSection.astro';
+import PaymentsSection from '../components/sections/PaymentsSection.astro';
+import AppSection from '../components/sections/AppSection.astro';
+import FAQSection from '../components/sections/FAQSection.astro';
+import CTASection from '../components/sections/CTASection.astro';
+
+const siteUrl = 'https://1winsl.kz';
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '1winsl.kz',
+  url: siteUrl,
+  description: 'Личный блог про 1Win для игроков из Казахстана.',
+  inLanguage: 'ru-KZ',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}/?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<BaseLayout
+  title="1Win Казахстан — ставки на спорт и казино КЗ 2026"
+  description="Обзор 1Win для Казахстан: ставки на КПЛ, казино, бонус до 220 000 ₸. Пополнение через Kaspi в тенге."
+  schema={websiteSchema}
+>
+  <HeroSection />
+  <OverviewSection />
+  <BonusSection />
+  <AdvantagesSection />
+  <SlotsSection />
+  <PaymentsSection />
+  <AppSection />
+  <FAQSection />
+  <CTASection />
+</BaseLayout>

@@ -1,0 +1,73 @@
+---
+const sections = [
+  {
+    title: 'Разделы',
+    links: [
+      { href: '/otkryt-schet', label: 'Регистрация' },
+      { href: '/ustanovka', label: 'Скачать' },
+      { href: '/igrovye-avtomaty', label: 'Игровые автоматы' },
+    ],
+  },
+  {
+    title: 'Ещё',
+    links: [
+      { href: '/privetstvennye-bonusy', label: 'Бонусы' },
+      { href: '/moj-profil', label: 'Мой профиль' },
+      { href: '/about', label: 'О проекте' },
+    ],
+  },
+  {
+    title: 'Слоты',
+    links: [
+      { href: '/dead-or-alive-2', label: 'Dead or Alive 2' },
+      { href: '/big-bass-bonanza', label: 'Big Bass Bonanza' },
+      { href: '/book-of-dead', label: 'Book of Dead' },
+    ],
+  },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-20 bg-gray-50 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-flex items-center gap-1 mb-4">
+          <span class="font-extrabold text-gray-900"
+            >1x<span class="text-cta-500">Bet</span> RU</span
+          >
+        </a>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Независимый обзор для игроков из России: интерфейс, платежи, бонусы. По данным из открытых источников.
+        </p>
+      </div>
+      {
+        sections.map((s) => (
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">{s.title}</h3>
+            <ul class="space-y-2.5">
+              {s.links.map((l) => (
+                <li>
+                  <a href={l.href} class="text-sm text-gray-600 hover:text-cta-500 transition-colors">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-gray-200 space-y-4 text-xs text-gray-500 leading-relaxed">
+      <p>
+        <strong class="text-gray-700">По данным из открытых источников.</strong> Материалы носят информационный характер, не являются призывом к игре на деньги. 18+.
+      </p>
+      <p>
+        Азартные игры связаны с риском. Играйте ответственно, в рамках личного бюджета. На сайте есть партнёрские ссылки.
+      </p>
+      <p class="text-gray-400">&copy; {year} 1xbetsite.su. Все права защищены.</p>
+    </div>
+  </div>
+</footer>

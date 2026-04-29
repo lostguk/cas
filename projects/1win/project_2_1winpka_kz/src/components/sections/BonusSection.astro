@@ -1,0 +1,43 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const bonuses = [
+  { type: 'Спортивный бонус', value: '100%–500%', condition: 'Вейджер ×50, 30 дней', rating: '3.5/5' },
+  { type: 'Казино-бонус', value: '70 фриспинов', condition: 'Вейджер ×50, определённые слоты', rating: '3.0/5' },
+  { type: 'Фрибет', value: 'Бесплатная ставка', condition: 'Условия первого депозита', rating: '4.0/5' },
+];
+---
+
+<section class="py-16 lg:py-20 bg-void-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Бонус до 500% — условия и рейтинг</SectionHeading>
+
+    <div class="grid lg:grid-cols-5 gap-8 items-start">
+      <div class="lg:col-span-2">
+        <ImagePlaceholder description="3. Бонусы 1Win: подарочная коробка, монеты и процент на фиолетовом фоне" aspect="4/3" />
+      </div>
+      <div class="lg:col-span-3 space-y-4">
+        {bonuses.map((b) => (
+          <Card>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-semibold text-white">{b.type}</h3>
+              <span class="text-sm text-glow-400 font-medium">{b.rating}</span>
+            </div>
+            <div class="text-2xl font-bold text-glow-400/80 mb-2">{b.value}</div>
+            <p class="text-sm text-slate-400">{b.condition}</p>
+          </Card>
+        ))}
+        <p class="text-sm text-slate-400">Вейджер ×50 — один из высоких показателей в сегменте. Подробнее — в <a href="/akcii" class="text-glow-400 hover:text-glow-300">разборе акций и бонусов</a>.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <CTAButton href={affiliateLink} size="lg" external>Активировать бонусный пакет</CTAButton>
+    </div>
+  </div>
+</section>

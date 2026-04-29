@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const affiliateLink = '#';
+const title = 'Обзор 1xBet Россия — кто автор и зачем этот сайт';
+const description =
+  'Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках.';
+const canonical = 'https://1xbetsite.su/about';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: title,
+  description,
+  url: canonical,
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema} type="article">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О проекте' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8 text-center">О проекте</h1>
+
+      <div class="space-y-8 text-gray-700 leading-relaxed">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-3">Зачем этот сайт</h2>
+          <p>
+            Независимый обзор платформы 1xBet для игроков из России. Разбираем интерфейс, платежи, бонусы и подводные камни. Без обещаний «лёгких денег».
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-3">Как тестируем</h2>
+          <p>
+            Пополняем реальные счета, делаем ставки, выводим на Сбербанк и Тинькофф. Проверяем сроки, комиссии, работу поддержки.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-3">Про честность</h2>
+          <p>
+            На сайте есть партнёрские ссылки. Если перейдёте и зарегистрируетесь — мы можем получить вознаграждение. Это не влияет на объективность обзоров.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-3">Предупреждение</h2>
+          <p>
+            18+. Азартные игры связаны с рисками. Не ставьте больше чем можете потерять. Установите лимиты в личном кабинете.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <CTAButton href={affiliateLink} size="lg" external>Перейти на платформу</CTAButton>
+        <CTAButton href="/otkryt-schet" variant="outline" size="lg">Регистрация</CTAButton>
+      </div>
+
+      <div class="mt-8 text-sm text-gray-500 text-center">
+        <a href="/ustanovka" class="text-cta-500 hover:text-cta-600">Скачать</a> · <a href="/moj-profil" class="text-cta-500 hover:text-cta-600">Профиль</a> · <a href="/book-of-dead" class="text-cta-500 hover:text-cta-600">Book of Dead</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

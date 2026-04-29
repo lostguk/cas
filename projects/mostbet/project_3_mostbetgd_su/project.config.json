@@ -1,0 +1,48 @@
+{
+	"brand": "Mostbet",
+	"region": "RU",
+	"language": "ru",
+	"currency": "RUB",
+	"domain": "mostbetgd.su",
+	"affiliate_url": "#",
+	"color_preset": "charcoal-orange",
+	"visual_style": "sports-energy",
+	"content_format": "B",
+	"preset_number": 8,
+	"font": "Rubik",
+	"logo_type": "E",
+	"author": null,
+	"pages": [
+		"index",
+		"nachalo-raboty",
+		"mobile-app",
+		"slots-i-igry",
+		"podarki",
+		"lichnyy-kabinet",
+		"about"
+	],
+	"slot_pages": ["big-bass-splash", "reactoonz-2"],
+	"sections_order": [
+		"Hero",
+		"Overview",
+		"Slots",
+		"Bonus",
+		"Sports",
+		"Advantages",
+		"Payments",
+		"App",
+		"FAQ",
+		"CTA"
+	],
+	"seo": {
+		"primary_keyword": "mostbet россия",
+		"secondary_keywords": [
+			"мостбет скачать",
+			"мостбет регистрация",
+			"мостбет слоты",
+			"мостбет приложение"
+		],
+		"geo_target": "RU"
+	},
+	"noindex": false
+}

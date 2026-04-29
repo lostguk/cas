@@ -1,0 +1,94 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+const affiliateLink = '#';
+
+const reviewSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  itemReviewed: {
+    '@type': 'SoftwareApplication',
+    name: 'Sweet Bonanza',
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'Web',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'KZT' },
+  },
+  author: { '@type': 'Person', name: 'Серик Калиев', url: 'https://1winsl.kz/about' },
+  reviewRating: { '@type': 'Rating', ratingValue: '4.2', bestRating: '5' },
+  datePublished: '2026-02-20',
+};
+---
+
+<BaseLayout
+  title="Стоит ли играть в Sweet Bonanza? Обзор слота 2026"
+  description="Слот Sweet Bonanza от Pragmatic Play на 1Win KZ. RTP 96.48%, макс. ×21 175. Как играть и выигрывать."
+  schema={reviewSchema}
+  publishDate="2026-02-20"
+  updateDate="2026-03-25"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино', href: '/casino' }, { label: 'Sweet Bonanza' }]} />
+  <ArticleMeta publishDate="2026-02-20" updateDate="2026-03-25" />
+
+  <section class="py-8 lg:py-12">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h1 class="text-2xl sm:text-3xl font-heading font-bold text-cream-900 leading-snug mb-4">Sweet Bonanza — обзор слота от Pragmatic Play</h1>
+        <p class="text-cream-500">RTP 96.48% · Макс. выигрыш ×21 175 · Высокая волатильность</p>
+        <div class="mt-6">
+          <CTAButton href={affiliateLink} size="lg" external>Запустить слот бесплатно</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/sweet-bonanza.jpg"
+        alt="Слот Sweet Bonanza: конфеты и фрукты на игровом поле"
+        width="624"
+        height="351"
+        loading="eager"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-10"
+      />
+
+      <div class="space-y-8 text-cream-700 leading-relaxed">
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Обзор Sweet Bonanza</h2>
+          <p>
+            Sweet Bonanza от Pragmatic Play — один из самых популярных слотов в мире, и на 1Win он есть. Конфетная тема, 6 барабанов, система Tumble (выигрышные символы исчезают и на их место падают новые). RTP 96.48%, волатильность высокая — можно долго сидеть без выигрыша, а потом получить ×100+ за один спин.
+          </p>
+          <p class="mt-3">Максимальный выигрыш ×21 175 от ставки. Я такого конечно не ловил, но ×50-80 пару раз прилетало — и это приятно удивило.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Как играть</h2>
+          <p>
+            Собираешь 8+ одинаковых символов в любом месте поля — они исчезают и начислятся выигрыш. Ключевая фича — бонусная игра: 4+ скаттера запускают 10 фриспинов с множителями. Множители от ×2 до ×100 падают в виде конфет-бомб, и они суммируются. Тут-то и случаются большие выигрыши.
+          </p>
+          <p class="mt-3">Есть функция покупки бонуса за ×100 от ставки — сразу попадаешь в фриспины. Дорого, но иногда оправдывается. Я покупал раз пять — два раза вышел в плюс, три раза слил. Математика примерно такая.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Мой опыт</h2>
+          <p>
+            Закинул примерно тысяч 15 в Sweet Bonanza за всё время. Общий результат — минус где-то 3000 тенге. Не катастрофа, учитывая количество часов развлечения. Самый большой выигрыш был ×87 от ставки 100 ₸ — 8700 пришло, я аж подпрыгнул. Правда потом за следующие полчаса слил половину обратно.
+          </p>
+          <p class="mt-3">Совет — ставь маленькие ставки и не покупай бонус каждый раз. Так баланс живёт дольше. Ну и заходи в <a href="/casino" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">раздел казино</a> через приложение — удобнее чем с браузера.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Стоит ли играть</h2>
+          <p>
+            Если любишь яркие слоты с высокой волатильностью и готов к просадкам — да. Если предпочитаешь стабильные небольшие выигрыши — лучше попробуй <a href="/coin-strike" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">Coin Strike</a>, он менее агрессивный. Sweet Bonanza — это эмоции и адреналин, но математически дом всегда в плюсе.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-rose-50 border border-violet-100">
+        <h2 class="text-lg font-heading font-bold text-cream-900 mb-2">Попробуйте сами</h2>
+        <p class="text-sm text-cream-600 mb-5">Демо-режим доступен без регистрации.</p>
+        <CTAButton href={affiliateLink} external>Крутить Sweet Bonanza</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

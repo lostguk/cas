@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const affiliateLink = '#';
+const siteUrl = 'https://1xbts.kz';
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'О портале 1xbts.kz',
+  url: `${siteUrl}/about`,
+  description: 'Информационный портал о букмекерской конторе 1xBet для казахстанских пользователей.',
+};
+---
+
+<BaseLayout
+  title="Обзор 1xBet Казахстан — кто автор и зачем этот сайт"
+  description="Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках."
+  schema={aboutSchema}
+  publishDate="2026-01-10"
+  updateDate="2026-04-05"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О портале' }]} />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-8 text-center">О портале 1xbts.kz</h1>
+
+      <div class="space-y-8 text-gray-300 leading-relaxed">
+        <div>
+          <h2 class="text-xl font-heading font-bold text-amber-400 mb-3">О редакции</h2>
+          <p>Портал 1xbts.kz — информационный ресурс, посвящённый обзору букмекерской конторы 1xBet для аудитории из Казахстана. Материалы подготовлены редакционной командой на основе анализа открытых источников, пользовательских отзывов и тестирования функционала платформы.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-amber-400 mb-3">Цель проекта</h2>
+          <p>Задача портала — предоставить структурированную и актуальную информацию о возможностях платформы 1xBet: регистрации, пополнении счёта в тенге, бонусной программе, мобильном приложении и способах обхода блокировок. Материалы ориентированы на казахстанских пользователей и учитывают местную специфику — банки (Kaspi, Halyk, Jusan), провайдеры, валюту KZT.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-amber-400 mb-3">Методология</h2>
+          <p>Информация верифицируется через реальное тестирование: пополнение счёта, размещение ставок, проверка сроков вывода, установка мобильного приложения на различных устройствах. Данные о коэффициентах, RTP слотов и условиях бонусов сверяются с официальными источниками.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-amber-400 mb-3">Партнёрские ссылки</h2>
+          <p>Портал содержит партнёрские ссылки на 1xBet. Это означает, что при переходе и регистрации по указанным ссылкам редакция получает комиссионное вознаграждение. Наличие партнёрской программы не влияет на содержание обзоров — недостатки платформы освещаются наравне с достоинствами.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-amber-400 mb-3">Обновление информации</h2>
+          <p>Материалы обновляются по мере изменения условий платформы. Дата последнего обновления указана на каждой странице. Для получения актуальных данных рекомендуется сверяться с <a href="/onlajn-kazino" class="text-amber-400 hover:text-amber-300">обзором казино</a>, <a href="/ustanovka" class="text-amber-400 hover:text-amber-300">инструкцией по установке</a> и <a href="/rabochij-sajt" class="text-amber-400 hover:text-amber-300">разделом о рабочем доступе</a>.</p>
+        </div>
+
+        <div class="bg-amber-500/5 border border-amber-500/10 rounded-xl p-6">
+          <h2 class="text-xl font-heading font-bold text-amber-400 mb-3">Предупреждение</h2>
+          <p class="text-gray-400">21+. Азартные игры связаны с финансовыми рисками и могут вызывать зависимость. Никогда не ставьте больше, чем можете позволить себе потерять. Букмекерская деятельность регулируется законодательством Республики Казахстан. Портал не является официальным ресурсом 1xBet, не принимает ставки и не проводит финансовых операций.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

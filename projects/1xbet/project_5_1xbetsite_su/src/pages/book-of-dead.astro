@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+const title = 'Book of Dead — обзор слота и демо на 1xBet | 2026';
+const description =
+  "Book of Dead — обзор слота от Play'n GO. RTP 96.21%, множитель ×5 000. Демо и реальная игра на 1xBet.";
+const canonical = 'https://1xbetsite.su/book-of-dead';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'Game',
+      name: 'Book of Dead',
+      gameLocation: { '@type': 'VirtualLocation', url: canonical },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4', bestRating: '5' },
+    author: { '@type': 'Organization', name: '1xbetsite.su' },
+    reviewBody: description,
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  type="article"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Слоты', href: '/igrovye-avtomaty' },
+      { label: 'Book of Dead' },
+    ]}
+  />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-sm font-semibold text-cta-500 mb-2">Play'n GO · RTP 96.21%</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Book of Dead</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Классика египетской тематики. Рич Уайлд ищет сокровища, расширяющиеся символы в бонусе. Максимум ×5 000.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Испытать удачу</CTAButton>
+      </div>
+
+      <ImagePlaceholder description="Слот Book of Dead: Египет, фараоны и Книга Мёртвых" aspect="16/9" class="mb-10" />
+
+      <div class="grid sm:grid-cols-3 gap-4 mb-10 text-center">
+        <Card class="py-4">
+          <div class="text-xs text-gray-500 uppercase">RTP</div>
+          <div class="text-xl font-bold text-gray-900">96.21%</div>
+        </Card>
+        <Card class="py-4">
+          <div class="text-xs text-gray-500 uppercase">Макс.</div>
+          <div class="text-xl font-bold text-gray-900">×5 000</div>
+        </Card>
+        <Card class="py-4">
+          <div class="text-xs text-gray-500 uppercase">Провайдер</div>
+          <div class="text-xl font-bold text-gray-900">Play'n GO</div>
+        </Card>
+      </div>
+
+      <div class="space-y-6 text-gray-700 mb-10">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-3">Обзор</h2>
+          <p>
+            Book of Dead — один из самых известных слотов в мире. Сетка 5×3, 10 линий. Книга работает как wild и scatter одновременно. Высокая волатильность, но бонус приходит стабильнее чем кажется.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-3">Как играть</h2>
+          <p>
+            3 книги запускают 10 фриспинов. Случайный символ становится расширяющимся — заполняет весь барабан. Если выпадает Рич Уайлд — потенциал раунда взлетает. Можно играть с покупкой бонуса.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900 mb-3">Стоит ли играть</h2>
+          <p>
+            Идеален для знакомства с «книжными» слотами. Менее агрессивный чем <a href="/dead-or-alive-2" class="text-cta-500 hover:text-cta-600 underline">Dead or Alive 2</a>, но с хорошим потенциалом. Рекомендуем попробовать в демо.
+          </p>
+        </div>
+      </div>
+
+      <div class="rounded-xl bg-gray-50 p-4 text-sm text-gray-500 mb-8">
+        18+. Играйте ответственно. Ознакомьтесь с <a href="/privetstvennye-bonusy" class="text-cta-500 hover:text-cta-600">условиями бонусов</a>.
+      </div>
+
+      <div class="text-center">
+        <CTAButton href={affiliateLink} size="lg" external>Играть на 1xBet</CTAButton>
+      </div>
+
+      <div class="mt-8 text-sm text-gray-500 text-center">
+        <a href="/igrovye-avtomaty" class="text-cta-500 hover:text-cta-600">Все слоты</a> · <a href="/dead-or-alive-2" class="text-cta-500 hover:text-cta-600">Dead or Alive 2</a> · <a href="/big-bass-bonanza" class="text-cta-500 hover:text-cta-600">Big Bass Bonanza</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

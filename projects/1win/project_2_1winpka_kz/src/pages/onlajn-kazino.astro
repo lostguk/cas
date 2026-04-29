@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const topSlots = [
+  { name: 'Gates of Olympus', provider: 'Pragmatic Play', rtp: '96.50%', rating: '4.5/5' },
+  { name: 'Sweet Bonanza', provider: 'Pragmatic Play', rtp: '96.51%', rating: '4.4/5' },
+  { name: 'Rocket Queen', provider: '1Win Games', rtp: '96.20%', rating: '4.2/5' },
+  { name: 'Lucky Jet', provider: 'Spribe', rtp: '97.00%', rating: '4.0/5' },
+  { name: 'Speed Cash', provider: 'SmartSoft Gaming', rtp: '96.10%', rating: '3.8/5' },
+];
+---
+
+<BaseLayout
+  title="Какие слоты есть на 1Win? Обзор казино КЗ 2026"
+  description="Казино 1Win КЗ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в тенге, выводи на Kaspi."
+  publishDate="2026-02-10"
+  updateDate="2026-04-03"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Онлайн-казино' }]} />
+  <ArticleMeta publishDate="2026-02-10" updateDate="2026-04-03" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Казино 1Win — слоты, рулетка и live-дилеры</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">12 000+ игр, четыре основных провайдера. Аналитический разбор каталога.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Играть с бонусом</CTAButton>
+          <CTAButton href="/sozdat-akkaunt" variant="secondary" size="lg">Создать аккаунт</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Казино 1Win: интерфейс каталога слотов на фиолетовом фоне" aspect="16/7" class="mb-12" />
+
+      <div class="space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Обзор казино</h2>
+        <p>Каталог заявлен на 12 000+ позиций — по факту, если убрать дубликаты и неработающие тайтлы, реальное число ближе к 8-9 тысячам. Четыре ключевых провайдера: Pragmatic Play (основной пул слотов), Spribe (краш-игры), SmartSoft Gaming (быстрые игры), и 1Win Games — собственная студия с эксклюзивами.</p>
+        <p>Фильтрация по провайдерам работает, по RTP — нет. Это минус: приходится гуглить RTP каждого слота отдельно. У конкурентов типа Mostbet фильтр по RTP есть. Если <a href="/dostup" class="text-glow-400 hover:text-glow-300">основной сайт заблокирован</a>, казино полностью доступно через приложение.</p>
+      </div>
+
+      <div class="mt-10">
+        <h2 class="text-2xl font-bold text-white mb-6">Популярные слоты — рейтинг</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-white/10">
+                <th class="text-left py-3 px-4 text-slate-400 font-medium">Слот</th>
+                <th class="text-left py-3 px-4 text-slate-400 font-medium">Провайдер</th>
+                <th class="text-left py-3 px-4 text-slate-400 font-medium">RTP</th>
+                <th class="text-left py-3 px-4 text-slate-400 font-medium">Оценка</th>
+              </tr>
+            </thead>
+            <tbody>
+              {topSlots.map((s) => (
+                <tr class="border-b border-white/5 hover:bg-white/[0.02]">
+                  <td class="py-3 px-4 text-white font-medium">{s.name}</td>
+                  <td class="py-3 px-4 text-slate-300">{s.provider}</td>
+                  <td class="py-3 px-4 text-slate-300">{s.rtp}</td>
+                  <td class="py-3 px-4 text-glow-400 font-medium">{s.rating}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-slate-400 mt-4">Детальные обзоры: <a href="/gates-of-olympus" class="text-glow-400 hover:text-glow-300">Gates of Olympus</a>, <a href="/rocket-queen" class="text-glow-400 hover:text-glow-300">Rocket Queen</a>.</p>
+      </div>
+
+      <div class="mt-12 space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Live-казино и краш-игры</h2>
+        <p>Lucky Jet, Aviator, Mines, Speed Cash, Crash — пять основных краш-игр. Lucky Jet от Spribe — наиболее популярная по данным <a href="/mobile-app" class="text-glow-400 hover:text-glow-300">мобильного приложения</a>. RTP заявлен 97%, но на коротких сессиях разброс значительный. Live-рулетка и блэкджек от Evolution тоже присутствуют.</p>
+
+        <h2 class="text-2xl font-bold text-white">Бонусы для казино</h2>
+        <p>70 фриспинов в рамках привитственного пакета. Вейджер ×50 — один из самых высоких в сегменте. Для сравнения: у Mostbet вейджер на казино-бонус ×40, у Pin-Up — ×35. По нашей оценке — 3/5, условия жёсткие. Подробнее в <a href="/akcii" class="text-glow-400 hover:text-glow-300">обзоре бонусов</a>.</p>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-glow-500/10 via-void-800 to-flash-500/5 border border-glow-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Попробовать каталог игр</h2>
+        <p class="text-slate-300 mb-6">12 000+ тайтлов, счёт в тенге, вывод на Kaspi.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Испытать удачу</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

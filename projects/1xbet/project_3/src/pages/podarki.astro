@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ArticleMeta from '../components/ArticleMeta.astro';
 import CTAButton from '../components/ui/CTAButton.astro';
-import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
 
 const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
 const title = '1xBet Бонусы — приветственный пакет для KZ | 2026';
@@ -27,7 +26,6 @@ const schema = {
   schema={schema}
   publishDate="2026-02-01"
   updateDate="2026-03-22"
-  noindex={true}
   type="article"
 >
   <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Подарки' }]} />
@@ -42,9 +40,13 @@ const schema = {
         <CTAButton href={affiliateLink} size="lg" external class="mt-8">Проверить акции</CTAButton>
       </div>
 
-      <ImagePlaceholder
-        description="Промо-баннер: подарочная лента, проценты бонуса и таймер акции"
-        class="mb-10"
+      <img
+        src="/images/promo-banner.png"
+        alt="Промо-баннер: бонусы и акции"
+        width="800"
+        height="450"
+        class="rounded-xl shadow-sm w-full"
+        loading="lazy"
       />
 
       <div class="space-y-5 text-gray-700 mb-12">

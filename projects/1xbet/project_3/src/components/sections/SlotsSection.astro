@@ -2,7 +2,6 @@
 import SectionHeading from '../ui/SectionHeading.astro';
 import Card from '../ui/Card.astro';
 import CTAButton from '../ui/CTAButton.astro';
-import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
 
 const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
 
@@ -15,6 +14,7 @@ const slots = [
     win: '×6 750',
     desc: 'Волатильность высокая: серии без бонуса выматывают. Когда ловишь фриспины — динамика резко меняется.',
     placeholder: 'Слот The Dog House: собаки и будки, весёлая тема',
+    image: '/images/slot-the-dog-house.png',
   },
   {
     href: '/sugar-rush-1000',
@@ -24,6 +24,7 @@ const slots = [
     win: '×25 000',
     desc: 'Каскады и множители дают редкие, но яркие пики. Не подходит тем, кто ждёт ровный график баланса.',
     placeholder: 'Слот Sugar Rush 1000: сладкая сетка и каскадные выигрыши',
+    image: '/images/slot-sugar-rush-1000.png',
   },
   {
     href: '/slots-i-igry',
@@ -33,6 +34,7 @@ const slots = [
     win: '—',
     desc: 'Фильтр по провайдеру спасает время. Демо есть у части игр — проверяйте кнопку «демо» до входа в аккаунт.',
     placeholder: 'Лобби казино: сетка превью слотов и фильтр по провайдерам',
+    image: '/images/casino-lobby.png',
   },
 ];
 ---
@@ -48,7 +50,14 @@ const slots = [
         slots.map((s) => (
           <Card class="flex flex-col">
             <a href={s.href} class="block mb-4 -mx-2">
-              <ImagePlaceholder description={s.placeholder} />
+              <img
+                src={s.image}
+                alt={s.placeholder}
+                width="400"
+                height="250"
+                class="w-full h-full object-cover rounded-t-xl"
+                loading="lazy"
+              />
             </a>
             <p class="text-xs font-semibold text-brand-600 uppercase tracking-wide mb-1">{s.provider}</p>
             <h3 class="text-xl font-bold text-gray-900 mb-2">{s.name}</h3>

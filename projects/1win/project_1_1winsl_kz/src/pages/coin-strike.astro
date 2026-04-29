@@ -1,0 +1,91 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+const affiliateLink = '#';
+
+const reviewSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  itemReviewed: {
+    '@type': 'SoftwareApplication',
+    name: 'Coin Strike',
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'Web',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'KZT' },
+  },
+  author: { '@type': 'Person', name: 'Серик Калиев', url: 'https://1winsl.kz/about' },
+  reviewRating: { '@type': 'Rating', ratingValue: '3.8', bestRating: '5' },
+  datePublished: '2026-03-01',
+};
+---
+
+<BaseLayout
+  title="Играть Coin Strike на 1Win Казахстан — обзор и RTP"
+  description="Coin Strike на 1Win: RTP 96.00%, бонусные раунды, волатильность. Честный обзор от жителя Казахстан 2026."
+  schema={reviewSchema}
+  publishDate="2026-03-01"
+  updateDate="2026-04-08"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино', href: '/casino' }, { label: 'Coin Strike' }]} />
+  <ArticleMeta publishDate="2026-03-01" updateDate="2026-04-08" />
+
+  <section class="py-8 lg:py-12">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h1 class="text-2xl sm:text-3xl font-heading font-bold text-cream-900 leading-snug mb-4">Coin Strike — обзор слота от SmartSoft</h1>
+        <p class="text-cream-500">RTP 96.00% · Макс. выигрыш ×2 580 · Средняя волатильность</p>
+        <div class="mt-6">
+          <CTAButton href={affiliateLink} size="lg" external>Испытать удачу</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/coin-strike.jpg"
+        alt="Слот Coin Strike: золотые монеты и игровой автомат"
+        width="624"
+        height="351"
+        loading="eager"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-10"
+      />
+
+      <div class="space-y-8 text-cream-700 leading-relaxed">
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Обзор Coin Strike</h2>
+          <p>
+            Coin Strike от SmartSoft — слот попроще чем Sweet Bonanza, но у него свои плюсы. RTP 96.00%, средняя волатильность — выигрыши прилетают чаще, но размер поменьше. Тема — золотые монеты, стиль аркадный. Максимальный множитель ×2 580 от ставки.
+          </p>
+          <p class="mt-3">SmartSoft вообще делает интересные игры — у них ещё Crash и Speed Cash есть на 1Win. Но Coin Strike мне нравится больше за предсказуемость (ну, насколько это вообще возможно в слотах).</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Как играть</h2>
+          <p>Механика простая — делаешь ставку, монеты падают на игровое поле. Собираешь комбинации и получаешь выигрыш. Бонусные раунды активируются через специальные символы — там множители побольше. Ничего сверхсложного, разберёшся за пару минут.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Мой опыт</h2>
+          <p>
+            Играл примерно неделю, закинул в сумме тысяч 8. Результат — плюс 2000 тенге. Не богатство, но хоть в минус не ушёл. Самый крупный выигрыш — ×34, что-то около 3400 тенге от ставки 100. Мелкие выигрыши прилетают часто — по 50-200 тенге, что держит баланс на плаву.
+          </p>
+          <p class="mt-3">Из минусов — графика простовата, без той конфетной яркости как у Sweet Bonanza. Но если важна математика а не визуал — Coin Strike интереснее для длительных сессий. Правда один раз баланс просел на 4000 за полчаса — бывает и такое, тут кому как.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Стоит ли играть</h2>
+          <p>
+            Если устал от агрессивных слотов которые сливают баланс за пять минут — да, попробуй. Для тех кто любит долгие сессии без резких просадок Coin Strike — хороший выбор. Если же хочется адреналина и больших множителей — лучше <a href="/sweet-bonanza" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">Sweet Bonanza</a>. Обе игры доступны в <a href="/casino" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">разделе казино</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-rose-50 border border-violet-100">
+        <h2 class="text-lg font-heading font-bold text-cream-900 mb-2">Проверьте сами</h2>
+        <p class="text-sm text-cream-600 mb-5">Демо-режим — без риска и без регистрации.</p>
+        <CTAButton href={affiliateLink} external>Играть в Coin Strike</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

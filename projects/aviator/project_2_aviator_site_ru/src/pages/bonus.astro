@@ -1,0 +1,158 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import FAQSection from '../components/sections/FAQSection.astro'
+import FinalCTASection from '../components/sections/FinalCTASection.astro'
+import Card from '../components/ui/Card.astro'
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro'
+import PromoBanner from '../components/ui/PromoBanner.astro'
+import StepsList from '../components/ui/StepsList.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const title = 'Бонусы Mostbet для игры в Aviator — до 125% и промокод MOSTAVIATOR';
+const description = 'Подробный разбор приветственного пакета Mostbet: бонус 125% до 35 000 ₽ на первые 4 депозита, промокод MOSTAVIATOR, кэшбэк, турниры Aviator. Условия отыгрыша, вейджер, советы.';
+
+const wagerSteps = [
+  { title: 'Сделайте первый депозит', body: 'Бонус начисляется автоматически при пополнении счёта от 200 ₽. Сумма бонуса = 125% от депозита, максимум 9 000 ₽ (то есть депозит до 9 000 ₽ даёт максимум).' },
+  { title: 'Изучите вейджер', body: 'Вейджер на бонус — x35. Это значит: чтобы перевести бонус на основной баланс, нужно сыграть в Aviator (или другие игры казино) на сумму = бонус × 35. Для бонуса 5 000 ₽ — оборот 135 000 ₽.' },
+  { title: 'Играйте на Aviator', body: 'Зачётность ставок на Aviator — 100%. Это значит: каждые 100 ₽ ставки полностью идут в выполнение вейджера. На некоторых других играх зачётность ниже (например, рулетка — 10%, блэкджек — 5%).' },
+  { title: 'Не превышайте лимит ставки', body: 'При активном бонусе максимальная ставка ограничена 500 ₽ за раунд. Если поставите больше — бонус сгорит. Это стандартное ограничение для всех онлайн-казино с бонусной программой.' },
+  { title: 'Завершите вейджер за 30 дней', body: 'На отыгрыш бонуса даётся 30 календарных дней с момента активации. Если не успели — оставшаяся часть бонуса автоматически списывается с баланса.' },
+];
+
+const faqItems = [
+  { q: 'Можно ли вывести приветственный бонус сразу?', a: 'Нет. До завершения вейджера x35 бонус находится на отдельном «бонусном балансе» и не выводится. После выполнения условий он переводится на основной баланс и становится обычными деньгами — их можно как продолжать играть, так и вывести по любому из доступных методов.' },
+  { q: 'Что произойдёт, если я не успею отыграть бонус за 30 дней?', a: 'Ровно через 30 дней с момента активации все нерастраченные бонусные средства автоматически списываются. Уже выигранные с использованием бонуса деньги — остаются у вас (если уже переведены на основной баланс). Поэтому важно либо успеть выполнить вейджер, либо честно использовать бонус для расширения банка без надежды на вывод.' },
+  { q: 'Работает ли бонус 125% при оплате криптовалютой?', a: 'Да. Все приветственные бонусы Mostbet работают одинаково при оплате через Сбербанк, Тинькофф, СБП, Visa/MC, ЮMoney, USDT, BTC, ETH. Главное условие — депозит от 200 ₽ (или эквивалент в крипте, ~5 USDT) в течение 7 минут после регистрации для максимального процента.' },
+  { q: 'Где и как ввести промокод MOSTAVIATOR?', a: 'Промокод вводится на этапе регистрации в специальном поле «Промокод» (внизу формы регистрации, под чекбоксом согласия с правилами). Если поле скрыто, нажмите «У меня есть промокод». Введите <strong>MOSTAVIATOR</strong> и нажмите «Применить» — увидите подтверждение, что код активирован. Бонус начислится автоматически после первого депозита.' },
+];
+---
+
+<BaseLayout title={title} description={description} type="article" publishDate="2026-02-04" updateDate="2026-04-23">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Бонусы Mostbet' }]} />
+
+  <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <ArticleMeta publishDate="2026-02-04" updateDate="2026-04-23" readingMinutes={8} />
+
+    <header class="mt-8 mb-10">
+      <p class="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-orange-300 bg-orange-500/10 border border-orange-500/30">
+        Промокод MOSTAVIATOR
+      </p>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+        Бонусы <span class="text-orange-400">Mostbet</span> для Aviator: до 125% за 4 депозита
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed max-w-3xl">
+        Полный разбор приветственного пакета Mostbet: <strong>бонус 125% до 35 000 ₽</strong> на первые четыре пополнения, промокод <strong>MOSTAVIATOR</strong>, ежедневные акции, турниры Aviator и условия отыгрыша вейджера x35.
+      </p>
+    </header>
+
+    <section class="mb-12">
+      <ImagePlaceholder description="1. Скриншот бонусной страницы Mostbet: четыре карточки депозитов с процентами 125% / 150% / 100% / 50%, общая сумма 35 000 ₽" aspect="16/9" />
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-5">Приветственный пакет: разбивка по депозитам</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <Card highlight>
+          <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">Депозит #1</p>
+          <h3 class="text-3xl font-extrabold text-white leading-none mb-2">+125%</h3>
+          <p class="text-sm text-orange-300 mb-2">до 9 000 ₽</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Максимальный процент. Активируется при депозите от 200 ₽ в течение 7 минут после регистрации.</p>
+        </Card>
+        <Card>
+          <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">Депозит #2</p>
+          <h3 class="text-3xl font-extrabold text-white leading-none mb-2">+150%</h3>
+          <p class="text-sm text-orange-300 mb-2">до 11 250 ₽</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Активируется автоматически при втором пополнении в течение 30 дней. Минимум 200 ₽.</p>
+        </Card>
+        <Card>
+          <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">Депозит #3</p>
+          <h3 class="text-3xl font-extrabold text-white leading-none mb-2">+100%</h3>
+          <p class="text-sm text-orange-300 mb-2">до 9 000 ₽</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Стандартное удвоение. Удобно использовать при любом следующем пополнении.</p>
+        </Card>
+        <Card>
+          <p class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">Депозит #4</p>
+          <h3 class="text-3xl font-extrabold text-white leading-none mb-2">+50%</h3>
+          <p class="text-sm text-orange-300 mb-2">до 3 500 ₽</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Завершающий бонус. Дальше работают другие акции — кэшбэк и турниры.</p>
+        </Card>
+      </div>
+      <p class="mt-5 text-sm text-slate-400">
+        Суммарно за четыре депозита — <strong class="text-white">до 35 000 ₽</strong> бонусных средств. Вейджер на весь пакет — <strong>x35</strong>, срок отыгрыша — 30 дней с момента активации.
+      </p>
+    </section>
+
+    <PromoBanner
+      imageNumber={2}
+      imageDescription="Промо-баннер: лестница из четырёх ступеней с процентами бонусов и финальной суммой 35 000 ₽"
+      headline="Активируйте промокод MOSTAVIATOR — и получите дополнительный фрибет 30 ₽"
+      body="При регистрации введите промокод MOSTAVIATOR в специальном поле формы — сверх обычного бонусного пакета вы получите фрибет 30 ₽ на Aviator, который засчитывается без вейджера."
+      primaryCta="Активировать промокод"
+      lastUsedMinutes={3}
+    />
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-5">Как отыграть вейджер x35 на Aviator</h2>
+      <p class="text-slate-300 leading-relaxed mb-6">
+        Вейджер — главное условие любого бонуса. Это сумма ставок, которую нужно сделать, прежде чем бонусные деньги переведутся на основной баланс. Для приветственного пакета Mostbet вейджер составляет x35 от суммы бонуса.
+      </p>
+      <StepsList steps={wagerSteps} />
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-5">Другие бонусы для игроков в Aviator</h2>
+      <div class="overflow-x-auto rounded-2xl border border-orange-500/15 bg-carbon-800/50">
+        <table class="w-full text-sm text-slate-200 min-w-[640px]">
+          <thead>
+            <tr class="bg-carbon-900/60 text-left">
+              <th class="px-5 py-3 font-bold text-white">Акция</th>
+              <th class="px-5 py-3 font-bold text-white">Размер</th>
+              <th class="px-5 py-3 font-bold text-white">Условия</th>
+              <th class="px-5 py-3 font-bold text-white">Вейджер</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-white/[0.04]"><td class="px-5 py-3 font-semibold">Кэшбэк по выходным</td><td class="px-5 py-3">до 30%</td><td class="px-5 py-3 text-slate-400">Возврат части проигрыша по итогам недели на казино</td><td class="px-5 py-3">x3</td></tr>
+            <tr class="border-t border-white/[0.04] bg-carbon-900/40"><td class="px-5 py-3 font-semibold">Турниры Aviator</td><td class="px-5 py-3">до 300 000 ₽</td><td class="px-5 py-3 text-slate-400">Призовой фонд еженедельных турниров среди игроков</td><td class="px-5 py-3">—</td></tr>
+            <tr class="border-t border-white/[0.04]"><td class="px-5 py-3 font-semibold">Express бонус</td><td class="px-5 py-3">+10–15%</td><td class="px-5 py-3 text-slate-400">К выигрышу экспрессов от 5 событий в спорт-разделе</td><td class="px-5 py-3">—</td></tr>
+            <tr class="border-t border-white/[0.04] bg-carbon-900/40"><td class="px-5 py-3 font-semibold">VIP кэшбэк</td><td class="px-5 py-3">до 25%</td><td class="px-5 py-3 text-slate-400">Для VIP-игроков с оборотом от 100 000 ₽ в месяц</td><td class="px-5 py-3">x1</td></tr>
+            <tr class="border-t border-white/[0.04]"><td class="px-5 py-3 font-semibold">«Колесо удачи»</td><td class="px-5 py-3">до 20 000 ₽</td><td class="px-5 py-3 text-slate-400">Ежедневное вращение бесплатно при наличии депозита от 500 ₽</td><td class="px-5 py-3">x10</td></tr>
+            <tr class="border-t border-white/[0.04] bg-carbon-900/40"><td class="px-5 py-3 font-semibold">Промокод MOSTAVIATOR</td><td class="px-5 py-3">+30 ₽</td><td class="px-5 py-3 text-slate-400">Фрибет на Aviator при регистрации с промокодом</td><td class="px-5 py-3">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <PromoBanner
+      imageNumber={3}
+      imageDescription="Промо-баннер: турнир Aviator на Mostbet, золотой кубок, призовой фонд 300 000 ₽, лидерборд из ТОП-10 игроков"
+      headline="Турниры Aviator — призовой фонд до 300 000 ₽ еженедельно"
+      body="Каждую неделю на Mostbet проходит турнир по Aviator: топ-100 игроков по обороту делят призовой фонд. Участие автоматическое — просто играйте в Aviator с обычными ставками."
+      primaryCta="Узнать о турнирах"
+      lastUsedMinutes={9}
+    />
+
+    <section class="mb-12 prose-aviator text-slate-300 leading-relaxed">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Что такое промокод MOSTAVIATOR и зачем он нужен</h2>
+      <p class="mb-4">
+        Промокод <strong>MOSTAVIATOR</strong> — это специальный код для читателей нашего сайта. При вводе на этапе регистрации он добавляет к стандартному приветственному пакету фрибет 30 ₽ на Aviator. Сумма небольшая, но удобная: фрибет используется без вейджера, выигрыш сразу можно вывести на основной баланс.
+      </p>
+      <p class="mb-4">
+        Промокод не работает «сам по себе» — без депозита фрибет не активируется. То есть схема такая: ввели промокод при регистрации → сделали первый депозит от 200 ₽ → автоматически получили основной бонус 125% + дополнительный фрибет 30 ₽ от промокода.
+      </p>
+      <p>
+        На сайте Mostbet также периодически появляются краткосрочные промокоды на турниры, дополнительные фриспины и кэшбэк. Следите за разделом «Акции» в личном кабинете — оператор отправляет уведомления о новых промокодах в Telegram-канал и через push-уведомления в приложении.
+      </p>
+    </section>
+
+    <FAQSection items={faqItems} title="Вопросы и ответы про бонусы Mostbet" />
+  </article>
+
+  <FinalCTASection
+    title='Готовы забрать <span class="text-orange-400">35 000 ₽</span> бонусов?'
+    body="Зарегистрируйтесь с промокодом MOSTAVIATOR, пополните счёт за 7 минут — и получите максимальный пакет 125% за четыре депозита."
+    rating="4.9/5"
+    cta="Получить бонус 125%"
+  />
+</BaseLayout>

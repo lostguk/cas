@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #fef8f0;
+  --color-primary-100: #fce9da;
+  --color-primary-200: #fad4b5;
+  --color-primary-300: #f7b891;
+  --color-primary-400: #f59e0b;
+  --color-primary-500: #d68f09;
+  --color-primary-600: #b37b08;
+  --color-primary-700: #8f6007;
+  --color-primary-800: #6b4805;
+  --color-primary-900: #4a3103;
+  
+  --color-base-50: #f9fafb;
+  --color-base-100: #f3f4f6;
+  --color-base-200: #e5e7eb;
+  --color-base-300: #d1d5db;
+  --color-base-400: #9ca3af;
+  --color-base-500: #6b7280;
+  --color-base-600: #4b5563;
+  --color-base-700: #374151;
+  --color-base-800: #1f2937;
+  --color-base-900: #111318;
+  --color-base-950: #030712;
+  
+  --color-secondary-50: #fefce8;
+  --color-secondary-100: #fffbcc;
+  --color-secondary-200: #fff999;
+  --color-secondary-300: #ffef66;
+  --color-secondary-400: #ffe633;
+  --color-secondary-500: #84cc16;
+  --color-secondary-600: #65a30d;
+  --color-secondary-700: #4d7c0f;
+  --color-secondary-800: #3f6212;
+  --color-secondary-900: #365314;
+  
+  --font-sans: "Rubik", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-base-950 text-slate-200 font-sans leading-relaxed;
+  }
+
+  ::selection {
+    @apply bg-primary-500 text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-white;
+  }
+
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
+  h2 { @apply text-2xl md:text-3xl lg:text-4xl; }
+  h3 { @apply text-xl md:text-2xl; }
+
+  a {
+    @apply text-primary-400 hover:text-primary-300 transition-colors;
+  }
+
+  button {
+    @apply font-medium transition-all duration-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-primary-500/30 transition-all;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 text-white border border-white/20 px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all;
+  }
+
+  .card {
+    @apply bg-white/[0.03] border border-white/[0.08] rounded-2xl p-6 backdrop-blur-sm hover:bg-white/[0.05] transition-colors;
+  }
+
+  .section {
+    @apply py-16 lg:py-20 px-4 md:px-6;
+  }
+
+  .container {
+    @apply max-w-6xl mx-auto;
+  }
+}

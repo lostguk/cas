@@ -1,0 +1,10 @@
+---
+const { label = "Получить бонус", href = "#" } = Astro.props
+---
+
+<button
+  class="btn-primary inline-block"
+  onclick={`window.location.href='${href}'`}
+>
+  {label}
+</button>

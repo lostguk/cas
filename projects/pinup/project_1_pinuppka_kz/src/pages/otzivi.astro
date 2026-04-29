@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="Отзывы игроков о PinUp Casino | Казахстан"
+  description="Реальные отзывы игроков о PinUp Casino. Читайте опыт других, смотрите рейтинги и оценки."
+>
+  <section class="container-section">
+    <div class="container-inner">
+      <h1 class="text-5xl font-bold text-white mb-4 text-center">Отзывы игроков</h1>
+      <div class="flex items-center justify-center gap-2 mb-12">
+        <div class="text-4xl font-bold gradient-text">4.9</div>
+        <div class="flex gap-1">{'⭐'.repeat(5)}</div>
+        <p class="text-slate-400">на основе 15,000+ отзывов</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            name: 'Руслан К.',
+            city: 'Алматы',
+            rating: 5,
+            text: 'Отличное казино! Вывел 250,000 тенге на Kaspi за 7 минут. Поддержка очень вежливая, помогли с верификацией.',
+            date: '3 дня назад'
+          },
+          {
+            name: 'Маша П.',
+            city: 'Астана',
+            rating: 5,
+            text: 'Впервые попробовала играть онлайн. Приложение очень удобное, быстро разобралась. Получила свой первый выигрыш!',
+            date: '5 дней назад'
+          },
+          {
+            name: 'Артём В.',
+            city: 'Актау',
+            rating: 5,
+            text: 'Надёжная платформа. Играю 2 года, никаких проблем с выводом денег. Лучшая подборка слотов из всех казино.',
+            date: '1 неделю назад'
+          },
+          {
+            name: 'Лена С.',
+            city: 'Темиртау',
+            rating: 5,
+            text: 'Спасибо за быстрый вывод! Много попробовала казино, здесь самое щедрое для новичков. Рекомендую!',
+            date: '1 неделю назад'
+          },
+          {
+            name: 'Коля Т.',
+            city: 'Караганда',
+            rating: 5,
+            text: 'Лучшее мобильное приложение из всех казино. Нет лагов, быстро загружается, интерфейс топ.',
+            date: '2 недели назад'
+          },
+          {
+            name: 'Дарья М.',
+            city: 'Костанай',
+            rating: 5,
+            text: 'Верификация прошла мгновенно. Получила приветственный бонус и уже выиграла 150,000 ₸. Спасибо PinUp!',
+            date: '2 недели назад'
+          }
+        ].map((review) => (
+          <div class="card">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h3 class="text-white font-bold">{review.name}</h3>
+                <p class="text-slate-400 text-sm">{review.city}</p>
+              </div>
+              <div class="flex gap-0.5">
+                {'⭐'.repeat(review.rating)}
+              </div>
+            </div>
+            <p class="text-slate-300 mb-4">{review.text}</p>
+            <p class="text-slate-500 text-xs">{review.date}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 bg-gradient-to-r from-amber-500/10 to-lime-400/10 border border-amber-500/20 rounded-2xl p-8 text-center">
+        <h2 class="text-2xl font-bold text-white mb-4">Остались вопросы?</h2>
+        <p class="text-slate-300 mb-6">Свяжитесь с нашей поддержкой 24/7. Мы ответим вам за минуты!</p>
+        <button class="btn-primary">Открыть живой чат</button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

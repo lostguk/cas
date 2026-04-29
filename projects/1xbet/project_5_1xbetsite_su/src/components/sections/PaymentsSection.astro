@@ -1,0 +1,70 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const methods = [
+  {
+    title: 'Сбербанк / Тинькофф / Альфа',
+    text: 'Карты и переводы российских банков. Пополнение мгновенно, вывод 1–24 часа.',
+  },
+  {
+    title: 'СБП и ВТБ',
+    text: 'Система быстрых платежей — зачисление за секунды, без комиссии площадки.',
+  },
+  {
+    title: 'Криптовалюта (USDT)',
+    text: 'TRC20, без комиссии платформы. Зачисление 15–30 мин.',
+  },
+];
+
+const rows = [
+  { method: 'Сбербанк', inp: 'Мгновенно', out: '1–24 часа', min: '100 ₽' },
+  { method: 'Тинькофф', inp: 'Мгновенно', out: '1–24 часа', min: '100 ₽' },
+  { method: 'СБП', inp: 'Секунды', out: '1–12 часов', min: '100 ₽' },
+  { method: 'USDT (TRC20)', inp: '15–30 мин', out: '15–30 мин', min: '~500 ₽' },
+];
+---
+
+<section class="py-16 lg:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Пополнение и вывод в рублях</SectionHeading>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      {
+        methods.map((m) => (
+          <Card>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">{m.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{m.text}</p>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="overflow-x-auto rounded-xl bg-white shadow-xl">
+      <table class="min-w-full text-sm text-left">
+        <thead class="bg-gray-50 text-gray-700 font-semibold border-b border-gray-200">
+          <tr>
+            <th class="px-4 py-3">Метод</th>
+            <th class="px-4 py-3">Пополнение</th>
+            <th class="px-4 py-3">Вывод</th>
+            <th class="px-4 py-3">Минимум</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          {
+            rows.map((r) => (
+              <tr class="hover:bg-gray-50/80">
+                <td class="px-4 py-3 text-gray-800 font-medium">{r.method}</td>
+                <td class="px-4 py-3 text-gray-600">{r.inp}</td>
+                <td class="px-4 py-3 text-gray-600">{r.out}</td>
+                <td class="px-4 py-3 text-gray-600">{r.min}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center mt-10">
+      <CTAButton href="#" size="lg" external>Пополнить счёт</CTAButton>
+    </div>
+  </div>
+</section>

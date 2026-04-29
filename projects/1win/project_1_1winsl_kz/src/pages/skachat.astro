@@ -1,0 +1,120 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+const affiliateLink = '#';
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Скачать 1Win — APK для Android и iPhone',
+  description: 'Как скачать и установить приложение 1Win на Android и iOS.',
+  step: [
+    { '@type': 'HowToStep', name: 'Перейдите на сайт', text: 'Откройте сайт 1Win через зеркало' },
+    { '@type': 'HowToStep', name: 'Скачайте APK', text: 'Нажмите кнопку скачивания для Android' },
+    { '@type': 'HowToStep', name: 'Установите', text: 'Разрешите неизвестные источники и установите' },
+    { '@type': 'HowToStep', name: 'Войдите', text: 'Залогиньтесь или создайте аккаунт' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Скачать 1Win Казахстан — APK для Android бесплатно"
+  description="Как скачать 1Win в Казахстан: APK для Android, инструкция для iPhone. Рабочая ссылка 2026."
+  schema={howToSchema}
+  publishDate="2026-02-05"
+  updateDate="2026-03-28"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Скачать' }]} />
+  <ArticleMeta publishDate="2026-02-05" updateDate="2026-03-28" />
+
+  <section class="py-8 lg:py-12">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h1 class="text-2xl sm:text-3xl font-heading font-bold text-cream-900 leading-snug mb-4">Скачать 1Win — APK для Android и iPhone</h1>
+        <p class="text-cream-500">Инструкция по установке — проверено на Samsung и Huawei.</p>
+        <div class="mt-6">
+          <CTAButton href={affiliateLink} size="lg" external>Загрузить на Android</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/mokap.jpg"
+        alt="Мокап смартфона с интерфейсом приложения 1Win"
+        width="624"
+        height="351"
+        loading="eager"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-10"
+      />
+
+      <div class="space-y-8 text-cream-700 leading-relaxed">
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-4">Скачать на Android (APK)</h2>
+          <p class="mb-4">В Google Play приложения нет — это нормально, ни у одного букемкера нет. Скачиваешь апк напрямую с сайта:</p>
+          <ol class="space-y-3 mb-4">
+            <li class="flex gap-3 items-start">
+              <span class="w-7 h-7 rounded-full bg-violet-100 text-violet-600 text-sm font-bold flex items-center justify-center shrink-0">1</span>
+              <span>Открой сайт через рабочее зеркало</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-7 h-7 rounded-full bg-violet-100 text-violet-600 text-sm font-bold flex items-center justify-center shrink-0">2</span>
+              <span>Найди кнопку «Скачать» — она обычно в шапке сайта</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-7 h-7 rounded-full bg-violet-100 text-violet-600 text-sm font-bold flex items-center justify-center shrink-0">3</span>
+              <span>Разреши установку из неизвестных источников в настройках телефона</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-7 h-7 rounded-full bg-violet-100 text-violet-600 text-sm font-bold flex items-center justify-center shrink-0">4</span>
+              <span>Установи APK, и войди в свой аккаунт</span>
+            </li>
+          </ol>
+          <p>У меня на Samsung Galaxy A34 всё встало за минуту — весит мегабайт 40, не критично.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Установка на iOS</h2>
+          <p>На iPhone чуть сложнее — в App Store приложения нет. Заходишь через мобильный Safari на сайт, добавляешь на домашний экран как PWA. Работает норм, но не так удобно как нативное приложение. Ладно, это тема для отдельного разговора.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Обзор приложения</h2>
+          <p>
+            Приложение в целом летает — ставки, казино, пополнение через Kaspi, вывод. Уведомления приходят о результатах ставок. Минус — обновляеться вручную, нужно скачивать новую версию с сайта. И на старых телефонах бывает подтормаживает, знакомый с Караганды жаловался на своём Redmi 9.
+          </p>
+          <p class="mt-3">
+            Если нужен <a href="/bonus" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">приветственный пакет</a> — он работает и через апк. А про все <a href="/sweet-bonanza" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">слоты</a> тоже можно играть с телефона без проблем.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Системные требования</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-cream-200">
+                  <th class="text-left py-2 pr-4 font-semibold text-cream-700">Параметр</th>
+                  <th class="text-left py-2 pr-4 font-semibold text-cream-700">Android</th>
+                  <th class="text-left py-2 font-semibold text-cream-700">iOS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-cream-100"><td class="py-2 pr-4">Версия ОС</td><td class="py-2 pr-4">6.0+</td><td class="py-2">12.0+</td></tr>
+                <tr class="border-b border-cream-100"><td class="py-2 pr-4">Размер</td><td class="py-2 pr-4">~40 МБ</td><td class="py-2">PWA</td></tr>
+                <tr><td class="py-2 pr-4">RAM</td><td class="py-2 pr-4">2 ГБ+</td><td class="py-2">2 ГБ+</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-rose-50 border border-violet-100">
+        <h2 class="text-lg font-heading font-bold text-cream-900 mb-2">Установите и начните</h2>
+        <p class="text-sm text-cream-600 mb-5">APK проверен — скачивайте и пользуйтесь.</p>
+        <CTAButton href={affiliateLink} external>Установить приложение</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

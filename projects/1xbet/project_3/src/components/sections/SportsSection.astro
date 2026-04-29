@@ -1,7 +1,6 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
 import Card from '../ui/Card.astro';
-import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
 
 const cards = [
   {
@@ -36,9 +35,13 @@ const cards = [
           Я сравниваю не «кто круче букмекер», а насколько удобно ставить из Казахстана: язык, методы, скорость расчёта. Если матч отменён — смотрите правила возврата в оферте, там всё жёстко по пунктам.
         </p>
       </div>
-      <ImagePlaceholder
-        description="Спорт: стадион, табло и ночная подсветка арены для атмосферы линии"
-        aspect="16/10"
+      <img
+        src="/images/stadium-night.png"
+        alt="Ночной стадион с подсветкой"
+        width="800"
+        height="450"
+        class="rounded-xl shadow-sm w-full"
+        loading="lazy"
       />
     </div>
     <div class="grid sm:grid-cols-2 gap-6">

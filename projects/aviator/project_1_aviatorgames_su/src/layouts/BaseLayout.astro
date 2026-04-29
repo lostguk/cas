@@ -1,0 +1,83 @@
+---
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import SEOHead from '../components/SEOHead.astro'
+import '../styles/global.css'
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  type?: 'website' | 'article';
+  schema?: object;
+  publishDate?: string;
+  updateDate?: string;
+}
+
+const siteUrl = 'https://aviatorgames.su';
+const siteName = 'aviatorgames.su';
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  noindex = false,
+  type = 'website',
+  schema: extraSchema,
+  publishDate,
+  updateDate,
+} = Astro.props;
+
+const publisherSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteName,
+  url: siteUrl,
+};
+
+let merged: object[] = [publisherSchema];
+
+if (publishDate) {
+  merged.push({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: publishDate,
+    dateModified: updateDate ?? publishDate,
+    publisher: { '@type': 'Organization', name: siteName, url: siteUrl },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical ?? Astro.url.href },
+  });
+}
+
+if (extraSchema) {
+  merged = merged.concat(Array.isArray(extraSchema) ? extraSchema : [extraSchema]);
+}
+
+const finalSchema = merged.length === 1 ? merged[0] : merged;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <SEOHead
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      noindex={noindex}
+      type={type}
+      schema={finalSchema}
+    />
+  </head>
+  <body class="min-h-screen flex flex-col bg-abyss-900 text-white font-sans">
+    <Header />
+    <main class="flex-1 pt-16 lg:pt-20">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const androidSteps = [
+  { num: '01', title: 'Откройте сайт через зеркало', text: 'Основной домен может быть заблокирован Kcell — используйте актуальное зеркало или VPN для первого захода.' },
+  { num: '02', title: 'Разрешите установку из неизвестных источников', text: 'Настройки → Безопасность → Неизвестные источники. На Samsung A54 это занимает 10 секунд.' },
+  { num: '03', title: 'Скачайте и установите APK', text: 'Вес ~40 МБ. На среднем мобильном интернете (Altel, 30 Мбит) — полминуты.' },
+  { num: '04', title: 'Войдите или зарегистрируйтесь', text: 'Интерфейс приложения идентичен десктопной версии. Авторизация через логин/пароль или соцсети.' },
+];
+
+const iosSteps = [
+  { num: '01', title: 'Откройте App Store', text: 'Приложение доступно в казахстанском App Store — поиск по запросу «1Win».' },
+  { num: '02', title: 'Установите и откройте', text: 'Стандартная установка, автообновление через магазин.' },
+  { num: '03', title: 'Авторизуйтесь', text: 'Данные от аккаунта работают кросс-платформенно — один логин на все устройства.' },
+];
+
+const tableRows = [
+  ['Android', '6.0+', '~40 МБ', '2 ГБ'],
+  ['iOS', '14.0+', '~80 МБ', '2 ГБ'],
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Как скачать приложение 1Win',
+  description: 'Инструкция по установке 1Win APK на Android и iOS.',
+  step: androidSteps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.text,
+  })),
+};
+---
+
+<BaseLayout
+  title="Скачать 1Win Казахстан — APK для Android бесплатно"
+  description="Как скачать 1Win в Казахстан: APK для Android, инструкция для iPhone. Рабочая ссылка 2026."
+  schema={schema}
+  publishDate="2026-02-05"
+  updateDate="2026-04-01"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Приложение' }]} />
+  <ArticleMeta publishDate="2026-02-05" updateDate="2026-04-01" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Скачать 1Win — APK для Android и iPhone</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">Сравнение мобильных версий: Android APK vs iOS. Системные требования и процесс установки.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Скачать APK бесплатно</CTAButton>
+          <CTAButton href="/sozdat-akkaunt" variant="secondary" size="lg">Сначала зарегистрироваться</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Мокап смартфона с интерфейсом приложения 1Win на фиолетовом фоне" aspect="16/7" class="mb-12" />
+
+      <div class="space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Скачать на Android (APK)</h2>
+        <p>Google Play не размещает букмекерские приложения — это политика магазина, не проблема конкретной платформы. APK скачивается с официального сайта. Обновлять придётся вручную — обновляеться автоматически приложение не может.</p>
+      </div>
+
+      <div class="relative mt-8 space-y-0">
+        {androidSteps.map((step, i) => (
+          <div class="flex gap-6 pb-8 relative">
+            {i < androidSteps.length - 1 && <div class="absolute left-5 top-12 bottom-0 w-px bg-glow-500/20"></div>}
+            <div class="w-10 h-10 rounded-full bg-glow-500/15 border border-glow-500/30 flex items-center justify-center text-glow-400 text-sm font-bold shrink-0 relative z-10">
+              {step.num}
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-1">{step.title}</h3>
+              <p class="text-sm text-slate-300">{step.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Установка на iOS</h2>
+        <p>На iPhone проще — приложение есть в App Store для KZ-региона.</p>
+      </div>
+
+      <div class="relative mt-8 space-y-0">
+        {iosSteps.map((step, i) => (
+          <div class="flex gap-6 pb-8 relative">
+            {i < iosSteps.length - 1 && <div class="absolute left-5 top-12 bottom-0 w-px bg-glow-500/20"></div>}
+            <div class="w-10 h-10 rounded-full bg-flash-500/15 border border-flash-500/30 flex items-center justify-center text-flash-400 text-sm font-bold shrink-0 relative z-10">
+              {step.num}
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-1">{step.title}</h3>
+              <p class="text-sm text-slate-300">{step.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Обзор приложения</h2>
+        <p>Интерфейс повторяет десктопную версию почти полностью. Из плюсов — push-уведомления о результатах пари, быстрый доступ к <a href="/rocket-queen" class="text-glow-400 hover:text-glow-300">краш-играм вроде Rocket Queen</a>. Из минусов — на устройствах с 2 ГБ RAM прилжение может подтормаживать в live-разделе. <a href="/akcii" class="text-glow-400 hover:text-glow-300">Бонусы</a> активируются и в приложении.</p>
+
+        <h2 class="text-2xl font-bold text-white">Системные требования</h2>
+      </div>
+
+      <div class="overflow-x-auto mt-4">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="text-left py-3 px-4 text-slate-400 font-medium">ОС</th>
+              <th class="text-left py-3 px-4 text-slate-400 font-medium">Версия</th>
+              <th class="text-left py-3 px-4 text-slate-400 font-medium">Размер</th>
+              <th class="text-left py-3 px-4 text-slate-400 font-medium">RAM</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tableRows.map((row) => (
+              <tr class="border-b border-white/5 hover:bg-white/[0.02]">
+                <td class="py-3 px-4 text-white font-medium">{row[0]}</td>
+                <td class="py-3 px-4 text-slate-300">{row[1]}</td>
+                <td class="py-3 px-4 text-slate-300">{row[2]}</td>
+                <td class="py-3 px-4 text-glow-400">{row[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-glow-500/10 via-void-800 to-flash-500/5 border border-glow-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Установить приложение</h2>
+        <p class="text-slate-300 mb-6">APK для Android — 40 МБ, установка за 2 минуты.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Загрузить на Android</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

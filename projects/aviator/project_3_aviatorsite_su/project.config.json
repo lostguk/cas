@@ -1,0 +1,46 @@
+{
+	"site_type": "game",
+	"game": "Aviator",
+	"game_provider": "Spribe",
+	"brand": "1xBet",
+	"region": "RU",
+	"language": "ru",
+	"domain": "aviatorsite.su",
+	"affiliate_url": "#",
+	"color_preset": "navy-coral",
+	"visual_style": "premium-encyclopedia",
+	"content_format": "H",
+	"preset_number": 15,
+	"font": "Plus Jakarta Sans",
+	"logo_type": "C",
+	"pages": [
+		"index",
+		"kak-igrat",
+		"strategii",
+		"demo",
+		"signaly",
+		"skachat",
+		"bonus",
+		"about"
+	],
+	"sections_order": "fixed",
+	"seo": {
+		"primary_keyword": "aviator игра",
+		"secondary_keywords": [
+			"aviator онлайн",
+			"aviator стратегия",
+			"aviator на деньги",
+			"aviator 1xbet"
+		],
+		"geo_target": "RU"
+	},
+	"bonus": {
+		"primary_percent": 500,
+		"max_amount": "до 32 500 ₽",
+		"freespins": 70,
+		"first_n_deposits_total_percent": 500,
+		"wager": "x35",
+		"promo_code": "AVIATOR1XBET"
+	},
+	"noindex": false
+}

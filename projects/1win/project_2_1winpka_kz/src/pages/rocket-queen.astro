@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'SoftwareApplication',
+      name: 'Rocket Queen',
+      applicationCategory: 'GameApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'KZT' },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4.2', bestRating: '5' },
+    author: { '@type': 'Organization', name: 'Редакция 1winpka.kz' },
+  },
+];
+---
+
+<BaseLayout
+  title="Играть Rocket Queen на 1Win Казахстан — обзор и RTP"
+  description="Rocket Queen на 1Win: RTP 96.20%, бонусные раунды, волатильность. Честный обзор от жителя Казахстан 2026."
+  schema={schema}
+  publishDate="2026-03-01"
+  updateDate="2026-04-10"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино', href: '/onlajn-kazino' }, { label: 'Rocket Queen' }]} />
+  <ArticleMeta publishDate="2026-03-01" updateDate="2026-04-10" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Rocket Queen — обзор слота от 1Win Games</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">RTP 96.20%, макс. выигрыш ×10 000. Эксклюзив собственной студии.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Запустить Rocket Queen</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Слот Rocket Queen: космическая ракета с множителями на тёмном фоне" aspect="16/9" class="mb-12" />
+
+      <div class="grid sm:grid-cols-4 gap-4 mb-12">
+        <Card hover={false} class="text-center">
+          <div class="text-xs text-slate-400 mb-1">RTP</div>
+          <div class="text-xl font-bold text-glow-400">96.20%</div>
+        </Card>
+        <Card hover={false} class="text-center">
+          <div class="text-xs text-slate-400 mb-1">Макс. выигрыш</div>
+          <div class="text-xl font-bold text-flash-400">×10 000</div>
+        </Card>
+        <Card hover={false} class="text-center">
+          <div class="text-xs text-slate-400 mb-1">Провайдер</div>
+          <div class="text-xl font-bold text-white">1Win Games</div>
+        </Card>
+        <Card hover={false} class="text-center">
+          <div class="text-xs text-slate-400 mb-1">Оценка</div>
+          <div class="text-xl font-bold text-glow-400">4.2/5</div>
+        </Card>
+      </div>
+
+      <div class="space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Обзор Rocket Queen</h2>
+        <p>Краш-игра с космической тематикой от собственной студии платформы. По механике напоминает Aviator от Spribe, но визуально проработана интереснее — ракета, множители на экране, анимация взлёта. RTP заявлен 96.20%, волатильность высокая. Максимальный множитель ×10 000 — достижим, но крайне редко.</p>
+
+        <h2 class="text-2xl font-bold text-white">Как играть</h2>
+        <p>Ставка размещается до старта раунда. Ракета начинает подниматься — множитель растёт. Задача — нажать «забрать» до того, как ракета взорвётся. Чем дольше ждёшь — тем выше множитель, но и риск потери увеличивается. Можно ставить двумя ставками одновременно: одну забирать рано (×1.5-2), вторую держать до крупного множителя.</p>
+        <p>Раунды быстрые — 5-15 секунд. За час можно отыграть 200+ раундов. На подтормаживть начинает при слабом интернете — задержка в секунду может стоить ставки.</p>
+
+        <h2 class="text-2xl font-bold text-white">Практические данные</h2>
+        <p>За 100 раундов по 500 ₸ (50 000 ₸ оборота) средний возврат составил около 47 000 ₸ — примерно 94% при заявленном RTP 96.20%. Выборка маленькая, но на коротких сессиях дисперсия существенная. Крупнейший множитель за тестовую сессию — ×28, пришёлся на раунд где уже нажал «забрать» при ×4.</p>
+
+        <h2 class="text-2xl font-bold text-white">Стоит ли играть</h2>
+        <p>По совокупности параметров — 4.2/5. Из плюсов: быстрые раунды, понятная механика, эксклюзив платформы. Из минусов: высокая волатильность, зависимость от скорости интернета, RTP ниже чем у Lucky Jet (97%). Если предпочитаете слоты с бонус-раундами — посмотрите <a href="/gates-of-olympus" class="text-glow-400 hover:text-glow-300">Gates of Olympus</a>. Полный каталог — в <a href="/onlajn-kazino" class="text-glow-400 hover:text-glow-300">обзоре казино</a>.</p>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-glow-500/10 via-void-800 to-flash-500/5 border border-glow-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Попробовать Rocket Queen</h2>
+        <p class="text-slate-300 mb-6">Минимальная ставка — от 50 ₸ за раунд.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Крутить с фриспинами</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

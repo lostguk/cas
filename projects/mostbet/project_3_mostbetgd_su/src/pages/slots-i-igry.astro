@@ -1,0 +1,130 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import Card from '../components/ui/Card.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const affiliateLink = '#';
+const title = 'Какие слоты есть на Mostbet? Обзор казино РУ 2026';
+const description =
+  'Казино Mostbet РУ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в рубль, выводи на Сбербанк.';
+const canonical = 'https://mostbetgd.su/slots-i-igry';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'ru',
+};
+
+const topSlots = [
+  { name: 'Big Bass Splash', provider: 'Pragmatic Play', rtp: '96.71%', href: '/big-bass-splash' },
+  { name: 'Reactoonz 2', provider: "Play'n GO", rtp: '96.20%', href: '/reactoonz-2' },
+  { name: 'Gates of Olympus', provider: 'Pragmatic Play', rtp: '96.50%', href: '/slots-i-igry' },
+  { name: 'Sweet Bonanza', provider: 'Pragmatic Play', rtp: '96.51%', href: '/slots-i-igry' },
+  { name: 'Book of Dead', provider: "Play'n GO", rtp: '96.21%', href: '/slots-i-igry' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-01-20"
+  updateDate="2026-03-28"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Слоты и игры' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight mb-4">
+          Казино Mostbet — слоты, рулетка и live-дилеры
+        </h1>
+        <p class="text-lg text-slate-300">
+          Более 8 000 игр от ведущих провайдеров. Мы предлагаем удобную фильтрацию по RTP, волатильности и тематике.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Открыть казино</CTAButton>
+          <CTAButton href="/big-bass-splash" variant="outline" size="lg">Big Bass Splash</CTAButton>
+          <CTAButton href="/reactoonz-2" variant="outline" size="lg">Reactoonz 2</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/catalog-2.jpg"
+        alt="Лобби казино Mostbet: каталог слотов"
+        width="1200"
+        height="675"
+        loading="eager"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-10"
+      />
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Обзор казино</h2>
+      <div class="space-y-5 text-slate-300 mb-12">
+        <p>
+          Каталог Mostbet включает 8 000+ игр от Pragmatic Play, Spribe, NetEnt, Evolution Gaming и десятков других провайдеров. Наши клиенты играют в рублях и выводят на Сбербанк и Тинькофф без конвертации.
+        </p>
+        <p>
+          RTP в карточке слота — долгосрочный ориентир провайдера, а не гарантия результата в конкретной сессии. Рекомендуем начинать с демо-режима для знакомства с механикой. Информация о <a href="/nachalo-raboty" class="text-main-400 hover:text-main-300 underline underline-offset-2">регистрации</a> и <a href="/mobile-app" class="text-main-400 hover:text-main-300 underline underline-offset-2">мобильном приложении</a> — на соответствующих страницах.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Популярные слоты</h2>
+      <div class="space-y-4 mb-12">
+        {
+          topSlots.map((s) => (
+            <a href={s.href} class="flex items-center justify-between gap-4 rounded-lg bg-deep-700/60 border-l-4 border-main-500 p-5 hover:bg-deep-600/60 transition-colors">
+              <div>
+                <h3 class="text-lg font-bold text-white">{s.name}</h3>
+                <p class="text-sm text-slate-400">{s.provider}</p>
+              </div>
+              <span class="text-main-400 font-semibold shrink-0">RTP {s.rtp}</span>
+            </a>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Live-казино и краш-игры</h2>
+      <img
+        src="/images/lobbi.jpg"
+        alt="Live-казино и рулетка Mostbet на ноутбуке"
+        width="1200"
+        height="675"
+        loading="lazy"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-8"
+      />
+      <div class="space-y-5 text-slate-300 mb-12">
+        <p>
+          Aviator, Lucky Jet, JetX, Mines, Dice — краш-игры с моментальным результатом. Live-казино от Evolution Gaming: рулетка, блэкджек, баккара с живыми дилерами на русском языке.
+        </p>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Бонусы для казино</h2>
+      <div class="text-slate-300 leading-relaxed mb-10">
+        <p>
+          150 фриспинов при первом депозите — начисляются на определённые слоты. Вейджер ×60 на казино, срок отыгрыша 30 дней. Подробнее — на <a href="/podarki" class="text-main-400 hover:text-main-300 underline underline-offset-2">странице бонусов</a>. Информация о платформе — на странице <a href="/about" class="text-main-400 hover:text-main-300 underline underline-offset-2">о нас</a>.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <Card>
+          <h3 class="text-lg font-bold text-white mb-2">Демо-режим</h3>
+          <p class="text-sm text-slate-400">
+            Часть слотов доступна без регистрации. Позволяет изучить механику до реальных ставок.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="text-lg font-bold text-white mb-2">Лимиты</h3>
+          <p class="text-sm text-slate-400">
+            Минимальная ставка и потенциальный выигрыш указаны внутри каждой игры. Устанавливайте лимиты в кабинете.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

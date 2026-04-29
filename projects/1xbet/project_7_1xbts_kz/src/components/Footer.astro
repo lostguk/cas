@@ -1,0 +1,68 @@
+---
+const affiliateLink = '#';
+const year = new Date().getFullYear();
+
+const sections = [
+  {
+    title: 'Платформа',
+    links: [
+      { href: '/vhod', label: 'Личный кабинет' },
+      { href: '/ustanovka', label: 'Приложение' },
+      { href: '/rabochij-sajt', label: 'Рабочий доступ' },
+    ],
+  },
+  {
+    title: 'Игры и ставки',
+    links: [
+      { href: '/onlajn-kazino', label: 'Онлайн-казино' },
+      { href: '/gates-of-olympus', label: 'Gates of Olympus' },
+      { href: '/sugar-rush', label: 'Sugar Rush' },
+    ],
+  },
+  {
+    title: 'Информация',
+    links: [
+      { href: '/akcii', label: 'Бонусы и акции' },
+      { href: '/about', label: 'О портале' },
+    ],
+  },
+];
+---
+
+<div class="h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent mt-20"></div>
+<footer class="bg-obsidian-950 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-black font-heading font-bold text-xs">1x</div>
+          <span class="font-heading text-amber-400/80 text-sm">1xbts.kz</span>
+        </div>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Информационный портал о букмекерской конторе 1xBet для пользователей из Казахстана. Содержит партнёрские ссылки.
+        </p>
+      </div>
+      {sections.map((sec) => (
+        <div>
+          <h3 class="font-heading text-amber-400 text-sm mb-4 pb-2 border-b border-amber-500/10">
+            {sec.title}
+          </h3>
+          <ul class="space-y-2.5">
+            {sec.links.map((l) => (
+              <li>
+                <a href={l.href} class="text-sm text-gray-400 hover:text-amber-400 transition-colors duration-300">
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="mt-12 pt-8 border-t border-white/5 text-xs text-gray-600 space-y-2">
+      <p>21+. Азартные игры связаны с финансовыми рисками. Букмекерская деятельность регулируется законодательством Республики Казахстан.</p>
+      <p>Портал не принимает ставки и не проводит финансовых операций. Все права на торговые марки принадлежат их правообладателям.</p>
+      <p class="text-gray-500">© {year} 1xbts.kz</p>
+    </div>
+  </div>
+</footer>

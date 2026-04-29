@@ -1,0 +1,45 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const stats = [
+  { value: '50+', label: 'видов спорта' },
+  { value: '100 ₽', label: 'мин. депозит' },
+  { value: '100%', label: 'на первый депозит' },
+];
+---
+
+<section class="relative py-16 sm:py-20 lg:py-28 border-b-2 border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl">
+      <p class="inline-block px-4 py-1.5 border-2 border-cta-500 text-cta-400 text-xs font-mono uppercase tracking-wider mb-6">
+        Информационный обзор для России
+      </p>
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-black text-white leading-none uppercase tracking-tighter mb-6">
+        1xBet Россия — ставки + казино для РФ
+      </h1>
+      <p class="text-lg text-white/60 leading-relaxed mb-8 max-w-2xl">
+        Обзор 1xBet по данным из открытых источников. 50+ видов спорта, 10 000+ игр в казино, счёт в рублях. Информация собрана на основе публичных данных и отзывов пользователей.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <CTAButton href={affiliateLink} size="lg" external>ПОСЕТИТЬ ОФИЦИАЛЬНЫЙ САЙТ</CTAButton>
+        <CTAButton href="/sozdat-akkaunt" variant="secondary" size="lg">ИНФОРМАЦИЯ О РЕГИСТРАЦИИ</CTAButton>
+      </div>
+    </div>
+
+    <div class="border-2 border-white/10 bg-surface-400 p-6 lg:p-8">
+      <div class="grid grid-cols-3 gap-6 lg:gap-8">
+        {
+          stats.map((s) => (
+            <div class="border-l-2 border-cta-500 pl-4">
+              <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-cta-400 font-mono">{s.value}</div>
+              <div class="text-xs sm:text-sm text-white/40 mt-1 font-mono uppercase">{s.label}</div>
+            </div>
+          ))
+        }
+      </div>
+      <p class="text-xs text-white/30 mt-4 font-mono">💡 По данным из открытых источников. Для актуальной информации обращайтесь на официальный сайт.</p>
+    </div>
+  </div>
+</section>

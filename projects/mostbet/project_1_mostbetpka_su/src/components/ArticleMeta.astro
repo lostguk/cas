@@ -1,0 +1,29 @@
+---
+interface Props {
+  publishDate: string;
+  updateDate: string;
+}
+
+const { publishDate, updateDate } = Astro.props;
+
+const months = [
+  'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+  'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря',
+];
+
+const formatDate = (dateStr: string) => {
+  const d = new Date(dateStr);
+  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+};
+---
+
+<div class="max-w-2xl mx-auto px-4 sm:px-6 flex flex-wrap items-center gap-3 text-sm text-warm-400 pb-2">
+  <div class="w-9 h-9 rounded-full bg-accent-500/15 text-accent-700 font-semibold flex items-center justify-center text-xs">
+    ДС
+  </div>
+  <a href="/about" class="font-medium text-warm-700 hover:text-accent-600">Дмитрий Смирнов</a>
+  <span class="text-warm-300">|</span>
+  <time datetime={publishDate}>Опубликовано: {formatDate(publishDate)}</time>
+  <span class="text-warm-300">|</span>
+  <time datetime={updateDate}>Обновлено: {formatDate(updateDate)}</time>
+</div>

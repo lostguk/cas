@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+	--color-carbon-50: #f4f4f8;
+	--color-carbon-100: #e4e4ec;
+	--color-carbon-200: #c8c8d4;
+	--color-carbon-300: #8b8b9e;
+	--color-carbon-400: #555569;
+	--color-carbon-500: #353548;
+	--color-carbon-600: #25253b;
+	--color-carbon-700: #1d1d33;
+	--color-carbon-800: #15152a;
+	--color-carbon-900: #1a1a2e;
+	--color-carbon-950: #0e0e1c;
+
+	--color-orange-300: #fdba74;
+	--color-orange-400: #fb923c;
+	--color-orange-500: #f97316;
+	--color-orange-600: #ea580c;
+	--color-orange-700: #c2410c;
+
+	--color-sky-300: #7dd3fc;
+	--color-sky-400: #38bdf8;
+	--color-sky-500: #0ea5e9;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+	}
+	body {
+		background-color: var(--color-carbon-900);
+		color: #e2e8f0;
+		font-family: var(--font-sans);
+		line-height: 1.7;
+	}
+	::selection {
+		background-color: var(--color-orange-500);
+		color: #ffffff;
+	}
+	details > summary {
+		list-style: none;
+		cursor: pointer;
+	}
+	details > summary::-webkit-details-marker {
+		display: none;
+	}
+}
+
+@layer components {
+	.prose-aviator p {
+		margin-block: 0.85rem;
+	}
+	.prose-aviator strong {
+		color: #ffffff;
+	}
+}
+
+@keyframes aviator-pulse {
+	0%,
+	100% {
+		opacity: 0.45;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.05);
+	}
+}
+
+.animate-aviator-pulse {
+	animation: aviator-pulse 2.4s ease-in-out infinite;
+}

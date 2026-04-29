@@ -1,0 +1,175 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import FAQSection from '../components/sections/FAQSection.astro'
+import FinalCTASection from '../components/sections/FinalCTASection.astro'
+import Card from '../components/ui/Card.astro'
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro'
+import PromoBanner from '../components/ui/PromoBanner.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const title = 'Сигналы Aviator: разоблачение мифа о «гарантированных предсказаниях»';
+const description = 'Подробный разбор схемы сигналов Aviator: почему «предсказания множителей» в Telegram — мошенничество, как устроен алгоритм Provably Fair и почему предсказать раунд невозможно.';
+
+const scamPatterns = [
+  { icon: '📨', title: 'Telegram-каналы с «бесплатными сигналами»', body: 'Шесть-семь сообщений в день вида «через 30 секунд множитель 5×». Бесплатно, чтобы заманить. После 2-3 случайных совпадений — предложение «премиум-доступа за 5 000 ₽».' },
+  { icon: '🤖', title: '«ИИ-боты» с «99% точностью»', body: 'Сайты типа aviator-predictor.com обещают сложный нейросетевой анализ истории. На деле выводят случайные числа в красивой обёртке.' },
+  { icon: '📱', title: 'Мобильные приложения «Aviator Hack»', body: 'Apk-файлы с обещанием «взломать алгоритм». В лучшем случае — пустышка, в худшем — троян, ворующий пароли от банков.' },
+  { icon: '👤', title: 'Личные «коучи»', body: 'Telegram-аккаунты, предлагающие индивидуальные сигналы за подписку. После оплаты обычно блокируют клиента.' },
+];
+
+const algorithmSteps = [
+  { title: 'Серверный seed', body: 'Перед раундом сервер Mostbet/Spribe генерирует случайное 256-битное число и публикует его SHA-256 хэш. Хэш виден всем игрокам до старта раунда.' },
+  { title: 'Клиентский seed', body: 'Каждый игрок параллельно генерирует свой клиентский seed (это происходит в браузере или приложении). Этот seed нельзя предсказать со стороны сервера.' },
+  { title: 'Объединение', body: 'После приёма ставок сервер раскрывает свой seed. Финальный множитель раунда = функция(серверный_seed + сумма_всех_клиентских_seeds). Сервер физически не может изменить результат после старта.' },
+  { title: 'Верификация', body: 'После раунда любой игрок может взять серверный seed и хэш и проверить, что они соответствуют. Если хоть один бит не совпадает — это однозначное доказательство манипуляции.' },
+  { title: 'Публикация истории', body: 'Все хэши и seed предыдущих раундов сохраняются в открытом доступе. На основе истории невозможно «угадать» следующий раунд — каждый раунд использует свежий случайный seed.' },
+];
+
+const faqItems = [
+  { q: 'А я видел скриншоты с +125% за день по сигналам — это подделка?', a: 'Да, и это самый частый приём. Скриншоты делаются <strong>после</strong> уже сыгранных раундов: продавец сигналов смотрит ленту истории игры и подгоняет «предсказание» под уже произошедшее. Если бы алгоритм действительно ломался — Spribe и Mostbet обанкротились бы за неделю, потому что выплаты превысили бы депозиты.' },
+  { q: 'Может, какие-то сигналы всё же работают на коротких сериях?', a: 'На коротких сериях (5–10 раундов) случайные совпадения статистически возможны. При шансе угадать множитель «выше 1.5×» в 65% — три совпадения подряд = (0.65)³ = 27% вероятности. Это не работа алгоритма — это нормальная вероятность. Ровно так же три раза подряд может «не угадать» и тот же сигнал.' },
+  { q: 'Что делать, если я уже купил подписку на сигналы?', a: 'Прекратите играть по «сигналам» немедленно. Если оплата была через банковскую карту — обратитесь в банк с заявлением о возврате (chargeback). Через криптовалюту, к сожалению, вернуть деньги почти невозможно — анонимный получатель. Сообщите о канале в Роскомнадзор и в саму платформу Telegram (через кнопку «Сообщить о спаме»).' },
+  { q: 'А почему алгоритм Aviator вообще считается «честным»?', a: 'Алгоритм Provably Fair прошёл независимый аудит лаборатории <strong>BMM Testlabs</strong> по стандарту ISO/IEC 17025. Это та же лаборатория, что сертифицирует игры в реальных казино Лас-Вегаса. Кроме того, исходный код проверки публично доступен — любой программист может проверить корректность.' },
+];
+---
+
+<BaseLayout title={title} description={description} type="article" publishDate="2026-03-04" updateDate="2026-04-19">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Сигналы Aviator' }]} />
+
+  <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <ArticleMeta publishDate="2026-03-04" updateDate="2026-04-19" readingMinutes={8} />
+
+    <header class="mt-8 mb-10">
+      <p class="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-orange-300 bg-orange-500/10 border border-orange-500/30">
+        Расследование
+      </p>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+        Сигналы <span class="text-orange-400">Aviator</span>: миф или реальность?
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed max-w-3xl">
+        Telegram-каналы, мобильные приложения и «личные коучи» обещают <strong>гарантированно предсказывать множители</strong> в Aviator. Разбираем, почему все эти сигналы — мошенничество, и почему алгоритм игры технически невозможно предсказать.
+      </p>
+    </header>
+
+    <section class="mb-10">
+      <div class="rounded-2xl bg-orange-500/10 border border-orange-500/40 p-6 lg:p-8">
+        <div class="flex items-start gap-4">
+          <span class="text-3xl shrink-0">⚠️</span>
+          <div>
+            <h2 class="text-xl font-bold text-white mb-2">Главное в одной строке</h2>
+            <p class="text-slate-200 leading-relaxed">
+              <strong>Любые «сигналы» к Aviator — это мошенничество.</strong> Алгоритм игры использует криптографически защищённый случайный seed, который технически невозможно предсказать ни одному из существующих в мире методов. Все «успешные кейсы» — либо случайные совпадения, либо подделки скриншотов задним числом.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <ImagePlaceholder description="1. Скриншот фейкового Telegram-канала с «сигналами» Aviator: красные стрелки, обещания 99% точности, цены подписки" aspect="16/9" />
+    </section>
+
+    <section class="mb-12 prose-aviator text-slate-300 leading-relaxed">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Что такое «сигналы Aviator» и кто их продаёт</h2>
+      <p class="mb-4">
+        «Сигналы» — это сообщения в стиле «через 30 секунд будет множитель 5.5×» или «следующий раунд — забирайте на 2.3×». Их активно продают в Telegram, на сайтах-однодневках и через Instagram-рекламу. Целевая аудитория — новички, которые хотят быстро разбогатеть и пока не разобрались в том, как устроена игра.
+      </p>
+      <p>
+        Бизнес-модель скам-каналов: бесплатные «пробные» сигналы для первичного завоевания доверия (с подгонкой под уже случившиеся раунды), затем платная подписка от 3 000 ₽ до 50 000 ₽ за месяц. Учитывая, что только в русскоязычном сегменте Telegram таких каналов — десятки тысяч, индустрия продажи фейковых сигналов оценивается в десятки миллионов рублей в год.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-5">Четыре главные схемы развода</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {scamPatterns.map((p) => (
+          <Card>
+            <div class="text-3xl mb-3" aria-hidden="true">{p.icon}</div>
+            <h3 class="font-bold text-white text-base mb-2">{p.title}</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{p.body}</p>
+          </Card>
+        ))}
+      </div>
+    </section>
+
+    <PromoBanner
+      imageNumber={2}
+      imageDescription="Промо-баннер: красный самолётик с надписью «Лучший сигнал — стратегия и дисциплина», иллюстрация графика с устойчивым ростом"
+      headline="Не платите за «сигналы» — играйте на бонус 125% от Mostbet"
+      body="Любые сигналы — обман. Реальная польза приходит от правильно выбранной стратегии и грамотного управления банком. На Mostbet — приветственный бонус до 35 000 ₽ для тестирования любых подходов."
+      primaryCta="Получить реальный бонус"
+      lastUsedMinutes={6}
+    />
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-5">Как на самом деле работает алгоритм Aviator</h2>
+      <p class="text-slate-300 leading-relaxed mb-6">
+        Aviator использует технологию <strong>Provably Fair</strong> на основе криптографических хэшей. Это значит — каждый раунд можно проверить математически. Вот как формируется итоговый множитель:
+      </p>
+      <ol class="space-y-5">
+        {algorithmSteps.map((step, i) => (
+          <li class="flex gap-4 items-start">
+            <span class="shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-extrabold text-sm bg-orange-500/15 text-orange-300 border border-orange-500/40" aria-hidden="true">{i + 1}</span>
+            <div class="flex-1 min-w-0 pt-1">
+              <h4 class="font-bold text-white text-base sm:text-lg mb-1.5">{step.title}</h4>
+              <p class="text-sm sm:text-base text-slate-300 leading-relaxed">{step.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="mb-12 prose-aviator text-slate-300 leading-relaxed">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Почему предсказать невозможно — простыми словами</h2>
+      <p class="mb-4">
+        SHA-256 — это математическая функция, которая превращает любой текст в строку из 64 символов. Особенность: чтобы найти исходный текст по хэшу, нужно перебрать в среднем 2²⁵⁶ комбинаций. Это число настолько огромное, что даже все компьютеры мира, работая в течение миллиардов лет, не смогут перебрать малую часть.
+      </p>
+      <p class="mb-4">
+        В Aviator серверный seed скрыт за хэшем до момента старта раунда. Пока раунд идёт — никто, включая сотрудников Spribe, не знает финальный множитель. После раунда seed раскрывается, и любой игрок может убедиться, что хэш совпадает.
+      </p>
+      <p>
+        Если кто-то утверждает, что «может предсказать» множитель — это означает, что он либо нашёл способ взломать SHA-256 (тогда он бы получил Нобелевскую премию по математике, а не продавал сигналы за 5 000 ₽), либо обманывает.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-5">Что работает вместо сигналов</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <Card highlight>
+          <h3 class="font-bold text-white text-base mb-2">📈 Рабочая стратегия</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Стратегия 1.5× с авто-кэшаутом, две одновременные ставки, дисциплина банкролла. Подробно — на странице <a href="/strategii" class="text-orange-300 hover:text-orange-200 underline decoration-orange-500/40 underline-offset-2">стратегий</a>.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="font-bold text-white text-base mb-2">🎓 Демо-режим</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Бесплатный <a href="/demo" class="text-orange-300 hover:text-orange-200 underline decoration-orange-500/40 underline-offset-2">демо Aviator</a> — научитесь играть без риска для бюджета.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="font-bold text-white text-base mb-2">🎁 Реальный бонус</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Приветственный <a href="/bonus" class="text-orange-300 hover:text-orange-200 underline decoration-orange-500/40 underline-offset-2">бонус 125% на Mostbet</a> увеличивает банк в 6 раз — это намного полезнее любого сигнала.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="font-bold text-white text-base mb-2">⏸ Дисциплина</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Лимиты на день, перерывы после серии проигрышей, фиксация прибыли — гораздо важнее любых «секретных систем».
+          </p>
+        </Card>
+      </div>
+    </section>
+
+    <FAQSection items={faqItems} title="Вопросы и ответы про сигналы Aviator" />
+  </article>
+
+  <FinalCTASection
+    title='Не верьте сигналам — <span class="text-orange-400">верьте дисциплине</span>'
+    body="Реальные деньги в Aviator делаются за счёт стратегии и грамотного управления банком — не за счёт волшебных предсказаний. Бонус 125% на Mostbet помогает начать в правильных условиях."
+    rating="4.9/5"
+    cta="Играть честно на Mostbet"
+  />
+</BaseLayout>

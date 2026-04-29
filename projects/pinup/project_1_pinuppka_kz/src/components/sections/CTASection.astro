@@ -1,0 +1,74 @@
+---
+import CTAButton from '../ui/CTAButton.astro'
+
+const affiliateLink = '#'
+---
+
+<section class="container-section bg-gradient-to-r from-amber-500/10 to-obsidian-950">
+  <div class="container-inner">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+          Готовы начать?
+        </h2>
+        <p class="text-slate-300 text-lg mb-6">
+          Присоединяйтесь к тысячам счастливых игроков в Казахстане. Простая регистрация займет не более 2 минут.
+        </p>
+        <div class="bg-white/[0.03] border border-white/[0.06] rounded-lg p-4 mb-8">
+          <p class="text-amber-500 font-semibold mb-2">✅ Что вы получите:</p>
+          <ul class="text-slate-300 space-y-2">
+            <li>✓ Приветственный бонус до 500K ₸</li>
+            <li>✓ Доступ к 5000+ слотам</li>
+            <li>✓ Быстрые выводы денег</li>
+            <li>✓ Поддержка 24/7</li>
+          </ul>
+        </div>
+        <CTAButton href={affiliateLink} variant="primary" size="lg">
+          Создать бесплатный аккаунт
+        </CTAButton>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 backdrop-blur-sm">
+        <h3 class="text-white font-bold text-2xl mb-6">Рейтинг игроков</h3>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="text-5xl font-bold gradient-text">4.9</div>
+          <div>
+            <div class="flex gap-1">
+              {'⭐'.repeat(5)}
+            </div>
+            <p class="text-slate-400 text-sm">на основе 15,000+ отзывов</p>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-slate-300">Надёжность</span>
+              <span class="text-amber-500">5.0</span>
+            </div>
+            <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+              <div class="h-full w-full bg-amber-500"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-slate-300">Бонусы</span>
+              <span class="text-amber-500">4.8</span>
+            </div>
+            <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+              <div class="h-full w-96 bg-amber-500"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-slate-300">Выводы</span>
+              <span class="text-amber-500">4.9</span>
+            </div>
+            <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+              <div class="h-full w-96 bg-amber-500"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

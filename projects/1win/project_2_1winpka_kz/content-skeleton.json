@@ -1,0 +1,1343 @@
+{
+  "_meta": {
+    "brand": "1Win",
+    "domain": "1winpka.kz",
+    "region": {
+      "name": "Казахстан",
+      "currency": "тенге",
+      "currencyCode": "KZT",
+      "currencySymbol": "₸",
+      "bonus": "220 000 ₸",
+      "minDeposit": "1 000 ₸",
+      "banks": [
+        "Kaspi",
+        "Halyk",
+        "Jusan"
+      ],
+      "mainBank": "Kaspi",
+      "providers": [
+        "Kcell",
+        "Beeline KZ",
+        "Altel"
+      ],
+      "league": "КПЛ",
+      "clubs": [
+        "Астана",
+        "Кайрат",
+        "Барыс"
+      ],
+      "docId": "ИИН",
+      "geoRegion": "KZ",
+      "geoPlacename": "Kazakhstan"
+    },
+    "region_code": "KZ",
+    "author": null,
+    "content_format": "G",
+    "content_format_name": "Агрегатор/сравнение",
+    "format_rules": {
+      "name": "Агрегатор/сравнение",
+      "voice": "Аналитический: «по совокупности параметров», оценки X/5",
+      "about_type": "Об аналитической команде",
+      "has_author": false,
+      "h2_style": "Сравнительные: «{brand} vs Mostbet: сравнение для KZ», «Рейтинг бонусов»",
+      "cta_style": "Аналитические: «Сравнить условия», «Посмотреть рейтинг»",
+      "faq_style": "Фактический, со ссылками на данные",
+      "forbidden": "Явная предвзятость, «однозначно лучший» без доказательств",
+      "main_words": "1000-1400",
+      "sub_words": "500-800",
+      "extras": "Таблицы сравнения + рейтинги как основа"
+    },
+    "style": null,
+    "style_description": null,
+    "generated_at": "2026-04-14T04:28:59.151Z",
+    "year": 2026
+  },
+  "keyword_budget": {
+    "brand": {
+      "word": "1Win",
+      "max_per_paragraph": 1,
+      "max_per_page": 10,
+      "synonyms": [
+        "контора",
+        "площадка",
+        "букмекер",
+        "тут",
+        "у них",
+        "платформа",
+        "сервис"
+      ]
+    },
+    "ставки": {
+      "word": "ставки",
+      "max_per_paragraph": 1,
+      "max_per_page": 6,
+      "synonyms": [
+        "прогнозы",
+        "пари",
+        "беттинг",
+        "игра"
+      ]
+    },
+    "казино": {
+      "word": "казино",
+      "max_per_paragraph": 1,
+      "max_per_page": 6,
+      "synonyms": [
+        "слоты",
+        "автоматы",
+        "игровой клуб",
+        "раздел с играми"
+      ]
+    },
+    "бонус": {
+      "word": "бонус",
+      "max_per_paragraph": 1,
+      "max_per_page": 6,
+      "synonyms": [
+        "подарок",
+        "акция",
+        "предложение",
+        "пакет",
+        "награда"
+      ]
+    },
+    "тенге": {
+      "word": "тенге",
+      "max_per_paragraph": 1,
+      "max_per_page": 6,
+      "synonyms": [
+        "валюта",
+        "KZT",
+        "₸",
+        "в местной валюте"
+      ]
+    },
+    "primary_keyword": {
+      "word": "1win казахстан",
+      "max_per_page": 5,
+      "placement": "H1, первый абзац, середина текста, финальный CTA"
+    },
+    "secondary_keywords": [
+      {
+        "word": "1вин кз",
+        "max_per_page": 2
+      },
+      {
+        "word": "1win casino",
+        "max_per_page": 2
+      },
+      {
+        "word": "1win регистрация",
+        "max_per_page": 2
+      },
+      {
+        "word": "1win приложение",
+        "max_per_page": 2
+      }
+    ]
+  },
+  "linking_plan": {
+    "plan": {
+      "index": {
+        "outgoing": [
+          "/sozdat-akkaunt",
+          "/mobile-app",
+          "/onlajn-kazino",
+          "/dostup",
+          "/akcii",
+          "/about",
+          "/rocket-queen",
+          "/gates-of-olympus"
+        ],
+        "min": 5
+      },
+      "sozdat-akkaunt": {
+        "outgoing": [
+          "/dostup",
+          "/onlajn-kazino",
+          "/akcii",
+          "/gates-of-olympus",
+          "/about"
+        ],
+        "min": 3
+      },
+      "mobile-app": {
+        "outgoing": [
+          "/rocket-queen",
+          "/akcii",
+          "/sozdat-akkaunt",
+          "/onlajn-kazino",
+          "/about"
+        ],
+        "min": 3
+      },
+      "onlajn-kazino": {
+        "outgoing": [
+          "/about",
+          "/sozdat-akkaunt",
+          "/mobile-app",
+          "/gates-of-olympus"
+        ],
+        "min": 3
+      },
+      "dostup": {
+        "outgoing": [
+          "/sozdat-akkaunt",
+          "/akcii",
+          "/gates-of-olympus",
+          "/onlajn-kazino",
+          "/about"
+        ],
+        "min": 3
+      },
+      "akcii": {
+        "outgoing": [
+          "/gates-of-olympus",
+          "/about",
+          "/dostup",
+          "/rocket-queen"
+        ],
+        "min": 3
+      },
+      "about": {
+        "outgoing": [
+          "/sozdat-akkaunt",
+          "/mobile-app",
+          "/akcii",
+          "/onlajn-kazino",
+          "/about"
+        ],
+        "min": 3
+      },
+      "rocket-queen": {
+        "outgoing": [
+          "/onlajn-kazino",
+          "/gates-of-olympus"
+        ],
+        "min": 2
+      },
+      "gates-of-olympus": {
+        "outgoing": [
+          "/onlajn-kazino",
+          "/rocket-queen"
+        ],
+        "min": 2
+      }
+    },
+    "incoming": {
+      "sozdat-akkaunt": [
+        "index",
+        "mobile-app",
+        "onlajn-kazino",
+        "dostup",
+        "about"
+      ],
+      "mobile-app": [
+        "index",
+        "onlajn-kazino",
+        "about"
+      ],
+      "onlajn-kazino": [
+        "index",
+        "sozdat-akkaunt",
+        "mobile-app",
+        "dostup",
+        "about",
+        "rocket-queen",
+        "gates-of-olympus"
+      ],
+      "dostup": [
+        "index",
+        "sozdat-akkaunt",
+        "akcii"
+      ],
+      "akcii": [
+        "index",
+        "sozdat-akkaunt",
+        "mobile-app",
+        "dostup",
+        "about"
+      ],
+      "about": [
+        "index",
+        "sozdat-akkaunt",
+        "mobile-app",
+        "onlajn-kazino",
+        "dostup",
+        "akcii",
+        "about"
+      ],
+      "rocket-queen": [
+        "index",
+        "mobile-app",
+        "akcii",
+        "gates-of-olympus"
+      ],
+      "gates-of-olympus": [
+        "index",
+        "sozdat-akkaunt",
+        "onlajn-kazino",
+        "dostup",
+        "akcii",
+        "rocket-queen"
+      ]
+    }
+  },
+  "main_page": {
+    "total_words": "1000-1400",
+    "sections_order": [
+      "Hero",
+      "Overview",
+      "Advantages",
+      "Sports",
+      "Slots",
+      "Bonus",
+      "Payments",
+      "Live",
+      "FAQ",
+      "CTA"
+    ],
+    "sections": [
+      {
+        "section": "Hero",
+        "words": "30-40 (подзаголовок)",
+        "h1": "1Win Казахстан — казино + ставки для игроков из KZ",
+        "h1_note": "НЕ дублировать title. Содержит primary keyword.",
+        "subtitle": "Личный обзор 1Win от игрока из Казахстана. 35+ видов спорта, 12 000+ игр в казино, счёт в тенге.",
+        "badge": "600+ live-событий",
+        "stats": [
+          {
+            "value": "35+",
+            "label": "видов спорта"
+          },
+          {
+            "value": "500 ₸",
+            "label": "мин. депозит"
+          },
+          {
+            "value": "100%",
+            "label": "на первый депозит"
+          }
+        ],
+        "cta_primary": {
+          "text": "Получить фрибет на первый депозит",
+          "href": "affiliateLink",
+          "external": true
+        },
+        "cta_secondary": {
+          "text": "Ставить на КПЛ",
+          "href": "/dostup"
+        },
+        "keywords": [
+          "1win казахстан"
+        ],
+        "style": "Тон: разговорный, расслабленный"
+      },
+      {
+        "section": "Overview",
+        "words": "150-200",
+        "h2": "Что такое 1Win и стоит ли тут играть",
+        "paragraphs": [
+          {
+            "plan": "Личное знакомство с платформой. Как узнал, сколько пользуюсь. Содержит primary keyword «1win казахстан».",
+            "keywords": [
+              "1win казахстан"
+            ],
+            "words": "50-70"
+          },
+          {
+            "plan": "Главные плюсы и один минус. Конкретные цифры: 12 000+ игр, 35+ видов спорта, депозит от 500 ₸.",
+            "keywords": [
+              "1вин кз"
+            ],
+            "words": "50-70"
+          },
+          {
+            "plan": "Дисклеймер: партнёрские ссылки, 21+, ответственная игра. Тон — честный, не продающий.",
+            "keywords": [],
+            "words": "40-50"
+          }
+        ],
+        "internal_links": [
+          "/sozdat-akkaunt",
+          "/dostup"
+        ],
+        "disclaimer": true,
+        "style": "Тон: разговорный, расслабленный. Абзацы: короткие (2-3 предложения). много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики"
+      },
+      {
+        "section": "Advantages",
+        "words": "100-130",
+        "h2": "Плюсы и минусы 1Win — без прикрас",
+        "cards": [
+          {
+            "title": "Линия и коэффициенты",
+            "plus": "35+ видов спорта, маржа 3-5%",
+            "minus": "На КПЛ роспись беднее, чем на АПЛ"
+          },
+          {
+            "title": "Оплата в тенге",
+            "plus": "Kaspi, Halyk, Jusan — без конвертации",
+            "minus": "Kaspi иногда отклоняет платежи"
+          },
+          {
+            "title": "Мобильное приложение",
+            "plus": "APK ~40 МБ, работает стабильно",
+            "minus": "Нет в Google Play, обновлять вручную"
+          },
+          {
+            "title": "Казино и слоты",
+            "plus": "12 000+ игр, Pragmatic Play, Spribe, SmartSoft Gaming, 1Win Games",
+            "minus": "Вейджер ×50 — жёстко"
+          },
+          {
+            "title": "Бонусы",
+            "plus": "До 500% + 70 фриспинов",
+            "minus": "Условия отыгрыша не самые простые"
+          },
+          {
+            "title": "Поддержка",
+            "plus": "Чат 24/7 на русском",
+            "minus": "Отвечают шаблонно, нужно настаивать"
+          }
+        ],
+        "note": "Каждая карточка: заголовок + 2 предложения (плюс и минус). Честно, без идеализации.",
+        "keywords": [
+          "1Win"
+        ],
+        "style": "Тон: разговорный, расслабленный."
+      },
+      {
+        "section": "Sports",
+        "words": "100-130",
+        "h2": "Ставки на спорт: что есть на 1Win",
+        "intro": "1 абзац (2-3 предложения). Общее впечатление о спортивной линии. Маржа 3-5%, 600+ live-событий.",
+        "cards": [
+          {
+            "title": "Киберспорт",
+            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
+            "icon_hint": "геймпад"
+          },
+          {
+            "title": "Теннис",
+            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
+            "icon_hint": "ракетка"
+          },
+          {
+            "title": "Футбол",
+            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
+            "icon_hint": "мяч"
+          },
+          {
+            "title": "Баскетбол",
+            "description_hint": "2 предложения: специфика линии + один факт/цифру. Например: «КПЛ — до 150 рынков на топ-матчи. Маржа 4-5%.»",
+            "icon_hint": "мяч баскетбольный"
+          }
+        ],
+        "keywords": [
+          "ставки"
+        ],
+        "internal_links": [],
+        "style": "Тон: разговорный, расслабленный. Факты, не описания."
+      },
+      {
+        "section": "Slots",
+        "words": "80-100",
+        "h2": "Казино: мои любимые слоты",
+        "cards": [
+          {
+            "slug": "rocket-queen",
+            "name": "Rocket Queen",
+            "provider": "1Win Games",
+            "rtp": "96.20%",
+            "maxWin": "×10 000",
+            "description_hint": "2 предложения: тема слота + впечатление. RTP 96.20%, макс. ×10 000.",
+            "cta": "Запустить слот бесплатно",
+            "link": "/rocket-queen"
+          },
+          {
+            "slug": "gates-of-olympus",
+            "name": "Gates of Olympus",
+            "provider": "Pragmatic Play",
+            "rtp": "96.50%",
+            "maxWin": "×5 000",
+            "description_hint": "2 предложения: тема слота + впечатление. RTP 96.50%, макс. ×5 000.",
+            "cta": "Открыть казино с бонусом",
+            "link": "/gates-of-olympus"
+          }
+        ],
+        "keywords": [
+          "казино"
+        ],
+        "style": "Тон: разговорный, расслабленный. Для каждого слота — уникальный CTA."
+      },
+      {
+        "section": "Bonus",
+        "words": "80-100",
+        "h2": "Бонус до 500% — условия",
+        "cards": [
+          {
+            "type": "Спортивный бонус",
+            "value": "100% до 500%",
+            "condition": "Вейджер ×50, 30 дней"
+          },
+          {
+            "type": "Казино-бонус",
+            "value": "70 фриспинов",
+            "condition": "Вейджер ×50, конкретные слоты"
+          },
+          {
+            "type": "Фрибет",
+            "value": "Бесплатная ставка",
+            "condition": "При выполнении условий первого депозита"
+          }
+        ],
+        "keywords": [
+          "бонус"
+        ],
+        "internal_links": [
+          "/akcii"
+        ],
+        "style": "Тон: разговорный, расслабленный. Обязательно упомянуть сложность отыгрыша — честно."
+      },
+      {
+        "section": "Payments",
+        "words": "80-100",
+        "h2": "Тенге без конвертации — как платить",
+        "cards": [
+          {
+            "method": "Kaspi / Halyk / Jusan",
+            "hint": "Карты и переводы казахстанских банков"
+          },
+          {
+            "method": "Криптовалюта (USDT)",
+            "hint": "TRC20, без комиссии платформы, 15-30 мин"
+          },
+          {
+            "method": "Электронные кошельки",
+            "hint": "QIWI, WebMoney — работает, но медленнее"
+          }
+        ],
+        "table": {
+          "columns": [
+            "Метод",
+            "Пополнение",
+            "Вывод",
+            "Минимум"
+          ],
+          "rows": [
+            [
+              "Kaspi Gold",
+              "Мгновенно",
+              "1-24 часа",
+              "500 ₸"
+            ],
+            [
+              "Halyk Homebank",
+              "5-15 мин",
+              "1-3 дня",
+              "500 ₸"
+            ],
+            [
+              "USDT (TRC20)",
+              "15-30 мин",
+              "15-30 мин",
+              "~3 000 ₸"
+            ]
+          ]
+        },
+        "keywords": [
+          "тенге"
+        ],
+        "style": "Тон: разговорный, расслабленный. Упомянуть личный опыт вывода."
+      },
+      {
+        "section": "Live",
+        "words": "80-100",
+        "h2": "Лайв на 1Win — ставки в реальном времени",
+        "paragraphs": [
+          {
+            "plan": "1-2 абзаца: как работает live, задержки, количество событий (600+).",
+            "words": "40-60"
+          }
+        ],
+        "features": [
+          "600+ live-событий ежедневно",
+          "Cash Out — забрать ставку до конца матча",
+          "Live-казино с дилерами: Lucky Jet, Aviator, Mines, Speed Cash, Crash",
+          "Трансляции матчей в приложении"
+        ],
+        "keywords": [],
+        "style": "Тон: разговорный, расслабленный. Упомянуть опыт live-ставки."
+      },
+      {
+        "section": "FAQ",
+        "words": "200-250",
+        "h2": "Вопросы о 1Win",
+        "questions": [
+          {
+            "number": 7,
+            "category": "Регистрация и аккаунт",
+            "question": "Что делать если не приходит SMS при регистрации?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 19,
+            "category": "Пополнение и вывод",
+            "question": "Берёт ли платформа комиссию за вывод?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 29,
+            "category": "Приложение и доступ",
+            "question": "Безопасно ли скачивать APK?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 38,
+            "category": "Блокировки и зеркала",
+            "question": "Блокирует ли Kcell сайт?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 43,
+            "category": "Бонусы и промоакции",
+            "question": "Что такое вейджер и как его отыграть?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 60,
+            "category": "Ставки на спорт",
+            "question": "Можно ли ставить с двух устройств одновременно?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          },
+          {
+            "number": 74,
+            "category": "Верификация и безопасность",
+            "question": "Можно ли играть без верификации?",
+            "answer_hint": "2-3 предложения. Тон: разговорный, расслабленный. Разговорный ответ с конкретикой, не шаблонный."
+          }
+        ],
+        "schema": "FAQPage",
+        "keywords": [
+          "1win казахстан"
+        ],
+        "style": "Ответы: разговорный, расслабленный. Каждый ответ содержит конкретную цифру или факт. Не «канцелярит»."
+      },
+      {
+        "section": "CTA",
+        "words": "15-25",
+        "h2": "Готовы начать?",
+        "subtitle": "Одно предложение. Личное обращение к читателю. Содержит бренд «1Win».",
+        "cta": {
+          "text": "Не откладывайте",
+          "href": "affiliateLink",
+          "external": true
+        },
+        "keywords": [
+          "1Win"
+        ]
+      }
+    ],
+    "used_cta_texts": [
+      "Получить фрибет на первый депозит",
+      "Ставить на КПЛ",
+      "Запустить слот бесплатно",
+      "Открыть казино с бонусом",
+      "Не откладывайте"
+    ]
+  },
+  "subpages": {
+    "sozdat-akkaunt": {
+      "slug": "sozdat-akkaunt",
+      "page_type": "registration",
+      "words": "500-800",
+      "schema_hint": "HowTo + HowToStep",
+      "internal_links": [
+        "/mobile-app",
+        "/onlajn-kazino",
+        "/dostup"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "Как зарегистрироваться на 1Win в Казахстане",
+      "blocks": [
+        {
+          "h2": "Пошаговая регистрация",
+          "type": "steps",
+          "content": "4-5 шагов: выбор способа → заполнение → валюта KZT → промокод → подтверждение"
+        },
+        {
+          "h2": "Способы регистрации на 1Win",
+          "type": "cards",
+          "content": "3-4 карточки: по телефону, email, соцсети, в один клик"
+        },
+        {
+          "h2": "Бонус при регистрации",
+          "type": "text",
+          "content": "Абзац о приветственном бонусе 500%. Ссылка на страницу бонусов."
+        },
+        {
+          "h2": "Верификация",
+          "type": "text",
+          "content": "Абзац о KYC: удостоверение + ИИН + селфи. Личный опыт: сколько заняло."
+        }
+      ]
+    },
+    "mobile-app": {
+      "slug": "mobile-app",
+      "page_type": "download",
+      "words": "500-800",
+      "schema_hint": "HowTo + HowToStep",
+      "internal_links": [
+        "/dostup",
+        "/sozdat-akkaunt",
+        "/akcii"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "Скачать 1Win — APK для Android и iPhone",
+      "blocks": [
+        {
+          "h2": "Скачать на Android (APK)",
+          "type": "steps",
+          "content": "4 шага: ссылка → разрешить источники → установить → войти"
+        },
+        {
+          "h2": "Установка на iOS",
+          "type": "steps",
+          "content": "3 шага: зеркало → скачать из App Store → войти"
+        },
+        {
+          "h2": "Обзор приложения",
+          "type": "text",
+          "content": "Плюсы и минусы мобильного приложения 1Win. Размер, скорость, удобство."
+        },
+        {
+          "h2": "Системные требования",
+          "type": "table",
+          "content": "Таблица: ОС | Версия | Размер | RAM"
+        }
+      ]
+    },
+    "onlajn-kazino": {
+      "slug": "onlajn-kazino",
+      "page_type": "casino",
+      "words": "500-800",
+      "schema_hint": "Article",
+      "internal_links": [
+        "/dostup",
+        "/mobile-app",
+        "/about"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "Казино 1Win — слоты, рулетка и live-дилеры",
+      "blocks": [
+        {
+          "h2": "Обзор казино",
+          "type": "text",
+          "content": "12 000+ игр, провайдеры: Pragmatic Play, Spribe, SmartSoft Gaming, 1Win Games. Личное впечатление."
+        },
+        {
+          "h2": "Популярные слоты",
+          "type": "cards",
+          "content": "Топ-5 слотов с RTP, провайдером и мнением"
+        },
+        {
+          "h2": "Live-казино и краш-игры",
+          "type": "text",
+          "content": "Lucky Jet, Aviator, Mines, Speed Cash, Crash. Опыт игры в Aviator."
+        },
+        {
+          "h2": "Бонусы для казино",
+          "type": "text",
+          "content": "70 фриспинов, вейджер ×50. Стоит ли брать."
+        }
+      ]
+    },
+    "dostup": {
+      "slug": "dostup",
+      "page_type": "mirror",
+      "words": "500-800",
+      "schema_hint": "Article",
+      "internal_links": [
+        "/onlajn-kazino",
+        "/akcii",
+        "/about"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "1Win зеркало — рабочий доступ для Казахстана",
+      "blocks": [
+        {
+          "h2": "Почему блокируют",
+          "type": "text",
+          "content": "Абзац о блокировках Kcell, Beeline KZ. Причины."
+        },
+        {
+          "h2": "3 способа зайти",
+          "type": "steps",
+          "content": "Зеркало → приложение → DNS (8.8.8.8)"
+        },
+        {
+          "h2": "Как отличить настоящее зеркало",
+          "type": "text",
+          "content": "Предупреждение о фишинге. Признаки реального зеркала."
+        }
+      ]
+    },
+    "akcii": {
+      "slug": "akcii",
+      "page_type": "bonus",
+      "words": "500-800",
+      "schema_hint": "Article",
+      "internal_links": [
+        "/about",
+        "/sozdat-akkaunt",
+        "/mobile-app"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "Бонусы 1Win — приветственный пакет и акции",
+      "blocks": [
+        {
+          "h2": "Приветственный бонус",
+          "type": "text",
+          "content": "До 500% + 70 фриспинов. Условия получения."
+        },
+        {
+          "h2": "Как отыграть бонус",
+          "type": "steps",
+          "content": "Вейджер ×50. Пошагово: что считается, сроки, подводные камни."
+        },
+        {
+          "h2": "Другие акции",
+          "type": "cards",
+          "content": "Экспресс-бонус, кешбэк, промокоды — что реально работает."
+        },
+        {
+          "h2": "Стоит ли брать бонус",
+          "type": "text",
+          "content": "Честное мнение: кому подойдёт, кому нет."
+        }
+      ]
+    },
+    "about": {
+      "slug": "about",
+      "page_type": "about",
+      "words": "400-600",
+      "schema_hint": "AboutPage + Person",
+      "internal_links": [
+        "/sozdat-akkaunt",
+        "/mobile-app",
+        "/onlajn-kazino"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики",
+      "h1": "Об авторе — кто стоит за обзором 1Win",
+      "blocks": [
+        {
+          "h2": "Кто я",
+          "type": "text",
+          "content": "undefined, undefined, undefined лет. С 2021 года в ставках."
+        },
+        {
+          "h2": "Зачем этот сайт",
+          "type": "text",
+          "content": "Мотивация: делюсь опытом, не заказной обзор. Личная история."
+        },
+        {
+          "h2": "Как тестирую",
+          "type": "text",
+          "content": "Пополняю реальные деньги, ставлю, вывожу. Не «теоретик»."
+        },
+        {
+          "h2": "Про честность",
+          "type": "text",
+          "content": "Открытое признание партнёрских ссылок. Это не влияет на оценки."
+        },
+        {
+          "h2": "Предупреждение",
+          "type": "text",
+          "content": "21+, ответственная игра. Не ставьте больше, чем можете потерять."
+        }
+      ]
+    }
+  },
+  "slot_pages": {
+    "rocket-queen": {
+      "slug": "rocket-queen",
+      "page_type": "slot",
+      "words": "500-800",
+      "h1": "Rocket Queen — обзор слота от 1Win Games",
+      "schema_hint": "Review + SoftwareApplication (GameApplication)",
+      "slot_info": {
+        "name": "Rocket Queen",
+        "rtp": "96.20%",
+        "maxWin": "×10 000",
+        "provider": "1Win Games"
+      },
+      "blocks": [
+        {
+          "h2": "Обзор Rocket Queen",
+          "type": "text",
+          "content": "Тема слота, RTP 96.20%, волатильность, макс. ×10 000. Первое впечатление."
+        },
+        {
+          "h2": "Как играть",
+          "type": "text",
+          "content": "Механика: символы, бонусные раунды, множители. 2-3 абзаца."
+        },
+        {
+          "h2": "Мой опыт",
+          "type": "text",
+          "content": "Личный опыт игры на 1Win. Конкретные суммы, сессии, результат."
+        },
+        {
+          "h2": "Стоит ли играть",
+          "type": "text",
+          "content": "Итоговая оценка. Кому подойдёт, кому нет. Плюсы и минусы."
+        }
+      ],
+      "internal_links": [
+        "/onlajn-kazino"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики"
+    },
+    "gates-of-olympus": {
+      "slug": "gates-of-olympus",
+      "page_type": "slot",
+      "words": "500-800",
+      "h1": "Gates of Olympus — обзор слота от Pragmatic Play",
+      "schema_hint": "Review + SoftwareApplication (GameApplication)",
+      "slot_info": {
+        "name": "Gates of Olympus",
+        "rtp": "96.50%",
+        "maxWin": "×5 000",
+        "provider": "Pragmatic Play"
+      },
+      "blocks": [
+        {
+          "h2": "Обзор Gates of Olympus",
+          "type": "text",
+          "content": "Тема слота, RTP 96.50%, волатильность, макс. ×5 000. Первое впечатление."
+        },
+        {
+          "h2": "Как играть",
+          "type": "text",
+          "content": "Механика: символы, бонусные раунды, множители. 2-3 абзаца."
+        },
+        {
+          "h2": "Мой опыт",
+          "type": "text",
+          "content": "Личный опыт игры на 1Win. Конкретные суммы, сессии, результат."
+        },
+        {
+          "h2": "Стоит ли играть",
+          "type": "text",
+          "content": "Итоговая оценка. Кому подойдёт, кому нет. Плюсы и минусы."
+        }
+      ],
+      "internal_links": [
+        "/onlajn-kazino"
+      ],
+      "style": "Тон: разговорный, расслабленный. много вставок «ну», «вот», «короче», незаконченные мысли, эмоциональные реплики"
+    }
+  },
+  "faq": {
+    "selected_questions": [
+      {
+        "number": 7,
+        "question": "Что делать если не приходит SMS при регистрации?",
+        "category": "Регистрация и аккаунт"
+      },
+      {
+        "number": 19,
+        "question": "Берёт ли платформа комиссию за вывод?",
+        "category": "Пополнение и вывод"
+      },
+      {
+        "number": 29,
+        "question": "Безопасно ли скачивать APK?",
+        "category": "Приложение и доступ"
+      },
+      {
+        "number": 38,
+        "question": "Блокирует ли Kcell сайт?",
+        "category": "Блокировки и зеркала"
+      },
+      {
+        "number": 43,
+        "question": "Что такое вейджер и как его отыграть?",
+        "category": "Бонусы и промоакции"
+      },
+      {
+        "number": 60,
+        "question": "Можно ли ставить с двух устройств одновременно?",
+        "category": "Ставки на спорт"
+      },
+      {
+        "number": 74,
+        "question": "Можно ли играть без верификации?",
+        "category": "Верификация и безопасность"
+      }
+    ],
+    "numbers_for_registry": "7, 19, 29, 38, 43, 60, 74"
+  },
+  "human_realism": {
+    "rules": {
+      "typos_per_page": "1-4 орфографических опечатки",
+      "punct_per_page": "2-3 пунктуационных сбоя",
+      "no_errors_in": "H1, title, description, первое предложение абзаца",
+      "contradictions": "1-2 на страницу — разный опыт в разных абзацах",
+      "self_corrections": "1-2 на страницу — «ну то есть», «ладно, за две»",
+      "emotional_reactions": "3-5 на страницу — в скобках или через тире",
+      "slang": "2-4 на страницу из банка",
+      "uneven_depth": "минимум 2 короткие секции + 1 длинная",
+      "vague_time": "2-3 на страницу — «где-то в марте», «кажется»",
+      "faq_style_variation": "разная длина ответов: 1 подробный, 1 краткий, 1 с отступлением"
+    },
+    "typo_bank": {
+      "drop_letter": [
+        "прилжение",
+        "регистраця",
+        "верифкация",
+        "коэфициент",
+        "пополнеие",
+        "приветсвенный",
+        "доступый"
+      ],
+      "swap_letters": [
+        "подтормаживть",
+        "тенеге",
+        "букемкер",
+        "поддрежка"
+      ],
+      "double_letter": [
+        "бонусс",
+        "каззино",
+        "оттзыв",
+        "коммиссия"
+      ],
+      "tsya_tsya": [
+        "регистрироватся",
+        "авторизоватся",
+        "пополняеться",
+        "обновляеться"
+      ],
+      "wrong_vowel": [
+        "скочать",
+        "палучить",
+        "привитственный",
+        "верефикация"
+      ]
+    },
+    "slang_bank": [
+      "норм",
+      "кэф",
+      "апк",
+      "тг",
+      "инфа",
+      "залил",
+      "слил",
+      "зашло",
+      "ЛК"
+    ],
+    "per_page_hints": [
+      {
+        "typo_count": 4,
+        "typos": [
+          {
+            "type": "wrong_vowel",
+            "example": "скочать"
+          },
+          {
+            "type": "double_letter",
+            "example": "оттзыв"
+          },
+          {
+            "type": "swap_letters",
+            "example": "поддрежка"
+          },
+          {
+            "type": "drop_letter",
+            "example": "регистраця"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "апк",
+          "тг",
+          "слил"
+        ],
+        "contradiction": true,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 5,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "tsya_tsya",
+            "example": "обновляеться"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "верефикация"
+          },
+          {
+            "type": "swap_letters",
+            "example": "поддрежка"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "лишняя запятая перед «и»"
+        ],
+        "slang_count": 4,
+        "slang_suggestions": [
+          "тг",
+          "зашло",
+          "норм"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 2,
+        "typos": [
+          {
+            "type": "swap_letters",
+            "example": "подтормаживть"
+          },
+          {
+            "type": "swap_letters",
+            "example": "подтормаживть"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 2,
+        "slang_suggestions": [
+          "тг",
+          "слил",
+          "залил"
+        ],
+        "contradiction": false,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 5,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "drop_letter",
+            "example": "пополнеие"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "палучить"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "привитственный"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "ЛК",
+          "кэф",
+          "залил"
+        ],
+        "contradiction": true,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "double_letter",
+            "example": "оттзыв"
+          },
+          {
+            "type": "tsya_tsya",
+            "example": "обновляеться"
+          },
+          {
+            "type": "drop_letter",
+            "example": "прилжение"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "пропуск запятой перед что/который",
+          "запятая вместо точки (поток мысли)"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "кэф",
+          "апк",
+          "инфа"
+        ],
+        "contradiction": false,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 3,
+        "typos": [
+          {
+            "type": "double_letter",
+            "example": "оттзыв"
+          },
+          {
+            "type": "tsya_tsya",
+            "example": "обновляеться"
+          },
+          {
+            "type": "swap_letters",
+            "example": "тенеге"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "пропуск запятой перед что/который",
+          "лишняя запятая перед «и»"
+        ],
+        "slang_count": 2,
+        "slang_suggestions": [
+          "норм",
+          "зашло",
+          "апк"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 4,
+        "typos": [
+          {
+            "type": "drop_letter",
+            "example": "пополнеие"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "привитственный"
+          },
+          {
+            "type": "swap_letters",
+            "example": "букемкер"
+          },
+          {
+            "type": "tsya_tsya",
+            "example": "обновляеться"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "лишняя запятая перед «и»",
+          "тире вместо двоеточия",
+          "пропуск запятой перед что/который"
+        ],
+        "slang_count": 4,
+        "slang_suggestions": [
+          "тг",
+          "инфа",
+          "залил"
+        ],
+        "contradiction": true,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 4,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 2,
+        "typos": [
+          {
+            "type": "drop_letter",
+            "example": "прилжение"
+          },
+          {
+            "type": "wrong_vowel",
+            "example": "привитственный"
+          }
+        ],
+        "punct_count": 2,
+        "punct_types": [
+          "запятая вместо точки (поток мысли)",
+          "тире вместо двоеточия"
+        ],
+        "slang_count": 4,
+        "slang_suggestions": [
+          "тг",
+          "инфа",
+          "ЛК"
+        ],
+        "contradiction": false,
+        "unfinished_thought": false,
+        "self_correction": true,
+        "emotional_reactions": 3,
+        "uneven_depth": true
+      },
+      {
+        "typo_count": 2,
+        "typos": [
+          {
+            "type": "tsya_tsya",
+            "example": "авторизоватся"
+          },
+          {
+            "type": "swap_letters",
+            "example": "букемкер"
+          }
+        ],
+        "punct_count": 3,
+        "punct_types": [
+          "тире вместо двоеточия",
+          "пропуск запятой перед что/который",
+          "запятая вместо точки (поток мысли)"
+        ],
+        "slang_count": 3,
+        "slang_suggestions": [
+          "тг",
+          "апк",
+          "залил"
+        ],
+        "contradiction": false,
+        "unfinished_thought": true,
+        "self_correction": true,
+        "emotional_reactions": 5,
+        "uneven_depth": true
+      }
+    ]
+  }
+}

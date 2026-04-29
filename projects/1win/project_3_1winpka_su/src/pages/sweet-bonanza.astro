@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const reviewSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'SoftwareApplication',
+      name: 'Sweet Bonanza',
+      applicationCategory: 'GameApplication',
+      operatingSystem: 'Web',
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5' },
+    author: { '@type': 'Organization', name: '1winpka.su' },
+  },
+];
+---
+
+<BaseLayout
+  title="Играть Sweet Bonanza на 1Win Россия — обзор и RTP"
+  description="Sweet Bonanza на 1Win: RTP 96.48%, бонусные раунды, волатильность. Честный обзор 2026."
+  schema={reviewSchema}
+  publishDate="2026-02-20"
+  updateDate="2026-04-06"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино', href: '/igrovye-avtomaty' }, { label: 'Sweet Bonanza' }]} />
+  <ArticleMeta publishDate="2026-02-20" updateDate="2026-04-06" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight mb-4">Sweet Bonanza — обзор слота</h1>
+        <p class="text-lg text-slate-300 max-w-xl mx-auto">Pragmatic Play · RTP 96.48% · Макс. выигрыш ×21 175</p>
+        <div class="mt-6">
+          <CTAButton href={affiliateLink} size="lg" external>Попробовать в демо-режиме</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Слот Sweet Bonanza: яркие конфеты и фрукты на игровом поле" aspect="16/9" class="mb-10" />
+
+      <div class="space-y-6 text-slate-300 leading-relaxed">
+        <h2 class="text-2xl font-bold text-white uppercase tracking-wide">Обзор Sweet Bonanza</h2>
+        <p>Один из самых популярных слотов в мире, и на 1Win он тоже в топе. Конфетная тема, Tumble-механика — выигрышные символы исчезают и на их место падают новые. RTP 96.48%, волатильность высокая. Максимальный множитель ×21 175 — цифра серьёзная.</p>
+
+        <h2 class="text-2xl font-bold text-white uppercase tracking-wide">Как играть</h2>
+        <p>Шесть барабанов, пять рядов, ставка от минимума. Для выигрыша нужно 8+ одинаковых символов в любом месте поля — не обязательно на линии. Scatter (леденец) запускает бесплатные вращения — 10 спинов. В бонусном раунде падают множители от ×2 до ×100.</p>
+        <p>Есть функция Ante Bet — увеличивает ставку на 25%, но удваивает шанс на бонусный раунд. Также можно купить бонус напрямую за ×100 ставки.</p>
+
+        <h2 class="text-2xl font-bold text-white uppercase tracking-wide">Стоит ли играть</h2>
+        <p>Если нравится высокая волатильность — да. Может долго не давать ничего, а потом выстрелить на ×500+. Для стабильной игры лучше подойдёт <a href="/bananas-go-bahamas" class="text-coral-400 hover:underline">Bananas go Bahamas</a> — там волатильность ниже.</p>
+        <p>Все слоты доступны в <a href="/igrovye-avtomaty" class="text-coral-400 hover:underline">разделе казино</a>.</p>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-lg bg-gradient-to-br from-coral-500/10 via-abyss-800 to-teal-500/5 border border-coral-500/10">
+        <h2 class="text-xl font-bold text-white uppercase mb-3">Запустить Sweet Bonanza</h2>
+        <p class="text-slate-300 mb-6">Конфетный слот с множителями до ×100 в бонусном раунде.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Начать со ставок на слоты</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,143 @@
+---
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import Card from '../components/ui/Card.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const affiliateLink = '#';
+const title = 'Регистрация Mostbet: 4 способа + бонус на первый депозит';
+const description =
+  'Регистрация Mostbet за 2 минуты — пошагово. Аккаунт в рубль, бонус на старте, верификация через ИИН.';
+const canonical = 'https://mostbetgd.su/nachalo-raboty';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: [
+    { '@type': 'HowToStep', name: 'Шаг 1', text: 'Откройте форму регистрации на официальной странице Mostbet.' },
+    { '@type': 'HowToStep', name: 'Шаг 2', text: 'Выберите валюту RUB и заполните контактные данные.' },
+    { '@type': 'HowToStep', name: 'Шаг 3', text: 'Подтвердите телефон или почту по коду из SMS.' },
+    { '@type': 'HowToStep', name: 'Шаг 4', text: 'Завершите профиль и при необходимости пройдите верификацию.' },
+  ],
+};
+
+const steps = [
+  {
+    n: '01',
+    title: 'Выбор способа регистрации',
+    text: 'Мы предлагаем четыре способа: в один клик, по телефону, через email или социальные сети. Самый быстрый — в один клик, потребуется только выбрать валюту и страну.',
+  },
+  {
+    n: '02',
+    title: 'Валюта и регион',
+    text: 'Для клиентов из России рекомендуем сразу выбрать рубль (RUB). Изменить валюту после создания аккаунта невозможно — это стандартная практика платформы.',
+  },
+  {
+    n: '03',
+    title: 'Подтверждение данных',
+    text: 'SMS с кодом приходит в течение минуты. Если задерживается — проверьте правильность номера и фильтры спама. Не нажимайте «отправить повторно» раньше чем через 60 секунд.',
+  },
+  {
+    n: '04',
+    title: 'Заполнение профиля',
+    text: 'ФИО и дата рождения должны совпадать с документами. Расхождения выявляются при верификации и могут заблокировать вывод средств.',
+  },
+];
+
+const regMethods = [
+  { title: 'По телефону', desc: 'Номер + SMS-код. Самый популярный способ среди наших клиентов из России.' },
+  { title: 'По email', desc: 'Указываете почту и пароль. Письмо с подтверждением приходит мгновенно.' },
+  { title: 'Через соцсети', desc: 'Авторизация через VK, Telegram или Google. Данные подтягиваются автоматически.' },
+  { title: 'В один клик', desc: 'Только валюта и страна — аккаунт создаётся за 10 секунд. Данные можно заполнить позже.' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-01-15"
+  updateDate="2026-04-01"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Регистрация' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight leading-tight mb-4">
+          Как зарегистрироваться на Mostbet в России
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+          Пошаговая инструкция от нашей команды. Процесс занимает не более 2 минут — мы проверили каждый шаг.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Зарегистрироваться</CTAButton>
+          <CTAButton href="/mobile-app" variant="outline" size="lg">Скачать приложение</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/registration.jpg"
+        alt="Форма регистрации Mostbet"
+        width="1200"
+        height="675"
+        loading="eager"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-12"
+      />
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-8">Пошаговая регистрация</h2>
+      <div class="space-y-6 mb-14">
+        {
+          steps.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-extrabold text-main-400 shrink-0">{s.n}</span>
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-2">{s.title}</h3>
+                  <p class="text-slate-400 leading-relaxed">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-8">Способы регистрации на Mostbet</h2>
+      <div class="grid sm:grid-cols-2 gap-6 mb-14">
+        {
+          regMethods.map((m) => (
+            <Card>
+              <h3 class="text-lg font-bold text-white mb-2">{m.title}</h3>
+              <p class="text-sm text-slate-400">{m.desc}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6">Бонус при регистрации</h2>
+      <p class="text-slate-300 leading-relaxed mb-4">
+        Новые клиенты получают приветственный бонус до 32 500 ₽ на первый депозит. Подробные условия — на <a href="/podarki" class="text-main-400 hover:text-main-300 underline underline-offset-2">странице бонусов</a>. Активация происходит автоматически при пополнении.
+      </p>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-6 mt-14">Верификация</h2>
+      <p class="text-slate-300 leading-relaxed mb-4">
+        Верификация требуется перед первым выводом средств. Необходимо загрузить скан СНИЛС или ИНН и сделать селфи. Процесс проверки занимает от нескольких часов до 3 рабочих дней. Рекомендуем пройти KYC сразу после регистрации.
+      </p>
+      <p class="text-slate-300 leading-relaxed mb-10">
+        Подробнее о возможностях аккаунта — в разделе <a href="/lichnyy-kabinet" class="text-main-400 hover:text-main-300 underline underline-offset-2">личный кабинет</a>. Информация о платформе — на странице <a href="/about" class="text-main-400 hover:text-main-300 underline underline-offset-2">о нас</a>.
+      </p>
+
+      <div class="text-center p-8 rounded-2xl border border-main-500/20 bg-deep-900/50">
+        <h2 class="text-2xl font-extrabold text-white uppercase tracking-tight mb-3">Готово — можно пополнять</h2>
+        <p class="text-slate-400 mb-6">
+          После регистрации пополните счёт через Сбербанк, Тинькофф или СБП. Минимальный депозит — 100 ₽.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Начать регистрацию</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

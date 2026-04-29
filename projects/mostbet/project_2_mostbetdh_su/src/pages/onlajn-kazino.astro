@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Какие слоты есть на Mostbet? Обзор казино РУ 2026';
+const description =
+  'Казино Mostbet РУ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в рубль, выводи на Сбербанк.';
+const canonical = 'https://mostbetdh.su/onlajn-kazino';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'ru',
+};
+
+const topSlots = [
+  { name: 'Sugar Rush', provider: 'Pragmatic Play', rtp: '96.50%', maxWin: '×5 000', score: '4.2', href: '/sugar-rush' },
+  { name: 'Fruit Party', provider: 'Pragmatic Play', rtp: '96.47%', maxWin: '×5 000', score: '4.0', href: '/fruit-party' },
+  { name: 'Gates of Olympus', provider: 'Pragmatic Play', rtp: '96.50%', maxWin: '×5 000', score: '4.3' },
+  { name: 'Sweet Bonanza', provider: 'Pragmatic Play', rtp: '96.48%', maxWin: '×21 100', score: '4.1' },
+  { name: 'Book of Dead', provider: 'Play\'n GO', rtp: '96.21%', maxWin: '×5 000', score: '3.9' },
+];
+
+const providers = [
+  { name: 'Pragmatic Play', games: '300+', rating: '4.5/5' },
+  { name: 'Evolution', games: '200+', rating: '4.6/5' },
+  { name: 'NetEnt', games: '150+', rating: '4.3/5' },
+  { name: 'Spribe', games: '10+', rating: '4.2/5' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-05"
+  updateDate="2026-04-02"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">
+          Казино Mostbet — слоты, рулетка и live-дилеры
+        </h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Сравнительный обзор казино-секции: 8 000+ игр, ведущие провайдеры, анализ RTP и бонусных условий.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" variant="cta" external class="mt-8">Перейти в казино</CTAButton>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4">Обзор казино</h2>
+      <div class="text-slate-300 space-y-4 mb-12">
+        <p>
+          По данным каталога, Mostbet предлагает свыше 8 000 игр от 60+ провайдеров. Основные категории: слоты, настольные игры, live-казино, краш-игры. Фильтрация по провайдеру и RTP — функциональное преимущество, отмеченное в 4 из 5 сравнительных обзоров. Создать аккаунт можно на <a href="/sozdat-akkaunt" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">странице регистрации</a>.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Рейтинг слотов по RTP</h2>
+      <div class="overflow-x-auto rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm mb-14">
+        <table class="min-w-full text-sm text-left">
+          <thead class="border-b border-white/[0.06]">
+            <tr>
+              <th class="px-5 py-4 text-slate-300 font-semibold">Слот</th>
+              <th class="px-5 py-4 text-slate-300 font-semibold">Провайдер</th>
+              <th class="px-5 py-4 text-slate-300 font-semibold">RTP</th>
+              <th class="px-5 py-4 text-slate-300 font-semibold">Макс.</th>
+              <th class="px-5 py-4 text-secondary-400 font-semibold text-center">Оценка</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/[0.04]">
+            {
+              topSlots.map((s) => (
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="px-5 py-3">
+                    {s.href ? (
+                      <a href={s.href} class="text-emerald-400 hover:text-emerald-300 font-medium">{s.name}</a>
+                    ) : (
+                      <span class="text-white font-medium">{s.name}</span>
+                    )}
+                  </td>
+                  <td class="px-5 py-3 text-slate-400">{s.provider}</td>
+                  <td class="px-5 py-3 text-slate-300">{s.rtp}</td>
+                  <td class="px-5 py-3 text-slate-400">{s.maxWin}</td>
+                  <td class="px-5 py-3 text-center">
+                    <span class="text-secondary-400 font-bold">{s.score}</span>
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Провайдеры: рейтинг</h2>
+      <div class="grid sm:grid-cols-2 gap-4 mb-14">
+        {
+          providers.map((p) => (
+            <Card>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-white font-semibold">{p.name}</h3>
+                <span class="text-xs text-secondary-400 font-bold">{p.rating}</span>
+              </div>
+              <p class="text-sm text-slate-400">{p.games} игр в каталоге</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4">Live-казино и краш-игры</h2>
+      <div class="text-slate-300 space-y-4 mb-10">
+        <p>
+          Live-секция от Evolution включает рулетку, блэкджек, баккару и игровые шоу. Aviator от Spribe (RTP 97%), Lucky Jet, JetX, Mines — краш-игры с высокой волатильностью. По данным сравнения, Aviator удерживает лидерство по популярности в RU-сегменте. Мобильная версия доступна через <a href="/prilozhenie" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">приложение</a>.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4">Бонусы для казино</h2>
+      <div class="text-slate-300 space-y-4 mb-10">
+        <p>
+          250 фриспинов в рамках приветственного пакета. Вейджер ×60 — по данным рейтинга, это выше среднего показателя (×40–50). Активация через 72 часа после депозита. Подробный разбор условий — на странице <a href="/akcii" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">акций</a>. Информация о команде аналитиков — <a href="/about" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">здесь</a>.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-emerald-500/20 bg-white/[0.02] p-4 text-sm text-slate-400 backdrop-blur-sm">
+        <strong class="text-slate-200">Дисклеймер.</strong> Азартные игры связаны с финансовым риском. 18+. Играйте ответственно, устанавливайте лимиты.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

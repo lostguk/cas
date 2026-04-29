@@ -1,0 +1,45 @@
+{
+	"brand": "Mostbet",
+	"region": "RU",
+	"language": "ru",
+	"currency": "RUB",
+	"domain": "mostbetpka.su",
+	"affiliate_url": "#",
+	"color_preset": "obsidian-amber",
+	"visual_style": "blog-personal",
+	"content_format": "F",
+	"preset_number": 6,
+	"font": "Lora+Source Sans 3",
+	"logo_type": "A",
+	"author": {
+		"name": "Дмитрий Смирнов",
+		"city": "Москва",
+		"age": 31,
+		"experience_years": 5,
+		"job_title": "Автор гайдов по ставкам и казино",
+		"bio_style": "casual"
+	},
+	"pages": ["index", "registraciya", "skachat", "casino", "bonus", "about"],
+	"slot_pages": ["sweet-bonanza", "gates-of-olympus"],
+	"sections_order": [
+		"Hero",
+		"Overview",
+		"Advantages",
+		"Bonus",
+		"Slots",
+		"Payments",
+		"FAQ",
+		"CTA"
+	],
+	"seo": {
+		"primary_keyword": "mostbet россия",
+		"secondary_keywords": [
+			"мостбет скачать",
+			"мостбет регистрация",
+			"мостбет авиатор",
+			"мостбет бонус"
+		],
+		"geo_target": "RU"
+	},
+	"noindex": false
+}

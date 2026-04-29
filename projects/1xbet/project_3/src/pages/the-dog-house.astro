@@ -4,7 +4,6 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ArticleMeta from '../components/ArticleMeta.astro';
 import CTAButton from '../components/ui/CTAButton.astro';
 import Card from '../components/ui/Card.astro';
-import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
 
 const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
 const title = 'Играть The Dog House на 1xBet Казахстан — обзор и RTP';
@@ -35,7 +34,6 @@ const schema = [
   schema={schema}
   publishDate="2026-02-14"
   updateDate="2026-03-25"
-  noindex={true}
   type="article"
 >
   <Breadcrumbs
@@ -57,7 +55,14 @@ const schema = [
         <CTAButton href={affiliateLink} size="lg" external class="mt-8">Играть на платформе</CTAButton>
       </div>
 
-      <ImagePlaceholder description="Слот The Dog House: собаки и будки, весёлая тема" class="mb-10" />
+      <img
+        src="/images/slot-the-dog-house.png"
+        alt="Слот The Dog House: собаки и будки"
+        width="800"
+        height="500"
+        class="rounded-xl shadow-sm w-full mb-10"
+        loading="lazy"
+      />
 
       <div class="grid sm:grid-cols-3 gap-4 mb-10 text-center">
         <Card class="py-4">

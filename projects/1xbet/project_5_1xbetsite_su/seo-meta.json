@@ -1,0 +1,90 @@
+{
+  "index": {
+    "title": "1xBet Россия — ставки на спорт и казино РУ 2026",
+    "description": "Обзор 1xBet для Россия: ставки на КПЛ, казино, бонус до 32 500 ₽. Пополнение через Сбербанк в рубль.",
+    "primary_keyword": "1xBet россия",
+    "title_formula": 1,
+    "page_type": "index"
+  },
+  "otkryt-schet": {
+    "title": "Регистрация 1xBet: 4 способа + бонус на первый депозит",
+    "description": "Регистрация 1xBet за 2 минуты — пошагово. Аккаунт в рубль, бонус на старте, верификация через ИИН.",
+    "primary_keyword": "1xBet регистрация",
+    "title_formula": 2,
+    "page_type": "registration"
+  },
+  "ustanovka": {
+    "title": "Скачать 1xBet Россия — APK для Android бесплатно",
+    "description": "Как скачать 1xBet в Россия: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.",
+    "primary_keyword": "1xBet скачать",
+    "title_formula": 3,
+    "page_type": "download"
+  },
+  "igrovye-avtomaty": {
+    "title": "Какие слоты есть на 1xBet? Обзор казино РУ 2026",
+    "description": "Казино 1xBet РУ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в рубль, выводи на Сбербанк.",
+    "primary_keyword": "1xBet казино",
+    "title_formula": 4,
+    "page_type": "casino"
+  },
+  "privetstvennye-bonusy": {
+    "title": "1xBet Бонусы — приветственный пакет для РУ | 2026",
+    "description": "Бонусы 1xBet для Россия: до 32 500 ₽ на спорт, 150 фриспинов на казино. Условия отыгрыша.",
+    "primary_keyword": "1xBet бонус",
+    "title_formula": 1,
+    "page_type": "bonus"
+  },
+  "moj-profil": {
+    "title": "Личный кабинет 1xBet: вход, вывод, верификация РУ",
+    "description": "1xBet личный кабинет — как войти, пополнить счёт и вывести деньги в рубль на Сбербанк Gold.",
+    "primary_keyword": "1xBet вход",
+    "title_formula": 2,
+    "page_type": "account"
+  },
+  "about": {
+    "title": "Обзор 1xBet Россия — кто автор и зачем этот сайт",
+    "description": "Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках.",
+    "primary_keyword": "1xBet обзор",
+    "title_formula": 3,
+    "page_type": "about"
+  },
+  "dead-or-alive-2": {
+    "title": "Играть Dead or Alive 2 на 1xBet Россия — обзор и RTP",
+    "description": "Dead or Alive 2 на 1xBet: RTP 96.82%, бонусные раунды, волатильность. Честный обзор от жителя Россия 2026.",
+    "primary_keyword": "Dead or Alive 2 слот",
+    "title_formula": 3,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Dead or Alive 2",
+      "rtp": "96.82%",
+      "maxWin": "×111 111",
+      "provider": "NetEnt"
+    }
+  },
+  "big-bass-bonanza": {
+    "title": "Big Bass Bonanza слот: RTP 96.71%, максимум ×2 100 | 1xBet",
+    "description": "Обзор слота Big Bass Bonanza на 1xBet: RTP 96.71%, макс. выигрыш ×2 100. Pragmatic Play. Играй в рубль.",
+    "primary_keyword": "Big Bass Bonanza слот",
+    "title_formula": 2,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Big Bass Bonanza",
+      "rtp": "96.71%",
+      "maxWin": "×2 100",
+      "provider": "Pragmatic Play"
+    }
+  },
+  "book-of-dead": {
+    "title": "Book of Dead — обзор слота и демо на 1xBet | 2026",
+    "description": "Book of Dead — обзор слота от Play'n GO. RTP 96.21%, множитель ×5 000. Демо и реальная игра на 1xBet.",
+    "primary_keyword": "Book of Dead слот",
+    "title_formula": 1,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Book of Dead",
+      "rtp": "96.21%",
+      "maxWin": "×5 000",
+      "provider": "Play'n GO"
+    }
+  }
+}

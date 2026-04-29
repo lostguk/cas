@@ -1,0 +1,70 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const items = [
+  {
+    title: 'ЛИНИЯ И КОЭФФИЦИЕНТЫ',
+    plus: '50+ видов спорта, маржа 3-5% по данным обзоров',
+    minus: 'На РПЛ роспись, согласно отзывам, беднее чем на АПЛ',
+  },
+  {
+    title: 'ОПЛАТА В РУБЛЯХ',
+    plus: 'Сбербанк, Тинькофф, Альфа-Банк — без конвертации',
+    minus: 'СБП-переводы иногда отклоняются, по данным пользователей',
+  },
+  {
+    title: 'МОБИЛЬНОЕ ПРИЛОЖЕНИЕ',
+    plus: 'APK ~40 МБ, по отзывам работает стабильно',
+    minus: 'Нет в Google Play, обновлять приходится вручную',
+  },
+  {
+    title: 'КАЗИНО И СЛОТЫ',
+    plus: '10 000+ игр: Pragmatic Play, NetEnt, Evolution',
+    minus: 'Вейджер ×35 на казино-бонус — достаточно жёстко',
+  },
+  {
+    title: 'БОНУСЫ',
+    plus: 'До 32 500 ₽ + 150 фриспинов, согласно обзорам',
+    minus: 'Условия отыгрыша не самые простые',
+  },
+  {
+    title: 'ПОДДЕРЖКА',
+    plus: 'Чат 24/7 на русском языке',
+    minus: 'Согласно отзывам, отвечают шаблонно',
+  },
+];
+---
+
+<section class="py-16 lg:py-24 border-b-2 border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>
+      ПЛЮСЫ И МИНУСЫ
+      <p slot="subtitle">По данным из открытых источников и отзывов пользователей</p>
+    </SectionHeading>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+      {
+        items.map((item) => (
+          <Card>
+            <p class="text-sm font-mono font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-3">{item.title}</p>
+            <div class="space-y-3">
+              <div class="flex gap-2">
+                <span class="text-green-400 font-mono text-sm shrink-0">+</span>
+                <p class="text-sm text-white/60">{item.plus}</p>
+              </div>
+              <div class="flex gap-2">
+                <span class="text-red-400 font-mono text-sm shrink-0">−</span>
+                <p class="text-sm text-white/60">{item.minus}</p>
+              </div>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+
+    <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50 mt-8">
+      <p>⚠️ Оценки основаны на информации из публичных источников. Мы не проводим регистрацию и не гарантируем актуальность данных. Для проверки обращайтесь на официальный сайт.</p>
+    </div>
+  </div>
+</section>

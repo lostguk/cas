@@ -1,0 +1,53 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const slots = [
+  {
+    name: 'Rocket Queen',
+    provider: '1Win Games',
+    rtp: '96.20%',
+    maxWin: '×10 000',
+    description: 'Краш-игра от собственной студии. По механике напоминает Aviator, но с космической тематикой и множителями до ×10 000.',
+    cta: 'Запустить слот бесплатно',
+    link: '/rocket-queen',
+    imgDesc: '1. Слот Rocket Queen: космическая ракета и множители на тёмном фоне',
+  },
+  {
+    name: 'Gates of Olympus',
+    provider: 'Pragmatic Play',
+    rtp: '96.50%',
+    maxWin: '×5 000',
+    description: 'Классика Pragmatic Play — Зевс, молнии, каскадные выпадения. RTP 96.50%, волатильность высокая, множители в бонус-раунде.',
+    cta: 'Открыть казино с бонусом',
+    link: '/gates-of-olympus',
+    imgDesc: '2. Слот Gates of Olympus: Зевс и молнии на облаках',
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Казино: рейтинг слотов</SectionHeading>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {slots.map((slot) => (
+        <Card>
+          <ImagePlaceholder description={slot.imgDesc} aspect="16/10" class="mb-5" />
+          <div class="text-xs text-glow-400 font-medium mb-1">{slot.provider}</div>
+          <h3 class="text-lg font-bold text-white mb-2">{slot.name}</h3>
+          <p class="text-sm text-slate-300 mb-4">{slot.description}</p>
+          <div class="flex items-center gap-4 text-xs text-slate-400 mb-5">
+            <span>RTP: <strong class="text-white">{slot.rtp}</strong></span>
+            <span>Макс: <strong class="text-flash-400">{slot.maxWin}</strong></span>
+          </div>
+          <CTAButton href={slot.link} variant="outline" size="sm">{slot.cta}</CTAButton>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Какие слоты есть на Mostbet? Обзор казино РУ 2026';
+const description =
+  'Казино Mostbet РУ — обзор: слоты, провайдеры, RTP, бонусы. Играйте в рублях, выводите на Сбербанк.';
+const canonical = 'https://mostbetpka.su/casino';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Дмитрий Смирнов' },
+};
+
+const topSlots = [
+  { name: 'Sweet Bonanza', provider: 'Pragmatic Play', rtp: '96.48%', href: '/sweet-bonanza' },
+  { name: 'Gates of Olympus', provider: 'Pragmatic Play', rtp: '96.50%', href: '/gates-of-olympus' },
+  { name: 'Big Bass Bonanza', provider: 'Pragmatic Play', rtp: '96.71%', href: null },
+  { name: 'Dog House Megaways', provider: 'Pragmatic Play', rtp: '96.55%', href: null },
+  { name: 'Aviator', provider: 'Spribe', rtp: '97.00%', href: null },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-01-20"
+  updateDate="2026-04-08"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино' }]} />
+  <ArticleMeta publishDate="2026-01-20" updateDate="2026-04-08" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-warm-900 leading-tight mb-4">
+        Казино Mostbet — слоты, рулетка и live-дилеры
+      </h1>
+      <p class="text-warm-500 leading-relaxed mb-8">
+        Каталог казино Mostbet насчитывает свыше 8 000 игр от более чем 100 провайдеров. В этом разделе описаны основные категории, популярные слоты и условия для пользователей из России.
+      </p>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Обзор казино</h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          В каталоге представлены слоты, настольные игры, live-казино и краш-игры. Основные провайдеры: Pragmatic Play, Spribe, NetEnt, Evolution, Play'n GO, Microgaming. Фильтрация по провайдеру и RTP позволяет быстро найти нужную игру.
+        </p>
+        <p>
+          Для запуска слотов в демо-режиме авторизация не требуется. Однако для игры на реальные деньги нужно <a href="/registraciya" class="text-accent-600 hover:underline">зарегистрироваться</a> и пополнить счёт. Минимальная ставка зависит от конкретного слота — обычно от 1 ₽ до 50 ₽.
+        </p>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-6">Популярные слоты</h2>
+      <div class="space-y-3 mb-10">
+        {
+          topSlots.map((s) => (
+            <Card>
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <div>
+                  <h3 class="font-serif font-semibold text-warm-900">
+                    {s.href ? <a href={s.href} class="hover:text-accent-600 transition-colors">{s.name}</a> : s.name}
+                  </h3>
+                  <p class="text-xs text-warm-400">{s.provider} · RTP {s.rtp}</p>
+                </div>
+                {s.href && (
+                  <CTAButton href={s.href} variant="outline" size="sm">Подробнее</CTAButton>
+                )}
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Live-казино и краш-игры</h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          Раздел live-казино включает столы с реальными дилерами: рулетка, блэкджек, баккара и игровые шоу от Evolution и Ezugi. Минимальная ставка за столом варьируется от 50 ₽ до 500 ₽.
+        </p>
+        <p>
+          Краш-игры — отдельная категория с Aviator, Lucky Jet, JetX, Mines и Dice. Aviator — самая популярная краш-игра на платформе с RTP 97%. Для запуска достаточно минимальной ставки от 10 ₽.
+        </p>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Бонусы для казино</h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          На первый депозит доступны 250 фриспинов в рамках приветственного пакета. Вейджер на казино-бонус — ×60, на спортивный — ×5. Чтобы ознакомиться с полными условиями, перейдите на <a href="/bonus" class="text-accent-600 hover:underline">страницу бонусов</a>.
+        </p>
+        <p>
+          Перед активацией бонуса рекомендуется изучить список подходящих слотов. Не все игры засчитываются в отыгрыш. Подробнее о платформе — на странице <a href="/about" class="text-accent-600 hover:underline">«О проекте»</a>.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-warm-200 bg-white p-4 text-xs text-warm-400">
+        18+. Азартные игры связаны с финансовыми рисками. Устанавливайте лимиты в личном кабинете перед началом игры.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+const title = 'Какие слоты есть на 1xBet? Обзор казино РУ 2026';
+const description =
+  'Казино 1xBet РУ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в рубль, выводи на Сбербанк.';
+const canonical = 'https://1xbetsite.su/igrovye-avtomaty';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'ru',
+};
+
+const topSlots = [
+  { name: 'Dead or Alive 2', provider: 'NetEnt', rtp: '96.82%', max: '×111 111', href: '/dead-or-alive-2' },
+  { name: 'Big Bass Bonanza', provider: 'Pragmatic Play', rtp: '96.71%', max: '×2 100', href: '/big-bass-bonanza' },
+  { name: 'Book of Dead', provider: "Play'n GO", rtp: '96.21%', max: '×5 000', href: '/book-of-dead' },
+  { name: 'Sweet Bonanza', provider: 'Pragmatic Play', rtp: '96.48%', max: '×21 100', href: '/igrovye-avtomaty' },
+  { name: 'Gates of Olympus', provider: 'Pragmatic Play', rtp: '96.50%', max: '×5 000', href: '/igrovye-avtomaty' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Игровые автоматы' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Казино 1xBet — слоты и live-дилеры</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          10 000+ игр от Pragmatic Play, NetEnt, Play'n GO, Evolution. Играй в рублях, выводи на Сбербанк.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external class="mt-8">Открыть казино</CTAButton>
+      </div>
+
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Популярные слоты</h2>
+      <div class="space-y-4 mb-12">
+        {
+          topSlots.map((s) => (
+            <a href={s.href} class="block">
+              <Card>
+                <div class="flex items-center justify-between flex-wrap gap-4">
+                  <div>
+                    <h3 class="font-semibold text-gray-900">{s.name}</h3>
+                    <p class="text-sm text-gray-500">{s.provider}</p>
+                  </div>
+                  <div class="flex gap-3 text-xs text-gray-500">
+                    <span class="px-2 py-1 rounded-md bg-gray-100">RTP {s.rtp}</span>
+                    <span class="px-2 py-1 rounded-md bg-gray-100">Макс. {s.max}</span>
+                  </div>
+                </div>
+              </Card>
+            </a>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-semibold text-gray-900 mb-4">Live-казино и краш-игры</h2>
+      <p class="text-gray-600 mb-6">
+        Aviator, JetX, Crazy Time, Lightning Roulette — всё в реальном времени. Дилеры от Evolution и Pragmatic Live.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-gray-900 mb-4">Бонусы для казино</h2>
+      <p class="text-gray-600 mb-8">
+        150 фриспинов + бонус до 32 500 ₽. Вейджер ×35 на казино. Подробнее — на <a href="/privetstvennye-bonusy" class="text-cta-500 hover:text-cta-600 underline">странице бонусов</a>.
+      </p>
+
+      <div class="text-center">
+        <CTAButton href={affiliateLink} size="lg" external>Начать играть</CTAButton>
+      </div>
+
+      <div class="mt-8 text-sm text-gray-500 text-center">
+        <a href="/moj-profil" class="text-cta-500 hover:text-cta-600">Личный кабинет</a> · <a href="/about" class="text-cta-500 hover:text-cta-600">О проекте</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

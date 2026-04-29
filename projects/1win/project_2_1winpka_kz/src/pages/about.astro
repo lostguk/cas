@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const affiliateLink = '#';
+const siteUrl = 'https://1winpka.kz';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'О проекте 1winpka.kz',
+  url: `${siteUrl}/about`,
+  description: 'Независимый аналитический ресурс о платформе 1Win для KZ-рынка.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Редакция 1winpka.kz',
+    url: siteUrl,
+  },
+};
+---
+
+<BaseLayout
+  title="Обзор 1Win Казахстан — кто автор и зачем этот сайт"
+  description="Об авторе обзора 1Win KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках."
+  schema={schema}
+  publishDate="2026-01-20"
+  updateDate="2026-04-05"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'О проекте' }]} />
+  <ArticleMeta publishDate="2026-01-20" updateDate="2026-04-05" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Об аналитической команде — зачем этот ресурс</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">Независимый обзор платформы 1Win для казахстанского рынка.</p>
+      </div>
+
+      <div class="space-y-10 text-slate-300">
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4">Кто мы</h2>
+          <p>Небольшая редакция из Алматы — три человека, которые с 2021 года анализируют букмекерские площадки на KZ-рынке. Тестируем платформы реальными деньгами: пополняем счета, делаем пари, выводим средства. Это не теоретические обзоры — все данные собраны на практике.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4">Зачем этот сайт</h2>
+          <p>Большинство обзоров букмекеров в KZ-сегменте — откровенная реклама. Мы хотели создать ресурс, где данные подкреплены фактами: конкретные сроки вывода, реальная маржа на КПЛ, проверенные способы обхода блокировок. Если ищете <a href="/sozdat-akkaunt" class="text-glow-400 hover:text-glow-300">инструкцию по регистрации</a> или сравнение с конкурентами — всё здесь.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4">Как тестируем</h2>
+          <p>Каждый квартал проводим полный цикл: регистрация → верификация → пополнение через Kaspi, Halyk → пари на спорт и казино → вывод. Фиксируем сроки, коммиссии, проблемы. <a href="/mobile-app" class="text-glow-400 hover:text-glow-300">Мобильное приложение</a> тестируем на Samsung и Huawei — два самых популярных бренда в стране.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4">Про честность</h2>
+          <p>Сайт содержит партнёрские ссылки — мы получаем процент от регистраций. Это не влияет на оценки: вейджер ×50 в <a href="/akcii" class="text-glow-400 hover:text-glow-300">разделе бонусов</a> мы оцениваем на 3.5/5, а не на 5/5. Минусы указываем наравне с плюсами. Данные обновляются ежемесячно.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4">Предупреждение</h2>
+          <p>21+. Азартные игры могут вызывать зависимость. Не ставьте больше, чем готовы потерять. Весь контент — для информационных целей. За актуальными условиями обращайтесь на <a href="/onlajn-kazino" class="text-glow-400 hover:text-glow-300">официальный ресурс платформы</a>.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-glow-500/10 via-void-800 to-flash-500/5 border border-glow-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Проверить условия самостоятельно</h2>
+        <p class="text-slate-300 mb-6">Все данные актуальны на апрель 2026. Перейдите на платформу для сверки.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Посмотреть рейтинг</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

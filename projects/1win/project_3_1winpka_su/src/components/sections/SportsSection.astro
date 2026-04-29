@@ -1,0 +1,52 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const sports = [
+  {
+    title: 'Футбол',
+    text: 'РПЛ, АПЛ, Ла Лига — до 200 рынков на топ-матчи. Маржа 3-4% на Зенит—Спартак.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8"><circle cx="12" cy="12" r="10"/><path d="m12 2 3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>',
+  },
+  {
+    title: 'Теннис',
+    text: 'ATP, WTA, ITF. Лайв-ставки на каждый гейм, тоталы и форы без задержек.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8"><circle cx="12" cy="12" r="10"/><path d="M18 4c-4 4-4 12 0 16M6 4c4 4 4 12 0 16"/></svg>',
+  },
+  {
+    title: 'Баскетбол',
+    text: 'НБА, Евролига, ВТБ Лига. Хорошая роспись на четверти и тоталы.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14M2 12h20M12 2v20"/></svg>',
+  },
+  {
+    title: 'Киберспорт',
+    text: 'CS2, Dota 2, Valorant — live-ставки на карты. Кэфы неплохие, особенно на мажоры.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M16 10l1.5 1.5L16 13M14 10l-1.5 1.5L14 13"/></svg>',
+  },
+];
+---
+
+<section class="relative py-20 lg:py-28 overflow-hidden" style="transform: skewY(-2deg);">
+  <div class="absolute inset-0 bg-abyss-800/50"></div>
+  <div class="relative" style="transform: skewY(2deg);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>Спортивные ставки</SectionHeading>
+      <p class="text-center text-slate-400 max-w-2xl mx-auto mb-10 -mt-6">35+ дисциплин, 600+ лайв-событий ежедневно. Маржа от 3% на топ-матчи.</p>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {sports.map((s) => (
+          <Card>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-coral-500/10 flex items-center justify-center text-coral-400 shrink-0">
+                <Fragment set:html={s.icon} />
+              </div>
+              <div>
+                <h3 class="font-bold text-white uppercase tracking-wide mb-1">{s.title}</h3>
+                <p class="text-sm text-slate-400">{s.text}</p>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

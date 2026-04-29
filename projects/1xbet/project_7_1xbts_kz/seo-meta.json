@@ -1,0 +1,77 @@
+{
+  "index": {
+    "title": "1xBet Казахстан — ставки на спорт и казино КЗ 2026",
+    "description": "Обзор 1xBet для Казахстан: ставки на КПЛ, казино, бонус до 220 000 ₸. Пополнение через Kaspi в тенге.",
+    "primary_keyword": "1xBet казахстан",
+    "title_formula": 1,
+    "page_type": "index"
+  },
+  "vhod": {
+    "title": "Личный кабинет 1xBet: вход, вывод, верификация КЗ",
+    "description": "1xBet личный кабинет — как войти, пополнить счёт и вывести деньги в тенге на Kaspi Gold.",
+    "primary_keyword": "1xBet вход",
+    "title_formula": 2,
+    "page_type": "account"
+  },
+  "ustanovka": {
+    "title": "Скачать 1xBet Казахстан — APK для Android бесплатно",
+    "description": "Как скачать 1xBet в Казахстан: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.",
+    "primary_keyword": "1xBet скачать",
+    "title_formula": 3,
+    "page_type": "download"
+  },
+  "onlajn-kazino": {
+    "title": "Какие слоты есть на 1xBet? Обзор казино КЗ 2026",
+    "description": "Казино 1xBet КЗ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в тенге, выводи на Kaspi.",
+    "primary_keyword": "1xBet казино",
+    "title_formula": 4,
+    "page_type": "casino"
+  },
+  "rabochij-sajt": {
+    "title": "1xBet Зеркало — рабочий доступ без блокировки | 2026",
+    "description": "Рабочее зеркало 1xBet для Казахстан. Обходи блокировку Kcell и Beeline — вход без VPN.",
+    "primary_keyword": "1xBet зеркало",
+    "title_formula": 1,
+    "page_type": "mirror"
+  },
+  "akcii": {
+    "title": "1xBet Бонус: до 220 000 ₸ + 150 фриспинов новым игрокам",
+    "description": "1xBet бонус 2026: приветственный пакет, промокод, фрибет. Как получить и отыграть бонус в KZ.",
+    "primary_keyword": "1xBet бонус",
+    "title_formula": 2,
+    "page_type": "bonus"
+  },
+  "about": {
+    "title": "Обзор 1xBet Казахстан — кто автор и зачем этот сайт",
+    "description": "Об авторе обзора 1xBet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках.",
+    "primary_keyword": "1xBet обзор",
+    "title_formula": 3,
+    "page_type": "about"
+  },
+  "gates-of-olympus": {
+    "title": "Играть Gates of Olympus на 1xBet Казахстан — обзор и RTP",
+    "description": "Gates of Olympus на 1xBet: RTP 96.50%, бонусные раунды, волатильность. Честный обзор от жителя Казахстан 2026.",
+    "primary_keyword": "Gates of Olympus слот",
+    "title_formula": 3,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Gates of Olympus",
+      "rtp": "96.50%",
+      "maxWin": "×5 000",
+      "provider": "Pragmatic Play"
+    }
+  },
+  "sugar-rush": {
+    "title": "Sugar Rush слот: RTP 96.50%, максимум ×5 000 | 1xBet",
+    "description": "Обзор слота Sugar Rush на 1xBet: RTP 96.50%, макс. выигрыш ×5 000. Pragmatic Play. Играй в тенге.",
+    "primary_keyword": "Sugar Rush слот",
+    "title_formula": 2,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Sugar Rush",
+      "rtp": "96.50%",
+      "maxWin": "×5 000",
+      "provider": "Pragmatic Play"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const steps = [
+  { n: '01', text: 'Перейдите на официальный сайт Mostbet через актуальную ссылку' },
+  { n: '02', text: 'Скачайте APK-файл для Android или откройте App Store для iOS' },
+  { n: '03', text: 'Разрешите установку из неизвестных источников в настройках устройства' },
+  { n: '04', text: 'Установите приложение и авторизуйтесь в своём аккаунте' },
+];
+---
+
+<section class="py-20 lg:py-28 relative">
+  <div class="absolute inset-0 -skew-y-2 bg-deep-900/60 -z-10" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>📱 Мобильное приложение</SectionHeading>
+    <div class="max-w-3xl mx-auto">
+      <p class="text-slate-300 text-center mb-10 -mt-4">
+        Мы предлагаем приложение для Android (APK, ~45 МБ) и iOS. Быстрый доступ к ставкам и казино, push-уведомления о результатах. Подробная инструкция — на <a href="/mobile-app" class="text-main-400 hover:text-main-300 underline underline-offset-2">странице приложения</a>.
+      </p>
+      <div class="space-y-4">
+        {
+          steps.map((s) => (
+            <div class="flex items-start gap-4 rounded-lg bg-deep-700/60 border-l-4 border-main-500 p-5">
+              <span class="text-2xl font-extrabold text-main-400 shrink-0">{s.n}</span>
+              <p class="text-slate-300">{s.text}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="text-center mt-10">
+        <CTAButton href={affiliateLink} size="lg" external>Скачать приложение</CTAButton>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+---
+const sections = [
+  {
+    title: 'Разделы',
+    links: [
+      { href: '/nachalo-raboty', label: 'Регистрация' },
+      { href: '/mobile-app', label: 'Приложение' },
+      { href: '/slots-i-igry', label: 'Слоты и игры' },
+    ],
+  },
+  {
+    title: 'Информация',
+    links: [
+      { href: '/podarki', label: 'Бонусы и подарки' },
+      { href: '/lichnyy-kabinet', label: 'Личный кабинет' },
+      { href: '/about', label: 'О платформе' },
+    ],
+  },
+  {
+    title: 'Слоты',
+    links: [
+      { href: '/big-bass-splash', label: 'Big Bass Splash' },
+      { href: '/reactoonz-2', label: 'Reactoonz 2' },
+    ],
+  },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-20 bg-deep-950 border-t border-main-500/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="inline-flex items-center gap-2 mb-4">
+          <span class="relative w-8 h-8 flex items-center justify-center" aria-hidden="true">
+            <span class="absolute inset-0 bg-gradient-to-br from-main-500 to-main-600 rounded-md rotate-45"></span>
+            <span class="relative text-white font-black text-sm z-10">M</span>
+          </span>
+          <span class="font-extrabold text-white">Most<span class="text-main-500">bet</span> RU</span>
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Обзор платформы Mostbet для пользователей из России: интерфейс, платежи, бонусы. По данным из открытых источников.
+        </p>
+      </div>
+      {
+        sections.map((s) => (
+          <div>
+            <h3 class="text-sm font-semibold text-main-400 uppercase tracking-wider mb-4">{s.title}</h3>
+            <ul class="space-y-2.5">
+              {s.links.map((l) => (
+                <li>
+                  <a href={l.href} class="text-sm text-slate-400 hover:text-main-400 transition-colors">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-white/5 space-y-4 text-xs text-slate-500 leading-relaxed">
+      <p>
+        <strong class="text-slate-300">По данным из открытых источников.</strong> Материалы носят информационный характер, не являются призывом к игре на деньги. 18+.
+      </p>
+      <p>
+        Азартные игры связаны с риском. Играйте ответственно, в рамках личного бюджета. На сайте есть партнёрские ссылки.
+      </p>
+      <p class="text-slate-600">© {year} mostbetgd.su. Все права защищены.</p>
+    </div>
+  </div>
+</footer>

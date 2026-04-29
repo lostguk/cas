@@ -1,0 +1,100 @@
+---
+const affiliateLink = '#';
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Главная' },
+  { href: '/registraciya', label: 'Регистрация' },
+  { href: '/skachat', label: 'Скачать' },
+  { href: '/casino', label: 'Казино' },
+  { href: '/bonus', label: 'Бонусы' },
+  { href: '/about', label: 'Об авторе' },
+];
+
+const isActive = (href: string) =>
+  currentPath === href || (href !== '/' && currentPath.startsWith(href));
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-cream-200">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-14 lg:h-16">
+      <a href="/" class="font-heading text-lg font-bold text-cream-900">
+        1<span class="text-violet-500">Win</span><span class="text-cream-400 text-sm font-body font-normal ml-1">sl.kz</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Основная навигация">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-3 py-1.5 rounded-full text-sm transition-colors duration-200',
+              isActive(link.href)
+                ? 'text-violet-600 bg-violet-50 font-semibold'
+                : 'text-cream-600 hover:text-cream-900 hover:bg-cream-100',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex bg-cream-800 text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-cream-700 transition-colors"
+        >
+          Попробовать
+        </a>
+        <button
+          type="button"
+          id="menu-toggle"
+          class="lg:hidden p-2 text-cream-600"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-cream-200 py-3">
+      <div class="flex flex-col gap-1">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-3 py-2 rounded-lg text-sm',
+              isActive(link.href)
+                ? 'text-violet-600 bg-violet-50 font-semibold'
+                : 'text-cream-600',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 text-center bg-cream-800 text-white text-sm font-semibold px-4 py-2.5 rounded-full"
+        >
+          Попробовать
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    const open = menu && !menu.classList.contains('hidden');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>

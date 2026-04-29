@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const reviewSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  itemReviewed: {
+    '@type': 'SoftwareApplication',
+    name: 'Sugar Rush',
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'Web',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'KZT' },
+  },
+  reviewRating: { '@type': 'Rating', ratingValue: '4.1', bestRating: '5' },
+  author: { '@type': 'Organization', name: '1xbts.kz' },
+};
+---
+
+<BaseLayout
+  title="Sugar Rush слот: RTP 96.50%, максимум ×5 000 | 1xBet"
+  description="Обзор слота Sugar Rush на 1xBet: RTP 96.50%, макс. выигрыш ×5 000. Pragmatic Play. Играй в тенге."
+  schema={reviewSchema}
+  publishDate="2026-02-25"
+  updateDate="2026-04-07"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино', href: '/onlajn-kazino' }, { label: 'Sugar Rush' }]} />
+  <ArticleMeta publishDate="2026-02-25" updateDate="2026-04-07" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">Sugar Rush — обзор слота от Pragmatic Play</h1>
+        <p class="text-lg text-gray-400 italic font-heading max-w-2xl mx-auto">Кластерная механика 7×7, нарастающие множители, RTP 96.50%.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Попробовать в демо-режиме</CTAButton>
+          <CTAButton href="/onlajn-kazino" variant="secondary" size="lg">Все слоты</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Слот Sugar Rush: разноцветные конфеты на игровом поле 7×7" aspect="16/9" class="mb-12" />
+
+      <div class="space-y-8 text-gray-300">
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Обзор Sugar Rush</h2>
+          <p class="mb-3">Sugar Rush от Pragmatic Play — слот с кластерной механикой на поле 7×7. Выигрыш формируется при кластере из 5+ одинаковых символов, расположенных смежно. Визуально — конфетная тематика, при этом математическая модель достаточно агрессивна: волатильность средне-высокая.</p>
+          <p class="text-gray-400 text-sm">RTP — 96.50%, потолок выигрыша — ×5 000 от ставки. Ключевая особенность — система нарастающих множителей на ячейках поля.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Как играть</h2>
+          <p class="mb-3">После каждого выигрышного кластера символы исчезают, а ячейки под ними получают множитель ×2. При повторном выигрыше на той же ячейке множитель удваивается: ×4, ×8, ×16 и далее. Множители сохраняются в пределах серии каскадов.</p>
+          <p class="text-gray-400 text-sm">Бонусный раунд — фриспины с сохранением всех накопленных множителей. Активируется при 3+ Scatter-символах. Также доступна покупка бонуса.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex-1 p-5 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-amber-500/15">
+            <div class="text-xs text-amber-500/60 uppercase tracking-wider mb-1">RTP</div>
+            <div class="text-2xl font-heading font-bold text-white">96.50%</div>
+          </div>
+          <div class="flex-1 p-5 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-amber-500/15">
+            <div class="text-xs text-amber-500/60 uppercase tracking-wider mb-1">Макс. выигрыш</div>
+            <div class="text-2xl font-heading font-bold text-white">×5 000</div>
+          </div>
+          <div class="flex-1 p-5 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-amber-500/15">
+            <div class="text-xs text-amber-500/60 uppercase tracking-wider mb-1">Поле</div>
+            <div class="text-2xl font-heading font-bold text-white">7×7</div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Стоит ли играть</h2>
+          <p class="text-gray-400 text-sm">Sugar Rush — вариант для тех кто предпочитает кластерную механику линейным слотам. Множители накапливаются быстро, но базовая частота выигрышей ниже, чем в классических автоматах. Сравнение с <a href="/gates-of-olympus" class="text-amber-400 hover:text-amber-300">Gates of Olympus</a> показывает: обе игры от одного провайдера, схожий потенциал, но Sugar Rush динамичнее за счёт поля 7×7. Полный каталог — в <a href="/onlajn-kazino" class="text-amber-400 hover:text-amber-300">разделе казино</a>.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-amber-500/10 via-obsidian-800 to-olive-500/5 border border-amber-500/10">
+        <h2 class="text-2xl font-heading font-bold text-white mb-3">Sugar Rush на 1xBet</h2>
+        <p class="text-gray-400 italic font-heading mb-6">Кластерная механика с множителями. Играйте в тенге.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть слот</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

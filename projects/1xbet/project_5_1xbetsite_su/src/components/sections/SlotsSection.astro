@@ -1,0 +1,71 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const slots = [
+  {
+    href: '/dead-or-alive-2',
+    provider: 'NetEnt',
+    name: 'Dead or Alive 2',
+    rtp: '96.82%',
+    win: '×111 111',
+    desc: 'Высокая волатильность, бонусные раунды с множителями. Тема Дикого Запада.',
+    cta: 'Открыть казино с бонусом',
+    placeholder: 'Слот Dead or Alive 2: ковбои и револьверы',
+  },
+  {
+    href: '/big-bass-bonanza',
+    provider: 'Pragmatic Play',
+    name: 'Big Bass Bonanza',
+    rtp: '96.71%',
+    win: '×2 100',
+    desc: 'Рыбалка со множителями. Ловишь рыбака — множитель растёт.',
+    cta: 'Попробовать в демо',
+    placeholder: 'Слот Big Bass Bonanza: рыбалка и множители',
+  },
+  {
+    href: '/book-of-dead',
+    provider: "Play'n GO",
+    name: 'Book of Dead',
+    rtp: '96.21%',
+    win: '×5 000',
+    desc: 'Египетская тематика, расширяющиеся символы в бонусе.',
+    cta: 'Испытать удачу',
+    placeholder: 'Слот Book of Dead: Египет и фараоны',
+  },
+];
+---
+
+<section class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Казино: популярные слоты</SectionHeading>
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        slots.map((s) => (
+          <Card class="flex flex-col">
+            <a href={s.href} class="block mb-4">
+              <ImagePlaceholder description={s.placeholder} aspect="16/10" />
+            </a>
+            <p class="text-xs font-semibold text-cta-500 uppercase tracking-wide mb-1">{s.provider}</p>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{s.name}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed flex-1 mb-4">{s.desc}</p>
+            <div class="flex flex-wrap gap-3 text-xs text-gray-500 mb-4">
+              <span class="px-2 py-1 rounded-md bg-gray-100">RTP {s.rtp}</span>
+              <span class="px-2 py-1 rounded-md bg-gray-100">Макс. {s.win}</span>
+            </div>
+            <CTAButton href={s.href} variant="outline" size="sm" class="w-full">
+              {s.cta}
+            </CTAButton>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="text-center mt-10">
+      <CTAButton href={affiliateLink} size="lg" external>Играть на платформе</CTAButton>
+    </div>
+  </div>
+</section>

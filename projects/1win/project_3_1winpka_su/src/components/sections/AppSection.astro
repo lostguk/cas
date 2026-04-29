@@ -1,0 +1,32 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const steps = [
+  { num: '01', title: 'Скачать', text: 'Зайти на сайт 1Win через зеркало, нажать «Скачать APK»' },
+  { num: '02', title: 'Разрешить', text: 'В настройках телефона разрешить установку из неизвестных источников' },
+  { num: '03', title: 'Установить', text: 'Открыть скачанный файл и подтвердить установку' },
+  { num: '04', title: 'Войти', text: 'Открыть приложение, авторизоватся или создать аккаунт' },
+];
+---
+
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>APK для Android — инструкция</SectionHeading>
+    <p class="text-center text-slate-400 max-w-2xl mx-auto mb-10 -mt-6">Приложение весит около 50 МБ, работает на Android 6.0+. В Google Play его нет — скачивать только с <a href="/prilozhenie" class="text-coral-400 hover:underline">сайта</a>.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+      {steps.map((s) => (
+        <div class="bg-abyss-800 border-l-4 border-coral-500 rounded-lg p-5 text-center">
+          <div class="text-4xl font-extrabold text-coral-400/20 mb-2">{s.num}</div>
+          <h3 class="font-bold text-white uppercase tracking-wide mb-2">{s.title}</h3>
+          <p class="text-sm text-slate-400">{s.text}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center">
+      <CTAButton href={affiliateLink} size="md" external>Скачать APK бесплатно</CTAButton>
+    </div>
+  </div>
+</section>

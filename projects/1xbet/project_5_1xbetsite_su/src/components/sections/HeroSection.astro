@@ -1,0 +1,48 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+---
+
+<section class="relative overflow-hidden py-16 sm:py-20 lg:py-28">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <p
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cta-500/10 text-cta-600 text-sm font-medium mb-6"
+      >
+        Актуально на 2026
+      </p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-[1.1] mb-6">
+        1xBet Россия — ставки и казино для&nbsp;RU
+      </h1>
+      <p class="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto">
+        50+ видов спорта, 10 000+ игр в казино, счёт в рублях. Пополнение через Сбербанк и СБП.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <CTAButton href={affiliateLink} size="lg" external>Получить бонус</CTAButton>
+        <CTAButton href="/otkryt-schet" variant="outline" size="lg">Открыть счёт</CTAButton>
+      </div>
+
+      <div class="rounded-2xl bg-gray-50 p-8 shadow-xl max-w-lg mx-auto">
+        <p class="text-sm text-gray-500 uppercase tracking-wide mb-2">Приветственный бонус</p>
+        <p class="text-4xl sm:text-5xl font-extrabold text-cta-500 mb-2">32 500 ₽</p>
+        <p class="text-gray-600 text-sm">100% на первый депозит + фриспины</p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6 mt-12 max-w-md mx-auto">
+        <div class="text-center">
+          <div class="text-xl sm:text-2xl font-extrabold text-gray-900">50+</div>
+          <div class="text-xs sm:text-sm text-gray-500 mt-1">видов спорта</div>
+        </div>
+        <div class="text-center">
+          <div class="text-xl sm:text-2xl font-extrabold text-gray-900">100 ₽</div>
+          <div class="text-xs sm:text-sm text-gray-500 mt-1">мин. депозит</div>
+        </div>
+        <div class="text-center">
+          <div class="text-xl sm:text-2xl font-extrabold text-gray-900">24/7</div>
+          <div class="text-xs sm:text-sm text-gray-500 mt-1">поддержка</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

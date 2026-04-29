@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import OverviewSection from '../components/sections/OverviewSection.astro';
+import SportsSection from '../components/sections/SportsSection.astro';
+import BonusSection from '../components/sections/BonusSection.astro';
+import SlotsSection from '../components/sections/SlotsSection.astro';
+import AdvantagesSection from '../components/sections/AdvantagesSection.astro';
+import AppSection from '../components/sections/AppSection.astro';
+import FAQSection from '../components/sections/FAQSection.astro';
+import CTASection from '../components/sections/CTASection.astro';
+
+const siteUrl = 'https://1winpka.su';
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '1winpka.su',
+  url: siteUrl,
+  description: 'Обзор 1Win для России: ставки, казино, бонусы.',
+  inLanguage: 'ru',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}/?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<BaseLayout
+  title="1Win Россия — ставки на спорт и казино РУ 2026"
+  description="Обзор 1Win для России: ставки на РПЛ, казино, бонус до 32 500 ₽. Пополнение через Сбербанк в рублях."
+  schema={websiteSchema}
+>
+  <HeroSection />
+  <OverviewSection />
+  <SportsSection />
+  <BonusSection />
+  <SlotsSection />
+  <AdvantagesSection />
+  <AppSection />
+  <FAQSection />
+  <CTASection />
+</BaseLayout>

@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'Об авторе',
+  description: 'Серик Калиев, 28 лет, Тараз — автор обзоров на 1Win.',
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Серик Калиев',
+    jobTitle: 'Автор обзоров, любитель Lucky Jet',
+    address: { '@type': 'PostalAddress', addressLocality: 'Тараз', addressCountry: 'KZ' },
+  },
+};
+---
+
+<BaseLayout
+  title="О нас: обзор 1Win от реального игрока из Казахстан"
+  description="О проекте: честный обзор 1Win от автора из Казахстан. Без заказных текстов, только личный опыт."
+  schema={aboutSchema}
+  publishDate="2026-01-20"
+  updateDate="2026-04-05"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Об авторе' }]} />
+  <ArticleMeta publishDate="2026-01-20" updateDate="2026-04-05" />
+
+  <section class="py-8 lg:py-12">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <h1 class="text-2xl sm:text-3xl font-heading font-bold text-cream-900 leading-snug mb-8">Об авторе — кто стоит за обзором 1Win</h1>
+
+      <div class="space-y-8 text-cream-700 leading-relaxed">
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Кто я</h2>
+          <p>
+            Привет, меня зовут Серик, мне 28, живу в Таразе. В ставки пришёл где-то в 2022-м, начал с футбола — ставил на КПЛ, на «Тараз» естественно. Потом попробовал Lucky Jet на 1Win, и как-то затянуло. Сейчас совмещаю ставки на спорт и казино, стараюсь подходить к этому с головой.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Зачем этот сайт</h2>
+          <p>
+            Когда искал инфу по 1Win для Казахстан — находил либо совсем заказные тексты где «всё идеально, 10 из 10», либо откровенный бред. Решил сделать нормальный обзор от первого лица. Рассказываю как есть — с плюсами и минусами. Да, тут есть партнёрские ссылки. Нет, это не влияет на то что я пишу. Если <a href="/bonus" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">бонусная программа</a> дерьмовая — я так и напишу.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Как тестирую</h2>
+          <p>
+            Реально пополняю свой счёт, ставлю, вывожу. Не пересказываю чужие обзоры и не копирую текст с офсайта. Залил 10 000 тенге через Kaspi, проверил вывод, поиграл в <a href="/casino" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">слоты</a>, потестил <a href="/skachat" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">мобильное приложение</a>. Если что-то не работает или тормозит — пишу как есть.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Про честность</h2>
+          <p>
+            На сайте есть партнёрские ссылки — если регистрируешься по ним, я палучу небольшой процент. Это стандартная практика. Но я не буду хвалить то что не заслуживает, и не буду скрывать проблемы. Все минусы которые нашёл — описаны.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Предупреждение</h2>
+          <div class="bg-violet-50 border border-violet-100 rounded-lg p-4 text-sm text-cream-600">
+            21+. Азартные игры могут вызывать зависимость. Ставь только те деньги которые готов потерять. Если чувствуешь что теряешь контроль — обратись за помощью. Я серьёзно.
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-rose-50 border border-violet-100">
+        <h2 class="text-lg font-heading font-bold text-cream-900 mb-2">Хотите попробовать сами?</h2>
+        <p class="text-sm text-cream-600 mb-5">Создайте аккаунт и проверьте платформу лично.</p>
+        <CTAButton href={affiliateLink} external>Зарегистрироваться с бонусом</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

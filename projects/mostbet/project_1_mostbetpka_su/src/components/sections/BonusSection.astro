@@ -1,0 +1,47 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const bonuses = [
+  {
+    title: 'Спортивный бонус',
+    sum: '100% до 32 500 ₽',
+    text: 'Начисляется на первый депозит. Вейджер ×5 на ставки, срок отыгрыша — 30 дней. Минимальный коэффициент экспресса для отыгрыша — от 1.40.',
+  },
+  {
+    title: 'Казино-бонус',
+    sum: '250 фриспинов',
+    text: 'Фриспины привязаны к определённым слотам. Вейджер ×60 на выигрыш с фриспинов. Перед активацией рекомендуется изучить список доступных игр.',
+  },
+  {
+    title: 'Фрибет',
+    sum: 'бесплатная ставка',
+    text: 'Выдаётся при выполнении условий первого депозита. Чтобы получить фрибет, необходимо пополнить счёт и сделать квалификационную ставку.',
+  },
+];
+---
+
+<section class="py-12 lg:py-16">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <SectionHeading>Бонусы Mostbet — что доступно на старте</SectionHeading>
+    <div class="space-y-4">
+      {
+        bonuses.map((b) => (
+          <div class="rounded-lg border border-accent-500/15 bg-white p-6">
+            <div class="flex flex-wrap items-baseline gap-2 mb-2">
+              <h3 class="font-serif text-lg font-semibold text-warm-900">{b.title}</h3>
+              <span class="text-accent-600 font-medium text-sm">{b.sum}</span>
+            </div>
+            <p class="text-sm text-warm-500 leading-relaxed">{b.text}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <CTAButton href={affiliateLink} size="lg" external>Получить бонус</CTAButton>
+      <CTAButton href="/bonus" variant="outline" size="lg">Подробнее о бонусах</CTAButton>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+---
+
+<BaseLayout
+  title="Страница не найдена"
+  description="Запрошенный адрес отсутствует на mostbetpka.su."
+  canonical="https://mostbetpka.su/404"
+  noindex={true}
+>
+  <section class="py-24 lg:py-32 text-center px-4">
+    <p class="text-accent-600 font-serif font-semibold mb-2">404</p>
+    <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-warm-900 mb-4">Такой страницы нет</h1>
+    <p class="text-warm-500 max-w-md mx-auto mb-8">
+      Проверьте адрес или вернитесь на главную страницу. Возможно, структура сайта была обновлена.
+    </p>
+    <CTAButton href="/" size="lg">На главную</CTAButton>
+  </section>
+</BaseLayout>

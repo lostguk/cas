@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const wagSteps = [
+  { num: '01', title: 'Активируйте бонус при депозите', text: 'Бонус начисляется автоматически на первые 4 депозита. Минимум — 500 ₸.' },
+  { num: '02', title: 'Делайте ставки для отыгрыша', text: 'Спорт: кэф от 1.3, экспрессы от 3 событий. Казино: все слоты кроме live-дилеров.' },
+  { num: '03', title: 'Прокрутите оборот ×50', text: 'Бонус 10 000 ₸ → нужно 500 000 ₸ оборота. Срок — 30 дней. По статистике отыгрывают менее 15%.' },
+];
+
+const promos = [
+  { title: 'Экспресс-бонус', text: 'Надбавка к выигрышу за экспресс от 5 событий. Чем больше событий — тем выше процент. До +15% к выигрышу.', rating: '4.0/5' },
+  { title: 'Кешбэк', text: 'Возврат части проигранных средств. По данным — до 30% в неделю на казино. На спорте кешбэк меньше.', rating: '3.5/5' },
+  { title: 'Промокоды', text: 'Периодически появляются в тг-каналах и у партнёров. Проверить актуальность можно только при вводе.', rating: '3.0/5' },
+];
+---
+
+<BaseLayout
+  title="1Win Бонус: до 220 000 ₸ + 150 фриспинов новым игрокам"
+  description="1Win бонус 2026: приветственный пакет, промокод, фрибет. Как получить и отыграть бонус в KZ."
+  publishDate="2026-02-20"
+  updateDate="2026-04-06"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Акции' }]} />
+  <ArticleMeta publishDate="2026-02-20" updateDate="2026-04-06" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Бонусы 1Win — приветственный пакет и акции</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">Разбор всех бонусов с рейтингом: что реально отыграть, а что — маркетинг.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Начать с приветственным пакетом</CTAButton>
+        </div>
+      </div>
+
+      <ImagePlaceholder description="1. Бонусы 1Win: процент и подарочные коробки на фиолетовом фоне" aspect="16/7" class="mb-12" />
+
+      <div class="space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Приветственный бонус</h2>
+        <p>До 500% на первые четыре депозита + 70 фриспинов. На бумаге выглядит щедро — но вейджер ×50 сводит привлекательность к минимуму. Для сравнения: Mostbet предлагает ×40, Pin-Up — ×35. Рейтинг по совокупности — <strong class="text-glow-400">3.5/5</strong>.</p>
+        <p>Минимальный депозит для активации — 500 ₸. Бонус начисляется автоматически, отдельной активации не требуется. Доступно сразу после <a href="/sozdat-akkaunt" class="text-glow-400 hover:text-glow-300">регистрации аккаунта</a>.</p>
+      </div>
+
+      <div class="mt-10">
+        <h2 class="text-2xl font-bold text-white mb-6">Как отыграть бонус</h2>
+        <div class="relative space-y-0">
+          {wagSteps.map((step, i) => (
+            <div class="flex gap-6 pb-8 relative">
+              {i < wagSteps.length - 1 && <div class="absolute left-5 top-12 bottom-0 w-px bg-glow-500/20"></div>}
+              <div class="w-10 h-10 rounded-full bg-glow-500/15 border border-glow-500/30 flex items-center justify-center text-glow-400 text-sm font-bold shrink-0 relative z-10">
+                {step.num}
+              </div>
+              <div>
+                <h3 class="font-semibold text-white mb-1">{step.title}</h3>
+                <p class="text-sm text-slate-300">{step.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <h2 class="text-2xl font-bold text-white mb-6">Другие акции</h2>
+        <div class="space-y-4">
+          {promos.map((p) => (
+            <Card>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-semibold text-white">{p.title}</h3>
+                <span class="text-sm text-glow-400 font-medium">{p.rating}</span>
+              </div>
+              <p class="text-sm text-slate-300">{p.text}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-10 space-y-6 text-slate-300">
+        <h2 class="text-2xl font-bold text-white">Стоит ли брать бонус</h2>
+        <p>Если играете на спорте — вейджер ×5 на фрибет вполне подъёмный. На казино при ×50 — шансы отыграть невелики. По нашей аналитике, оптимальная стратегия — использовать только спортивный бонус, а казино-бонус пропустить. Больше данных о <a href="/gates-of-olympus" class="text-glow-400 hover:text-glow-300">конкретных слотах</a> для отыгрыша — в обзорах игр. Общий обзор проекта — на <a href="/about" class="text-glow-400 hover:text-glow-300">странице о редакции</a>.</p>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-glow-500/10 via-void-800 to-flash-500/5 border border-glow-500/10">
+        <h2 class="text-2xl font-bold text-white mb-3">Активировать бонус</h2>
+        <p class="text-slate-300 mb-6">До 500% на старте, и 70 фриспинов — решение за вами.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Зарегистрироваться с бонусом</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

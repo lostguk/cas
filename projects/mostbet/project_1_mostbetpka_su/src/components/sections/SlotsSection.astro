@@ -1,0 +1,60 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import CTAButton from '../ui/CTAButton.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const slots = [
+  {
+    href: '/sweet-bonanza',
+    provider: 'Pragmatic Play',
+    name: 'Sweet Bonanza',
+    rtp: '96.48%',
+    win: '×21 175',
+    desc: 'Кластерная механика с множителями. Высокая волатильность: длинные серии без бонуса сменяются крупными выигрышами в фриспинах. Для запуска на Mostbet достаточно счёта в рублях.',
+    placeholder: 'Слот Sweet Bonanza: фруктовая тема, яркие символы',
+  },
+  {
+    href: '/gates-of-olympus',
+    provider: 'Pragmatic Play',
+    name: 'Gates of Olympus',
+    rtp: '96.50%',
+    win: '×5 000',
+    desc: 'Тематика древнегреческой мифологии с каскадными выигрышами. Множители накапливаются в бонусном раунде. RTP 96.50% — один из стандартных показателей у Pragmatic Play.',
+    placeholder: 'Слот Gates of Olympus: Зевс и молнии',
+  },
+];
+---
+
+<section class="py-12 lg:py-16 bg-warm-100/50">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <SectionHeading>Популярные слоты в каталоге Mostbet</SectionHeading>
+    <p class="text-warm-500 mb-8 -mt-4 text-sm">
+      RTP — долгосрочный показатель от провайдера. Результат конкретной сессии может отличаться.
+    </p>
+    <div class="space-y-6">
+      {
+        slots.map((s) => (
+          <Card>
+            <a href={s.href} class="block mb-4">
+              <ImagePlaceholder description={s.placeholder} aspect="16/9" />
+            </a>
+            <p class="text-xs font-medium text-accent-600 uppercase tracking-wide mb-1">{s.provider}</p>
+            <h3 class="font-serif text-xl font-semibold text-warm-900 mb-2">{s.name}</h3>
+            <p class="text-sm text-warm-500 leading-relaxed mb-4">{s.desc}</p>
+            <div class="flex flex-wrap gap-2 text-xs text-warm-400 mb-4">
+              <span class="px-2 py-1 rounded bg-warm-100">RTP {s.rtp}</span>
+              <span class="px-2 py-1 rounded bg-warm-100">Макс. {s.win}</span>
+            </div>
+            <CTAButton href={s.href} variant="outline" size="sm">Подробнее о слоте</CTAButton>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="mt-8 text-center">
+      <CTAButton href="/casino" variant="secondary">Все слоты и игры →</CTAButton>
+    </div>
+  </div>
+</section>

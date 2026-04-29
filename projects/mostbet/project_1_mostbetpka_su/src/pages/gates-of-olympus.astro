@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+const title = 'Играть Gates of Olympus на Mostbet Россия — обзор и RTP';
+const description =
+  'Gates of Olympus на Mostbet: RTP 96.50%, бонусные раунды, волатильность. Обзор слота для пользователей из России 2026.';
+const canonical = 'https://mostbetpka.su/gates-of-olympus';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'Game',
+      name: 'Gates of Olympus',
+      gameLocation: { '@type': 'VirtualLocation', url: canonical },
+    },
+    reviewRating: { '@type': 'Rating', ratingValue: '4', bestRating: '5' },
+    author: { '@type': 'Person', name: 'Дмитрий Смирнов' },
+    reviewBody: description,
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-02-15"
+  updateDate="2026-04-02"
+  type="article"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Главная', href: '/' },
+      { label: 'Казино', href: '/casino' },
+      { label: 'Gates of Olympus' },
+    ]}
+  />
+  <ArticleMeta publishDate="2026-02-15" updateDate="2026-04-02" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <p class="text-sm font-medium text-accent-600 mb-2">Pragmatic Play · RTP 96.50%</p>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-warm-900 leading-tight mb-4">
+        Gates of Olympus — обзор слота от Pragmatic Play
+      </h1>
+      <p class="text-warm-500 leading-relaxed mb-6">
+        Gates of Olympus — слот с тематикой древнегреческой мифологии. Каскадные выигрыши, множители в бонусном раунде и максимальный выигрыш ×5 000 от ставки. Доступен в каталоге Mostbet для игры в рублях.
+      </p>
+      <CTAButton href={affiliateLink} size="lg" external class="mb-8">Запустить слот бесплатно</CTAButton>
+
+      <ImagePlaceholder description="Слот Gates of Olympus: Зевс и множители на игровом поле" aspect="16/9" class="mb-8" />
+
+      <div class="grid grid-cols-3 gap-3 mb-10">
+        <Card class="py-4 text-center">
+          <div class="text-xs text-warm-400 uppercase">RTP</div>
+          <div class="text-xl font-serif font-semibold text-warm-900">96.50%</div>
+        </Card>
+        <Card class="py-4 text-center">
+          <div class="text-xs text-warm-400 uppercase">Макс.</div>
+          <div class="text-xl font-serif font-semibold text-warm-900">×5 000</div>
+        </Card>
+        <Card class="py-4 text-center">
+          <div class="text-xs text-warm-400 uppercase">Провайдер</div>
+          <div class="text-xl font-serif font-semibold text-warm-900">Pragmatic</div>
+        </Card>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Как играть</h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          Игровое поле — сетка 6×5 с механикой Pay Anywhere: символы не привязаны к линиям выплат. Выигрыш засчитывается при появлении 8 и более одинаковых символов на поле. После каждого выигрыша символы удаляются, новые падают сверху — каскадная система.
+        </p>
+        <p>
+          Зевс — ключевой элемент слота. Случайным образом он добавляет множители (×2, ×3, ×5, ×10) к текущему каскаду. В бонусном раунде множители суммируются: если выпало ×5 и ×3, следующий выигрыш умножается на ×8.
+        </p>
+        <p>
+          Бонусный раунд активируется при 4 и более символах Scatter. Начисляется 15 фриспинов. Множители сохраняются в течение всего раунда. Доступна покупка бонуса за 100× от ставки для мгновенного входа во фриспины.
+        </p>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Рекомендации</h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          Gates of Olympus относится к слотам с высокой волатильностью. Базовая игра часто даёт небольшие выигрыши или серии без выплат. Основной потенциал — в бонусном раунде, где накопленные множители обеспечивают крупные выплаты.
+        </p>
+        <p>
+          По сравнению с <a href="/sweet-bonanza" class="text-accent-600 hover:underline">Sweet Bonanza</a>, потолок выигрыша ниже (×5 000 против ×21 175), но распределение выплат в бонусе субъективно воспринимается как более стабильное. Оба слота доступны в каталоге <a href="/casino" class="text-accent-600 hover:underline">казино Mostbet</a>.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-warm-200 bg-white p-4 text-xs text-warm-400">
+        18+. Результаты определяются генератором случайных чисел (RNG). Не ставьте больше, чем готовы потерять. Устанавливайте лимиты в настройках аккаунта.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

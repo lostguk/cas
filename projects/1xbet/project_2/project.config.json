@@ -46,6 +46,6 @@
     ],
     "geo_target": "KZ"
   },
-  "noindex": true,
+  "noindex": false,
   "faq_bank_ids": [2, 12, 22, 32, 42, 52, 65]
 }

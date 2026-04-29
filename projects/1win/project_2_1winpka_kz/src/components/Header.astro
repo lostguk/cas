@@ -1,0 +1,104 @@
+---
+const affiliateLink = '#';
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Главная' },
+  { href: '/sozdat-akkaunt', label: 'Регистрация' },
+  { href: '/onlajn-kazino', label: 'Казино' },
+  { href: '/akcii', label: 'Акции' },
+  { href: '/dostup', label: 'Доступ' },
+  { href: '/about', label: 'О проекте' },
+];
+
+const isActive = (href: string) =>
+  currentPath === href || (href !== '/' && currentPath.startsWith(href));
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-void-950/90 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14 lg:h-16">
+      <a href="/" class="flex items-center gap-2">
+        <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" class="fill-glow-500"/>
+          <path d="M8 10l4 12h1l3-8 3 8h1l4-12h-2.5l-2.5 8-3-8h-1l-3 8-2.5-8z" class="fill-void-950"/>
+        </svg>
+        <span class="font-bold text-white">1Win <span class="text-glow-400">KZ</span></span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Основная навигация">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
+              isActive(link.href)
+                ? 'text-glow-400 bg-glow-500/10'
+                : 'text-slate-300 hover:text-white hover:bg-white/5',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center px-5 py-2 rounded-full bg-glow-500 text-white text-sm font-semibold shadow-2xl shadow-glow-500/30 hover:bg-glow-600 transition-colors"
+        >
+          Сравнить условия
+        </a>
+        <button
+          type="button"
+          id="menu-toggle"
+          class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/5 py-4">
+      <div class="flex flex-col gap-1">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-4 py-2.5 rounded-lg text-sm font-medium',
+              isActive(link.href)
+                ? 'text-glow-400 bg-glow-500/10'
+                : 'text-slate-200 hover:bg-white/5',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 text-center px-5 py-3 rounded-full bg-glow-500 text-white text-sm font-semibold shadow-2xl shadow-glow-500/30"
+        >
+          Сравнить условия
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    const open = menu && !menu.classList.contains('hidden');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>

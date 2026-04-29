@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Скачать Mostbet Россия — APK для Android бесплатно';
+const description =
+  'Как скачать Mostbet в Россия: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.';
+const canonical = 'https://mostbetdh.su/prilozhenie';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: [
+    { '@type': 'HowToStep', name: 'Шаг 1', text: 'Перейдите на официальный сайт Mostbet.' },
+    { '@type': 'HowToStep', name: 'Шаг 2', text: 'Нажмите кнопку загрузки APK для Android.' },
+    { '@type': 'HowToStep', name: 'Шаг 3', text: 'Разрешите установку из неизвестных источников.' },
+    { '@type': 'HowToStep', name: 'Шаг 4', text: 'Установите приложение и войдите в аккаунт.' },
+  ],
+};
+
+const androidSteps = [
+  { n: '01', text: 'Перейдите на официальный сайт Mostbet через мобильный браузер.' },
+  { n: '02', text: 'Нажмите «Скачать APK» — файл весит ~45 МБ.' },
+  { n: '03', text: 'В настройках разрешите установку из неизвестных источников.' },
+  { n: '04', text: 'Откройте загруженный файл и завершите установку.' },
+];
+
+const iosSteps = [
+  { n: '01', text: 'Откройте сайт Mostbet через Safari на iPhone.' },
+  { n: '02', text: 'Перейдите в раздел мобильных приложений.' },
+  { n: '03', text: 'Следуйте инструкции — установка через TestFlight или PWA.' },
+];
+
+const requirements = [
+  { param: 'ОС', android: 'Android 8.0+', ios: 'iOS 14.0+' },
+  { param: 'Размер', android: '~45 МБ', ios: '~90 МБ' },
+  { param: 'RAM', android: '2 ГБ+', ios: '2 ГБ+' },
+  { param: 'Обновление', android: 'Вручную (APK)', ios: 'App Store / TestFlight' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-01-20"
+  updateDate="2026-04-01"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Приложение' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">
+          Скачать Mostbet — APK для Android и iPhone
+        </h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Сравнение мобильного приложения и веб-версии. Инструкция по установке, системные требования, оценка удобства.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" variant="cta" external class="mt-8">Скачать приложение</CTAButton>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Скачать на Android (APK)</h2>
+      <div class="space-y-4 mb-14">
+        {
+          androidSteps.map((s) => (
+            <div class="flex gap-4 items-start rounded-xl bg-white/[0.03] border border-white/[0.06] p-4">
+              <span class="text-lg font-extrabold text-emerald-500 shrink-0">{s.n}</span>
+              <p class="text-slate-300">{s.text}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Установка на iOS</h2>
+      <div class="space-y-4 mb-14">
+        {
+          iosSteps.map((s) => (
+            <div class="flex gap-4 items-start rounded-xl bg-white/[0.03] border border-white/[0.06] p-4">
+              <span class="text-lg font-extrabold text-emerald-500 shrink-0">{s.n}</span>
+              <p class="text-slate-300">{s.text}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6">Системные требования: сравнение</h2>
+      <div class="overflow-x-auto rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm mb-14">
+        <table class="min-w-full text-sm text-left">
+          <thead class="border-b border-white/[0.06]">
+            <tr>
+              <th class="px-5 py-4 text-slate-300 font-semibold">Параметр</th>
+              <th class="px-5 py-4 text-emerald-400 font-semibold">Android</th>
+              <th class="px-5 py-4 text-slate-300 font-semibold">iOS</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/[0.04]">
+            {
+              requirements.map((r) => (
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="px-5 py-3 text-white font-medium">{r.param}</td>
+                  <td class="px-5 py-3 text-slate-300">{r.android}</td>
+                  <td class="px-5 py-3 text-slate-400">{r.ios}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4">Обзор приложения</h2>
+      <div class="text-slate-300 space-y-4 mb-10">
+        <p>
+          По результатам тестирования, мобильное приложение получает оценку 4.0/5. Плюсы: быстрая загрузка, стабильная работа live-ставок, push-уведомления о результатах. Минусы: отсутствие в Google Play, ручное обновление APK. Рекомендуем также ознакомиться с <a href="/about" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">методологией оценки</a>.
+        </p>
+        <p>
+          Веб-версия функционально идентична, но уступает по скорости загрузки на 15–20%. Для пользователей, предпочитающих не устанавливать APK, мобильный браузер остаётся рабочей альтернативой. Актуальные <a href="/akcii" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">бонусы</a> доступны в обеих версиях. Ассортимент игр — <a href="/onlajn-kazino" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">в разделе казино</a>.
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-emerald-500/20 bg-white/[0.02] p-4 text-sm text-slate-400 backdrop-blur-sm">
+        <strong class="text-slate-200">По данным из открытых источников.</strong> Интерфейс приложения может отличаться в зависимости от версии и региона. 18+.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

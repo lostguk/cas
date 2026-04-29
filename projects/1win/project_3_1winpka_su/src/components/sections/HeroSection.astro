@@ -1,0 +1,42 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+const cards = [
+  { icon: '⚽', title: 'Ставки на спорт', text: '35+ дисциплин', href: '/otkryt-schet' },
+  { icon: '🎰', title: 'Казино и слоты', text: '12 000+ игр', href: '/igrovye-avtomaty' },
+  { icon: '🎁', title: 'Бонус до 500%', text: 'на четыре депозита', href: '/podarki' },
+];
+---
+
+<section class="relative overflow-visible pb-24 lg:pb-32" style="clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);">
+  <div class="absolute inset-0 bg-gradient-to-b from-abyss-800 via-abyss-900 to-abyss-950"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--color-coral-500)_0%,_transparent_60%)] opacity-[0.08]"></div>
+  <div class="relative pt-16 sm:pt-20 lg:pt-28 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-coral-500/10 border border-coral-500/20 text-coral-400 text-sm font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-coral-400 animate-pulse"></span>
+        Обновлено 2026
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] uppercase tracking-tight mb-6">
+        1Win Россия — ставки и казино
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-8">Спортивные пари, краш-игры, слоты от топовых провайдеров. Счёт в рублях, быстрые выплаты на Сбербанк и Тинькофф.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <CTAButton href={affiliateLink} size="lg" external>Забрать бонус на старте</CTAButton>
+        <CTAButton href="/otkryt-schet" variant="secondary" size="lg">Открыть аккаунт</CTAButton>
+      </div>
+    </div>
+  </div>
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mb-16">
+    <div class="grid sm:grid-cols-3 gap-4">
+      {cards.map((c) => (
+        <a href={c.href} class="group p-6 rounded-lg bg-abyss-800 border-l-4 border-coral-500 hover:scale-[1.02] transition-transform duration-200 text-center shadow-xl">
+          <span class="text-3xl block mb-3">{c.icon}</span>
+          <div class="font-bold text-white uppercase tracking-wide mb-1">{c.title}</div>
+          <div class="text-sm text-coral-400">{c.text}</div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

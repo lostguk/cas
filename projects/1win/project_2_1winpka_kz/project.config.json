@@ -1,0 +1,48 @@
+{
+	"brand": "1Win",
+	"region": "KZ",
+	"language": "ru",
+	"currency": "KZT",
+	"domain": "1winpka.kz",
+	"affiliate_url": "#",
+	"color_preset": "deep-purple",
+	"visual_style": "dark-premium",
+	"content_format": "G",
+	"preset_number": 13,
+	"font": "Plus Jakarta Sans",
+	"logo_type": "B",
+	"author": null,
+	"pages": [
+		"index",
+		"sozdat-akkaunt",
+		"mobile-app",
+		"onlajn-kazino",
+		"dostup",
+		"akcii",
+		"about"
+	],
+	"slot_pages": ["rocket-queen", "gates-of-olympus"],
+	"sections_order": [
+		"Hero",
+		"Overview",
+		"Advantages",
+		"Sports",
+		"Slots",
+		"Bonus",
+		"Payments",
+		"Live",
+		"FAQ",
+		"CTA"
+	],
+	"seo": {
+		"primary_keyword": "1win казахстан",
+		"secondary_keywords": [
+			"1вин кз",
+			"1win casino",
+			"1win регистрация",
+			"1win приложение"
+		],
+		"geo_target": "KZ"
+	},
+	"noindex": false
+}

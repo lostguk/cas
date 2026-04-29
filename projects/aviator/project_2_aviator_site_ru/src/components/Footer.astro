@@ -1,0 +1,78 @@
+---
+const affiliateLink = '#';
+const year = new Date().getFullYear();
+
+const sections = [
+  {
+    title: 'Игра',
+    links: [
+      { href: '/kak-igrat', label: 'Как играть' },
+      { href: '/strategii', label: 'Стратегии' },
+      { href: '/demo', label: 'Демо-режим' },
+      { href: '/signaly', label: 'Сигналы' },
+    ],
+  },
+  {
+    title: 'Платформа',
+    links: [
+      { href: '/skachat', label: 'Скачать приложение' },
+      { href: '/bonus', label: 'Бонусы Mostbet' },
+    ],
+  },
+  {
+    title: 'О сайте',
+    links: [
+      { href: '/about', label: 'О проекте' },
+    ],
+  },
+];
+---
+
+<footer class="mt-20 border-t border-orange-500/10 bg-carbon-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img
+            src="/images/aviator-logo.png"
+            alt="aviator-site.ru — логотип"
+            width="36"
+            height="36"
+            class="w-9 h-9 rounded-lg"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="font-extrabold text-white">aviator<span class="text-orange-400">games</span></span>
+        </div>
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Информационный портал об игре Aviator от Spribe. Обзоры, стратегии, советы и партнёрский доступ к Mostbet.
+        </p>
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          class="inline-flex items-center mt-4 px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-md shadow-orange-500/20 hover:shadow-orange-500/40 transition-shadow duration-200"
+        >
+          Играть на Mostbet
+        </a>
+      </div>
+      {sections.map((sec) => (
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-4">{sec.title}</h3>
+          <ul class="space-y-2.5">
+            {sec.links.map((l) => (
+              <li>
+                <a href={l.href} class="text-sm text-slate-400 hover:text-white transition-colors">{l.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="mt-12 pt-8 border-t border-white/5 text-xs text-slate-600 space-y-2">
+      <p>18+. Играйте ответственно. Азартные игры могут вызывать зависимость.</p>
+      <p>Сайт носит информационный характер и содержит партнёрские ссылки. Aviator — товарный знак Spribe. Все имена платформ принадлежат их владельцам.</p>
+      <p class="text-slate-500">© {year} aviator-site.ru</p>
+    </div>
+  </div>
+</footer>

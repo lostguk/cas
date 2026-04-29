@@ -1,0 +1,99 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import Card from '../components/ui/Card.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const affiliateLink = '#';
+
+const promos = [
+  { title: 'Экспресс-бонус', text: 'Дополнительный процент к выигрышу при ставке-экспрессе от 3 событий. Размер бонуса зависит от количества событий — до +40% при 11+.' },
+  { title: 'Кешбэк в казино', text: 'Еженедельный возврат части проигранных средств в разделе казино. Процент варьируется в зависимости от уровня игрока.' },
+  { title: 'Промокоды', text: 'Периодически публикуются специальные коды для дополнительных бонусов. Актуальность ограничена — обычно 3–7 дней.' },
+];
+
+const wagerSteps = [
+  { num: '01', title: 'Сделать первый депозит', text: 'Минимум 1 000 ₸. Бонус начисляется автоматически на спортивный бонусный счёт.' },
+  { num: '02', title: 'Отыграть на экспрессах', text: 'Вейджер ×5: ставки-экспрессы от 3 событий, каждое с коэффициентом от 1.40. Срок — 30 дней.' },
+  { num: '03', title: 'Казино-бонус — вейджер ×35', text: 'Фриспины отыгрываются на конкретных слотах. Условия существенно жёстче спортивного направления.' },
+];
+---
+
+<BaseLayout
+  title="1xBet Бонус: до 220 000 ₸ + 150 фриспинов новым игрокам"
+  description="1xBet бонус 2026: приветственный пакет, промокод, фрибет. Как получить и отыграть бонус в KZ."
+  publishDate="2026-01-30"
+  updateDate="2026-04-09"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Бонусы и акции' }]} />
+  <ArticleMeta publishDate="2026-01-30" updateDate="2026-04-09" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">Бонусы 1xBet — приветственный пакет и акции</h1>
+        <p class="text-lg text-gray-400 italic font-heading max-w-2xl mx-auto">Подробный разбор условий приветственного бонуса и текущих промоакций для казахстанских пользователей.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Забрать бонус на старте</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/bonus-1.jpg"
+        alt="Бонусная программа 1xBet: золотые фишки и фриспины для новых игроков"
+        width="1200"
+        height="600"
+        loading="eager"
+        decoding="async"
+        class="rounded-2xl w-full h-auto aspect-[16/8] object-cover mb-12"
+      />
+
+      <div class="space-y-8 text-gray-300">
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Приветственный бонус</h2>
+          <p class="mb-3">Платформа начисляет 100% от суммы первого депозита — до 220 000 ₸. Дополнительно предусмотрены 150 фриспинов для раздела казино. Бонусные средства зачисляются на отдельный счёт и становятся доступны для вывода после выполнения условий отыгрыша.</p>
+          <p class="text-gray-400 text-sm">Минимальный депозит для активации — 1 000 ₸. Средства принимаются через Kaspi, Halyk, Jusan и USDT. На этом этапе важно убедиться, что аккаунт прошёл базовую верификацию.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-6">Как отыграть бонус</h2>
+          <div class="space-y-4">
+            {wagerSteps.map((step) => (
+              <div class="flex gap-4 items-start border-l-2 border-amber-500/20 pl-5">
+                <div class="text-amber-400 font-heading font-bold text-sm shrink-0">{step.num}</div>
+                <div>
+                  <h3 class="font-semibold text-white mb-1">{step.title}</h3>
+                  <p class="text-sm text-gray-400">{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Другие акции</h2>
+          <div class="grid sm:grid-cols-3 gap-4">
+            {promos.map((p) => (
+              <Card>
+                <h3 class="font-heading font-bold text-white mb-2">{p.title}</h3>
+                <p class="text-sm text-gray-400">{p.text}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Стоит ли брать бонус</h2>
+          <p class="text-gray-400 text-sm">Спортивный бонус с вейджером ×5 — вполне рабочий инструмент для тех кто регулярно ставит экспрессы. Казино-бонус с вейджером ×35 значительно сложнее в отыгрыше и подойдёт скорее опытным игрокам. Новичкам рекомендуется начинать со спортивного направления. Подробности о <a href="/sugar-rush" class="text-amber-400 hover:text-amber-300">слотах</a> и <a href="/rabochij-sajt" class="text-amber-400 hover:text-amber-300">доступе к платформе</a> — в соответствующих разделах. Информация по играм — в <a href="/onlajn-kazino" class="text-amber-400 hover:text-amber-300">обзоре казино</a>.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-amber-500/10 via-obsidian-800 to-olive-500/5 border border-amber-500/10">
+        <h2 class="text-2xl font-heading font-bold text-white mb-3">До 220 000 ₸ на первый депозит</h2>
+        <p class="text-gray-400 italic font-heading mb-6">Активация бонуса — автоматическая при первом пополнении.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Зарегистрироваться с бонусом</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

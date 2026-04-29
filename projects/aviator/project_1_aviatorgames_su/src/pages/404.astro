@@ -1,0 +1,45 @@
+---
+import CTAButton from '../components/ui/CTAButton.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="404 — Страница не найдена"
+  description="Запрашиваемая страница на aviatorgames.su не найдена. Возможно, она была удалена или вы перешли по неверной ссылке."
+  noindex
+>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 text-center">
+    <div class="relative inline-block mb-8">
+      <svg class="w-32 h-32 mx-auto" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="planeGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fb7185" />
+            <stop offset="100%" stop-color="#e11d48" />
+          </linearGradient>
+        </defs>
+        <path d="M30 130 L80 80 M30 130 L60 110" stroke="#2dd4bf" stroke-width="2" stroke-dasharray="4 4" fill="none" opacity="0.5" />
+        <g transform="translate(100 60) rotate(45)">
+          <path d="M0 0 L50 -12 L80 0 L70 12 L90 22 L75 30 L50 32 L25 26 L0 28 L8 14 Z" fill="url(#planeGrad)" />
+        </g>
+        <text x="50" y="190" font-size="20" fill="#2dd4bf" font-weight="900" font-family="Manrope, sans-serif">CRASH ×0</text>
+      </svg>
+    </div>
+
+    <h1 class="text-6xl lg:text-8xl font-extrabold text-white tracking-tight mb-4">404</h1>
+    <h2 class="text-2xl lg:text-3xl font-bold text-coral-400 mb-4">Самолёт улетел не туда</h2>
+    <p class="text-base lg:text-lg text-slate-300 max-w-xl mx-auto mb-8 leading-relaxed">
+      Запрашиваемая страница не найдена — кажется, ваш самолёт зашёл за пределы карты. Вернитесь на главную или попробуйте наши популярные разделы.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <CTAButton href="/" size="lg">На главную</CTAButton>
+      <CTAButton href="/kak-igrat" variant="secondary" size="lg">Как играть</CTAButton>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-3 max-w-xl mx-auto">
+      <a href="/strategii" class="px-4 py-3 rounded-xl bg-abyss-800/60 border border-white/[0.06] text-sm font-semibold text-slate-300 hover:text-white hover:border-coral-500/30 transition-colors">Стратегии</a>
+      <a href="/demo" class="px-4 py-3 rounded-xl bg-abyss-800/60 border border-white/[0.06] text-sm font-semibold text-slate-300 hover:text-white hover:border-coral-500/30 transition-colors">Демо-режим</a>
+      <a href="/bonus" class="px-4 py-3 rounded-xl bg-abyss-800/60 border border-white/[0.06] text-sm font-semibold text-slate-300 hover:text-white hover:border-coral-500/30 transition-colors">Бонусы 1Win</a>
+    </div>
+  </section>
+</BaseLayout>

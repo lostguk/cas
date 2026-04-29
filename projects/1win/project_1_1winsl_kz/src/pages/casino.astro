@@ -1,0 +1,102 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+const affiliateLink = '#';
+
+const topSlots = [
+  { name: 'Sweet Bonanza', provider: 'Pragmatic Play', rtp: '96.48%' },
+  { name: 'Gates of Olympus', provider: 'Pragmatic Play', rtp: '96.50%' },
+  { name: 'Lucky Jet', provider: '1Win Games', rtp: '97.00%' },
+  { name: 'Coin Strike', provider: 'SmartSoft', rtp: '96.00%' },
+  { name: 'Rocket Queen', provider: '1Win Games', rtp: '96.50%' },
+];
+---
+
+<BaseLayout
+  title="Какие слоты есть на 1Win? Обзор казино КЗ 2026"
+  description="Казино 1Win КЗ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в тенге, выводи на Kaspi."
+  publishDate="2026-02-10"
+  updateDate="2026-04-01"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино' }]} />
+  <ArticleMeta publishDate="2026-02-10" updateDate="2026-04-01" />
+
+  <section class="py-8 lg:py-12">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h1 class="text-2xl sm:text-3xl font-heading font-bold text-cream-900 leading-snug mb-4">Казино 1Win — слоты, рулетка и live-дилеры</h1>
+        <p class="text-cream-500">12 000+ игр — рассказываю что реально стоит попробовать.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
+          <CTAButton href={affiliateLink} size="lg" external>Открыть казино с бонусом</CTAButton>
+          <CTAButton href="/registraciya" variant="secondary">Как создать аккаунт</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/lobbi.jpg"
+        alt="Лобби казино 1Win: карточки слотов и категории"
+        width="624"
+        height="351"
+        loading="eager"
+        decoding="async"
+        class="w-full h-auto aspect-video object-cover rounded-lg mb-10"
+      />
+
+      <div class="space-y-8 text-cream-700 leading-relaxed">
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Обзор казино</h2>
+          <p>
+            Раздел с играми тут реально большой — 12 000+ автоматов от Pragmatic Play, Spribe, SmartSoft Gaming и собственных 1Win Games. Навигация нормальная, есть поиск по названию и фильтр по провайдеру. Лично мне нравится что можно сортировать по популярности — сразу видно что играют другие.
+          </p>
+          <p class="mt-3">
+            Минус — интерфейс иногда подгружается медленно если у тебя слабый интернет. У меня на Altel иногда тормозило, на Wi-Fi всё летает. Ну и вейджер ×50 на казино-бонус — это серьёзно, <a href="/about" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">я писал об этом</a> в разделе про честность.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-4">Популярные слоты</h2>
+          <div class="space-y-2">
+            {topSlots.map((slot, i) => (
+              <div class="flex items-center justify-between bg-white rounded-lg px-4 py-3 shadow-sm">
+                <div class="flex items-center gap-3">
+                  <span class="text-sm font-bold text-violet-400">{i + 1}</span>
+                  <div>
+                    <p class="font-semibold text-cream-900 text-sm">{slot.name}</p>
+                    <p class="text-xs text-cream-400">{slot.provider}</p>
+                  </div>
+                </div>
+                <span class="text-xs text-cream-500">RTP {slot.rtp}</span>
+              </div>
+            ))}
+          </div>
+          <p class="text-sm text-cream-500 mt-3">
+            Подробные обзоры: <a href="/sweet-bonanza" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">Sweet Bonanza</a> и <a href="/coin-strike" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">Coin Strike</a>.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Live-казино и краш-игры</h2>
+          <p>
+            Lucky Jet — это отдельная тема. Краш-игра от 1Win Games, я на ней и подсел собственно. Суть простая — ставишь, ждёшь множитель, забираешь до краша. Адреналин зашкаливает, но и слить можно быстро (спойлер: я слил первые 3000 тенге за вечер).
+          </p>
+          <p class="mt-3">Ещё есть Aviator от Spribe, Mines, Speed Cash, Crash — все работают, задержек нет. Live-казино с дилерами тоже в наличии, но я туда редко захожу — не моё.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-heading font-bold text-cream-900 mb-3">Бонусы для казино</h2>
+          <p>
+            70 фриспинов на конкретные слоты + часть от <a href="/bonus" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">приветственного пакета</a>. Вейджер ×50 — отыграть сложно, не буду врать. Для <a href="/registraciya" class="text-violet-600 hover:text-violet-700 underline underline-offset-2">новых игроков</a> есть смысл попробовать, но не надейтесь вывести бонусные деньги сразу.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-rose-50 border border-violet-100">
+        <h2 class="text-lg font-heading font-bold text-cream-900 mb-2">Испытайте удачу</h2>
+        <p class="text-sm text-cream-600 mb-5">12 000+ игр ждут — начните с бонусных фриспинов.</p>
+        <CTAButton href={affiliateLink} external>Попробовать в демо-режиме</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

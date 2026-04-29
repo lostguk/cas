@@ -1,0 +1,77 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const items = [
+  {
+    title: 'Линия и коэффициенты',
+    plus: '40+ видов спорта, маржа 3–5% на топ-события',
+    minus: 'На РПЛ роспись беднее, чем на АПЛ и Ла Лигу',
+    score: '4.2',
+  },
+  {
+    title: 'Оплата в рублях',
+    plus: 'Сбербанк, Тинькофф, Альфа-Банк, СБП — без конвертации',
+    minus: 'СБП иногда задерживает зачисление до 15 минут',
+    score: '4.4',
+  },
+  {
+    title: 'Мобильное приложение',
+    plus: 'APK ~45 МБ, стабильная работа на Android 8+',
+    minus: 'Нет в Google Play, обновление только вручную',
+    score: '4.0',
+  },
+  {
+    title: 'Казино и слоты',
+    plus: '8 000+ игр, Pragmatic Play, Evolution, NetEnt',
+    minus: 'Вейджер ×5 спорт / ×60 казино — высокие требования',
+    score: '4.1',
+  },
+  {
+    title: 'Бонусы',
+    plus: 'До 32 500 ₽ + 250 фриспинов на первый депозит',
+    minus: 'Условия отыгрыша сложные, 30 дней на выполнение',
+    score: '3.8',
+  },
+  {
+    title: 'Поддержка',
+    plus: 'Чат 24/7, поддержка на русском языке',
+    minus: 'Ответы шаблонные, эскалация занимает время',
+    score: '3.6',
+  },
+];
+---
+
+<section class="py-16 lg:py-20 bg-base-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Сравнительная таблица: плюсы и минусы</SectionHeading>
+    <div class="overflow-x-auto rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm">
+      <table class="min-w-full text-sm text-left">
+        <thead class="border-b border-white/[0.06]">
+          <tr>
+            <th class="px-5 py-4 text-slate-300 font-semibold">Параметр</th>
+            <th class="px-5 py-4 text-emerald-400 font-semibold">Плюс</th>
+            <th class="px-5 py-4 text-red-400 font-semibold">Минус</th>
+            <th class="px-5 py-4 text-secondary-400 font-semibold text-center">Оценка</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-white/[0.04]">
+          {
+            items.map((item) => (
+              <tr class="hover:bg-white/[0.02] transition-colors">
+                <td class="px-5 py-4 text-white font-medium">{item.title}</td>
+                <td class="px-5 py-4 text-slate-300">{item.plus}</td>
+                <td class="px-5 py-4 text-slate-400">{item.minus}</td>
+                <td class="px-5 py-4 text-center">
+                  <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-secondary-400/10 text-secondary-400 font-bold text-sm">{item.score}</span>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="text-center text-sm text-slate-500 mt-6">
+      Средняя оценка по совокупности параметров: <strong class="text-secondary-400">4.0 / 5</strong>
+    </p>
+  </div>
+</section>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://1winpka.kz/sitemap-index.xml

@@ -1,0 +1,67 @@
+---
+import CTAButton from '../ui/CTAButton.astro'
+
+const affiliateLink = '#'
+---
+
+<section class="container-section bg-gradient-to-b from-obsidian-950 to-obsidian-900/50">
+  <div class="container-inner">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <span class="gradient-text">PinUp Casino</span> — лучшее казино Казахстана
+        </h1>
+        <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+          Официальная платформа с лицензией. Более 5000 слотов, ставки на спорт, живые дилеры и бонусы до 500,000 тенге.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <CTAButton href={affiliateLink} variant="primary" size="lg">
+            🎰 Начать игру прямо сейчас
+          </CTAButton>
+          <CTAButton href="/bonus" variant="secondary" size="lg">
+            Узнать о бонусах →
+          </CTAButton>
+        </div>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 backdrop-blur-sm">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-white/10">
+            <tr class="py-3">
+              <td class="py-3 pr-4">✅ Лицензия</td>
+              <td class="text-amber-500 font-semibold">Кюрасао</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4">🎮 Игр</td>
+              <td class="text-amber-500 font-semibold">5000+</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4">📃 RTP</td>
+              <td class="text-amber-500 font-semibold">96-98%</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4">🎁 Бонус</td>
+              <td class="text-amber-500 font-semibold">до 500K ₸</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4">💳 Платежи</td>
+              <td class="text-amber-500 font-semibold">15+ методов</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4">⌛ Вывод</td>
+              <td class="text-amber-500 font-semibold">до 10 минут</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4">📱 Приложение</td>
+              <td class="text-amber-500 font-semibold">iOS + Android</td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4">📞 Поддержка</td>
+              <td class="text-amber-500 font-semibold">24/7</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

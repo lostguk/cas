@@ -1,0 +1,112 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import Card from '../components/ui/Card.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const affiliateLink = '#';
+
+const steps = [
+  { num: '01', title: 'Перейти на сайт или открыть приложение', text: 'Используется актуальное зеркало (при блокировке основного домена) либо мобильное приложение для Android/iOS.' },
+  { num: '02', title: 'Ввести логин и пароль', text: 'Логин — номер телефона, email или ID аккаунта. При утере пароля доступна процедура восстановления через SMS или почту.' },
+  { num: '03', title: 'Двухфакторная аутентификация', text: 'При включённой 2FA потребуется ввести код из Google Authenticator или SMS. Рекомендуется активировать для защиты средств.' },
+];
+
+const features = [
+  { title: 'История ставок', text: 'Полный архив прематч и лайв-ставок с фильтрацией по дате и статусу.' },
+  { title: 'Вывод средств', text: 'Kaspi Gold, Halyk, USDT — доступны прямо из кабинета без перехода на внешние сервисы.' },
+  { title: 'Верификация', text: 'Загрузка документов (удостоверение личности с ИИН) для подтверждения аккаунта.' },
+  { title: 'Настройки безопасности', text: 'Смена пароля, привязка 2FA, лимиты на депозиты и ставки.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Как войти в личный кабинет 1xBet',
+  step: steps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.text,
+  })),
+};
+---
+
+<BaseLayout
+  title="Личный кабинет 1xBet: вход, вывод, верификация КЗ"
+  description="1xBet личный кабинет — как войти, пополнить счёт и вывести деньги в тенге на Kaspi Gold."
+  schema={schema}
+  publishDate="2026-01-18"
+  updateDate="2026-04-06"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Личный кабинет' }]} />
+  <ArticleMeta publishDate="2026-01-18" updateDate="2026-04-06" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">Личный кабинет 1xBet — вход, настройки, вывод</h1>
+        <p class="text-lg text-gray-400 italic font-heading max-w-2xl mx-auto">Инструкция по авторизации и управлению аккаунтом на платформе для пользователей из Казахстана.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Открыть личный кабинет</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/sing-in-1.jpg"
+        alt="Интерфейс личного кабинета 1xBet: панель управления аккаунтом"
+        width="1200"
+        height="600"
+        loading="eager"
+        decoding="async"
+        class="rounded-2xl w-full h-auto aspect-[16/8] object-cover mb-12"
+      />
+
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-6">Как войти</h2>
+          <div class="space-y-4">
+            {steps.map((step) => (
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-full border border-amber-500/30 flex items-center justify-center text-amber-400 font-heading font-bold text-sm shrink-0">{step.num}</div>
+                <div>
+                  <h3 class="font-semibold text-white mb-1">{step.title}</h3>
+                  <p class="text-sm text-gray-400">{step.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent"></div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-6">Возможности кабинета</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {features.map((f) => (
+              <Card>
+                <h3 class="font-heading font-bold text-white mb-2">{f.title}</h3>
+                <p class="text-sm text-gray-400">{f.text}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div class="h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent"></div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Вывод средств</h2>
+          <p class="text-gray-300 mb-3">Платформа поддерживает несколько направлений вывода для казахстанских пользователей. Kaspi Gold обрабатывается в приоритетном порядке — по отзывам, зачисление занимает от 1 до 24 часов. Halyk Homebank работает медленнее: от одного до трёх рабочих дней.</p>
+          <p class="text-gray-400 text-sm">USDT через сеть TRC20 — вариант для тех кто предпочитает криптовалюту. Среднее время транзакции составляет 15–30 минут, комиссия платформы отсутствует. Подробнее о методах пополнения и вывода — на <a href="/onlajn-kazino" class="text-amber-400 hover:text-amber-300">странице казино</a> и в <a href="/ustanovka" class="text-amber-400 hover:text-amber-300">обзоре приложения</a>.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-amber-500/10 via-obsidian-800 to-olive-500/5 border border-amber-500/10">
+        <h2 class="text-2xl font-heading font-bold text-white mb-3">Доступ к аккаунту</h2>
+        <p class="text-gray-400 italic font-heading mb-6">Авторизация через официальный ресурс или актуальное зеркало.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Войти в аккаунт</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

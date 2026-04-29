@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Mostbet Бонусы — приветственный пакет для РУ | 2026';
+const description =
+  'Бонусы Mostbet для России: до 32 500 ₽ на спорт, 250 фриспинов на казино. Условия отыгрыша.';
+const canonical = 'https://mostbetpka.su/bonus';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Дмитрий Смирнов' },
+};
+
+const wagSteps = [
+  { n: '01', title: 'Выберите тип бонуса', text: 'При первом пополнении система предложит выбрать: спортивный бонус (100% до 32 500 ₽) или казино-бонус (250 фриспинов). Активировать оба одновременно нельзя.' },
+  { n: '02', title: 'Пополните счёт', text: 'Минимальный депозит для активации бонуса — 100 ₽. Чтобы пополнить через Сбербанк или Тинькофф, перейдите в раздел кассы и выберите подходящий метод.' },
+  { n: '03', title: 'Отыграйте бонус', text: 'Для спортивного бонуса: вейджер ×5 экспрессами с коэффициентом от 1.40 за 30 дней. Для казино: вейджер ×60 на выигрыш с фриспинов в подходящих слотах.' },
+  { n: '04', title: 'Выведите средства', text: 'После выполнения условий отыгрыша бонусные средства переходят на основной баланс. Вывод доступен через Сбербанк, Тинькофф, СБП и другие методы.' },
+];
+
+const promos = [
+  { title: 'Экспресс-бонус', desc: 'Повышенный коэффициент на экспресс-ставки. Чем больше событий — тем выше надбавка. Максимальное увеличение — до 40%.' },
+  { title: 'Кешбэк на казино', desc: 'Еженедельный возврат части проигрыша в слотах. Процент кешбэка зависит от уровня в программе лояльности.' },
+  { title: 'Промокоды', desc: 'Периодические акции с промокодами. Для активации необходимо ввести код в разделе «Промо» личного кабинета.' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  publishDate="2026-01-25"
+  updateDate="2026-04-03"
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Бонусы' }]} />
+  <ArticleMeta publishDate="2026-01-25" updateDate="2026-04-03" />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-warm-900 leading-tight mb-4">
+        Бонусы Mostbet — приветственный пакет и акции
+      </h1>
+      <p class="text-warm-500 leading-relaxed mb-8">
+        На этой странице собрана информация о бонусной программе Mostbet для пользователей из России: приветственный бонус, условия отыгрыша и текущие акции.
+      </p>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Приветственный бонус</h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          Новые пользователи могут получить бонус на первый депозит: 100% до 32 500 ₽ на спорт или 250 фриспинов на казино. Бонус активируется автоматически при пополнении счёта, если тип бонуса выбран в настройках.
+        </p>
+        <p>
+          Чтобы <a href="/registraciya" class="text-accent-600 hover:underline">зарегистрироваться</a> и получить бонус, потребуется не более двух минут. Минимальный депозит — 100 ₽.
+        </p>
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-6">Как отыграть бонус — пошагово</h2>
+      <div class="space-y-4 mb-12">
+        {
+          wagSteps.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-serif font-semibold text-accent-500 shrink-0">{s.n}</span>
+                <div>
+                  <h3 class="font-serif text-lg font-semibold text-warm-900 mb-1">{s.title}</h3>
+                  <p class="text-sm text-warm-500 leading-relaxed">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-6">Другие акции</h2>
+      <div class="space-y-4 mb-10">
+        {
+          promos.map((p) => (
+            <Card>
+              <h3 class="font-serif font-semibold text-warm-900 mb-1">{p.title}</h3>
+              <p class="text-sm text-warm-500 leading-relaxed">{p.desc}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="font-serif text-2xl font-semibold text-warm-900 mb-4">Стоит ли активировать бонус</h2>
+      <div class="text-warm-500 leading-relaxed space-y-3 mb-10">
+        <p>
+          Спортивный бонус с вейджером ×5 — одно из лучших предложений на рынке. Условия выполнимые, если делать экспрессы на матчи РПЛ или КХЛ с коэффициентами от 1.40.
+        </p>
+        <p>
+          Казино-бонус с вейджером ×60 — более жёсткий. Для его отыгрыша потребуется значительный объём ставок. Рекомендуется для опытных пользователей, которые регулярно играют в слоты. Подробнее о слотах — на странице <a href="/casino" class="text-accent-600 hover:underline">казино</a>.
+        </p>
+        <p>
+          Если условия отыгрыша кажутся сложными, можно <a href="/skachat" class="text-accent-600 hover:underline">скачать приложение</a> и начать без бонуса. Подробнее о проекте — на странице <a href="/about" class="text-accent-600 hover:underline">«О проекте»</a>.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-accent-500/15 bg-white p-6 text-center">
+        <h2 class="font-serif text-xl font-semibold text-warm-900 mb-2">Получить приветственный бонус</h2>
+        <p class="text-sm text-warm-500 mb-4">Зарегистрируйтесь и пополните счёт от 100 ₽, чтобы активировать бонус.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Перейти на Mostbet</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

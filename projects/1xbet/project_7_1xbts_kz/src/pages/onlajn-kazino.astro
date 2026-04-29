@@ -1,0 +1,88 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CTAButton from '../components/ui/CTAButton.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const affiliateLink = '#';
+
+const topSlots = [
+  { name: 'Gates of Olympus', provider: 'Pragmatic Play', rtp: '96.50%', link: '/gates-of-olympus' },
+  { name: 'Sugar Rush', provider: 'Pragmatic Play', rtp: '96.50%', link: '/sugar-rush' },
+  { name: 'Sweet Bonanza', provider: 'Pragmatic Play', rtp: '96.48%', link: null },
+  { name: 'Big Bass Bonanza', provider: 'Pragmatic Play', rtp: '96.71%', link: null },
+  { name: 'Book of Dead', provider: "Play'n GO", rtp: '96.21%', link: null },
+];
+---
+
+<BaseLayout
+  title="Какие слоты есть на 1xBet? Обзор казино КЗ 2026"
+  description="Казино 1xBet КЗ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в тенге, выводи на Kaspi."
+  publishDate="2026-01-25"
+  updateDate="2026-04-08"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Онлайн-казино' }]} />
+  <ArticleMeta publishDate="2026-01-25" updateDate="2026-04-08" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">Казино 1xBet — слоты, рулетка и live-дилеры</h1>
+        <p class="text-lg text-gray-400 italic font-heading max-w-2xl mx-auto">Обзор игрового раздела платформы: каталог, провайдеры, бонусы и особенности для казахстанской аудитории.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Открыть казино с бонусом</CTAButton>
+        </div>
+      </div>
+
+      <img
+        src="/images/kazino-1.jpg"
+        alt="Лобби онлайн-казино 1xBet: карточные столы, рулетка и неоновое освещение"
+        width="1200"
+        height="600"
+        loading="eager"
+        decoding="async"
+        class="rounded-2xl w-full h-auto aspect-[16/8] object-cover mb-12"
+      />
+
+      <div class="space-y-8 text-gray-300">
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Обзор казино</h2>
+          <p class="mb-3">Каталог 1xBet насчитывает свыше 10 000 игровых позиций от ведущих провайдеров: Pragmatic Play, NetEnt, Play'n GO, Evolution Gaming и Microgaming. Раздел структурирован по категориям — слоты, настольные игры, live-казино, краш-игры и лотереи.</p>
+          <p class="text-gray-400 text-sm">Для пользователей из Казахстана доступна фильтрация по валюте (KZT) и провайдеру. Пополнение игрового баланса производится через Kaspi, Halyk или USDT без конвертации. Интерфейс каталога перегружен элементами — поиск конкретного автомата может занять время.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Популярные слоты</h2>
+          <div class="grid gap-3">
+            {topSlots.map((slot) => (
+              <div class="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-gray-900 to-black border border-amber-500/10 hover:border-amber-500/25 transition-all duration-300">
+                <div>
+                  <span class="text-white font-medium">{slot.link ? <a href={slot.link} class="text-amber-400 hover:text-amber-300">{slot.name}</a> : slot.name}</span>
+                  <span class="text-gray-500 text-sm ml-2">{slot.provider}</span>
+                </div>
+                <span class="text-sm text-gray-400">RTP {slot.rtp}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Live-казино и краш-игры</h2>
+          <p class="mb-3">Раздел Live Casino работает на базе Evolution Gaming: столы с живыми дилерами для рулетки, блэкджека, баккары и специальных шоу (Crazy Time, Lightning Roulette). Трансляция в HD, задержка минимальна.</p>
+          <p class="text-gray-400 text-sm">Среди краш-игр наибольшей популярностью пользуются Aviator и JetX. Механика проста — множитель растёт до случайного момента, задача игрока забрать выигрыш вовремя. Минимальная ставка от 100 ₸.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Бонусы для казино</h2>
+          <p class="text-gray-400 text-sm">Приветственный пакет включает 150 фриспинов на определённые слоты. Вейджер — ×35, что существенно выше среднерыночных показателей. Подробности о том, как получить и отыграть бонус — в <a href="/akcii" class="text-amber-400 hover:text-amber-300">обзоре акций</a>. Для обхода ограничений доступа рекомендуется использовать <a href="/ustanovka" class="text-amber-400 hover:text-amber-300">мобильное приложение</a> или <a href="/rabochij-sajt" class="text-amber-400 hover:text-amber-300">актуальное зеркало</a>.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-amber-500/10 via-obsidian-800 to-olive-500/5 border border-amber-500/10">
+        <h2 class="text-2xl font-heading font-bold text-white mb-3">Каталог из 10 000+ игр</h2>
+        <p class="text-gray-400 italic font-heading mb-6">Слоты, live-столы, краш-игры — в тенге без конвертации.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Играть с бонусом</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

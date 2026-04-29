@@ -1,0 +1,102 @@
+---
+const affiliateLink = '#';
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const navLinks = [
+  { href: '/', label: 'Главная' },
+  { href: '/registraciya', label: 'Регистрация' },
+  { href: '/skachat', label: 'Скачать' },
+  { href: '/casino', label: 'Казино' },
+  { href: '/bonus', label: 'Бонусы' },
+  { href: '/about', label: 'О проекте' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-warm-50/90 backdrop-blur-sm border-b border-warm-200">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-14 lg:h-16">
+      <a href="/" class="font-serif text-xl font-semibold text-warm-900 tracking-tight">
+        Mostbet
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Основное меню">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class:list={[
+                'px-3 py-1.5 text-sm transition-colors duration-200',
+                currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+                  ? 'text-accent-600 font-medium'
+                  : 'text-warm-500 hover:text-warm-800',
+              ]}
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center px-4 py-1.5 bg-warm-800 text-white text-sm rounded-full hover:bg-warm-900 transition-colors"
+        >
+          На сайт
+        </a>
+        <button
+          type="button"
+          id="menu-toggle"
+          class="lg:hidden p-2 text-warm-600 hover:text-warm-800"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Открыть меню"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-warm-200 py-4">
+      <nav class="flex flex-col gap-1" aria-label="Мобильное меню">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class:list={[
+                'px-3 py-2 text-sm',
+                currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+                  ? 'text-accent-600 font-medium'
+                  : 'text-warm-600 hover:text-warm-800',
+              ]}
+            >
+              {link.label}
+            </a>
+          ))
+        }
+        <a
+          href={affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 text-center px-4 py-2.5 bg-warm-800 text-white text-sm rounded-full hover:bg-warm-900 transition-colors"
+        >
+          Перейти на Mostbet
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    const open = !!(menu && !menu.classList.contains('hidden'));
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>

@@ -4,7 +4,6 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ArticleMeta from '../components/ArticleMeta.astro';
 import CTAButton from '../components/ui/CTAButton.astro';
 import Card from '../components/ui/Card.astro';
-import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
 
 const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
 const title = 'Скачать 1xBet Казахстан — APK для Android бесплатно';
@@ -33,7 +32,6 @@ const schema = {
   schema={schema}
   publishDate="2026-02-03"
   updateDate="2026-03-20"
-  noindex={true}
   type="article"
 >
   <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Установка' }]} />
@@ -60,9 +58,13 @@ const schema = {
             После установки включите автообновление внутри приложения если есть — иначе версия устареет и словите баги на live.
           </p>
         </div>
-        <ImagePlaceholder
-          description="Мокап смартфона: экран загрузки APK и иконка приложения на рабочем столе"
-          aspect="3/4"
+        <img
+          src="/images/app-phone-mockup.png"
+          alt="Мокап смартфона с приложением"
+          width="400"
+          height="600"
+          class="rounded-xl shadow-sm mx-auto"
+          loading="lazy"
         />
       </div>
 

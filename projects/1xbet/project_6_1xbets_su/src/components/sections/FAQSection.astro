@@ -1,0 +1,78 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const faqs = [
+  {
+    q: 'Как восстановить забытый пароль?',
+    a: 'По данным из открытых источников, восстановление пароля доступно через email или номер телефона, указанный при регистрации. Кнопка «Забыли пароль?» находится на странице входа. Процесс, согласно отзывам, занимает несколько минут.',
+  },
+  {
+    q: 'Можно ли вывести средства на Сбербанк?',
+    a: 'Согласно обзорам, вывод на карту Сбербанка доступен. Сроки, по данным пользователей, составляют от 1 до 24 часов. Минимальная сумма — от 100 ₽. Для актуальных условий обращайтесь на официальный сайт.',
+  },
+  {
+    q: 'Сколько весит APK-файл?',
+    a: 'По данным из открытых источников, APK-файл приложения весит около 40 МБ. Требуется Android 5.0 или выше. Скачать можно с официального сайта оператора.',
+  },
+  {
+    q: 'Работает ли DNS 8.8.8.8 для обхода блокировки?',
+    a: 'Согласно отзывам некоторых пользователей, смена DNS на 8.8.8.8 (Google) может помочь при блокировке у некоторых провайдеров. Однако это не гарантированный способ. Альтернативы: зеркало или мобильное приложение.',
+  },
+  {
+    q: 'Есть ли фрибет без депозита?',
+    a: 'По данным из открытых источников, на момент обзора фрибет без депозита не предлагается. Бонусная программа привязана к первому пополнению. Условия могут меняться — уточняйте на сайте оператора.',
+  },
+  {
+    q: 'Что такое Cash Out и как им пользоваться?',
+    a: 'Согласно обзорам, Cash Out позволяет досрочно рассчитать ставку до окончания события. Доступен не на все матчи. Сумма зависит от текущей ситуации в игре и коэффициентов.',
+  },
+  {
+    q: 'Есть ли live-казино с дилерами?',
+    a: 'По данным из обзоров, в разделе live-казино доступны столы с реальными дилерами: рулетка, блэкджек, баккара, игровые шоу (Crazy Time, Lightning Roulette). Провайдер — Evolution Gaming.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+---
+
+<section class="py-16 lg:py-24 border-b-2 border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>
+      ЧАСТЫЕ ВОПРОСЫ
+      <p slot="subtitle">Ответы составлены по данным из открытых источников</p>
+    </SectionHeading>
+
+    <div class="max-w-3xl space-y-2">
+      {
+        faqs.map((f) => (
+          <details class="group border-2 border-white/10 bg-surface-400 hover:border-cta-500/30 transition-colors duration-100">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer list-none">
+              <span class="font-mono text-sm text-white uppercase tracking-wide pr-4">{f.q}</span>
+              <span class="text-cta-400 font-mono text-xl shrink-0 group-open:rotate-45 transition-transform duration-100">+</span>
+            </summary>
+            <div class="px-6 pb-4 text-sm text-white/60 leading-relaxed border-t border-white/5 pt-4">
+              {f.a}
+            </div>
+          </details>
+        ))
+      }
+    </div>
+
+    <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50 mt-8 max-w-3xl">
+      <p>💡 Ответы носят информационный характер. Для получения точной информации обращайтесь в службу поддержки оператора.</p>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

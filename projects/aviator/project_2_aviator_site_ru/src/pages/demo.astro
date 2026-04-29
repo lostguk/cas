@@ -1,0 +1,140 @@
+---
+import ArticleMeta from '../components/ArticleMeta.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import FAQSection from '../components/sections/FAQSection.astro'
+import FinalCTASection from '../components/sections/FinalCTASection.astro'
+import Card from '../components/ui/Card.astro'
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro'
+import PromoBanner from '../components/ui/PromoBanner.astro'
+import StepsList from '../components/ui/StepsList.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const title = 'Демо Aviator — играть бесплатно без регистрации и без денег';
+const description = 'Запустите краш-игру Aviator в демо-режиме без регистрации: виртуальный баланс 1 000 единиц, все функции реальной игры, поддержка авто-кэшаута и двух ставок. Идеально для тренировки.';
+
+const launchSteps = [
+  { title: 'Откройте сайт Mostbet', body: 'Перейдите по партнёрской ссылке — она ведёт сразу в раздел казино. Регистрация для демо <strong>не требуется</strong>: сайт автоматически предложит «попробовать в демо-режиме» в превью каждой игры.' },
+  { title: 'Найдите Aviator', body: 'В разделе «Казино» откройте подкатегорию «Краш-игры» или используйте поиск (иконка лупы). Aviator всегда в топе главной страницы — у него отдельный значок с красным самолётом.' },
+  { title: 'Нажмите «Демо»', body: 'Под иконкой игры есть две кнопки: «Играть на деньги» и «Демо». Кликните на «Демо» — откроется полноценная игра без необходимости создавать аккаунт.' },
+  { title: 'Получите виртуальный баланс', body: 'По умолчанию демо-баланс — 1 000 условных единиц. Если деньги закончились, обновите страницу — баланс восстановится. Это полностью бесплатно и без скрытых условий.' },
+  { title: 'Тренируйтесь', body: 'Все функции реальной игры доступны: ставка, кэшаут, авто-кэшаут, две одновременные ставки, история раундов. Пробуйте стратегии, изучайте интерфейс, ловите редкие 50×—100×.' },
+];
+
+const faqItems = [
+  { q: 'Можно ли вывести выигрыши из демо-режима?', a: 'Нет. Демо-режим работает на виртуальной валюте — выигрыши и проигрыши никак не связаны с реальным балансом. Демо нужно для тренировки и изучения механики, а не для заработка. Все выигрыши «обнуляются» при закрытии страницы или обновлении баланса.' },
+  { q: 'Чем демо отличается от игры на реальные деньги?', a: 'Алгоритм генерации множителей — <strong>идентичный</strong>: тот же Provably Fair, те же распределения. Отличается только валюта (виртуальные единицы вместо рублей) и факт списания/зачисления денег. Поэтому демо-результаты — реалистичный показатель того, что вас ждёт в реальной игре.' },
+  { q: 'Сколько раундов нужно отыграть в демо перед реальной игрой?', a: 'Опытные игроки рекомендуют не меньше <strong>50–100 раундов</strong> в демо. Этого достаточно, чтобы освоить интерфейс, попробовать авто-кэшаут на 1.5× / 2× / 5×, увидеть распределение множителей в течение нескольких сессий и проверить выбранную стратегию.' },
+  { q: 'Можно ли играть в демо с мобильного телефона?', a: 'Да. Демо-режим Aviator работает в любом современном мобильном браузере (Safari, Chrome, Firefox) без установки приложения. Просто откройте сайт Mostbet с телефона, найдите игру, нажмите «Демо».' },
+];
+---
+
+<BaseLayout title={title} description={description} type="article" publishDate="2026-02-25" updateDate="2026-04-18">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Демо Aviator' }]} />
+
+  <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <ArticleMeta publishDate="2026-02-25" updateDate="2026-04-18" readingMinutes={6} />
+
+    <header class="mt-8 mb-10">
+      <p class="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-orange-300 bg-orange-500/10 border border-orange-500/30">
+        Бесплатно · Без регистрации
+      </p>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+        Демо <span class="text-orange-400">Aviator</span>: играйте бесплатно
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed max-w-3xl">
+        Краш-игра <strong>Aviator от Spribe</strong> доступна в полноценном демо-режиме: виртуальный баланс 1 000 единиц, тот же алгоритм, что и в реальной игре, поддержка авто-кэшаута и двух ставок. Идеальная тренировочная площадка перед игрой на деньги.
+      </p>
+    </header>
+
+    <section class="mb-12">
+      <ImagePlaceholder description="1. Скриншот демо-режима Aviator: виртуальный баланс 1000 единиц, активная ставка 50, множитель 2.18×" aspect="16/9" />
+    </section>
+
+    <section class="mb-12 prose-aviator text-slate-300 leading-relaxed">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Зачем нужен демо-режим Aviator</h2>
+      <p class="mb-4">
+        Демо-режим — это полная копия реальной игры, но на виртуальной валюте. У него три ключевые цели:
+      </p>
+      <ul class="list-disc list-inside space-y-2 mb-4">
+        <li><strong>Изучение интерфейса.</strong> Где кнопка «Поставить», как включить авто-кэшаут, как открыть вторую ставку — на демо ошибиться в этом не страшно.</li>
+        <li><strong>Тестирование стратегий.</strong> Хотите попробовать Мартингейл на 200 раундов? В демо это безопасно. На реальные деньги — может стоить дневного банка.</li>
+        <li><strong>Психологическая подготовка.</strong> Многие новички впервые видят серию из 7 проигрышей подряд именно в демо — и понимают, что это нормально и не повод увеличивать ставку.</li>
+      </ul>
+      <p>
+        Кроме того, демо-режим Aviator можно использовать как «успокаивающий» сценарий: если в реальной игре проиграли, перешли в демо — отыграли спокойно ещё час, восстановили эмоциональный баланс. Это намного дешевле психотерапии.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-5">Как запустить Aviator в демо за 5 шагов</h2>
+      <StepsList steps={launchSteps} />
+    </section>
+
+    <PromoBanner
+      imageNumber={2}
+      imageDescription="Промо-баннер: смартфон с открытым демо Aviator, виртуальные купюры на фоне, надпись «Демо без регистрации»"
+      headline="Поиграли в демо? Переходите на реальные ставки с бонусом 125%"
+      body="После того как вы освоились в демо-режиме — следующий шаг переход на реальные ставки. На Mostbet при первом депозите вы получаете бонус 125% — отличный буфер для первых раундов на деньги."
+      primaryCta="Перейти к реальной игре"
+      lastUsedMinutes={4}
+    />
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-5">Что доступно в демо-режиме</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Card>
+          <div class="text-3xl mb-3" aria-hidden="true">✅</div>
+          <h3 class="font-bold text-white text-base mb-2">Все ставки</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">Минимум 0,10, максимум 7 000 виртуальных единиц — те же лимиты, что и в реальной версии.</p>
+        </Card>
+        <Card>
+          <div class="text-3xl mb-3" aria-hidden="true">⚡</div>
+          <h3 class="font-bold text-white text-base mb-2">Авто-кэшаут</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">Любые целевые множители: 1.3×, 1.5×, 2×, 5×, 10× — настраивайте и тестируйте.</p>
+        </Card>
+        <Card>
+          <div class="text-3xl mb-3" aria-hidden="true">🎯</div>
+          <h3 class="font-bold text-white text-base mb-2">Две ставки</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">Двойное поле ставки доступно: страховочная + рискованная одновременно.</p>
+        </Card>
+        <Card>
+          <div class="text-3xl mb-3" aria-hidden="true">📊</div>
+          <h3 class="font-bold text-white text-base mb-2">История раундов</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">Полная лента предыдущих множителей — для отработки статистических стратегий.</p>
+        </Card>
+        <Card>
+          <div class="text-3xl mb-3" aria-hidden="true">👥</div>
+          <h3 class="font-bold text-white text-base mb-2">Лента ставок</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">Реальная лента ставок других игроков — она не зависит от демо/реал режима.</p>
+        </Card>
+        <Card>
+          <div class="text-3xl mb-3" aria-hidden="true">🎮</div>
+          <h3 class="font-bold text-white text-base mb-2">Турбо-режим</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">Ускоренная анимация для опытных игроков — экономит время на тренировке.</p>
+        </Card>
+      </div>
+    </section>
+
+    <section class="mb-12 prose-aviator text-slate-300 leading-relaxed">
+      <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Чего нет в демо-режиме</h2>
+      <p class="mb-4">
+        Чат — на демо обычно отключён или работает в режиме «только чтение». Вы видите сообщения других игроков, но не можете писать. Это сделано, чтобы не забивать общий канал виртуальными ставками.
+      </p>
+      <p class="mb-4">
+        Турниры — ставки в демо не учитываются в турнирных таблицах Mostbet, и призовые средства вы получить не сможете. Турниры — только для реальных аккаунтов.
+      </p>
+      <p>
+        Бонусы — приветственный пакет 125% активируется только после регистрации и первого реального депозита. В демо никаких бонусов нет, потому что их некуда зачислять.
+      </p>
+    </section>
+
+    <FAQSection items={faqItems} title="Вопросы и ответы о демо Aviator" />
+  </article>
+
+  <FinalCTASection
+    title='Готовы перейти от демо <span class="text-orange-400">к реальным ставкам</span>?'
+    body="Зарегистрируйтесь на Mostbet за 2 минуты, пополните счёт за 7 минут — и заберите бонус 125% до 35 000 ₽."
+    rating="4.9/5"
+    cta="Играть в Aviator на деньги"
+  />
+</BaseLayout>

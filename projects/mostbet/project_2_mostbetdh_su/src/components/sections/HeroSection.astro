@@ -1,0 +1,77 @@
+---
+import CTAButton from '../ui/CTAButton.astro';
+
+const affiliateLink = '#';
+
+const stats = [
+  { value: '40+', label: 'видов спорта' },
+  { value: '100 ₽', label: 'мин. депозит' },
+  { value: '32 500 ₽', label: 'бонус на старте' },
+];
+---
+
+<section class="relative overflow-hidden py-16 sm:py-20 lg:py-28">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-br from-base-950 via-base-950 to-emerald-950/40"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-emerald-500/[0.07] to-transparent"></div>
+    <div class="absolute -top-32 right-1/4 w-[500px] h-[500px] rounded-full bg-emerald-500/[0.08] blur-[100px]"></div>
+    <div class="absolute bottom-0 left-1/4 w-[300px] h-[300px] rounded-full bg-secondary-400/[0.05] blur-[80px]"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div>
+        <p class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+          Рейтинг 4.3/5 по совокупности параметров
+        </p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+          Mostbet Россия — сравнительный анализ ставок и казино
+        </h1>
+        <p class="text-lg text-slate-400 leading-relaxed mb-8 max-w-xl">
+          Аналитический обзор платформы Mostbet для российских пользователей. 40+ видов спорта, 8 000+ игр в казино, счёт в рублях. Оценки основаны на открытых данных.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <CTAButton href={affiliateLink} size="lg" variant="cta" external>Сравнить условия</CTAButton>
+          <CTAButton href="/sozdat-akkaunt" variant="outline" size="lg">Как зарегистрироваться</CTAButton>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          {
+            stats.map((s) => (
+              <div class="text-center sm:text-left">
+                <div class="text-xl sm:text-2xl font-extrabold text-emerald-400">{s.value}</div>
+                <div class="text-xs sm:text-sm text-slate-500 mt-1">{s.label}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm p-6 lg:p-8">
+          <h3 class="text-white font-bold mb-4">Сводная таблица</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between py-2 border-b border-white/[0.06]">
+              <span class="text-slate-400">Минимальный депозит</span>
+              <span class="text-white font-semibold">100 ₽</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-white/[0.06]">
+              <span class="text-slate-400">Приветственный бонус</span>
+              <span class="text-emerald-400 font-semibold">до 32 500 ₽</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-white/[0.06]">
+              <span class="text-slate-400">Способы оплаты</span>
+              <span class="text-white font-semibold">Сбербанк, СБП, QIWI</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-white/[0.06]">
+              <span class="text-slate-400">Лицензия</span>
+              <span class="text-white font-semibold">Кюрасао</span>
+            </div>
+            <div class="flex justify-between py-2">
+              <span class="text-slate-400">Общая оценка</span>
+              <span class="text-secondary-400 font-bold">4.3 / 5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

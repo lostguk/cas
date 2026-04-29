@@ -1,0 +1,62 @@
+---
+import CTAButton from '../ui/CTAButton.astro'
+
+const affiliateLink = '#'
+---
+
+<section class="container-section bg-gradient-to-r from-amber-500/10 to-lime-400/10 border-y border-amber-500/20">
+  <div class="container-inner">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+        Приветственные бонусы 🎁
+      </h2>
+      <p class="text-slate-300 text-lg">До 500,000 тенге за первые 4 депозита</p>
+    </div>
+
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full">
+        <thead>
+          <tr class="border-b border-white/[0.06]">
+            <th class="px-4 py-4 text-left text-white font-bold">Депозит</th>
+            <th class="px-4 py-4 text-left text-amber-500 font-bold">Бонус</th>
+            <th class="px-4 py-4 text-left text-lime-400 font-bold">Фриспины</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-white/[0.06] hover:bg-white/[0.02]">
+            <td class="px-4 py-4 text-white">1-й депозит: 10,000 ₸</td>
+            <td class="px-4 py-4 text-amber-500 font-semibold">100%</td>
+            <td class="px-4 py-4 text-lime-400">50</td>
+          </tr>
+          <tr class="border-b border-white/[0.06] hover:bg-white/[0.02]">
+            <td class="px-4 py-4 text-white">2-й депозит: 10,000 ₸</td>
+            <td class="px-4 py-4 text-amber-500 font-semibold">50%</td>
+            <td class="px-4 py-4 text-lime-400">25</td>
+          </tr>
+          <tr class="border-b border-white/[0.06] hover:bg-white/[0.02]">
+            <td class="px-4 py-4 text-white">3-й депозит: 10,000 ₸</td>
+            <td class="px-4 py-4 text-amber-500 font-semibold">50%</td>
+            <td class="px-4 py-4 text-lime-400">25</td>
+          </tr>
+          <tr class="hover:bg-white/[0.02]">
+            <td class="px-4 py-4 text-white">4-й депозит: 10,000 ₸</td>
+            <td class="px-4 py-4 text-amber-500 font-semibold">25%</td>
+            <td class="px-4 py-4 text-lime-400">25</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 mb-8">
+      <p class="text-slate-300 text-center">
+        <strong>Условия:</strong> Минимальный депозит 5,000 ₸ • Вейджер х40 • Действует 30 дней • Применимо ко всем слотам
+      </p>
+    </div>
+
+    <div class="text-center">
+      <CTAButton href={affiliateLink} variant="primary" size="lg">
+        Зарегистрироваться и получить все бонусы
+      </CTAButton>
+    </div>
+  </div>
+</section>

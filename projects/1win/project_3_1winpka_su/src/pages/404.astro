@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+---
+
+<BaseLayout
+  title="Страница не найдена"
+  description="404 — такой страницы нет на 1winpka.su."
+  noindex={true}
+>
+  <section class="py-24 px-4 text-center">
+    <p class="text-7xl font-extrabold text-coral-500 uppercase mb-4">404</p>
+    <h1 class="text-2xl font-extrabold uppercase text-white mb-4">Страница не найдена</h1>
+    <p class="text-slate-400 max-w-md mx-auto mb-8">
+      Такого адреса нет — проверь ссылку или вернись на главную.
+    </p>
+    <CTAButton href="/" size="lg">На главную</CTAButton>
+  </section>
+</BaseLayout>

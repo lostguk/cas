@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+
+const affiliateLink = '#';
+const title = 'Регистрация 1xBet: 4 способа + бонус на первый депозит';
+const description =
+  'Регистрация 1xBet за 2 минуты — пошагово. Аккаунт в рубль, бонус на старте, верификация через ИИН.';
+const canonical = 'https://1xbetsite.su/otkryt-schet';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: [
+    { '@type': 'HowToStep', name: 'Шаг 1', text: 'Откройте форму регистрации на официальной странице.' },
+    { '@type': 'HowToStep', name: 'Шаг 2', text: 'Выберите валюту RUB и заполните контакты.' },
+    { '@type': 'HowToStep', name: 'Шаг 3', text: 'Подтвердите телефон или почту по коду из SMS.' },
+    { '@type': 'HowToStep', name: 'Шаг 4', text: 'Завершите профиль и при необходимости загрузите документы.' },
+  ],
+};
+
+const steps = [
+  {
+    n: '01',
+    title: 'Выбор способа',
+    text: 'По телефону, email, через соцсеть или в один клик. Телефон — самый быстрый вариант.',
+  },
+  {
+    n: '02',
+    title: 'Валюта и регион',
+    text: 'Выбирайте рубль сразу — потом изменить сложно. Регион определится автоматически.',
+  },
+  {
+    n: '03',
+    title: 'Подтверждение',
+    text: 'SMS приходит за 30 секунд. Если задерживается — проверьте номер и антиспам.',
+  },
+  {
+    n: '04',
+    title: 'Профиль и бонус',
+    text: 'ФИО как в паспорте. Промокод вводите до первого депозита, потом не активируется.',
+  },
+];
+
+const methods = [
+  { title: 'По телефону', text: 'Номер + SMS-код. Самый быстрый.' },
+  { title: 'По email', text: 'Адрес + пароль. Ссылка подтверждения на почту.' },
+  { title: 'Через соцсеть', text: 'VK, Telegram, Google — авторизация в два клика.' },
+  { title: 'В один клик', text: 'Только страна и валюта. Логин/пароль генерируются автоматически.' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  type="article"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Регистрация' }]} />
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+          Четыре шага до первой ставки
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Регистрация на 1xBet занимает 2 минуты. Счёт в рублях, бонус до 32 500 ₽ на первый депозит.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Зарегистрироваться</CTAButton>
+          <CTAButton href="/ustanovka" variant="outline" size="lg">Скачать приложение</CTAButton>
+        </div>
+      </div>
+
+      <div class="space-y-6 mb-14">
+        {
+          steps.map((s) => (
+            <Card>
+              <div class="flex gap-4">
+                <span class="text-2xl font-extrabold text-cta-500 shrink-0">{s.n}</span>
+                <div>
+                  <h2 class="text-xl font-semibold text-gray-900 mb-2">{s.title}</h2>
+                  <p class="text-gray-600 leading-relaxed">{s.text}</p>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Способы регистрации</h2>
+      <div class="grid sm:grid-cols-2 gap-4 mb-14">
+        {
+          methods.map((m) => (
+            <Card>
+              <h3 class="font-semibold text-gray-900 mb-1">{m.title}</h3>
+              <p class="text-sm text-gray-600">{m.text}</p>
+            </Card>
+          ))
+        }
+      </div>
+
+      <div class="text-center p-8 rounded-2xl bg-gray-50 shadow-xl">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-3">Бонус при регистрации</h2>
+        <p class="text-gray-600 mb-6">
+          До 32 500 ₽ + 150 фриспинов. Подробнее — на <a href="/privetstvennye-bonusy" class="text-cta-500 hover:text-cta-600 underline">странице бонусов</a>.
+        </p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть регистрацию</CTAButton>
+      </div>
+
+      <div class="mt-10 text-sm text-gray-500 text-center">
+        Верификация: загрузите <a href="/moj-profil" class="text-cta-500 hover:text-cta-600">СНИЛС или ИНН</a> в личном кабинете. Вывод откроется после подтверждения.
+      </div>
+    </div>
+  </section>
+</BaseLayout>

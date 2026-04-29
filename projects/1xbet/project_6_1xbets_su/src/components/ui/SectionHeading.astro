@@ -1,0 +1,29 @@
+---
+interface Props {
+  tag?: 'h2' | 'h3';
+  align?: 'left' | 'center';
+  class?: string;
+}
+
+const { tag: Tag = 'h2', align = 'left', class: className = '' } = Astro.props;
+---
+
+<div class:list={['mb-10', align === 'center' && 'text-center', className]}>
+  <Tag
+    class:list={[
+      'text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-none uppercase tracking-tighter',
+      align === 'center' && 'mx-auto max-w-4xl',
+    ]}
+  >
+    <slot />
+  </Tag>
+  <div
+    class:list={[
+      'mt-4 text-white/60 max-w-2xl text-base sm:text-lg',
+      align === 'center' && 'mx-auto',
+      align === 'left' && 'max-w-3xl',
+    ]}
+  >
+    <slot name="subtitle" />
+  </div>
+</div>

@@ -1,0 +1,47 @@
+{
+	"brand": "1xBet",
+	"region": "RU",
+	"language": "ru",
+	"currency": "RUB",
+	"domain": "1xbets.su",
+	"affiliate_url": "#",
+	"color_preset": "iron-blue",
+	"visual_style": "brutalist",
+	"content_format": "D",
+	"preset_number": 10,
+	"font": "Space Mono+Inter",
+	"logo_type": "E",
+	"author": null,
+	"pages": [
+		"index",
+		"sozdat-akkaunt",
+		"mobile-app",
+		"onlajn-kazino",
+		"dostup",
+		"akcii",
+		"about"
+	],
+	"slot_pages": ["sugar-rush-1000", "the-dog-house"],
+	"sections_order": [
+		"Hero",
+		"Overview",
+		"Bonus",
+		"Advantages",
+		"Sports",
+		"Payments",
+		"Slots",
+		"FAQ",
+		"CTA"
+	],
+	"seo": {
+		"primary_keyword": "1xbet россия",
+		"secondary_keywords": [
+			"1хбет скачать",
+			"1xbet регистрация",
+			"1xbet зеркало",
+			"1xbet бонус"
+		],
+		"geo_target": "RU"
+	},
+	"noindex": false
+}

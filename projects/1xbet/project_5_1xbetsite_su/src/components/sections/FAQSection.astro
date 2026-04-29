@@ -1,0 +1,112 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const categories = [
+  {
+    name: 'Регистрация',
+    items: [
+      {
+        q: 'Можно ли зарегистрироваться из-за рубежа?',
+        a: 'Да, регистрация доступна из большинства стран. Выбирайте валюту RUB при создании аккаунта, если планируете пополнять в рублях.',
+      },
+    ],
+  },
+  {
+    name: 'Платежи',
+    items: [
+      {
+        q: 'Работает ли пополнение через СБП?',
+        a: 'СБП работает и зачисляется за секунды. Комиссии со стороны платформы нет, но банк может брать свою — уточняйте у оператора.',
+      },
+    ],
+  },
+  {
+    name: 'Приложение',
+    items: [
+      {
+        q: 'Есть ли версия для iPhone?',
+        a: 'Для iOS есть веб-приложение и периодически появляется приложение в App Store. Проверяйте актуальность на официальном сайте.',
+      },
+    ],
+  },
+  {
+    name: 'Зеркала',
+    items: [
+      {
+        q: 'Сохраняется ли баланс при входе через зеркало?',
+        a: 'Да, баланс привязан к аккаунту, а не к домену. Зеркало — это тот же сайт с другим адресом. Проверяйте HTTPS.',
+      },
+    ],
+  },
+  {
+    name: 'Бонусы',
+    items: [
+      {
+        q: 'Можно ли снять бонусные деньги сразу?',
+        a: 'Нет, сначала нужно выполнить условия отыгрыша — вейджер ×5 на спорт или ×35 на казино. Сроки: 30 дней.',
+      },
+    ],
+  },
+  {
+    name: 'Ставки',
+    items: [
+      {
+        q: 'Есть ли live-трансляции матчей РПЛ?',
+        a: 'Часть матчей транслируется прямо в приложении. Для РПЛ — зависит от сезона и прав. Проверяйте раздел «Live».',
+      },
+    ],
+  },
+  {
+    name: 'Казино',
+    items: [
+      {
+        q: 'Есть ли live-казино с дилерами?',
+        a: 'Да, Evolution, Pragmatic Live и другие провайдеры. Рулетка, блэкджек, баккара — всё в реальном времени.',
+      },
+    ],
+  },
+];
+
+const allFaq = categories.flatMap((c) => c.items);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: allFaq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+---
+
+<section class="py-16 lg:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading>Вопросы о 1xBet</SectionHeading>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      {
+        categories.map((cat) => (
+          <div class="rounded-xl bg-white p-6 shadow-xl">
+            <h3 class="text-sm font-semibold text-cta-500 uppercase tracking-wide mb-4">{cat.name}</h3>
+            {cat.items.map((item) => (
+              <div>
+                <p class="font-semibold text-gray-900 mb-2">{item.q}</p>
+                <p class="text-sm text-gray-600 leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center mt-10">
+      <CTAButton href="#" size="lg" external>Задать вопрос поддержке</CTAButton>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

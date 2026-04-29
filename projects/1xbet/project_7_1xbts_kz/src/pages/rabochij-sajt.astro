@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+
+const methods = [
+  { num: '01', title: 'Актуальное зеркало', text: 'Зеркало — полная копия основного сайта на альтернативном домене. Функционал идентичен: ставки, казино, вывод средств. Адрес зеркала периодически обновляется.' },
+  { num: '02', title: 'Мобильное приложение', text: 'APK для Android работает напрямую, минуя блокировки провайдеров. Подключение идёт через защищённые серверы платформы. Подробности — в <a href="/ustanovka" class="text-amber-400 hover:text-amber-300">инструкции по установке</a>.' },
+  { num: '03', title: 'Смена DNS на 8.8.8.8', text: 'Google Public DNS обходит часть блокировок на уровне провайдера. Настраивается в параметрах сети устройства. Подходит как временное решение.' },
+];
+---
+
+<BaseLayout
+  title="1xBet Зеркало — рабочий доступ без блокировки | 2026"
+  description="Рабочее зеркало 1xBet для Казахстан. Обходи блокировку Kcell и Beeline — вход без VPN."
+  publishDate="2026-02-12"
+  updateDate="2026-04-11"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Рабочий доступ' }]} />
+  <ArticleMeta publishDate="2026-02-12" updateDate="2026-04-11" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">1xBet зеркало — рабочий доступ для Казахстана</h1>
+        <p class="text-lg text-gray-400 italic font-heading max-w-2xl mx-auto">Как обойти блокировку основного домена: зеркала, приложение, DNS.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Перейти на рабочее зеркало</CTAButton>
+          <CTAButton href="/ustanovka" variant="secondary" size="lg">Установить приложение</CTAButton>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Почему блокируют</h2>
+          <p class="text-gray-300 mb-3">Провайдеры Kcell, Beeline KZ и ряд других операторов периодически ограничивают доступ к основному домену 1xBet. Блокировка происходит на уровне DNS-резолвера провайдера — сам сайт при этом функционирует, недоступен лишь конкретный адрес.</p>
+          <p class="text-gray-400 text-sm">Подобная практика характерна для всех крупных букмекерских платформ в регионе. Ограничения не затрагивают мобильные приложения и альтернативные адреса.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-6">3 способа зайти</h2>
+          <div class="space-y-4">
+            {methods.map((m) => (
+              <div class="flex gap-4 items-start border-l-2 border-amber-500/20 pl-5">
+                <div class="text-amber-400 font-heading font-bold text-sm shrink-0">{m.num}</div>
+                <div>
+                  <h3 class="font-semibold text-white mb-1">{m.title}</h3>
+                  <p class="text-sm text-gray-400" set:html={m.text} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-heading font-bold text-amber-400 mb-4">Как отличить настоящее зеркало</h2>
+          <p class="text-gray-300 mb-3">Фишинговые сайты маскируются под зеркала для кражи учётных данных. Признаки подлинного ресурса: SSL-сертификат (замок в адресной строке), рабочая авторизация под существующим аккаунтом, корректное отображение баланса и истории ставок.</p>
+          <p class="text-gray-400 text-sm">При возникновении сомнений рекомендуется обратиться в службу поддержки через <a href="/onlajn-kazino" class="text-amber-400 hover:text-amber-300">основной раздел</a> или мессенджер. Актуальные ссылки также публикуются в <a href="/akcii" class="text-amber-400 hover:text-amber-300">новостях бонусной программы</a>. Дополнительная информация — в <a href="/vhod" class="text-amber-400 hover:text-amber-300">разделе авторизации</a>.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-2xl bg-gradient-to-br from-amber-500/10 via-obsidian-800 to-olive-500/5 border border-amber-500/10">
+        <h2 class="text-2xl font-heading font-bold text-white mb-3">Доступ без ограничений</h2>
+        <p class="text-gray-400 italic font-heading mb-6">Зеркало, приложение или DNS — выберите удобный способ.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Открыть через зеркало</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

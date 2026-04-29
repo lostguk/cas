@@ -1,0 +1,54 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import ImagePlaceholder from '../ui/ImagePlaceholder.astro';
+import CTAButton from '../ui/CTAButton.astro';
+
+const slots = [
+  {
+    name: 'Bananas go Bahamas',
+    provider: 'Novomatic',
+    rtp: '96.10%',
+    maxWin: '×9 000',
+    description: 'Классика с тропической темой. Простая механика, но с неожиданными множителями — иногда раскачивается нормально.',
+    cta: 'Играть с бонусом',
+    link: '/bananas-go-bahamas',
+    imgDesc: '1. Слот Bananas go Bahamas: тропические фрукты и обезьяны',
+  },
+  {
+    name: 'Sweet Bonanza',
+    provider: 'Pragmatic Play',
+    rtp: '96.48%',
+    maxWin: '×21 175',
+    description: 'Конфетный слот с Tumble-механикой. Множители в бонусном раунде до ×100 — волатильность высокая.',
+    cta: 'Запустить слот бесплатно',
+    link: '/sweet-bonanza',
+    imgDesc: '2. Слот Sweet Bonanza: яркие конфеты и леденцы на игровом поле',
+  },
+];
+---
+
+<section class="relative py-20 lg:py-28 overflow-hidden" style="transform: skewY(-2deg);">
+  <div class="absolute inset-0 bg-abyss-800/50"></div>
+  <div class="relative" style="transform: skewY(2deg);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>Слоты 1Win — личный топ</SectionHeading>
+      <div class="grid md:grid-cols-2 gap-6">
+        {slots.map((s) => (
+          <div class="bg-abyss-800 border-l-4 border-coral-500 rounded-lg overflow-hidden hover:scale-[1.02] transition-transform duration-200">
+            <ImagePlaceholder description={s.imgDesc} aspect="16/10" />
+            <div class="p-5">
+              <div class="text-xs font-semibold text-teal-400 uppercase tracking-wider mb-1">{s.provider}</div>
+              <h3 class="text-lg font-bold text-white uppercase mb-2">{s.name}</h3>
+              <p class="text-sm text-slate-400 mb-3">{s.description}</p>
+              <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                <span>RTP {s.rtp}</span>
+                <span>Макс. {s.maxWin}</span>
+              </div>
+              <CTAButton href={s.link} variant="outline" size="sm">{s.cta}</CTAButton>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

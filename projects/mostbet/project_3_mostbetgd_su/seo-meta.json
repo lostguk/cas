@@ -1,0 +1,77 @@
+{
+  "index": {
+    "title": "Mostbet Россия — ставки на спорт и казино РУ 2026",
+    "description": "Обзор Mostbet для Россия: ставки на КПЛ, казино, бонус до 32 500 ₽. Пополнение через Сбербанк в рубль.",
+    "primary_keyword": "Mostbet россия",
+    "title_formula": 1,
+    "page_type": "index"
+  },
+  "nachalo-raboty": {
+    "title": "Регистрация Mostbet: 4 способа + бонус на первый депозит",
+    "description": "Регистрация Mostbet за 2 минуты — пошагово. Аккаунт в рубль, бонус на старте, верификация через ИИН.",
+    "primary_keyword": "Mostbet регистрация",
+    "title_formula": 2,
+    "page_type": "registration"
+  },
+  "mobile-app": {
+    "title": "Скачать Mostbet Россия — APK для Android бесплатно",
+    "description": "Как скачать Mostbet в Россия: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.",
+    "primary_keyword": "Mostbet скачать",
+    "title_formula": 3,
+    "page_type": "download"
+  },
+  "slots-i-igry": {
+    "title": "Какие слоты есть на Mostbet? Обзор казино РУ 2026",
+    "description": "Казино Mostbet РУ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в рубль, выводи на Сбербанк.",
+    "primary_keyword": "Mostbet казино",
+    "title_formula": 4,
+    "page_type": "casino"
+  },
+  "podarki": {
+    "title": "Mostbet Бонусы — приветственный пакет для РУ | 2026",
+    "description": "Бонусы Mostbet для Россия: до 32 500 ₽ на спорт, 150 фриспинов на казино. Условия отыгрыша.",
+    "primary_keyword": "Mostbet бонус",
+    "title_formula": 1,
+    "page_type": "bonus"
+  },
+  "lichnyy-kabinet": {
+    "title": "Личный кабинет Mostbet: вход, вывод, верификация РУ",
+    "description": "Mostbet личный кабинет — как войти, пополнить счёт и вывести деньги в рубль на Сбербанк Gold.",
+    "primary_keyword": "Mostbet вход",
+    "title_formula": 2,
+    "page_type": "account"
+  },
+  "about": {
+    "title": "Обзор Mostbet Россия — кто автор и зачем этот сайт",
+    "description": "Об авторе обзора Mostbet KZ: кто я, зачем этот сайт, как тестирую. Прозрачно о партнёрских ссылках.",
+    "primary_keyword": "Mostbet обзор",
+    "title_formula": 3,
+    "page_type": "about"
+  },
+  "big-bass-splash": {
+    "title": "Играть Big Bass Splash на Mostbet Россия — обзор и RTP",
+    "description": "Big Bass Splash на Mostbet: RTP 96.71%, бонусные раунды, волатильность. Честный обзор от жителя Россия 2026.",
+    "primary_keyword": "Big Bass Splash слот",
+    "title_formula": 3,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Big Bass Splash",
+      "rtp": "96.71%",
+      "maxWin": "×2 100",
+      "provider": "Pragmatic Play"
+    }
+  },
+  "reactoonz-2": {
+    "title": "Reactoonz 2 слот: RTP 96.20%, максимум ×5 083 | Mostbet",
+    "description": "Обзор слота Reactoonz 2 на Mostbet: RTP 96.20%, макс. выигрыш ×5 083. Play'n GO. Играй в рубль.",
+    "primary_keyword": "Reactoonz 2 слот",
+    "title_formula": 2,
+    "page_type": "slot",
+    "slot_info": {
+      "name": "Reactoonz 2",
+      "rtp": "96.20%",
+      "maxWin": "×5 083",
+      "provider": "Play'n GO"
+    }
+  }
+}

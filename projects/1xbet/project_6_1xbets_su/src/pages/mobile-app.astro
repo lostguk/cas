@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import Card from '../components/ui/Card.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+
+const title = 'Скачать 1xBet Россия — APK для Android бесплатно';
+const description = 'Как скачать 1xBet в Россия: APK для Android, инструкция для iPhone. Рабочая ссылка 2026.';
+
+const affiliateLink = '#';
+
+const androidSteps = [
+  { num: '01', title: 'Перейти на сайт', desc: 'По данным из открытых источников, APK доступен на официальном сайте оператора в разделе «Приложения».' },
+  { num: '02', title: 'Разрешить установку', desc: 'Согласно инструкциям, в настройках Android нужно разрешить установку из неизвестных источников.' },
+  { num: '03', title: 'Скачать и установить', desc: 'По данным обзоров, файл весит около 40 МБ. Установка занимает менее минуты.' },
+  { num: '04', title: 'Войти в аккаунт', desc: 'Согласно отзывам, после установки можно авторизоваться или создать новый аккаунт.' },
+];
+
+const iosSteps = [
+  { num: '01', title: 'Открыть сайт', desc: 'По данным из обзоров, ссылка на App Store доступна на сайте оператора или его зеркале.' },
+  { num: '02', title: 'Скачать из App Store', desc: 'Согласно информации, приложение доступно в App Store. Может потребоваться смена региона.' },
+  { num: '03', title: 'Авторизоваться', desc: 'По данным отзывов, функционал iOS-версии аналогичен Android-приложению.' },
+];
+
+const reqs = [
+  ['Android', '5.0+', '~40 МБ', '1 ГБ'],
+  ['iOS', '12.0+', '~120 МБ', '2 ГБ'],
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: androidSteps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.desc,
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} canonical="https://1xbets.su/mobile-app" schema={schema} publishDate="2026-04-01" updateDate="2026-04-13">
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Приложение' }]} />
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-none uppercase tracking-tighter mb-6">
+        СКАЧАТЬ 1XBET — ОБЗОР ПРИЛОЖЕНИЯ
+      </h1>
+      <p class="text-lg text-white/60 max-w-2xl mb-4">
+        По данным из открытых источников, мобильное приложение 1xBet доступно для Android (APK) и iOS. Ниже — информация об установке, собранная из публичных обзоров.
+      </p>
+      <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+        <p>⚠️ Мы не распространяем программное обеспечение. Для скачивания обращайтесь на официальный сайт оператора.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>СКАЧАТЬ НА ANDROID (APK)</SectionHeading>
+      <div class="space-y-4 max-w-3xl">
+        {androidSteps.map((s) => (
+          <div class="flex gap-6 border-2 border-white/10 bg-surface-400 p-6 hover:border-cta-500/30 transition-colors duration-100">
+            <span class="text-3xl font-black font-mono text-cta-500 shrink-0">{s.num}</span>
+            <div>
+              <p class="font-mono font-bold text-white uppercase tracking-wider mb-1">{s.title}</p>
+              <p class="text-sm text-white/60">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50 mt-8 max-w-3xl">
+        <p>💡 По данным из открытых источников. APK недоступен в Google Play из-за политики магазина.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>УСТАНОВКА НА IOS</SectionHeading>
+      <div class="space-y-4 max-w-3xl">
+        {iosSteps.map((s) => (
+          <div class="flex gap-6 border-2 border-white/10 bg-surface-400 p-6 hover:border-cta-500/30 transition-colors duration-100">
+            <span class="text-3xl font-black font-mono text-cta-500 shrink-0">{s.num}</span>
+            <div>
+              <p class="font-mono font-bold text-white uppercase tracking-wider mb-1">{s.title}</p>
+              <p class="text-sm text-white/60">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading>СИСТЕМНЫЕ ТРЕБОВАНИЯ</SectionHeading>
+      <div class="overflow-x-auto max-w-3xl">
+        <table class="w-full text-sm text-left border-2 border-white/10">
+          <thead>
+            <tr class="bg-surface-400 border-b-2 border-white/10">
+              <th class="px-4 py-3 font-mono text-xs uppercase tracking-wider text-white/60">ОС</th>
+              <th class="px-4 py-3 font-mono text-xs uppercase tracking-wider text-white/60">Версия</th>
+              <th class="px-4 py-3 font-mono text-xs uppercase tracking-wider text-white/60">Размер</th>
+              <th class="px-4 py-3 font-mono text-xs uppercase tracking-wider text-white/60">RAM</th>
+            </tr>
+          </thead>
+          <tbody>
+            {reqs.map((row) => (
+              <tr class="border-b border-white/5">
+                <td class="px-4 py-3 font-mono text-white/80">{row[0]}</td>
+                <td class="px-4 py-3 text-white/60">{row[1]}</td>
+                <td class="px-4 py-3 text-white/60">{row[2]}</td>
+                <td class="px-4 py-3 text-cta-400 font-mono">{row[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50 mt-8 max-w-3xl">
+        <p>⚠️ Данные о системных требованиях взяты из публичных обзоров и могут быть неактуальны.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+      <SectionHeading>ОБЗОР ПРИЛОЖЕНИЯ</SectionHeading>
+      <div class="space-y-4 text-white/70">
+        <p>
+          Согласно отзывам, приложение работает стабильно и предоставляет доступ к полному функционалу платформы: ставки, казино, live-трансляции. Интерфейс, по данным обзоров, адаптирован под мобильные экраны.
+        </p>
+        <p>
+          Из минусов, которые отмечают пользователи: необходимость ручного обновления APK на Android и периодические задержки уведомлений. Также рекомендуем ознакомиться с информацией о <a href="/sozdat-akkaunt" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">регистрации аккаунта</a>, обзором <a href="/onlajn-kazino" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">онлайн-казино</a> и информацией о <a href="/dostup" class="text-cta-400 border-b border-cta-500/40 hover:border-cta-500 transition-colors duration-100">доступе к сайту</a>.
+        </p>
+        <div class="border-l-2 border-info-400 pl-4 py-2 text-sm text-white/50">
+          <p>💡 Мы не являемся разработчиками приложения. Для получения актуальной версии обращайтесь на официальный сайт.</p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <CTAButton href={affiliateLink} size="lg" external>ПОСЕТИТЬ ОФИЦИАЛЬНЫЙ САЙТ</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

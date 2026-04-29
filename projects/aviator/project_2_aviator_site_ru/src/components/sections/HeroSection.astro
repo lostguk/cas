@@ -1,0 +1,78 @@
+---
+import CTAButton from '../ui/CTAButton.astro'
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle: string;
+  primaryCta: string;
+  secondaryCta?: string;
+  stats?: Stat[];
+}
+
+const affiliateLink = '#';
+
+const {
+  eyebrow = 'Aviator от Spribe',
+  title,
+  subtitle,
+  primaryCta,
+  secondaryCta,
+  stats = [],
+} = Astro.props;
+---
+
+<section class="relative overflow-hidden border-b border-orange-500/15">
+  <div class="absolute inset-0 pointer-events-none">
+    <img
+      src="/images/aviator-hero.jpg"
+      alt=""
+      width="1376"
+      height="768"
+      class="w-full h-full object-cover object-center opacity-90"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      aria-hidden="true"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-carbon-900 via-carbon-900/85 to-carbon-900/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-carbon-900 via-transparent to-carbon-900/40"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 xl:py-28">
+    <div class="max-w-3xl">
+      <p class="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-orange-300 bg-orange-500/15 border border-orange-500/40 backdrop-blur-sm">
+        <span class="w-2 h-2 bg-orange-400 rounded-full animate-aviator-pulse"></span>
+        {eyebrow}
+      </p>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-5 drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
+        <span set:html={title} />
+      </h1>
+
+      <p class="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed max-w-2xl mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]" set:html={subtitle} />
+
+      <div class="flex flex-wrap items-center gap-3">
+        <CTAButton href={affiliateLink} external size="lg">{primaryCta}</CTAButton>
+        {secondaryCta && (
+          <CTAButton href="/kak-igrat" variant="secondary" size="lg">{secondaryCta}</CTAButton>
+        )}
+      </div>
+
+      {stats.length > 0 && (
+        <div class="grid grid-cols-3 gap-4 sm:gap-6 mt-10 pt-8 border-t border-white/[0.12] max-w-xl">
+          {stats.map((s) => (
+            <div>
+              <div class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-orange-400 leading-none mb-1.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">{s.value}</div>
+              <div class="text-[11px] sm:text-xs text-slate-300 uppercase tracking-wider leading-snug">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

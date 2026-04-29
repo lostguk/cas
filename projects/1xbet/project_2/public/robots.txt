@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /
-
+Allow: /
 Sitemap: https://1xstavka-kz.com/sitemap-index.xml

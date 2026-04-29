@@ -4,7 +4,6 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ArticleMeta from '../components/ArticleMeta.astro';
 import CTAButton from '../components/ui/CTAButton.astro';
 import Card from '../components/ui/Card.astro';
-import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
 
 const affiliateLink = 'https://refpa94475.com/L?tag=d_3955872m_100c_';
 const title = 'Какие слоты есть на 1xBet? Обзор казино KZ 2026';
@@ -28,7 +27,6 @@ const schema = {
   schema={schema}
   publishDate="2026-01-20"
   updateDate="2026-03-15"
-  noindex={true}
   type="article"
 >
   <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Слоты и игры' }]} />
@@ -47,9 +45,13 @@ const schema = {
         </div>
       </div>
 
-      <ImagePlaceholder
-        description="Лобби казино: сетка превью слотов и фильтр по провайдерам на светлом UI"
-        class="mb-12"
+      <img
+        src="/images/casino-lobby.png"
+        alt="Лобби казино: сетка слотов и фильтры"
+        width="800"
+        height="450"
+        class="rounded-xl shadow-sm w-full"
+        loading="lazy"
       />
 
       <div class="space-y-6 text-gray-700 mb-10">

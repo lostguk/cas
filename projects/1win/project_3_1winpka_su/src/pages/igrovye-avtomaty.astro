@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import CTAButton from '../components/ui/CTAButton.astro';
+import Card from '../components/ui/Card.astro';
+import ImagePlaceholder from '../components/ui/ImagePlaceholder.astro';
+
+const affiliateLink = '#';
+---
+
+<BaseLayout
+  title="Какие слоты есть на 1Win? Обзор казино РУ 2026"
+  description="Казино 1Win РУ — честный обзор: слоты, провайдеры, RTP, бонусы. Играй в рублях, выводи на Сбербанк."
+  publishDate="2026-01-25"
+  updateDate="2026-04-01"
+>
+  <Breadcrumbs items={[{ label: 'Главная', href: '/' }, { label: 'Казино' }]} />
+  <ArticleMeta publishDate="2026-01-25" updateDate="2026-04-01" />
+
+  <section class="py-12 lg:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight mb-4">Казино 1Win — слоты и live-дилеры</h1>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">12 000+ игр, провайдеры Pragmatic Play, Spribe, SmartSoft, 1Win Games. Счёт в рублях.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <CTAButton href={affiliateLink} size="lg" external>Открыть казино с бонусом</CTAButton>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-3">Обзор казино</h2>
+          <p class="text-slate-300">Каталог здесь реально большой — двенадцать тысяч позиций, и это не просто цифра. Pragmatic Play, Spribe, SmartSoft Gaming плюс собственные игры 1Win Games. Lucky Jet, Aviator, Mines — краш-игры в отдельном разделе. Слоты фильтруются по провайдеру и по RTP что удобно.</p>
+          <p class="text-slate-400 text-sm mt-2">Минус один — поиск по названию иногда глючит, быстрее через <a href="/prilozhenie" class="text-coral-400 hover:underline">приложение</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-4">Популярные слоты</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-abyss-800 border-l-4 border-coral-500 rounded-lg overflow-hidden">
+              <ImagePlaceholder description="1. Слот Bananas go Bahamas: тропический пляж и обезьяны" aspect="16/10" />
+              <div class="p-5">
+                <div class="text-xs text-teal-400 font-semibold uppercase mb-1">Novomatic</div>
+                <h3 class="font-bold text-white uppercase">Bananas go Bahamas</h3>
+                <p class="text-xs text-slate-500 mt-1">RTP 96.10% · Макс. ×9 000</p>
+                <CTAButton href="/bananas-go-bahamas" variant="outline" size="sm" class="mt-3">Подробный обзор</CTAButton>
+              </div>
+            </div>
+            <div class="bg-abyss-800 border-l-4 border-coral-500 rounded-lg overflow-hidden">
+              <ImagePlaceholder description="2. Слот Sweet Bonanza: конфеты и леденцы" aspect="16/10" />
+              <div class="p-5">
+                <div class="text-xs text-teal-400 font-semibold uppercase mb-1">Pragmatic Play</div>
+                <h3 class="font-bold text-white uppercase">Sweet Bonanza</h3>
+                <p class="text-xs text-slate-500 mt-1">RTP 96.48% · Макс. ×21 175</p>
+                <CTAButton href="/sweet-bonanza" variant="outline" size="sm" class="mt-3">Подробный обзор</CTAButton>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-3">Live-казино и краш-игры</h2>
+          <p class="text-slate-300">Lucky Jet — самая популярная краш-игра на площадке. Aviator тоже есть, плюс Mines и Speed Cash. Live-казино с настоящими дилерами — рулетка, блэкджек, баккара. Работает круглосуточно.</p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-white uppercase tracking-wide mb-3">Бонусы для казино</h2>
+          <p class="text-slate-300">70 фриспинов на определённые слоты, вейджер ×50. Честно говоря отыграть сложно. На <a href="/podarki" class="text-coral-400 hover:underline">странице бонусов</a> расписали все условия. Спортивный бонус отыгрывается проще — вейджер ×5.</p>
+          <p class="text-slate-400 text-sm mt-2">Если ещё нет аккаунта — <a href="/otkryt-schet" class="text-coral-400 hover:underline">инструкция по регистрации</a> с бонусом. Подробнее о нас — на <a href="/about" class="text-coral-400 hover:underline">отдельной странице</a>.</p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center p-8 rounded-lg bg-gradient-to-br from-coral-500/10 via-abyss-800 to-teal-500/5 border border-coral-500/10">
+        <h2 class="text-xl font-bold text-white uppercase mb-3">12 000+ игр ждут</h2>
+        <p class="text-slate-300 mb-6">Слоты, live-казино и краш-игры — всё в одном месте.</p>
+        <CTAButton href={affiliateLink} size="lg" external>Испытать удачу</CTAButton>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
